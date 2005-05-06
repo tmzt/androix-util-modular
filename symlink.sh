@@ -27,6 +27,12 @@ function check_exist() {
     fi
 }
 
+function delete_existing() {
+    # Delete $2
+
+    rm -f $2
+}
+
 function link_files() {
     # Link $1 to $2
 
@@ -39,6 +45,7 @@ function main() {
     check_args $1 $2
 
     run check_exist "Checking that the source files exist"
+    run delete_existing "Deleting existing files"
     run link_files "Linking files"
 }
 
@@ -2118,9 +2125,13 @@ function check_args() {
 	usage
 	exit
     fi
-    
-    SRC_DIR=$1
-    DST_DIR=$2
+
+    D=`dirname "$relpath"`
+    B=`basename "$relpath"`
+    abspath="`cd \"$D\" 2>/dev/null && pwd || echo \"$D\"`/$B"
+
+    SRC_DIR=`( cd $1 ; pwd )`
+    DST_DIR=`(cd $2 ; pwd )`
 }
 
 main $1 $2
