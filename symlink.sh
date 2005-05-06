@@ -39,9 +39,7 @@ function main() {
     check_args $1 $2
 
     run check_exist "Checking that the source files exist"
-    if [ -z $DST_DIR_ERROR ] ; then
-	run link_files "Linking files"
-    fi
+    run link_files "Linking files"
 }
 
 
@@ -2032,6 +2030,12 @@ function symlink_util() {
 #
 #########
 
+function error() {
+	echo
+	echo \ \ \ error:\ \ \ $1
+	exit
+}
+
 # Function printing out what's going on
 function run_module() {
     # $1 module
@@ -2058,34 +2062,24 @@ function run() {
 function src_dir() {
     REAL_SRC_DIR=$SRC_DIR/$1
     if [ ! -d $REAL_SRC_DIR ] ; then
-	echo $REAL_SRC_DIR does not exist
+	error "Source directory $REAL_SRC_DIR does not exist"
     fi
 }
 
 function dst_dir() {
     REAL_DST_DIR=$DST_DIR/$1
     if [ ! -d $REAL_DST_DIR ] ; then
-	echo $REAL_DST_DIR does not exist
-	DST_DIR_ERROR=yes
+	error "Destination direcotry $REAL_DST_DIR does not exist"
     fi
 }
 
 function action() {
-    if [ -z $DST_DIR_ERROR ] ; then
-	if [ -z $2 ] ; then
-	    $ACTION	$REAL_SRC_DIR/$1	$REAL_DST_DIR/$1
-	else
-	    $ACTION	$REAL_SRC_DIR/$1	$REAL_DST_DIR/$2
-	fi
+    if [ -z $2 ] ; then
+	$ACTION	$REAL_SRC_DIR/$1	$REAL_DST_DIR/$1
+    else
+	$ACTION	$REAL_SRC_DIR/$1	$REAL_DST_DIR/$2
     fi
 }
-
-function error() {
-	echo
-	echo \ \ \ error:\ \ \ $1
-	exit
-}
-
 
 function usage() {
     echo symlink.sh src-dir dst-dir
