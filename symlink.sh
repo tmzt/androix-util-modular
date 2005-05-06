@@ -19,6 +19,12 @@
 #	- Clean target directory of irrelevant files
 #
 
+function check_destinations () {
+    # don't do anything - we are relying on the side
+    # effect of dst_dir
+    true
+}
+
 function check_exist() {
     # Check whether $1 exists
 
@@ -44,6 +50,7 @@ function link_files() {
 function main() {
     check_args $1 $2
 
+    run check_destinations "Creating destination directories"
     run check_exist "Checking that the source files exist"
     run delete_existing "Deleting existing files"
     run link_files "Linking files"
@@ -463,11 +470,65 @@ function symlink_lib_composite() {
     action	Xcomposite.c
 }
 
+function symlink_lib_damage() {
+    src_dir lib/Xdamage
+    dst_dir lib/Xdamage
+
+    action	AUTHORS
+    action	autogen.sh
+    action	ChangeLog
+    action	COPYING
+    action	INSTALL
+    action	NEWS
+    action	README
+    action	xdamage.pc.in
+
+    dst_dir	lib/Xdamage/include
+
+    action	Xdamage.h
+    action	xdamageint.h
+
+    dst_dir	lib/Xdamage/src
+
+    action	Xdamage.c
+}
+
+function symlink_lib_fixes() {
+    src_dir lib/Xfixes
+    dst_dir lib/Xfixes
+
+    action	AUTHORS
+    action	autogen.sh
+    action	ChangeLog
+    action	COPYING
+    action	INSTALL
+    action	NEWS
+    action	README
+    action	xfixes.pc.in
+
+    dst_dir lib/Xfixes/src
+
+    action	Cursor.c
+    action	Region.c
+    action	SaveSet.c
+    action	Selection.c
+    action	Xfixes.c
+
+    dst_dir lib/Xfixes/include
+    
+    action	Xfixes.h
+    action	Xfixesint.h
+
+    dst_dir lib/Xfixes/man
+
+    action	Xfixes.man
+}
+
 function symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
-#    symlink_lib_damage
-#    symlink_lib_fixes
+    symlink_lib_damage
+    symlink_lib_fixes
 #    symlink_lib_ice
 #    symlink_lib_randr
 #    symlink_lib_record
@@ -2076,7 +2137,8 @@ function src_dir() {
 function dst_dir() {
     REAL_DST_DIR=$DST_DIR/$1
     if [ ! -d $REAL_DST_DIR ] ; then
-	error "Destination direcotry $REAL_DST_DIR does not exist"
+	echo Creating directory $REAL_DST_DIR
+	mkdir -p $REAL_DST_DIR
     fi
 }
 
