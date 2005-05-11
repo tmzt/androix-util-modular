@@ -15,7 +15,7 @@
 #		- if a file doesn't need to be linked, then it needs
 #		  to be listed as "not-linked"
 #	- Compute diffs between all the files (shouldn't be necessary)
-#	- possibly check that files are listen in Makefile.am's
+#	- possibly check that files are listet in Makefile.am's
 #	- Clean target directory of irrelevant files
 #
 
@@ -524,19 +524,119 @@ function symlink_lib_fixes() {
     action	Xfixes.man
 }
 
+function symlink_lib_xau() {
+    src_dir	lib/Xau
+    dst_dir	lib/Xau
+
+    action	README
+
+    action	Xauth.h
+
+    action	AuDispose.c
+    action	AuFileName.c
+    action	AuGetAddr.c
+    action	AuGetBest.c
+    action	AuLock.c
+    action	AuRead.c
+    action	Autest.c
+    action	AuUnlock.c
+    action	AuWrite.c
+    action	k5encode.c
+
+    src_dir	doc/man/Xau
+
+    action	Xau.man		Xau.3
+}
+
+function symlink_lib_xtrans() {
+    src_dir lib/xtrans
+    dst_dir lib/xtrans
+
+    action	transport.c
+    action	Xtrans.c
+    action	Xtransdnet.c
+    action	Xtrans.h
+    action	Xtransint.h
+    action	Xtranslcl.c
+    action	Xtransos2.c
+    action	Xtranssock.c
+    action	Xtranstli.c
+    action	Xtransutil.c
+}
+
+function symlink_lib_xdmcp() {
+    src_dir lib/Xdmcp
+    dst_dir lib/Xdmcp
+
+    action	Xdmcp.h
+
+    action	A8Eq.c
+    action	AA16.c
+    action	AA32.c
+    action	AA8.c
+    action	Alloc.c
+    action	AofA8.c
+    action	CA8.c
+    action	CmpKey.c
+    action	DA16.c
+    action	DA32.c
+    action	DA8.c
+    action	DAofA8.c
+    action	DecKey.c
+    action	Fill.c
+    action	Flush.c
+    action	GenKey.c
+    action	IncKey.c
+    action	RA16.c
+    action	RA32.c
+    action	RA8.c
+    action	RaA16.c
+    action	RaA32.c
+    action	RaA8.c
+    action	RaAoA8.c
+    action	RAofA8.c
+    action	RC16.c
+    action	RC32.c
+    action	RC8.c
+    action	RHead.c
+    action	RR.c
+    action	Unwrap.c
+    action	WA16.c
+    action	WA32.c
+    action	WA8.c
+    action	WAofA8.c
+    action	WC16.c
+    action	WC32.c
+    action	WC8.c
+    action	Whead.c
+    action	Wrap.c
+    action	Wraphelp.c
+
+    action	Wraphelp.README.crypto
+}
+
+function symlink_lib_x11() {
+    src_dir lib/x11
+    dst_dir lib/X11
+
+    
+}
+
 function symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
     symlink_lib_damage
-    symlink_lib_fixes
+    symlink_lib_fixes 
+    symlink_lib_xau
+    symlink_lib_xtrans
+    symlink_lib_xdmcp
+#    symlink_lib_x11
 #    symlink_lib_ice
 #    symlink_lib_randr
 #    symlink_lib_record
 #    symlink_lib_render
 #    symlink_lib_resource
 #    symlink_lib_sm
-#    symlink_lib_x11
-#    symlink_lib_xau
 #    symlink_lib_xaw
 #    ...
 }
@@ -2137,7 +2237,6 @@ function src_dir() {
 function dst_dir() {
     REAL_DST_DIR=$DST_DIR/$1
     if [ ! -d $REAL_DST_DIR ] ; then
-	echo Creating directory $REAL_DST_DIR
 	mkdir -p $REAL_DST_DIR
     fi
 }
