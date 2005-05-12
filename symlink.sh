@@ -570,6 +570,8 @@ function symlink_lib_xdmcp() {
 
     action	Xdmcp.h
 
+    action	Wrap.h
+
     action	A8Eq.c
     action	AA16.c
     action	AA32.c
