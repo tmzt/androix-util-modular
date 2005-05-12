@@ -617,11 +617,1022 @@ function symlink_lib_xdmcp() {
     action	Wraphelp.README.crypto
 }
 
+function symlink_lib_xext() {
+    src_dir lib/Xext
+    dst_dir lib/Xext
+
+    action	DPMS.c
+    action	extutil.c
+    action	globals.c
+    action	MITMisc.c
+    action	XAppgroup.c
+    action	Xcup.c
+    action	Xdbe.c
+    action	XEVI.c
+    action	XLbx.c
+    action	XMultibuf.c
+    action	XSecurity.c
+    action	XShape.c
+    action	XShm.c
+    action	XSync.c
+    action	XTestExt1.c
+
+    src_dir doc/man/Xext
+    dst_dir lib/Xext/man
+
+    action	XcupGetReservedColormapEntries.man	XcupGetReservedColormapEntries.3
+    action	XcupQueryVersion.man			XcupQueryVersion.3
+    action	XcupStoreColors.man			XcupStoreColors.3
+    action	Xevi.man				Xevi.3
+    action	Xmbuf.man				Xmbuf.3
+    action	XShape.man				XShape.3
+
+    src_dir doc/man/Xext/dbe
+
+    action	DBE.man					DBE.3
+    action	XdbeAllo.man				XdbeAllo.3
+    action	XdbeBegi.man				XdbeBegi.3
+    action	XdbeDeal.man				XdbeDeal.3
+    action	XdbeEndI.man				XdbeEndI.3
+    action	XdbeFree.man				XdbeFree.3
+    action	XdbeGetB.man				XdbeGetB.3
+    action	XdbeGetV.man				XdbeGetV.3
+    action	XdbeQuer.man				XdbeQuer.3
+    action	XdbeSwap.man				XdbeSwap.3
+} 
+
 function symlink_lib_x11() {
-    src_dir lib/x11
+    src_dir lib/X11
     dst_dir lib/X11
 
-    
+    action	Cmap.h
+    action	Cr.h
+    action	cursorfont.h
+    action	Cv.h
+    action	ImUtil.h
+    action	Key.h
+    action	locking.h
+    action	poly.h
+    action	region.h
+    action	Xaixlcint.h
+    action	Xatomtype.h
+    action	Xcms.h
+    action	Xcmsint.h
+    action	XimImSw.h
+    action	Ximint.h
+    action	XimintL.h
+    action	XimintP.h
+    action	XimProto.h
+    action	XimThai.h
+    action	XimTrans.h
+    action	XimTrInt.h
+    action	XimTrX.h
+    action	Xintatom.h
+    action	Xintconn.h
+    action	XKBlib.h
+    action	XKBlibint.h
+    action	XlcGeneric.h
+    action	Xlcint.h
+    action	XlcPubI.h
+    action	XlcPublic.h
+    action	Xlib.h
+    action	Xlibint.h
+    action	Xlocale.h
+    action	XomGeneric.h
+    action	Xresinternal.h
+    action	Xresource.h
+    action	XrmI.h
+    action	Xutil.h
+
+    action	AddDIC.c
+    action	AddSF.c
+    action	AllCells.c
+    action	AllowEv.c
+    action	AllPlanes.c
+    action	AutoRep.c
+    action	Backgnd.c
+    action	BdrWidth.c
+    action	Bell.c
+    action	Border.c
+    action	CCC.c
+    action	ChAccCon.c
+    action	ChActPGb.c
+    action	ChClMode.c
+    action	ChCmap.c
+    action	ChGC.c
+    action	ChKeyCon.c
+    action	ChkIfEv.c
+    action	ChkMaskEv.c
+    action	ChkTypEv.c
+    action	ChkTypWEv.c
+    action	ChkWinEv.c
+    action	ChPntCon.c
+    action	ChProp.c
+    action	ChSaveSet.c
+    action	ChWAttrs.c
+    action	ChWindow.c
+    action	CirWin.c
+    action	CirWinDn.c
+    action	CirWinUp.c
+    action	ClDisplay.c
+    action	ClearArea.c
+    action	Clear.c
+    action	cmsAllCol.c
+    action	cmsAllNCol.c
+    action	cmsCmap.c
+    action	cmsColNm.c
+    action	cmsGlobls.c
+    action	cmsInt.c
+    action	cmsLkCol.c
+    action	cmsMath.c
+    action	cmsProp.c
+    action	cmsTrig.c
+    action	ConfWind.c
+    action	ConnDis.c
+    action	Context.c
+    action	ConvSel.c
+    action	CopyArea.c
+    action	CopyCmap.c
+    action	CopyGC.c
+    action	CopyPlane.c
+    action	CrBFData.c
+    action	CrCmap.c
+    action	CrCursor.c
+    action	CrGC.c
+    action	CrGlCur.c
+    action	CrPFBData.c
+    action	CrPixmap.c
+    action	CrWindow.c
+    action	Cursor.c
+    action	CvCols.c
+    action	CvColW.c
+    action	DefCursor.c
+    action	DelProp.c
+    action	Depths.c
+    action	DestSubs.c
+    action	DestWind.c
+    action	DisName.c
+    action	DrArc.c
+    action	DrArcs.c
+    action	DrLine.c
+    action	DrLines.c
+    action	DrPoint.c
+    action	DrPoints.c
+    action	DrRect.c
+    action	DrRects.c
+    action	DrSegs.c
+    action	ErrDes.c
+    action	ErrHndlr.c
+    action	evtomask.c
+    action	EvToWire.c
+    action	FetchName.c
+    action	FillArc.c
+    action	FillArcs.c
+    action	FillPoly.c
+    action	FillRct.c
+    action	FillRcts.c
+    action	FilterEv.c
+    action	Flush.c
+    action	Font.c
+    action	FontInfo.c
+    action	FontNames.c
+    action	FreeCmap.c
+    action	FreeCols.c
+    action	FreeCurs.c
+    action	FreeEData.c
+    action	FreeGC.c
+    action	FreePix.c
+    action	FSSaver.c
+    action	FSWrap.c
+    action	GCMisc.c
+    action	Geom.c
+    action	GetAtomNm.c
+    action	GetColor.c
+    action	GetDflt.c
+    action	GetFPath.c
+    action	GetFProp.c
+    action	GetGCVals.c
+    action	GetGeom.c
+    action	GetHColor.c
+    action	GetHints.c
+    action	GetIFocus.c
+    action	GetImage.c
+    action	GetKCnt.c
+    action	GetMoEv.c
+    action	GetNrmHint.c
+    action	GetPCnt.c
+    action	GetPntMap.c
+    action	GetProp.c
+    action	GetRGBCMap.c
+    action	GetSOwner.c
+    action	GetSSaver.c
+    action	GetStCmap.c
+    action	GetTxtProp.c
+    action	GetWAttrs.c
+    action	GetWMCMapW.c
+    action	GetWMProto.c
+    action	globals.c
+    action	GrButton.c
+    action	GrKeybd.c
+    action	GrKey.c
+    action	GrPointer.c
+    action	GrServer.c
+    action	Host.c
+    action	HVC.c
+    action	HVCGcC.c
+    action	HVCGcV.c
+    action	HVCGcVC.c
+    action	HVCMnV.c
+    action	HVCMxC.c
+    action	HVCMxV.c
+    action	HVCMxVC.c
+    action	HVCMxVs.c
+    action	HVCWpAj.c
+    action	Iconify.c
+    action	ICWrap.c
+    action	IdOfPr.c
+    action	IfEvent.c
+    action	imCallbk.c
+    action	imConv.c
+    action	imDefFlt.c
+    action	imDefIc.c
+    action	imDefIm.c
+    action	imDefLkup.c
+    action	imDispch.c
+    action	imEvToWire.c
+    action	imExten.c
+    action	imImSw.c
+    action	imInsClbk.c
+    action	imInt.c
+    action	imKStoUCS.c
+    action	imLcFlt.c
+    action	imLcGIc.c
+    action	imLcIc.c
+    action	imLcIm.c
+    action	imLcLkup.c
+    action	imLcPrs.c
+    action	imLcSIc.c
+    action	imRmAttr.c
+    action	imRm.c
+    action	ImText16.c
+    action	ImText.c
+    action	imThaiFlt.c
+    action	imThaiIc.c
+    action	imThaiIm.c
+    action	imTrans.c
+    action	imTransR.c
+    action	imTrX.c
+    action	ImUtil.c
+    action	IMWrap.c
+    action	InitExt.c
+    action	InsCmap.c
+    action	IntAtom.c
+    action	KeyBind.c
+    action	KeysymStr.c
+    action	KillCl.c
+    action	Lab.c
+    action	LabGcC.c
+    action	LabGcL.c
+    action	LabGcLC.c
+    action	LabMnL.c
+    action	LabMxC.c
+    action	LabMxL.c
+    action	LabMxLC.c
+    action	LabWpAj.c
+    action	lcCharSet.c
+    action	lcConv.c
+    action	lcCT.c
+    action	lcDB.c
+    action	lcDefConv.c
+    action	lcDynamic.c
+    action	lcEuc.c
+    action	lcFile.c
+    action	lcGenConv.c
+    action	lcGeneric.c
+    action	lcInit.c
+    action	lcJis.c
+    action	lcPrTxt.c
+    action	lcPublic.c
+    action	lcPubWrap.c
+    action	lcRM.c
+    action	lcSjis.c
+    action	lcStd.c
+    action	lcTxtPr.c
+    action	lcUTF8.c
+    action	lcUTF8Load.c
+    action	lcUtil.c
+    action	lcWrap.c
+    action	LiHosts.c
+    action	LiICmaps.c
+    action	LiProps.c
+    action	ListExt.c
+    action	LoadFont.c
+    action	LockDis.c
+    action	locking.c
+    action	LookupCol.c
+    action	LowerWin.c
+    action	LRGB.c
+    action	Luv.c
+    action	LuvGcC.c
+    action	LuvGcL.c
+    action	LuvGcLC.c
+    action	LuvMnL.c
+    action	LuvMxC.c
+    action	LuvMxL.c
+    action	LuvMxLC.c
+    action	LuvWpAj.c
+    action	Macros.c
+    action	MapRaised.c
+    action	MapSubs.c
+    action	MapWindow.c
+    action	MaskEvent.c
+    action	mbWMProps.c
+    action	mbWrap.c
+    action	Misc.c
+    action	ModMap.c
+    action	MoveWin.c
+    action	NextEvent.c
+    action	OCWrap.c
+    action	OfCCC.c
+    action	omDefault.c
+    action	omGeneric.c
+    action	omImText.c
+    action	omText.c
+    action	omTextEsc.c
+    action	omTextExt.c
+    action	omTextPer.c
+    action	OMWrap.c
+    action	omXChar.c
+    action	OpenDis.c
+    action	os2Stubs.c
+    action	ParseCmd.c
+    action	ParseCol.c
+    action	ParseGeom.c
+    action	PeekEvent.c
+    action	PeekIfEv.c
+    action	Pending.c
+    action	PixFormats.c
+    action	PmapBgnd.c
+    action	PmapBord.c
+    action	PolyReg.c
+    action	PolyTxt16.c
+    action	PolyTxt.c
+    action	PrOfId.c
+    action	PropAlloc.c
+    action	PutBEvent.c
+    action	PutImage.c
+    action	QBlack.c
+    action	QBlue.c
+    action	QGreen.c
+    action	QRed.c
+    action	Quarks.c
+    action	QuBest.c
+    action	QuCol.c
+    action	QuColor.c
+    action	QuColors.c
+    action	QuCols.c
+    action	QuCurShp.c
+    action	QuExt.c
+    action	QuKeybd.c
+    action	QuPntr.c
+    action	QuStipShp.c
+    action	QuTextE16.c
+    action	QuTextExt.c
+    action	QuTileShp.c
+    action	QuTree.c
+    action	QWhite.c
+    action	RaiseWin.c
+    action	RdBitF.c
+    action	RecolorC.c
+    action	ReconfWin.c
+    action	ReconfWM.c
+    action	Region.c
+    action	RegstFlt.c
+    action	RepWindow.c
+    action	RestackWs.c
+    action	RotProp.c
+    action	ScrResStr.c
+    action	SelInput.c
+    action	SendEvent.c
+    action	SetBack.c
+    action	SetCCC.c
+    action	SetClMask.c
+    action	SetClOrig.c
+    action	SetCRects.c
+    action	SetDashes.c
+    action	SetFont.c
+    action	SetFore.c
+    action	SetFPath.c
+    action	SetFunc.c
+    action	SetGetCols.c
+    action	SetHints.c
+    action	SetIFocus.c
+    action	SetLocale.c
+    action	SetLStyle.c
+    action	SetNrmHint.c
+    action	SetPMask.c
+    action	SetPntMap.c
+    action	SetRGBCMap.c
+    action	SetSOwner.c
+    action	SetSSaver.c
+    action	SetState.c
+    action	SetStCmap.c
+    action	SetStip.c
+    action	SetTile.c
+    action	SetTSOrig.c
+    action	SetTxtProp.c
+    action	SetWMCMapW.c
+    action	SetWMProto.c
+    action	StBytes.c
+    action	StCol.c
+    action	StColor.c
+    action	StColors.c
+    action	StCols.c
+    action	StName.c
+    action	StNColor.c
+    action	StrKeysym.c
+    action	StrToText.c
+    action	Sync.c
+    action	Synchro.c
+    action	Text16.c
+    action	Text.c
+    action	TextExt16.c
+    action	TextExt.c
+    action	TextToStr.c
+    action	TrCoords.c
+    action	udcInf.c
+    action	UIThrStubs.c
+    action	UndefCurs.c
+    action	UNDEFINED.c
+    action	UngrabBut.c
+    action	UngrabKbd.c
+    action	UngrabKey.c
+    action	UngrabPtr.c
+    action	UngrabSvr.c
+    action	UninsCmap.c
+    action	UnldFont.c
+    action	UnmapSubs.c
+    action	UnmapWin.c
+    action	utf8WMProps.c
+    action	utf8Wrap.c
+    action	uvY.c
+    action	VisUtil.c
+    action	WarpPtr.c
+    action	wcWrap.c
+    action	Window.c
+    action	WinEvent.c
+    action	Withdraw.c
+    action	WMGeom.c
+    action	WMProps.c
+    action	WrBitF.c
+    action	XDefaultIMIF.c
+    action	XDefaultOMIF.c
+    action	XKBAlloc.c
+    action	XKBBell.c
+    action	XKBBind.c
+    action	XKB.c
+    action	XKBCompat.c
+    action	XKBCtrls.c
+    action	XKBCvt.c
+    action	XKBExtDev.c
+    action	XKBGAlloc.c
+    action	XKBGeom.c
+    action	XKBGetByName.c
+    action	XKBGetMap.c
+    action	XKBleds.c
+    action	XKBList.c
+    action	XKBMAlloc.c
+    action	XKBMisc.c
+    action	XKBNames.c
+    action	XKBRdBuf.c
+    action	XKBSetGeom.c
+    action	XKBSetMap.c
+    action	XKBUse.c
+    action	XlcDL.c
+    action	XlcSL.c
+    action	XlibAsync.c
+    action	XlibInt.c
+    action	XRGB.c
+    action	Xrm.c
+    action	xyY.c
+    action	XYZ.c
+
+    #---------------------
+    #
+    #  NLS
+    #
+    #---------------------
+
+    src_dir nls
+    dst_dir lib/X11/nls/
+
+    action	compose.dir
+    action	locale.dir
+    action	locale.alias
+
+    # armscii-8
+    dst_dir lib/X11/nls/armscii-8
+    src_dir nls/XLC_LOCALE
+    action		armscii-8		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		armscii-8		XI18N_OBJS
+    src_dir nls/Compose
+    action		armscii-8		Compose.pre
+
+    # C
+    dst_dir lib/X11/nls/C
+    src_dir nls/XLC_LOCALE
+    action		C			XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		C			XI18N_OBJS
+    #src_dir nls/Compose
+    #action		C			Compose.pre
+
+    # en_US.UTF-8
+    dst_dir lib/X11/nls/en_US.UTF-8
+    src_dir nls/XLC_LOCALE
+    action		en_US.UTF-8		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		en_US.UTF-8		XI18N_OBJS
+    src_dir nls/Compose
+    action		en_US.UTF-8		Compose.pre
+
+    # georgian-academy
+    dst_dir lib/X11/nls/georgian-academy
+    src_dir nls/XLC_LOCALE
+    action		georgian-academy	XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		georgian-academy	XI18N_OBJS
+    src_dir nls/Compose
+    action		georgian-academy	Compose.pre
+
+    # georgian-ps
+    dst_dir lib/X11/nls/georgian-ps
+    src_dir nls/XLC_LOCALE
+    action		georgian-ps		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		georgian-ps		XI18N_OBJS
+    src_dir nls/Compose
+    action		georgian-ps		Compose.pre
+
+    # ibm-cp1133
+    dst_dir lib/X11/nls/ibm-cp1133
+    src_dir nls/XLC_LOCALE
+    action		ibm-cp1133		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		ibm-cp1133		XI18N_OBJS
+    src_dir nls/Compose
+    action		ibm-cp1133		Compose.pre
+
+    # iscii-dev
+    dst_dir lib/X11/nls/iscii-dev
+    src_dir nls/XLC_LOCALE
+    action		iscii-dev		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		iscii-dev		XI18N_OBJS
+    #src_dir nls/Compose
+    #action		iscii-dev		Compose.pre
+
+    # isiri-3342
+    dst_dir lib/X11/nls/isiri-3342
+    src_dir nls/XLC_LOCALE
+    action		isiri-3342		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		isiri-3342		XI18N_OBJS
+    #src_dir nls/Compose
+    #action		isiri-3342		Compose.pre
+
+    # iso8859-1
+    dst_dir lib/X11/nls/iso8859-1
+    src_dir nls/XLC_LOCALE
+    action		iso8859-1		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		iso8859-1		XI18N_OBJS
+    src_dir nls/Compose
+    action		iso8859-1		Compose.pre
+
+    # iso8859-10
+    dst_dir lib/X11/nls/iso8859-10
+    src_dir nls/XLC_LOCALE
+    action		iso8859-10		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		iso8859-10		XI18N_OBJS
+    src_dir nls/Compose
+    action		iso8859-10		Compose.pre
+
+    # iso8859-11
+    dst_dir lib/X11/nls/iso8859-11
+    src_dir nls/XLC_LOCALE
+    action		iso8859-11		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		iso8859-11		XI18N_OBJS
+    #src_dir nls/Compose
+    #action		iso8859-11		Compose.pre
+
+    # iso8859-13
+    dst_dir lib/X11/nls/iso8859-13
+    src_dir nls/XLC_LOCALE
+    action		iso8859-13		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		iso8859-13		XI18N_OBJS
+    src_dir nls/Compose
+    action		iso8859-13		Compose.pre
+
+    # iso8859-14
+    dst_dir lib/X11/nls/iso8859-14
+    src_dir nls/XLC_LOCALE
+    action		iso8859-14		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		iso8859-14		XI18N_OBJS
+    src_dir nls/Compose
+    action		iso8859-14		Compose.pre
+
+    # iso8859-15
+    dst_dir lib/X11/nls/iso8859-15
+    src_dir nls/XLC_LOCALE
+    action		iso8859-15		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		iso8859-15		XI18N_OBJS
+    src_dir nls/Compose
+    action		iso8859-15		Compose.pre
+
+    # iso8859-2
+    dst_dir lib/X11/nls/iso8859-2
+    src_dir nls/XLC_LOCALE
+    action		iso8859-2		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		iso8859-2		XI18N_OBJS
+    src_dir nls/Compose
+    action		iso8859-2		Compose.pre
+
+    # iso8859-3
+    dst_dir lib/X11/nls/iso8859-3
+    src_dir nls/XLC_LOCALE
+    action		iso8859-3		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		iso8859-3		XI18N_OBJS
+    src_dir nls/Compose
+    action		iso8859-3		Compose.pre
+
+    # iso8859-4
+    dst_dir lib/X11/nls/iso8859-4
+    src_dir nls/XLC_LOCALE
+    action		iso8859-4		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		iso8859-4		XI18N_OBJS
+    src_dir nls/Compose
+    action		iso8859-4		Compose.pre
+
+    # iso8859-5
+    dst_dir lib/X11/nls/iso8859-5
+    src_dir nls/XLC_LOCALE
+    action		iso8859-5		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		iso8859-5		XI18N_OBJS
+    src_dir nls/Compose
+    action		iso8859-5		Compose.pre
+
+    # iso8859-6
+    dst_dir lib/X11/nls/iso8859-6
+    src_dir nls/XLC_LOCALE
+    action		iso8859-6		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		iso8859-6		XI18N_OBJS
+    src_dir nls/Compose
+    action		iso8859-6		Compose.pre
+
+    # iso8859-7
+    dst_dir lib/X11/nls/iso8859-7
+    src_dir nls/XLC_LOCALE
+    action		iso8859-7		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		iso8859-7		XI18N_OBJS
+    src_dir nls/Compose
+    action		iso8859-7		Compose.pre
+
+    # iso8859-8
+    dst_dir lib/X11/nls/iso8859-8
+    src_dir nls/XLC_LOCALE
+    action		iso8859-8		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		iso8859-8		XI18N_OBJS
+    src_dir nls/Compose
+    action		iso8859-8		Compose.pre
+
+    # iso8859-9
+    dst_dir lib/X11/nls/iso8859-9
+    src_dir nls/XLC_LOCALE
+    action		iso8859-9		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		iso8859-9		XI18N_OBJS
+    src_dir nls/Compose
+    action		iso8859-9		Compose.pre
+
+    # iso8859-9e
+    dst_dir lib/X11/nls/iso8859-9e
+    src_dir nls/XLC_LOCALE
+    action		iso8859-9e		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		iso8859-9e		XI18N_OBJS
+    src_dir nls/Compose
+    action		iso8859-9e		Compose.pre
+
+    # ja
+    dst_dir lib/X11/nls/ja
+    src_dir nls/XLC_LOCALE
+    action		ja			XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		ja			XI18N_OBJS
+    src_dir nls/Compose
+    action		ja			Compose.pre
+
+    # ja.JIS
+    dst_dir lib/X11/nls/ja.JIS
+    src_dir nls/XLC_LOCALE
+    action		ja.JIS			XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		ja.JIS			XI18N_OBJS
+    src_dir nls/Compose
+    action		ja.JIS			Compose.pre
+
+    # ja_JP.UTF-8
+    dst_dir lib/X11/nls/ja_JP.UTF-8
+    src_dir nls/XLC_LOCALE
+    action		ja_JP.UTF-8		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		ja_JP.UTF-8		XI18N_OBJS
+    #src_dir nls/Compose
+    #action		ja_JP.UTF-8		Compose.pre
+
+    # ja.S90
+    dst_dir lib/X11/nls/ja.S90
+    src_dir nls/XLC_LOCALE
+    action		ja.S90			XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		ja.S90			XI18N_OBJS
+    #src_dir nls/Compose
+    #action		ja.S90			Compose.pre
+
+    # ja.SJIS
+    dst_dir lib/X11/nls/ja.SJIS
+    src_dir nls/XLC_LOCALE
+    action		ja.SJIS			XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		ja.SJIS			XI18N_OBJS
+    src_dir nls/Compose
+    action		ja.SJIS			Compose.pre
+
+    # ja.U90
+    dst_dir lib/X11/nls/ja.U90
+    src_dir nls/XLC_LOCALE
+    action		ja.U90			XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		ja.U90			XI18N_OBJS
+    #src_dir nls/Compose
+    #action		ja.U90			Compose.pre
+
+    # ko
+    dst_dir lib/X11/nls/ko
+    src_dir nls/XLC_LOCALE
+    action		ko			XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		ko			XI18N_OBJS
+    src_dir nls/Compose
+    action		ko			Compose.pre
+
+    # koi8-c
+    dst_dir lib/X11/nls/koi8-c
+    src_dir nls/XLC_LOCALE
+    action		koi8-c			XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		koi8-c			XI18N_OBJS
+    src_dir nls/Compose
+    action		koi8-c			Compose.pre
+
+    # koi8-r
+    dst_dir lib/X11/nls/koi8-r
+    src_dir nls/XLC_LOCALE
+    action		koi8-r			XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		koi8-r			XI18N_OBJS
+    src_dir nls/Compose
+    action		koi8-r			Compose.pre
+
+    # koi8-u
+    dst_dir lib/X11/nls/koi8-u
+    src_dir nls/XLC_LOCALE
+    action		koi8-u			XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		koi8-u			XI18N_OBJS
+    src_dir nls/Compose
+    action		koi8-u			Compose.pre
+
+    # ko_KR.UTF-8
+    dst_dir lib/X11/nls/ko_KR.UTF-8
+    src_dir nls/XLC_LOCALE
+    action		ko_KR.UTF-8		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		ko_KR.UTF-8		XI18N_OBJS
+    #src_dir nls/Compose
+    #action		ko_KR.UTF-8		Compose.pre
+
+    # microsoft-cp1251
+    dst_dir lib/X11/nls/microsoft-cp1251
+    src_dir nls/XLC_LOCALE
+    action		microsoft-cp1251	XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		microsoft-cp1251	XI18N_OBJS
+    #src_dir nls/Compose
+    #action		microsoft-cp1251	Compose.pre
+
+    # microsoft-cp1255
+    dst_dir lib/X11/nls/microsoft-cp1255
+    src_dir nls/XLC_LOCALE
+    action		microsoft-cp1255	XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		microsoft-cp1255	XI18N_OBJS
+    #src_dir nls/Compose
+    #action		microsoft-cp1255	Compose.pre
+
+    # microsoft-cp1256
+    dst_dir lib/X11/nls/microsoft-cp1256
+    src_dir nls/XLC_LOCALE
+    action		microsoft-cp1256	XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		microsoft-cp1256	XI18N_OBJS
+    #src_dir nls/Compose
+    #action		microsoft-cp1256	Compose.pre
+
+    # mulelao-1
+    dst_dir lib/X11/nls/mulelao-1
+    src_dir nls/XLC_LOCALE
+    action		mulelao-1		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		mulelao-1		XI18N_OBJS
+    src_dir nls/Compose
+    action		mulelao-1		Compose.pre
+
+    # nokhchi-1
+    dst_dir lib/X11/nls/nokhchi-1
+    src_dir nls/XLC_LOCALE
+    action		nokhchi-1		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		nokhchi-1		XI18N_OBJS
+    #src_dir nls/Compose
+    #action		nokhchi-1		Compose.pre
+
+    # pt_BR.UTF-8
+    dst_dir lib/X11/nls/pt_BR.UTF-8
+    src_dir nls/XLC_LOCALE
+    action		pt_BR.UTF-8		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		pt_BR.UTF-8		XI18N_OBJS
+    src_dir nls/Compose
+    action		pt_BR.UTF-8		Compose.pre
+
+    # tatar-cyr
+    dst_dir lib/X11/nls/tatar-cyr
+    src_dir nls/XLC_LOCALE
+    action		tatar-cyr		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		tatar-cyr		XI18N_OBJS
+    #src_dir nls/Compose
+    #action		tatar-cyr		Compose.pre
+
+    # th_TH
+    dst_dir lib/X11/nls/th_TH
+    src_dir nls/XLC_LOCALE
+    action		th_TH			XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		th_TH			XI18N_OBJS
+    #src_dir nls/Compose
+    #action		th_TH			Compose.pre
+
+    # th_TH.UTF-8
+    dst_dir lib/X11/nls/th_TH.UTF-8
+    src_dir nls/XLC_LOCALE
+    action		th_TH.UTF-8		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		th_TH.UTF-8		XI18N_OBJS
+    #src_dir nls/Compose
+    #action		th_TH.UTF-8		Compose.pre
+
+    # tscii-0
+    dst_dir lib/X11/nls/tscii-0
+    src_dir nls/XLC_LOCALE
+    action		tscii-0			XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		tscii-0			XI18N_OBJS
+    #src_dir nls/Compose
+    #action		tscii-0			Compose.pre
+
+    # vi_VN.tcvn
+    dst_dir lib/X11/nls/vi_VN.tcvn
+    src_dir nls/XLC_LOCALE
+    action		vi_VN.tcvn		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		vi_VN.tcvn		XI18N_OBJS
+    src_dir nls/Compose
+    action		vi_VN.tcvn		Compose.pre
+
+    # vi_VN.viscii
+    dst_dir lib/X11/nls/vi_VN.viscii
+    src_dir nls/XLC_LOCALE
+    action		vi_VN.viscii		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		vi_VN.viscii		XI18N_OBJS
+    src_dir nls/Compose
+    action		vi_VN.viscii		Compose.pre
+
+    # zh_CN
+    dst_dir lib/X11/nls/zh_CN
+    src_dir nls/XLC_LOCALE
+    action		zh_CN			XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		zh_CN			XI18N_OBJS
+    #src_dir nls/Compose
+    action		zh_CN			Compose.pre
+
+    # zh_CN.gb18030
+    dst_dir lib/X11/nls/zh_CN.gb18030
+    src_dir nls/XLC_LOCALE
+    action		zh_CN.gb18030		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		zh_CN.gb18030		XI18N_OBJS
+    src_dir nls/Compose
+    action		zh_CN.gb18030		Compose.pre
+
+    # zh_CN.gbk
+    dst_dir lib/X11/nls/zh_CN.gbk
+    src_dir nls/XLC_LOCALE
+    action		zh_CN.gbk		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		zh_CN.gbk		XI18N_OBJS
+    src_dir nls/Compose
+    action		zh_CN.gbk		Compose.pre
+
+    # zh_CN.UTF-8
+    dst_dir lib/X11/nls/zh_CN.UTF-8
+    src_dir nls/XLC_LOCALE
+    action		zh_CN.UTF-8		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		zh_CN.UTF-8		XI18N_OBJS
+    #src_dir nls/Compose
+    #action		zh_CN.UTF-8		Compose.pre
+
+    # zh_HK.big5
+    dst_dir lib/X11/nls/zh_HK.big5
+    src_dir nls/XLC_LOCALE
+    action		zh_HK.big5		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		zh_HK.big5		XI18N_OBJS
+    src_dir nls/Compose
+    action		zh_HK.big5		Compose.pre
+
+    # zh_HK.big5hkscs
+    dst_dir lib/X11/nls/zh_HK.big5hkscs
+    src_dir nls/XLC_LOCALE
+    action		zh_HK.big5hkscs		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		zh_HK.big5hkscs		XI18N_OBJS
+    src_dir nls/Compose
+    action		zh_HK.big5hkscs		Compose.pre
+
+    # zh_HK.UTF-8
+    dst_dir lib/X11/nls/zh_HK.UTF-8
+    src_dir nls/XLC_LOCALE
+    action		zh_HK.UTF-8		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		zh_HK.UTF-8		XI18N_OBJS
+    #src_dir nls/Compose
+    #action		zh_HK.UTF-8		Compose.pre
+
+    # zh_TW
+    dst_dir lib/X11/nls/zh_TW
+    src_dir nls/XLC_LOCALE
+    action		zh_TW			XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		zh_TW			XI18N_OBJS
+    src_dir nls/Compose
+    action		zh_TW			Compose.pre
+
+    # zh_TW.big5
+    dst_dir lib/X11/nls/zh_TW.big5
+    src_dir nls/XLC_LOCALE
+    action		zh_TW.big5		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		zh_TW.big5		XI18N_OBJS
+    src_dir nls/Compose
+    action		zh_TW.big5		Compose.pre
+
+    # zh_TW.UTF-8
+    dst_dir lib/X11/nls/zh_TW.UTF-8
+    src_dir nls/XLC_LOCALE
+    action		zh_TW.UTF-8		XLC_LOCALE.pre
+    src_dir nls/XI18N_OBJS
+    action		zh_TW.UTF-8		XI18N_OBJS
+    #src_dir nls/Compose
+    #action		zh_TW.UTF-8		Compose.pre
 }
 
 function symlink_lib() {
@@ -632,7 +1643,8 @@ function symlink_lib() {
     symlink_lib_xau
     symlink_lib_xtrans
     symlink_lib_xdmcp
-#    symlink_lib_x11
+    symlink_lib_xext
+    symlink_lib_x11
 #    symlink_lib_ice
 #    symlink_lib_randr
 #    symlink_lib_record
