@@ -451,15 +451,6 @@ function symlink_lib_composite() {
     src_dir lib/Xcomposite
     dst_dir lib/Xcomposite
 
-    action	AUTHORS
-    action	autogen.sh
-    action	ChangeLog
-    action	COPYING
-    action	INSTALL
-    action	NEWS
-    action	README
-    action	xcomposite.pc.in
-
     dst_dir lib/Xcomposite/include
 
     action	Xcomposite.h
@@ -474,15 +465,6 @@ function symlink_lib_damage() {
     src_dir lib/Xdamage
     dst_dir lib/Xdamage
 
-    action	AUTHORS
-    action	autogen.sh
-    action	ChangeLog
-    action	COPYING
-    action	INSTALL
-    action	NEWS
-    action	README
-    action	xdamage.pc.in
-
     dst_dir	lib/Xdamage/include
 
     action	Xdamage.h
@@ -496,15 +478,6 @@ function symlink_lib_damage() {
 function symlink_lib_fixes() {
     src_dir lib/Xfixes
     dst_dir lib/Xfixes
-
-    action	AUTHORS
-    action	autogen.sh
-    action	ChangeLog
-    action	COPYING
-    action	INSTALL
-    action	NEWS
-    action	README
-    action	xfixes.pc.in
 
     dst_dir lib/Xfixes/src
 
@@ -663,20 +636,32 @@ function symlink_lib_xext() {
 
 function symlink_lib_x11() {
     src_dir lib/X11
-    dst_dir lib/X11
+
+    # public .h files
+    dst_dir lib/X11/include/X11
+
+    action	cursorfont.h
+    action	region.h
+    action	Xcms.h
+    action	XKBlib.h
+    action	Xlib.h
+    action	Xlibint.h
+    action	Xlocale.h
+    action	Xresource.h
+    action	Xutil.h
+
+    # internal .h files
+    dst_dir lib/X11/src
 
     action	Cmap.h
     action	Cr.h
-    action	cursorfont.h
     action	Cv.h
     action	ImUtil.h
     action	Key.h
     action	locking.h
     action	poly.h
-    action	region.h
     action	Xaixlcint.h
     action	Xatomtype.h
-    action	Xcms.h
     action	Xcmsint.h
     action	XimImSw.h
     action	Ximint.h
@@ -689,20 +674,22 @@ function symlink_lib_x11() {
     action	XimTrX.h
     action	Xintatom.h
     action	Xintconn.h
-    action	XKBlib.h
     action	XKBlibint.h
     action	XlcGeneric.h
     action	Xlcint.h
     action	XlcPubI.h
     action	XlcPublic.h
-    action	Xlib.h
-    action	Xlibint.h
-    action	Xlocale.h
     action	XomGeneric.h
     action	Xresinternal.h
-    action	Xresource.h
     action	XrmI.h
-    action	Xutil.h
+
+    # Misc
+   
+    action	XKeysymDB
+    action	XErrorDB
+    
+
+    # source .c files
 
     action	AddDIC.c
     action	AddSF.c
@@ -1117,6 +1104,201 @@ function symlink_lib_x11() {
     action	xyY.c
     action	XYZ.c
 
+    # man pages
+
+    src_dir doc/man/X11/
+    dst_dir lib/X11/man
+
+    action	AllPlanes.man	AllPlanes.3
+    action	BlkPScrn.man	BlkPScrn.3
+    action	Dis3C.man	Dis3C.3
+    action	ImageOrd.man	ImageOrd.3
+    action	IsCKey.man	IsCKey.3
+    action	XACHints.man	XACHints.3
+    action	XAddHost.man	XAddHost.3
+    action	XAIcSize.man	XAIcSize.3
+    action	XAllColor.man	XAllColor.3
+    action	XAllEvnt.man	XAllEvnt.3
+    action	XAnyEvent.man	XAnyEvent.3
+    action	XASCmap.man	XASCmap.3
+    action	XASHints.man	XASHints.3
+    action	XAWMHints.man	XAWMHints.3
+    action	XButEvent.man	XButEvent.3
+    action	XCirEvent.man	XCirEvent.3
+    action	XCirREven.man	XCirREven.3
+    action	XCKCntrl.man	XCKCntrl.3
+    action	XCKMping.man	XCKMping.3
+    action	XClrArea.man	XClrArea.3
+    action	XCMEvent.man	XCMEvent.3
+    action	XCmpEvent.man	XCmpEvent.3
+    action	Xcms3CoC.man	Xcms3CoC.3
+    action	XcmsAClr.man	XcmsAClr.3
+    action	XcmsCClrs.man	XcmsCClrs.3
+    action	XcmsClr.man	XcmsClr.3
+    action	XcmsCre3C.man	XcmsCre3C.3
+    action	XcmsD3C.man	XcmsD3C.3
+    action	XcmsLaQMC.man	XcmsLaQMC.3
+    action	XcmsLuQMC.man	XcmsLuQMC.3
+    action	XcmsQBlk.man	XcmsQBlk.3
+    action	XcmsQClr.man	XcmsQClr.3
+    action	XcmsSClr.man	XcmsSClr.3
+    action	XcmsSWP.man	XcmsSWP.3
+    action	XcmsTQMC.man	XcmsTQMC.3
+    action	XConEvent.man	XConEvent.3
+    action	XConfWin.man	XConfWin.3
+    action	XConREven.man	XConREven.3
+    action	XCopyArea.man	XCopyArea.3
+    action	XCPCntrl.man	XCPCntrl.3
+    action	XCreCmap.man	XCreCmap.3
+    action	XCreFCur.man	XCreFCur.3
+    action	XCreFSet.man	XCreFSet.3
+    action	XCreGC.man	XCreGC.3
+    action	XCreIC.man	XCreIC.3
+    action	XCreImage.man	XCreImage.3
+    action	XCreOC.man	XCreOC.3
+    action	XCrePmap.man	XCrePmap.3
+    action	XCreReg.man	XCreReg.3
+    action	XCreWin.man	XCreWin.3
+    action	XCroEvent.man	XCroEvent.3
+    action	XCSSet.man	XCSSet.3
+    action	XCWAttrib.man	XCWAttrib.3
+    action	XCWEvent.man	XCWEvent.3
+    action	XDefCur.man	XDefCur.3
+    action	XDesWin.man	XDesWin.3
+    action	XDrArc.man	XDrArc.3
+    action	XDrIStr.man	XDrIStr.3
+    action	XDrLine.man	XDrLine.3
+    action	XDrPoint.man	XDrPoint.3
+    action	XDrRect.man	XDrRect.3
+    action	XDrString.man	XDrString.3
+    action	XDrText.man	XDrText.3
+    action	XDWEvent.man	XDWEvent.3
+    action	XEnumDB.man	XEnumDB.3
+    action	XEofFSet.man	XEofFSet.3
+    action	XERegion.man	XERegion.3
+    action	XErrEvent.man	XErrEvent.3
+    action	XExpEvent.man	XExpEvent.3
+    action	XFCEvent.man	XFCEvent.3
+    action	XFEvent.man	XFEvent.3
+    action	XFillRect.man	XFillRect.3
+    action	XFlush.man	XFlush.3
+    action	XFofFSet.man	XFofFSet.3
+    action	XFree.man	XFree.3
+    action	XFSExt.man	XFSExt.3
+    action	XGEEvent.man	XGEEvent.3
+    action	XGetRes.man	XGetRes.3
+    action	XGetVInfo.man	XGetVInfo.3
+    action	XGetWAttr.man	XGetWAttr.3
+    action	XGetWProp.man	XGetWProp.3
+    action	XGEvent.man	XGEvent.3
+    action	XGFDBase.man	XGFDBase.3
+    action	XGrButton.man	XGrButton.3
+    action	XGrKey.man	XGrKey.3
+    action	XGrKeybrd.man	XGrKeybrd.3
+    action	XGrPntr.man	XGrPntr.3
+    action	XGrServer.man	XGrServer.3
+    action	XIcWin.man	XIcWin.3
+    action	XIfEvent.man	XIfEvent.3
+    action	XInitial.man	XInitial.3
+    action	XInstCmap.man	XInstCmap.3
+    action	XIntConn.man	XIntConn.3
+    action	XInternA.man	XInternA.3
+    action	XInterReg.man	XInterReg.3
+    action	XKMapEven.man	XKMapEven.3
+    action	XListFont.man	XListFont.3
+    action	XLoadFont.man	XLoadFont.3
+    action	XLookKsym.man	XLookKsym.3
+    action	XMapWin.man	XMapWin.3
+    action	XmbDIStr.man	XmbDIStr.3
+    action	XmbDStr.man	XmbDStr.3
+    action	XmbDTxt.man	XmbDTxt.3
+    action	XmbLStr.man	XmbLStr.3
+    action	XmbRIC.man	XmbRIC.3
+    action	XmbTEsc.man	XmbTEsc.3
+    action	XmbTExt.man	XmbTExt.3
+    action	XmbTPCEx.man	XmbTPCEx.3
+    action	XMDBases.man	XMDBases.3
+    action	XMEvent.man	XMEvent.3
+    action	XMREvent.man	XMREvent.3
+    action	XNEvent.man	XNEvent.3
+    action	XNoOp.man	XNoOp.3
+    action	XOpDsply.man	XOpDsply.3
+    action	XOpenIM.man	XOpenIM.3
+    action	XOpenOM.man	XOpenOM.3
+    action	XParGeom.man	XParGeom.3
+    action	XPEvent.man	XPEvent.3
+    action	XPolyReg.man	XPolyReg.3
+    action	XPutBEvnt.man	XPutBEvnt.3
+    action	XPutImage.man	XPutImage.3
+    action	XPutRes.man	XPutRes.3
+    action	XQBSize.man	XQBSize.3
+    action	XQColor.man	XQColor.3
+    action	XQPointer.man	XQPointer.3
+    action	XQTree.man	XQTree.3
+    action	XRaiseWin.man	XRaiseWin.3
+    action	XReadBF.man	XReadBF.3
+    action	XRecCur.man	XRecCur.3
+    action	XReparWin.man	XReparWin.3
+    action	XREvent.man	XREvent.3
+    action	XRMStr.man	XRMStr.3
+    action	XRREvent.man	XRREvent.3
+    action	XSCEvent.man	XSCEvent.3
+    action	XSContext.man	XSContext.3
+    action	XSeArcMod.man	XSeArcMod.3
+    action	XSeClipO.man	XSeClipO.3
+    action	XSeClosDM.man	XSeClosDM.3
+    action	XSeCmd.man	XSeCmd.3
+    action	XSeErrHan.man	XSeErrHan.3
+    action	XSeEvent.man	XSeEvent.3
+    action	XSeFillS.man	XSeFillS.3
+    action	XSeFont.man	XSeFont.3
+    action	XSeFontP.man	XSeFontP.3
+    action	XSeInFoc.man	XSeInFoc.3
+    action	XSeLAttr.man	XSeLAttr.3
+    action	XSePMap.man	XSePMap.3
+    action	XSeScSav.man	XSeScSav.3
+    action	XSeSelOwn.man	XSeSelOwn.3
+    action	XSeState.man	XSeState.3
+    action	XSeTFHint.man	XSeTFHint.3
+    action	XSeTile.man	XSeTile.3
+    action	XSeTProp.man	XSeTProp.3
+    action	XSEvent.man	XSEvent.3
+    action	XSeWMCMac.man	XSeWMCMac.3
+    action	XSeWMCWin.man	XSeWMCWin.3
+    action	XSeWMINam.man	XSeWMINam.3
+    action	XSeWMName.man	XSeWMName.3
+    action	XSeWMProp.man	XSeWMProp.3
+    action	XSeWMProt.man	XSeWMProt.3
+    action	XSICFoc.man	XSICFoc.3
+    action	XSICVals.man	XSICVals.3
+    action	XSInput.man	XSInput.3
+    action	XSLTTProp.man	XSLTTProp.3
+    action	XSREvent.man	XSREvent.3
+    action	XStBytes.man	XStBytes.3
+    action	XStColors.man	XStColors.3
+    action	XStTKsym.man	XStTKsym.3
+    action	XSupLoc.man	XSupLoc.3
+    action	XSync.man	XSync.3
+    action	XTextExt.man	XTextExt.3
+    action	XTextWid.man	XTextWid.3
+    action	XThreads.man	XThreads.3
+    action	XTLTTProp.man	XTLTTProp.3
+    action	XTranWCo.man	XTranWCo.3
+    action	XUmapEven.man	XUmapEven.3
+    action	XUnmapWin.man	XUnmapWin.3
+    action	XUQuark.man	XUQuark.3
+    action	XVCNList.man	XVCNList.3
+    action	XVEvent.man	XVEvent.3
+    action	XWarpPntr.man	XWarpPntr.3
+
+    # src/util
+
+    src_dir lib/X11/util
+    dst_dir lib/X11/src/util
+
+    action	makekeys.c
+    action	mkks.sh
+
     #---------------------
     #
     #  NLS
@@ -1126,9 +1308,9 @@ function symlink_lib_x11() {
     src_dir nls
     dst_dir lib/X11/nls/
 
-    action	compose.dir
-    action	locale.dir
-    action	locale.alias
+    action	compose.dir	compose.dir.pre
+    action	locale.dir	locale.dir
+    action	locale.alias	locale.alias.pre
 
     # armscii-8
     dst_dir lib/X11/nls/armscii-8
@@ -1551,7 +1733,7 @@ function symlink_lib_x11() {
     src_dir nls/XI18N_OBJS
     action		zh_CN			XI18N_OBJS
     #src_dir nls/Compose
-    action		zh_CN			Compose.pre
+    #action		zh_CN			Compose.pre
 
     # zh_CN.gb18030
     dst_dir lib/X11/nls/zh_CN.gb18030
@@ -1633,6 +1815,59 @@ function symlink_lib_x11() {
     action		zh_TW.UTF-8		XI18N_OBJS
     #src_dir nls/Compose
     #action		zh_TW.UTF-8		Compose.pre
+
+
+    # lcuniconv
+
+    src_dir lib/X11/lcUniConv
+    dst_dir lib/X11/src/lcUniConv
+
+    action	README
+
+    action	8bit_tab_to_h.c
+    action	armscii_8.h
+    action	ascii.h
+    action	big5_emacs.h
+    action	big5.h
+    action	cjk_tab_to_h.c
+    action	COPYRIGHT
+    action	cp1133.h
+    action	cp1251.h
+    action	cp1255.h
+    action	cp1256.h
+    action	gb2312.h
+    action	georgian_academy.h
+    action	georgian_ps.h
+    action	iso8859_10.h
+    action	iso8859_11.h
+    action	iso8859_13.h
+    action	iso8859_14.h
+    action	iso8859_15.h
+    action	iso8859_16.h
+    action	iso8859_1.h
+    action	iso8859_2.h
+    action	iso8859_3.h
+    action	iso8859_4.h
+    action	iso8859_5.h
+    action	iso8859_6.h
+    action	iso8859_7.h
+    action	iso8859_8.h
+    action	iso8859_9e.h
+    action	iso8859_9.h
+    action	jisx0201.h
+    action	jisx0208.h
+    action	jisx0212.h
+    action	koi8_c.h
+    action	koi8_r.h
+    action	koi8_u.h
+    action	ksc5601.h
+    action	mulelao.h
+    action	tatar_cyr.h
+    action	tcvn.h
+    action	tis620.h
+    action	ucs2be.h
+    action	utf8.h
+    action	viscii.h
 }
 
 function symlink_lib() {
