@@ -226,7 +226,7 @@ function symlink_proto_resource() {
 
 function symlink_proto_saver() {
     src_dir include/extensions
-    dst_dir proto/SS
+    dst_dir proto/ScrnSaver
 
     action	saver.h
     action	saverproto.h
