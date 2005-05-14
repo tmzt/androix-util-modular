@@ -503,8 +503,6 @@ function symlink_lib_xau() {
 
     action	README
 
-    action	Xauth.h
-
     action	AuDispose.c
     action	AuFileName.c
     action	AuGetAddr.c
@@ -516,7 +514,11 @@ function symlink_lib_xau() {
     action	AuWrite.c
     action	k5encode.c
 
+    dst_dir	lib/Xau/include/X11
+    action	Xauth.h
+
     src_dir	doc/man/Xau
+    dst_dir	lib/Xau
 
     action	Xau.man		Xau.3
 }
@@ -540,8 +542,6 @@ function symlink_lib_xtrans() {
 function symlink_lib_xdmcp() {
     src_dir lib/Xdmcp
     dst_dir lib/Xdmcp
-
-    action	Xdmcp.h
 
     action	Wrap.h
 
@@ -588,6 +588,9 @@ function symlink_lib_xdmcp() {
     action	Wraphelp.c
 
     action	Wraphelp.README.crypto
+
+    dst_dir	lib/Xdmcp/include/X11
+    action	Xdmcp.h
 }
 
 function symlink_lib_xext() {
