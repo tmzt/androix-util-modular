@@ -3437,9 +3437,30 @@ function symlink_util_imake() {
     action	Makefile.ini
 }
 
+function symlink_util_makedepend() {
+    src_dir config/makedepend
+    dst_dir util/makedepend
+
+    action	cppsetup.c
+    action	def.h
+    action	ifparser.c
+    action	ifparser.h
+    action	include.c
+    action	main.c
+    action	mkdepend.man
+    action	parse.c
+    action	pr.c
+
+    src_dir config/imake
+    dst_dir util/makedepend
+
+    action	imakemdep.h
+}
+
 function symlink_util() {
     symlink_util_cf
     symlink_util_imake
+    symlink_util_makedepend
 #    ...
 }
 
