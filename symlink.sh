@@ -1950,9 +1950,7 @@ function symlink_lib_xt() {
     action	ObjectP.h
     action	RectObj.h
     action	RectObjP.h
-    action	Shell.h
     action	ShellP.h
-    action	StringDefs.h
     action	Vendor.h
     action	VendorP.h
 
@@ -2024,7 +2022,6 @@ function symlink_lib_xt() {
     action	SetWMCW.c
     action	sharedlib.c
     action	Shell.c
-    action	StringDefs.c
     action	Threads.c
     action	TMaction.c
     action	TMgrab.c
