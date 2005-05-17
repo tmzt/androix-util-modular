@@ -1873,6 +1873,46 @@ function symlink_lib_x11() {
     action	viscii.h
 }
 
+function symlink_lib_ice() {
+    src_dir lib/ICE
+    dst_dir lib/ICE/src
+    
+    action	accept.c
+    action	authutil.c
+    action	connect.c
+    action	error.c
+    action	getauth.c
+    action	iceauth.c
+    action	listen.c
+    action	listenwk.c
+    action	locking.c
+    action	misc.c
+    action	ping.c
+    action	process.c
+    action	protosetup.c
+    action	register.c
+    action	replywait.c
+    action	setauth.c
+    action	shutdown.c
+    action	watch.c
+
+    action	globals.h
+    action	ICElibint.h
+
+    dst_dir lib/ICE/include/X11/ICE
+
+    action	ICEconn.h
+    action	ICE.h
+    action	ICElib.h
+    action	ICEmsg.h
+    action	ICEproto.h
+    action	ICEutil.h
+}
+
+function symlink_lib_sm() {
+    src_dir lib/SM
+}
+
 function symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
@@ -1883,7 +1923,8 @@ function symlink_lib() {
     symlink_lib_xdmcp
     symlink_lib_xext
     symlink_lib_x11
-#    symlink_lib_ice
+    symlink_lib_ice
+    symlink_lib_sm
 #    symlink_lib_randr
 #    symlink_lib_record
 #    symlink_lib_render
