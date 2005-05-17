@@ -486,15 +486,15 @@ function symlink_lib_fixes() {
     action	SaveSet.c
     action	Selection.c
     action	Xfixes.c
+    action	Xfixesint.h
 
-    dst_dir lib/Xfixes/include
+    dst_dir lib/Xfixes/include/X11/extensions
     
     action	Xfixes.h
-    action	Xfixesint.h
 
     dst_dir lib/Xfixes/man
 
-    action	Xfixes.man
+    action	Xfixes.man	Xfixes.3
 }
 
 function symlink_lib_xau() {
