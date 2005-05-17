@@ -1911,6 +1911,24 @@ function symlink_lib_ice() {
 
 function symlink_lib_sm() {
     src_dir lib/SM
+    dst_dir lib/SM/src
+
+    action	sm_auth.c
+    action	sm_client.c
+    action	sm_error.c
+    action	sm_genid.c
+    action	sm_manager.c
+    action	sm_misc.c
+    action	sm_process.c
+
+    action	globals.h
+    action	SMlibint.h
+
+    dst_dir lib/SM/include/X11/SM
+    
+    action	SM.h
+    action	SMlib.h
+    action	SMproto.h
 }
 
 function symlink_lib() {
