@@ -465,13 +465,13 @@ function symlink_lib_damage() {
     src_dir lib/Xdamage
     dst_dir lib/Xdamage
 
-    dst_dir	lib/Xdamage/include
+    dst_dir	lib/Xdamage/include/X11/extensions
 
     action	Xdamage.h
-    action	xdamageint.h
 
     dst_dir	lib/Xdamage/src
 
+    action	xdamageint.h
     action	Xdamage.c
 }
 
