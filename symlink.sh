@@ -1931,6 +1931,236 @@ function symlink_lib_sm() {
     action	SMproto.h
 }
 
+function symlink_lib_xt() {
+    src_dir lib/Xt
+    
+    # Public headers
+
+    dst_dir lib/Xt/include/X11/
+
+    action	Composite.h
+    action	CompositeP.h
+    action	Constraint.h
+    action	ConstrainP.h
+    action	Core.h
+    action	CoreP.h
+    action	Intrinsic.h
+    action	IntrinsicP.h
+    action	Object.h
+    action	ObjectP.h
+    action	RectObj.h
+    action	RectObjP.h
+    action	Shell.h
+    action	ShellP.h
+    action	StringDefs.h
+    action	Vendor.h
+    action	VendorP.h
+
+    # Private headers
+
+    dst_dir lib/Xt/src
+
+    action	CallbackI.h
+    action	ConvertI.h
+    action	CreateI.h
+    action	EventI.h
+    action	HookObjI.h
+    action	InitialI.h
+    action	IntrinsicI.h
+    action	PassivGraI.h
+    action	ResConfigP.h
+    action	ResourceI.h
+    action	SelectionI.h
+    action	ShellI.h
+    action	ThreadsI.h
+    action	TranslateI.h
+    action	VarargsI.h
+    action	Xtos.h
+
+    # Source
+
+    dst_dir lib/Xt/src
+
+    action	ActionHook.c
+    action	Alloc.c
+    action	ArgList.c
+    action	Callback.c
+    action	ClickTime.c
+    action	Composite.c
+    action	Constraint.c
+    action	Convert.c
+    action	Converters.c
+    action	Core.c
+    action	Create.c
+    action	Destroy.c
+    action	Display.c
+    action	Error.c
+    action	Event.c
+    action	EventUtil.c
+    action	Functions.c
+    action	GCManager.c
+    action	Geometry.c
+    action	GetActKey.c
+    action	GetResList.c
+    action	GetValues.c
+    action	HookObj.c
+    action	Hooks.c
+    action	Initialize.c
+    action	Intrinsic.c
+    action	Keyboard.c
+    action	Manage.c
+    action	NextEvent.c
+    action	Object.c
+    action	PassivGrab.c
+    action	Pointer.c
+    action	Popup.c
+    action	PopupCB.c
+    action	RectObj.c
+    action	ResConfig.c
+    action	Resources.c
+    action	Selection.c
+    action	SetSens.c
+    action	SetValues.c
+    action	SetWMCW.c
+    action	sharedlib.c
+    action	Shell.c
+    action	StringDefs.c
+    action	Threads.c
+    action	TMaction.c
+    action	TMgrab.c
+    action	TMkey.c
+    action	TMparse.c
+    action	TMprint.c
+    action	TMstate.c
+    action	Varargs.c
+    action	VarCreate.c
+    action	VarGet.c
+    action	Vendor.c
+
+    # utils
+
+    src_dir lib/Xt/util
+    dst_dir lib/Xt/util
+
+    action	Shell.ht
+    action	StrDefs.ct
+    action	StrDefs.ht
+    action	string.list
+
+    # man pages
+
+    src_dir doc/man/Xt
+    dst_dir lib/Xt/man
+
+    action	XtActHook.man	XtActHook.3
+    action	XtAddAct.man	XtAddAct.3
+    action	XtAddCbk.man	XtAddCbk.3
+    action	XtAddEHand.man	XtAddEHand.3
+    action	XtAddETReg.man	XtAddETReg.3
+    action	XtAddGrab.man	XtAddGrab.3
+    action	XtAddIn.man	XtAddIn.3
+    action	XtAllocGC.man	XtAllocGC.3
+    action	XtAppAAct.man	XtAppAAct.3
+    action	XtAppAC.man	XtAppAC.3
+    action	XtAppAI.man	XtAppAI.3
+    action	XtAppASig.man	XtAppASig.3
+    action	XtAppATO.man	XtAppATO.3
+    action	XtAppAWP.man	XtAppAWP.3
+    action	XtAppCSh.man	XtAppCSh.3
+    action	XtAppE.man	XtAppE.3
+    action	XtAppEM.man	XtAppEM.3
+    action	XtAppGEDB.man	XtAppGEDB.3
+    action	XtAppGSTO.man	XtAppGSTO.3
+    action	XtAppInit.man	XtAppInit.3
+    action	XtAppLock.man	XtAppLock.3
+    action	XtAppNEv.man	XtAppNEv.3
+    action	XtAppRCR.man	XtAppRCR.3
+    action	XtAppSEF.man	XtAppSEF.3
+    action	XtAppSetFR.man	XtAppSetFR.3
+    action	XtAppSTC.man	XtAppSTC.3
+    action	XtBEMask.man	XtBEMask.3
+    action	XtBlockH.man	XtBlockH.3
+    action	XtCallActP.man	XtCallActP.3
+    action	XtCallAFoc.man	XtCallAFoc.3
+    action	XtCallCbks.man	XtCallCbks.3
+    action	XtClass.man	XtClass.3
+    action	XtClickT.man	XtClickT.3
+    action	XtConfWid.man	XtConfWid.3
+    action	XtConvert.man	XtConvert.3
+    action	XtConvSt.man	XtConvSt.3
+    action	XtCreACon.man	XtCreACon.3
+    action	XtCreASh.man	XtCreASh.3
+    action	XtCreateSR.man	XtCreateSR.3
+    action	XtCrePSh.man	XtCrePSh.3
+    action	XtCreWid.man	XtCreWid.3
+    action	XtCreWin.man	XtCreWin.3
+    action	XtDisACon.man	XtDisACon.3
+    action	XtDisplayI.man	XtDisplayI.3
+    action	XtDisplay.man	XtDisplay.3
+    action	XtDStrCW.man	XtDStrCW.3
+    action	XtErr.man	XtErr.3
+    action	XtErrM.man	XtErrM.3
+    action	XtExtEvDis.man	XtExtEvDis.3
+    action	XtFindF.man	XtFindF.3
+    action	XtGEDB.man	XtGEDB.3
+    action	XtGetActK.man	XtGetActK.3
+    action	XtGetActL.man	XtGetActL.3
+    action	XtGetANC.man	XtGetANC.3
+    action	XtGetAres.man	XtGetAres.3
+    action	XtGetClExt.man	XtGetClExt.3
+    action	XtGetDisp.man	XtGetDisp.3
+    action	XtGetGC.man	XtGetGC.3
+    action	XtGetKFoc.man	XtGetKFoc.3
+    action	XtGetRList.man	XtGetRList.3
+    action	XtGetSP.man	XtGetSP.3
+    action	XtGetSres.man	XtGetSres.3
+    action	XtGetSR.man	XtGetSR.3
+    action	XtGetSTO.man	XtGetSTO.3
+    action	XtGetSValI.man	XtGetSValI.3
+    action	XtGetSVal.man	XtGetSVal.3
+    action	XtGrabKey.man	XtGrabKey.3
+    action	XtHookOD.man	XtHookOD.3
+    action	XtInit.man	XtInit.3
+    action	XtInitWC.man	XtInitWC.3
+    action	XtKeysym.man	XtKeysym.3
+    action	XtLastProc.man	XtLastProc.3
+    action	XtMakGReq.man	XtMakGReq.3
+    action	XtMalloc.man	XtMalloc.3
+    action	XtManChild.man	XtManChild.3
+    action	XtMapWid.man	XtMapWid.3
+    action	XtName.man	XtName.3
+    action	XtNameTWid.man	XtNameTWid.3
+    action	XtNextEv.man	XtNextEv.3
+    action	XtOffset.man	XtOffset.3
+    action	XtOpenApp.man	XtOpenApp.3
+    action	XtOwnSel.man	XtOwnSel.3
+    action	XtParATab.man	XtParATab.3
+    action	XtParent.man	XtParent.3
+    action	XtParTTab.man	XtParTTab.3
+    action	XtPopdown.man	XtPopdown.3
+    action	XtPopup.man	XtPopup.3
+    action	XtProcLock.man	XtProcLock.3
+    action	XtQueryGeo.man	XtQueryGeo.3
+    action	XtRealize.man	XtRealize.3
+    action	XtRegDraw.man	XtRegDraw.3
+    action	XtRegGA.man	XtRegGA.3
+    action	XtResPA.man	XtResPA.3
+    action	XtResPath.man	XtResPath.3
+    action	XtSession.man	XtSession.3
+    action	XtSetArg.man	XtSetArg.3
+    action	XtSetKFoc.man	XtSetKFoc.3
+    action	XtSetKTr.man	XtSetKTr.3
+    action	XtSetLangP.man	XtSetLangP.3
+    action	XtSetSens.man	XtSetSens.3
+    action	XtSetSP.man	XtSetSP.3
+    action	XtSetVal.man	XtSetVal.3
+    action	XtSetWMC.man	XtSetWMC.3
+    action	XtStrCW.man	XtStrCW.3
+    action	XtThreadI.man	XtThreadI.3
+    action	XtTransC.man	XtTransC.3
+    action	XtVaCrArgL.man	XtVaCrArgL.3
+}
+
 function symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
@@ -1943,6 +2173,7 @@ function symlink_lib() {
     symlink_lib_x11
     symlink_lib_ice
     symlink_lib_sm
+    symlink_lib_xt
 #    symlink_lib_randr
 #    symlink_lib_record
 #    symlink_lib_render
