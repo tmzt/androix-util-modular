@@ -2162,6 +2162,83 @@ function symlink_lib_xt() {
     action	XtVaCrArgL.man	XtVaCrArgL.3
 }
 
+function symlink_lib_xmu() {
+    src_dir lib/Xmu
+    dst_dir lib/Xmu/include/X11/Xmu
+
+    action	Atoms.h
+    action	CharSet.h
+    action	CloseHook.h
+    action	Converters.h
+    action	CurUtil.h
+    action	CvtCache.h
+    action	DisplayQue.h
+    action	Drawing.h
+    action	Editres.h
+    action	EditresP.h
+    action	Error.h
+    action	ExtAgent.h
+    action	Initer.h
+    action	Lookup.h
+    action	Misc.h
+    action	StdCmap.h
+    action	StdSel.h
+    action	SysUtil.h
+    action	WhitePoint.h
+    action	WidgetNode.h
+    action	WinUtil.h
+    action	Xct.h
+    action	Xmu.h
+    
+    dst_dir lib/Xmu/src
+
+    action	AllCmap.c
+    action	Atoms.c
+    action	ClientWin.c
+    action	Clip.c
+    action	CloseHook.c
+    action	CmapAlloc.c
+    action	CrCmap.c
+    action	CrPixFBit.c
+    action	CursorName.c
+    action	CvtCache.c
+    action	CvtStdSel.c
+    action	DefErrMsg.c
+    action	DelCmap.c
+    action	DisplayQue.c
+    action	Distinct.c
+    action	DrawLogo.c
+    action	DrRndRect.c
+    action	EditresCom.c
+    action	ExtAgent.c
+    action	FToCback.c
+    action	GetHost.c
+    action	GrayPixmap.c
+    action	Initer.c
+    action	LocBitmap.c
+    action	Lookup.c
+    action	LookupCmap.c
+    action	Lower.c
+    action	RdBitF.c
+    action	ScrOfWin.c
+    action	ShapeWidg.c
+    action	sharedlib.c
+    action	StdCmap.c
+    action	StrToBmap.c
+    action	StrToBS.c
+    action	StrToCurs.c
+    action	StrToGrav.c
+    action	StrToJust.c
+    action	StrToLong.c
+    action	StrToOrnt.c
+    action	StrToShap.c
+    action	StrToWidg.c
+    action	UpdMapHint.c
+    action	VisCmap.c
+    action	WidgetNode.c
+    action	Xct.c
+}
+
 function symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
@@ -2170,11 +2247,12 @@ function symlink_lib() {
     symlink_lib_xau
     symlink_lib_xtrans
     symlink_lib_xdmcp
-    symlink_lib_xext
     symlink_lib_x11
     symlink_lib_ice
     symlink_lib_sm
     symlink_lib_xt
+    symlink_lib_xext
+    symlink_lib_xmu
 #    symlink_lib_randr
 #    symlink_lib_record
 #    symlink_lib_render
