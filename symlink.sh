@@ -2044,6 +2044,10 @@ function symlink_lib_xt() {
     action	StrDefs.ht
     action	string.list
 
+    src_dir config/util/
+
+    action	makestrs.c
+
     # man pages
 
     src_dir doc/man/Xt
