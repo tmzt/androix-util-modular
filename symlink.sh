@@ -2239,6 +2239,69 @@ function symlink_lib_xmu() {
     action	Xct.c
 }
 
+function symlink_lib_xp() {
+    src_dir lib/Xp
+    dst_dir lib/Xp/src
+
+    action	XpAttr.c
+    action	XpContext.c
+    action	XpDoc.c
+    action	XpExtUtil.c
+    action	XpExtVer.c
+    action	XpGetData.c
+    action	XpImageRes.c
+    action	XpInput.c
+    action	XpJob.c
+    action	XpLocale.c
+    action	XpNotifyPdm.c
+    action	XpPage.c
+    action	XpPageDim.c
+    action	XpPrinter.c
+    action	XpPutData.c
+    action	XpScreens.c
+
+    action	XpExtUtil.h
+
+    # man pages
+    src_dir doc/man/Xp
+    dst_dir lib/Xp/man
+
+    action	libXp.man			libXp.3
+    action	XpCancelDoc.man			XpCancelDoc.3
+    action	XpCancelJob.man			XpCancelJob.3
+    action	XpCancelPage.man		XpCancelPage.3
+    action	XpCreateContext.man		XpCreateContext.3
+    action	XpDestroyContext.man		XpDestroyContext.3
+    action	XpEndDoc.man			XpEndDoc.3
+    action	XpEndJob.man			XpEndJob.3
+    action	XpEndPage.man			XpEndPage.3
+    action	XpFreePrinterList.man		XpFreePrinterList.3
+    action	XpGetAttributes.man		XpGetAttributes.3
+    action	XpGetContext.man		XpGetContext.3
+    action	XpGetDocumentData.man		XpGetDocumentData.3
+    action	XpGetImageResolution.man	XpGetImageResolution.3
+    action	XpGetLocaleHinter.man		XpGetLocaleHinter.3
+    action	XpGetOneAttribute.man		XpGetOneAttribute.3
+    action	XpGetPageDimensions.man		XpGetPageDimensions.3
+    action	XpGetPdmStartParams.man		XpGetPdmStartParams.3
+    action	XpGetPrinterList.man		XpGetPrinterList.3
+    action	XpGetScreenOfContext.man	XpGetScreenOfContext.3
+    action	XpInputSelected.man		XpInputSelected.3
+    action	XpPutDocumentData.man		XpPutDocumentData.3
+    action	XpQueryExtension.man		XpQueryExtension.3
+    action	XpQueryScreens.man		XpQueryScreens.3
+    action	XpQueryVersion.man		XpQueryVersion.3
+    action	XpRehashPrinterList.man		XpRehashPrinterList.3
+    action	XpSelectInput.man		XpSelectInput.3
+    action	XpSetAttributes.man		XpSetAttributes.3
+    action	XpSetContext.man		XpSetContext.3
+    action	XpSetImageResolution.man	XpSetImageResolution.3
+    action	XpSetLocaleHinter.man		XpSetLocaleHinter.3
+    action	XpStartDoc.man			XpStartDoc.3
+    action	XpStartJob.man			XpStartJob.3
+    action	XpStartPage.man			XpStartPage.3
+}
+
 function symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
@@ -2253,6 +2316,7 @@ function symlink_lib() {
     symlink_lib_xt
     symlink_lib_xext
     symlink_lib_xmu
+    symlink_lib_xp
 #    symlink_lib_randr
 #    symlink_lib_record
 #    symlink_lib_render
