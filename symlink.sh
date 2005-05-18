@@ -595,7 +595,7 @@ function symlink_lib_xdmcp() {
 
 function symlink_lib_xext() {
     src_dir lib/Xext
-    dst_dir lib/Xext
+    dst_dir lib/Xext/src
 
     action	DPMS.c
     action	extutil.c
