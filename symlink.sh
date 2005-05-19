@@ -2391,7 +2391,7 @@ function symlink_lib_xpm() {
 
 function symlink_lib_xrender() {
     src_dir lib/Xrender
-    dst_dir lib/Xrender
+    dst_dir lib/Xrender/src
 
     action	AddTrap.c
     action	Color.c
@@ -2566,6 +2566,7 @@ function symlink_lib() {
     symlink_lib_xp
     symlink_lib_xpm
     symlink_lib_xfont
+    symlink_lib_xrender
 #    symlink_lib_randr
 #    symlink_lib_record
 #    symlink_lib_render
