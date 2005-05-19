@@ -2389,6 +2389,31 @@ function symlink_lib_xpm() {
     action	plaid.xpm
 }
 
+function symlink_lib_xrender() {
+    src_dir lib/Xrender
+    dst_dir lib/Xrender
+
+    action	AddTrap.c
+    action	Color.c
+    action	Composite.c
+    action	Cursor.c
+    action	FillRect.c
+    action	FillRects.c
+    action	Filter.c
+    action	Glyph.c
+    action	Picture.c
+    action	Poly.c
+    action	Trap.c
+    action	Tri.c
+    action	Xrender.c
+
+    action	Xrenderint.h
+
+    dst_dir lib/Xrender/include/X11/extensions
+
+    action	Xrender.h
+}
+
 function symlink_lib_xfont() {
     src_dir lib/font/FreeType
     dst_dir lib/Xfont/src/FreeType
