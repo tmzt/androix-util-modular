@@ -2302,6 +2302,93 @@ function symlink_lib_xp() {
     action	XpStartPage.man			XpStartPage.3
 }
 
+function symlink_lib_xpm() {
+    src_dir extras/Xpm
+    dst_dir lib/Xpm
+
+    action	CHANGES
+    action	COPYRIGHT
+    action	FAQ.html
+    action	FILES
+    action	README.AMIGA
+    action	README.html
+    action	README.MSW
+
+    src_dir extras/Xpm/doc
+
+    action	xpm.PS.gz
+
+    src_dir extras/Xpm/lib
+
+    #
+    # Library 
+    #
+
+    # Public header
+    dst_dir lib/Xpm/include/X11
+
+    action	xpm.h
+
+    # Source 
+
+    dst_dir lib/Xpm/src
+
+    # headers
+    action	amigax.h
+    action	rgbtab.h
+    action	simx.h
+    action	XpmI.h
+
+    action	amigax.c
+    action	Attrib.c
+    action	CrBufFrI.c
+    action	CrBufFrP.c
+    action	CrDatFrI.c
+    action	CrDatFrP.c
+    action	create.c
+    action	CrIFrBuf.c
+    action	CrIFrDat.c
+    action	CrIFrP.c
+    action	CrPFrBuf.c
+    action	CrPFrDat.c
+    action	CrPFrI.c
+    action	data.c
+    action	hashtab.c
+    action	Image.c
+    action	Info.c
+    action	misc.c
+    action	parse.c
+    action	RdFToBuf.c
+    action	RdFToDat.c
+    action	RdFToI.c
+    action	RdFToP.c
+    action	rgb.c
+    action	scan.c
+    action	simx.c
+    action	WrFFrBuf.c
+    action	WrFFrDat.c
+    action	WrFFrI.c
+    action	WrFFrP.c
+
+    # 
+    # Apps
+    #
+    src_dir extras/Xpm/cxpm
+    dst_dir lib/Xpm/cxpm
+
+    action	cxpm.c
+    action	cxpm.man	cxpm.1
+    
+    src_dir extras/Xpm/sxpm
+    dst_dir lib/Xpm/sxpm
+
+    action	sxpm.c
+    action	sxpm.man	sxpm.1
+    action	plaid_ext.xpm
+    action	plaid_mask.xpm
+    action	plaid.xpm
+}
+
 function symlink_lib_xfont() {
     src_dir lib/font/FreeType
     dst_dir lib/Xfont/src/FreeType
@@ -2452,6 +2539,7 @@ function symlink_lib() {
     symlink_lib_xext
     symlink_lib_xmu
     symlink_lib_xp
+    symlink_lib_xpm
     symlink_lib_xfont
 #    symlink_lib_randr
 #    symlink_lib_record
