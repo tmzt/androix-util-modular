@@ -2302,6 +2302,141 @@ function symlink_lib_xp() {
     action	XpStartPage.man			XpStartPage.3
 }
 
+function symlink_lib_xfont() {
+    src_dir lib/font/FreeType
+    dst_dir lib/Xfont/src/FreeType
+
+    action      ft.h
+    action      ftenc.c
+    action      ftfuncs.c
+    action      ftfuncs.h
+    action      ftsystem.c
+    action      fttools.c
+    action      xttcap.c
+    action      xttcap.h
+
+    src_dir lib/font/bitmap
+    dst_dir lib/Xfont/src/bitmap
+
+    action      bdfint.h
+    action      bdfread.c
+    action      bdfutils.c
+    action      bitmap.c
+    action      bitmapfunc.c
+    action      bitmaputil.c
+    action      bitscale.c
+    action      fontink.c
+    action      pcf.h
+    action      pcfread.c
+    action      pcfwrite.c
+    action      snfread.c
+    action      snfstr.h
+
+    src_dir lib/font/builtins
+    dst_dir lib/Xfont/src/builtins
+
+    action      buildfont
+    action      builtin.h
+    action      dir.c
+    action      file.c
+    action      fonts.c
+    action      fpe.c
+    action      render.c
+
+    src_dir lib/font/fc
+    dst_dir lib/Xfont/src/fc
+
+    action      fsconvert.c
+    action      fserve.c
+    action      fserve.h
+    action      fservestr.h
+    action      fsio.c
+    action      fsio.h
+    action      fslibos.h
+
+    src_dir lib/font/fontcache
+    dst_dir lib/Xfont/src/fontcache
+
+    action      fcqueue.h
+    action      fontcache.c
+    action      fontcache.h
+
+    src_dir lib/font/fontfile
+    dst_dir lib/Xfont/src/fontfile
+
+    action      bitsource.c
+    action      bufio.c
+    action      decompress.c
+    action      defaults.c
+    action      dirfile.c
+    action      encparse.c
+    action      ffcheck.c
+    action      fileio.c
+    action      filewr.c
+    action      fontdir.c
+    action      fontenc.c
+    action      fontencI.h
+    action      fontencc.c
+    action      fontfile.c
+    action      fontscale.c
+    action      gunzip.c
+    action      printerfont.c
+    action      register.c
+    action      renderers.c
+
+    src_dir lib/font/include
+    dst_dir lib/Xfont/include
+
+    action      bitmap.h
+    action      bufio.h
+    action      fntfil.h
+    action      fntfilio.h
+    action      fntfilst.h
+    action      fontenc.h
+    action      fontencc.h
+    action      fontmisc.h
+    action      fontmod.h
+    action      fontshow.h
+    action      fontutil.h
+    action      fontxlfd.h
+
+    src_dir lib/font/stubs
+    dst_dir lib/Xfont/src/stubs
+
+    action      cauthgen.c
+    action      csignal.c
+    action      delfntcid.c
+    action      errorf.c
+    action      fatalerror.c
+    action      findoldfnt.c
+    action      getcres.c
+    action      getdefptsize.c
+    action      getnewfntcid.c
+    action      gettime.c
+    action      initfshdl.c
+    action      regfpefunc.c
+    action      rmfshdl.c
+    action      servclient.c
+    action      setfntauth.c
+    action      stfntcfnt.c
+    action      stubs.h
+    action      xpstubs.c
+
+    src_dir lib/font/util
+    dst_dir lib/Xfont/src/util
+
+    action      atom.c
+    action      fontaccel.c
+    action      fontnames.c
+    action      fontutil.c
+    action      fontxlfd.c
+    action      format.c
+    action      miscutil.c
+    action      patcache.c
+    action      private.c
+    action      utilbitmap.c
+}
+
 function symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
@@ -2317,6 +2452,7 @@ function symlink_lib() {
     symlink_lib_xext
     symlink_lib_xmu
     symlink_lib_xp
+    symlink_lib_xfont
 #    symlink_lib_randr
 #    symlink_lib_record
 #    symlink_lib_render
