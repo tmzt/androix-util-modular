@@ -636,25 +636,25 @@ function symlink_lib_xext() {
     src_dir doc/man/Xext
     dst_dir lib/Xext/man
 
-    action	XcupGetReservedColormapEntries.man	XcupGetReservedColormapEntries.3
-    action	XcupQueryVersion.man			XcupQueryVersion.3
-    action	XcupStoreColors.man			XcupStoreColors.3
-    action	Xevi.man				Xevi.3
-    action	Xmbuf.man				Xmbuf.3
-    action	XShape.man				XShape.3
+    action	XcupGetReservedColormapEntries.man
+    action	XcupQueryVersion.man
+    action	XcupStoreColors.man
+    action	Xevi.man
+    action	Xmbuf.man
+    action	XShape.man
 
     src_dir doc/man/Xext/dbe
 
-    action	DBE.man					DBE.3
-    action	XdbeAllo.man				XdbeAllo.3
-    action	XdbeBegi.man				XdbeBegi.3
-    action	XdbeDeal.man				XdbeDeal.3
-    action	XdbeEndI.man				XdbeEndI.3
-    action	XdbeFree.man				XdbeFree.3
-    action	XdbeGetB.man				XdbeGetB.3
-    action	XdbeGetV.man				XdbeGetV.3
-    action	XdbeQuer.man				XdbeQuer.3
-    action	XdbeSwap.man				XdbeSwap.3
+    action	DBE.man
+    action	XdbeAllo.man	XdbeAllocateBackBufferName.man
+    action	XdbeBegi.man	XdbeBeginIdiom.man
+    action	XdbeEndI.man	XdbeEndIdiom.man
+    action	XdbeDeal.man	XdbeDeallocateBackBufferName.man
+    action	XdbeFree.man	XdbeFreeVisualInfo.man
+    action	XdbeQuer.man	XdbeQueryExtension.man
+    action	XdbeSwap.man	XdbeSwapBuffers.man
+    action	XdbeGetB.man	XdbeGetBackBufferAttributes.man
+    action	XdbeGetV.man	XdbeGetVisualInfo.man
 } 
 
 function symlink_lib_x11() {
@@ -1132,187 +1132,187 @@ function symlink_lib_x11() {
     src_dir doc/man/X11/
     dst_dir lib/X11/man
 
-    action	AllPlanes.man	AllPlanes.3
-    action	BlkPScrn.man	BlkPScrn.3
-    action	Dis3C.man	Dis3C.3
-    action	ImageOrd.man	ImageOrd.3
-    action	IsCKey.man	IsCKey.3
-    action	XACHints.man	XACHints.3
-    action	XAddHost.man	XAddHost.3
-    action	XAIcSize.man	XAIcSize.3
-    action	XAllColor.man	XAllColor.3
-    action	XAllEvnt.man	XAllEvnt.3
-    action	XAnyEvent.man	XAnyEvent.3
-    action	XASCmap.man	XASCmap.3
-    action	XASHints.man	XASHints.3
-    action	XAWMHints.man	XAWMHints.3
-    action	XButEvent.man	XButEvent.3
-    action	XCirEvent.man	XCirEvent.3
-    action	XCirREven.man	XCirREven.3
-    action	XCKCntrl.man	XCKCntrl.3
-    action	XCKMping.man	XCKMping.3
-    action	XClrArea.man	XClrArea.3
-    action	XCMEvent.man	XCMEvent.3
-    action	XCmpEvent.man	XCmpEvent.3
-    action	Xcms3CoC.man	Xcms3CoC.3
-    action	XcmsAClr.man	XcmsAClr.3
-    action	XcmsCClrs.man	XcmsCClrs.3
-    action	XcmsClr.man	XcmsClr.3
-    action	XcmsCre3C.man	XcmsCre3C.3
-    action	XcmsD3C.man	XcmsD3C.3
-    action	XcmsLaQMC.man	XcmsLaQMC.3
-    action	XcmsLuQMC.man	XcmsLuQMC.3
-    action	XcmsQBlk.man	XcmsQBlk.3
-    action	XcmsQClr.man	XcmsQClr.3
-    action	XcmsSClr.man	XcmsSClr.3
-    action	XcmsSWP.man	XcmsSWP.3
-    action	XcmsTQMC.man	XcmsTQMC.3
-    action	XConEvent.man	XConEvent.3
-    action	XConfWin.man	XConfWin.3
-    action	XConREven.man	XConREven.3
-    action	XCopyArea.man	XCopyArea.3
-    action	XCPCntrl.man	XCPCntrl.3
-    action	XCreCmap.man	XCreCmap.3
-    action	XCreFCur.man	XCreFCur.3
-    action	XCreFSet.man	XCreFSet.3
-    action	XCreGC.man	XCreGC.3
-    action	XCreIC.man	XCreIC.3
-    action	XCreImage.man	XCreImage.3
-    action	XCreOC.man	XCreOC.3
-    action	XCrePmap.man	XCrePmap.3
-    action	XCreReg.man	XCreReg.3
-    action	XCreWin.man	XCreWin.3
-    action	XCroEvent.man	XCroEvent.3
-    action	XCSSet.man	XCSSet.3
-    action	XCWAttrib.man	XCWAttrib.3
-    action	XCWEvent.man	XCWEvent.3
-    action	XDefCur.man	XDefCur.3
-    action	XDesWin.man	XDesWin.3
-    action	XDrArc.man	XDrArc.3
-    action	XDrIStr.man	XDrIStr.3
-    action	XDrLine.man	XDrLine.3
-    action	XDrPoint.man	XDrPoint.3
-    action	XDrRect.man	XDrRect.3
-    action	XDrString.man	XDrString.3
-    action	XDrText.man	XDrText.3
-    action	XDWEvent.man	XDWEvent.3
-    action	XEnumDB.man	XEnumDB.3
-    action	XEofFSet.man	XEofFSet.3
-    action	XERegion.man	XERegion.3
-    action	XErrEvent.man	XErrEvent.3
-    action	XExpEvent.man	XExpEvent.3
-    action	XFCEvent.man	XFCEvent.3
-    action	XFEvent.man	XFEvent.3
-    action	XFillRect.man	XFillRect.3
-    action	XFlush.man	XFlush.3
-    action	XFofFSet.man	XFofFSet.3
-    action	XFree.man	XFree.3
-    action	XFSExt.man	XFSExt.3
-    action	XGEEvent.man	XGEEvent.3
-    action	XGetRes.man	XGetRes.3
-    action	XGetVInfo.man	XGetVInfo.3
-    action	XGetWAttr.man	XGetWAttr.3
-    action	XGetWProp.man	XGetWProp.3
-    action	XGEvent.man	XGEvent.3
-    action	XGFDBase.man	XGFDBase.3
-    action	XGrButton.man	XGrButton.3
-    action	XGrKey.man	XGrKey.3
-    action	XGrKeybrd.man	XGrKeybrd.3
-    action	XGrPntr.man	XGrPntr.3
-    action	XGrServer.man	XGrServer.3
-    action	XIcWin.man	XIcWin.3
-    action	XIfEvent.man	XIfEvent.3
-    action	XInitial.man	XInitial.3
-    action	XInstCmap.man	XInstCmap.3
-    action	XIntConn.man	XIntConn.3
-    action	XInternA.man	XInternA.3
-    action	XInterReg.man	XInterReg.3
-    action	XKMapEven.man	XKMapEven.3
-    action	XListFont.man	XListFont.3
-    action	XLoadFont.man	XLoadFont.3
-    action	XLookKsym.man	XLookKsym.3
-    action	XMapWin.man	XMapWin.3
-    action	XmbDIStr.man	XmbDIStr.3
-    action	XmbDStr.man	XmbDStr.3
-    action	XmbDTxt.man	XmbDTxt.3
-    action	XmbLStr.man	XmbLStr.3
-    action	XmbRIC.man	XmbRIC.3
-    action	XmbTEsc.man	XmbTEsc.3
-    action	XmbTExt.man	XmbTExt.3
-    action	XmbTPCEx.man	XmbTPCEx.3
-    action	XMDBases.man	XMDBases.3
-    action	XMEvent.man	XMEvent.3
-    action	XMREvent.man	XMREvent.3
-    action	XNEvent.man	XNEvent.3
-    action	XNoOp.man	XNoOp.3
-    action	XOpDsply.man	XOpDsply.3
-    action	XOpenIM.man	XOpenIM.3
-    action	XOpenOM.man	XOpenOM.3
-    action	XParGeom.man	XParGeom.3
-    action	XPEvent.man	XPEvent.3
-    action	XPolyReg.man	XPolyReg.3
-    action	XPutBEvnt.man	XPutBEvnt.3
-    action	XPutImage.man	XPutImage.3
-    action	XPutRes.man	XPutRes.3
-    action	XQBSize.man	XQBSize.3
-    action	XQColor.man	XQColor.3
-    action	XQPointer.man	XQPointer.3
-    action	XQTree.man	XQTree.3
-    action	XRaiseWin.man	XRaiseWin.3
-    action	XReadBF.man	XReadBF.3
-    action	XRecCur.man	XRecCur.3
-    action	XReparWin.man	XReparWin.3
-    action	XREvent.man	XREvent.3
-    action	XRMStr.man	XRMStr.3
-    action	XRREvent.man	XRREvent.3
-    action	XSCEvent.man	XSCEvent.3
-    action	XSContext.man	XSContext.3
-    action	XSeArcMod.man	XSeArcMod.3
-    action	XSeClipO.man	XSeClipO.3
-    action	XSeClosDM.man	XSeClosDM.3
-    action	XSeCmd.man	XSeCmd.3
-    action	XSeErrHan.man	XSeErrHan.3
-    action	XSeEvent.man	XSeEvent.3
-    action	XSeFillS.man	XSeFillS.3
-    action	XSeFont.man	XSeFont.3
-    action	XSeFontP.man	XSeFontP.3
-    action	XSeInFoc.man	XSeInFoc.3
-    action	XSeLAttr.man	XSeLAttr.3
-    action	XSePMap.man	XSePMap.3
-    action	XSeScSav.man	XSeScSav.3
-    action	XSeSelOwn.man	XSeSelOwn.3
-    action	XSeState.man	XSeState.3
-    action	XSeTFHint.man	XSeTFHint.3
-    action	XSeTile.man	XSeTile.3
-    action	XSeTProp.man	XSeTProp.3
-    action	XSEvent.man	XSEvent.3
-    action	XSeWMCMac.man	XSeWMCMac.3
-    action	XSeWMCWin.man	XSeWMCWin.3
-    action	XSeWMINam.man	XSeWMINam.3
-    action	XSeWMName.man	XSeWMName.3
-    action	XSeWMProp.man	XSeWMProp.3
-    action	XSeWMProt.man	XSeWMProt.3
-    action	XSICFoc.man	XSICFoc.3
-    action	XSICVals.man	XSICVals.3
-    action	XSInput.man	XSInput.3
-    action	XSLTTProp.man	XSLTTProp.3
-    action	XSREvent.man	XSREvent.3
-    action	XStBytes.man	XStBytes.3
-    action	XStColors.man	XStColors.3
-    action	XStTKsym.man	XStTKsym.3
-    action	XSupLoc.man	XSupLoc.3
-    action	XSync.man	XSync.3
-    action	XTextExt.man	XTextExt.3
-    action	XTextWid.man	XTextWid.3
-    action	XThreads.man	XThreads.3
-    action	XTLTTProp.man	XTLTTProp.3
-    action	XTranWCo.man	XTranWCo.3
-    action	XUmapEven.man	XUmapEven.3
-    action	XUnmapWin.man	XUnmapWin.3
-    action	XUQuark.man	XUQuark.3
-    action	XVCNList.man	XVCNList.3
-    action	XVEvent.man	XVEvent.3
-    action	XWarpPntr.man	XWarpPntr.3
+    action	AllPlanes.man	AllPlanes.man
+    action	BlkPScrn.man	BlackPixelOfScreen.man
+    action	Dis3C.man	DisplayOfCCC.man
+    action	ImageOrd.man	ImageByteOrder.man
+    action	IsCKey.man	IsCursorKey.man
+    action	XACHints.man	XAllocClassHint.man
+    action	XAIcSize.man	XAllocIconSize.man
+    action	XASCmap.man	XAllocStandardColormap.man
+    action	XASHints.man	XAllocSizeHints.man
+    action	XAWMHints.man	XAllocWMHints.man
+    action	XAddHost.man	XAddHost.man
+    action	XAllColor.man	XAllocColor.man
+    action	XAllEvnt.man	XAllowEvents.man
+    action	XAnyEvent.man	XAnyEvent.man
+    action	XButEvent.man	XButtonEvent.man
+    action	XCKCntrl.man	XChangeKeyboardControl.man
+    action	XCKMping.man	XChangeKeyboardMapping.man
+    action	XCMEvent.man	XClientMessageEvent.man
+    action	XCPCntrl.man	XChangePointerControl.man
+    action	XCSSet.man	XChangeSaveSet.man
+    action	XCWAttrib.man	XChangeWindowAttributes.man
+    action	XCWEvent.man	XCreateWindowEvent.man
+    action	XCirEvent.man	XCirculateEvent.man
+    action	XCirREven.man	XCirculateRequestEvent.man
+    action	XClrArea.man	XClearArea.man
+    action	XCmpEvent.man	XColormapEvent.man
+    action	XConEvent.man	XConfigureEvent.man
+    action	XConREven.man	XConfigureRequestEvent.man
+    action	XConfWin.man	XConfigureWindow.man
+    action	XCopyArea.man	XCopyArea.man
+    action	XCreCmap.man	XCreateColormap.man
+    action	XCreFCur.man	XCreateFontCursor.man
+    action	XCreFSet.man	XCreateFontSet.man
+    action	XCreGC.man	XCreateGC.man
+    action	XCreIC.man	XCreateIC.man
+    action	XCreImage.man	XInitImage.man
+    action	XCreOC.man	XCreateOC.man
+    action	XCrePmap.man	XCreatePixmap.man
+    action	XCreReg.man	XCreateRegion.man
+    action	XCreWin.man	XCreateWindow.man
+    action	XCroEvent.man	XCrossingEvent.man
+    action	XDWEvent.man	XDestroyWindowEvent.man
+    action	XDefCur.man	XDefineCursor.man
+    action	XDesWin.man	XDestroyWindow.man
+    action	XDrArc.man	XDrawArc.man
+    action	XDrIStr.man	XDrawImageString.man
+    action	XDrLine.man	XDrawLine.man
+    action	XDrPoint.man	XDrawPoint.man
+    action	XDrRect.man	XDrawRectangle.man
+    action	XDrString.man	XDrawString.man
+    action	XDrText.man	XDrawText.man
+    action	XERegion.man	XEmptyRegion.man
+    action	XEnumDB.man	XrmEnumerateDatabase.man
+    action	XEofFSet.man	XExtentsOfFontSet.man
+    action	XErrEvent.man	XErrorEvent.man
+    action	XExpEvent.man	XExposeEvent.man
+    action	XFCEvent.man	XFocusChangeEvent.man
+    action	XFEvent.man	XFilterEvent.man
+    action	XFSExt.man	XFontSetExtents.man
+    action	XFillRect.man	XFillRectangle.man
+    action	XFlush.man	XFlush.man
+    action	XFofFSet.man	XFontsOfFontSet.man
+    action	XFree.man	XFree.man
+    action	XGEEvent.man	XGraphicsExposeEvent.man
+    action	XGEvent.man	XGravityEvent.man
+    action	XGFDBase.man	XrmGetFileDatabase.man
+    action	XGetRes.man	XrmGetResource.man
+    action	XGetVInfo.man	XGetVisualInfo.man
+    action	XGetWAttr.man	XGetWindowAttributes.man
+    action	XGetWProp.man	XGetWindowProperty.man
+    action	XGrButton.man	XGrabButton.man
+    action	XGrKey.man	XGrabKey.man
+    action	XGrKeybrd.man	XGrabKeyboard.man
+    action	XGrPntr.man	XGrabPointer.man
+    action	XGrServer.man	XGrabServer.man
+    action	XIcWin.man	XIconifyWindow.man
+    action	XIfEvent.man	XIfEvent.man
+    action	XInitial.man	XrmInitialize.man
+    action	XInstCmap.man	XInstallColormap.man
+    action	XIntConn.man	XAddConnectionWatch.man
+    action	XInterReg.man	XIntersectRegion.man
+    action	XInternA.man	XInternAtom.man
+    action	XKMapEven.man	XKeymapEvent.man
+    action	XListFont.man	XListFonts.man
+    action	XLoadFont.man	XLoadFont.man
+    action	XLookKsym.man	XLookupKeysym.man
+    action	XMDBases.man	XrmMergeDatabases.man
+    action	XMEvent.man	XMapEvent.man
+    action	XMREvent.man	XMapRequestEvent.man
+    action	XMapWin.man	XMapWindow.man
+    action	XNEvent.man	XNextEvent.man
+    action	XNoOp.man	XNoOp.man
+    action	XOpDsply.man	XOpenDisplay.man
+    action	XOpenIM.man	XOpenIM.man
+    action	XOpenOM.man	XOpenOM.man
+    action	XPEvent.man	XPropertyEvent.man
+    action	XParGeom.man	XParseGeometry.man
+    action	XPolyReg.man	XPolygonRegion.man
+    action	XPutBEvnt.man	XPutBackEvent.man
+    action	XPutImage.man	XPutImage.man
+    action	XPutRes.man	XrmPutResource.man
+    action	XQBSize.man	XQueryBestSize.man
+    action	XQColor.man	XQueryColor.man
+    action	XQPointer.man	XQueryPointer.man
+    action	XQTree.man	XQueryTree.man
+    action	XREvent.man	XReparentEvent.man
+    action	XRMStr.man	XResourceManagerString.man
+    action	XRREvent.man	XResizeRequestEvent.man
+    action	XRaiseWin.man	XRaiseWindow.man
+    action	XReadBF.man	XReadBitmapFile.man
+    action	XRecCur.man	XRecolorCursor.man
+    action	XReparWin.man	XReparentWindow.man
+    action	XSCEvent.man	XSelectionClearEvent.man
+    action	XSContext.man	XSaveContext.man
+    action	XSEvent.man	XSelectionEvent.man
+    action	XSICFoc.man	XSetICFocus.man
+    action	XSICVals.man	XSetICValues.man
+    action	XSInput.man	XSelectInput.man
+    action	XSLTTProp.man	XStringListToTextProperty.man
+    action	XSREvent.man	XSelectionRequestEvent.man
+    action	XSeArcMod.man	XSetArcMode.man
+    action	XSeClipO.man	XSetClipOrigin.man
+    action	XSeClosDM.man	XSetCloseDownMode.man
+    action	XSeCmd.man	XSetCommand.man
+    action	XSeErrHan.man	XSetErrorHandler.man
+    action	XSeEvent.man	XSendEvent.man
+    action	XSeFillS.man	XSetFillStyle.man
+    action	XSeFont.man	XSetFont.man
+    action	XSeFontP.man	XSetFontPath.man
+    action	XSeInFoc.man	XSetInputFocus.man
+    action	XSeLAttr.man	XSetLineAttributes.man
+    action	XSePMap.man	XSetPointerMapping.man
+    action	XSeScSav.man	XSetScreenSaver.man
+    action	XSeSelOwn.man	XSetSelectionOwner.man
+    action	XSeState.man	XSetState.man
+    action	XSeTFHint.man	XSetTransientForHint.man
+    action	XSeTProp.man	XSetTextProperty.man
+    action	XSeTile.man	XSetTile.man
+    action	XSeWMCMac.man	XSetWMClientMachine.man
+    action	XSeWMCWin.man	XSetWMColormapWindows.man
+    action	XSeWMINam.man	XSetWMIconName.man
+    action	XSeWMName.man	XSetWMName.man
+    action	XSeWMProp.man	XSetWMProperties.man
+    action	XSeWMProt.man	XSetWMProtocols.man
+    action	XStBytes.man	XStoreBytes.man
+    action	XStColors.man	XStoreColors.man
+    action	XStTKsym.man	XStringToKeysym.man
+    action	XSupLoc.man	XSupportsLocale.man
+    action	XSync.man	XSynchronize.man
+    action	XTLTTProp.man	XmbTextListToTextProperty.man
+    action	XTextExt.man	XTextExtents.man
+    action	XTextWid.man	XTextWidth.man
+    action	XThreads.man	XInitThreads.man
+    action	XTranWCo.man	XTranslateCoordinates.man
+    action	XUQuark.man	XrmUniqueQuark.man
+    action	XUmapEven.man	XUnmapEvent.man
+    action	XUnmapWin.man	XUnmapWindow.man
+    action	XVCNList.man	XVaCreateNestedList.man
+    action	XVEvent.man	XVisibilityEvent.man
+    action	XWarpPntr.man	XWarpPointer.man
+    action	Xcms3CoC.man	XcmsCCCOfColormap.man
+    action	XcmsAClr.man	XcmsAllocColor.man
+    action	XcmsCClrs.man	XcmsConvertColors.man
+    action	XcmsClr.man	XcmsColor.man
+    action	XcmsCre3C.man	XcmsCreateCCC.man
+    action	XcmsD3C.man	XcmsDefaultCCC.man
+    action	XcmsLaQMC.man	XcmsCIELabQueryMaxC.man
+    action	XcmsLuQMC.man	XcmsCIELuvQueryMaxC.man
+    action	XcmsQBlk.man	XcmsQueryBlack.man
+    action	XcmsQClr.man	XcmsQueryColor.man
+    action	XcmsSClr.man	XcmsStoreColor.man
+    action	XcmsSWP.man	XcmsSetWhitePoint.man
+    action	XcmsTQMC.man	XcmsTekHVCQueryMaxC.man
+    action	XmbDIStr.man	XmbDrawImageString.man
+    action	XmbDStr.man	XmbDrawString.man
+    action	XmbDTxt.man	XmbDrawText.man
+    action	XmbLStr.man	XmbLookupString.man
+    action	XmbRIC.man	XmbResetIC.man
+    action	XmbTEsc.man	XmbTextEscapement.man
+    action	XmbTExt.man	XmbTextExtents.man
+    action	XmbTPCEx.man	XmbTextPerCharExtents.man
 
     # src/util
 
@@ -2073,113 +2073,113 @@ function symlink_lib_xt() {
     src_dir doc/man/Xt
     dst_dir lib/Xt/man
 
-    action	XtActHook.man	XtActHook.3
-    action	XtAddAct.man	XtAddAct.3
-    action	XtAddCbk.man	XtAddCbk.3
-    action	XtAddEHand.man	XtAddEHand.3
-    action	XtAddETReg.man	XtAddETReg.3
-    action	XtAddGrab.man	XtAddGrab.3
-    action	XtAddIn.man	XtAddIn.3
-    action	XtAllocGC.man	XtAllocGC.3
-    action	XtAppAAct.man	XtAppAAct.3
-    action	XtAppAC.man	XtAppAC.3
-    action	XtAppAI.man	XtAppAI.3
-    action	XtAppASig.man	XtAppASig.3
-    action	XtAppATO.man	XtAppATO.3
-    action	XtAppAWP.man	XtAppAWP.3
-    action	XtAppCSh.man	XtAppCSh.3
-    action	XtAppE.man	XtAppE.3
-    action	XtAppEM.man	XtAppEM.3
-    action	XtAppGEDB.man	XtAppGEDB.3
-    action	XtAppGSTO.man	XtAppGSTO.3
-    action	XtAppInit.man	XtAppInit.3
-    action	XtAppLock.man	XtAppLock.3
-    action	XtAppNEv.man	XtAppNEv.3
-    action	XtAppRCR.man	XtAppRCR.3
-    action	XtAppSEF.man	XtAppSEF.3
-    action	XtAppSetFR.man	XtAppSetFR.3
-    action	XtAppSTC.man	XtAppSTC.3
-    action	XtBEMask.man	XtBEMask.3
-    action	XtBlockH.man	XtBlockH.3
-    action	XtCallActP.man	XtCallActP.3
-    action	XtCallAFoc.man	XtCallAFoc.3
-    action	XtCallCbks.man	XtCallCbks.3
-    action	XtClass.man	XtClass.3
-    action	XtClickT.man	XtClickT.3
-    action	XtConfWid.man	XtConfWid.3
-    action	XtConvert.man	XtConvert.3
-    action	XtConvSt.man	XtConvSt.3
-    action	XtCreACon.man	XtCreACon.3
-    action	XtCreASh.man	XtCreASh.3
-    action	XtCreateSR.man	XtCreateSR.3
-    action	XtCrePSh.man	XtCrePSh.3
-    action	XtCreWid.man	XtCreWid.3
-    action	XtCreWin.man	XtCreWin.3
-    action	XtDisACon.man	XtDisACon.3
-    action	XtDisplayI.man	XtDisplayI.3
-    action	XtDisplay.man	XtDisplay.3
-    action	XtDStrCW.man	XtDStrCW.3
-    action	XtErr.man	XtErr.3
-    action	XtErrM.man	XtErrM.3
-    action	XtExtEvDis.man	XtExtEvDis.3
-    action	XtFindF.man	XtFindF.3
-    action	XtGEDB.man	XtGEDB.3
-    action	XtGetActK.man	XtGetActK.3
-    action	XtGetActL.man	XtGetActL.3
-    action	XtGetANC.man	XtGetANC.3
-    action	XtGetAres.man	XtGetAres.3
-    action	XtGetClExt.man	XtGetClExt.3
-    action	XtGetDisp.man	XtGetDisp.3
-    action	XtGetGC.man	XtGetGC.3
-    action	XtGetKFoc.man	XtGetKFoc.3
-    action	XtGetRList.man	XtGetRList.3
-    action	XtGetSP.man	XtGetSP.3
-    action	XtGetSres.man	XtGetSres.3
-    action	XtGetSR.man	XtGetSR.3
-    action	XtGetSTO.man	XtGetSTO.3
-    action	XtGetSValI.man	XtGetSValI.3
-    action	XtGetSVal.man	XtGetSVal.3
-    action	XtGrabKey.man	XtGrabKey.3
-    action	XtHookOD.man	XtHookOD.3
-    action	XtInit.man	XtInit.3
-    action	XtInitWC.man	XtInitWC.3
-    action	XtKeysym.man	XtKeysym.3
-    action	XtLastProc.man	XtLastProc.3
-    action	XtMakGReq.man	XtMakGReq.3
-    action	XtMalloc.man	XtMalloc.3
-    action	XtManChild.man	XtManChild.3
-    action	XtMapWid.man	XtMapWid.3
-    action	XtName.man	XtName.3
-    action	XtNameTWid.man	XtNameTWid.3
-    action	XtNextEv.man	XtNextEv.3
-    action	XtOffset.man	XtOffset.3
-    action	XtOpenApp.man	XtOpenApp.3
-    action	XtOwnSel.man	XtOwnSel.3
-    action	XtParATab.man	XtParATab.3
-    action	XtParent.man	XtParent.3
-    action	XtParTTab.man	XtParTTab.3
-    action	XtPopdown.man	XtPopdown.3
-    action	XtPopup.man	XtPopup.3
-    action	XtProcLock.man	XtProcLock.3
-    action	XtQueryGeo.man	XtQueryGeo.3
-    action	XtRealize.man	XtRealize.3
-    action	XtRegDraw.man	XtRegDraw.3
-    action	XtRegGA.man	XtRegGA.3
-    action	XtResPA.man	XtResPA.3
-    action	XtResPath.man	XtResPath.3
-    action	XtSession.man	XtSession.3
-    action	XtSetArg.man	XtSetArg.3
-    action	XtSetKFoc.man	XtSetKFoc.3
-    action	XtSetKTr.man	XtSetKTr.3
-    action	XtSetLangP.man	XtSetLangP.3
-    action	XtSetSens.man	XtSetSens.3
-    action	XtSetSP.man	XtSetSP.3
-    action	XtSetVal.man	XtSetVal.3
-    action	XtSetWMC.man	XtSetWMC.3
-    action	XtStrCW.man	XtStrCW.3
-    action	XtThreadI.man	XtThreadI.3
-    action	XtTransC.man	XtTransC.3
-    action	XtVaCrArgL.man	XtVaCrArgL.3
+    action	XtAddCbk.man	XtAddCallback.man
+    action	XtAddEHand.man	XtAddEventHandler.man
+    action	XtAddETReg.man	XtAddExposureToRegion.man
+    action	XtAddGrab.man	XtAddGrab.man
+    action	XtAppAAct.man	XtAppAddActions.man
+    action	XtAddAct.man	XtAddActions.man
+    action	XtAppAC.man	XtAppAddConverter.man
+    action	XtAppAI.man	XtAppAddInput.man
+    action	XtAppATO.man	XtAppAddTimeOut.man
+    action	XtAppAWP.man	XtAppAddWorkProc.man
+    action	XtAppCSh.man	XtAppCreateShell.man
+    action	XtAppE.man	XtAppError.man
+    action	XtAppEM.man	XtAppErrorMsg.man
+    action	XtAppGEDB.man	XtAppGetErrorDatabase.man
+    action	XtAppGSTO.man	XtAppGetSelectionTimeout.man
+    action	XtAppNEv.man	XtAppNextEvent.man
+    action	XtNextEv.man	XtNextEvent.man
+    action	XtBEMask.man	XtBuildEventMask.man
+    action	XtCallAFoc.man	XtCallAcceptFocus.man
+    action	XtCallCbks.man	XtCallCallbacks.man
+    action	XtClass.man	XtClass.man
+    action	XtConfWid.man	XtConfigureWidget.man
+    action	XtConvert.man	XtConvert.man
+    action	XtConvSt.man	XtConvertAndStore.man
+    action	XtCreACon.man	XtCreateApplicationContext.man
+    action	XtCrePSh.man	XtCreatePopupShell.man
+    action	XtCreWid.man	XtCreateWidget.man
+    action	XtCreWin.man	XtCreateWindow.man
+    action	XtDisplay.man	XtDisplay.man
+    action	XtDisplayI.man	XtDisplayInitialize.man
+    action	XtGetGC.man	XtGetGC.man
+    action	XtGetRList.man	XtGetResourceList.man
+    action	XtGetSVal.man	XtGetSelectionValue.man
+    action	XtGetSres.man	XtGetSubresources.man
+    action	XtGetAres.man	XtGetApplicationResources.man
+    action	XtMakGReq.man	XtMakeGeometryRequest.man
+    action	XtMalloc.man	XtMalloc.man
+    action	XtManChild.man	XtManageChildren.man
+    action	XtMapWid.man	XtMapWidget.man
+    action	XtNameTWid.man	XtNameToWidget.man
+    action	XtOffset.man	XtOffset.man
+    action	XtOwnSel.man	XtOwnSelection.man
+    action	XtParATab.man	XtParseAcceleratorTable.man
+    action	XtParTTab.man	XtParseTranslationTable.man
+    action	XtPopdown.man	XtPopdown.man
+    action	XtPopup.man	XtPopup.man
+    action	XtQueryGeo.man	XtQueryGeometry.man
+    action	XtRealize.man	XtRealizeWidget.man
+    action	XtSetArg.man	XtSetArg.man
+    action	XtSetKFoc.man	XtSetKeyboardFocus.man
+    action	XtSetKTr.man	XtSetKeyTranslator.man
+    action	XtSetSens.man	XtSetSensitive.man
+    action	XtSetVal.man	XtSetValues.man
+    action	XtStrCW.man	XtStringConversionWarning.man
+    action	XtDStrCW.man	XtDisplayStringConversionWarning.man
+    action	XtTransC.man	XtTranslateCoords.man
+    action	XtKeysym.man	XtGetKeysymTable.man
+    action	XtAppSTC.man	XtAppSetTypeConverter.man
+    action	XtActHook.man	XtAppAddActionHook.man
+    action	XtGetActL.man	XtGetActionList.man
+    action	XtCallActP.man	XtCallActionProc.man
+    action	XtRegGA.man	XtRegisterGrabAction.man
+    action	XtClickT.man	XtSetMultiClickTime.man
+    action	XtGetActK.man	XtGetActionKeysym.man
+    action	XtExtEvDis.man	XtInsertEventTypeHandler.man
+    action	XtGetKFoc.man	XtGetKeyboardFocusWidget.man
+    action	XtLastProc.man	XtLastEventProcessed.man
+    action	XtAppASig.man	XtAppAddSignal.man
+    action	XtAddIn.man	XtAddInput.man
+    action	XtBlockH.man	XtAppAddBlockHook.man
+    action	XtGetClExt.man	XtGetClassExtension.man
+    action	XtVaCrArgL.man	XtVaCreateArgsList.man
+    action	XtParent.man	XtParent.man
+    action	XtName.man	XtName.man
+    action	XtCreASh.man	XtCreateApplicationShell.man
+    action	XtSetLangP.man	XtSetLanguageProc.man
+    action	XtAppInit.man	XtAppInitialize.man
+    action	XtInit.man	XtInitialize.man
+    action	XtAppSetFR.man	XtAppSetFallbackResources.man
+    action	XtInitWC.man	XtInitializeWidgetClass.man
+    action	XtDisACon.man	XtDisplayToApplicationContext.man
+    action	XtSession.man	XtSessionGetToken.man
+    action	XtErrM.man	XtErrorMsg.man
+    action	XtErr.man	XtError.man
+    action	XtGEDB.man	XtGetErrorDatabase.man
+    action	XtAllocGC.man	XtAllocateGC.man
+    action	XtAppRCR.man	XtAppReleaseCacheRefs.man
+    action	XtSetWMC.man	XtSetWMColormapWindows.man
+    action	XtFindF.man	XtFindFile.man
+    action	XtResPath.man	XtResolvePathname.man
+    action	XtGetSValI.man	XtGetSelectionValueIncremental.man
+    action	XtGetSTO.man	XtGetSelectionTimeout.man
+    action	XtGetSR.man	XtGetSelectionRequest.man
+    action	XtSetSP.man	XtSetSelectionParameters.man
+    action	XtGetSP.man	XtGetSelectionParameters.man
+    action	XtCreateSR.man	XtCreateSelectionRequest.man
+    action	XtResPA.man	XtReservePropertyAtom.man
+    action	XtGrabKey.man	XtGrabKey.man
+    action	XtGetANC.man	XtGetApplicationNameAndClass.man
+    action	XtRegDraw.man	XtRegisterDrawable.man
+    action	XtHookOD.man	XtHooksOfDisplay.man
+    action	XtGetDisp.man	XtGetDisplays.man
+    action	XtThreadI.man	XtToolkitThreadInitialize.man
+    action	XtAppSEF.man	XtAppSetExitFlag.man
+    action	XtAppLock.man	XtAppLock.man
+    action	XtProcLock.man	XtProcessLock.man
+    action	XtOpenApp.man	XtOpenApplication.man
 }
 
 function symlink_lib_xmu() {
@@ -2434,6 +2434,79 @@ function symlink_lib_xrender() {
     action	Xrender.h
 }
 
+function symlink_lib_xi() {
+    src_dir lib/Xi
+    dst_dir lib/Xi/src
+
+    action	XIint.h
+    action	XAllowDv.c
+    action	XChgDCtl.c
+    action	XChgFCtl.c
+    action	XChgKMap.c
+    action	XChgKbd.c
+    action	XChgPnt.c
+    action	XChgProp.c
+    action	XCloseDev.c
+    action	XDevBell.c
+    action	XExtInt.c
+    action	XExtToWire.c
+    action	XFreeLst.c
+    action	XGMotion.c
+    action	XGetBMap.c
+    action	XGetDCtl.c
+    action	XGetFCtl.c
+    action	XGetKMap.c
+    action	XGetMMap.c
+    action	XGetProp.c
+    action	XGetVers.c
+    action	XGrDvBut.c
+    action	XGrDvKey.c
+    action	XGrabDev.c
+    action	XGtFocus.c
+    action	XGtSelect.c
+    action	XListDev.c
+    action	XOpenDev.c
+    action	XQueryDv.c
+    action	XSelect.c
+    action	XSetBMap.c
+    action	XSetDVal.c
+    action	XSetMMap.c
+    action	XSetMode.c
+    action	XSndExEv.c
+    action	XStFocus.c
+    action	XUngrDev.c
+    action	XUngrDvB.c
+    action	XUngrDvK.c
+
+    src_dir doc/man/Xi
+    dst_dir lib/Xi/man
+
+    action	XAllDvEv.man	XAllowDeviceEvents.man
+    action	XChDCtl.man	XGetDeviceControl.man
+    action	XChFCtl.man	XGetFeedbackControl.man
+    action	XChKMap.man	XGetDeviceKeyMapping.man
+    action	XChMMap.man	XGetDeviceModifierMapping.man
+    action	XChProp.man	XChangeDeviceDontPropagateList.man
+    action	XChgKbd.man	XChangeKeyboardDevice.man
+    action	XChgPtr.man	XChangePointerDevice.man
+    action	XDevBell.man	XDeviceBell.man
+    action	XGetDvMo.man	XGetDeviceMotionEvents.man
+    action	XGetExtV.man	XGetExtensionVersion.man
+    action	XGrDvBut.man	XGrabDeviceButton.man
+    action	XGrDvKey.man	XGrabDeviceKey.man
+    action	XGrabDev.man	XGrabDevice.man
+    action	XListDev.man	XListInputDevices.man
+    action	XOpenDev.man	XOpenDevice.man
+    action	XQueryDv.man	XQueryDeviceState.man
+    action	XSExEvnt.man	XSendExtensionEvent.man
+    action	XSeBMap.man	XSetDeviceButtonMapping.man
+    action	XSeDvFoc.man	XSetDeviceFocus.man
+    action	XSelExtEv.man	XSelectExtensionEvent.man
+    action	XSetDVal.man	XSetDeviceValuators.man
+    action	XSetMode.man	XSetDeviceMode.man
+
+}
+
 function symlink_lib_xfont() {
     src_dir lib/font/FreeType
     dst_dir lib/Xfont/src/FreeType
@@ -2587,12 +2660,17 @@ function symlink_lib() {
     symlink_lib_xpm
     symlink_lib_xfont
     symlink_lib_xrender
+    symlink_lib_xi
+#    symlink_lib_fs
+#    symlink_lib_lbxutil
 #    symlink_lib_randr
 #    symlink_lib_record
-#    symlink_lib_render
 #    symlink_lib_resource
-#    symlink_lib_sm
 #    symlink_lib_xaw
+#    symlink_lib_xinerama
+#    symlink_lib_xss
+#    symlink_lib_xtrap
+#    symlink_lib_xv
 #    ...
 }
 
@@ -4150,7 +4228,7 @@ function symlink_util_makedepend() {
     action	ifparser.h
     action	include.c
     action	main.c
-    action	mkdepend.man
+    action	mkdepend.man	makedepend.man
     action	parse.c
     action	pr.c
 
