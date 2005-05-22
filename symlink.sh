@@ -134,7 +134,6 @@ function symlink_proto_evie() {
     src_dir include/extensions
     dst_dir proto/EvIE
 
-    action	Xevie.h
     action	Xeviestr.h
 }
 
@@ -473,6 +472,27 @@ function symlink_lib_damage() {
 
     action	xdamageint.h
     action	Xdamage.c
+}
+
+function symlink_lib_damage() {
+    src_dir	include/extensions
+    dst_dir	lib/Xevie/include/X11/extensions
+
+    action	Xevie.h
+
+    src_dir	lib/Xevie
+    dst_dir	lib/Xevie
+
+    action	AUTHORS
+    action	xevie.pc.in
+
+    dst_dir	lib/Xevie/src
+
+    action	Xevie.c
+
+    dst_dir	lib/Xevie/man
+
+    action	Xevie.man
 }
 
 function symlink_lib_fixes() {
