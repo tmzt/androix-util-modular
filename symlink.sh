@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #
 # A script that symlinks source files from monolithic to modular
@@ -19,13 +19,13 @@
 #	- Clean target directory of irrelevant files
 #
 
-function check_destinations () {
+check_destinations () {
     # don't do anything - we are relying on the side
     # effect of dst_dir
     true
 }
 
-function check_exist() {
+check_exist() {
     # Check whether $1 exists
 
     if [ ! -e $1 ] ; then
@@ -33,13 +33,13 @@ function check_exist() {
     fi
 }
 
-function delete_existing() {
+delete_existing() {
     # Delete $2
 
     rm -f $2
 }
 
-function link_files() {
+link_files() {
     # Link $1 to $2
 
     if [ ! -e $2 ] ; then
@@ -47,7 +47,7 @@ function link_files() {
     fi
 }
 
-function main() {
+main() {
     check_args $1 $2
 
     run check_destinations "Creating destination directories"
@@ -65,7 +65,7 @@ function main() {
 
 # Core protocol
 
-function symlink_proto_core() {
+symlink_proto_core() {
     src_dir include
     dst_dir proto/X11
 
@@ -99,14 +99,14 @@ function symlink_proto_core() {
 
 # Extension protocols
 
-function symlink_proto_bigreq() {
+symlink_proto_bigreq() {
     src_dir include/extensions
     dst_dir proto/BigReqs
 
     action	bigreqstr.h
 }
 
-function symlink_proto_composite() {
+symlink_proto_composite() {
     src_dir include/extensions
     dst_dir proto/Composite
 
@@ -114,7 +114,7 @@ function symlink_proto_composite() {
     action	compositeproto.h
 }
 
-function symlink_proto_damage() {
+symlink_proto_damage() {
     src_dir include/extensions
     dst_dir proto/Damage
 
@@ -122,7 +122,7 @@ function symlink_proto_damage() {
     action	damagewire.h
 }
 
-function symlink_proto_dmx() {
+symlink_proto_dmx() {
     src_dir include/extensions
     dst_dir proto/DMX
 
@@ -130,14 +130,14 @@ function symlink_proto_dmx() {
     action	dmxproto.h
 }
 
-function symlink_proto_evie() {
+symlink_proto_evie() {
     src_dir include/extensions
     dst_dir proto/EvIE
 
     action	Xeviestr.h
 }
 
-function symlink_proto_fixes() {
+symlink_proto_fixes() {
     src_dir include/extensions
     dst_dir proto/Fixes
 
@@ -145,7 +145,7 @@ function symlink_proto_fixes() {
     action	xfixeswire.h
 }
 
-function symlink_proto_fontcache() {
+symlink_proto_fontcache() {
     src_dir include/extensions
     dst_dir proto/Fontcache
 
@@ -154,7 +154,7 @@ function symlink_proto_fontcache() {
     action	fontcachstr.h
 }
 
-function symlink_proto_input() {
+symlink_proto_input() {
     src_dir include/extensions
     dst_dir proto/Input
 
@@ -163,7 +163,7 @@ function symlink_proto_input() {
     action	XIproto.h
 }
 
-function symlink_proto_kb() {
+symlink_proto_kb() {
     src_dir include/extensions
     dst_dir proto/KB
 
@@ -174,7 +174,7 @@ function symlink_proto_kb() {
     action	XKBstr.h
 }
 
-function symlink_proto_panoramix() {
+symlink_proto_panoramix() {
     src_dir include/extensions
     dst_dir proto/Panoramix
 
@@ -183,7 +183,7 @@ function symlink_proto_panoramix() {
     action	Xinerama.h	# not used in server
 }
 
-function symlink_proto_print() {
+symlink_proto_print() {
     src_dir include/extensions
     dst_dir proto/Print
 
@@ -191,7 +191,7 @@ function symlink_proto_print() {
     action	Printstr.h
 }
 
-function symlink_proto_randr() {
+symlink_proto_randr() {
     src_dir include/extensions
     dst_dir proto/Randr
 
@@ -199,7 +199,7 @@ function symlink_proto_randr() {
     action	randrproto.h
 }
 
-function symlink_proto_record() {
+symlink_proto_record() {
     src_dir include/extensions
     dst_dir proto/Record
 
@@ -207,7 +207,7 @@ function symlink_proto_record() {
     action	recordstr.h
 }
 
-function symlink_proto_render() {
+symlink_proto_render() {
     src_dir include/extensions
     dst_dir proto/Render
 
@@ -215,7 +215,7 @@ function symlink_proto_render() {
     action	renderproto.h
 }
 
-function symlink_proto_resource() {
+symlink_proto_resource() {
     src_dir include/extensions
     dst_dir proto/Resource
 
@@ -223,7 +223,7 @@ function symlink_proto_resource() {
     action	XResproto.h
 }
 
-function symlink_proto_saver() {
+symlink_proto_saver() {
     src_dir include/extensions
     dst_dir proto/ScrnSaver
 
@@ -232,7 +232,7 @@ function symlink_proto_saver() {
     action	scrnsaver.h	# not used in server
 }
 
-function symlink_proto_trap() {
+symlink_proto_trap() {
     src_dir include/extensions
     dst_dir proto/Trap
 
@@ -245,7 +245,7 @@ function symlink_proto_trap() {
     action	xtrapproto.h	# only used in server
 }
 
-function symlink_proto_video() {
+symlink_proto_video() {
     src_dir include/extensions
     dst_dir proto/Video
 
@@ -258,7 +258,7 @@ function symlink_proto_video() {
     action	Xvproto.h
 }
 
-function symlink_proto_xcmisc() {
+symlink_proto_xcmisc() {
     src_dir include/extensions
     dst_dir proto/XCMisc
 
@@ -266,7 +266,7 @@ function symlink_proto_xcmisc() {
 }
 
 # should these be exploded into individual extension components?
-function symlink_proto_xext() {
+symlink_proto_xext() {
     src_dir include/extensions
     dst_dir proto/XExt
 
@@ -308,7 +308,7 @@ function symlink_proto_xext() {
     action	xteststr.h
 }
 
-function symlink_proto_xf86bigfont() {
+symlink_proto_xf86bigfont() {
     src_dir include/extensions
     dst_dir proto/XF86BigFont
 
@@ -316,7 +316,7 @@ function symlink_proto_xf86bigfont() {
     action	xf86bigfstr.h
 }
 
-function symlink_proto_xf86dga() {
+symlink_proto_xf86dga() {
     src_dir include/extensions
     dst_dir proto/XF86DGA
 
@@ -326,7 +326,7 @@ function symlink_proto_xf86dga() {
     action	xf86dgastr.h
 }
 
-function symlink_proto_xf86misc() {
+symlink_proto_xf86misc() {
     src_dir include/extensions
     dst_dir proto/XF86Misc
 
@@ -334,7 +334,7 @@ function symlink_proto_xf86misc() {
     action	xf86mscstr.h
 }
 
-function symlink_proto_xf86rush() {
+symlink_proto_xf86rush() {
     src_dir include/extensions
     dst_dir proto/XF86Rush
 
@@ -342,7 +342,7 @@ function symlink_proto_xf86rush() {
     action	xf86rushstr.h
 }
 
-function symlink_proto_xf86vidmode() {
+symlink_proto_xf86vidmode() {
     src_dir include/extensions
     dst_dir proto/XF86VidMode
 
@@ -350,7 +350,7 @@ function symlink_proto_xf86vidmode() {
     action	xf86vmstr.h
 }
 
-function symlink_proto_fonts() {
+symlink_proto_fonts() {
     src_dir include/fonts
     dst_dir proto/Fonts
 
@@ -362,7 +362,7 @@ function symlink_proto_fonts() {
     action	FSproto.h	# not used in server
 }
 
-function symlink_proto_gl() {
+symlink_proto_gl() {
     src_dir include/GL
     dst_dir proto/GL
 
@@ -374,7 +374,7 @@ function symlink_proto_gl() {
     action	glxtokens.h
 }
 
-function symlink_proto() {
+symlink_proto() {
     # Core protocol
     symlink_proto_core
 
@@ -418,7 +418,7 @@ function symlink_proto() {
 #
 #########
 
-function symlink_lib_dmx() {
+symlink_lib_dmx() {
     src_dir lib/dmx
     dst_dir lib/dmx/src
 
@@ -446,7 +446,7 @@ function symlink_lib_dmx() {
     action	DMXSync.man
 }
 
-function symlink_lib_composite() {
+symlink_lib_composite() {
     src_dir lib/Xcomposite
     dst_dir lib/Xcomposite
 
@@ -460,7 +460,7 @@ function symlink_lib_composite() {
     action	Xcomposite.c
 }
 
-function symlink_lib_damage() {
+symlink_lib_damage() {
     src_dir lib/Xdamage
     dst_dir lib/Xdamage
 
@@ -474,7 +474,7 @@ function symlink_lib_damage() {
     action	Xdamage.c
 }
 
-function symlink_lib_damage() {
+symlink_lib_damage() {
     src_dir	include/extensions
     dst_dir	lib/Xevie/include/X11/extensions
 
@@ -495,7 +495,7 @@ function symlink_lib_damage() {
     action	Xevie.man
 }
 
-function symlink_lib_fixes() {
+symlink_lib_fixes() {
     src_dir lib/Xfixes
     dst_dir lib/Xfixes
 
@@ -517,7 +517,7 @@ function symlink_lib_fixes() {
     action	Xfixes.man	Xfixes.3
 }
 
-function symlink_lib_xau() {
+symlink_lib_xau() {
     src_dir	lib/Xau
     dst_dir	lib/Xau
 
@@ -543,7 +543,7 @@ function symlink_lib_xau() {
     action	Xau.man		Xau.3
 }
 
-function symlink_lib_xtrans() {
+symlink_lib_xtrans() {
     src_dir lib/xtrans
     dst_dir lib/xtrans
 
@@ -559,7 +559,7 @@ function symlink_lib_xtrans() {
     action	Xtransutil.c
 }
 
-function symlink_lib_xdmcp() {
+symlink_lib_xdmcp() {
     src_dir lib/Xdmcp
     dst_dir lib/Xdmcp
 
@@ -613,7 +613,7 @@ function symlink_lib_xdmcp() {
     action	Xdmcp.h
 }
 
-function symlink_lib_xext() {
+symlink_lib_xext() {
     src_dir lib/Xext
     dst_dir lib/Xext/src
 
@@ -657,7 +657,7 @@ function symlink_lib_xext() {
     action	XdbeGetV.man	XdbeGetVisualInfo.man
 } 
 
-function symlink_lib_x11() {
+symlink_lib_x11() {
     src_dir lib/X11
 
     # public .h files
@@ -1893,7 +1893,7 @@ function symlink_lib_x11() {
     action	viscii.h
 }
 
-function symlink_lib_ice() {
+symlink_lib_ice() {
     src_dir lib/ICE
     dst_dir lib/ICE/src
     
@@ -1929,7 +1929,7 @@ function symlink_lib_ice() {
     action	ICEutil.h
 }
 
-function symlink_lib_sm() {
+symlink_lib_sm() {
     src_dir lib/SM
     dst_dir lib/SM/src
 
@@ -1951,7 +1951,7 @@ function symlink_lib_sm() {
     action	SMproto.h
 }
 
-function symlink_lib_xt() {
+symlink_lib_xt() {
     src_dir lib/Xt
     
     # Public headers
@@ -2182,7 +2182,7 @@ function symlink_lib_xt() {
     action	XtOpenApp.man	XtOpenApplication.man
 }
 
-function symlink_lib_xmu() {
+symlink_lib_xmu() {
     src_dir lib/Xmu
     dst_dir lib/Xmu/include/X11/Xmu
 
@@ -2259,7 +2259,7 @@ function symlink_lib_xmu() {
     action	Xct.c
 }
 
-function symlink_lib_xp() {
+symlink_lib_xp() {
     src_dir lib/Xp
     dst_dir lib/Xp/src
 
@@ -2322,7 +2322,7 @@ function symlink_lib_xp() {
     action	XpStartPage.man			XpStartPage.3
 }
 
-function symlink_lib_xpm() {
+symlink_lib_xpm() {
     src_dir extras/Xpm
     dst_dir lib/Xpm
 
@@ -2409,7 +2409,7 @@ function symlink_lib_xpm() {
     action	plaid.xpm
 }
 
-function symlink_lib_xrender() {
+symlink_lib_xrender() {
     src_dir lib/Xrender
     dst_dir lib/Xrender/src
 
@@ -2434,7 +2434,7 @@ function symlink_lib_xrender() {
     action	Xrender.h
 }
 
-function symlink_lib_xi() {
+symlink_lib_xi() {
     src_dir lib/Xi
     dst_dir lib/Xi/src
 
@@ -2507,7 +2507,7 @@ function symlink_lib_xi() {
 
 }
 
-function symlink_lib_xfont() {
+symlink_lib_xfont() {
     src_dir lib/font/FreeType
     dst_dir lib/Xfont/src/FreeType
 
@@ -2642,7 +2642,7 @@ function symlink_lib_xfont() {
     action      utilbitmap.c
 }
 
-function symlink_lib_xaw() {
+symlink_lib_xaw() {
     src_dir	lib/Xaw
     dst_dir	lib/Xaw/src/
 
@@ -2777,7 +2777,7 @@ function symlink_lib_xaw() {
     action	Xaw.man
 }
 
-function symlink_lib() {
+symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
     symlink_lib_damage
@@ -2817,7 +2817,7 @@ function symlink_lib() {
 #
 #########
 
-function symlink_app_twm() {
+symlink_app_twm() {
     src_dir programs/twm
     dst_dir app/twm/src
 
@@ -2867,7 +2867,7 @@ function symlink_app_twm() {
     action	lemke.twmrc
 }
 
-function symlink_app_xdpyinfo() {
+symlink_app_xdpyinfo() {
     src_dir programs/xdpyinfo
     dst_dir app/xdpyinfo
 
@@ -2875,7 +2875,7 @@ function symlink_app_xdpyinfo() {
     action	xdpyinfo.man
 }
 
-function symlink_app() {
+symlink_app() {
     symlink_app_twm
     symlink_app_xdpyinfo
 #    ...
@@ -2888,7 +2888,7 @@ function symlink_app() {
 #
 #########
 
-function symlink_xserver_dix() {
+symlink_xserver_dix() {
     src_dir programs/Xserver/dix
     dst_dir xserver/xorg/dix
 
@@ -2924,7 +2924,7 @@ function symlink_xserver_dix() {
     action	CHANGES
 }
 
-function symlink_xserver_include() {
+symlink_xserver_include() {
     src_dir programs/Xserver/include
     dst_dir xserver/xorg/include
 
@@ -2976,7 +2976,7 @@ function symlink_xserver_include() {
     action	XIstubs.h
 }
 
-function symlink_xserver() {
+symlink_xserver() {
     symlink_xserver_dix
     symlink_xserver_include
 #    ...
@@ -2989,7 +2989,7 @@ function symlink_xserver() {
 #
 #########
 
-function symlink_driver_ati() {
+symlink_driver_ati() {
     src_dir programs/Xserver/hw/xfree86/drivers/ati
     dst_dir driver/xaa-ati/src
 
@@ -3157,7 +3157,7 @@ function symlink_driver_ati() {
     action	radeon.man
 }
 
-function symlink_driver_mouse() {
+symlink_driver_mouse() {
     src_dir programs/Xserver/hw/xfree86/input/mouse
     dst_dir driver/xf86input-mouse/src
 
@@ -3171,7 +3171,7 @@ function symlink_driver_mouse() {
     action	mouse.man
 }
 
-function symlink_driver() {
+symlink_driver() {
     symlink_driver_ati
     symlink_driver_mouse
 #    symlink_driver_damage
@@ -3195,7 +3195,7 @@ function symlink_driver() {
 #
 #########
 
-function symlink_font_100dpi() {
+symlink_font_100dpi() {
     src_dir fonts/bdf/100dpi
     dst_dir font/100dpi
 
@@ -3611,7 +3611,7 @@ function symlink_font_100dpi() {
     action	LU_LEGALNOTICE
 }
 
-function symlink_font() {
+symlink_font() {
     symlink_font_100dpi
 #    symlink_font_75dpi
 #    symlink_font_cyrillic
@@ -3633,7 +3633,7 @@ function symlink_font() {
 #
 #########
 
-function symlink_doc_old() {
+symlink_doc_old() {
     src_dir doc/hardcopy
     dst_dir doc/old/hardcopy
 
@@ -4201,7 +4201,7 @@ function symlink_doc_old() {
     action	macros.t
 }
 
-function symlink_doc() {
+symlink_doc() {
     symlink_doc_old
 #    symlink_doc_man
 #    ...
@@ -4214,7 +4214,7 @@ function symlink_doc() {
 #
 #########
 
-function symlink_util_cf() {
+symlink_util_cf() {
     src_dir config/cf
     dst_dir util/cf
 
@@ -4342,7 +4342,7 @@ function symlink_util_cf() {
     action	xprint_host.def
 }
 
-function symlink_util_imake() {
+symlink_util_imake() {
     src_dir config/imake
     dst_dir util/imake
 
@@ -4354,7 +4354,7 @@ function symlink_util_imake() {
     action	Makefile.ini
 }
 
-function symlink_util_makedepend() {
+symlink_util_makedepend() {
     src_dir config/makedepend
     dst_dir util/makedepend
 
@@ -4374,7 +4374,7 @@ function symlink_util_makedepend() {
     action	imakemdep.h
 }
 
-function symlink_util() {
+symlink_util() {
     symlink_util_cf
     symlink_util_imake
     symlink_util_makedepend
@@ -4388,14 +4388,14 @@ function symlink_util() {
 #
 #########
 
-function error() {
+error() {
 	echo
 	echo \ \ \ error:\ \ \ $1
 	exit
 }
 
-# Function printing out what's going on
-function run_module() {
+# printing out what's going on
+run_module() {
     # $1 module
     # $2 explanation
     echo -n $EXPLANATION for $1 module ...\ 
@@ -4403,7 +4403,7 @@ function run_module() {
     echo DONE
 }
 
-function run() {
+run() {
     # $1 what to do
     # $2 explanation
 
@@ -4417,21 +4417,21 @@ function run() {
     ACTION=$1 EXPLANATION=$2 run_module util
 }
 
-function src_dir() {
+src_dir() {
     REAL_SRC_DIR=$SRC_DIR/$1
     if [ ! -d $REAL_SRC_DIR ] ; then
 	error "Source directory $REAL_SRC_DIR does not exist"
     fi
 }
 
-function dst_dir() {
+dst_dir() {
     REAL_DST_DIR=$DST_DIR/$1
     if [ ! -d $REAL_DST_DIR ] ; then
 	mkdir -p $REAL_DST_DIR
     fi
 }
 
-function action() {
+action() {
     if [ -z $2 ] ; then
 	$ACTION	$REAL_SRC_DIR/$1	$REAL_DST_DIR/$1
     else
@@ -4439,14 +4439,14 @@ function action() {
     fi
 }
 
-function usage() {
+usage() {
     echo symlink.sh src-dir dst-dir
     echo src-dir: the xc directory of the monolithic source tree
     echo dst-dir: the modular source tree containing proto, app, lib, ...
 }
 
 # Check commandline args
-function check_args() {
+check_args() {
     if [ -z $1 ] ; then
 	echo Missing source dir
 	usage
