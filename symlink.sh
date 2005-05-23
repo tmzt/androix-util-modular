@@ -2642,6 +2642,141 @@ function symlink_lib_xfont() {
     action      utilbitmap.c
 }
 
+function symlink_lib_xaw() {
+    src_dir	lib/Xaw
+    dst_dir	lib/Xaw/src/
+
+    action	Actions.c
+    action	AllWidgets.c
+    action	AsciiSink.c
+    action	AsciiSrc.c
+    action	AsciiText.c
+    action	Box.c
+    action	Command.c
+    action	Converters.c
+    action	Dialog.c
+    action	DisplayList.c
+    action	Form.c
+    action	Grip.c
+    action	Label.c
+    action	List.c
+    action	MenuButton.c
+    action	MultiSink.c
+    action	MultiSrc.c
+    action	OS.c
+    action	Paned.c
+    action	Panner.c
+    action	Pixmap.c
+    action	Porthole.c
+    action	PrintShell.c
+    action	Repeater.c
+    action	Scrollbar.c
+    action	sharedlib.c
+    action	Simple.c
+    action	SimpleMenu.c
+    action	SmeBSB.c
+    action	Sme.c
+    action	SmeLine.c
+    action	StripChart.c
+    action	Template.c
+    action	TextAction.c
+    action	Text.c
+    action	TextPop.c
+    action	TextSink.c
+    action	TextSrc.c
+    action	TextTr.c
+    action	Tip.c
+    action	Toggle.c
+    action	Tree.c
+    action	Vendor.c
+    action	Viewport.c
+    action	XawI18n.c
+    action	XawIm.c
+    action	XawInit.c
+
+    action	Private.h
+    action	XawI18n.h
+
+    dst_dir lib/Xaw/include/X11/Xaw
+
+    action	AllWidgets.h
+    action	AsciiSink.h
+    action	AsciiSinkP.h
+    action	AsciiSrc.h
+    action	AsciiSrcP.h
+    action	AsciiText.h
+    action	AsciiTextP.h
+    action	Box.h
+    action	BoxP.h
+    action	Cardinals.h
+    action	Command.h
+    action	CommandP.h
+    action	Dialog.h
+    action	DialogP.h
+    action	Form.h
+    action	FormP.h
+    action	Grip.h
+    action	GripP.h
+    action	Label.h
+    action	LabelP.h
+    action	List.h
+    action	ListP.h
+    action	MenuButton.h
+    action	MenuButtoP.h
+    action	MultiSink.h
+    action	MultiSinkP.h
+    action	MultiSrc.h
+    action	MultiSrcP.h
+    action	Paned.h
+    action	PanedP.h
+    action	Panner.h
+    action	PannerP.h
+    action	Porthole.h
+    action	PortholeP.h
+    action	Print.h
+    action	PrintSP.h
+    action	Repeater.h
+    action	RepeaterP.h
+    action	Reports.h
+    action	Scrollbar.h
+    action	ScrollbarP.h
+    action	Simple.h
+    action	SimpleMenP.h
+    action	SimpleMenu.h
+    action	SimpleP.h
+    action	SmeBSB.h
+    action	SmeBSBP.h
+    action	Sme.h
+    action	SmeLine.h
+    action	SmeLineP.h
+    action	SmeP.h
+    action	StripCharP.h
+    action	StripChart.h
+    action	Template.h
+    action	TemplateP.h
+    action	Text.h
+    action	TextP.h
+    action	TextSink.h
+    action	TextSinkP.h
+    action	TextSrc.h
+    action	TextSrcP.h
+    action	Tip.h
+    action	TipP.h
+    action	Toggle.h
+    action	ToggleP.h
+    action	Tree.h
+    action	TreeP.h
+    action	VendorEP.h
+    action	Viewport.h
+    action	ViewportP.h
+    action	XawImP.h
+    action	XawInit.h
+
+    dst_dir lib/Xaw/man
+
+    action	Xaw.man
+}
+
 function symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
@@ -2661,12 +2796,13 @@ function symlink_lib() {
     symlink_lib_xfont
     symlink_lib_xrender
     symlink_lib_xi
+    symlink_lib_xaw
+
 #    symlink_lib_fs
 #    symlink_lib_lbxutil
 #    symlink_lib_randr
 #    symlink_lib_record
 #    symlink_lib_resource
-#    symlink_lib_xaw
 #    symlink_lib_xinerama
 #    symlink_lib_xss
 #    symlink_lib_xtrap
