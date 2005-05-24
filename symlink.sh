@@ -474,7 +474,7 @@ symlink_lib_damage() {
     action	Xdamage.c
 }
 
-symlink_lib_damage() {
+symlink_lib_evie() {
     src_dir	include/extensions
     dst_dir	lib/Xevie/include/X11/extensions
 
