@@ -475,22 +475,22 @@ symlink_lib_damage() {
 }
 
 symlink_lib_evie() {
-    src_dir	include/extensions
-    dst_dir	lib/Xevie/include/X11/extensions
+    src_dir include/extensions
+    dst_dir lib/Xevie/include/X11/extensions
 
     action	Xevie.h
 
-    src_dir	lib/Xevie
-    dst_dir	lib/Xevie
+    src_dir lib/Xevie
+    dst_dir lib/Xevie
 
     action	AUTHORS
     action	xevie.pc.in
 
-    dst_dir	lib/Xevie/src
+    dst_dir lib/Xevie/src
 
     action	Xevie.c
 
-    dst_dir	lib/Xevie/man
+    dst_dir lib/Xevie/man
 
     action	Xevie.man
 }
@@ -518,8 +518,8 @@ symlink_lib_fixes() {
 }
 
 symlink_lib_xau() {
-    src_dir	lib/Xau
-    dst_dir	lib/Xau
+    src_dir lib/Xau
+    dst_dir lib/Xau
 
     action	README
 
@@ -534,11 +534,12 @@ symlink_lib_xau() {
     action	AuWrite.c
     action	k5encode.c
 
-    dst_dir	lib/Xau/include/X11
+    dst_dir lib/Xau/include/X11
+
     action	Xauth.h
 
-    src_dir	doc/man/Xau
-    dst_dir	lib/Xau
+    src_dir doc/man/Xau
+    dst_dir lib/Xau
 
     action	Xau.man		Xau.3
 }
@@ -609,7 +610,8 @@ symlink_lib_xdmcp() {
 
     action	Wraphelp.README.crypto
 
-    dst_dir	lib/Xdmcp/include/X11
+    dst_dir lib/Xdmcp/include/X11
+
     action	Xdmcp.h
 }
 
@@ -2643,8 +2645,8 @@ symlink_lib_xfont() {
 }
 
 symlink_lib_xaw() {
-    src_dir	lib/Xaw
-    dst_dir	lib/Xaw/src/
+    src_dir lib/Xaw
+    dst_dir lib/Xaw/src/
 
     action	Actions.c
     action	AllWidgets.c
@@ -2777,6 +2779,44 @@ symlink_lib_xaw() {
     action	Xaw.man
 }
 
+symlink_lib_fs() {
+    src_dir lib/FS
+    dst_dir lib/FS/src
+
+    action	FSCloseFt.c
+    action	FSClServ.c
+    action	FSConnServ.c
+    action	FSErrDis.c
+    action	FSErrHndlr.c
+    action	FSFlush.c
+    action	FSFontInfo.c
+    action	FSFtNames.c
+    action	FSGetCats.c
+    action	FSlibInt.c
+    action	FSListCats.c
+    action	FSListExt.c
+    action	FSMisc.c
+    action	FSNextEv.c
+    action	FSOpenFont.c
+    action	FSOpenServ.c
+    action	FSQGlyphs.c
+    action	FSQuExt.c
+    action	FSQXExt.c
+    action	FSQXInfo.c
+    action	FSServName.c
+    action	FSSetCats.c
+    action	FSSync.c
+    action	FSSynchro.c
+    action	transport.c
+
+    action	FSlibint.h
+    action	FSlibos.h
+
+    dst_dir lib/FS/include/X11/fonts
+
+    action	FSlib.h
+}
+
 symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
@@ -2797,8 +2837,7 @@ symlink_lib() {
     symlink_lib_xrender
     symlink_lib_xi
     symlink_lib_xaw
-
-#    symlink_lib_fs
+    symlink_lib_fs
 #    symlink_lib_lbxutil
 #    symlink_lib_randr
 #    symlink_lib_record
