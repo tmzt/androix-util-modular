@@ -2807,7 +2807,6 @@ symlink_lib_fs() {
     action	FSSetCats.c
     action	FSSync.c
     action	FSSynchro.c
-    action	transport.c
 
     action	FSlibint.h
     action	FSlibos.h
