@@ -2592,7 +2592,7 @@ symlink_lib_xfont() {
     action      renderers.c
 
     src_dir lib/font/include
-    dst_dir lib/Xfont/include
+    dst_dir lib/Xfont/include/X11/fonts
 
     action      bitmap.h
     action      bufio.h
