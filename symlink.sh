@@ -219,7 +219,6 @@ symlink_proto_resource() {
     src_dir include/extensions
     dst_dir proto/Resource
 
-    action	XRes.h		# only used by DMX example program in server
     action	XResproto.h
 }
 
@@ -2816,6 +2815,23 @@ symlink_lib_fs() {
     action	FSlib.h
 }
 
+symlink_lib_xres() {
+    src_dir lib/XRes
+    dst_dir lib/XRes/src
+
+    action	XRes.c
+
+    src_dir include/extensions
+    dst_dir lib/XRes/include/X11/extensions
+
+    action	XRes.h
+
+    src_dir lib/XRes
+    dst_dir lib/XRes/man
+
+    action	XRes.man
+}
+
 symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
@@ -2837,6 +2853,7 @@ symlink_lib() {
     symlink_lib_xi
     symlink_lib_xaw
     symlink_lib_fs
+    symlink_lib_xres
 #    symlink_lib_lbxutil
 #    symlink_lib_randr
 #    symlink_lib_record
