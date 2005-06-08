@@ -2853,6 +2853,28 @@ symlink_lib_randr()
     action	Xrandr.man
 }
 
+symlink_lib_xcursor()
+{
+    src_dir lib/Xcursor
+
+    dst_dir lib/Xcursor/include/X11/Xcursor
+
+    action	Xcursor.h
+
+    dst_dir lib/Xcursor/src
+    
+    action	xcursorint.h
+    action	cursor.c
+    action	display.c
+    action	file.c
+    action	library.c
+    action	xlib.c
+
+    dst_dir lib/Xcursor/man
+
+    action	Xcursor.man		Xcursor.3
+}
+
 symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
@@ -2876,6 +2898,7 @@ symlink_lib() {
     symlink_lib_fs
     symlink_lib_xres
     symlink_lib_randr
+    symlink_lib_xcursor
 #    symlink_lib_lbxutil
 #    symlink_lib_record
 #    symlink_lib_resource
