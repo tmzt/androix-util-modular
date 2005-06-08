@@ -2832,6 +2832,27 @@ symlink_lib_xres() {
     action	XRes.man
 }
 
+symlink_lib_randr()
+{
+    src_dir lib/Xrandr
+    dst_dir lib/Xrandr/src
+
+    action	Xrandrint.h
+    action	Xrandr.c
+
+    dst_dir lib/Xrandr/include/X11/extensions
+
+    action	Xrandr.h
+
+#    FIXME: put this file somewhere
+#    dst_dir lib/Xrandr/test
+#    action	test.c  
+
+    dst_dir lib/Xrandr/man
+
+    action	Xrandr.man
+}
+
 symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
@@ -2854,8 +2875,8 @@ symlink_lib() {
     symlink_lib_xaw
     symlink_lib_fs
     symlink_lib_xres
+    symlink_lib_randr
 #    symlink_lib_lbxutil
-#    symlink_lib_randr
 #    symlink_lib_record
 #    symlink_lib_resource
 #    symlink_lib_xinerama
