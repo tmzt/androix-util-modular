@@ -2890,6 +2890,63 @@ symlink_lib_xtrap()
     action	XEWrappers.c
 }
 
+symlink_lib_xfontcache() 
+{
+    src_dir lib/Xfontcache
+    dst_dir lib/Xfontcache/src
+
+    action	FontCache.c
+
+    dst_dir lib/Xfontcache/man
+
+    action	Xfontcache.man		Xfontcache.3
+}
+
+symlink_lib_xinerama()
+{
+    src_dir lib/Xinerama
+    dst_dir lib/Xinerama/src
+
+    action	Xinerama.c
+}
+
+symlink_lib_xprint_util()
+{
+    src_dir lib/XprintUtil
+    dst_dir lib/XprintUtil/src
+
+    action	xprintutil.c
+    action	xprintutil_printtofile.c
+
+    dst_dir lib/XprintUtil/include/X11/XprintUtil
+
+    action	xprintutil.h
+}
+
+symlink_lib_xprint_app_util()
+{
+    src_dir lib/XprintAppUtil
+    dst_dir lib/XprintAppUtil/src
+
+    action	xpapputil.c
+
+    dst_dir lib/XprintAppUtil/include/X11/XprintAppUtil
+
+    action	xpapputil.h
+}
+
+symlink_lib_xss()
+{
+    src_dir lib/Xss
+    dst_dir lib/XScrnSaver/src
+    
+    action	XScrnSaver.c
+
+    dst_dir lib/XScrnSaver/man
+
+    action	Xss.man			Xss.3
+}
+
 symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
@@ -2915,12 +2972,14 @@ symlink_lib() {
     symlink_lib_randr
     symlink_lib_xcursor
     symlink_lib_xtrap
+    symlink_lib_xfontcache
+    symlink_lib_xinerama
+    symlink_lib_xprint_util
+    symlink_lib_xprint_app_util
+    symlink_lib_xss
+
 #    symlink_lib_lbxutil
-#    symlink_lib_record
-#    symlink_lib_resource
-#    symlink_lib_xinerama
 #    symlink_lib_xss
-#    symlink_lib_xtrap
 #    symlink_lib_xv
 #    ...
 }
