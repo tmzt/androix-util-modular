@@ -2875,6 +2875,21 @@ symlink_lib_xcursor()
     action	Xcursor.man		Xcursor.3
 }
 
+symlink_lib_xtrap()
+{
+    src_dir lib/XTrap
+    dst_dir lib/XTrap/src
+
+    action	XECallBcks.c
+    action	XEConTxt.c
+    action	XEDsptch.c
+    action	XEPrInfo.c
+    action	XERqsts.c
+    action	XEStrMap.c
+    action	XETrapInit.c
+    action	XEWrappers.c
+}
+
 symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
@@ -2899,6 +2914,7 @@ symlink_lib() {
     symlink_lib_xres
     symlink_lib_randr
     symlink_lib_xcursor
+    symlink_lib_xtrap
 #    symlink_lib_lbxutil
 #    symlink_lib_record
 #    symlink_lib_resource
@@ -2908,7 +2924,6 @@ symlink_lib() {
 #    symlink_lib_xv
 #    ...
 }
-
 
 #########
 #
