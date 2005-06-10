@@ -2947,6 +2947,40 @@ symlink_lib_xss()
     action	Xss.man			Xss.3
 }
 
+symlink_lib_xxf86dga() {
+    src_dir lib/Xxf86dga
+    dst_dir lib/Xxf86dga/src
+
+    action	XF86DGA.c
+    action	XF86DGA2.c
+
+    dst_dir lib/Xxf86dga/man
+
+    action	XDGA.man		XDGA.3
+}
+
+symlink_lib_xxf86misc() {
+    src_dir lib/Xxf86misc
+    dst_dir lib/Xxf86misc/src
+
+    action	XF86Misc.c
+
+    dst_dir lib/Xxf86misc/man
+
+    action	XF86Misc.man		XF86Misc.3
+}
+
+symlink_lib_xxf86vm() {
+    src_dir lib/Xxf86vm
+    dst_dir lib/Xxf86vm/src
+
+    action	XF86VMode.c
+
+    dst_dir lib/Xxf86vm/man
+
+    action	XF86VM.man		XF86VM.3
+}
+
 symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
@@ -2978,9 +3012,10 @@ symlink_lib() {
     symlink_lib_xprint_util
     symlink_lib_xprint_app_util
     symlink_lib_xss
-
+    symlink_lib_xxf86dga
+    symlink_lib_xxf86misc
+    symlink_lib_xxf86vm
 #    symlink_lib_lbxutil
-#    symlink_lib_xss
 #    symlink_lib_xv
 #    ...
 }
