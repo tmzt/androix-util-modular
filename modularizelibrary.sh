@@ -2,6 +2,13 @@
 
 # Variables
 
+if [ -z $1 ] ; then
+    echo
+    echo Usage: $0 \<directory\>
+    echo
+    exit
+fi
+
 # fixme: modular dir should 
 
 MODULAR_DIR=`( cd $1 ; cd ../.. ; pwd )`
@@ -9,18 +16,26 @@ MODULE_DIR=`( cd $1 ; pwd )`
 MODULE_NAME=`( basename $MODULE_DIR )`
 modulename=`echo $MODULE_NAME | tr "[:upper:]" "[:lower:]"`
 
-echo Modular dir: $MODULAR_DIR
-echo Module dir : $MODULE_DIR
-echo Name: $MODULE_NAME
-echo lower: $modulename
-
 if [ -x $MODULE_DIR/man ] ; then
     HAS_MAN_DIR="yes"
 else
     HAS_MAN_DIR="no"
 fi
 
-echo Man dir: $HAS_MAN_DIR
+if [ -x $MODULE_DIR/include ] ; then
+    HAS_INCLUDE_DIR="yes"
+else
+    HAS_INCLUDE_DIR="no"
+fi
+
+if [ -z foo ]  ; then
+    echo Modular dir: $MODULAR_DIR
+    echo Module dir : $MODULE_DIR
+    echo Name: $MODULE_NAME
+    echo lower: $modulename
+    echo Man dir: $HAS_MAN_DIR
+    echo Include dir: $HAS_INCLUDE_DIR
+fi
 
 # 
 #	Generate build files
@@ -52,9 +67,9 @@ cat <<EOF >> Makefile.am
 #  documentation for any purpose is hereby granted without fee, provided that
 #  the above copyright notice appear in all copies and that both that
 #  copyright notice and this permission notice appear in supporting
-#  documentation, and that the name of Keith Packard not be used in
+#  documentation, and that the name of Red Hat not be used in
 #  advertising or publicity pertaining to distribution of the software without
-#  specific, written prior permission.  Keith Packard makes no
+#  specific, written prior permission.  Red Hat makes no
 #  representations about the suitability of this software for any purpose.  It
 #  is provided "as is" without express or implied warranty.
 # 
@@ -69,11 +84,11 @@ cat <<EOF >> Makefile.am
 EOF
 
 if [ $HAS_MAN_DIR = "yes" ] ; then
-cat << EOF >> Makefile.am
+    cat << EOF >> Makefile.am
 SUBDIRS = src man
 EOF
 else
-cat <<EOF >> Makefile.am
+    cat <<EOF >> Makefile.am
 SUBDIRS = src
 EOF
 fi
@@ -99,15 +114,15 @@ dnl  Permission to use, copy, modify, distribute, and sell this software and its
 dnl  documentation for any purpose is hereby granted without fee, provided that
 dnl  the above copyright notice appear in all copies and that both that
 dnl  copyright notice and this permission notice appear in supporting
-dnl  documentation, and that the name of Keith Packard not be used in
+dnl  documentation, and that the name of Red Hat not be used in
 dnl  advertising or publicity pertaining to distribution of the software without
-dnl  specific, written prior permission.  Keith Packard makes no
+dnl  specific, written prior permission.  Red Hat makes no
 dnl  representations about the suitability of this software for any purpose.  It
 dnl  is provided "as is" without express or implied warranty.
 dnl 
-dnl  KEITH PACKARD DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+dnl  RED HAT DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
 dnl  INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO
-dnl  EVENT SHALL KEITH PACKARD BE LIABLE FOR ANY SPECIAL, INDIRECT OR
+dnl  EVENT SHALL RED HAT BE LIABLE FOR ANY SPECIAL, INDIRECT OR
 dnl  CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE,
 dnl  DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
 dnl  TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
@@ -136,11 +151,13 @@ AC_SUBST(DEP_LIBS)
 AC_OUTPUT([Makefile
 	   src/Makefile
 EOF
+
 if [ $HAS_MAN_DIR = yes ] ; then
-cat <<EOF >> configure.ac
+    cat <<EOF >> configure.ac
 	   man/Makefile
 EOF
 fi
+
 cat <<EOF >> configure.ac
            $modulename.pc])
 EOF
@@ -161,7 +178,9 @@ Libs: -L\${libdir} -l$MODULE_NAME @DEP_LIBS@
 
 EOF
 
+#
 #		src/Makefile
+#
 
 cd src
 
@@ -185,35 +204,103 @@ for x in `ls *.[ch]`; do
     fi
 done
 
+if [ $HAS_INCLUDE_DIR = yes ] ; then
+    
+    HEADERFILE=`find ../include -name "*.h" | head -1`
+
+    INCLUDE_SRC_DIR=`dirname $HEADERFILE | sed "s/../\\$(top_srcdir)/"`
+
+    INCLUDE_INSTALL_DIR=`dirname $HEADERFILE | sed "s/..\/include/\\$(includedir)/"`
+
+    cat <<EOF >> Makefile.am
+
+INCLUDES = -I$INCLUDE_SRC_DIR
+
+EOF
+
+fi
+
 cat <<EOF >> Makefile.am
 
+lib${MODULE_NAME}_la_LIBADD = @DEP_LIBS@
 
 lib${MODULE_NAME}_la_LDFLAGS = -version-info 7:0:0 -no-undefined
+
 EOF
+
+
+if [ $HAS_INCLUDE_DIR = yes ] ; then
+
+    cat <<EOF >> Makefile.am
+
+lib${MODULE_NAME}includedir = $INCLUDE_INSTALL_DIR
+lib${MODULE_NAME}include_HEADERS = \\
+EOF
+
+    for f in `find ../include -name "*.h"` ; do
+	LAST=$f
+    done
+
+    for f in `find ../include -name "*.h"` ; do
+
+	NAME=`echo $f | sed "s/../\\$(top_srcdir)/"`
+
+	echo -n \ \ \ \ $NAME				>> Makefile.am
+
+	if [ $LAST = $f ] ; then
+	    echo					>> Makefile.am
+	else
+	    echo \\					>> Makefile.am
+	fi
+    done
+fi
+
+echo >> Makefile.am
 
 #
 #		man/Makefile
 #
 
 if [ $HAS_MAN_DIR = yes ] ; then
-cd ../man
-rm Makefile.am
-cat <<EOF > Makefile.am
-man3_MANS = \\
+
+    cd ../man
+    rm Makefile.am
+    cat <<EOF > Makefile.am
+#  Copyright 2005  Red Hat, Inc.
+# 
+#  Permission to use, copy, modify, distribute, and sell this software and its
+#  documentation for any purpose is hereby granted without fee, provided that
+#  the above copyright notice appear in all copies and that both that
+#  copyright notice and this permission notice appear in supporting
+#  documentation, and that the name of Red Hat not be used in
+#  advertising or publicity pertaining to distribution of the software without
+#  specific, written prior permission.  Red Hat makes no representations about
+#  the suitability of this software for any purpose.  It is provided "as is" without
+#  express or implied warranty.
+# 
+#  RED HAT DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+#  INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO
+#  EVENT SHALL RED HAT BE LIABLE FOR ANY SPECIAL, INDIRECT OR
+#  CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE,
+#  DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+#  TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+#  PERFORMANCE OF THIS SOFTWARE.
+#
+
+man_MANS = \\
 EOF
-
-for x in `ls *.3` ; do
-    LAST=$x
-done
-
-for x in `ls *.3`; do
-    if [ $x = $LAST ] ; then
-	echo \ \ \ \ \ \ \ \ \ $x			>> Makefile.am
-    else
-	echo \ \ \ \ \ \ \ \ \ $x \\			>> Makefile.am
-    fi
-done
-
-echo "EXTRA_DIST = \$(man3_MANS)"			>> Makefile.am
-
+    
+    for x in `ls *.3` ; do
+	LAST=$x
+    done
+    
+    for x in `ls *.3`; do
+	if [ $x = $LAST ] ; then
+	    echo \ \ \ \ \ \ \ \ \ $x			>> Makefile.am
+	else
+	    echo \ \ \ \ \ \ \ \ \ $x \\			>> Makefile.am
+	fi
+    done
+    
+    echo "EXTRA_DIST = \$(man3_MANS)"			>> Makefile.am
 fi
