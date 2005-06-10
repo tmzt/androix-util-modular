@@ -2951,6 +2951,7 @@ symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
     symlink_lib_damage
+    symlink_lib_evie
     symlink_lib_fixes 
     symlink_lib_xau
     symlink_lib_xtrans
