@@ -264,7 +264,7 @@ echo >> Makefile.am
 if [ $HAS_MAN_DIR = yes ] ; then
 
     cd ../man
-    rm Makefile.am
+    rm -f Makefile.am
     cat <<EOF > Makefile.am
 #  Copyright 2005  Red Hat, Inc.
 # 
