@@ -3944,6 +3944,770 @@ symlink_xserver_hw_vfb() {
     action      lk201kbd.h
 }
 
+symlink_xserver_hw_xfree86_common() {
+    src_dir programs/Xserver/hw/xfree86/common
+    dst_dir xserver/xorg/hw/xfree86/common
+
+    action      atKeynames.h
+    action      compiler.h
+    action      fourcc.h
+    action      scoasm.h
+    action      xf86.h
+    action      xf86AutoConfig.c
+    action      xf86Bus.c
+    action      xf86Bus.h
+    action      xf86Config.c
+    action      xf86Config.h
+    action      xf86Configure.c
+    action      xf86Cursor.c
+    action      xf86DGA.c
+    action      xf86DPMS.c
+    action      xf86Debug.c
+    action      xf86DefModes.c
+    action      xf86DoProbe.c
+    action      xf86DoScanPci.c
+    action      xf86Events.c
+    action      xf86Globals.c
+    action      xf86Helper.c
+    action      xf86InPriv.h
+    action      xf86Init.c
+    action      xf86Io.c
+    action      xf86Kbd.c
+    action      xf86KbdBSD.c
+    action      xf86KbdLnx.c
+    action      xf86KbdMach.c
+    action      xf86Keymap.h
+    action      xf86MiscExt.c
+    action      xf86Mode.c
+    action      xf86Module.h
+    action      xf86Opt.h
+    action      xf86Option.c
+    action      xf86PM.c
+    action      xf86PciInfo.h
+    action      xf86Priv.h
+    action      xf86Privstr.h
+    action      xf86RandR.c
+    action      xf86Resources.h
+    action      xf86Versions.c
+    action      xf86VidMode.c
+    action      xf86XKB.c
+    action      xf86Xinput.c
+    action      xf86Xinput.h
+    action      xf86cmap.c
+    action      xf86cmap.h
+    action      xf86fbBus.c
+    action      xf86fbman.c
+    action      xf86fbman.h
+    action      xf86isaBus.c
+    action      xf86noBus.c
+    action      xf86pciBus.c
+    action      xf86pciBus.h
+    action      xf86sbusBus.c
+    action      xf86sbusBus.h
+    action      xf86str.h
+    action      xf86xv.c
+    action      xf86xv.h
+    action      xf86xvmc.c
+    action      xf86xvmc.h
+    action      xf86xvpriv.h
+    action      xisb.c
+    action      xisb.h
+    action      xorgHelper.c
+}
+
+symlink_xserver_hw_xfree86_ddc() {
+    src_dir programs/Xserver/hw/xfree86/ddc
+    dst_dir xserver/xorg/hw/xfree86/ddc
+
+    action      ddcPriv.h
+    action      ddcProperty.c
+    action      edid.c
+    action      edid.h
+    action      interpret_edid.c
+    action      interpret_vdif.c
+    action      print_edid.c
+    action      print_vdif.c
+    action      vdif.h
+    action      xf86DDC.c
+    action      xf86DDC.h
+}
+
+symlink_xserver_hw_xfree86_dummylib() {
+    src_dir programs/Xserver/hw/xfree86/dummylib
+    dst_dir xserver/xorg/hw/xfree86/dummylib
+
+    action      dummylib.h
+    action      fatalerror.c
+    action      getvalidbios.c
+    action      logvwrite.c
+    action      pcitestmulti.c
+    action      verrorf.c
+    action      xalloc.c
+    action      xf86addrestolist.c
+    action      xf86allocscripi.c
+    action      xf86drvmsg.c
+    action      xf86drvmsgverb.c
+    action      xf86errorf.c
+    action      xf86errorfverb.c
+    action      xf86getpagesize.c
+    action      xf86getverb.c
+    action      xf86info.c
+    action      xf86msg.c
+    action      xf86msgverb.c
+    action      xf86opt.c
+    action      xf86screens.c
+    action      xf86servisinit.c
+    action      xf86verbose.c
+}
+
+symlink_xserver_hw_xfree86_fbdevhw() {
+    src_dir programs/Xserver/hw/xfree86/fbdevhw
+    dst_dir xserver/xorg/hw/xfree86/fbdevhw
+
+    action      fbdevhw.c
+    action      fbdevhw.h
+    action      fbdevhwstub.c
+    action      fbpriv.h
+}
+
+symlink_xserver_hw_xfree86_i2c() {
+    src_dir programs/Xserver/hw/xfree86/i2c
+    dst_dir xserver/xorg/hw/xfree86/i2c
+
+    action      xf86i2c.c
+    action      xf86i2c.h
+    action      xf86i2cmodule.c
+}
+
+symlink_xserver_hw_xfree86_int10() {
+    src_dir programs/Xserver/hw/xfree86/int10
+    dst_dir xserver/xorg/hw/xfree86/int10
+
+    action      generic.c
+    action      helper_exec.c
+    action      helper_mem.c
+    action      pci.c
+    action      stub.c
+    action      x86emu.c
+    action      xf86int10.c
+    action      xf86int10.h
+    action      xf86int10module.c
+    action      xf86x86emu.c
+    action      xf86x86emu.h
+}
+
+symlink_xserver_hw_xfree86_loader() {
+    src_dir programs/Xserver/hw/xfree86/loader
+    dst_dir xserver/xorg/hw/xfree86/loader
+
+    action      aout.h
+    action      aoutloader.c
+    action      aoutloader.h
+    action      ar.h
+    action      coff.h
+    action      coffloader.c
+    action      coffloader.h
+    action      dixsym.c
+    action      dlloader.c
+    action      dlloader.h
+    action      elf.h
+    action      elfloader.c
+    action      elfloader.h
+    action      extsym.c
+    action      fontsym.c
+    action      hash.c
+    action      hash.h
+    action      loader.c
+    action      loader.h
+    action      loaderProcs.h
+    action      loadext.c
+    action      loadfont.c
+    action      loadmod.c
+    action      misym.c
+    action      os.c
+    action      os2funcs.c
+    action      sym.h
+    action      xf86sym.c
+}
+
+symlink_xserver_hw_xfree86_ossupport() {
+    src_dir programs/Xserver/hw/xfree86/os-support
+    dst_dir xserver/xorg/hw/xfree86/os-support
+
+    action      assyntax.h
+    action      int10Defines.h
+    action      xf86OSKbd.h
+    action      xf86OSmouse.h
+    action      xf86OSpriv.h
+    action      xf86_OSlib.h
+    action      xf86_OSproc.h
+    action      xf86_ansic.h
+    action      xf86_libc.h
+    action      xf86drm.h
+    action      xf86drmCompat.h
+}
+
+symlink_xserver_hw_xfree86_ossupport_bsd() {
+    src_dir programs/Xserver/hw/xfree86/os-support/bsd
+    dst_dir xserver/xorg/hw/xfree86/os-support/bsd
+
+    action      alpha_video.c
+    action      arm_video.c
+    action      bsdResource.c
+    action      bsd_KbdMap.c
+    action      bsd_VTsw.c
+    action      bsd_apm.c
+    action      bsd_axp.c
+    action      bsd_ev56.c
+    action      bsd_init.c
+    action      bsd_io.c
+    action      bsd_jstk.c
+    action      bsd_kbd.c
+    action      bsd_kbd.h
+    action      bsd_kmod.c
+    action      bsd_kqueue_apm.c
+    action      bsd_mouse.c
+    action      i386_video.c
+    action      memrange.h
+    action      ppc_video.c
+    action      sparc64_video.c
+}
+
+symlink_xserver_hw_xfree86_ossupport_bsd_libusb() {
+    src_dir programs/Xserver/hw/xfree86/os-support/bsd/libusb
+    dst_dir xserver/xorg/hw/xfree86/os-support/bsd/libusb
+
+    action      data.c
+    action      descr.c
+    action      parse.c
+    action      usage.c
+    action      usb.h
+    action      usbvar.h
+}
+
+symlink_xserver_hw_xfree86_ossupport_bsdi() {
+    src_dir programs/Xserver/hw/xfree86/os-support/bsdi
+    dst_dir xserver/xorg/hw/xfree86/os-support/bsdi
+
+    action      bsdi_init.c
+    action      bsdi_io.c
+    action      bsdi_mouse.c
+    action      bsdi_video.c
+}
+
+symlink_xserver_hw_xfree86_ossupport_bus() {
+    src_dir programs/Xserver/hw/xfree86/os-support/bus
+    dst_dir xserver/xorg/hw/xfree86/os-support/bus
+
+    action      460gxPCI.c
+    action      460gxPCI.h
+    action      Pci.c
+    action      Pci.h
+    action      Sbus.c
+    action      altixPCI.c
+    action      altixPCI.h
+    action      axpPci.c
+    action      e8870PCI.c
+    action      e8870PCI.h
+    action      freebsdPci.c
+    action      ix86Pci.c
+    action      linuxPci.c
+    action      netbsdPci.c
+    action      ppcPci.c
+    action      sparcPci.c
+    action      xf86Pci.h
+    action      xf86Sbus.h
+    action      zx1PCI.c
+    action      zx1PCI.h
+}
+
+symlink_xserver_hw_xfree86_ossupport_dgux() {
+    src_dir programs/Xserver/hw/xfree86/os-support/dgux
+    dst_dir xserver/xorg/hw/xfree86/os-support/dgux
+
+    action      bios_DGmmap.c
+    action      dgux_init.c
+    action      dgux_io.c
+    action      dgux_kbd.c
+    action      dgux_kbdEv.c
+    action      dgux_tty.c
+    action      dgux_video.c
+}
+
+symlink_xserver_hw_xfree86_ossupport_hurd() {
+    src_dir programs/Xserver/hw/xfree86/os-support/hurd
+    dst_dir xserver/xorg/hw/xfree86/os-support/hurd
+
+    action      bios_mmap.c
+    action      hurd_init.c
+    action      hurd_io.c
+    action      hurd_mouse.c
+    action      hurd_video.c
+}
+
+symlink_xserver_hw_xfree86_ossupport_linux() {
+    src_dir programs/Xserver/hw/xfree86/os-support/linux
+    dst_dir xserver/xorg/hw/xfree86/os-support/linux
+
+    action      agpgart.h
+    action      lnx.h
+    action      lnxResource.c
+    action      lnx_KbdMap.c
+    action      lnx_agp.c
+    action      lnx_apm.c
+    action      lnx_axp.c
+    action      lnx_ev56.c
+    action      lnx_font.c
+    action      lnx_ia64.c
+    action      lnx_init.c
+    action      lnx_io.c
+    action      lnx_jstk.c
+    action      lnx_kbd.c
+    action      lnx_kbd.h
+    action      lnx_kmod.c
+    action      lnx_mouse.c
+    action      lnx_pci.c
+    action      lnx_video.c
+}
+
+symlink_xserver_hw_xfree86_ossupport_linux_drm() {
+    src_dir programs/Xserver/hw/xfree86/os-support/linux/drm
+    dst_dir xserver/xorg/hw/xfree86/os-support/linux/drm
+
+    action      drmmodule.c
+    action      xf86drm.c
+    action      xf86drmCompat.c
+    action      xf86drmHash.c
+    action      xf86drmRandom.c
+    action      xf86drmSL.c
+}
+
+symlink_xserver_hw_xfree86_ossupport_linux_int10() {
+    src_dir programs/Xserver/hw/xfree86/os-support/linux/int10
+    dst_dir xserver/xorg/hw/xfree86/os-support/linux/int10
+
+    action      linux.c
+}
+
+symlink_xserver_hw_xfree86_ossupport_linux_int10_vm86() {
+    src_dir programs/Xserver/hw/xfree86/os-support/linux/int10/vm86
+    dst_dir xserver/xorg/hw/xfree86/os-support/linux/int10/vm86
+
+    action      linux_vm86.c
+}
+
+symlink_xserver_hw_xfree86_ossupport_lynxos() {
+    src_dir programs/Xserver/hw/xfree86/os-support/lynxos
+    dst_dir xserver/xorg/hw/xfree86/os-support/lynxos
+
+    action      lynx_init.c
+    action      lynx_io.c
+    action      lynx_mmap.c
+    action      lynx_mouse.c
+    action      lynx_noinline.c
+    action      lynx_ppc.c
+    action      lynx_video.c
+}
+
+symlink_xserver_hw_xfree86_ossupport_misc() {
+    src_dir programs/Xserver/hw/xfree86/os-support/misc
+    dst_dir xserver/xorg/hw/xfree86/os-support/misc
+
+    action      BUSmemcpy.c
+    action      Delay.c
+    action      IODelay.c
+    action      SlowBcopy.c
+    action      xf86_IlHack.c
+    action      xf86_Util.c
+}
+
+symlink_xserver_hw_xfree86_ossupport_nto() {
+    src_dir programs/Xserver/hw/xfree86/os-support/nto
+    dst_dir xserver/xorg/hw/xfree86/os-support/nto
+
+    action      nto_init.c
+    action      nto_io.c
+    action      nto_ioperm.c
+    action      nto_kbdEv.c
+    action      nto_mouse.c
+    action      nto_video.c
+}
+
+symlink_xserver_hw_xfree86_ossupport_os2() {
+    src_dir programs/Xserver/hw/xfree86/os-support/os2
+    dst_dir xserver/xorg/hw/xfree86/os-support/os2
+
+    action      os2_VTsw.c
+    action      os2_bios.c
+    action      os2_diag.c
+    action      os2_init.c
+    action      os2_io.c
+    action      os2_ioperm.c
+    action      os2_kbd.c
+    action      os2_kbdEv.c
+    action      os2_mouse.c
+    action      os2_select.c
+    action      os2_select.h
+    action      os2_serial.c
+    action      os2_stubs.c
+    action      os2_video.c
+}
+
+symlink_xserver_hw_xfree86_ossupport_os2_int10() {
+    src_dir programs/Xserver/hw/xfree86/os-support/os2/int10
+    dst_dir xserver/xorg/hw/xfree86/os-support/os2/int10
+
+    action      os2.c
+}
+
+symlink_xserver_hw_xfree86_ossupport_pmax() {
+    src_dir programs/Xserver/hw/xfree86/os-support/pmax
+    dst_dir xserver/xorg/hw/xfree86/os-support/pmax
+
+    action      pmax_devs.c
+    action      pmax_init.c
+    action      pmax_map.c
+    action      pmax_mouse.c
+    action      pmax_pci.c
+    action      pmax_ppc.c
+}
+
+symlink_xserver_hw_xfree86_ossupport_qnx4() {
+    src_dir programs/Xserver/hw/xfree86/os-support/qnx4
+    dst_dir xserver/xorg/hw/xfree86/os-support/qnx4
+
+    action      qnx_VTsw.c
+    action      qnx_init.c
+    action      qnx_io.c
+    action      qnx_kbd.c
+    action      qnx_mouse.c
+    action      qnx_select.c
+    action      qnx_utils.c
+    action      qnx_video.c
+}
+
+symlink_xserver_hw_xfree86_ossupport_sco() {
+    src_dir programs/Xserver/hw/xfree86/os-support/sco
+    dst_dir xserver/xorg/hw/xfree86/os-support/sco
+
+    action      VTsw_sco.c
+    action      sco_init.c
+    action      sco_io.c
+    action      sco_iop.c
+    action      sco_mouse.c
+    action      sco_video.c
+}
+
+symlink_xserver_hw_xfree86_ossupport_shared() {
+    src_dir programs/Xserver/hw/xfree86/os-support/shared
+    dst_dir xserver/xorg/hw/xfree86/os-support/shared
+
+    action      VTsw_noop.c
+    action      VTsw_usl.c
+    action      agp_noop.c
+    action      at_scancode.c
+    action      bios_devmem.c
+    action      bios_mmap.c
+    action      ia64Pci.c
+    action      ia64Pci.h
+    action      ioperm_noop.c
+    action      kbd.c
+    action      kmod_noop.c
+    action      libc_wrapper.c
+    action      pm_noop.c
+    action      posix_tty.c
+    action      sigio.c
+    action      sigiostubs.c
+    action      stdPci.c
+    action      stdResource.c
+    action      std_kbdEv.c
+    action      sysv_kbd.c
+    action      vidmem.c
+    action      xf86Axp.c
+    action      xf86Axp.h
+}
+
+symlink_xserver_hw_xfree86_ossupport_sunos() {
+    src_dir programs/Xserver/hw/xfree86/os-support/sunos
+    dst_dir xserver/xorg/hw/xfree86/os-support/sunos
+
+    action      sun_bios.c
+    action      sun_init.c
+    action      sun_io.c
+    action      sun_kbd.c
+    action      sun_kbdEv.c
+    action      sun_mouse.c
+    action      sun_vid.c
+}
+
+symlink_xserver_hw_xfree86_ossupport_sysv() {
+    src_dir programs/Xserver/hw/xfree86/os-support/sysv
+    dst_dir xserver/xorg/hw/xfree86/os-support/sysv
+
+    action      sysv_init.c
+    action      sysv_io.c
+    action      sysv_mouse.c
+    action      sysv_video.c
+    action      xqueue.c
+    action      xqueue.h
+}
+
+symlink_xserver_hw_xfree86_parser() {
+    src_dir programs/Xserver/hw/xfree86/parser
+    dst_dir xserver/xorg/hw/xfree86/parser
+
+    action      Configint.h
+    action      DRI.c
+    action      Device.c
+    action      Extensions.c
+    action      Files.c
+    action      Flags.c
+    action      Input.c
+    action      Keyboard.c
+    action      Layout.c
+    action      Module.c
+    action      Monitor.c
+    action      Pointer.c
+    action      Screen.c
+    action      Vendor.c
+    action      Video.c
+    action      configProcs.h
+    action      cpconfig.c
+    action      read.c
+    action      scan.c
+    action      write.c
+    action      xf86Optrec.h
+    action      xf86Parser.h
+    action      xf86tokens.h
+}
+
+symlink_xserver_hw_xfree86_rac() {
+    src_dir programs/Xserver/hw/xfree86/rac
+    dst_dir xserver/xorg/hw/xfree86/rac
+
+    action      xf86RAC.c
+    action      xf86RAC.h
+    action      xf86RACmodule.c
+}
+
+symlink_xserver_hw_xfree86_ramdac() {
+    src_dir programs/Xserver/hw/xfree86/ramdac
+    dst_dir xserver/xorg/hw/xfree86/ramdac
+
+    action      BT.c
+    action      BT.h
+    action      BTPriv.h
+    action      IBM.c
+    action      IBM.h
+    action      IBMPriv.h
+    action      TI.c
+    action      TI.h
+    action      TIPriv.h
+    action      xf86Cursor.c
+    action      xf86Cursor.h
+    action      xf86CursorPriv.h
+    action      xf86HWCurs.c
+    action      xf86RamDac.c
+    action      xf86RamDac.h
+    action      xf86RamDacCmap.c
+    action      xf86RamDacMod.c
+    action      xf86RamDacPriv.h
+}
+
+symlink_xserver_hw_xfree86_scanpci() {
+    src_dir programs/Xserver/hw/xfree86/scanpci
+    dst_dir xserver/xorg/hw/xfree86/scanpci
+
+    action      xf86PciData.h
+    action      xf86PciStdIds.h
+    action      xf86PciStr.h
+    action      xf86ScanPci.c
+    action      xf86ScanPci.h
+    
+    action      pciid2c.pl
+}
+
+symlink_xserver_hw_xfree86_shadowfb() {
+    src_dir programs/Xserver/hw/xfree86/shadowfb
+    dst_dir xserver/xorg/hw/xfree86/shadowfb
+
+    action      sfbmodule.c
+    action      shadow.c
+    action      shadowfb.h
+}
+
+symlink_xserver_hw_xfree86_vbe() {
+    src_dir programs/Xserver/hw/xfree86/vbe
+    dst_dir xserver/xorg/hw/xfree86/vbe
+
+    action      vbe.c
+    action      vbe.h
+    action      vbeModes.c
+    action      vbeModes.h
+    action      vbe_module.c
+}
+
+symlink_xserver_hw_xfree86_vgahw() {
+    src_dir programs/Xserver/hw/xfree86/vgahw
+    dst_dir xserver/xorg/hw/xfree86/vgahw
+
+    action      vgaCmap.c
+    action      vgaHW.c
+    action      vgaHW.h
+    action      vgaHWmodule.c
+}
+
+symlink_xserver_hw_xfree86_xaa() {
+    src_dir programs/Xserver/hw/xfree86/xaa
+    dst_dir xserver/xorg/hw/xfree86/xaa
+
+    action      xaa.h
+    action      xaaBitBlt.c
+    action      xaaBitOrder.c
+    action      xaaBitmap.c
+    action      xaaCpyArea.c
+    action      xaaCpyPlane.c
+    action      xaaCpyWin.c
+    action      xaaDashLine.c
+    action      xaaFallback.c
+    action      xaaFillArc.c
+    action      xaaFillPoly.c
+    action      xaaFillRect.c
+    action      xaaGC.c
+    action      xaaGCmisc.c
+    action      xaaImage.c
+    action      xaaInit.c
+    action      xaaInitAccel.c
+    action      xaaLine.c
+    action      xaaLineMisc.c
+    action      xaaNonTEGlyph.c
+    action      xaaNonTEText.c
+    action      xaaOffscreen.c
+    action      xaaOverlay.c
+    action      xaaOverlayDF.c
+    action      xaaPCache.c
+    action      xaaPaintWin.c
+    action      xaaPict.c
+    action      xaaROP.c
+    action      xaaRect.c
+    action      xaaSpans.c
+    action      xaaStateChange.c
+    action      xaaStipple.c
+    action      xaaTEGlyph.c
+    action      xaaTEText.c
+    action      xaaTables.c
+    action      xaaWideLine.c
+    action      xaaWrapper.c
+    action      xaaWrapper.h
+    action      xaacexp.h
+    action      xaalocal.h
+    action      xaarop.h
+    action      xaawrap.h
+}
+
+symlink_xserver_hw_xfree86_xf1bpp() {
+    src_dir programs/Xserver/hw/xfree86/xf1bpp
+    dst_dir xserver/xorg/hw/xfree86/xf1bpp
+
+    action      mfbmap.h
+    action      mfbmodule.c
+    action      mfbunmap.h
+    action      xf1bpp.h
+}
+
+symlink_xserver_hw_xfree86_xf4bpp() {
+    src_dir programs/Xserver/hw/xfree86/xf4bpp
+    dst_dir xserver/xorg/hw/xfree86/xf4bpp
+
+    action      OScompiler.h
+    action      emulOpStip.c
+    action      emulRepAre.c
+    action      emulTile.c
+    action      ibmTrace.h
+    action      mfbbres.c
+    action      mfbbresd.c
+    action      mfbfillarc.c
+    action      mfbhrzvert.c
+    action      mfbimggblt.c
+    action      mfbline.c
+    action      mfbzerarc.c
+    action      offscreen.c
+    action      ppcArea.c
+    action      ppcBStore.c
+    action      ppcCReduce.c
+    action      ppcClip.c
+    action      ppcCpArea.c
+    action      ppcDepth.c
+    action      ppcFillRct.c
+    action      ppcGC.c
+    action      ppcGCstr.h
+    action      ppcGetSp.c
+    action      ppcIO.c
+    action      ppcImg.c
+    action      ppcPixFS.c
+    action      ppcPixmap.c
+    action      ppcPntWin.c
+    action      ppcPolyPnt.c
+    action      ppcPolyRec.c
+    action      ppcQuery.c
+    action      ppcRslvC.c
+    action      ppcSetSp.c
+    action      ppcSpMcro.h
+    action      ppcWinFS.c
+    action      ppcWindow.c
+    action      vgaBitBlt.c
+    action      vgaGC.c
+    action      vgaImages.c
+    action      vgaReg.h
+    action      vgaSolid.c
+    action      vgaStipple.c
+    action      vgaVideo.h
+    action      vgamodule.c
+    action      wm3.c
+    action      wm3.h
+    action      xf4bpp.h
+}
+
+symlink_xserver_hw_xfree86_xf8_16bpp() {
+    src_dir programs/Xserver/hw/xfree86/xf8_16bpp
+    dst_dir xserver/xorg/hw/xfree86/xf8_16bpp
+
+    action      cfb8_16.h
+    action      cfb8_16module.c
+    action      cfbscrinit.c
+    action      cfbwindow.c
+}
+
+symlink_xserver_hw_xfree86_xf8_32bpp() {
+    src_dir programs/Xserver/hw/xfree86/xf8_32bpp
+    dst_dir xserver/xorg/hw/xfree86/xf8_32bpp
+
+    action      cfb8_32.h
+    action      cfb8_32module.c
+    action      cfbbstore.c
+    action      cfbcpyarea.c
+    action      cfbcpyplane.c
+    action      cfbgc.c
+    action      cfbgcmisc.c
+    action      cfbgcunder.c
+    action      cfbimage.c
+    action      cfbpntwin.c
+    action      cfbscrinit.c
+    action      cfbwindow.c
+    action      xf86overlay.c
+}
+
+symlink_xserver_hw_xfree86_xf8_32wid() {
+    src_dir programs/Xserver/hw/xfree86/xf8_32wid
+    dst_dir xserver/xorg/hw/xfree86/xf8_32wid
+
+    action      cfb8_32wid.h
+    action      cfb8_32widmodule.c
+    action      cfbscrinit.c
+    action      cfbwid.c
+    action      cfbwindow.c
+}
+
 symlink_xserver_hw_xnest() {
     src_dir programs/Xserver/hw/xnest
     dst_dir xserver/xorg/hw/xnest
@@ -4584,6 +5348,48 @@ symlink_xserver() {
     symlink_xserver_hw_dmx_glxProxy
     symlink_xserver_hw_dmx_input
     symlink_xserver_hw_vfb
+    symlink_xserver_hw_xfree86_common
+    symlink_xserver_hw_xfree86_ddc
+    symlink_xserver_hw_xfree86_dummylib
+    symlink_xserver_hw_xfree86_fbdevhw
+    symlink_xserver_hw_xfree86_i2c
+    symlink_xserver_hw_xfree86_int10
+    symlink_xserver_hw_xfree86_loader
+    symlink_xserver_hw_xfree86_ossupport
+    symlink_xserver_hw_xfree86_ossupport_bsd
+    symlink_xserver_hw_xfree86_ossupport_bsd_libusb
+    symlink_xserver_hw_xfree86_ossupport_bsdi
+    symlink_xserver_hw_xfree86_ossupport_bus
+    symlink_xserver_hw_xfree86_ossupport_dgux
+    symlink_xserver_hw_xfree86_ossupport_hurd
+    symlink_xserver_hw_xfree86_ossupport_linux
+    symlink_xserver_hw_xfree86_ossupport_linux_drm
+    symlink_xserver_hw_xfree86_ossupport_linux_int10
+    symlink_xserver_hw_xfree86_ossupport_linux_int10_vm86
+    symlink_xserver_hw_xfree86_ossupport_lynxos
+    symlink_xserver_hw_xfree86_ossupport_misc
+    symlink_xserver_hw_xfree86_ossupport_nto
+    symlink_xserver_hw_xfree86_ossupport_os2
+    symlink_xserver_hw_xfree86_ossupport_os2_int10
+    symlink_xserver_hw_xfree86_ossupport_pmax
+    symlink_xserver_hw_xfree86_ossupport_qnx4
+    symlink_xserver_hw_xfree86_ossupport_sco
+    symlink_xserver_hw_xfree86_ossupport_shared
+    symlink_xserver_hw_xfree86_ossupport_sunos
+    symlink_xserver_hw_xfree86_ossupport_sysv
+    symlink_xserver_hw_xfree86_parser
+    symlink_xserver_hw_xfree86_rac
+    symlink_xserver_hw_xfree86_ramdac
+    symlink_xserver_hw_xfree86_scanpci
+    symlink_xserver_hw_xfree86_shadowfb
+    symlink_xserver_hw_xfree86_vbe
+    symlink_xserver_hw_xfree86_vgahw
+    symlink_xserver_hw_xfree86_xaa
+    symlink_xserver_hw_xfree86_xf1bpp
+    symlink_xserver_hw_xfree86_xf4bpp
+    symlink_xserver_hw_xfree86_xf8_16bpp
+    symlink_xserver_hw_xfree86_xf8_32bpp
+    symlink_xserver_hw_xfree86_xf8_32wid
     symlink_xserver_hw_xnest
     symlink_xserver_hw_xwin
     symlink_xserver_ilbm
