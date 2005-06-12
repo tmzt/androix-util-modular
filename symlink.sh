@@ -3097,6 +3097,515 @@ symlink_app() {
 #
 #########
 
+
+symlink_xserver_GL_apple() {
+    src_dir programs/Xserver/GL/apple
+    dst_dir xserver/xorg/GL/apple
+
+    action      aglGlx.c
+    action      indirect.c
+}
+
+symlink_xserver_GL_dri() {
+    src_dir programs/Xserver/GL/dri
+    dst_dir xserver/xorg/GL/dri
+
+    action      dri.c
+    action      dri.h
+    action      drimodule.c
+    action      dristruct.h
+    action      sarea.h
+    action      xf86dri.c
+}
+
+symlink_xserver_GL_glx() {
+    src_dir programs/Xserver/GL/glx
+    dst_dir xserver/xorg/GL/glx
+
+    action      g_disptab.c
+    action      g_disptab.h
+    action      g_disptab_EXT.c
+    action      g_disptab_EXT.h
+    action      g_render.c
+    action      g_renderswap.c
+    action      g_single.c
+    action      g_singleswap.c
+    action      global.c
+    action      glxbuf.c
+    action      glxbuf.h
+    action      glxcmds.c
+    action      glxcmdsswap.c
+    action      glxcontext.h
+    action      glxdrawable.h
+    action      glxerror.h
+    action      glxext.c
+    action      glxext.h
+    action      glxfb.c
+    action      glxfb.h
+    action      glximports.c
+    action      glximports.h
+    action      glxmem.c
+    action      glxmem.h
+    action      glxpix.c
+    action      glxpix.h
+    action      glxscreens.c
+    action      glxscreens.h
+    action      glxserver.h
+    action      glxutil.c
+    action      glxutil.h
+    action      impsize.h
+    action      render2.c
+    action      render2swap.c
+    action      renderpix.c
+    action      renderpixswap.c
+    action      rensize.c
+    action      rensizetab.c
+    action      single2.c
+    action      single2swap.c
+    action      singlepix.c
+    action      singlepixswap.c
+    action      singlesize.c
+    action      singlesize.h
+    action      unpack.h
+    action      xfont.c
+}
+
+symlink_xserver_GL_include_GL() {
+    src_dir programs/Xserver/GL/include/GL
+    dst_dir xserver/xorg/GL/include/GL
+
+    action      glx_ansic.h
+    action      xf86glx.h
+}
+
+symlink_xserver_GL_mesa_GLcore() {
+    src_dir programs/Xserver/GL/mesa/GLcore
+    dst_dir xserver/xorg/GL/mesa/GLcore
+
+    action      GLcoremodule.c
+}
+
+symlink_xserver_GL_mesa_X() {
+    src_dir programs/Xserver/GL/mesa/X
+    dst_dir xserver/xorg/GL/mesa/X
+
+    action      xf86glx.c
+    action      xf86glx_util.c
+    action      xf86glx_util.h
+    action      xf86glxint.h
+}
+
+symlink_xserver_GL_windows() {
+    src_dir programs/Xserver/GL/windows
+    dst_dir xserver/xorg/GL/windows
+
+    action      glwindows.h
+    action      glwrap.c
+    action      indirect.c
+}
+
+symlink_xserver_XTrap() {
+    src_dir programs/Xserver/XTrap
+    dst_dir xserver/xorg/XTrap
+
+    action      xf86XTrapModule.c
+    action      xtrapddmi.c
+    action      xtrapdi.c
+    action      xtrapdiswp.c
+    action      xtrapditbl.c
+}
+
+symlink_xserver_Xext() {
+    src_dir programs/Xserver/Xext
+    dst_dir xserver/xorg/Xext
+
+    action      EVI.c
+    action      EVIstruct.h
+    action      appgroup.c
+    action      appgroup.h
+    action      bigreq.c
+    action      cup.c
+    action      dgaproc.h
+    action      dmx.c
+    action      dpms.c
+    action      dpmsproc.h
+    action      dpmsstubs.c
+    action      fontcache.c
+    action      mbuf.c
+    action      mbufbf.c
+    action      mbufpx.c
+    action      mitmisc.c
+    action      panoramiX.c
+    action      panoramiX.h
+    action      panoramiXSwap.c
+    action      panoramiXh.h
+    action      panoramiXprocs.c
+    action      panoramiXsrv.h
+    action      sampleEVI.c
+    action      saver.c
+    action      security.c
+    action      shape.c
+    action      shm.c
+    action      sleepuntil.c
+    action      sleepuntil.h
+    action      sync.c
+    action      vidmodeproc.h
+    action      xcmisc.c
+    action      xevie.c
+    action      xf86bigfont.c
+    action      xf86dga.c
+    action      xf86dga2.c
+    action      xf86dgaext.h
+    action      xf86misc.c
+    action      xf86miscproc.h
+    action      xf86vmode.c
+    action      xprint.c
+    action      xres.c
+    action      xtest.c
+    action      xtest1dd.c
+    action      xtest1dd.h
+    action      xtest1di.c
+    action      xvdisp.c
+    action      xvdisp.h
+    action      xvdix.h
+    action      xvmain.c
+    action      xvmc.c
+    action      xvmcext.h
+    action      xvmod.c
+    action      xvmodproc.h
+}
+
+symlink_xserver_Xext_extmod() {
+    src_dir programs/Xserver/Xext/extmod
+    dst_dir xserver/xorg/Xext/extmod
+
+    action      modinit.c
+    action      modinit.h
+}
+
+symlink_xserver_Xi() {
+    src_dir programs/Xserver/Xi
+    dst_dir xserver/xorg/Xi
+
+    action      allowev.c
+    action      allowev.h
+    action      chgdctl.c
+    action      chgdctl.h
+    action      chgfctl.c
+    action      chgfctl.h
+    action      chgkbd.c
+    action      chgkbd.h
+    action      chgkmap.c
+    action      chgkmap.h
+    action      chgprop.c
+    action      chgprop.h
+    action      chgptr.c
+    action      chgptr.h
+    action      closedev.c
+    action      closedev.h
+    action      devbell.c
+    action      devbell.h
+    action      exevents.c
+    action      exglobals.h
+    action      extinit.c
+    action      getbmap.c
+    action      getbmap.h
+    action      getdctl.c
+    action      getdctl.h
+    action      getfctl.c
+    action      getfctl.h
+    action      getfocus.c
+    action      getfocus.h
+    action      getkmap.c
+    action      getkmap.h
+    action      getmmap.c
+    action      getmmap.h
+    action      getprop.c
+    action      getprop.h
+    action      getselev.c
+    action      getselev.h
+    action      getvers.c
+    action      getvers.h
+    action      grabdev.c
+    action      grabdev.h
+    action      grabdevb.c
+    action      grabdevb.h
+    action      grabdevk.c
+    action      grabdevk.h
+    action      gtmotion.c
+    action      gtmotion.h
+    action      listdev.c
+    action      listdev.h
+    action      opendev.c
+    action      opendev.h
+    action      queryst.c
+    action      queryst.h
+    action      selectev.c
+    action      selectev.h
+    action      sendexev.c
+    action      sendexev.h
+    action      setbmap.c
+    action      setbmap.h
+    action      setdval.c
+    action      setdval.h
+    action      setfocus.c
+    action      setfocus.h
+    action      setmmap.c
+    action      setmmap.h
+    action      setmode.c
+    action      setmode.h
+    action      stubs.c
+    action      ungrdev.c
+    action      ungrdev.h
+    action      ungrdevb.c
+    action      ungrdevb.h
+    action      ungrdevk.c
+    action      ungrdevk.h
+}
+
+symlink_xserver_Xprint() {
+    src_dir programs/Xserver/Xprint
+    dst_dir xserver/xorg/Xprint
+
+    action      AttrValid.c
+    action      AttrValid.h
+    action      DiPrint.h
+    action      Init.c
+    action      Oid.c
+    action      Oid.h
+    action      OidDefs.h
+    action      OidStrs.h
+    action      Util.c
+    action      ValTree.c
+    action      attributes.c
+    action      attributes.h
+    action      ddxInit.c
+    action      mediaSizes.c
+    action      spooler.c
+    action      spooler.h
+}
+
+symlink_xserver_Xprint_ps() {
+    src_dir programs/Xserver/Xprint/ps
+    dst_dir xserver/xorg/Xprint/ps
+
+    action      Ps.h
+    action      PsArc.c
+    action      PsArea.c
+    action      PsAttVal.c
+    action      PsAttr.c
+    action      PsCache.c
+    action      PsColor.c
+    action      PsDef.h
+    action      PsFTFonts.c
+    action      PsFonts.c
+    action      PsGC.c
+    action      PsImageUtil.c
+    action      PsInit.c
+    action      PsLine.c
+    action      PsMisc.c
+    action      PsPixel.c
+    action      PsPixmap.c
+    action      PsPolygon.c
+    action      PsPrint.c
+    action      PsSpans.c
+    action      PsText.c
+    action      PsWindow.c
+    action      psout.c
+    action      psout.h
+    action      psout_ft.c
+    action      psout_ftpstype1.c
+    action      psout_ftpstype3.c
+    action      ttf2pt1wrap.c
+}
+
+symlink_xserver_Xprint_pcl() {
+    src_dir programs/Xserver/Xprint/pcl
+    dst_dir xserver/xorg/Xprint/pcl
+
+    action      Pcl.h
+    action      PclArc.c
+    action      PclArea.c
+    action      PclAttVal.c
+    action      PclAttr.c
+    action      PclColor.c
+    action      PclCursor.c
+    action      PclDef.h
+    action      PclFonts.c
+    action      PclGC.c
+    action      PclInit.c
+    action      PclLine.c
+    action      PclMisc.c
+    action      PclPixel.c
+    action      PclPixmap.c
+    action      PclPolygon.c
+    action      PclPrint.c
+    action      PclSFonts.c
+    action      PclSFonts.h
+    action      PclSpans.c
+    action      PclText.c
+    action      PclWindow.c
+    action      Pclmap.h
+}
+
+symlink_xserver_Xprint_raster() {
+    src_dir programs/Xserver/Xprint/raster
+    dst_dir xserver/xorg/Xprint/raster
+
+    action      Raster.c
+    action      Raster.h
+    action      RasterAttVal.c
+}
+
+symlink_xserver_afb() {
+    src_dir programs/Xserver/afb
+    dst_dir xserver/xorg/afb
+
+    action      afb.h
+    action      afbbitblt.c
+    action      afbblt.c
+    action      afbbres.c
+    action      afbbresd.c
+    action      afbbstore.c
+    action      afbclip.c
+    action      afbcmap.c
+    action      afbfillarc.c
+    action      afbfillrct.c
+    action      afbfillsp.c
+    action      afbfont.c
+    action      afbgc.c
+    action      afbgetsp.c
+    action      afbhrzvert.c
+    action      afbimage.c
+    action      afbimggblt.c
+    action      afbline.c
+    action      afbmisc.c
+    action      afbmodule.c
+    action      afbpixmap.c
+    action      afbply1rct.c
+    action      afbplygblt.c
+    action      afbpntarea.c
+    action      afbpntwin.c
+    action      afbpolypnt.c
+    action      afbpushpxl.c
+    action      afbscrinit.c
+    action      afbsetsp.c
+    action      afbtegblt.c
+    action      afbtile.c
+    action      afbwindow.c
+    action      afbzerarc.c
+}
+
+symlink_xserver_cfb() {
+    src_dir programs/Xserver/cfb
+    dst_dir xserver/xorg/cfb
+
+    action      cfb.h
+    action      cfb16.h
+    action      cfb24.h
+    action      cfb32.h
+    action      cfb8bit.c
+    action      cfb8bit.h
+    action      cfb8line.c
+    action      cfballpriv.c
+    action      cfbbitblt.c
+    action      cfbblt.c
+    action      cfbbres.c
+    action      cfbbresd.c
+    action      cfbbstore.c
+    action      cfbcmap.c
+    action      cfbcppl.c
+    action      cfbfillarc.c
+    action      cfbfillrct.c
+    action      cfbfillsp.c
+    action      cfbgc.c
+    action      cfbgetsp.c
+    action      cfbglblt8.c
+    action      cfbhrzvert.c
+    action      cfbigblt8.c
+    action      cfbimage.c
+    action      cfbline.c
+    action      cfbmap.h
+    action      cfbmodule.c
+    action      cfbmskbits.c
+    action      cfbmskbits.h
+    action      cfbpixmap.c
+    action      cfbply1rct.c
+    action      cfbpntwin.c
+    action      cfbpolypnt.c
+    action      cfbpush8.c
+    action      cfbrctstp8.c
+    action      cfbrrop.c
+    action      cfbrrop.h
+    action      cfbscrinit.c
+    action      cfbsetsp.c
+    action      cfbsolid.c
+    action      cfbtab.h
+    action      cfbteblt8.c
+    action      cfbtegblt.c
+    action      cfbtile32.c
+    action      cfbtileodd.c
+    action      cfbunmap.h
+    action      cfbwindow.c
+    action      cfbzerarc.c
+    action      stip68kgnu.h
+}
+
+
+symlink_xserver_cfb16() {
+    src_dir programs/Xserver/cfb16
+    dst_dir xserver/xorg/cfb16
+
+    action      cfbmodule.c
+}
+
+symlink_xserver_cfb24() {
+    src_dir programs/Xserver/cfb24
+    dst_dir xserver/xorg/cfb24
+
+    action      cfbmodule.c
+    action      cfbrrop24.h
+}
+
+symlink_xserver_cfb32() {
+    src_dir programs/Xserver/cfb32
+    dst_dir xserver/xorg/cfb32
+
+    action      cfbmodule.c
+}
+
+symlink_xserver_composite() {
+    src_dir programs/Xserver/composite
+    dst_dir xserver/xorg/composite
+
+    action      compalloc.c
+    action      compext.c
+    action      compinit.c
+    action      compint.h
+    action      compwindow.c
+}
+
+symlink_xserver_damageext() {
+    src_dir programs/Xserver/damageext
+    dst_dir xserver/xorg/damageext
+
+    action      damageext.c
+    action      damageext.h
+    action      damageextint.h
+}
+
+symlink_xserver_dbe() {
+    src_dir programs/Xserver/dbe
+    dst_dir xserver/xorg/dbe
+
+    action      dbe.c
+    action      dbemodule.c
+    action      dbestruct.h
+    action      midbe.c
+    action      midbe.h
+    action      midbestr.h
+}
+
 symlink_xserver_dix() {
     src_dir programs/Xserver/dix
     dst_dir xserver/xorg/dix
@@ -3131,6 +3640,474 @@ symlink_xserver_dix() {
     action	buildatoms
     action	BuiltInAtoms
     action	CHANGES
+}
+
+symlink_xserver_fb() {
+    src_dir programs/Xserver/fb
+    dst_dir xserver/xorg/fb
+
+    action      fb.h
+    action      fb24_32.c
+    action      fb24_32.h
+    action      fballpriv.c
+    action      fbarc.c
+    action      fbbits.c
+    action      fbbits.h
+    action      fbblt.c
+    action      fbbltone.c
+    action      fbbstore.c
+    action      fbcmap.c
+    action      fbcompose.c
+    action      fbcopy.c
+    action      fbedge.c
+    action      fbedgeimp.h
+    action      fbfill.c
+    action      fbfillrect.c
+    action      fbfillsp.c
+    action      fbgc.c
+    action      fbgetsp.c
+    action      fbglyph.c
+    action      fbimage.c
+    action      fbline.c
+    action      fbmmx.c
+    action      fbmmx.h
+    action      fbmodule.c
+    action      fboverlay.c
+    action      fboverlay.h
+    action      fbpict.c
+    action      fbpict.h
+    action      fbpixmap.c
+    action      fbpoint.c
+    action      fbpseudocolor.c
+    action      fbpush.c
+    action      fbrop.h
+    action      fbscreen.c
+    action      fbseg.c
+    action      fbsetsp.c
+    action      fbsolid.c
+    action      fbstipple.c
+    action      fbtile.c
+    action      fbtrap.c
+    action      fbutil.c
+    action      fbwindow.c
+}
+
+symlink_xserver_hw_darwin() {
+    src_dir programs/Xserver/hw/darwin
+    dst_dir xserver/xorg/hw/darwin
+
+    action      darwin.c
+    action      darwin.h
+    action      darwinClut8.h
+    action      darwinEvents.c
+    action      darwinKeyboard.c
+    action      darwinKeyboard.h
+    action      darwinXinput.c
+}
+
+symlink_xserver_hw_darwin_iokit() {
+    src_dir programs/Xserver/hw/darwin/iokit
+    dst_dir xserver/xorg/hw/darwin/iokit
+
+    action      xfIOKit.c
+    action      xfIOKit.h
+    action      xfIOKitCursor.c
+    action      xfIOKitStartup.c
+}
+
+symlink_xserver_hw_darwin_quartz() {
+    src_dir programs/Xserver/hw/darwin/quartz
+    dst_dir xserver/xorg/hw/darwin/quartz
+
+    action      Preferences.h
+    action      XApplication.h
+    action      XDarwinStartup.c
+    action      XServer.h
+    action      applewm.c
+    action      applewmExt.h
+    action      keysym2ucs.c
+    action      keysym2ucs.h
+    action      pseudoramiX.c
+    action      pseudoramiX.h
+    action      quartz.c
+    action      quartz.h
+    action      quartzAudio.c
+    action      quartzAudio.h
+    action      quartzCommon.h
+    action      quartzCursor.c
+    action      quartzCursor.h
+    action      quartzKeyboard.c
+    action      quartzPasteboard.c
+    action      quartzPasteboard.h
+    action      quartzStartup.c
+}
+
+symlink_xserver_hw_darwin_quartz_cr() {
+    src_dir programs/Xserver/hw/darwin/quartz/cr
+    dst_dir xserver/xorg/hw/darwin/quartz/cr
+
+    action      XView.h
+    action      cr.h
+}
+
+symlink_xserver_hw_darwin_quartz_fullscreen() {
+    src_dir programs/Xserver/hw/darwin/quartz/fullscreen
+    dst_dir xserver/xorg/hw/darwin/quartz/fullscreen
+
+    action      fullscreen.c
+    action      quartzCursor.c
+    action      quartzCursor.h
+}
+
+symlink_xserver_hw_darwin_quartz_xpr() {
+    src_dir programs/Xserver/hw/darwin/quartz/xpr
+    dst_dir xserver/xorg/hw/darwin/quartz/xpr
+
+    action      Xplugin.h
+    action      appledri.c
+    action      dri.c
+    action      dri.h
+    action      dristruct.h
+    action      x-hash.c
+    action      x-hash.h
+    action      x-hook.c
+    action      x-hook.h
+    action      x-list.c
+    action      x-list.h
+    action      xpr.h
+    action      xprAppleWM.c
+    action      xprCursor.c
+    action      xprFrame.c
+    action      xprScreen.c
+}
+
+symlink_xserver_hw_dmx() {
+    src_dir programs/Xserver/hw/dmx
+    dst_dir xserver/xorg/hw/dmx
+
+    action      dmx.h
+    action      dmx_glxvisuals.c
+    action      dmx_glxvisuals.h
+    action      dmxcb.c
+    action      dmxcb.h
+    action      dmxclient.h
+    action      dmxcmap.c
+    action      dmxcmap.h
+    action      dmxcursor.c
+    action      dmxcursor.h
+    action      dmxdpms.c
+    action      dmxdpms.h
+    action      dmxextension.c
+    action      dmxextension.h
+    action      dmxfont.c
+    action      dmxfont.h
+    action      dmxgc.c
+    action      dmxgc.h
+    action      dmxgcops.c
+    action      dmxgcops.h
+    action      dmxinit.c
+    action      dmxinit.h
+    action      dmxinput.c
+    action      dmxinput.h
+    action      dmxlog.c
+    action      dmxlog.h
+    action      dmxpict.c
+    action      dmxpict.h
+    action      dmxpixmap.c
+    action      dmxpixmap.h
+    action      dmxprop.c
+    action      dmxprop.h
+    action      dmxscrinit.c
+    action      dmxscrinit.h
+    action      dmxshadow.c
+    action      dmxshadow.h
+    action      dmxstat.c
+    action      dmxstat.h
+    action      dmxsync.c
+    action      dmxsync.h
+    action      dmxvisual.c
+    action      dmxvisual.h
+    action      dmxwindow.c
+    action      dmxwindow.h
+}
+
+symlink_xserver_hw_dmx_examples() {
+    src_dir programs/Xserver/hw/dmx/examples
+    dst_dir xserver/xorg/hw/dmx/examples
+
+    action      dmxaddinput.c
+    action      dmxaddscreen.c
+    action      dmxreconfig.c
+    action      dmxresize.c
+    action      dmxrminput.c
+    action      dmxrmscreen.c
+    action      dmxwininfo.c
+    action      ev.c
+    action      evi.c
+    action      res.c
+    action      xbell.c
+    action      xdmx.c
+    action      xinput.c
+    action      xled.c
+    action      xtest.c
+}
+
+symlink_xserver_hw_dmx_glxProxy() {
+    src_dir programs/Xserver/hw/dmx/glxProxy
+    dst_dir xserver/xorg/hw/dmx/glxProxy
+
+    action      compsize.c
+    action      g_disptab.c
+    action      g_disptab.h
+    action      g_renderswap.c
+    action      global.c
+    action      glxcmds.c
+    action      glxcmdsswap.c
+    action      glxcontext.h
+    action      glxdrawable.h
+    action      glxerror.h
+    action      glxext.c
+    action      glxext.h
+    action      glxfbconfig.c
+    action      glxfbconfig.h
+    action      glxscreens.c
+    action      glxscreens.h
+    action      glxserver.h
+    action      glxsingle.c
+    action      glxsingle.h
+    action      glxswap.c
+    action      glxswap.h
+    action      glxutil.c
+    action      glxutil.h
+    action      glxvendor.c
+    action      glxvendor.h
+    action      glxvisuals.c
+    action      glxvisuals.h
+    action      render2swap.c
+    action      renderpixswap.c
+    action      unpack.h
+}
+
+symlink_xserver_hw_dmx_input() {
+    src_dir programs/Xserver/hw/dmx/input
+    dst_dir xserver/xorg/hw/dmx/input
+
+    action      ChkNotMaskEv.c
+    action      ChkNotMaskEv.h
+    action      dmxarg.c
+    action      dmxarg.h
+    action      dmxbackend.c
+    action      dmxbackend.h
+    action      dmxcommon.c
+    action      dmxcommon.h
+    action      dmxconsole.c
+    action      dmxconsole.h
+    action      dmxdetach.c
+    action      dmxdummy.c
+    action      dmxdummy.h
+    action      dmxeq.c
+    action      dmxeq.h
+    action      dmxevents.c
+    action      dmxevents.h
+    action      dmxinputinit.c
+    action      dmxinputinit.h
+    action      dmxmap.c
+    action      dmxmap.h
+    action      dmxmotion.c
+    action      dmxmotion.h
+    action      dmxsigio.c
+    action      dmxsigio.h
+    action      dmxxinput.c
+    action      lnx-keyboard.c
+    action      lnx-keyboard.h
+    action      lnx-ms.c
+    action      lnx-ms.h
+    action      lnx-ps2.c
+    action      lnx-ps2.h
+    action      usb-common.c
+    action      usb-common.h
+    action      usb-keyboard.c
+    action      usb-keyboard.h
+    action      usb-mouse.c
+    action      usb-mouse.h
+    action      usb-other.c
+    action      usb-other.h
+    action      usb-private.h
+}
+
+symlink_xserver_hw_vfb() {
+    src_dir programs/Xserver/hw/vfb
+    dst_dir xserver/xorg/hw/vfb
+
+    action      InitInput.c
+    action      InitOutput.c
+    action      lk201kbd.h
+}
+
+symlink_xserver_hw_xnest() {
+    src_dir programs/Xserver/hw/xnest
+    dst_dir xserver/xorg/hw/xnest
+
+    action      Args.c
+    action      Args.h
+    action      Color.c
+    action      Color.h
+    action      Cursor.c
+    action      Display.c
+    action      Display.h
+    action      Drawable.h
+    action      Events.c
+    action      Events.h
+    action      Font.c
+    action      GC.c
+    action      GCOps.c
+    action      GCOps.h
+    action      GetTime.c
+    action      Handlers.c
+    action      Handlers.h
+    action      Init.c
+    action      Init.h
+    action      Keyboard.c
+    action      Keyboard.h
+    action      Pixmap.c
+    action      Pointer.c
+    action      Pointer.h
+    action      Screen.c
+    action      Screen.h
+    action      TestExt.c
+    action      Visual.c
+    action      Visual.h
+    action      Window.c
+    action      XNCursor.h
+    action      XNFont.h
+    action      XNGC.h
+    action      XNPixmap.h
+    action      XNWindow.h
+    action      Xnest.h
+    action      os2Stub.c
+}
+
+symlink_xserver_hw_xwin() {
+    src_dir programs/Xserver/hw/xwin
+    dst_dir xserver/xorg/hw/xwin
+
+    action      InitInput.c
+    action      InitOutput.c
+    action      ddraw.h
+    action      win.h
+    action      winallpriv.c
+    action      winauth.c
+    action      winblock.c
+    action      winclip.c
+    action      winclipboard.h
+    action      winclipboardinit.c
+    action      winclipboardtextconv.c
+    action      winclipboardthread.c
+    action      winclipboardunicode.c
+    action      winclipboardwndproc.c
+    action      winclipboardwrappers.c
+    action      winclipboardxevents.c
+    action      wincmap.c
+    action      winconfig.c
+    action      winconfig.h
+    action      wincreatewnd.c
+    action      wincursor.c
+    action      windialogs.c
+    action      winengine.c
+    action      winerror.c
+    action      winfillsp.c
+    action      winfont.c
+    action      wingc.c
+    action      wingetsp.c
+    action      winglobals.c
+    action      winkeybd.c
+    action      winkeybd.h
+    action      winkeyhook.c
+    action      winkeymap.h
+    action      winkeynames.h
+    action      winlayouts.h
+    action      winmessages.h
+    action      winmisc.c
+    action      winmouse.c
+    action      winms.h
+    action      winmsg.c
+    action      winmsg.h
+    action      winmultiwindowclass.c
+    action      winmultiwindowclass.h
+    action      winmultiwindowicons.c
+    action      winmultiwindowshape.c
+    action      winmultiwindowwindow.c
+    action      winmultiwindowwm.c
+    action      winmultiwindowwndproc.c
+    action      winnativegdi.c
+    action      winpfbdd.c
+    action      winpixmap.c
+    action      winpntwin.c
+    action      winpolyline.c
+    action      winprefs.c
+    action      winprefs.h
+    action      winpriv.c
+    action      winpriv.h
+    action      winprocarg.c
+    action      winpushpxl.c
+    action      winrandr.c
+    action      winregistry.c
+    action      winresource.h
+    action      winrop.c
+    action      winscrinit.c
+    action      winsetsp.c
+    action      winshaddd.c
+    action      winshadddnl.c
+    action      winshadgdi.c
+    action      wintrayicon.c
+    action      winvalargs.c
+    action      winvideo.c
+    action      winwakeup.c
+    action      winwin32rootless.c
+    action      winwin32rootlesswindow.c
+    action      winwin32rootlesswndproc.c
+    action      winwindow.c
+    action      winwindow.h
+    action      winwindowswm.c
+    action      winwndproc.c
+}
+
+symlink_xserver_ilbm() {
+    src_dir programs/Xserver/ilbm
+    dst_dir xserver/xorg/ilbm
+
+    action      ilbm.h
+    action      ilbmbitblt.c
+    action      ilbmblt.c
+    action      ilbmbres.c
+    action      ilbmbresd.c
+    action      ilbmbstore.c
+    action      ilbmclip.c
+    action      ilbmcmap.c
+    action      ilbmfillarc.c
+    action      ilbmfillrct.c
+    action      ilbmfillsp.c
+    action      ilbmfont.c
+    action      ilbmgc.c
+    action      ilbmgetsp.c
+    action      ilbmhrzvert.c
+    action      ilbmimage.c
+    action      ilbmimggblt.c
+    action      ilbmline.c
+    action      ilbmmisc.c
+    action      ilbmpixmap.c
+    action      ilbmply1rct.c
+    action      ilbmplygblt.c
+    action      ilbmpntarea.c
+    action      ilbmpntwin.c
+    action      ilbmpolypnt.c
+    action      ilbmpushpxl.c
+    action      ilbmscrinit.c
+    action      ilbmsetsp.c
+    action      ilbmtegblt.c
+    action      ilbmtile.c
+    action      ilbmwindow.c
+    action      ilbmzerarc.c
 }
 
 symlink_xserver_include() {
@@ -3185,12 +4162,452 @@ symlink_xserver_include() {
     action	XIstubs.h
 }
 
-symlink_xserver() {
-    symlink_xserver_dix
-    symlink_xserver_include
-#    ...
+symlink_xserver_iplan2p2() {
+    src_dir programs/Xserver/iplan2p2
+    dst_dir xserver/xorg/iplan2p2
 }
 
+symlink_xserver_iplan2p4() {
+    src_dir programs/Xserver/iplan2p4
+    dst_dir xserver/xorg/iplan2p4
+
+    action      ipl.h
+    action      iplallpriv.c
+    action      iplbitblt.c
+    action      iplblt.c
+    action      iplbres.c
+    action      iplbresd.c
+    action      iplbstore.c
+    action      iplcmap.c
+    action      iplfillarc.c
+    action      iplfillrct.c
+    action      iplfillsp.c
+    action      iplgc.c
+    action      iplgetsp.c
+    action      iplhrzvert.c
+    action      iplimage.c
+    action      iplline.c
+    action      iplmap.h
+    action      iplmergerop.h
+    action      iplmskbits.c
+    action      iplmskbits.h
+    action      iplpack.c
+    action      iplpack.h
+    action      iplpixmap.c
+    action      iplply1rct.c
+    action      iplpntwin.c
+    action      iplpolypnt.c
+    action      iplrrop.c
+    action      iplrrop.h
+    action      iplscrinit.c
+    action      iplsetsp.c
+    action      iplsolid.c
+    action      ipltegblt.c
+    action      ipltile32.c
+    action      ipltileodd.c
+    action      iplwindow.c
+}
+
+symlink_xserver_iplan2p8() {
+    src_dir programs/Xserver/iplan2p8
+    dst_dir xserver/xorg/iplan2p8
+
+}
+
+symlink_xserver_lbx() {
+    src_dir programs/Xserver/lbx
+    dst_dir xserver/xorg/lbx
+
+    action      lbxcmap.c
+    action      lbxdata.h
+    action      lbxdix.c
+    action      lbxexts.c
+    action      lbxgfx.c
+    action      lbxmain.c
+    action      lbxopts.c
+    action      lbxprop.c
+    action      lbxserve.h
+    action      lbxsquish.c
+    action      lbxsrvopts.h
+    action      lbxswap.c
+    action      lbxtables.c
+    action      lbxtags.c
+    action      lbxtags.h
+    action      lbxzerorep.c
+}
+
+symlink_xserver_mfb() {
+    src_dir programs/Xserver/mfb
+    dst_dir xserver/xorg/mfb
+
+    action      fastblt.h
+    action      maskbits.c
+    action      maskbits.h
+    action      mergerop.h
+    action      mfb.h
+    action      mfbbitblt.c
+    action      mfbblt.c
+    action      mfbbres.c
+    action      mfbbresd.c
+    action      mfbbstore.c
+    action      mfbclip.c
+    action      mfbcmap.c
+    action      mfbfillarc.c
+    action      mfbfillrct.c
+    action      mfbfillsp.c
+    action      mfbfont.c
+    action      mfbgc.c
+    action      mfbgetsp.c
+    action      mfbhrzvert.c
+    action      mfbimage.c
+    action      mfbimggblt.c
+    action      mfbline.c
+    action      mfbmisc.c
+    action      mfbmodule.c
+    action      mfbpixmap.c
+    action      mfbply1rct.c
+    action      mfbplygblt.c
+    action      mfbpntarea.c
+    action      mfbpntwin.c
+    action      mfbpolypnt.c
+    action      mfbpushpxl.c
+    action      mfbscrclse.c
+    action      mfbscrinit.c
+    action      mfbsetsp.c
+    action      mfbtegblt.c
+    action      mfbtile.c
+    action      mfbwindow.c
+    action      mfbzerarc.c
+}
+
+symlink_xserver_mi() {
+    src_dir programs/Xserver/mi
+    dst_dir xserver/xorg/mi
+
+    action      cbrt.c
+    action      mi.h
+    action      miarc.c
+    action      mibank.c
+    action      mibank.h
+    action      mibitblt.c
+    action      mibstore.c
+    action      mibstore.h
+    action      mibstorest.h
+    action      miclipn.c
+    action      micmap.c
+    action      micmap.h
+    action      micoord.h
+    action      micursor.c
+    action      midash.c
+    action      midispcur.c
+    action      mieq.c
+    action      miexpose.c
+    action      mifillarc.c
+    action      mifillarc.h
+    action      mifillrct.c
+    action      mifpoly.h
+    action      mifpolycon.c
+    action      migc.c
+    action      migc.h
+    action      miglblt.c
+    action      miline.h
+    action      mioverlay.c
+    action      mioverlay.h
+    action      mipointer.c
+    action      mipointer.h
+    action      mipointrst.h
+    action      mipoly.c
+    action      mipoly.h
+    action      mipolycon.c
+    action      mipolygen.c
+    action      mipolypnt.c
+    action      mipolyrect.c
+    action      mipolyseg.c
+    action      mipolytext.c
+    action      mipolyutil.c
+    action      mipushpxl.c
+    action      miregion.c
+    action      miscanfill.h
+    action      miscrinit.c
+    action      mispans.c
+    action      mispans.h
+    action      misprite.c
+    action      misprite.h
+    action      mispritest.h
+    action      mistruct.h
+    action      mivalidate.h
+    action      mivaltree.c
+    action      miwideline.c
+    action      miwideline.h
+    action      miwindow.c
+    action      mizerarc.c
+    action      mizerarc.h
+    action      mizerclip.c
+    action      mizerline.c
+}
+
+symlink_xserver_miext_cw() {
+    src_dir programs/Xserver/miext/cw
+    dst_dir xserver/xorg/miext/cw
+
+    action      cw.c
+    action      cw.h
+    action      cw_ops.c
+    action      cw_render.c
+}
+
+symlink_xserver_miext_damage() {
+    src_dir programs/Xserver/miext/damage
+    dst_dir xserver/xorg/miext/damage
+
+    action      damage.c
+    action      damage.h
+    action      damagestr.h
+}
+
+symlink_xserver_miext_layer() {
+    src_dir programs/Xserver/miext/layer
+    dst_dir xserver/xorg/miext/layer
+
+    action      layer.h
+    action      layergc.c
+    action      layerinit.c
+    action      layerpict.c
+    action      layerstr.h
+    action      layerwin.c
+    action      laymodule.c
+}
+
+symlink_xserver_miext_rootless() {
+    src_dir programs/Xserver/miext/rootless
+    dst_dir xserver/xorg/miext/rootless
+
+    action      rootless.h
+    action      rootlessCommon.c
+    action      rootlessCommon.h
+    action      rootlessConfig.h
+    action      rootlessGC.c
+    action      rootlessScreen.c
+    action      rootlessValTree.c
+    action      rootlessWindow.c
+    action      rootlessWindow.h
+}
+
+symlink_xserver_miext_rootless_accel() {
+    src_dir programs/Xserver/miext/rootless/accel
+    dst_dir xserver/xorg/miext/rootless/accel
+
+    action      rlAccel.c
+    action      rlAccel.h
+    action      rlBlt.c
+    action      rlCopy.c
+    action      rlFill.c
+    action      rlFillRect.c
+    action      rlFillSpans.c
+    action      rlGlyph.c
+    action      rlSolid.c
+}
+
+symlink_xserver_miext_shadow() {
+    src_dir programs/Xserver/miext/shadow
+    dst_dir xserver/xorg/miext/shadow
+
+    action      shadow.c
+    action      shadow.h
+    action      shalloc.c
+    action      shmodule.c
+    action      shpacked.c
+    action      shplanar.c
+    action      shplanar8.c
+    action      shrot16pack.c
+    action      shrot16pack_180.c
+    action      shrot16pack_270.c
+    action      shrot16pack_90.c
+    action      shrot32pack.c
+    action      shrot32pack_180.c
+    action      shrot32pack_270.c
+    action      shrot32pack_90.c
+    action      shrot8pack.c
+    action      shrot8pack_180.c
+    action      shrot8pack_270.c
+    action      shrot8pack_90.c
+    action      shrotate.c
+    action      shrotpack.h
+}
+
+symlink_xserver_os() {
+    src_dir programs/Xserver/os
+    dst_dir xserver/xorg/os
+
+    action      WaitFor.c
+    action      access.c
+    action      auth.c
+    action      connection.c
+    action      io.c
+    action      k5auth.c
+    action      lbxio.c
+    action      log.c
+    action      mitauth.c
+    action      oscolor.c
+    action      osdep.h
+    action      osinit.c
+    action      rpcauth.c
+    action      secauth.c
+    action      utils.c
+    action      xalloc.c
+    action      xdmauth.c
+    action      xdmcp.c
+    action      xprintf.c
+}
+
+symlink_xserver_randr() {
+    src_dir programs/Xserver/randr
+    dst_dir xserver/xorg/randr
+
+    action      mirandr.c
+    action      randr.c
+    action      randrstr.h
+}
+
+symlink_xserver_record() {
+    src_dir programs/Xserver/record
+    dst_dir xserver/xorg/record
+
+    action      record.c
+    action      recordmod.c
+    action      set.c
+    action      set.h
+}
+
+symlink_xserver_render() {
+    src_dir programs/Xserver/render
+    dst_dir xserver/xorg/render
+
+    action      animcur.c
+    action      filter.c
+    action      glyph.c
+    action      glyphstr.h
+    action      miglyph.c
+    action      miindex.c
+    action      mipict.c
+    action      mipict.h
+    action      mirect.c
+    action      mitrap.c
+    action      mitri.c
+    action      picture.c
+    action      picture.h
+    action      picturestr.h
+    action      render.c
+    action      renderedge.c
+    action      renderedge.h
+}
+
+symlink_xserver_xfixes() {
+    src_dir programs/Xserver/xfixes
+    dst_dir xserver/xorg/xfixes
+
+    action      cursor.c
+    action      region.c
+    action      saveset.c
+    action      select.c
+    action      xfixes.c
+    action      xfixes.h
+    action      xfixesint.h
+}
+
+symlink_xserver_xkb() {
+    src_dir programs/Xserver/xkb
+    dst_dir xserver/xorg/xkb
+
+    action      ddxBeep.c
+    action      ddxConfig.c
+    action      ddxCtrls.c
+    action      ddxDevBtn.c
+    action      ddxFakeBtn.c
+    action      ddxFakeMtn.c
+    action      ddxInit.c
+    action      ddxKeyClick.c
+    action      ddxKillSrv.c
+    action      ddxLEDs.c
+    action      ddxList.c
+    action      ddxLoad.c
+    action      ddxPrivate.c
+    action      ddxVT.c
+    action      xkb.c
+    action      xkb.h
+    action      xkbAccessX.c
+    action      xkbActions.c
+    action      xkbDflts.h
+    action      xkbEvents.c
+    action      xkbInit.c
+    action      xkbLEDs.c
+    action      xkbPrKeyEv.c
+    action      xkbPrOtherEv.c
+    action      xkbSwap.c
+    action      xkbUtils.c
+}
+
+symlink_xserver() {
+    symlink_xserver_GL_apple
+    symlink_xserver_GL_dri
+    symlink_xserver_GL_glx
+    symlink_xserver_GL_include_GL
+    symlink_xserver_GL_mesa_GLcore
+    symlink_xserver_GL_mesa_X
+    symlink_xserver_GL_windows
+    symlink_xserver_XTrap
+    symlink_xserver_Xext
+    symlink_xserver_Xext_extmod
+    symlink_xserver_Xi
+    symlink_xserver_Xprint
+    symlink_xserver_Xprint_ps
+    symlink_xserver_Xprint_pcl
+    symlink_xserver_Xprint_raster
+    symlink_xserver_afb
+    symlink_xserver_cfb
+    symlink_xserver_cfb16
+    symlink_xserver_cfb24
+    symlink_xserver_cfb32
+    symlink_xserver_composite
+    symlink_xserver_damageext
+    symlink_xserver_dbe
+    symlink_xserver_dix
+    symlink_xserver_fb
+    symlink_xserver_hw_darwin
+    symlink_xserver_hw_darwin_iokit
+    symlink_xserver_hw_darwin_quartz
+    symlink_xserver_hw_darwin_quartz_cr
+    symlink_xserver_hw_darwin_quartz_fullscreen
+    symlink_xserver_hw_darwin_quartz_xpr
+    symlink_xserver_hw_dmx
+    symlink_xserver_hw_dmx_examples
+    symlink_xserver_hw_dmx_glxProxy
+    symlink_xserver_hw_dmx_input
+    symlink_xserver_hw_vfb
+    symlink_xserver_hw_xnest
+    symlink_xserver_hw_xwin
+    symlink_xserver_ilbm
+    symlink_xserver_include
+    symlink_xserver_iplan2p2
+    symlink_xserver_iplan2p4
+    symlink_xserver_iplan2p8
+    symlink_xserver_lbx
+    symlink_xserver_mfb
+    symlink_xserver_mi
+    symlink_xserver_miext_cw
+    symlink_xserver_miext_damage
+    symlink_xserver_miext_layer
+    symlink_xserver_miext_rootless
+    symlink_xserver_miext_rootless_accel
+    symlink_xserver_miext_shadow
+    symlink_xserver_os
+    symlink_xserver_randr
+    symlink_xserver_record
+    symlink_xserver_render
+    symlink_xserver_xfixes
+    symlink_xserver_xkb
+#    ...
+}
 
 #########
 #
