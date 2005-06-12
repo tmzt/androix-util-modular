@@ -5589,6 +5589,208 @@ symlink_driver_ati() {
     action	radeon.man
 }
 
+symlink_driver_acecad() {
+    src_dir programs/Xserver/hw/xfree86/input/acecad
+    dst_dir driver/xf86input-acecad/src
+
+    action      acecad.c
+    action      acecad.h
+
+    dst_dir driver/xf86input-acecad/man
+
+    action      acecad.man
+}
+
+symlink_driver_aiptek() {
+    src_dir programs/Xserver/hw/xfree86/input/aiptek
+    dst_dir driver/xf86input-aiptek/src
+
+    action      xf86Aiptek.c
+    action      xf86Aiptek.h
+
+    dst_dir driver/xf86input-aiptek/man
+
+    action      aiptek.man
+}
+
+symlink_driver_calcomp() {
+    src_dir programs/Xserver/hw/xfree86/input/calcomp
+    dst_dir driver/xf86input-calcomp/src
+
+    action      xf86Calcomp.c
+    action      xf86Calcomp.h
+
+    dst_dir driver/xf86input-calcomp/man
+
+    action      calcomp.man
+}
+
+symlink_driver_citron() {
+    src_dir programs/Xserver/hw/xfree86/input/citron
+    dst_dir driver/xf86input-citron/src
+
+    action      citron.c
+    action      citron.h
+
+    dst_dir driver/xf86input-citron/man
+
+    action      citron.man
+}
+
+symlink_driver_digitaledge() {
+    src_dir programs/Xserver/hw/xfree86/input/digitaledge
+    dst_dir driver/xf86input-digitaledge/src
+
+    action      DigitalEdge.c
+
+    dst_dir driver/xf86input-digitaledge/man
+
+}
+
+symlink_driver_dmc() {
+    src_dir programs/Xserver/hw/xfree86/input/dmc
+    dst_dir driver/xf86input-dmc/src
+
+    action      xf86DMC.c
+    action      xf86DMC.h
+
+    dst_dir driver/xf86input-dmc/man
+
+    action      dmc.man
+}
+
+symlink_driver_dynapro() {
+    src_dir programs/Xserver/hw/xfree86/input/dynapro
+    dst_dir driver/xf86input-dynapro/src
+
+    action      xf86Dyna.c
+    action      xf86Dyna.h
+
+    dst_dir driver/xf86input-dynapro/man
+
+    action      dynapro.man
+}
+
+symlink_driver_elo2300() {
+    src_dir programs/Xserver/hw/xfree86/input/elo2300
+    dst_dir driver/xf86input-elo2300/src
+
+    action      elo.c
+    action      elo.h
+
+    dst_dir driver/xf86input-elo2300/man
+
+}
+
+symlink_driver_elographics() {
+    src_dir programs/Xserver/hw/xfree86/input/elographics
+    dst_dir driver/xf86input-elographics/src
+
+    action      xf86Elo.c
+
+    dst_dir driver/xf86input-elographics/man
+
+    action      elographics.man
+}
+
+symlink_driver_evdev() {
+    src_dir programs/Xserver/hw/xfree86/input/evdev
+    dst_dir driver/xf86input-evdev/src
+
+    action      evdev.c
+
+    dst_dir driver/xf86input-evdev/man
+
+}
+
+symlink_driver_fpit() {
+    src_dir programs/Xserver/hw/xfree86/input/fpit
+    dst_dir driver/xf86input-fpit/src
+
+    action      xf86Fpit.c
+
+    dst_dir driver/xf86input-fpit/man
+
+    action      fpit.man
+}
+
+symlink_driver_hyperpen() {
+    src_dir programs/Xserver/hw/xfree86/input/hyperpen
+    dst_dir driver/xf86input-hyperpen/src
+
+    action      xf86HyperPen.c
+
+    dst_dir driver/xf86input-hyperpen/man
+
+}
+
+symlink_driver_jamstudio() {
+    src_dir programs/Xserver/hw/xfree86/input/jamstudio
+    dst_dir driver/xf86input-jamstudio/src
+
+    action      js_x.c
+
+    dst_dir driver/xf86input-jamstudio/man
+
+    action      js_x.man
+}
+
+symlink_driver_joystick() {
+    src_dir programs/Xserver/hw/xfree86/input/joystick
+    dst_dir driver/xf86input-joystick/src
+
+    action      xf86Jstk.c
+
+    dst_dir driver/xf86input-joystick/man
+
+}
+
+symlink_driver_keyboard() {
+    src_dir programs/Xserver/hw/xfree86/input/keyboard
+    dst_dir driver/xf86input-keyboard/src
+
+    action      kbd.c
+
+    dst_dir driver/xf86input-keyboard/man
+
+    action      kbd.man
+    action      keyboard.man
+}
+
+symlink_driver_magellan() {
+    src_dir programs/Xserver/hw/xfree86/input/magellan
+    dst_dir driver/xf86input-magellan/src
+
+    action      magellan.c
+    action      magellan.h
+
+    dst_dir driver/xf86input-magellan/man
+
+}
+
+symlink_driver_magictouch() {
+    src_dir programs/Xserver/hw/xfree86/input/magictouch
+    dst_dir driver/xf86input-magictouch/src
+
+    action      xf86MagicTouch.c
+
+    dst_dir driver/xf86input-magictouch/man
+
+    action      magictouch.man
+}
+
+symlink_driver_microtouch() {
+    src_dir programs/Xserver/hw/xfree86/input/microtouch
+    dst_dir driver/xf86input-microtouch/src
+
+    action      microtouch.c
+    action      microtouch.h
+
+    dst_dir driver/xf86input-microtouch/man
+
+    action      microtouch.man
+}
+
 symlink_driver_mouse() {
     src_dir programs/Xserver/hw/xfree86/input/mouse
     dst_dir driver/xf86input-mouse/src
@@ -5603,20 +5805,136 @@ symlink_driver_mouse() {
     action	mouse.man
 }
 
+symlink_driver_mutouch() {
+    src_dir programs/Xserver/hw/xfree86/input/mutouch
+    dst_dir driver/xf86input-mutouch/src
+
+    action      xf86MuTouch.c
+
+    dst_dir driver/xf86input-mutouch/man
+
+    action      mutouch.man
+}
+
+symlink_driver_palmax() {
+    src_dir programs/Xserver/hw/xfree86/input/palmax
+    dst_dir driver/xf86input-palmax/src
+
+    action      xf86Palmax.c
+
+    dst_dir driver/xf86input-palmax/man
+
+    action      palmax.man
+}
+
+symlink_driver_penmount() {
+    src_dir programs/Xserver/hw/xfree86/input/penmount
+    dst_dir driver/xf86input-penmount/src
+
+    action      xf86PM.c
+    action      xf86PM.h
+
+    dst_dir driver/xf86input-penmount/man
+
+    action      penmount.man
+}
+
+symlink_driver_sample() {
+    src_dir programs/Xserver/hw/xfree86/input/sample
+    dst_dir driver/xf86input-sample/src
+
+    action      sample.c
+    action      sample.h
+
+    dst_dir driver/xf86input-sample/man
+
+}
+
+symlink_driver_spaceorb() {
+    src_dir programs/Xserver/hw/xfree86/input/spaceorb
+    dst_dir driver/xf86input-spaceorb/src
+
+    action      spaceorb.c
+    action      spaceorb.h
+
+    dst_dir driver/xf86input-spaceorb/man
+
+}
+
+symlink_driver_summa() {
+    src_dir programs/Xserver/hw/xfree86/input/summa
+    dst_dir driver/xf86input-summa/src
+
+    action      xf86Summa.c
+
+    dst_dir driver/xf86input-summa/man
+
+}
+
+symlink_driver_tek4957() {
+    src_dir programs/Xserver/hw/xfree86/input/tek4957
+    dst_dir driver/xf86input-tek4957/src
+
+    action      xf86Tek4957.c
+
+    dst_dir driver/xf86input-tek4957/man
+
+    action      tek4957.man
+}
+
+symlink_driver_ur98() {
+    src_dir programs/Xserver/hw/xfree86/input/ur98
+    dst_dir driver/xf86input-ur98/src
+
+    action      xf86Ur-98.c
+
+    dst_dir driver/xf86input-ur98/man
+
+    action      ur98.man
+}
+
+symlink_driver_void() {
+    src_dir programs/Xserver/hw/xfree86/input/void
+    dst_dir driver/xf86input-void/src
+
+    action      void.c
+
+    dst_dir driver/xf86input-void/man
+
+    action      void.man
+}
+
 symlink_driver() {
     symlink_driver_ati
+
+    symlink_driver_acecad
+    symlink_driver_aiptek
+    symlink_driver_calcomp
+    symlink_driver_citron
+    symlink_driver_digitaledge
+    symlink_driver_dmc
+    symlink_driver_dynapro
+    symlink_driver_elo2300
+    symlink_driver_elographics
+    symlink_driver_evdev
+    symlink_driver_fpit
+    symlink_driver_hyperpen
+    symlink_driver_jamstudio
+    symlink_driver_joystick
+    symlink_driver_keyboard
+    symlink_driver_magellan
+    symlink_driver_magictouch
+    symlink_driver_microtouch
     symlink_driver_mouse
-#    symlink_driver_damage
-#    symlink_driver_fixes
-#    symlink_driver_ice
-#    symlink_driver_randr
-#    symlink_driver_record
-#    symlink_driver_render
-#    symlink_driver_resource
-#    symlink_driver_sm
-#    symlink_driver_x11
-#    symlink_driver_xau
-#    symlink_driver_xaw
+    symlink_driver_mutouch
+    symlink_driver_palmax
+    symlink_driver_penmount
+    symlink_driver_sample
+    symlink_driver_spaceorb
+    symlink_driver_summa
+    symlink_driver_tek4957
+    symlink_driver_ur98
+    symlink_driver_void
 #    ...
 }
 
