@@ -3036,6 +3036,35 @@ symlink_lib_xxf86rush() {
     action	XF86Rush.c
 }
 
+symlink_lib_xkbfile() {
+    src_dir lib/xkbfile
+    dst_dir lib/xkbfile/src
+
+    action	cout.c
+    action	maprules.c
+    action	srvmisc.c
+    action	xkbatom.c
+    action	xkbbells.c
+    action	xkbconfig.c
+    action	xkbdraw.c
+    action	xkberrs.c
+    action	xkbmisc.c
+    action	xkbout.c
+    action	xkbtext.c
+    action	xkmout.c
+    action	xkmread.c
+    action	XKBfileInt.h
+
+    dst_dir lib/xkbfile/include/X11/extensions
+
+    action	XKBbells.h
+    action	XKBconfig.h
+    action	XKBfile.h
+    action	XKBrules.h
+    action	XKMformat.h
+    action	XKM.h
+}
+
 symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
@@ -3072,6 +3101,7 @@ symlink_lib() {
     symlink_lib_xxf86vm
     symlink_lib_xtst
     symlink_lib_xv
+    symlink_lib_xkbfile
 #    symlink_lib_lbxutil
 #    ...
 }
