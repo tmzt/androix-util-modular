@@ -3065,6 +3065,22 @@ symlink_lib_xkbfile() {
     action	XKM.h
 }
 
+symlink_lib_oldx() {
+    src_dir lib/oldX
+    dst_dir lib/oldX/src
+
+    action	XCrAssoc.c
+    action	XDelAssoc.c
+    action	XDestAssoc.c
+    action	XDraw.c
+    action	XLookAssoc.c
+    action	XMakeAssoc.c
+
+    dst_dir lib/oldX/include/X11/
+    
+    action	X10.h
+}
+
 symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
@@ -3102,6 +3118,7 @@ symlink_lib() {
     symlink_lib_xtst
     symlink_lib_xv
     symlink_lib_xkbfile
+    symlink_lib_oldx
 #    symlink_lib_lbxutil
 #    ...
 }
