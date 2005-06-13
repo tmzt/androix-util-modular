@@ -426,23 +426,23 @@ symlink_lib_dmx() {
     src_dir doc/man/DMX
     dst_dir lib/dmx/man
 
-    action	DMXAddInput.man
-    action	DMXAddScreen.man
-    action	DMXChangeDesktopAttributes.man
-    action	DMXChangeScreensAttributes.man
-    action	DMXForceWindowCreation.man
-    action	DMXGetDesktopAttributes.man
-    action	DMXGetInputAttributes.man
-    action	DMXGetInputCount.man
-    action	DMXGetScreenAttributes.man
-    action	DMXGetScreenCount.man
-    action	DMXGetWindowAttributes.man
-    action	DMX.man
-    action	DMXQueryExtension.man
-    action	DMXQueryVersion.man
-    action	DMXRemoveInput.man
-    action	DMXRemoveScreen.man
-    action	DMXSync.man
+    action	DMXAddInput.man			DMXAddInput.3
+    action	DMXAddScreen.man		DMXAddScreen.3
+    action	DMXChangeDesktopAttributes.man	DMXChangeDesktopAttributes.3
+    action	DMXChangeScreensAttributes.man	DMXChangeScreensAttributes.3
+    action	DMXForceWindowCreation.man	DMXForceWindowCreation.3
+    action	DMXGetDesktopAttributes.man	DMXGetDesktopAttributes.3
+    action	DMXGetInputAttributes.man	DMXGetInputAttributes.3
+    action	DMXGetInputCount.man		DMXGetInputCount.3
+    action	DMXGetScreenAttributes.man	DMXGetScreenAttributes.3
+    action	DMXGetScreenCount.man		DMXGetScreenCount.3
+    action	DMXGetWindowAttributes.man	DMXGetWindowAttributes.3
+    action	DMX.man				DMX.3
+    action	DMXQueryExtension.man		DMXQueryExtension.3
+    action	DMXQueryVersion.man		DMXQueryVersion.3
+    action	DMXRemoveInput.man		DMXRemoveInput.3
+    action	DMXRemoveScreen.man		DMXRemoveScreen.3
+    action	DMXSync.man			DMXSync.3
 }
 
 symlink_lib_composite() {
