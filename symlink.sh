@@ -3047,8 +3047,8 @@ symlink_lib() {
     symlink_lib_xxf86misc
     symlink_lib_xxf86vm
     symlink_lib_xtst
+    symlink_lib_xv
 #    symlink_lib_lbxutil
-#    symlink_lib_xv
 #    ...
 }
 
