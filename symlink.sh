@@ -2981,6 +2981,37 @@ symlink_lib_xxf86vm() {
     action	XF86VM.man		XF86VM.3
 }
 
+symlink_lib_xtst() {
+    src_dir lib/Xtst
+    dst_dir lib/Xtst/src
+
+    action	XRecord.c
+    action	XTest.c
+}
+
+symlink_lib_xv() {
+    src_dir lib/Xv
+    dst_dir lib/Xv/src
+
+    action	Xv.c
+    action	Xvlibint.h
+}
+
+symlink_lib_xvmc() {
+    src_dir lib/XvMC
+    dst_dir lib/XvMC/src
+
+    action	XvMC.c
+    action	XvMClibint.h
+}
+
+symlink_lib_xxf86rush() {
+    src_dir lib/Xxf86rush
+    dst_dir lib/Xxf86rush/src
+
+    action	XF86Rush.c
+}
+
 symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
@@ -3015,6 +3046,7 @@ symlink_lib() {
     symlink_lib_xxf86dga
     symlink_lib_xxf86misc
     symlink_lib_xxf86vm
+    symlink_lib_xtst
 #    symlink_lib_lbxutil
 #    symlink_lib_xv
 #    ...
