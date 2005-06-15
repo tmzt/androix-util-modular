@@ -673,6 +673,7 @@ symlink_lib_x11() {
     action	Xlocale.h
     action	Xresource.h
     action	Xutil.h
+    action	ImUtil.h
 
     # internal .h files
     dst_dir lib/X11/src
@@ -680,7 +681,6 @@ symlink_lib_x11() {
     action	Cmap.h
     action	Cr.h
     action	Cv.h
-    action	ImUtil.h
     action	Key.h
     action	locking.h
     action	poly.h
