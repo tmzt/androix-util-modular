@@ -5524,337 +5524,1323 @@ symlink_xserver() {
 #
 #########
 
+
+symlink_driver_apm() {
+    src_dir programs/Xserver/hw/xfree86/drivers/apm
+    dst_dir driver/xf86-video-apm/src
+
+    action      apm.h
+    action      apm_accel.c
+    action      apm_cursor.c
+    action      apm_dga.c
+    action      apm_driver.c
+    action      apm_funcs.c
+    action      apm_i2c.c
+    action      apm_regs.h
+    action      apm_rush.c
+    action      apm_video.c
+
+    dst_dir driver/xf86-video-apm/man
+
+    action      apm.man
+}
+
+symlink_driver_ark() {
+    src_dir programs/Xserver/hw/xfree86/drivers/ark
+    dst_dir driver/xf86-video-ark/src
+
+    action      ark.h
+    action      ark_accel.c
+    action      ark_driver.c
+    action      ark_reg.h
+
+    dst_dir driver/xf86-video-ark/man
+
+}
+
 symlink_driver_ati() {
     src_dir programs/Xserver/hw/xfree86/drivers/ati
-    dst_dir driver/xaa-ati/src
+    dst_dir driver/xf86-video-ati/src
 
-    action	atiaccel.c
-    action	atiaccel.h
-    action	atiadapter.c
-    action	atiadapter.h
-    action	atiadjust.c
-    action	atiadjust.h
-    action	atiaudio.c
-    action	atiaudio.h
-    action	atibank.c
-    action	atibank.h
-    action	atibus.c
-    action	atibus.h
-    action	ati.c
-    action	atichip.c
-    action	atichip.h
-    action	aticlock.c
-    action	aticlock.h
-    action	aticonfig.c
-    action	aticonfig.h
-    action	aticonsole.c
-    action	aticonsole.h
-    action	aticrtc.h
-    action	aticursor.c
-    action	aticursor.h
-    action	atidac.c
-    action	atidac.h
-    action	atidecoder.c
-    action	atidecoder.h
-    action	atidga.c
-    action	atidga.h
-    action	atidri.c
-    action	atidri.h
-    action	atidripriv.h
-    action	atidsp.c
-    action	atidsp.h
-    action	atifillin.c
-    action	atifillin.h
-    action	ati.h
-    action	atii2c.c
-    action	atii2c.h
-    action	atiident.c
-    action	atiident.h
-    action	atiio.h
-    action	atiload.c
-    action	atiload.h
-    action	atilock.c
-    action	atilock.h
-    action	atimach64accel.c
-    action	atimach64accel.h
-    action	atimach64.c
-    action	atimach64cursor.c
-    action	atimach64cursor.h
-    action	atimach64.h
-    action	atimach64i2c.c
-    action	atimach64i2c.h
-    action	atimach64io.c
-    action	atimach64io.h
-    action	atimach64xv.c
-    action	atimach64xv.h
-    action	atimisc.c
-    action	atimode.c
-    action	atimode.h
-    action	atimodule.c
-    action	atimodule.h
-    action	atimono.h
-    action	atioption.c
-    action	atioption.h
-    action	atipreinit.c
-    action	atipreinit.h
-    action	atiprint.c
-    action	atiprint.h
-    action	atipriv.h
-    action	atiprobe.c
-    action	atiprobe.h
-    action	atiregs.h
-    action	atirgb514.c
-    action	atirgb514.h
-    action	atiscreen.c
-    action	atiscreen.h
-    action	atistruct.h
-    action	atituner.c
-    action	atituner.h
-    action	atiutil.c
-    action	atiutil.h
-    action	ativalid.c
-    action	ativalid.h
-    action	ativersion.h
-    action	ativga.c
-    action	ativga.h
-    action	ativgaio.c
-    action	ativgaio.h
-    action	atividmem.c
-    action	atividmem.h
-    action	atiwonder.c
-    action	atiwonder.h
-    action	atiwonderio.c
-    action	atiwonderio.h
-    action	atixv.c
-    action	atixv.h
-    action	generic_bus.h
-    action	mach64_common.h
-    action	mach64_dri.h
-    action	mach64_sarea.h
-    action	r128_accel.c
-    action	r128_chipset.h
-    action	r128_common.h
-    action	r128_cursor.c
-    action	r128_dga.c
-    action	r128_dri.c
-    action	r128_dri.h
-    action	r128_dripriv.h
-    action	r128_driver.c
-    action	r128.h
-    action	r128_misc.c
-    action	r128_probe.c
-    action	r128_probe.h
-    action	r128_reg.h
-    action	r128_sarea.h
-    action	r128_version.h
-    action	r128_video.c
-    action	radeon_accel.c
-    action	radeon_accelfuncs.c
-    action	radeon_bios.c
-    action	radeon_chipset.h
-    action	radeon_common.h
-    action	radeon_cursor.c
-    action	radeon_dga.c
-    action	radeon_dri.c
-    action	radeon_dri.h
-    action	radeon_dripriv.h
-    action	radeon_driver.c
-    action	radeon.h
-    action	radeon_macros.h
-    action	radeon_mergedfb.c
-    action	radeon_mergedfb.h
-    action	radeon_misc.c
-    action	radeon_mm_i2c.c
-    action	radeon_probe.c
-    action	radeon_probe.h
-    action	radeon_reg.h
-    action	radeon_render.c
-    action	radeon_sarea.h
-    action	radeon_version.h
-    action	radeon_video.c
-    action	radeon_video.h
-    action	radeon_vip.c
-    action	theatre200.c
-    action	theatre200.h
-    action	theatre200_module.c
-    action	theatre.c
-    action	theatre_detect.c
-    action	theatre_detect.h
-    action	theatre_detect_module.c
-    action	theatre.h
-    action	theatre_module.c
-    action	theatre_reg.h
+    action      ati.c
+    action      ati.h
+    action      atiaccel.c
+    action      atiaccel.h
+    action      atiadapter.c
+    action      atiadapter.h
+    action      atiadjust.c
+    action      atiadjust.h
+    action      atiaudio.c
+    action      atiaudio.h
+    action      atibank.c
+    action      atibank.h
+    action      atibus.c
+    action      atibus.h
+    action      atichip.c
+    action      atichip.h
+    action      aticlock.c
+    action      aticlock.h
+    action      aticonfig.c
+    action      aticonfig.h
+    action      aticonsole.c
+    action      aticonsole.h
+    action      aticrtc.h
+    action      aticursor.c
+    action      aticursor.h
+    action      atidac.c
+    action      atidac.h
+    action      atidecoder.c
+    action      atidecoder.h
+    action      atidga.c
+    action      atidga.h
+    action      atidri.c
+    action      atidri.h
+    action      atidripriv.h
+    action      atidsp.c
+    action      atidsp.h
+    action      atifillin.c
+    action      atifillin.h
+    action      atii2c.c
+    action      atii2c.h
+    action      atiident.c
+    action      atiident.h
+    action      atiio.h
+    action      atiload.c
+    action      atiload.h
+    action      atilock.c
+    action      atilock.h
+    action      atimach64.c
+    action      atimach64.h
+    action      atimach64accel.c
+    action      atimach64accel.h
+    action      atimach64cursor.c
+    action      atimach64cursor.h
+    action      atimach64i2c.c
+    action      atimach64i2c.h
+    action      atimach64io.c
+    action      atimach64io.h
+    action      atimach64xv.c
+    action      atimach64xv.h
+    action      atimisc.c
+    action      atimode.c
+    action      atimode.h
+    action      atimodule.c
+    action      atimodule.h
+    action      atimono.h
+    action      atioption.c
+    action      atioption.h
+    action      atipreinit.c
+    action      atipreinit.h
+    action      atiprint.c
+    action      atiprint.h
+    action      atipriv.h
+    action      atiprobe.c
+    action      atiprobe.h
+    action      atiregs.h
+    action      atirgb514.c
+    action      atirgb514.h
+    action      atiscreen.c
+    action      atiscreen.h
+    action      atistruct.h
+    action      atituner.c
+    action      atituner.h
+    action      atiutil.c
+    action      atiutil.h
+    action      ativalid.c
+    action      ativalid.h
+    action      ativersion.h
+    action      ativga.c
+    action      ativga.h
+    action      ativgaio.c
+    action      ativgaio.h
+    action      atividmem.c
+    action      atividmem.h
+    action      atiwonder.c
+    action      atiwonder.h
+    action      atiwonderio.c
+    action      atiwonderio.h
+    action      atixv.c
+    action      atixv.h
+    action      generic_bus.h
+    action      mach64_common.h
+    action      mach64_dri.h
+    action      mach64_sarea.h
+    action      r128.h
+    action      r128_accel.c
+    action      r128_chipset.h
+    action      r128_common.h
+    action      r128_cursor.c
+    action      r128_dga.c
+    action      r128_dri.c
+    action      r128_dri.h
+    action      r128_dripriv.h
+    action      r128_driver.c
+    action      r128_misc.c
+    action      r128_probe.c
+    action      r128_probe.h
+    action      r128_reg.h
+    action      r128_sarea.h
+    action      r128_version.h
+    action      r128_video.c
+    action      radeon.h
+    action      radeon_accel.c
+    action      radeon_accelfuncs.c
+    action      radeon_bios.c
+    action      radeon_chipset.h
+    action      radeon_common.h
+    action      radeon_cursor.c
+    action      radeon_dga.c
+    action      radeon_dri.c
+    action      radeon_dri.h
+    action      radeon_dripriv.h
+    action      radeon_driver.c
+    action      radeon_macros.h
+    action      radeon_mergedfb.c
+    action      radeon_mergedfb.h
+    action      radeon_misc.c
+    action      radeon_mm_i2c.c
+    action      radeon_probe.c
+    action      radeon_probe.h
+    action      radeon_reg.h
+    action      radeon_render.c
+    action      radeon_sarea.h
+    action      radeon_version.h
+    action      radeon_video.c
+    action      radeon_video.h
+    action      radeon_vip.c
+    action      theatre.c
+    action      theatre.h
+    action      theatre200.c
+    action      theatre200.h
+    action      theatre200_module.c
+    action      theatre_detect.c
+    action      theatre_detect.h
+    action      theatre_detect_module.c
+    action      theatre_module.c
+    action      theatre_reg.h
 
-    dst_dir driver/xaa-ati/man
+    dst_dir driver/xf86-video-ati/man
 
-    action	ati.man
-    action	r128.man
-    action	radeon.man
+    action      ati.man
+    action      r128.man
+    action      radeon.man
+}
+
+symlink_driver_chips() {
+    src_dir programs/Xserver/hw/xfree86/drivers/chips
+    dst_dir driver/xf86-video-chips/src
+
+    action      ct_BlitMM.h
+    action      ct_Blitter.h
+    action      ct_BltHiQV.h
+    action      ct_accel.c
+    action      ct_bank.c
+    action      ct_cursor.c
+    action      ct_ddc.c
+    action      ct_dga.c
+    action      ct_driver.c
+    action      ct_driver.h
+    action      ct_regs.c
+    action      ct_shadow.c
+    action      ct_video.c
+
+    dst_dir driver/xf86-video-chips/man
+
+    action      chips.man
+}
+
+symlink_driver_cirrus() {
+    src_dir programs/Xserver/hw/xfree86/drivers/cirrus
+    dst_dir driver/xf86-video-cirrus/src
+
+    action      CirrusClk.c
+    action      alp.h
+    action      alp_driver.c
+    action      alp_hwcurs.c
+    action      alp_i2c.c
+    action      alp_xaa.c
+    action      alp_xaam.c
+    action      cir.h
+    action      cir_dga.c
+    action      cir_driver.c
+    action      cir_shadow.c
+    action      lg.h
+    action      lg_driver.c
+    action      lg_hwcurs.c
+    action      lg_i2c.c
+    action      lg_xaa.c
+    action      lg_xaa.h
+
+    dst_dir driver/xf86-video-cirrus/man
+
+    action      cirrus.man
+}
+
+symlink_driver_cyrix() {
+    src_dir programs/Xserver/hw/xfree86/drivers/cyrix
+    dst_dir driver/xf86-video-cyrix/src
+
+    action      cyrix.h
+    action      cyrix_accel.c
+    action      cyrix_bank.c
+    action      cyrix_driver.c
+    action      cyrix_helper.c
+    action      cyrix_shadow.c
+
+    dst_dir driver/xf86-video-cyrix/man
+
+    action      cyrix.man
+}
+
+symlink_driver_dummy() {
+    src_dir programs/Xserver/hw/xfree86/drivers/dummy
+    dst_dir driver/xf86-video-dummy/src
+
+    action      dummy.h
+    action      dummy_cursor.c
+    action      dummy_dga.c
+    action      dummy_driver.c
+
+    dst_dir driver/xf86-video-dummy/man
+
+}
+
+symlink_driver_fbdev() {
+    src_dir programs/Xserver/hw/xfree86/drivers/fbdev
+    dst_dir driver/xf86-video-fbdev/src
+
+    action      fbdev.c
+
+    dst_dir driver/xf86-video-fbdev/man
+
+    action      fbdev.man
+}
+
+symlink_driver_glide() {
+    src_dir programs/Xserver/hw/xfree86/drivers/glide
+    dst_dir driver/xf86-video-glide/src
+
+    action      glide_driver.c
+
+    dst_dir driver/xf86-video-glide/man
+
+    action      glide.man
+}
+
+symlink_driver_glint() {
+    src_dir programs/Xserver/hw/xfree86/drivers/glint
+    dst_dir driver/xf86-video-glint/src
+
+    action      IBMramdac.c
+    action      TIramdac.c
+    action      glint.h
+    action      glint_common.h
+    action      glint_dga.c
+    action      glint_dri.c
+    action      glint_dri.h
+    action      glint_dripriv.h
+    action      glint_driver.c
+    action      glint_regs.h
+    action      glint_shadow.c
+    action      pm2_accel.c
+    action      pm2_dac.c
+    action      pm2_video.c
+    action      pm2ramdac.c
+    action      pm2v_dac.c
+    action      pm2vramdac.c
+    action      pm3_accel.c
+    action      pm3_dac.c
+    action      pm3_regs.h
+    action      pm3_video.c
+    action      pm_accel.c
+    action      pm_dac.c
+    action      sx_accel.c
+    action      tx_accel.c
+    action      tx_dac.c
+
+    dst_dir driver/xf86-video-glint/man
+
+    action      glint.man
+}
+
+symlink_driver_i128() {
+    src_dir programs/Xserver/hw/xfree86/drivers/i128
+    dst_dir driver/xf86-video-i128/src
+
+    action      IBMRGB.h
+    action      Ti302X.h
+    action      i128.h
+    action      i128IBMDAC.c
+    action      i128_driver.c
+    action      i128accel.c
+    action      i128dga.c
+    action      i128init.c
+    action      i128reg.h
+
+    dst_dir driver/xf86-video-i128/man
+
+    action      i128.man
+}
+
+symlink_driver_i740() {
+    src_dir programs/Xserver/hw/xfree86/drivers/i740
+    dst_dir driver/xf86-video-i740/src
+
+    action      i740.h
+    action      i740_accel.c
+    action      i740_cursor.c
+    action      i740_dga.c
+    action      i740_dga.h
+    action      i740_driver.c
+    action      i740_i2c.c
+    action      i740_io.c
+    action      i740_macros.h
+    action      i740_reg.h
+    action      i740_video.c
+
+    dst_dir driver/xf86-video-i740/man
+
+    action      i740.man
+}
+
+symlink_driver_i810() {
+    src_dir programs/Xserver/hw/xfree86/drivers/i810
+    dst_dir driver/xf86-video-i810/src
+
+    action      common.h
+    action      i810.h
+    action      i810_accel.c
+    action      i810_common.h
+    action      i810_cursor.c
+    action      i810_dga.c
+    action      i810_dri.c
+    action      i810_dri.h
+    action      i810_driver.c
+    action      i810_hwmc.c
+    action      i810_io.c
+    action      i810_memory.c
+    action      i810_reg.h
+    action      i810_video.c
+    action      i810_wmark.c
+    action      i830.h
+    action      i830_accel.c
+    action      i830_common.h
+    action      i830_cursor.c
+    action      i830_dga.c
+    action      i830_dri.c
+    action      i830_dri.h
+    action      i830_driver.c
+    action      i830_memory.c
+    action      i830_modes.c
+    action      i830_video.c
+
+    dst_dir driver/xf86-video-i810/man
+
+    action      i810.man
+}
+
+symlink_driver_imstt() {
+    src_dir programs/Xserver/hw/xfree86/drivers/imstt
+    dst_dir driver/xf86-video-imstt/src
+
+    action      imstt.h
+    action      imstt_accel.c
+    action      imstt_driver.c
+    action      imstt_reg.h
+
+    dst_dir driver/xf86-video-imstt/man
+
+    action      imstt.man
+}
+
+symlink_driver_mga() {
+    src_dir programs/Xserver/hw/xfree86/drivers/mga
+    dst_dir driver/xf86-video-mga/src
+
+    action      client.h
+    action      clientlx.c
+    action      mga.h
+    action      mga_arc.c
+    action      mga_bios.h
+    action      mga_common.h
+    action      mga_dac3026.c
+    action      mga_dacG.c
+    action      mga_dga.c
+    action      mga_dh.c
+    action      mga_dri.c
+    action      mga_dri.h
+    action      mga_dripriv.h
+    action      mga_driver.c
+    action      mga_esc.c
+    action      mga_g450pll.c
+    action      mga_halmod.c
+    action      mga_hwcurs.c
+    action      mga_macros.h
+    action      mga_map.h
+    action      mga_maven.h
+    action      mga_merge.c
+    action      mga_merge.h
+    action      mga_reg.h
+    action      mga_sarea.h
+    action      mga_shadow.c
+    action      mga_storm.c
+    action      mga_ucode.h
+    action      mga_video.c
+    action      mgareg_flags.h
+
+    dst_dir driver/xf86-video-mga/man
+
+    action      mga.man
+}
+
+symlink_driver_neomagic() {
+    src_dir programs/Xserver/hw/xfree86/drivers/neomagic
+    dst_dir driver/xf86-video-neomagic/src
+
+    action      neo.h
+    action      neo_2070.c
+    action      neo_2090.c
+    action      neo_2097.c
+    action      neo_2200.c
+    action      neo_bank.c
+    action      neo_cursor.c
+    action      neo_dga.c
+    action      neo_driver.c
+    action      neo_i2c.c
+    action      neo_macros.h
+    action      neo_reg.h
+    action      neo_shadow.c
+    action      neo_video.c
+    action      neo_video.h
+
+    dst_dir driver/xf86-video-neomagic/man
+
+    action      neomagic.man
+}
+
+symlink_driver_newport() {
+    src_dir programs/Xserver/hw/xfree86/drivers/newport
+    dst_dir driver/xf86-video-newport/src
+
+    action      newport.h
+    action      newport_accel.c
+    action      newport_cmap.c
+    action      newport_cursor.c
+    action      newport_driver.c
+    action      newport_regs.c
+    action      newport_regs.h
+    action      newport_shadow.c
+
+    dst_dir driver/xf86-video-newport/man
+
+    action      newport.man
+}
+
+symlink_driver_nsc() {
+    src_dir programs/Xserver/hw/xfree86/drivers/nsc
+    dst_dir driver/xf86-video-nsc/src
+
+    action      durango.c
+    action      nsc.h
+    action      nsc_driver.c
+    action      nsc_fourcc.h
+    action      nsc_galfns.c
+    action      nsc_galstub.c
+    action      nsc_gx1_accel.c
+    action      nsc_gx1_cursor.c
+    action      nsc_gx1_dga.c
+    action      nsc_gx1_driver.c
+    action      nsc_gx1_shadow.c
+    action      nsc_gx1_video.c
+    action      nsc_gx2_accel.c
+    action      nsc_gx2_cursor.c
+    action      nsc_gx2_dga.c
+    action      nsc_gx2_driver.c
+    action      nsc_gx2_shadow.c
+    action      nsc_gx2_vga.c
+    action      nsc_gx2_video.c
+    action      nsc_regacc.c
+    action      panel.c
+
+    dst_dir driver/xf86-video-nsc/man
+
+    action      nsc.man
+}
+
+symlink_driver_nv() {
+    src_dir programs/Xserver/hw/xfree86/drivers/nv
+    dst_dir driver/xf86-video-nv/src
+
+    action      nv_const.h
+    action      nv_cursor.c
+    action      nv_dac.c
+    action      nv_dga.c
+    action      nv_dma.h
+    action      nv_driver.c
+    action      nv_hw.c
+    action      nv_include.h
+    action      nv_local.h
+    action      nv_proto.h
+    action      nv_setup.c
+    action      nv_shadow.c
+    action      nv_type.h
+    action      nv_video.c
+    action      nv_xaa.c
+    action      nvreg.h
+    action      nvvga.h
+    action      riva_const.h
+    action      riva_cursor.c
+    action      riva_dac.c
+    action      riva_dga.c
+    action      riva_driver.c
+    action      riva_hw.c
+    action      riva_hw.h
+    action      riva_include.h
+    action      riva_local.h
+    action      riva_proto.h
+    action      riva_setup.c
+    action      riva_shadow.c
+    action      riva_tbl.h
+    action      riva_type.h
+    action      riva_xaa.c
+
+    dst_dir driver/xf86-video-nv/man
+
+    action      nv.man
+}
+
+symlink_driver_rendition() {
+    src_dir programs/Xserver/hw/xfree86/drivers/rendition
+    dst_dir driver/xf86-video-rendition/src
+
+    action      accel.h
+    action      accelX.c
+    action      cmd2d.h
+    action      commonregs.h
+    action      cscode.h
+    action      hwcursor.c
+    action      hwcursor.h
+    action      rendition.c
+    action      rendition.h
+    action      rendition_options.h
+    action      rendition_shadow.c
+    action      rendition_shadow.h
+    action      v1kregs.h
+    action      v1krisc.c
+    action      v1krisc.h
+    action      v2kregs.h
+    action      vboard.c
+    action      vboard.h
+    action      vloaduc.c
+    action      vloaduc.h
+    action      vmisc.c
+    action      vmisc.h
+    action      vmodes.c
+    action      vmodes.h
+    action      vos.h
+    action      vramdac.c
+    action      vramdac.h
+    action      vtypes.h
+
+    dst_dir driver/xf86-video-rendition/man
+
+    action      rendition.man
+}
+
+symlink_driver_s3() {
+    src_dir programs/Xserver/hw/xfree86/drivers/s3
+    dst_dir driver/xf86-video-s3/src
+
+    action      newmmio.h
+    action      s3.h
+    action      s3_IBMRGB.c
+    action      s3_Ti.c
+    action      s3_Trio64DAC.c
+    action      s3_accel.c
+    action      s3_bios.c
+    action      s3_cursor.c
+    action      s3_dga.c
+    action      s3_driver.c
+    action      s3_reg.h
+    action      s3_video.c
+
+    dst_dir driver/xf86-video-s3/man
+
+}
+
+symlink_driver_s3virge() {
+    src_dir programs/Xserver/hw/xfree86/drivers/s3virge
+    dst_dir driver/xf86-video-s3virge/src
+
+    action      newmmio.h
+    action      regs3v.h
+    action      s3v.h
+    action      s3v_accel.c
+    action      s3v_dac.c
+    action      s3v_dga.c
+    action      s3v_driver.c
+    action      s3v_hwcurs.c
+    action      s3v_i2c.c
+    action      s3v_macros.h
+    action      s3v_rop.h
+    action      s3v_shadow.c
+    action      s3v_xv.c
+
+    dst_dir driver/xf86-video-s3virge/man
+
+    action      s3virge.man
+}
+
+symlink_driver_savage() {
+    src_dir programs/Xserver/hw/xfree86/drivers/savage
+    dst_dir driver/xf86-video-savage/src
+
+    action      savage_accel.c
+    action      savage_bci.h
+    action      savage_common.h
+    action      savage_cursor.c
+    action      savage_dga.c
+    action      savage_dri.c
+    action      savage_dri.h
+    action      savage_dripriv.h
+    action      savage_driver.c
+    action      savage_driver.h
+    action      savage_drm.h
+    action      savage_hwmc.c
+    action      savage_i2c.c
+    action      savage_image.c
+    action      savage_regs.h
+    action      savage_sarea.h
+    action      savage_shadow.c
+    action      savage_streams.c
+    action      savage_streams.h
+    action      savage_vbe.c
+    action      savage_vbe.h
+    action      savage_video.c
+
+    dst_dir driver/xf86-video-savage/man
+
+    action      savage.man
+}
+
+symlink_driver_siliconmotion() {
+    src_dir programs/Xserver/hw/xfree86/drivers/siliconmotion
+    dst_dir driver/xf86-video-siliconmotion/src
+
+    action      regsmi.h
+    action      smi.h
+    action      smi_accel.c
+    action      smi_dac.c
+    action      smi_dga.c
+    action      smi_driver.c
+    action      smi_hwcurs.c
+    action      smi_i2c.c
+    action      smi_shadow.c
+    action      smi_video.c
+    action      smi_video.h
+
+    dst_dir driver/xf86-video-siliconmotion/man
+
+    action      siliconmotion.man
+}
+
+symlink_driver_sis() {
+    src_dir programs/Xserver/hw/xfree86/drivers/sis
+    dst_dir driver/xf86-video-sis/src
+
+    action      300vtbl.h
+    action      310vtbl.h
+    action      init.c
+    action      init.h
+    action      init301.c
+    action      init301.h
+    action      initdef.h
+    action      oem300.h
+    action      oem310.h
+    action      osdef.h
+    action      sis.h
+    action      sis300_accel.c
+    action      sis300_accel.h
+    action      sis310_accel.c
+    action      sis310_accel.h
+    action      sis6326_video.c
+    action      sis_accel.c
+    action      sis_accel.h
+    action      sis_common.h
+    action      sis_cursor.c
+    action      sis_cursor.h
+    action      sis_dac.c
+    action      sis_dac.h
+    action      sis_dga.c
+    action      sis_dri.c
+    action      sis_dri.h
+    action      sis_driver.c
+    action      sis_driver.h
+    action      sis_memcpy.c
+    action      sis_opt.c
+    action      sis_regs.h
+    action      sis_setup.c
+    action      sis_shadow.c
+    action      sis_utility.c
+    action      sis_vb.c
+    action      sis_vga.c
+    action      sis_video.c
+    action      sis_video.h
+    action      sis_videostr.h
+    action      vgatypes.h
+    action      vstruct.h
+
+    dst_dir driver/xf86-video-sis/man
+
+    action      sis.man
+}
+
+symlink_driver_sisusb() {
+    src_dir programs/Xserver/hw/xfree86/drivers/sisusb
+    dst_dir driver/xf86-video-sisusb/src
+
+    action      sisusb.h
+    action      sisusb_accel.c
+    action      sisusb_accel.h
+    action      sisusb_cursor.c
+    action      sisusb_cursor.h
+    action      sisusb_dac.c
+    action      sisusb_dac.h
+    action      sisusb_driver.c
+    action      sisusb_driver.h
+    action      sisusb_init.c
+    action      sisusb_init.h
+    action      sisusb_opt.c
+    action      sisusb_osdef.h
+    action      sisusb_regs.h
+    action      sisusb_setup.c
+    action      sisusb_shadow.c
+    action      sisusb_struct.h
+    action      sisusb_types.h
+    action      sisusb_utility.c
+    action      sisusb_vga.c
+    action      sisusb_video.c
+    action      sisusb_video.h
+    action      sisusb_videostr.h
+
+    dst_dir driver/xf86-video-sisusb/man
+
+    action      sisusb.man
+}
+
+symlink_driver_sunbw2() {
+    src_dir programs/Xserver/hw/xfree86/drivers/sunbw2
+    dst_dir driver/xf86-video-sunbw2/src
+
+    action      bw2.h
+    action      bw2_driver.c
+
+    dst_dir driver/xf86-video-sunbw2/man
+
+    action      sunbw2.man
+}
+
+symlink_driver_suncg14() {
+    src_dir programs/Xserver/hw/xfree86/drivers/suncg14
+    dst_dir driver/xf86-video-suncg14/src
+
+    action      cg14.h
+    action      cg14_driver.c
+
+    dst_dir driver/xf86-video-suncg14/man
+
+    action      suncg14.man
+}
+
+symlink_driver_suncg3() {
+    src_dir programs/Xserver/hw/xfree86/drivers/suncg3
+    dst_dir driver/xf86-video-suncg3/src
+
+    action      cg3.h
+    action      cg3_driver.c
+
+    dst_dir driver/xf86-video-suncg3/man
+
+    action      suncg3.man
+}
+
+symlink_driver_suncg6() {
+    src_dir programs/Xserver/hw/xfree86/drivers/suncg6
+    dst_dir driver/xf86-video-suncg6/src
+
+    action      cg6.h
+    action      cg6_cursor.c
+    action      cg6_driver.c
+    action      cg6_regs.h
+
+    dst_dir driver/xf86-video-suncg6/man
+
+    action      suncg6.man
+}
+
+symlink_driver_sunffb() {
+    src_dir programs/Xserver/hw/xfree86/drivers/sunffb
+    dst_dir driver/xf86-video-sunffb/src
+
+    action      ffb.h
+    action      ffb_accel.c
+    action      ffb_attr.c
+    action      ffb_bcopy.c
+    action      ffb_checks.c
+    action      ffb_circle.c
+    action      ffb_clip.c
+    action      ffb_clip.h
+    action      ffb_cplane.c
+    action      ffb_cursor.c
+    action      ffb_dac.c
+    action      ffb_dac.h
+    action      ffb_dbe.c
+    action      ffb_ddc.c
+    action      ffb_dga.c
+    action      ffb_dri.c
+    action      ffb_drishare.h
+    action      ffb_driver.c
+    action      ffb_fifo.h
+    action      ffb_frect.c
+    action      ffb_fspans.c
+    action      ffb_gc.c
+    action      ffb_gc.h
+    action      ffb_glyph.c
+    action      ffb_gspans.c
+    action      ffb_line.c
+    action      ffb_loops.h
+    action      ffb_plygon.c
+    action      ffb_point.c
+    action      ffb_rcache.h
+    action      ffb_rect.c
+    action      ffb_regs.h
+    action      ffb_seg.c
+    action      ffb_sspans.c
+    action      ffb_stip.c
+    action      ffb_stip.h
+    action      ffb_stubs.c
+    action      ffb_wid.c
+    action      ffb_wline.c
+    action      ffb_zeroarc.c
+
+    dst_dir driver/xf86-video-sunffb/man
+
+    action      sunffb.man
+}
+
+symlink_driver_sunleo() {
+    src_dir programs/Xserver/hw/xfree86/drivers/sunleo
+    dst_dir driver/xf86-video-sunleo/src
+
+    action      leo.h
+    action      leo_accel.c
+    action      leo_checks.c
+    action      leo_cursor.c
+    action      leo_driver.c
+    action      leo_frect.c
+    action      leo_frectsp.c
+    action      leo_fspans.c
+    action      leo_fspanssp.c
+    action      leo_glyph.c
+    action      leo_regs.h
+
+    dst_dir driver/xf86-video-sunleo/man
+
+    action      sunleo.man
+}
+
+symlink_driver_suntcx() {
+    src_dir programs/Xserver/hw/xfree86/drivers/suntcx
+    dst_dir driver/xf86-video-suntcx/src
+
+    action      tcx.h
+    action      tcx_cursor.c
+    action      tcx_driver.c
+    action      tcx_regs.h
+
+    dst_dir driver/xf86-video-suntcx/man
+
+    action      suntcx.man
+}
+
+symlink_driver_tdfx() {
+    src_dir programs/Xserver/hw/xfree86/drivers/tdfx
+    dst_dir driver/xf86-video-tdfx/src
+
+    action      tdfx.h
+    action      tdfx_accel.c
+    action      tdfx_dga.c
+    action      tdfx_dri.c
+    action      tdfx_dri.h
+    action      tdfx_dripriv.h
+    action      tdfx_driver.c
+    action      tdfx_hwcurs.c
+    action      tdfx_io.c
+    action      tdfx_priv.c
+    action      tdfx_priv.h
+    action      tdfx_sli.c
+    action      tdfx_video.c
+    action      tdfxdefs.h
+
+    dst_dir driver/xf86-video-tdfx/man
+
+    action      tdfx.man
+}
+
+symlink_driver_tga() {
+    src_dir programs/Xserver/hw/xfree86/drivers/tga
+    dst_dir driver/xf86-video-tga/src
+
+    action      BT463ramdac.c
+    action      BTramdac.c
+    action      IBM561ramdac.c
+    action      ICS1562.c
+    action      tga.h
+    action      tga_accel.c
+    action      tga_cursor.c
+    action      tga_dac.c
+    action      tga_driver.c
+    action      tga_line.c
+    action      tga_regs.h
+
+    dst_dir driver/xf86-video-tga/man
+
+}
+
+symlink_driver_trident() {
+    src_dir programs/Xserver/hw/xfree86/drivers/trident
+    dst_dir driver/xf86-video-trident/src
+
+    action      blade_accel.c
+    action      image_accel.c
+    action      trident.h
+    action      trident_accel.c
+    action      trident_bank.c
+    action      trident_dac.c
+    action      trident_dga.c
+    action      trident_driver.c
+    action      trident_i2c.c
+    action      trident_regs.h
+    action      trident_shadow.c
+    action      trident_tv.c
+    action      trident_video.c
+    action      tridenthelper.c
+    action      tridentramdac.c
+    action      tvga_dac.c
+    action      xp_accel.c
+
+    dst_dir driver/xf86-video-trident/man
+
+    action      trident.man
+}
+
+symlink_driver_tseng() {
+    src_dir programs/Xserver/hw/xfree86/drivers/tseng
+    dst_dir driver/xf86-video-tseng/src
+
+    action      tseng.h
+    action      tseng_accel.c
+    action      tseng_acl.c
+    action      tseng_acl.h
+    action      tseng_bank.c
+    action      tseng_clock.c
+    action      tseng_colexp.c
+    action      tseng_cursor.c
+    action      tseng_dga.c
+    action      tseng_dpms.c
+    action      tseng_driver.c
+    action      tseng_inline.h
+    action      tseng_ramdac.c
+
+    dst_dir driver/xf86-video-tseng/man
+
+    action      tseng.man
+}
+
+symlink_driver_vesa() {
+    src_dir programs/Xserver/hw/xfree86/drivers/vesa
+    dst_dir driver/xf86-video-vesa/src
+
+    action      vesa.c
+    action      vesa.h
+
+    dst_dir driver/xf86-video-vesa/man
+
+    action      vesa.man
+}
+
+symlink_driver_vga() {
+    src_dir programs/Xserver/hw/xfree86/drivers/vga
+    dst_dir driver/xf86-video-vga/src
+
+    action      generic.c
+
+    dst_dir driver/xf86-video-vga/man
+
+    action      vga.man
+}
+
+symlink_driver_via() {
+    src_dir programs/Xserver/hw/xfree86/drivers/via
+    dst_dir driver/xf86-video-via/src
+
+    action      via.h
+    action      via_accel.c
+    action      via_bandwidth.c
+    action      via_bios.c
+    action      via_bios.h
+    action      via_common.h
+    action      via_cursor.c
+    action      via_dga.c
+    action      via_dri.c
+    action      via_dri.h
+    action      via_driver.c
+    action      via_driver.h
+    action      via_i2c.c
+    action      via_id.c
+    action      via_id.h
+    action      via_memcpy.c
+    action      via_memcpy.h
+    action      via_memory.c
+    action      via_mode.c
+    action      via_mode.h
+    action      via_overlay.c
+    action      via_overlay.h
+    action      via_priv.h
+    action      via_regrec.c
+    action      via_regrec.h
+    action      via_regs.h
+    action      via_shadow.c
+    action      via_swov.c
+    action      via_swov.h
+    action      via_vgahw.c
+    action      via_vgahw.h
+    action      via_video.c
+    action      via_video.h
+    action      via_vt162x.c
+    action      via_vt162x.h
+    action      via_xvmc.c
+    action      via_xvmc.h
+    action      via_xvpriv.h
+
+    dst_dir driver/xf86-video-via/man
+
+    action      via.man
+}
+
+symlink_driver_vmware() {
+    src_dir programs/Xserver/hw/xfree86/drivers/vmware
+    dst_dir driver/xf86-video-vmware/src
+
+    action      bits2pixels.c
+    action      bits2pixels.h
+    action      guest_os.h
+    action      includeCheck.h
+    action      offscreen_manager.c
+    action      offscreen_manager.h
+    action      svga_limits.h
+    action      svga_reg.h
+    action      svga_struct.h
+    action      vm_basic_types.h
+    action      vm_device_version.h
+    action      vmware.c
+    action      vmware.h
+    action      vmwarecurs.c
+    action      vmwarexaa.c
+
+    dst_dir driver/xf86-video-vmware/man
+
+    action      vmware.man
+}
+
+symlink_driver_voodoo() {
+    src_dir programs/Xserver/hw/xfree86/drivers/voodoo
+    dst_dir driver/xf86-video-voodoo/src
+
+    action      voodoo.h
+    action      voodoo_dga.c
+    action      voodoo_driver.c
+    action      voodoo_hardware.c
+
+    dst_dir driver/xf86-video-voodoo/man
+
+    action      voodoo.man
+}
+
+symlink_driver_wsfb() {
+    src_dir programs/Xserver/hw/xfree86/drivers/wsfb
+    dst_dir driver/xf86-video-wsfb/src
+
+    action      wsfb_driver.c
+
+    dst_dir driver/xf86-video-wsfb/man
+
+    action      wsfb.man
 }
 
 symlink_driver_acecad() {
     src_dir programs/Xserver/hw/xfree86/input/acecad
-    dst_dir driver/xf86input-acecad/src
+    dst_dir driver/xf86-input-acecad/src
 
     action      acecad.c
     action      acecad.h
 
-    dst_dir driver/xf86input-acecad/man
+    dst_dir driver/xf86-input-acecad/man
 
     action      acecad.man
 }
 
 symlink_driver_aiptek() {
     src_dir programs/Xserver/hw/xfree86/input/aiptek
-    dst_dir driver/xf86input-aiptek/src
+    dst_dir driver/xf86-input-aiptek/src
 
     action      xf86Aiptek.c
     action      xf86Aiptek.h
 
-    dst_dir driver/xf86input-aiptek/man
+    dst_dir driver/xf86-input-aiptek/man
 
     action      aiptek.man
 }
 
 symlink_driver_calcomp() {
     src_dir programs/Xserver/hw/xfree86/input/calcomp
-    dst_dir driver/xf86input-calcomp/src
+    dst_dir driver/xf86-input-calcomp/src
 
     action      xf86Calcomp.c
     action      xf86Calcomp.h
 
-    dst_dir driver/xf86input-calcomp/man
+    dst_dir driver/xf86-input-calcomp/man
 
     action      calcomp.man
 }
 
 symlink_driver_citron() {
     src_dir programs/Xserver/hw/xfree86/input/citron
-    dst_dir driver/xf86input-citron/src
+    dst_dir driver/xf86-input-citron/src
 
     action      citron.c
     action      citron.h
 
-    dst_dir driver/xf86input-citron/man
+    dst_dir driver/xf86-input-citron/man
 
     action      citron.man
 }
 
 symlink_driver_digitaledge() {
     src_dir programs/Xserver/hw/xfree86/input/digitaledge
-    dst_dir driver/xf86input-digitaledge/src
+    dst_dir driver/xf86-input-digitaledge/src
 
     action      DigitalEdge.c
 
-    dst_dir driver/xf86input-digitaledge/man
+    dst_dir driver/xf86-input-digitaledge/man
 
 }
 
 symlink_driver_dmc() {
     src_dir programs/Xserver/hw/xfree86/input/dmc
-    dst_dir driver/xf86input-dmc/src
+    dst_dir driver/xf86-input-dmc/src
 
     action      xf86DMC.c
     action      xf86DMC.h
 
-    dst_dir driver/xf86input-dmc/man
+    dst_dir driver/xf86-input-dmc/man
 
     action      dmc.man
 }
 
 symlink_driver_dynapro() {
     src_dir programs/Xserver/hw/xfree86/input/dynapro
-    dst_dir driver/xf86input-dynapro/src
+    dst_dir driver/xf86-input-dynapro/src
 
     action      xf86Dyna.c
     action      xf86Dyna.h
 
-    dst_dir driver/xf86input-dynapro/man
+    dst_dir driver/xf86-input-dynapro/man
 
     action      dynapro.man
 }
 
 symlink_driver_elo2300() {
     src_dir programs/Xserver/hw/xfree86/input/elo2300
-    dst_dir driver/xf86input-elo2300/src
+    dst_dir driver/xf86-input-elo2300/src
 
     action      elo.c
     action      elo.h
 
-    dst_dir driver/xf86input-elo2300/man
+    dst_dir driver/xf86-input-elo2300/man
 
 }
 
 symlink_driver_elographics() {
     src_dir programs/Xserver/hw/xfree86/input/elographics
-    dst_dir driver/xf86input-elographics/src
+    dst_dir driver/xf86-input-elographics/src
 
     action      xf86Elo.c
 
-    dst_dir driver/xf86input-elographics/man
+    dst_dir driver/xf86-input-elographics/man
 
     action      elographics.man
 }
 
 symlink_driver_evdev() {
     src_dir programs/Xserver/hw/xfree86/input/evdev
-    dst_dir driver/xf86input-evdev/src
+    dst_dir driver/xf86-input-evdev/src
 
     action      evdev.c
 
-    dst_dir driver/xf86input-evdev/man
+    dst_dir driver/xf86-input-evdev/man
 
 }
 
 symlink_driver_fpit() {
     src_dir programs/Xserver/hw/xfree86/input/fpit
-    dst_dir driver/xf86input-fpit/src
+    dst_dir driver/xf86-input-fpit/src
 
     action      xf86Fpit.c
 
-    dst_dir driver/xf86input-fpit/man
+    dst_dir driver/xf86-input-fpit/man
 
     action      fpit.man
 }
 
 symlink_driver_hyperpen() {
     src_dir programs/Xserver/hw/xfree86/input/hyperpen
-    dst_dir driver/xf86input-hyperpen/src
+    dst_dir driver/xf86-input-hyperpen/src
 
     action      xf86HyperPen.c
 
-    dst_dir driver/xf86input-hyperpen/man
+    dst_dir driver/xf86-input-hyperpen/man
 
 }
 
 symlink_driver_jamstudio() {
     src_dir programs/Xserver/hw/xfree86/input/jamstudio
-    dst_dir driver/xf86input-jamstudio/src
+    dst_dir driver/xf86-input-jamstudio/src
 
     action      js_x.c
 
-    dst_dir driver/xf86input-jamstudio/man
+    dst_dir driver/xf86-input-jamstudio/man
 
     action      js_x.man
 }
 
 symlink_driver_joystick() {
     src_dir programs/Xserver/hw/xfree86/input/joystick
-    dst_dir driver/xf86input-joystick/src
+    dst_dir driver/xf86-input-joystick/src
 
     action      xf86Jstk.c
 
-    dst_dir driver/xf86input-joystick/man
+    dst_dir driver/xf86-input-joystick/man
 
 }
 
 symlink_driver_keyboard() {
     src_dir programs/Xserver/hw/xfree86/input/keyboard
-    dst_dir driver/xf86input-keyboard/src
+    dst_dir driver/xf86-input-keyboard/src
 
     action      kbd.c
 
-    dst_dir driver/xf86input-keyboard/man
+    dst_dir driver/xf86-input-keyboard/man
 
     action      kbd.man
     action      keyboard.man
@@ -5862,153 +6848,195 @@ symlink_driver_keyboard() {
 
 symlink_driver_magellan() {
     src_dir programs/Xserver/hw/xfree86/input/magellan
-    dst_dir driver/xf86input-magellan/src
+    dst_dir driver/xf86-input-magellan/src
 
     action      magellan.c
     action      magellan.h
 
-    dst_dir driver/xf86input-magellan/man
+    dst_dir driver/xf86-input-magellan/man
 
 }
 
 symlink_driver_magictouch() {
     src_dir programs/Xserver/hw/xfree86/input/magictouch
-    dst_dir driver/xf86input-magictouch/src
+    dst_dir driver/xf86-input-magictouch/src
 
     action      xf86MagicTouch.c
 
-    dst_dir driver/xf86input-magictouch/man
+    dst_dir driver/xf86-input-magictouch/man
 
     action      magictouch.man
 }
 
 symlink_driver_microtouch() {
     src_dir programs/Xserver/hw/xfree86/input/microtouch
-    dst_dir driver/xf86input-microtouch/src
+    dst_dir driver/xf86-input-microtouch/src
 
     action      microtouch.c
     action      microtouch.h
 
-    dst_dir driver/xf86input-microtouch/man
+    dst_dir driver/xf86-input-microtouch/man
 
     action      microtouch.man
 }
 
 symlink_driver_mouse() {
     src_dir programs/Xserver/hw/xfree86/input/mouse
-    dst_dir driver/xf86input-mouse/src
+    dst_dir driver/xf86-input-mouse/src
 
     action	mouse.c
     action	mouse.h
     action	mousePriv.h
     action	pnp.c
 
-    dst_dir driver/xf86input-mouse/man
+    dst_dir driver/xf86-input-mouse/man
 
     action	mouse.man
 }
 
 symlink_driver_mutouch() {
     src_dir programs/Xserver/hw/xfree86/input/mutouch
-    dst_dir driver/xf86input-mutouch/src
+    dst_dir driver/xf86-input-mutouch/src
 
     action      xf86MuTouch.c
 
-    dst_dir driver/xf86input-mutouch/man
+    dst_dir driver/xf86-input-mutouch/man
 
     action      mutouch.man
 }
 
 symlink_driver_palmax() {
     src_dir programs/Xserver/hw/xfree86/input/palmax
-    dst_dir driver/xf86input-palmax/src
+    dst_dir driver/xf86-input-palmax/src
 
     action      xf86Palmax.c
 
-    dst_dir driver/xf86input-palmax/man
+    dst_dir driver/xf86-input-palmax/man
 
     action      palmax.man
 }
 
 symlink_driver_penmount() {
     src_dir programs/Xserver/hw/xfree86/input/penmount
-    dst_dir driver/xf86input-penmount/src
+    dst_dir driver/xf86-input-penmount/src
 
     action      xf86PM.c
     action      xf86PM.h
 
-    dst_dir driver/xf86input-penmount/man
+    dst_dir driver/xf86-input-penmount/man
 
     action      penmount.man
 }
 
 symlink_driver_sample() {
     src_dir programs/Xserver/hw/xfree86/input/sample
-    dst_dir driver/xf86input-sample/src
+    dst_dir driver/xf86-input-sample/src
 
     action      sample.c
     action      sample.h
 
-    dst_dir driver/xf86input-sample/man
+    dst_dir driver/xf86-input-sample/man
 
 }
 
 symlink_driver_spaceorb() {
     src_dir programs/Xserver/hw/xfree86/input/spaceorb
-    dst_dir driver/xf86input-spaceorb/src
+    dst_dir driver/xf86-input-spaceorb/src
 
     action      spaceorb.c
     action      spaceorb.h
 
-    dst_dir driver/xf86input-spaceorb/man
+    dst_dir driver/xf86-input-spaceorb/man
 
 }
 
 symlink_driver_summa() {
     src_dir programs/Xserver/hw/xfree86/input/summa
-    dst_dir driver/xf86input-summa/src
+    dst_dir driver/xf86-input-summa/src
 
     action      xf86Summa.c
 
-    dst_dir driver/xf86input-summa/man
+    dst_dir driver/xf86-input-summa/man
 
 }
 
 symlink_driver_tek4957() {
     src_dir programs/Xserver/hw/xfree86/input/tek4957
-    dst_dir driver/xf86input-tek4957/src
+    dst_dir driver/xf86-input-tek4957/src
 
     action      xf86Tek4957.c
 
-    dst_dir driver/xf86input-tek4957/man
+    dst_dir driver/xf86-input-tek4957/man
 
     action      tek4957.man
 }
 
 symlink_driver_ur98() {
     src_dir programs/Xserver/hw/xfree86/input/ur98
-    dst_dir driver/xf86input-ur98/src
+    dst_dir driver/xf86-input-ur98/src
 
     action      xf86Ur-98.c
 
-    dst_dir driver/xf86input-ur98/man
+    dst_dir driver/xf86-input-ur98/man
 
     action      ur98.man
 }
 
 symlink_driver_void() {
     src_dir programs/Xserver/hw/xfree86/input/void
-    dst_dir driver/xf86input-void/src
+    dst_dir driver/xf86-input-void/src
 
     action      void.c
 
-    dst_dir driver/xf86input-void/man
+    dst_dir driver/xf86-input-void/man
 
     action      void.man
 }
 
 symlink_driver() {
+    symlink_driver_apm
+    symlink_driver_ark
     symlink_driver_ati
+    symlink_driver_chips
+    symlink_driver_cirrus
+    symlink_driver_cyrix
+    symlink_driver_dummy
+    symlink_driver_fbdev
+    symlink_driver_glide
+    symlink_driver_glint
+    symlink_driver_i128
+    symlink_driver_i740
+    symlink_driver_i810
+    symlink_driver_imstt
+    symlink_driver_mga
+    symlink_driver_neomagic
+    symlink_driver_newport
+    symlink_driver_nsc
+    symlink_driver_nv
+    symlink_driver_rendition
+    symlink_driver_s3
+    symlink_driver_s3virge
+    symlink_driver_savage
+    symlink_driver_siliconmotion
+    symlink_driver_sis
+    symlink_driver_sisusb
+    symlink_driver_sunbw2
+    symlink_driver_suncg14
+    symlink_driver_suncg3
+    symlink_driver_suncg6
+    symlink_driver_sunffb
+    symlink_driver_sunleo
+    symlink_driver_suntcx
+    symlink_driver_tdfx
+    symlink_driver_tga
+    symlink_driver_trident
+    symlink_driver_tseng
+    symlink_driver_vesa
+    symlink_driver_vga
+    symlink_driver_via
+    symlink_driver_vmware
+    symlink_driver_voodoo
+    symlink_driver_wsfb
 
     symlink_driver_acecad
     symlink_driver_aiptek
