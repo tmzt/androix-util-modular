@@ -2697,7 +2697,6 @@ symlink_lib_xfont() {
     action	hints.h
     action	lines.c
     action	lines.h
-    action	minimain.c
     action	objects.c
     action	objects.h
     action	paths.c
@@ -2720,7 +2719,6 @@ symlink_lib_xfont() {
     action	t1snap.c
     action	t1stdio.h
     action	t1stub.c
-    action	t1test.c
     action	t1unicode.c
     action	t1unicode.h
     action	token.c
@@ -2730,7 +2728,6 @@ symlink_lib_xfont() {
     action	type1.c
     action	util.c
     action	util.h
-    
 }
 
 symlink_lib_xaw() {
