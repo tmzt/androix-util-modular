@@ -2641,6 +2641,96 @@ symlink_lib_xfont() {
     action      patcache.c
     action      private.c
     action      utilbitmap.c
+
+    src_dir lib/font/Speedo
+    dst_dir lib/Xfont/src/Speedo
+
+    action	adobe-iso.h
+    action	bics-iso.h
+    action	bics-unicode.c
+    action	bics-unicode.h
+    action	do_char.c
+    action	do_trns.c
+    action	htest.c
+    action	iface.c
+    action	keys.h
+    action	nsample.c
+    action	out_bl2d.c
+    action	out_blk.c
+    action	out_outl.c
+    action	out_scrn.c
+    action	out_util.c
+    action	reset.c
+    action	set_spcs.c
+    action	set_trns.c
+    action	spdo_prv.h
+    action	speedo.h
+    action	spencode.c
+    action	sperr.c
+    action	spfile.c
+    action	spfont.c
+    action	spfuncs.c
+    action	spglyph.c
+    action	spinfo.c
+    action	spint.h
+    action	sptobdf.c
+    action	useropt.h
+
+    src_dir lib/font/Type1
+    dst_dir lib/Xfont/src/Type1
+
+    action	afm.c
+    action	AFM.h
+    action	arith.c
+    action	arith.h
+    action	blues.h
+    action	cidchar.c
+    action	cluts.h
+    action	curves.c
+    action	curves.h
+    action	digit.h
+    action	fontfcn.c
+    action	fontfcn.h
+    action	fonts.h
+    action	hdigit.h
+    action	hints.c
+    action	hints.h
+    action	lines.c
+    action	lines.h
+    action	minimain.c
+    action	objects.c
+    action	objects.h
+    action	paths.c
+    action	paths.h
+    action	pictures.h
+    action	range.h
+    action	regions.c
+    action	regions.h
+    action	scanfont.c
+    action	spaces.c
+    action	spaces.h
+    action	strokes.h
+    action	t1funcs.c
+    action	t1hdigit.h
+    action	t1imager.h
+    action	t1info.c
+    action	t1intf.h
+    action	t1io.c
+    action	t1malloc.c
+    action	t1snap.c
+    action	t1stdio.h
+    action	t1stub.c
+    action	t1test.c
+    action	t1unicode.c
+    action	t1unicode.h
+    action	token.c
+    action	token.h
+    action	tokst.h
+    action	trig.h
+    action	type1.c
+    action	util.c
+    action	util.h
+    
 }
 
 symlink_lib_xaw() {
@@ -4379,7 +4469,6 @@ symlink_xserver_hw_xfree86_ossupport_linux_drm() {
 
     action      drmmodule.c
     action      xf86drm.c
-    action      xf86drmCompat.c
     action      xf86drmHash.c
     action      xf86drmRandom.c
     action      xf86drmSL.c
@@ -6587,9 +6676,6 @@ symlink_driver_via() {
     action      via.h
     action      via_accel.c
     action      via_bandwidth.c
-    action      via_bios.c
-    action      via_bios.h
-    action      via_common.h
     action      via_cursor.c
     action      via_dga.c
     action      via_dri.c
@@ -6604,11 +6690,7 @@ symlink_driver_via() {
     action      via_memory.c
     action      via_mode.c
     action      via_mode.h
-    action      via_overlay.c
-    action      via_overlay.h
     action      via_priv.h
-    action      via_regrec.c
-    action      via_regrec.h
     action      via_regs.h
     action      via_shadow.c
     action      via_swov.c
