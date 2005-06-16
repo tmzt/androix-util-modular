@@ -2651,10 +2651,7 @@ symlink_lib_xfont() {
     action	bics-unicode.h
     action	do_char.c
     action	do_trns.c
-    action	htest.c
-    action	iface.c
     action	keys.h
-    action	nsample.c
     action	out_bl2d.c
     action	out_blk.c
     action	out_outl.c
@@ -2673,7 +2670,6 @@ symlink_lib_xfont() {
     action	spglyph.c
     action	spinfo.c
     action	spint.h
-    action	sptobdf.c
     action	useropt.h
 
     src_dir lib/font/Type1
