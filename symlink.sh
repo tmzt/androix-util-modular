@@ -1975,9 +1975,9 @@ symlink_lib_xt() {
     action	Vendor.h
     action	VendorP.h
 
-    # Private headers
+    # Private headers - they are used by XTrap
 
-    dst_dir lib/Xt/src
+    dst_dir lib/Xt/include/X11/internal
 
     action	CallbackI.h
     action	ConvertI.h
@@ -3110,6 +3110,11 @@ symlink_lib_xvmc() {
 
     action	XvMC.c
     action	XvMClibint.h
+
+    src_dir lib/XvMC/wrapper
+    dst_dir lib/XvMC/src/wrapper
+
+    action	XvMCWrapper.c
 }
 
 symlink_lib_xxf86rush() {
@@ -3202,8 +3207,38 @@ symlink_lib() {
     symlink_lib_xv
     symlink_lib_xkbfile
     symlink_lib_oldx
-#    symlink_lib_lbxutil
+    symlink_lib_xvmc
+    symlink_lib_lbxutil
 #    ...
+}
+
+symlink_lib_lbxutil() {
+    src_dir lib/lbxutil/image
+    dst_dir lib/lbxutil/src/image
+
+    action     dfaxg42d.c
+    action     dpackbits.c
+    action     efaxg42d.c
+    action     epackbits.c
+    action     g3states.h
+    action     lbxbwcodes.h
+    action     lbxfax.h
+    action     misc.c
+    action     mkg3states.c
+
+    src_dir lib/lbxutil/delta/
+    dst_dir lib/lbxutil/src/delta
+
+    action     lbxdelta.c
+
+    src_dir lib/lbxutil/lbx_zlib
+    dst_dir lib/lbxutil/src/lbx_zlib
+
+    action     lbx_zlib.c
+    action     lbx_zlib.h
+    action     lbx_zlib_io.c
+    action     reqstats.c
+    action     reqstats.h
 }
 
 #########
