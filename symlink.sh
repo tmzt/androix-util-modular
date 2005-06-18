@@ -3220,7 +3220,7 @@ symlink_lib_lbxutil() {
     action     dpackbits.c
     action     efaxg42d.c
     action     epackbits.c
-    action     g3states.h
+#   action     g3states.h  - not in CVS, built by mkg3states.c
     action     lbxbwcodes.h
     action     lbxfax.h
     action     misc.c
@@ -3305,9 +3305,18 @@ symlink_app_xdpyinfo() {
     action	xdpyinfo.man
 }
 
+symlink_app_xhost() {
+    src_dir programs/xhost
+    dst_dir app/xhost
+
+    action	xhost.c
+    action	xhost.man
+}
+
 symlink_app() {
     symlink_app_twm
     symlink_app_xdpyinfo
+    symlink_app_xhost
 #    ...
 }
 
