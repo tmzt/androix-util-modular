@@ -3153,6 +3153,18 @@ symlink_lib_xkbfile() {
     action	XKM.h
 }
 
+symlink_lib_xkbui() {
+    src_dir lib/xkbui
+    dst_dir lib/xkbui/src
+
+    action	XKBui.c
+    action	XKBuiPriv.h
+    
+    dst_dir lib/xkbui/include/X11/extensions
+
+    action	XKBui.h
+}
+
 symlink_lib_oldx() {
     src_dir lib/oldX
     dst_dir lib/oldX/src
@@ -3206,6 +3218,7 @@ symlink_lib() {
     symlink_lib_xtst
     symlink_lib_xv
     symlink_lib_xkbfile
+    symlink_lib_xkbui
     symlink_lib_oldx
     symlink_lib_xvmc
     symlink_lib_lbxutil
