@@ -3112,7 +3112,6 @@ symlink_lib_xvmc() {
     action	XvMClibint.h
 
     src_dir lib/XvMC/wrapper
-    dst_dir lib/XvMC/src/wrapper
 
     action	XvMCWrapper.c
 }
