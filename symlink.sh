@@ -8489,31 +8489,31 @@ check_args() {
     if [ -z $1 ] ; then
 	echo Missing source dir
 	usage
-	exit
+	exit 1
     fi
 
     if [ -z $2 ] ; then
 	echo Missing destination dir
 	usage
-	exit
+	exit 1
     fi
      
     if [ ! -d $1 ] ; then
 	echo $1 is not a dir
 	usage
-	exit
+	exit 1
     fi
 
     if [ ! -d $2 ] ; then
 	echo $2 is not a dir
 	usage
-	exit
+	exit 1
     fi
 
     if [ $1 = $2 ] ; then
 	echo source and destination can\'t be the same
 	usage
-	exit
+	exit 1
     fi
 
     D=`dirname "$relpath"`
