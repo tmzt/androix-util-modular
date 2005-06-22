@@ -3352,7 +3352,1291 @@ symlink_app_xhost() {
     action	xhost.man
 }
 
+symlink_app_appres() {
+    src_dir programs/appres
+    dst_dir app/appres
+
+    action	appres.c
+
+    action	appres.man
+
+}
+
+symlink_app_bdftopcf() {
+    src_dir programs/bdftopcf
+    dst_dir app/bdftopcf
+
+    action	bdftopcf.c
+
+    action	bdftopcf.man
+
+}
+
+symlink_app_beforelight() {
+    src_dir programs/beforelight
+    dst_dir app/beforelight
+
+    action	b4light.c
+
+    action	b4light.man
+
+}
+
+symlink_app_bitmap() {
+    src_dir programs/bitmap
+    dst_dir app/bitmap
+
+    action	atobm.c
+    action	BitEdit.c
+    action	Bitmap.c
+    action	bmtoa.c
+    action	CutPaste.c
+    action	Dialog.c
+    action	Graphics.c
+    action	Handlers.c
+    action	ReqMach.c
+
+    action	Bitmap.h
+    action	BitmapP.h
+    action	Dialog.h
+    action	Requests.h
+
+    action	bitmap.man
+
+}
+
+symlink_app_dpsexec() {
+    src_dir programs/dpsexec
+    dst_dir app/dpsexec
+
+    action	dpsexec.c
+
+    action	dpsexec.man
+
+}
+
+symlink_app_dpsinfo() {
+    src_dir programs/dpsinfo
+    dst_dir app/dpsinfo
+
+    action	dpsinfo.c
+
+    action	dpsinfo.man
+
+}
+
+symlink_app_editres() {
+    src_dir programs/editres
+    dst_dir app/editres
+
+    action	actions.c
+    action	comm.c
+    action	editres.c
+    action	geometry.c
+    action	handler.c
+    action	setvalues.c
+    action	svpopup.c
+    action	utils.c
+    action	widgets.c
+    action	wtree.c
+
+    action	README
+
+    action	editresP.h
+
+    action	editres.man
+
+}
+
+symlink_app_fonttosfnt() {
+    src_dir programs/fonttosfnt
+    dst_dir app/fonttosfnt
+
+    action	env.c
+    action	fonttosfnt.c
+    action	read.c
+    action	struct.c
+    action	util.c
+    action	write.c
+
+    action	fonttosfnt.h
+
+    action	fonttosfnt.man
+
+}
+
+symlink_app_fslsfonts() {
+    src_dir programs/fslsfonts
+    dst_dir app/fslsfonts
+
+    action	fslsfonts.c
+
+    action	fslsfonts.man
+
+}
+
+symlink_app_fstobdf() {
+    src_dir programs/fstobdf
+    dst_dir app/fstobdf
+
+    action	chars.c
+    action	fstobdf.c
+    action	header.c
+    action	props.c
+
+    action	fstobdf.h
+
+    action	fstobdf.man
+
+}
+
+symlink_app_iceauth() {
+    src_dir programs/iceauth
+    dst_dir app/iceauth
+
+    action	iceauth.c
+    action	process.c
+
+    action	iceauth.h
+
+    action	iceauth.man
+
+}
+
+symlink_app_ico() {
+    src_dir programs/ico
+    dst_dir app/ico
+
+    action	ico.c
+
+    action	allobjs.h
+    action	objcube.h
+    action	objico.h
+    action	objocta.h
+    action	objplane.h
+    action	objpyr.h
+    action	polyinfo.h
+
+    action	ico.man
+
+}
+
+symlink_app_listres() {
+    src_dir programs/listres
+    dst_dir app/listres
+
+    action	listres.c
+
+    action	listres.man
+
+}
+
+symlink_app_luit() {
+    src_dir programs/luit
+    dst_dir app/luit
+
+    action	charset.c
+    action	iso2022.c
+    action	locale.c
+    action	luit.c
+    action	other.c
+    action	parser.c
+    action	sys.c
+
+    action	charset.h
+    action	iso2022.h
+    action	luit.h
+    action	other.h
+    action	parser.h
+    action	sys.h
+
+    action	luit.man
+
+}
+
+symlink_app_makepsres() {
+    src_dir programs/makepsres
+    dst_dir app/makepsres
+
+    action	makepsres.c
+
+    action	makepsres.man
+
+}
+
+symlink_app_mkfontscale() {
+    src_dir programs/mkfontscale
+    dst_dir app/mkfontscale
+
+    action	hash.c
+    action	ident.c
+    action	list.c
+    action	mkfontscale.c
+
+    action	data.h
+    action	hash.h
+    action	ident.h
+    action	list.h
+
+    action	mkfontscale.man
+
+}
+
+symlink_app_oclock() {
+    src_dir programs/oclock
+    dst_dir app/oclock
+
+    action	Clock.c
+    action	oclock.c
+    action	transform.c
+
+    action	Clock.h
+    action	ClockP.h
+    action	transform.h
+
+    action	oclock.man
+
+}
+
+symlink_app_pclcomp() {
+    src_dir programs/pclcomp
+    dst_dir app/pclcomp
+
+    action	pclcomp.c
+
+    action	README
+
+    action	pclcomp.man
+
+}
+
+symlink_app_proxymngr() {
+    src_dir programs/proxymngr
+    dst_dir app/proxymngr
+
+    action	config.c
+    action	main.c
+    action	pmdb.c
+
+    action	config.h
+    action	pmdb.h
+    action	PM.h
+    action	pmint.h
+    action	PMproto.h
+
+    action	proxymngr.man
+
+}
+
+symlink_app_rgb() {
+    src_dir programs/rgb
+    dst_dir app/rgb
+
+    action	rgb.c
+    action	showrgb.c
+
+    action	showrgb.man
+
+}
+
+symlink_app_rstart() {
+    src_dir programs/rstart
+    dst_dir app/rstart
+
+    action	auth.c
+    action	server.c
+
+    action	rstartd.man
+    action	rstart.man
+
+}
+
+symlink_app_setxkbmap() {
+    src_dir programs/setxkbmap
+    dst_dir app/setxkbmap
+
+    action	setxkbmap.c
+
+    action	setxkbmap.man
+
+}
+
+symlink_app_showfont() {
+    src_dir programs/showfont
+    dst_dir app/showfont
+
+    action	showfont.c
+
+    action	showfont.man
+
+}
+
+symlink_app_smproxy() {
+    src_dir programs/smproxy
+    dst_dir app/smproxy
+
+    action	save.c
+    action	smproxy.c
+
+    action	smproxy.h
+
+    action	smproxy.man
+
+}
+
+symlink_app_texteroids() {
+    src_dir programs/texteroids
+    dst_dir app/texteroids
+
+    action	texteroids.c
+
+    action	texteroids.man
+
+}
+
+symlink_app_viewres() {
+    src_dir programs/viewres
+    dst_dir app/viewres
+
+    action	viewres.c
+
+    action	viewres.man
+
+}
+
+symlink_app_x11perf() {
+    src_dir programs/x11perf
+    dst_dir app/x11perf
+
+    action	bitmaps.c
+    action	do_arcs.c
+    action	do_blt.c
+    action	do_complex.c
+    action	do_dots.c
+    action	do_lines.c
+    action	do_movewin.c
+    action	do_rects.c
+    action	do_segs.c
+    action	do_simple.c
+    action	do_tests.c
+    action	do_text.c
+    action	do_traps.c
+    action	do_tris.c
+    action	do_valgc.c
+    action	do_windows.c
+    action	x11perf.c
+
+    action	bitmaps.h
+    action	x11perf.h
+
+    action	x11pcomp.man
+    action	x11perf.man
+    action	Xmark.man
+
+}
+
+symlink_app_xauth() {
+    src_dir programs/xauth
+    dst_dir app/xauth
+
+    action	gethost.c
+    action	parsedpy.c
+    action	process.c
+    action	xauth.c
+
+    action	xauth.h
+
+    action	xauth.man
+
+}
+
+symlink_app_xbiff() {
+    src_dir programs/xbiff
+    dst_dir app/xbiff
+
+    action	Mailbox.c
+    action	xbiff.c
+
+    action	Mailbox.h
+    action	MailboxP.h
+
+    action	xbiff.man
+
+}
+
+symlink_app_xcalc() {
+    src_dir programs/xcalc
+    dst_dir app/xcalc
+
+    action	actions.c
+    action	math.c
+    action	xcalc.c
+
+    action	actions.h
+    action	xcalc.h
+
+    action	xcalc.man
+
+}
+
+symlink_app_xclipboard() {
+    src_dir programs/xclipboard
+    dst_dir app/xclipboard
+
+    action	xclipboard.c
+    action	xcutsel.c
+
+    action	xclipboard.man
+    action	xcutsel.man
+
+}
+
+symlink_app_xclock() {
+    src_dir programs/xclock
+    dst_dir app/xclock
+
+    action	Clock.c
+    action	xclock.c
+
+    action	Clock.h
+    action	ClockP.h
+
+    action	xclock.man
+
+}
+
+symlink_app_xcmsdb() {
+    src_dir programs/xcmsdb
+    dst_dir app/xcmsdb
+
+    action	loadData.c
+    action	xcmsdb.c
+
+    action	SCCDFile.h
+
+    action	xcmsdb.man
+
+}
+
+symlink_app_xconsole() {
+    src_dir programs/xconsole
+    dst_dir app/xconsole
+
+    action	xconsole.c
+
+    action	xconsole.man
+
+}
+
+symlink_app_xdbedizzy() {
+    src_dir programs/xdbedizzy
+    dst_dir app/xdbedizzy
+
+    action	xdbedizzy.c
+
+    action	xdbedizzy.man
+
+}
+
+symlink_app_xditview() {
+    src_dir programs/xditview
+    dst_dir app/xditview
+
+    action	draw.c
+    action	Dvi.c
+    action	DviChar.c
+    action	font.c
+    action	lex.c
+    action	page.c
+    action	parse.c
+    action	xditview.c
+    action	XFontName.c
+
+    action	DviChar.h
+    action	Dvi.h
+    action	DviP.h
+    action	Menu.h
+    action	XFontName.h
+
+    action	xditview.man
+
+}
+
+symlink_app_xdriinfo() {
+    src_dir programs/xdriinfo
+    dst_dir app/xdriinfo
+
+    action	xdriinfo.c
+
+    action	xdriinfo.man
+
+}
+
+symlink_app_xev() {
+    src_dir programs/xev
+    dst_dir app/xev
+
+    action	xev.c
+
+    action	xev.man
+
+}
+
+symlink_app_xeyes() {
+    src_dir programs/xeyes
+    dst_dir app/xeyes
+
+    action	Eyes.c
+    action	transform.c
+    action	xeyes.c
+
+    action	Eyes.h
+    action	EyesP.h
+    action	transform.h
+
+    action	xeyes.man
+
+}
+
+symlink_app_xf86dga() {
+    src_dir programs/xf86dga
+    dst_dir app/xf86dga
+
+    action	dga.c
+
+    action	dga.man
+
+}
+
+symlink_app_xfd() {
+    src_dir programs/xfd
+    dst_dir app/xfd
+
+    action	grid.c
+    action	xfd.c
+
+    action	grid.h
+    action	gridP.h
+
+    action	xfd.man
+
+}
+
+symlink_app_xfindproxy() {
+    src_dir programs/xfindproxy
+    dst_dir app/xfindproxy
+
+    action	xfindproxy.c
+
+    action	xfindproxy.h
+
+    action	xfindproxy.man
+
+}
+
+symlink_app_xfontsel() {
+    src_dir programs/xfontsel
+    dst_dir app/xfontsel
+
+    action	ULabel.c
+    action	xfontsel.c
+
+    action	ULabel.h
+    action	ULabelP.h
+
+    action	xfontsel.man
+
+}
+
+symlink_app_xfsinfo() {
+    src_dir programs/xfsinfo
+    dst_dir app/xfsinfo
+
+    action	xfsinfo.c
+
+    action	xfsinfo.man
+
+}
+
+symlink_app_xfwp() {
+    src_dir programs/xfwp
+    dst_dir app/xfwp
+
+    action	io.c
+    action	misc.c
+    action	pm.c
+    action	transport.c
+    action	xfwp.c
+
+    action	io.h
+    action	misc.h
+    action	pm.h
+    action	transport.h
+    action	xfwp.h
+
+    action	xfwp.man
+
+}
+
+symlink_app_xgamma() {
+    src_dir programs/xgamma
+    dst_dir app/xgamma
+
+    action	xgamma.c
+
+    action	xgamma.man
+
+}
+
+symlink_app_xgc() {
+    src_dir programs/xgc
+    dst_dir app/xgc
+
+    action	choice.c
+    action	dashlist.c
+    action	getfile.c
+    action	gram.c
+    action	interpret.c
+    action	lex.c
+    action	main.c
+    action	planemask.c
+    action	record.c
+    action	testfrac.c
+    action	tests.c
+    action	text.c
+
+    action	constants.h
+    action	gram.h
+    action	main.h
+    action	xgc.h
+
+    action	xgc.man
+
+}
+
+symlink_app_xinit() {
+    src_dir programs/xinit
+    dst_dir app/xinit
+
+    action	xinit.c
+
+    action	README
+
+    action	startx.man
+    action	xinit.man
+
+}
+
+symlink_app_xkbcomp() {
+    src_dir programs/xkbcomp
+    dst_dir app/xkbcomp
+
+    action	action.c
+    action	alias.c
+    action	compat.c
+    action	expr.c
+    action	geometry.c
+    action	indicators.c
+    action	keycodes.c
+    action	keymap.c
+    action	keytypes.c
+    action	listing.c
+    action	misc.c
+    action	parseutils.c
+    action	symbols.c
+    action	utils.c
+    action	vmod.c
+    action	xkbcomp.c
+    action	xkbparse.c
+    action	xkbpath.c
+    action	xkbscan.c
+
+    action	README
+
+    action	action.h
+    action	alias.h
+    action	compat.h
+    action	expr.h
+    action	indicators.h
+    action	keycodes.h
+    action	misc.h
+    action	parseutils.h
+    action	tokens.h
+    action	utils.h
+    action	vmod.h
+    action	xkbcomp.h
+    action	xkbpath.h
+
+    action	xkbcomp.man
+
+}
+
+symlink_app_xkbevd() {
+    src_dir programs/xkbevd
+    dst_dir app/xkbevd
+
+    action	cfgparse.c
+    action	cfgscan.c
+    action	evargs.c
+    action	printev.c
+    action	utils.c
+    action	xkbevd.c
+
+    action	tokens.h
+    action	utils.h
+    action	xkbevd.h
+
+    action	xkbevd.man
+
+}
+
+symlink_app_xkbprint() {
+    src_dir programs/xkbprint
+    dst_dir app/xkbprint
+
+    action	psgeom.c
+    action	utils.c
+    action	xkbprint.c
+
+    action	isokeys.h
+    action	utils.h
+    action	xkbprint.h
+
+    action	xkbprint.man
+
+}
+
+symlink_app_xkbutils() {
+    src_dir programs/xkbutils
+    dst_dir app/xkbutils
+
+    action	LED.c
+    action	utils.c
+    action	xkbbell.c
+    action	xkbvleds.c
+    action	xkbwatch.c
+
+    action	LED.h
+    action	LEDP.h
+    action	utils.h
+
+}
+
+symlink_app_xkill() {
+    src_dir programs/xkill
+    dst_dir app/xkill
+
+    action	xkill.c
+
+    action	xkill.man
+
+}
+
+symlink_app_xload() {
+    src_dir programs/xload
+    dst_dir app/xload
+
+    action	get_load.c
+    action	get_rload.c
+    action	xload.c
+
+    action	xload.h
+
+    action	xload.man
+
+}
+
+symlink_app_xlogo() {
+    src_dir programs/xlogo
+    dst_dir app/xlogo
+
+    action	Logo.c
+    action	print.c
+    action	RenderLogo.c
+    action	xlogo.c
+
+    action	Logo.h
+    action	LogoP.h
+    action	print.h
+    action	RenderLogo.h
+    action	xlogo.h
+
+    action	xlogo.man
+
+}
+
+symlink_app_xlsatoms() {
+    src_dir programs/xlsatoms
+    dst_dir app/xlsatoms
+
+    action	xlsatoms.c
+
+    action	xlsatoms.man
+
+}
+
+symlink_app_xlsclients() {
+    src_dir programs/xlsclients
+    dst_dir app/xlsclients
+
+    action	xlsclients.c
+
+    action	xlscli.man
+
+}
+
+symlink_app_xlsfonts() {
+    src_dir programs/xlsfonts
+    dst_dir app/xlsfonts
+
+    action	dsimple.c
+    action	xlsfonts.c
+
+    action	dsimple.h
+
+    action	xlsfonts.man
+
+}
+
+symlink_app_xmag() {
+    src_dir programs/xmag
+    dst_dir app/xmag
+
+    action	CutPaste.c
+    action	RootWin.c
+    action	Scale.c
+    action	xmag.c
+
+    action	CutPaste.h
+    action	RootWin.h
+    action	RootWinP.h
+    action	Scale.h
+    action	ScaleP.h
+
+    action	xmag.man
+
+}
+
+symlink_app_xman() {
+    src_dir programs/xman
+    dst_dir app/xman
+
+    action	buttons.c
+    action	globals.c
+    action	handler.c
+    action	help.c
+    action	main.c
+    action	man.c
+    action	misc.c
+    action	print.c
+    action	ScrollByL.c
+    action	search.c
+    action	tkfuncs.c
+    action	vendor.c
+
+    action	defs.h
+    action	globals.h
+    action	iconclosed.h
+    action	icon_help.h
+    action	icon_open.h
+    action	man.h
+    action	print.h
+    action	ScrollByL.h
+    action	ScrollByLP.h
+    action	vendor.h
+    action	version.h
+
+    action	xman.man
+
+}
+
+symlink_app_xmessage() {
+    src_dir programs/xmessage
+    dst_dir app/xmessage
+
+    action	makeform.c
+    action	readfile.c
+    action	xmessage.c
+
+    action	README
+
+    action	readfile.h
+    action	xmessage.h
+
+    action	xmessage.man
+
+}
+
+symlink_app_xmh() {
+    src_dir programs/xmh
+    dst_dir app/xmh
+
+    action	bbox.c
+    action	command.c
+    action	compfuncs.c
+    action	folder.c
+    action	init.c
+    action	main.c
+    action	menu.c
+    action	miscfuncs.c
+    action	mlist.c
+    action	msg.c
+    action	pick.c
+    action	popup.c
+    action	screen.c
+    action	toc.c
+    action	tocfuncs.c
+    action	tocutil.c
+    action	tsource.c
+    action	util.c
+    action	viewfuncs.c
+
+    action	actions.h
+    action	bbox.h
+    action	bboxint.h
+    action	externs.h
+    action	globals.h
+    action	mlist.h
+    action	msg.h
+    action	toc.h
+    action	tocintrnl.h
+    action	tocutil.h
+    action	tsource.h
+    action	tsourceP.h
+    action	version.h
+    action	xmh.h
+
+    action	xmh.man
+
+}
+
+symlink_app_xmodmap() {
+    src_dir programs/xmodmap
+    dst_dir app/xmodmap
+
+    action	exec.c
+    action	handle.c
+    action	pf.c
+    action	xmodmap.c
+
+    action	wq.h
+    action	xmodmap.h
+
+    action	xmodmap.man
+
+}
+
+symlink_app_xmore() {
+    src_dir programs/xmore
+    dst_dir app/xmore
+
+    action	print.c
+    action	printdialog.c
+    action	xmore.c
+
+    action	printdialog.h
+    action	printdialogprivates.h
+    action	print.h
+    action	xmore.h
+
+    action	xmore.man
+
+}
+
+symlink_app_xplsprinters() {
+    src_dir programs/xplsprinters
+    dst_dir app/xplsprinters
+
+    action	xplsprinters.c
+
+    action	xplsprinters.man
+
+}
+
+symlink_app_xpr() {
+    src_dir programs/xpr
+    dst_dir app/xpr
+
+    action	x2jet.c
+    action	x2pmp.c
+    action	xpr.c
+
+    action	lncmd.h
+    action	pmp.h
+    action	xpr.h
+
+    action	xdpr.man
+    action	xpr.man
+
+}
+
+symlink_app_xprehashprinterlist() {
+    src_dir programs/xprehashprinterlist
+    dst_dir app/xprehashprinterlist
+
+    action	xprehashprinterlist.c
+
+    action	xprehashprinterlist.man
+
+}
+
+symlink_app_xrandr() {
+    src_dir programs/xrandr
+    dst_dir app/xrandr
+
+    action	xrandr.c
+
+    action	xrandr.man
+
+}
+
+symlink_app_xrdb() {
+    src_dir programs/xrdb
+    dst_dir app/xrdb
+
+    action	xrdb.c
+
+    action	xrdb.man
+
+}
+
+symlink_app_xrefresh() {
+    src_dir programs/xrefresh
+    dst_dir app/xrefresh
+
+    action	xrefresh.c
+
+    action	xrefresh.man
+
+}
+
+symlink_app_xset() {
+    src_dir programs/xset
+    dst_dir app/xset
+
+    action	xset.c
+
+    action	xset.man
+
+}
+
+symlink_app_xsetmode() {
+    src_dir programs/xsetmode
+    dst_dir app/xsetmode
+
+    action	xsetmode.c
+
+    action	xsetmode.man
+
+}
+
+symlink_app_xsetpointer() {
+    src_dir programs/xsetpointer
+    dst_dir app/xsetpointer
+
+    action	xsetpointer.c
+
+    action	xsetpnt.man
+
+}
+
+symlink_app_xsetroot() {
+    src_dir programs/xsetroot
+    dst_dir app/xsetroot
+
+    action	xsetroot.c
+
+    action	xsetroot.man
+
+}
+
+symlink_app_xsm() {
+    src_dir programs/xsm
+    dst_dir app/xsm
+
+    action	auth.c
+    action	choose.c
+    action	globals.c
+    action	info.c
+    action	list.c
+    action	lock.c
+    action	log.c
+    action	mainwin.c
+    action	misc.c
+    action	popup.c
+    action	printhex.c
+    action	prop.c
+    action	remote.c
+    action	restart.c
+    action	save.c
+    action	saveutil.c
+    action	signals.c
+    action	xsm.c
+    action	xtwatch.c
+
+    action	README
+
+    action	auth.h
+    action	choose.h
+    action	info.h
+    action	list.h
+    action	lock.h
+    action	log.h
+    action	mainwin.h
+    action	popup.h
+    action	prop.h
+    action	restart.h
+    action	save.h
+    action	saveutil.h
+    action	xsm.h
+    action	xtwatch.h
+
+    action	xsm.man
+
+}
+
+symlink_app_xstdcmap() {
+    src_dir programs/xstdcmap
+    dst_dir app/xstdcmap
+
+    action	xstdcmap.c
+
+    action	xstdcmap.man
+
+}
+
+symlink_app_xtrap() {
+    src_dir programs/xtrap
+    dst_dir app/xtrap
+
+    action	chparse.c
+    action	XEKeybCtrl.c
+    action	xtrapchar.c
+    action	xtrapin.c
+    action	xtrapinfo.c
+    action	xtrapout.c
+    action	xtrapproto.c
+    action	xtrapreset.c
+    action	xtrapstats.c
+
+    action	chparse.h
+    action	XEKeybCtrl.h
+
+    action	xtrap.man
+
+}
+
+symlink_app_xvidtune() {
+    src_dir programs/xvidtune
+    dst_dir app/xvidtune
+
+    action	xvidtune.c
+
+    action	xvidtune.man
+
+}
+
+symlink_app_xvinfo() {
+    src_dir programs/xvinfo
+    dst_dir app/xvinfo
+
+    action	xvinfo.c
+
+    action	xvinfo.man
+
+}
+
+symlink_app_xwud() {
+    src_dir programs/xwud
+    dst_dir app/xwud
+
+    action	xwud.c
+
+    action	xwud.man
+
+}
+
 symlink_app() {
+    symlink_app_xwud
+    symlink_app_xvinfo
+    symlink_app_xvidtune
+    symlink_app_xtrap
+    symlink_app_xstdcmap
+    symlink_app_xsm
+    symlink_app_xsetroot
+    symlink_app_xsetpointer
+    symlink_app_xsetmode
+    symlink_app_xset
+    symlink_app_xrefresh
+    symlink_app_xrdb
+    symlink_app_xrandr
+    symlink_app_xprehashprinterlist
+    symlink_app_xpr
+    symlink_app_xplsprinters
+    symlink_app_xmore
+    symlink_app_xmodmap
+    symlink_app_xmh
+    symlink_app_xmessage
+    symlink_app_xman
+    symlink_app_xmag
+    symlink_app_xlsfonts
+    symlink_app_xlsclients
+    symlink_app_xlsatoms
+    symlink_app_xlogo
+    symlink_app_xload
+    symlink_app_xkill
+    symlink_app_xkbutils
+    symlink_app_xkbprint
+    symlink_app_xkbevd
+    symlink_app_xkbcomp
+    symlink_app_xinit
+    symlink_app_xgc
+    symlink_app_xgamma
+    symlink_app_xfwp
+    symlink_app_xfsinfo
+    symlink_app_xfontsel
+    symlink_app_xfindproxy
+    symlink_app_xfd
+    symlink_app_xf86dga
+    symlink_app_xeyes
+    symlink_app_xev
+    symlink_app_xdriinfo
+    symlink_app_xditview
+    symlink_app_xdbedizzy
+    symlink_app_xconsole
+    symlink_app_xcmsdb
+    symlink_app_xclock
+    symlink_app_xclipboard
+    symlink_app_xcalc
+    symlink_app_xbiff
+    symlink_app_xauth
+    symlink_app_x11perf
+    symlink_app_viewres
+    symlink_app_texteroids
+    symlink_app_smproxy
+    symlink_app_showfont
+    symlink_app_setxkbmap
+    symlink_app_rstart
+    symlink_app_rgb
+    symlink_app_proxymngr
+    symlink_app_pclcomp
+    symlink_app_oclock
+    symlink_app_mkfontscale
+    symlink_app_makepsres
+    symlink_app_luit
+    symlink_app_listres
+    symlink_app_ico
+    symlink_app_iceauth
+    symlink_app_fstobdf
+    symlink_app_fslsfonts
+    symlink_app_fonttosfnt
+    symlink_app_editres
+    symlink_app_dpsinfo
+    symlink_app_dpsexec
+    symlink_app_bitmap
+    symlink_app_beforelight
+    symlink_app_bdftopcf
+    symlink_app_appres
     symlink_app_twm
     symlink_app_xdpyinfo
     symlink_app_xhost
