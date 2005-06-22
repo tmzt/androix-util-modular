@@ -2726,6 +2726,19 @@ symlink_lib_xfont() {
     action	util.h
 }
 
+symlink_lib_fontenc() {
+    src_dir lib/font/fontfile
+    dst_dir lib/font/src/fontenc/src
+
+    action encparse.c
+    action fontenc.c
+    
+    src_dir lib/font/include
+    dst_dir lib/fontenc/include/X11/fonts
+
+    action fontenc.h
+}
+
 symlink_lib_xaw() {
     src_dir lib/Xaw
     dst_dir lib/Xaw/src/
@@ -3211,6 +3224,7 @@ symlink_lib() {
     symlink_lib_xmu
     symlink_lib_xp
     symlink_lib_xpm
+    symlink_lib_fontenc
     symlink_lib_xfont
     symlink_lib_xrender
     symlink_lib_xi
