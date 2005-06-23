@@ -3995,9 +3995,9 @@ symlink_app_xgc() {
     action	choice.c
     action	dashlist.c
     action	getfile.c
-    action	gram.c
+    action	gram.y
     action	interpret.c
-    action	lex.c
+    action	lex.l
     action	main.c
     action	planemask.c
     action	record.c
@@ -4006,7 +4006,6 @@ symlink_app_xgc() {
     action	text.c
 
     action	constants.h
-    action	gram.h
     action	main.h
     action	xgc.h
 
@@ -4047,7 +4046,7 @@ symlink_app_xkbcomp() {
     action	utils.c
     action	vmod.c
     action	xkbcomp.c
-    action	xkbparse.c
+    action	xkbparse.y
     action	xkbpath.c
     action	xkbscan.c
 
@@ -4075,7 +4074,7 @@ symlink_app_xkbevd() {
     src_dir programs/xkbevd
     dst_dir app/xkbevd
 
-    action	cfgparse.c
+    action	cfgparse.y
     action	cfgscan.c
     action	evargs.c
     action	printev.c
