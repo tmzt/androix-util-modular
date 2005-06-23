@@ -3376,6 +3376,8 @@ symlink_app_beforelight() {
     src_dir programs/beforelight
     dst_dir app/beforelight
 
+    action	B4light.ad
+
     action	b4light.c
 
     action	b4light.man
@@ -3385,6 +3387,10 @@ symlink_app_beforelight() {
 symlink_app_bitmap() {
     src_dir programs/bitmap
     dst_dir app/bitmap
+
+    action	Bitmap.ad
+    action	Bitmap-co.ad
+    action	Bitmap-nocase.ad
 
     action	atobm.c
     action	BitEdit.c
@@ -3428,6 +3434,9 @@ symlink_app_dpsinfo() {
 symlink_app_editres() {
     src_dir programs/editres
     dst_dir app/editres
+
+    action	Edit-col.ad
+    action	Editres.ad
 
     action	actions.c
     action	comm.c
@@ -3586,6 +3595,8 @@ symlink_app_oclock() {
     src_dir programs/oclock
     dst_dir app/oclock
 
+    action	Clock-col.ad
+
     action	Clock.c
     action	oclock.c
     action	transform.c
@@ -3698,6 +3709,8 @@ symlink_app_viewres() {
     src_dir programs/viewres
     dst_dir app/viewres
 
+    action	Viewres.ad
+
     action	viewres.c
 
     action	viewres.man
@@ -3768,6 +3781,9 @@ symlink_app_xcalc() {
     src_dir programs/xcalc
     dst_dir app/xcalc
 
+    action	XCalc.ad
+    action	XCalc-col.ad
+
     action	actions.c
     action	math.c
     action	xcalc.c
@@ -3783,6 +3799,8 @@ symlink_app_xclipboard() {
     src_dir programs/xclipboard
     dst_dir app/xclipboard
 
+    action	XClipboard.ad
+
     action	xclipboard.c
     action	xcutsel.c
 
@@ -3794,6 +3812,9 @@ symlink_app_xclipboard() {
 symlink_app_xclock() {
     src_dir programs/xclock
     dst_dir app/xclock
+
+    action	XClk-col.ad
+    action	XClock.ad
 
     action	Clock.c
     action	xclock.c
@@ -3822,6 +3843,8 @@ symlink_app_xconsole() {
     src_dir programs/xconsole
     dst_dir app/xconsole
 
+    action	XConsole.ad
+
     action	xconsole.c
 
     action	xconsole.man
@@ -3841,6 +3864,9 @@ symlink_app_xdbedizzy() {
 symlink_app_xditview() {
     src_dir programs/xditview
     dst_dir app/xditview
+
+    action	Xdit-chrtr.ad
+    action	Xditview.ad
 
     action	draw.c
     action	Dvi.c
@@ -3912,6 +3938,8 @@ symlink_app_xfd() {
     src_dir programs/xfd
     dst_dir app/xfd
 
+    action	Xfd.ad
+
     action	grid.c
     action	xfd.c
 
@@ -3937,6 +3965,8 @@ symlink_app_xfindproxy() {
 symlink_app_xfontsel() {
     src_dir programs/xfontsel
     dst_dir app/xfontsel
+
+    action	XFontSel.ad
 
     action	ULabel.c
     action	xfontsel.c
@@ -3991,6 +4021,8 @@ symlink_app_xgamma() {
 symlink_app_xgc() {
     src_dir programs/xgc
     dst_dir app/xgc
+
+    action	Xgc.ad
 
     action	choice.c
     action	dashlist.c
@@ -4135,6 +4167,8 @@ symlink_app_xload() {
     src_dir programs/xload
     dst_dir app/xload
 
+    action	XLoad.ad
+
     action	get_load.c
     action	get_rload.c
     action	xload.c
@@ -4148,6 +4182,9 @@ symlink_app_xload() {
 symlink_app_xlogo() {
     src_dir programs/xlogo
     dst_dir app/xlogo
+
+    action	XLogo.ad
+    action	XLogo-co.ad
 
     action	Logo.c
     action	print.c
@@ -4201,6 +4238,8 @@ symlink_app_xmag() {
     src_dir programs/xmag
     dst_dir app/xmag
 
+    action	Xmag.ad
+
     action	CutPaste.c
     action	RootWin.c
     action	Scale.c
@@ -4219,6 +4258,10 @@ symlink_app_xmag() {
 symlink_app_xman() {
     src_dir programs/xman
     dst_dir app/xman
+
+    action	Xman.ad
+    action	Xman-noxprint.ad
+    action	Xman-xprint.ad
 
     action	buttons.c
     action	globals.c
@@ -4253,6 +4296,9 @@ symlink_app_xmessage() {
     src_dir programs/xmessage
     dst_dir app/xmessage
 
+    action	Xmessage.ad
+    action	Xmessage-color.ad
+
     action	makeform.c
     action	readfile.c
     action	xmessage.c
@@ -4269,6 +4315,8 @@ symlink_app_xmessage() {
 symlink_app_xmh() {
     src_dir programs/xmh
     dst_dir app/xmh
+
+    action	Xmh.ad
 
     action	bbox.c
     action	command.c
@@ -4328,6 +4376,8 @@ symlink_app_xmodmap() {
 symlink_app_xmore() {
     src_dir programs/xmore
     dst_dir app/xmore
+
+    action	XMore.ad
 
     action	print.c
     action	printdialog.c
@@ -4453,6 +4503,8 @@ symlink_app_xsm() {
     src_dir programs/xsm
     dst_dir app/xsm
 
+    action	XSm.ad
+
     action	auth.c
     action	choose.c
     action	globals.c
@@ -4528,6 +4580,8 @@ symlink_app_xtrap() {
 symlink_app_xvidtune() {
     src_dir programs/xvidtune
     dst_dir app/xvidtune
+
+    action	Xvidtune.ad
 
     action	xvidtune.c
 
