@@ -3411,26 +3411,6 @@ symlink_app_bitmap() {
 
 }
 
-symlink_app_dpsexec() {
-    src_dir programs/dpsexec
-    dst_dir app/dpsexec
-
-    action	dpsexec.c
-
-    action	dpsexec.man
-
-}
-
-symlink_app_dpsinfo() {
-    src_dir programs/dpsinfo
-    dst_dir app/dpsinfo
-
-    action	dpsinfo.c
-
-    action	dpsinfo.man
-
-}
-
 symlink_app_editres() {
     src_dir programs/editres
     dst_dir app/editres
