@@ -2575,13 +2575,10 @@ symlink_lib_xfont() {
     action      decompress.c
     action      defaults.c
     action      dirfile.c
-    action      encparse.c
     action      ffcheck.c
     action      fileio.c
     action      filewr.c
     action      fontdir.c
-    action      fontenc.c
-    action      fontencI.h
     action      fontencc.c
     action      fontfile.c
     action      fontscale.c
@@ -2598,7 +2595,6 @@ symlink_lib_xfont() {
     action      fntfil.h
     action      fntfilio.h
     action      fntfilst.h
-    action      fontenc.h
     action      fontencc.h
     action      fontmisc.h
     action      fontmod.h
@@ -2728,10 +2724,11 @@ symlink_lib_xfont() {
 
 symlink_lib_fontenc() {
     src_dir lib/font/fontfile
-    dst_dir lib/font/src/fontenc/src
+    dst_dir lib/fontenc/src
 
-    action encparse.c
     action fontenc.c
+    action encparse.c
+    action fontencI.h
     
     src_dir lib/font/include
     dst_dir lib/fontenc/include/X11/fonts
@@ -4664,8 +4661,6 @@ symlink_app() {
     symlink_app_fslsfonts
     symlink_app_fonttosfnt
     symlink_app_editres
-    symlink_app_dpsinfo
-    symlink_app_dpsexec
     symlink_app_bitmap
     symlink_app_beforelight
     symlink_app_bdftopcf
