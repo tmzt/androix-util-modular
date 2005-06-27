@@ -118,15 +118,7 @@ if [ ! -z $LAST ] ; then
 
 appdefaultdir = \$(sysconfdir)/X11/app-defaults
 
-EXTRA_DIST = \\
 EOF
-    for x in `ls *.ad` ; do
-	if [ $x = $LAST ] ; then
-	    echo \ \ \ \ \ \ \ \ $x		>> Makefile.am
-	else
-	    echo \ \ \ \ \ \ \ \ $x	\\	>> Makefile.am
-	fi
-    done
 
     cat <<EOF >> Makefile.am
 
@@ -144,10 +136,13 @@ EOF
 
     cat <<EOF >> Makefile.am
 
+
 \$(APPDEFAULTFILES): %: %.ad
 	cp \$< \$@
 
 appdefault_DATA = \$(APPDEFAULTFILES)
+
+EXTRA_DIST = \$(foreach FILE, \$(APPDEFAULTFILES), \$(FILE).ad)
 
 CLEANFILES = \$(APPDEFAULTFILES)
 
