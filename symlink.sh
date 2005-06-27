@@ -7734,6 +7734,8 @@ symlink_driver_sis() {
     action      init301.c
     action      init301.h
     action      initdef.h
+    action      initextx.c
+    action      initxext.h
     action      oem300.h
     action      oem310.h
     action      osdef.h
