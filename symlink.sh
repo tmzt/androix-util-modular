@@ -95,6 +95,11 @@ symlink_proto_core() {
     action	XWDFile.h
     action	Xwindows.h
     action	Xwinsock.h
+
+    src_dir programs/Xserver/include
+
+    action	os.h		# needed for lbxutil
+    action	misc.h		# needed for lbxutil
 }
 
 # Extension protocols
@@ -3256,7 +3261,6 @@ symlink_lib_lbxutil() {
     action     dpackbits.c
     action     efaxg42d.c
     action     epackbits.c
-#   action     g3states.h  - not in CVS, built by mkg3states.c
     action     lbxbwcodes.h
     action     lbxfax.h
     action     misc.c
@@ -6481,10 +6485,8 @@ symlink_xserver_include() {
     action	globals.h
     action	input.h
     action	inputstr.h
-    action	misc.h
     action	miscstruct.h
     action	opaque.h
-    action	os.h
     action	pixmap.h
     action	pixmapstr.h
     action	property.h
