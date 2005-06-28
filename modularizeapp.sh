@@ -89,6 +89,7 @@ echo >> Makefile.am
 
 # Man files
 
+LAST=
 for x in `ls *.man` ; do
     LAST=$x
 done
@@ -108,6 +109,7 @@ fi
 
 # .ad files
 
+LAST=
 for x in `ls *.ad` ; do
     LAST=$x
 done

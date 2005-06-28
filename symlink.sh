@@ -3646,6 +3646,8 @@ symlink_app_oclock() {
 
     action	oclock.man
 
+    action	oclock.bit
+    action	oclmask.bit
 }
 
 symlink_app_pclcomp() {
@@ -3655,6 +3657,7 @@ symlink_app_pclcomp() {
     action	pclcomp.c
 
     action	README
+    action	printer.note
 
     action	pclcomp.man
 
