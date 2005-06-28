@@ -642,6 +642,15 @@ symlink_lib_xext() {
     src_dir doc/man/Xext
     dst_dir lib/Xext/man
 
+    action      DPMSCapable.man
+    action      DPMSDisable.man
+    action      DPMSEnable.man
+    action      DPMSForceLevel.man
+    action      DPMSGetTimeouts.man
+    action      DPMSGetVersion.man
+    action      DPMSInfo.man
+    action      DPMSQueryExtension.man
+    action      DPMSSetTimeouts.man
     action	XcupGetReservedColormapEntries.man
     action	XcupQueryVersion.man
     action	XcupStoreColors.man
