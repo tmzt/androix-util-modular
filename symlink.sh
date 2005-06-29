@@ -3688,6 +3688,7 @@ symlink_app_proxymngr() {
 
     action	proxymngr.man
 
+    action	pmconfig.cpp
 }
 
 symlink_app_rgb() {
@@ -3696,8 +3697,16 @@ symlink_app_rgb() {
 
     action	rgb.c
     action	showrgb.c
-
     action	showrgb.man
+    action	rgb.txt
+    
+    src_dir programs/rgb/others
+    dst_dir app/rgb/others
+
+    action	old-rgb.txt
+    action	raveling.txt
+    action	README
+    action	thomas.txt
 
 }
 
