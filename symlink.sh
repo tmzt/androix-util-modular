@@ -3806,6 +3806,12 @@ symlink_app_x11perf() {
     action	x11perf.man
     action	Xmark.man
 
+    action	fillblnk.sh
+    action	perfboth.sh
+    action	perfratio.sh
+    action	Xmark.sh
+
+    action	x11pcomp.cpp
 }
 
 symlink_app_xauth() {
