@@ -4310,7 +4310,6 @@ symlink_app_xman() {
     src_dir programs/xman
     dst_dir app/xman
 
-    action	Xman.ad
     action	Xman-noxprint.ad
     action	Xman-xprint.ad
 
