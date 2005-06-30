@@ -8644,9 +8644,234 @@ symlink_driver() {
 #
 #########
 
-symlink_font_100dpi() {
+symlink_font_adobe_100dpi() {
     src_dir fonts/bdf/100dpi
-    dst_dir font/100dpi
+    dst_dir font/adobe-100dpi
+
+    action	courB08.bdf
+    action	courB10.bdf
+    action	courB12.bdf
+    action	courB14.bdf
+    action	courB18.bdf
+    action	courB24.bdf
+    action	courBO08.bdf
+    action	courBO10.bdf
+    action	courBO12.bdf
+    action	courBO14.bdf
+    action	courBO18.bdf
+    action	courBO24.bdf
+    action	courO08.bdf
+    action	courO10.bdf
+    action	courO12.bdf
+    action	courO14.bdf
+    action	courO18.bdf
+    action	courO24.bdf
+    action	courR08.bdf
+    action	courR10.bdf
+    action	courR12.bdf
+    action	courR14.bdf
+    action	courR18.bdf
+    action	courR24.bdf
+    action	helvB08.bdf
+    action	helvB10.bdf
+    action	helvB12.bdf
+    action	helvB14.bdf
+    action	helvB18.bdf
+    action	helvB24.bdf
+    action	helvBO08.bdf
+    action	helvBO10.bdf
+    action	helvBO12.bdf
+    action	helvBO14.bdf
+    action	helvBO18.bdf
+    action	helvBO24.bdf
+    action	helvO08.bdf
+    action	helvO10.bdf
+    action	helvO12.bdf
+    action	helvO14.bdf
+    action	helvO18.bdf
+    action	helvO24.bdf
+    action	helvR08.bdf
+    action	helvR10.bdf
+    action	helvR12.bdf
+    action	helvR14.bdf
+    action	helvR18.bdf
+    action	helvR24.bdf
+    action	ncenB08.bdf
+    action	ncenB10.bdf
+    action	ncenB12.bdf
+    action	ncenB14.bdf
+    action	ncenB18.bdf
+    action	ncenB24.bdf
+    action	ncenBI08.bdf
+    action	ncenBI10.bdf
+    action	ncenBI12.bdf
+    action	ncenBI14.bdf
+    action	ncenBI18.bdf
+    action	ncenBI24.bdf
+    action	ncenI08.bdf
+    action	ncenI10.bdf
+    action	ncenI12.bdf
+    action	ncenI14.bdf
+    action	ncenI18.bdf
+    action	ncenI24.bdf
+    action	ncenR08.bdf
+    action	ncenR10.bdf
+    action	ncenR12.bdf
+    action	ncenR14.bdf
+    action	ncenR18.bdf
+    action	ncenR24.bdf
+    action	symb08.bdf
+    action	symb10.bdf
+    action	symb12.bdf
+    action	symb14.bdf
+    action	symb18.bdf
+    action	symb24.bdf
+    action	timB08.bdf
+    action	timB10.bdf
+    action	timB12.bdf
+    action	timB14.bdf
+    action	timB18.bdf
+    action	timB24.bdf
+    action	timBI08.bdf
+    action	timBI10.bdf
+    action	timBI12.bdf
+    action	timBI14.bdf
+    action	timBI18.bdf
+    action	timBI24.bdf
+    action	timI08.bdf
+    action	timI10.bdf
+    action	timI12.bdf
+    action	timI14.bdf
+    action	timI18.bdf
+    action	timI24.bdf
+    action	timR08.bdf
+    action	timR10.bdf
+    action	timR12.bdf
+    action	timR14.bdf
+    action	timR18.bdf
+    action	timR24.bdf
+}
+
+symlink_font_adobe_utopia_100dpi() {
+    src_dir fonts/bdf/100dpi
+    dst_dir font/adobe-utopia-100dpi
+
+# XXX These fonts are copyright Adobe, but all rights reserved
+    action	UTB___10.bdf
+    action	UTB___12.bdf
+    action	UTB___14.bdf
+    action	UTB___18.bdf
+    action	UTB___24.bdf
+    action	UTBI__10.bdf
+    action	UTBI__12.bdf
+    action	UTBI__14.bdf
+    action	UTBI__18.bdf
+    action	UTBI__24.bdf
+    action	UTI___10.bdf
+    action	UTI___12.bdf
+    action	UTI___14.bdf
+    action	UTI___18.bdf
+    action	UTI___24.bdf
+    action	UTRG__10.bdf
+    action	UTRG__12.bdf
+    action	UTRG__14.bdf
+    action	UTRG__18.bdf
+    action	UTRG__24.bdf
+}
+
+symlink_font_bh_100dpi() {
+    src_dir fonts/bdf/100dpi
+    dst_dir font/bh-100dpi
+
+    action	lubB08.bdf
+    action	lubB10.bdf
+    action	lubB12.bdf
+    action	lubB14.bdf
+    action	lubB18.bdf
+    action	lubB19.bdf
+    action	lubB24.bdf
+    action	lubBI08.bdf
+    action	lubBI10.bdf
+    action	lubBI12.bdf
+    action	lubBI14.bdf
+    action	lubBI18.bdf
+    action	lubBI19.bdf
+    action	lubBI24.bdf
+    action	lubI08.bdf
+    action	lubI10.bdf
+    action	lubI12.bdf
+    action	lubI14.bdf
+    action	lubI18.bdf
+    action	lubI19.bdf
+    action	lubI24.bdf
+    action	luBIS08.bdf
+    action	luBIS10.bdf
+    action	luBIS12.bdf
+    action	luBIS14.bdf
+    action	luBIS18.bdf
+    action	luBIS19.bdf
+    action	luBIS24.bdf
+    action	lubR08.bdf
+    action	lubR10.bdf
+    action	lubR12.bdf
+    action	lubR14.bdf
+    action	lubR18.bdf
+    action	lubR19.bdf
+    action	lubR24.bdf
+    action	luBS08.bdf
+    action	luBS10.bdf
+    action	luBS12.bdf
+    action	luBS14.bdf
+    action	luBS18.bdf
+    action	luBS19.bdf
+    action	luBS24.bdf
+    action	luIS08.bdf
+    action	luIS10.bdf
+    action	luIS12.bdf
+    action	luIS14.bdf
+    action	luIS18.bdf
+    action	luIS19.bdf
+    action	luIS24.bdf
+    action	luRS08.bdf
+    action	luRS10.bdf
+    action	luRS12.bdf
+    action	luRS14.bdf
+    action	luRS18.bdf
+    action	luRS19.bdf
+    action	luRS24.bdf
+
+    action	LU_LEGALNOTICE
+
+# XXX part of fonts.alias should be included in bh-100
+#    action	fonts.alias
+}
+
+symlink_font_bh_lucidatypewriter_100dpi() {
+    src_dir fonts/bdf/100dpi
+    dst_dir font/bh-lucidatypewriter-100dpi
+
+    action	lutBS08.bdf
+    action	lutBS10.bdf
+    action	lutBS12.bdf
+    action	lutBS14.bdf
+    action	lutBS18.bdf
+    action	lutBS19.bdf
+    action	lutBS24.bdf
+    action	lutRS08.bdf
+    action	lutRS10.bdf
+    action	lutRS12.bdf
+    action	lutRS14.bdf
+    action	lutRS18.bdf
+    action	lutRS19.bdf
+    action	lutRS24.bdf
+
+# XXX part of fonts.alias should be included in bh-lut-100
+#    action	fonts.alias
+}
+
+symlink_font_bitstream_100dpi() {
+    src_dir fonts/bdf/100dpi
+    dst_dir font/bitstream-100dpi
 
     action	charB08.bdf
     action	charB10.bdf
@@ -8672,407 +8897,719 @@ symlink_font_100dpi() {
     action	charR14.bdf
     action	charR18.bdf
     action	charR24.bdf
+    action	tech14.bdf
+    action	techB14.bdf
+    action	term14.bdf
+    action	termB14.bdf
+}
+
+symlink_font_adobe_75dpi() {
+    src_dir fonts/bdf/75dpi
+    dst_dir font/adobe-75dpi
+
     action	courB08.bdf
-    action	courB08-L1.bdf
     action	courB10.bdf
-    action	courB10-L1.bdf
     action	courB12.bdf
-    action	courB12-L1.bdf
     action	courB14.bdf
-    action	courB14-L1.bdf
     action	courB18.bdf
-    action	courB18-L1.bdf
     action	courB24.bdf
-    action	courB24-L1.bdf
     action	courBO08.bdf
-    action	courBO08-L1.bdf
     action	courBO10.bdf
-    action	courBO10-L1.bdf
     action	courBO12.bdf
-    action	courBO12-L1.bdf
     action	courBO14.bdf
-    action	courBO14-L1.bdf
     action	courBO18.bdf
-    action	courBO18-L1.bdf
     action	courBO24.bdf
-    action	courBO24-L1.bdf
     action	courO08.bdf
-    action	courO08-L1.bdf
     action	courO10.bdf
-    action	courO10-L1.bdf
     action	courO12.bdf
-    action	courO12-L1.bdf
     action	courO14.bdf
-    action	courO14-L1.bdf
     action	courO18.bdf
-    action	courO18-L1.bdf
     action	courO24.bdf
-    action	courO24-L1.bdf
     action	courR08.bdf
-    action	courR08-L1.bdf
     action	courR10.bdf
-    action	courR10-L1.bdf
     action	courR12.bdf
-    action	courR12-L1.bdf
     action	courR14.bdf
-    action	courR14-L1.bdf
     action	courR18.bdf
-    action	courR18-L1.bdf
     action	courR24.bdf
-    action	courR24-L1.bdf
     action	helvB08.bdf
-    action	helvB08-L1.bdf
     action	helvB10.bdf
-    action	helvB10-L1.bdf
     action	helvB12.bdf
-    action	helvB12-L1.bdf
     action	helvB14.bdf
-    action	helvB14-L1.bdf
     action	helvB18.bdf
-    action	helvB18-L1.bdf
     action	helvB24.bdf
-    action	helvB24-L1.bdf
     action	helvBO08.bdf
-    action	helvBO08-L1.bdf
     action	helvBO10.bdf
-    action	helvBO10-L1.bdf
     action	helvBO12.bdf
-    action	helvBO12-L1.bdf
     action	helvBO14.bdf
-    action	helvBO14-L1.bdf
     action	helvBO18.bdf
-    action	helvBO18-L1.bdf
     action	helvBO24.bdf
-    action	helvBO24-L1.bdf
     action	helvO08.bdf
-    action	helvO08-L1.bdf
     action	helvO10.bdf
-    action	helvO10-L1.bdf
     action	helvO12.bdf
-    action	helvO12-L1.bdf
     action	helvO14.bdf
-    action	helvO14-L1.bdf
     action	helvO18.bdf
-    action	helvO18-L1.bdf
     action	helvO24.bdf
-    action	helvO24-L1.bdf
     action	helvR08.bdf
-    action	helvR08-L1.bdf
     action	helvR10.bdf
-    action	helvR10-L1.bdf
     action	helvR12.bdf
-    action	helvR12-L1.bdf
     action	helvR14.bdf
-    action	helvR14-L1.bdf
     action	helvR18.bdf
-    action	helvR18-L1.bdf
     action	helvR24.bdf
-    action	helvR24-L1.bdf
-    action	lubB08.bdf
-    action	lubB08-L1.bdf
-    action	lubB10.bdf
-    action	lubB10-L1.bdf
-    action	lubB12.bdf
-    action	lubB12-L1.bdf
-    action	lubB14.bdf
-    action	lubB14-L1.bdf
-    action	lubB18.bdf
-    action	lubB18-L1.bdf
-    action	lubB19.bdf
-    action	lubB19-L1.bdf
-    action	lubB24.bdf
-    action	lubB24-L1.bdf
-    action	lubBI08.bdf
-    action	lubBI08-L1.bdf
-    action	lubBI10.bdf
-    action	lubBI10-L1.bdf
-    action	lubBI12.bdf
-    action	lubBI12-L1.bdf
-    action	lubBI14.bdf
-    action	lubBI14-L1.bdf
-    action	lubBI18.bdf
-    action	lubBI18-L1.bdf
-    action	lubBI19.bdf
-    action	lubBI19-L1.bdf
-    action	lubBI24.bdf
-    action	lubBI24-L1.bdf
-    action	lubI08.bdf
-    action	lubI08-L1.bdf
-    action	lubI10.bdf
-    action	lubI10-L1.bdf
-    action	lubI12.bdf
-    action	lubI12-L1.bdf
-    action	lubI14.bdf
-    action	lubI14-L1.bdf
-    action	lubI18.bdf
-    action	lubI18-L1.bdf
-    action	lubI19.bdf
-    action	lubI19-L1.bdf
-    action	lubI24.bdf
-    action	lubI24-L1.bdf
-    action	luBIS08.bdf
-    action	luBIS08-L1.bdf
-    action	luBIS10.bdf
-    action	luBIS10-L1.bdf
-    action	luBIS12.bdf
-    action	luBIS12-L1.bdf
-    action	luBIS14.bdf
-    action	luBIS14-L1.bdf
-    action	luBIS18.bdf
-    action	luBIS18-L1.bdf
-    action	luBIS19.bdf
-    action	luBIS19-L1.bdf
-    action	luBIS24.bdf
-    action	luBIS24-L1.bdf
-    action	lubR08.bdf
-    action	lubR08-L1.bdf
-    action	lubR10.bdf
-    action	lubR10-L1.bdf
-    action	lubR12.bdf
-    action	lubR12-L1.bdf
-    action	lubR14.bdf
-    action	lubR14-L1.bdf
-    action	lubR18.bdf
-    action	lubR18-L1.bdf
-    action	lubR19.bdf
-    action	lubR19-L1.bdf
-    action	lubR24.bdf
-    action	lubR24-L1.bdf
-    action	luBS08.bdf
-    action	luBS08-L1.bdf
-    action	luBS10.bdf
-    action	luBS10-L1.bdf
-    action	luBS12.bdf
-    action	luBS12-L1.bdf
-    action	luBS14.bdf
-    action	luBS14-L1.bdf
-    action	luBS18.bdf
-    action	luBS18-L1.bdf
-    action	luBS19.bdf
-    action	luBS19-L1.bdf
-    action	luBS24.bdf
-    action	luBS24-L1.bdf
-    action	luIS08.bdf
-    action	luIS08-L1.bdf
-    action	luIS10.bdf
-    action	luIS10-L1.bdf
-    action	luIS12.bdf
-    action	luIS12-L1.bdf
-    action	luIS14.bdf
-    action	luIS14-L1.bdf
-    action	luIS18.bdf
-    action	luIS18-L1.bdf
-    action	luIS19.bdf
-    action	luIS19-L1.bdf
-    action	luIS24.bdf
-    action	luIS24-L1.bdf
-    action	luRS08.bdf
-    action	luRS08-L1.bdf
-    action	luRS10.bdf
-    action	luRS10-L1.bdf
-    action	luRS12.bdf
-    action	luRS12-L1.bdf
-    action	luRS14.bdf
-    action	luRS14-L1.bdf
-    action	luRS18.bdf
-    action	luRS18-L1.bdf
-    action	luRS19.bdf
-    action	luRS19-L1.bdf
-    action	luRS24.bdf
-    action	luRS24-L1.bdf
-    action	lutBS08.bdf
-    action	lutBS08-L1.bdf
-    action	lutBS10.bdf
-    action	lutBS10-L1.bdf
-    action	lutBS12.bdf
-    action	lutBS12-L1.bdf
-    action	lutBS14.bdf
-    action	lutBS14-L1.bdf
-    action	lutBS18.bdf
-    action	lutBS18-L1.bdf
-    action	lutBS19.bdf
-    action	lutBS19-L1.bdf
-    action	lutBS24.bdf
-    action	lutBS24-L1.bdf
-    action	lutRS08.bdf
-    action	lutRS08-L1.bdf
-    action	lutRS10.bdf
-    action	lutRS10-L1.bdf
-    action	lutRS12.bdf
-    action	lutRS12-L1.bdf
-    action	lutRS14.bdf
-    action	lutRS14-L1.bdf
-    action	lutRS18.bdf
-    action	lutRS18-L1.bdf
-    action	lutRS19.bdf
-    action	lutRS19-L1.bdf
-    action	lutRS24.bdf
-    action	lutRS24-L1.bdf
     action	ncenB08.bdf
-    action	ncenB08-L1.bdf
     action	ncenB10.bdf
-    action	ncenB10-L1.bdf
     action	ncenB12.bdf
-    action	ncenB12-L1.bdf
     action	ncenB14.bdf
-    action	ncenB14-L1.bdf
     action	ncenB18.bdf
-    action	ncenB18-L1.bdf
     action	ncenB24.bdf
-    action	ncenB24-L1.bdf
     action	ncenBI08.bdf
-    action	ncenBI08-L1.bdf
     action	ncenBI10.bdf
-    action	ncenBI10-L1.bdf
     action	ncenBI12.bdf
-    action	ncenBI12-L1.bdf
     action	ncenBI14.bdf
-    action	ncenBI14-L1.bdf
     action	ncenBI18.bdf
-    action	ncenBI18-L1.bdf
     action	ncenBI24.bdf
-    action	ncenBI24-L1.bdf
     action	ncenI08.bdf
-    action	ncenI08-L1.bdf
     action	ncenI10.bdf
-    action	ncenI10-L1.bdf
     action	ncenI12.bdf
-    action	ncenI12-L1.bdf
     action	ncenI14.bdf
-    action	ncenI14-L1.bdf
     action	ncenI18.bdf
-    action	ncenI18-L1.bdf
     action	ncenI24.bdf
-    action	ncenI24-L1.bdf
     action	ncenR08.bdf
-    action	ncenR08-L1.bdf
     action	ncenR10.bdf
-    action	ncenR10-L1.bdf
     action	ncenR12.bdf
-    action	ncenR12-L1.bdf
     action	ncenR14.bdf
-    action	ncenR14-L1.bdf
     action	ncenR18.bdf
-    action	ncenR18-L1.bdf
     action	ncenR24.bdf
-    action	ncenR24-L1.bdf
     action	symb08.bdf
     action	symb10.bdf
     action	symb12.bdf
     action	symb14.bdf
     action	symb18.bdf
     action	symb24.bdf
+    action	timB08.bdf
+    action	timB10.bdf
+    action	timB12.bdf
+    action	timB14.bdf
+    action	timB18.bdf
+    action	timB24.bdf
+    action	timBI08.bdf
+    action	timBI10.bdf
+    action	timBI12.bdf
+    action	timBI14.bdf
+    action	timBI18.bdf
+    action	timBI24.bdf
+    action	timI08.bdf
+    action	timI10.bdf
+    action	timI12.bdf
+    action	timI14.bdf
+    action	timI18.bdf
+    action	timI24.bdf
+    action	timR08.bdf
+    action	timR10.bdf
+    action	timR12.bdf
+    action	timR14.bdf
+    action	timR18.bdf
+    action	timR24.bdf
+}
+
+symlink_font_adobe_utopia_75dpi() {
+    src_dir fonts/bdf/75dpi
+    dst_dir font/adobe-utopia-75dpi
+
+# XXX These fonts are copyright Adobe, but all rights reserved
+    action	UTB___10.bdf
+    action	UTB___12.bdf
+    action	UTB___14.bdf
+    action	UTB___18.bdf
+    action	UTB___24.bdf
+    action	UTBI__10.bdf
+    action	UTBI__12.bdf
+    action	UTBI__14.bdf
+    action	UTBI__18.bdf
+    action	UTBI__24.bdf
+    action	UTI___10.bdf
+    action	UTI___12.bdf
+    action	UTI___14.bdf
+    action	UTI___18.bdf
+    action	UTI___24.bdf
+    action	UTRG__10.bdf
+    action	UTRG__12.bdf
+    action	UTRG__14.bdf
+    action	UTRG__18.bdf
+    action	UTRG__24.bdf
+}
+
+symlink_font_bh_75dpi() {
+    src_dir fonts/bdf/75dpi
+    dst_dir font/bh-75dpi
+
+    action	lubB08.bdf
+    action	lubB10.bdf
+    action	lubB12.bdf
+    action	lubB14.bdf
+    action	lubB18.bdf
+    action	lubB19.bdf
+    action	lubB24.bdf
+    action	lubBI08.bdf
+    action	lubBI10.bdf
+    action	lubBI12.bdf
+    action	lubBI14.bdf
+    action	lubBI18.bdf
+    action	lubBI19.bdf
+    action	lubBI24.bdf
+    action	lubI08.bdf
+    action	lubI10.bdf
+    action	lubI12.bdf
+    action	lubI14.bdf
+    action	lubI18.bdf
+    action	lubI19.bdf
+    action	lubI24.bdf
+    action	luBIS08.bdf
+    action	luBIS10.bdf
+    action	luBIS12.bdf
+    action	luBIS14.bdf
+    action	luBIS18.bdf
+    action	luBIS19.bdf
+    action	luBIS24.bdf
+    action	lubR08.bdf
+    action	lubR10.bdf
+    action	lubR12.bdf
+    action	lubR14.bdf
+    action	lubR18.bdf
+    action	lubR19.bdf
+    action	lubR24.bdf
+    action	luBS08.bdf
+    action	luBS10.bdf
+    action	luBS12.bdf
+    action	luBS14.bdf
+    action	luBS18.bdf
+    action	luBS19.bdf
+    action	luBS24.bdf
+    action	luIS08.bdf
+    action	luIS10.bdf
+    action	luIS12.bdf
+    action	luIS14.bdf
+    action	luIS18.bdf
+    action	luIS19.bdf
+    action	luIS24.bdf
+    action	luRS08.bdf
+    action	luRS10.bdf
+    action	luRS12.bdf
+    action	luRS14.bdf
+    action	luRS18.bdf
+    action	luRS19.bdf
+    action	luRS24.bdf
+
+    action	LU_LEGALNOTICE
+
+# XXX part of fonts.alias should be included in bh-75
+#    action	fonts.alias
+}
+
+symlink_font_bh_lucidatypewriter_75dpi() {
+    src_dir fonts/bdf/75dpi
+    dst_dir font/bh-lucidatypewriter-75dpi
+
+    action	lutBS08.bdf
+    action	lutBS10.bdf
+    action	lutBS12.bdf
+    action	lutBS14.bdf
+    action	lutBS18.bdf
+    action	lutBS19.bdf
+    action	lutBS24.bdf
+    action	lutRS08.bdf
+    action	lutRS10.bdf
+    action	lutRS12.bdf
+    action	lutRS14.bdf
+    action	lutRS18.bdf
+    action	lutRS19.bdf
+    action	lutRS24.bdf
+
+# XXX part of fonts.alias should be included in bh-lut-75
+#    action	fonts.alias
+}
+
+symlink_font_bitstream_75dpi() {
+    src_dir fonts/bdf/75dpi
+    dst_dir font/bitstream-75dpi
+
+    action	charB08.bdf
+    action	charB10.bdf
+    action	charB12.bdf
+    action	charB14.bdf
+    action	charB18.bdf
+    action	charB24.bdf
+    action	charBI08.bdf
+    action	charBI10.bdf
+    action	charBI12.bdf
+    action	charBI14.bdf
+    action	charBI18.bdf
+    action	charBI24.bdf
+    action	charI08.bdf
+    action	charI10.bdf
+    action	charI12.bdf
+    action	charI14.bdf
+    action	charI18.bdf
+    action	charI24.bdf
+    action	charR08.bdf
+    action	charR10.bdf
+    action	charR12.bdf
+    action	charR14.bdf
+    action	charR18.bdf
+    action	charR24.bdf
     action	tech14.bdf
     action	techB14.bdf
     action	term14.bdf
     action	termB14.bdf
-    action	timB08.bdf
-    action	timB08-L1.bdf
-    action	timB10.bdf
-    action	timB10-L1.bdf
-    action	timB12.bdf
-    action	timB12-L1.bdf
-    action	timB14.bdf
-    action	timB14-L1.bdf
-    action	timB18.bdf
-    action	timB18-L1.bdf
-    action	timB24.bdf
-    action	timB24-L1.bdf
-    action	timBI08.bdf
-    action	timBI08-L1.bdf
-    action	timBI10.bdf
-    action	timBI10-L1.bdf
-    action	timBI12.bdf
-    action	timBI12-L1.bdf
-    action	timBI14.bdf
-    action	timBI14-L1.bdf
-    action	timBI18.bdf
-    action	timBI18-L1.bdf
-    action	timBI24.bdf
-    action	timBI24-L1.bdf
-    action	timI08.bdf
-    action	timI08-L1.bdf
-    action	timI10.bdf
-    action	timI10-L1.bdf
-    action	timI12.bdf
-    action	timI12-L1.bdf
-    action	timI14.bdf
-    action	timI14-L1.bdf
-    action	timI18.bdf
-    action	timI18-L1.bdf
-    action	timI24.bdf
-    action	timI24-L1.bdf
-    action	timR08.bdf
-    action	timR08-L1.bdf
-    action	timR10.bdf
-    action	timR10-L1.bdf
-    action	timR12.bdf
-    action	timR12-L1.bdf
-    action	timR14.bdf
-    action	timR14-L1.bdf
-    action	timR18.bdf
-    action	timR18-L1.bdf
-    action	timR24.bdf
-    action	timR24-L1.bdf
-    action	UTB___10.bdf
-    action	UTB___10-L1.bdf
-    action	UTB___12.bdf
-    action	UTB___12-L1.bdf
-    action	UTB___14.bdf
-    action	UTB___14-L1.bdf
-    action	UTB___18.bdf
-    action	UTB___18-L1.bdf
-    action	UTB___24.bdf
-    action	UTB___24-L1.bdf
-    action	UTBI__10.bdf
-    action	UTBI__10-L1.bdf
-    action	UTBI__12.bdf
-    action	UTBI__12-L1.bdf
-    action	UTBI__14.bdf
-    action	UTBI__14-L1.bdf
-    action	UTBI__18.bdf
-    action	UTBI__18-L1.bdf
-    action	UTBI__24.bdf
-    action	UTBI__24-L1.bdf
-    action	UTI___10.bdf
-    action	UTI___10-L1.bdf
-    action	UTI___12.bdf
-    action	UTI___12-L1.bdf
-    action	UTI___14.bdf
-    action	UTI___14-L1.bdf
-    action	UTI___18.bdf
-    action	UTI___18-L1.bdf
-    action	UTI___24.bdf
-    action	UTI___24-L1.bdf
-    action	UTRG__10.bdf
-    action	UTRG__10-L1.bdf
-    action	UTRG__12.bdf
-    action	UTRG__12-L1.bdf
-    action	UTRG__14.bdf
-    action	UTRG__14-L1.bdf
-    action	UTRG__18.bdf
-    action	UTRG__18-L1.bdf
-    action	UTRG__24.bdf
-    action	UTRG__24-L1.bdf
+}
 
-    action	fonts.alias
+symlink_font_cronyx_cyrillic() {
+    src_dir fonts/bdf/cyrillic
+    dst_dir font/cronyx-cyrillic
 
-    action	LU_LEGALNOTICE
+    action	crox1cb.bdf
+    action	crox1c.bdf
+    action	crox1cbo.bdf
+    action	crox1co.bdf
+    action	crox1hb.bdf
+    action	crox1h.bdf
+    action	crox1hbo.bdf
+    action	crox1ho.bdf
+    action	crox1tb.bdf
+    action	crox1t.bdf
+    action	crox1tbo.bdf
+    action	crox1to.bdf
+    action	crox2cb.bdf
+    action	crox2c.bdf
+    action	crox2cbo.bdf
+    action	crox2co.bdf
+    action	crox2hb.bdf
+    action	crox2h.bdf
+    action	crox2hbo.bdf
+    action	crox2ho.bdf
+    action	crox2tb.bdf
+    action	crox2t.bdf
+    action	crox2tbo.bdf
+    action	crox2to.bdf
+    action	crox3cb.bdf
+    action	crox3c.bdf
+    action	crox3cbo.bdf
+    action	crox3co.bdf
+    action	crox3hb.bdf
+    action	crox3h.bdf
+    action	crox3hbo.bdf
+    action	crox3ho.bdf
+    action	crox3tb.bdf
+    action	crox3t.bdf
+    action	crox3tbo.bdf
+    action	crox3to.bdf
+    action	crox4hb.bdf
+    action	crox4h.bdf
+    action	crox4hbo.bdf
+    action	crox4ho.bdf
+    action	crox4tb.bdf
+    action	crox4t.bdf
+    action	crox4tbo.bdf
+    action	crox4to.bdf
+    action	crox5hb.bdf
+    action	crox5h.bdf
+    action	crox5hbo.bdf
+    action	crox5ho.bdf
+    action	crox5tb.bdf
+    action	crox5t.bdf
+    action	crox5tbo.bdf
+    action	crox5to.bdf
+    action	crox6hb.bdf
+    action	crox6h.bdf
+    action	crox6hbo.bdf
+    action	crox6ho.bdf
+    action	crox6tb.bdf
+    action	crox6t.bdf
+    action	crox6tbo.bdf
+    action	crox6to.bdf
+    action	koi10x16b.bdf
+    action	koi10x20.bdf
+    action	koi6x10.bdf
+    action	koinil2.bdf
+
+    action	COPYRIGHT
+
+# XXX Need to deal with fonts.alias for cyrillic fonts
+}
+
+symlink_font_misc_cyrillic() {
+    src_dir fonts/bdf/cyrillic
+    dst_dir font/misc-cyrillic
+
+# XXX Should these be broken into three different components?
+
+# XXX "May be distributed and modified without restrictions"
+    action	koi12x24b.bdf
+    action	koi8x16b.bdf
+    action	koi8x16.bdf
+
+# XXX Same license as cronyx-cyrillic 
+    action	koi12x24.bdf
+    action	koi6x13.bdf
+
+# XXX public domain
+    action	koi5x8.bdf
+    action	koi6x13b.bdf
+    action	koi6x9.bdf
+    action	koi7x14b.bdf
+    action	koi7x14.bdf
+    action	koi8x13.bdf
+    action	koi9x15b.bdf
+    action	koi9x15.bdf
+    action	koi9x18b.bdf
+    action	koi9x18.bdf
+}
+
+symlink_font_screen_cyrillic() {
+    src_dir fonts/bdf/cyrillic
+    dst_dir font/screen-cyrillic
+
+# XXX no copyright/license at all
+    action	screen8x16b.bdf
+    action	screen8x16.bdf
+}
+
+symlink_font_winitzki_cyrillic() {
+    src_dir fonts/bdf/cyrillic
+    dst_dir font/winitzki-cyrillic
+
+    action	proof9x16.bdf
+}
+
+symlink_font_cursor_misc() {
+    src_dir fonts/bdf/misc
+    dst_dir font/cursor-misc
+
+# XXX Does "unencumbered" mean the same thing as public domain
+#     in this context?
+    action	cursor.bdf
+}
+
+symlink_font_daewoo_misc() {
+    src_dir fonts/bdf/misc
+    dst_dir font/daewoo-misc
+
+# XXX These fonts are copyright, but no permissions are given
+    action	hanglg16.bdf
+    action	hanglm16.bdf
+    action	hanglm24.bdf
+}
+
+symlink_font_dec_misc() {
+    src_dir fonts/bdf/misc
+    dst_dir font/dec-misc
+
+    action	deccurs.bdf
+    action	decsess.bdf
+}
+
+symlink_font_isas_misc() {
+    src_dir fonts/bdf/misc
+    dst_dir font/isas-misc
+
+    action	gb16fs.bdf
+    action	gb16st.bdf
+    action	gb24st.bdf
+}
+
+symlink_font_jis_misc() {
+    src_dir fonts/bdf/misc
+    dst_dir font/jis-misc
+
+# XXX Verify license restrictions
+    action	jiskan16.bdf
+    action	jiskan24.bdf
+}
+
+symlink_font_micro_misc() {
+    src_dir fonts/bdf/misc
+    dst_dir font/micro-misc
+
+    action	micro.bdf
+}
+
+symlink_font_misc_misc() {
+    src_dir fonts/bdf/misc
+    dst_dir font/misc-misc
+
+    action	10x20.bdf
+    action	12x13ja.bdf
+    action	18x18ja.bdf
+    action	18x18ko.bdf
+    action	4x6.bdf
+    action	5x7.bdf
+    action	5x8.bdf
+    action	6x10.bdf
+    action	6x12.bdf
+    action	6x13B.bdf
+    action	6x13.bdf
+    action	6x13O.bdf
+    action	6x9.bdf
+    action	7x13B.bdf
+    action	7x13.bdf
+    action	7x13O.bdf
+    action	7x14B.bdf
+    action	7x14.bdf
+    action	8x13B.bdf
+    action	8x13.bdf
+    action	8x13O.bdf
+    action	9x15B.bdf
+    action	9x15.bdf
+    action	9x18B.bdf
+    action	9x18.bdf
+    action	k14.bdf
+
+# XXX This font does not have any COPYRIGHT
+    action	nil2.bdf
+
+# XXX Need to deal with fonts.alias for misc fonts
+}
+
+symlink_font_schumacher_misc() {
+    src_dir fonts/bdf/misc
+    dst_dir font/schumacher-misc
+
+    action	clB6x10.bdf
+    action	clB6x12.bdf
+    action	clB8x10.bdf
+    action	clB8x12.bdf
+    action	clB8x13.bdf
+    action	clB8x14.bdf
+    action	clB8x16.bdf
+    action	clB8x8.bdf
+    action	clB9x15.bdf
+    action	clI6x12.bdf
+    action	clI8x8.bdf
+    action	clR4x6.bdf
+    action	clR5x10.bdf
+    action	clR5x6.bdf
+    action	clR5x8.bdf
+    action	clR6x10.bdf
+    action	clR6x12.bdf
+    action	clR6x13.bdf
+    action	clR6x6.bdf
+    action	clR6x8.bdf
+    action	clR7x10.bdf
+    action	clR7x12.bdf
+    action	clR7x14.bdf
+    action	clR7x8.bdf
+    action	clR8x10.bdf
+    action	clR8x12.bdf
+    action	clR8x13.bdf
+    action	clR8x14.bdf
+    action	clR8x16.bdf
+    action	clR8x8.bdf
+    action	clR9x15.bdf
+}
+
+symlink_font_sony_misc() {
+    src_dir fonts/bdf/misc
+    dst_dir font/sony-misc
+
+    action	12x24.bdf
+    action	12x24rk.bdf
+    action	8x16.bdf
+    action	8x16rk.bdf
+}
+
+symlink_font_sun_misc() {
+    src_dir fonts/bdf/misc
+    dst_dir font/sun-misc
+
+    action	olcursor.bdf
+    action	olgl10.bdf
+    action	olgl12.bdf
+    action	olgl14.bdf
+    action	olgl19.bdf
+}
+
+symlink_font_bh_ttf() {
+    src_dir fonts/scaled/TTF
+    dst_dir font/bh-ttf
+
+    action	luximbi.ttf
+    action	luximb.ttf
+    action	luximri.ttf
+    action	luximr.ttf
+    action	luxirbi.ttf
+    action	luxirb.ttf
+    action	luxirri.ttf
+    action	luxirr.ttf
+    action	luxisbi.ttf
+    action	luxisb.ttf
+    action	luxisri.ttf
+    action	luxisr.ttf
+
+    action	COPYRIGHT.BH
+}
+
+symlink_font_adobe_utopia_type1() {
+    src_dir fonts/scaled/Type1
+    dst_dir font/adobe-utopia-type1
+
+# XXX These fonts are copyright Adobe, but all rights reserved
+    action	UTB_____.afm
+    action	UTBI____.afm
+    action	UTBI____.pfa
+    action	UTB_____.pfa
+    action	UTI_____.afm
+    action	UTI_____.pfa
+    action	UTRG____.afm
+    action	UTRG____.pfa
+}
+
+symlink_font_bh_type1() {
+    src_dir fonts/scaled/Type1
+    dst_dir font/bh-type1
+
+    action	l047013t.afm
+    action	l047013t.pfa
+    action	l047016t.afm
+    action	l047016t.pfa
+    action	l047033t.afm
+    action	l047033t.pfa
+    action	l047036t.afm
+    action	l047036t.pfa
+    action	l048013t.afm
+    action	l048013t.pfa
+    action	l048016t.afm
+    action	l048016t.pfa
+    action	l048033t.afm
+    action	l048033t.pfa
+    action	l048036t.afm
+    action	l048036t.pfa
+    action	l049013t.afm
+    action	l049013t.pfa
+    action	l049016t.afm
+    action	l049016t.pfa
+    action	l049033t.afm
+    action	l049033t.pfa
+    action	l049036t.afm
+    action	l049036t.pfa
+
+    action	COPYRIGHT.BH
+}
+
+symlink_font_bitstream_type1() {
+    src_dir fonts/scaled/Type1
+    dst_dir font/bitstream-type1
+
+    action	c0419bt_.afm
+    action	c0419bt_.pfb
+    action	c0582bt_.afm
+    action	c0582bt_.pfb
+    action	c0583bt_.afm
+    action	c0583bt_.pfb
+    action	c0611bt_.afm
+    action	c0611bt_.pfb
+    action	c0632bt_.afm
+    action	c0632bt_.pfb
+    action	c0633bt_.afm
+    action	c0633bt_.pfb
+    action	c0648bt_.afm
+    action	c0648bt_.pfb
+    action	c0649bt_.afm
+    action	c0649bt_.pfb
+
+    action	Copyright
+}
+
+symlink_font_ibm_type1() {
+    src_dir fonts/scaled/Type1
+    dst_dir font/ibm-type1
+
+    action	cour.afm
+    action	courb.afm
+    action	courbi.afm
+    action	courbi.pfa
+    action	courb.pfa
+    action	couri.afm
+    action	couri.pfa
+    action	cour.pfa
+
+    action	COPYRIGHT.IBM
+}
+
+symlink_font_xfree86_type1() {
+    src_dir fonts/scaled/Type1
+    dst_dir font/xfree86-type1
+
+    action	cursor.pfa
+}
+
+symlink_font_util() {
+    src_dir fonts/util
+    dst_dir font/util
+
+    action	8859-1.TXT	map-ISO8859-1
+    action	8859-2.TXT	map-ISO8859-2
+    action	8859-3.TXT	map-ISO8859-3
+    action	8859-4.TXT	map-ISO8859-4
+    action	8859-5.TXT	map-ISO8859-5
+    action	8859-6.TXT	map-ISO8859-6
+    action	8859-7.TXT	map-ISO8859-7
+    action	8859-8.TXT	map-ISO8859-8
+    action	8859-9.TXT	map-ISO8859-9
+    action	8859-10.TXT	map-ISO8859-10
+    action	8859-11.TXT	map-ISO8859-11
+    action	8859-13.TXT	map-ISO8859-13
+    action	8859-14.TXT	map-ISO8859-14
+    action	8859-15.TXT	map-ISO8859-15
+    action	8859-16.TXT	map-ISO8859-16
+    action	JIS0201.TXT	map-JISX0201.1976-0
+    action	KOI8-R.TXT	map-KOI8-R
+
+    action	bdftruncate.man
+    action	bdftruncate.pl
+
+    action	ucs2any.c
+    action	ucs2any.man
 }
 
 symlink_font() {
-    symlink_font_100dpi
-#    symlink_font_75dpi
-#    symlink_font_cyrillic
-#    symlink_font_misc
-#    symlink_font_CID
-#    symlink_font_Ethiopic
-#    symlink_font_Meltho
-#    symlink_font_Speedo
-#    symlink_font_TTF
-#    symlink_font_Type1
-#    symlink_font_encodings
-#    symlink_font_util
+    symlink_font_adobe_100dpi
+    symlink_font_adobe_utopia_100dpi
+    symlink_font_bh_100dpi
+    symlink_font_bh_lucidatypewriter_100dpi
+    symlink_font_bitstream_100dpi
+
+    symlink_font_adobe_75dpi
+    symlink_font_adobe_utopia_75dpi
+    symlink_font_bh_75dpi
+    symlink_font_bh_lucidatypewriter_75dpi
+    symlink_font_bitstream_75dpi
+
+    symlink_font_cronyx_cyrillic
+    symlink_font_misc_cyrillic
+    symlink_font_screen_cyrillic
+    symlink_font_winitzki_cyrillic
+
+    symlink_font_cursor_misc
+    symlink_font_daewoo_misc
+    symlink_font_dec_misc
+    symlink_font_isas_misc
+    symlink_font_jis_misc
+    symlink_font_micro_misc
+    symlink_font_misc_misc
+    symlink_font_schumacher_misc
+    symlink_font_sony_misc
+    symlink_font_sun_misc
+
+    symlink_font_bh_ttf
+
+    symlink_font_adobe_utopia_type1
+    symlink_font_bh_type1
+    symlink_font_bitstream_type1
+    symlink_font_ibm_type1
+    symlink_font_xfree86_type1
+
+    symlink_font_util
+
+#    symlink_font_encodings -- This will be put into libfontenc XXX
 }
 
 
