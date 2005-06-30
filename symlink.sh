@@ -3841,6 +3841,13 @@ symlink_app_xbiff() {
 
     action	xbiff.man
 
+    src_dir programs/xbiff/bitmaps
+    dst_dir app/xbiff/bitmaps
+
+    action	mail-down
+    action	mail-down-mask
+    action	mail-up
+    action	mail-up-mask
 }
 
 symlink_app_xcalc() {
@@ -3890,6 +3897,9 @@ symlink_app_xclock() {
 
     action	xclock.man
 
+    action	clmask.bit
+    action	clock.bit
+ 
 }
 
 symlink_app_xcmsdb() {
