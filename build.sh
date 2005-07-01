@@ -15,6 +15,7 @@ build() {
     cd ../..
 }
 
+# protocol headers have no build order dependencies
 build_proto() {
     build proto BigReqs
     build proto Composite
@@ -46,6 +47,18 @@ build_proto() {
     build proto XF86VidMode
 }
 
+# All protocol modules must be installed before the libs (okay, that's an
+# overstatement, but all protocol modules should be installed anyway)
+#
+# the libraries have a dependency order:
+# xtrans, Xau, Xdmcp before anything else
+# fontenc before Xfont
+# ICE before SM
+# X11 before Xext
+# (X11 and SM) before Xt
+# Xt before Xmu and Xpm
+# Xext before any other extension library
+# Xp before XprintUtil before XprintAppUtil
 build_lib() {
     build lib xtrans
     build lib Xau
@@ -90,18 +103,24 @@ build_lib() {
     build lib Xxf86vm
 }
 
+# All apps depend at least on libX11.
+# TODO: detailed breakdown of which apps require which libs
 build_app() {
     build
 }
 
+# The server requires at least the following libraries:
+# Xfont, Xau, Xdmcp
 build_xserver() {
     build
 }
 
+# The server must be built before the drivers
 build_driver() {
     build
 }
 
+# TODO
 build_font() {
     build font util
     build font adobe-100dpi
@@ -136,6 +155,7 @@ build_font() {
     build font xfree86-type1
 }
 
+# TODO
 build_doc() {
     build
 }
