@@ -5365,6 +5365,7 @@ symlink_xserver_fb() {
     action      fbpixmap.c
     action      fbpoint.c
     action      fbpseudocolor.c
+    action      fbpseudocolor.h
     action      fbpush.c
     action      fbrop.h
     action      fbscreen.c
@@ -5718,6 +5719,43 @@ symlink_xserver_hw_xfree86_ddc() {
     action      xf86DDC.h
 }
 
+symlink_xserver_hw_xfree86_dixmods() {
+    dst_dir xserver/xorg/hw/xfree86/dixmods
+
+    src_dir programs/Xserver/afb
+    action	afbmodule.c
+
+    src_dir lib/font/bitmap/module
+    action	bitmapmod.c
+
+    src_dir programs/Xserver/cfb
+    action	cfbmodule.c
+
+    src_dir programs/Xserver/cfb16
+    action	cfbmodule.c	cfb16module.c
+
+    src_dir programs/Xserver/cfb24
+    action	cfbmodule.c	cfb24module.c
+
+    src_dir programs/Xserver/cfb32
+    action	cfbmodule.c	cfb32module.c
+
+    src_dir programs/Xserver/dbe
+    action	dbemodule.c
+	    
+    src_dir programs/Xserver/fb
+    action	fbmodule.c
+
+    src_dir programs/Xserver/miext/layer
+    action	laymodule.c
+
+    src_dir programs/Xserver/miext/shadow
+    action	shmodule.c
+
+    src_dir programs/Xserver/mfb
+    action	mfbmodule.c
+}
+
 symlink_xserver_hw_xfree86_dummylib() {
     src_dir programs/Xserver/hw/xfree86/dummylib
     dst_dir xserver/xorg/hw/xfree86/dummylib
@@ -5744,6 +5782,10 @@ symlink_xserver_hw_xfree86_dummylib() {
     action      xf86screens.c
     action      xf86servisinit.c
     action      xf86verbose.c
+
+    src_dir lib/misc
+    action	strlcat.c
+    action	strlcpy.c
 }
 
 symlink_xserver_hw_xfree86_fbdevhw() {
@@ -6992,6 +7034,21 @@ symlink_xserver_xkb() {
     action      xkbPrOtherEv.c
     action      xkbSwap.c
     action      xkbUtils.c
+
+    src_dir lib/X11
+    action	XKBAlloc.c
+    action	XKBGAlloc.c
+    action	XKBMAlloc.c
+    action	XKBMisc.c
+
+    src_dir lib/xkbfile
+    action	maprules.c
+    action	xkbconfig.c
+    action	xkberrs.c
+    action	xkbmisc.c xkbfmisc.c
+    action	xkbout.c
+    action	xkbtext.c
+    action	xkmread.c
 }
 
 symlink_xserver() {
@@ -7033,6 +7090,7 @@ symlink_xserver() {
     symlink_xserver_hw_vfb
     symlink_xserver_hw_xfree86_common
     symlink_xserver_hw_xfree86_ddc
+    symlink_xserver_hw_xfree86_dixmods
     symlink_xserver_hw_xfree86_dummylib
     symlink_xserver_hw_xfree86_fbdevhw
     symlink_xserver_hw_xfree86_i2c
