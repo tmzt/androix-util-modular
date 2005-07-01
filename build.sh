@@ -120,7 +120,21 @@ build_driver() {
     build
 }
 
-# TODO
+# All fonts require mkfontscale and mkfontdir to be available
+#
+# The following fonts require bdftopcf to be available:
+#   adobe-100dpi, adobe-75dpi, adobe-utopia-100dpi, adobe-utopia-75dpi,
+#   bh-100dpi, bh-75dpi, bh-lucidatypewriter-100dpi, bh-lucidatypewriter-75dpi,
+#   bitstream-100dpi, bitstream-75dpi, cronyx-cyrillic, cursor-misc,
+#   daewoo-misc, dec-misc, isas-misc, jis-misc, micro-misc, misc-cyrillic,
+#   misc-misc, schumacher-misc, screen-cyrillic, sony-misc, sun-misc and
+#   winitzki-cyrillic
+#
+# Within the font module, the util component must be built before the
+# following fonts:
+#   adobe-100dpi, adobe-75dpi, adobe-utopia-100dpi, adobe-utopia-75dpi,
+#   bh-100dpi, bh-75dpi, bh-lucidatypewriter-100dpi, bh-lucidatypewriter-75dpi,
+#   misc-misc and schumacher-misc
 build_font() {
     build font util
     build font adobe-100dpi
