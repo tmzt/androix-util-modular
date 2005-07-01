@@ -151,8 +151,11 @@ fi
 ACLOCAL_LOCALDIR="${PREFIX}/share/aclocal"
 mkdir -p ${ACLOCAL_LOCALDIR}
 
-export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
+# The following is required to make aclocal find our .m4 macros
 export ACLOCAL="aclocal -I ${ACLOCAL_LOCALDIR}"
+
+# The following is required to make pkg-config find our .pc metadata files
+export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
 
 date
 
