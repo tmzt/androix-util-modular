@@ -4477,6 +4477,7 @@ symlink_app_xplsprinters() {
 
     action	xplsprinters.man
 
+    action	xplsprinters.sgml
 }
 
 symlink_app_xpr() {
@@ -4494,6 +4495,7 @@ symlink_app_xpr() {
     action	xdpr.man
     action	xpr.man
 
+    action	xdpr.script
 }
 
 symlink_app_xprehashprinterlist() {
@@ -4504,6 +4506,7 @@ symlink_app_xprehashprinterlist() {
 
     action	xprehashprinterlist.man
 
+    action	xprehashprinterlist.sgml
 }
 
 symlink_app_xrandr() {
