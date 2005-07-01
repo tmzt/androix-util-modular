@@ -3998,6 +3998,8 @@ symlink_app_xeyes() {
 
     action	xeyes.man
 
+    action	eyes.bit
+    action	eyesmask.bit
 }
 
 symlink_app_xf86dga() {
@@ -4602,6 +4604,8 @@ symlink_app_xsm() {
 
     action	README
 
+    action	system.xsm
+
     action	auth.h
     action	choose.h
     action	info.h
@@ -4656,7 +4660,7 @@ symlink_app_xvidtune() {
     src_dir programs/xvidtune
     dst_dir app/xvidtune
 
-    # action	Xvidtune.ad     built from xvidtune.cpp
+    action	Xvidtune.cpp
 
     action	xvidtune.c
 
@@ -7534,7 +7538,7 @@ symlink_driver_mga() {
     action      clientlx.c
     action      mga.h
     action      mga_arc.c
-    action      mga_bios.h
+#    action      mga_bios.h
     action      mga_common.h
     action      mga_dac3026.c
     action      mga_dacG.c
