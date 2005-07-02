@@ -103,10 +103,17 @@ build_lib() {
     build lib Xxf86vm
 }
 
-# All apps depend at least on libX11.
+# Most apps depend at least on libX11.
+#
+# bdftopcf depends on libXfont
+# mkfontscale depends on libfontenc and libfreetype
+# mkfontdir depends on mkfontscale
+#
 # TODO: detailed breakdown of which apps require which libs
 build_app() {
-    build
+    build app bdftopcf
+    build app mkfontscale
+    build app mkfontdir
 }
 
 # The server requires at least the following libraries:
@@ -193,13 +200,31 @@ else
 fi
 
 # The following is required to make pkg-config find our .pc metadata files
-export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
+if [ x"$PKG_CONFIG_PATH" = x ] ; then
+    export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
+else
+    export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig:${PKG_CONFIG_PATH}
+fi
+
+# Set the library path so that locally built libs will be found by apps
+if [ x"$LD_LIBRARY_PATH" = x ] ; then
+    export LD_LIBRARY_PATH=${PREFIX}/lib
+else
+    export LD_LIBRARY_PATH=${PREFIX}/lib:${LD_LIBRARY_PATH}
+fi
+
+# Set the path so that locally built apps will be found and used
+if [ x"$PATH" = x ] ; then
+    export PATH=${PREFIX}/bin
+else
+    export PATH=${PREFIX}/bin:${PATH}
+fi
 
 date
 
 build_proto
 build_lib
-# build_app
+build_app
 # build_xserver
 # build_driver
 build_font

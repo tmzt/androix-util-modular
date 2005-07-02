@@ -2538,7 +2538,6 @@ symlink_lib_xfont() {
     src_dir lib/font/bitmap
     dst_dir lib/Xfont/src/bitmap
 
-    action      bdfint.h
     action      bdfread.c
     action      bdfutils.c
     action      bitmap.c
@@ -2546,11 +2545,16 @@ symlink_lib_xfont() {
     action      bitmaputil.c
     action      bitscale.c
     action      fontink.c
-    action      pcf.h
     action      pcfread.c
     action      pcfwrite.c
     action      snfread.c
     action      snfstr.h
+
+    src_dir lib/font/bitmap
+    dst_dir lib/Xfont/include/X11/fonts
+
+    action      bdfint.h
+    action      pcf.h
 
     src_dir lib/font/builtins
     dst_dir lib/Xfont/src/builtins
@@ -3618,6 +3622,16 @@ symlink_app_makepsres() {
     action	makepsres.c
 
     action	makepsres.man
+
+}
+
+symlink_app_mkfontdir() {
+    src_dir programs/mkfontdir
+    dst_dir app/mkfontdir
+
+    action	mkfontdir.cpp
+
+    action	mkfontdir.man
 
 }
 
@@ -4756,6 +4770,7 @@ symlink_app() {
     symlink_app_proxymngr
     symlink_app_pclcomp
     symlink_app_oclock
+    symlink_app_mkfontdir
     symlink_app_mkfontscale
     symlink_app_makepsres
     symlink_app_luit
