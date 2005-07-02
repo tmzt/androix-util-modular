@@ -9621,6 +9621,32 @@ symlink_font_xfree86_type1() {
     action	cursor.pfa
 }
 
+symlink_font_arabic_misc() {
+    src_dir extras/fonts/arabic24
+    dst_dir font/arabic-misc
+
+    action	arabic24.bdf
+
+    action	README
+    action	uniarab.txt
+}
+
+symlink_font_mutt_misc() {
+    src_dir extras/fonts/ClearlyU
+    dst_dir font/mutt-misc
+
+    action cu12.bdf
+    action cu-alt12.bdf
+    action cu-arabic12.bdf
+    action cuarabic12.bdf
+    action cu-devnag12.bdf
+    action cudevnag12.bdf
+    action cu-lig12.bdf
+    action cu-pua12.bdf
+
+    action	README
+}
+
 symlink_font_util() {
     src_dir fonts/util
     dst_dir font/util
@@ -9686,6 +9712,9 @@ symlink_font() {
     symlink_font_bitstream_type1
     symlink_font_ibm_type1
     symlink_font_xfree86_type1
+
+    symlink_font_mutt_misc
+    symlink_font_arabic_misc
 
     symlink_font_util
 
