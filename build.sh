@@ -89,8 +89,8 @@ build_lib() {
     build lib Xinerama
     build lib xkbfile
     build lib xkbui
-    build lib XprintAppUtil
     build lib XprintUtil
+    build lib XprintAppUtil
     build lib Xrandr
     build lib XRes
     build lib XScrnSaver
