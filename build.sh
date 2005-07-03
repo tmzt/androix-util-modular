@@ -1,11 +1,16 @@
 #!/bin/sh
 
+# global environment variables you may set:
+# CACHE: absolute path to a global autoconf cache
+# QUIET: hush the configure script noise
+
 build() {
     echo "Building $1 module component $2..."
     cd $1/$2
 
     # Use "sh autogen.sh" since some scripts are not executable in CVS
-    sh autogen.sh --prefix=${PREFIX}
+    sh autogen.sh --prefix=${PREFIX} ${QUIET:+--quiet} \
+        ${CACHE:+--cache-file=}${CACHE}
 #    make
     make install
 #    make clean
