@@ -95,11 +95,6 @@ symlink_proto_core() {
     action	XWDFile.h
     action	Xwindows.h
     action	Xwinsock.h
-
-    src_dir programs/Xserver/include
-
-    action	os.h		# needed for lbxutil
-    action	misc.h		# needed for lbxutil
 }
 
 # Extension protocols
@@ -5715,6 +5710,11 @@ symlink_xserver_hw_xfree86_common() {
     action      xisb.c
     action      xisb.h
     action      xorgHelper.c
+
+    src_dir programs/Xserver/hw/xfree86
+    action	xf86Date.h
+    action	xf86Version.h
+    action	xorgVersion.h
 }
 
 symlink_xserver_hw_xfree86_ddc() {
@@ -6267,6 +6267,9 @@ symlink_xserver_hw_xfree86_scanpci() {
     action      xf86ScanPci.h
     
     action      pciid2c.pl
+
+    src_dir programs/Xserver/hw/xfree86/etc
+    action	pci.ids
 }
 
 symlink_xserver_hw_xfree86_shadowfb() {
@@ -6643,8 +6646,10 @@ symlink_xserver_include() {
     action	globals.h
     action	input.h
     action	inputstr.h
+    action	misc.h
     action	miscstruct.h
     action	opaque.h
+    action	os.h
     action	pixmap.h
     action	pixmapstr.h
     action	property.h
@@ -6814,6 +6819,7 @@ symlink_xserver_mi() {
     action      migc.c
     action      migc.h
     action      miglblt.c
+    action	miinitext.c
     action      miline.h
     action      mioverlay.c
     action      mioverlay.h
