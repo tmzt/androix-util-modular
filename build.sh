@@ -191,7 +191,7 @@ build_doc() {
 
 PREFIX=$1
 
-if test "x${PREFIX}" == "x" ; then
+if test "x${PREFIX}" = "x" ; then
     echo "Usage: $0 prefix"
     exit
 fi
@@ -202,31 +202,35 @@ mkdir -p ${ACLOCAL_LOCALDIR}
 
 # The following is required to make aclocal find our .m4 macros
 if [ x"$ACLOCAL" = x ] ; then
-    export ACLOCAL="aclocal -I ${ACLOCAL_LOCALDIR}"
+    ACLOCAL="aclocal -I ${ACLOCAL_LOCALDIR}"
 else
-    export ACLOCAL="${ACLOCAL} -I ${ACLOCAL_LOCALDIR}"
+    ACLOCAL="${ACLOCAL} -I ${ACLOCAL_LOCALDIR}"
 fi
+export ACLOCAL
 
 # The following is required to make pkg-config find our .pc metadata files
 if [ x"$PKG_CONFIG_PATH" = x ] ; then
-    export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
+    PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
 else
-    export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig:${PKG_CONFIG_PATH}
+    PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig:${PKG_CONFIG_PATH}
 fi
+export PKG_CONFIG_PATH
 
 # Set the library path so that locally built libs will be found by apps
 if [ x"$LD_LIBRARY_PATH" = x ] ; then
-    export LD_LIBRARY_PATH=${PREFIX}/lib
+    LD_LIBRARY_PATH=${PREFIX}/lib
 else
-    export LD_LIBRARY_PATH=${PREFIX}/lib:${LD_LIBRARY_PATH}
+    LD_LIBRARY_PATH=${PREFIX}/lib:${LD_LIBRARY_PATH}
 fi
+export LD_LIBRARY_PATH
 
 # Set the path so that locally built apps will be found and used
 if [ x"$PATH" = x ] ; then
-    export PATH=${PREFIX}/bin
+    PATH=${PREFIX}/bin
 else
-    export PATH=${PREFIX}/bin:${PATH}
+    PATH=${PREFIX}/bin:${PATH}
 fi
+export PATH
 
 date
 
