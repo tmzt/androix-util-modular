@@ -6555,6 +6555,8 @@ symlink_xserver_hw_xwin() {
     action      winpolyline.c
     action      winprefs.c
     action      winprefs.h
+    action      winprefsyacc.y
+    action      winprefslex.l
     action      winpriv.c
     action      winpriv.h
     action      winprocarg.c
@@ -6579,6 +6581,10 @@ symlink_xserver_hw_xwin() {
     action      winwindow.h
     action      winwindowswm.c
     action      winwndproc.c
+
+    action      XWin.rc
+    action      X.ico
+    action      X-boxed.ico
 }
 
 symlink_xserver_ilbm() {
@@ -6918,6 +6924,15 @@ symlink_xserver_miext_rootless_accel() {
     action      rlSolid.c
 }
 
+symlink_xserver_miext_rootless_safealpha() {
+    src_dir programs/Xserver/miext/rootless/safeAlpha
+    dst_dir xserver/xorg/miext/rootless/safeAlpha
+
+    action      safeAlpha.h
+    action      safeAlphaPicture.c
+    action      safeAlphaWindow.c
+}
+
 symlink_xserver_miext_shadow() {
     src_dir programs/Xserver/miext/shadow
     dst_dir xserver/xorg/miext/shadow
@@ -7167,6 +7182,7 @@ symlink_xserver() {
     symlink_xserver_miext_layer
     symlink_xserver_miext_rootless
     symlink_xserver_miext_rootless_accel
+    symlink_xserver_miext_rootless_safealpha
     symlink_xserver_miext_shadow
     symlink_xserver_os
     symlink_xserver_randr
