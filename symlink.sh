@@ -4130,6 +4130,19 @@ symlink_app_xgc() {
 
     action	xgc.man
 
+    action	Bugs
+    action	tile
+
+    src_dir programs/xgc/Written
+    dst_dir app/xgc/Written
+
+    action	FilledRects
+    action	Interface
+    action	Jim
+    action	Notes
+    action	Notes2
+    action	Outline
+    action	Widget
 }
 
 symlink_app_xinit() {
@@ -4143,6 +4156,11 @@ symlink_app_xinit() {
     action	startx.man
     action	xinit.man
 
+    action	startx.cmd
+    action	xinitrc.cmd
+    action	xinit.def
+    action	startx.cpp
+    action	xinitrc.cpp
 }
 
 symlink_app_xkbcomp() {
@@ -4264,6 +4282,7 @@ symlink_app_xload() {
 
     action	xload.man
 
+    action	xload.bit
 }
 
 symlink_app_xlogo() {
@@ -4396,6 +4415,7 @@ symlink_app_xmessage() {
 
     action	xmessage.man
 
+    action	Tests
 }
 
 symlink_app_xmh() {
@@ -4441,6 +4461,9 @@ symlink_app_xmh() {
 
     action	xmh.man
 
+    action	black6
+    action	box6
+    action	Xmh.sample
 }
 
 symlink_app_xmodmap() {
@@ -4457,6 +4480,7 @@ symlink_app_xmodmap() {
 
     action	xmodmap.man
 
+    action	swap.km
 }
 
 symlink_app_xmore() {
