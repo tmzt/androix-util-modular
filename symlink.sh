@@ -3936,6 +3936,14 @@ symlink_app_xconsole() {
 
 }
 
+symlink_app_xcursorgen() {
+    src_dir programs/xcursorgen
+    dst_dir app/xcursorgen
+
+    action	xcursorgen.c
+    action	xcursorgen.man
+}
+
 symlink_app_xdbedizzy() {
     src_dir programs/xdbedizzy
     dst_dir app/xdbedizzy
@@ -4807,6 +4815,7 @@ symlink_app() {
     symlink_app_twm
     symlink_app_xdpyinfo
     symlink_app_xhost
+    symlink_app_xcursorgen
 #    ...
 }
 
