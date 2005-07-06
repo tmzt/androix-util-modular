@@ -3456,7 +3456,7 @@ symlink_app_bitmap() {
     dst_dir app/bitmap
 
     action	Bitmap.ad
-    action	Bitmap-co.ad
+    action	Bitmap-co.ad		Bitmap-color.ad
     action	Bitmap-nocase.ad
 
     action	atobm.c
@@ -3476,6 +3476,19 @@ symlink_app_bitmap() {
 
     action	bitmap.man
 
+    action	Dashes
+    action	Down
+    action	Excl
+    action	FlipHoriz
+    action	FlipVert
+    action	Fold
+    action	Left
+    action	Right
+    action	RotateLeft
+    action	RotateRight
+    action	Stipple
+    action	Term
+    action	Up
 }
 
 symlink_app_editres() {
@@ -3952,6 +3965,7 @@ symlink_app_xdbedizzy() {
 
     action	xdbedizzy.man
 
+    action	xdbedizzy.sgml
 }
 
 symlink_app_xditview() {
