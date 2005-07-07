@@ -449,13 +449,13 @@ symlink_lib_composite() {
     src_dir lib/Xcomposite
     dst_dir lib/Xcomposite
 
-    dst_dir lib/Xcomposite/include
+    dst_dir lib/Xcomposite/include/X11/extensions
 
     action	Xcomposite.h
-    action	xcompositeint.h
 
     dst_dir lib/Xcomposite/src
 
+    action	xcompositeint.h
     action	Xcomposite.c
 }
 
@@ -3732,18 +3732,6 @@ symlink_app_rgb() {
 
 }
 
-symlink_app_rstart() {
-    src_dir programs/rstart
-    dst_dir app/rstart
-
-    action	auth.c
-    action	server.c
-
-    action	rstartd.man
-    action	rstart.man
-
-}
-
 symlink_app_setxkbmap() {
     src_dir programs/setxkbmap
     dst_dir app/setxkbmap
@@ -3751,7 +3739,6 @@ symlink_app_setxkbmap() {
     action	setxkbmap.c
 
     action	setxkbmap.man
-
 }
 
 symlink_app_showfont() {
@@ -3761,7 +3748,6 @@ symlink_app_showfont() {
     action	showfont.c
 
     action	showfont.man
-
 }
 
 symlink_app_smproxy() {
@@ -3774,7 +3760,6 @@ symlink_app_smproxy() {
     action	smproxy.h
 
     action	smproxy.man
-
 }
 
 symlink_app_texteroids() {
@@ -3784,7 +3769,6 @@ symlink_app_texteroids() {
     action	texteroids.c
 
     action	texteroids.man
-
 }
 
 symlink_app_viewres() {
@@ -3796,7 +3780,6 @@ symlink_app_viewres() {
     action	viewres.c
 
     action	viewres.man
-
 }
 
 symlink_app_x11perf() {
@@ -3848,7 +3831,6 @@ symlink_app_xauth() {
     action	xauth.h
 
     action	xauth.man
-
 }
 
 symlink_app_xbiff() {
@@ -3935,6 +3917,11 @@ symlink_app_xcmsdb() {
 
     action	xcmsdb.man
 
+    src_dir programs/xcmsdb/datafiles
+    dst_dir app/xcmsdb/datafiles
+
+    action	sample1.dcc
+    action	sample2.dcc
 }
 
 symlink_app_xconsole() {
@@ -3972,7 +3959,7 @@ symlink_app_xditview() {
     src_dir programs/xditview
     dst_dir app/xditview
 
-    action	Xdit-chrtr.ad
+    action	Xdit-chrtr.ad		Xditview-chrtr.ad
     action	Xditview.ad
 
     action	draw.c
@@ -3993,6 +3980,8 @@ symlink_app_xditview() {
 
     action	xditview.man
 
+    action	xdit.bm
+    action	xdit_mask.bm
 }
 
 symlink_app_xdriinfo() {
@@ -4733,7 +4722,6 @@ symlink_app_xvinfo() {
     action	xvinfo.c
 
     action	xvinfo.man
-
 }
 
 symlink_app_xwud() {
@@ -4743,7 +4731,133 @@ symlink_app_xwud() {
     action	xwud.c
 
     action	xwud.man
+}
 
+symlink_app_scripts() {
+    src_dir programs/scripts
+    dst_dir app/scripts
+
+    action	fontname.sh
+    action	fontprop.sh
+    action	xauth_switch_to_sun-des-1.cpp
+    action	xon.sh
+
+    action	xon.man
+}
+
+symlink_app_rstart() {
+    src_dir programs/rstart
+    dst_dir app/rstart
+
+    action	auth.c			# auth.o     \
+    action	server.c		# server.o   /   rstartd.real
+
+    action	rstartd.man		# man page
+    action	rstart.man		# man page
+
+    action	client.cpp		# => CPP > client
+    action	server.cpp		# => CPP > server
+    action	config.cpp		# => CPP > config
+
+    action	server.os2		# EXTRA_DIST
+
+    # commands
+
+    src_dir programs/rstart/commands
+    dst_dir app/rstart/commands
+
+    action	ListContexts
+    action	ListGenericCommands
+    action	@List
+
+    #        x11r6
+    
+    src_dir programs/rstart/commands/x11r6
+    dst_dir app/rstart/commands/x11r6
+
+    action	@List
+    action	LoadMonitor
+    action	Terminal
+
+    # contexts
+
+    src_dir programs/rstart/contexts
+    dst_dir app/rstart/contexts
+
+    action	@List
+    action	@Aliases
+    action	default
+    action	x11r6
+
+    # samples
+
+    #        commands
+
+    src_dir programs/rstart/samples/commands
+    dst_dir app/rstart/samples/commands
+
+    action	@List
+    action	ListContexts
+    action	ListGenericCommands
+
+    #                odt1
+    
+    src_dir programs/rstart/samples/commands/odt1
+    dst_dir app/rstart/samples/commands/odt1
+
+    action	@List
+    action	LoadMonitor
+    action	Terminal
+
+    #                openwindows2
+
+    src_dir programs/rstart/samples/commands/openwindows2
+    dst_dir app/rstart/samples/commands/openwindows2
+
+    action	@List
+    action	LoadMonitor
+    action	Terminal
+
+    #                openwindow3
+
+    src_dir programs/rstart/samples/commands/openwindows3
+    dst_dir app/rstart/samples/commands/openwindows3
+
+    action	@List
+    action	LoadMonitor
+    action	Terminal
+
+    #                x11r5
+
+    src_dir programs/rstart/samples/commands/x11r5
+    dst_dir app/rstart/samples/commands/x11r5
+
+    action	@List
+    action	LoadMonitor
+    action	Terminal
+
+    #        contexts.odt1
+
+    src_dir programs/rstart/samples/contexts.odt1
+    dst_dir app/rstart/samples/contexts.odt1
+
+    action	@Aliases
+    action	@List
+    action	default
+    action	odt1
+
+    #        contexts.sun
+
+    src_dir programs/rstart/samples/contexts.sun
+    dst_dir app/rstart/samples/contexts.odt1
+
+    action	@Aliases
+    action	@List
+    action	default
+    action	openwindows2
+    action	openwindows3
+    action	x11r5
+    action	x11r6
 }
 
 symlink_app() {
@@ -4830,6 +4944,7 @@ symlink_app() {
     symlink_app_xdpyinfo
     symlink_app_xhost
     symlink_app_xcursorgen
+    symlink_app_scripts
 #    ...
 }
 
