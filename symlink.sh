@@ -4749,17 +4749,17 @@ symlink_app_rstart() {
     src_dir programs/rstart
     dst_dir app/rstart
 
-    action	auth.c			# auth.o     \
-    action	server.c		# server.o   /   rstartd.real
+    action	auth.c		
+    action	server.c	
 
-    action	rstartd.man		# man page
-    action	rstart.man		# man page
+    action	rstartd.man	
+    action	rstart.man	
+    
+    action	client.cpp	
+    action	server.cpp	
+    action	config.cpp	
 
-    action	client.cpp		# => CPP > client
-    action	server.cpp		# => CPP > server
-    action	config.cpp		# => CPP > config
-
-    action	server.os2		# EXTRA_DIST
+    action	server.os2	
 
     # commands
 
