@@ -4860,6 +4860,83 @@ symlink_app_rstart() {
     action	x11r6
 }
 
+symlink_app_xdm() {
+    src_dir programs/xdm
+    dst_dir app/xdm/
+
+    action	access.c
+    action	auth.c
+    action	choose.c
+    action	chooser.c
+    action	daemon.c
+    action	dm.c
+    action	dpylist.c
+    action	error.c
+    action	file.c
+    action	genauth.c
+    action	krb5auth.c
+    action	mitauth.c
+    action	netaddr.c
+    action	policy.c
+    action	prngc.c
+    action	protodpy.c
+    action	reset.c
+    action	resource.c
+    action	rpcauth.c
+    action	server.c
+    action	session.c
+    action	sessreg.c
+    action	socket.c
+    action	streams.c
+    action	util.c
+    action	xdmauth.c
+    action	xdmcp.c
+    action      xdmshell.c
+
+    action	dm_auth.h
+    action	dm_error.h
+    action	dm.h
+    action	dm_socket.h
+    action	greet.h
+
+    src_dir programs/xdm/greeter
+    dst_dir app/xdm/greeter
+
+    action	greet.c
+    action	Login.c
+    action	Login.h
+    action	LoginP.h
+    action	verify.c
+
+    src_dir programs/xdm/config
+    dst_dir app/xdm/config
+    
+    action	README
+
+    action	GiveConsole
+
+    action	system.Xdefaults.sequent
+    action	system.xsession.sequent
+    action	TakeConsole
+
+    action	XFree86bw.xpm
+    action	XFree86.xpm
+    action	xorg-bw.xpm
+    action	xorg.xpm
+
+    action	Xreset
+    action	Xaccess
+    action	Xservers.fs
+    action	Xsession
+    action	Xsetup_0
+    action	Xstartup
+    action	Xwilling
+ 
+    action	Xres.cpp
+    action	Xserv.ws.cpp
+    action	xdm-conf.cpp
+}
+
 symlink_app() {
     symlink_app_xwud
     symlink_app_xvinfo
@@ -4945,6 +5022,7 @@ symlink_app() {
     symlink_app_xhost
     symlink_app_xcursorgen
     symlink_app_scripts
+    symlink_app_xdm
 #    ...
 }
 
