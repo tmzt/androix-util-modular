@@ -4937,7 +4937,58 @@ symlink_app_xdm() {
     action	xdm-conf.cpp
 }
 
+symlink_app_xprop() {
+    src_dir programs/xprop
+    dst_dir app/xprop
+
+    action	xprop.c
+
+    action	xprop.man
+
+    src_dir programs/xlsfonts
+
+    action	dsimple.c
+    action	dsimple.h
+}
+
+symlink_app_xwd() {
+    src_dir programs/xwd
+    dst_dir app/xwd
+
+    action	list.c
+    action	multiVis.c
+    action	xwd.c
+
+    action	list.h
+    action	multiVis.h
+    action	wsutils.h
+
+    action	xwd.man
+
+    src_dir programs/xlsfonts
+
+    action	dsimple.c
+    action	dsimple.h
+}
+
+symlink_app_xwininfo() {
+    src_dir programs/xwininfo
+    dst_dir app/xwininfo
+
+    action	xwininfo.c
+
+    action	xwininfo.man
+
+    src_dir programs/xlsfonts
+
+    action	dsimple.c
+    action	dsimple.h
+}
+
 symlink_app() {
+    symlink_app_xwininfo
+    symlink_app_xwd
+    symlink_app_xprop
     symlink_app_xwud
     symlink_app_xvinfo
     symlink_app_xvidtune
