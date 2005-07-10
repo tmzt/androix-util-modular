@@ -47,6 +47,7 @@ build_proto() {
     build proto XExt
     build proto XF86BigFont
     build proto XF86DGA
+    build proto XF86DRI
     build proto XF86Misc
     build proto XF86Rush
     build proto XF86VidMode
