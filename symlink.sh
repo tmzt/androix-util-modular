@@ -325,6 +325,13 @@ symlink_proto_xf86dga() {
     action	xf86dgastr.h
 }
 
+symlink_proto_xf86dri() {
+    src_dir lib/GL/glx
+    dst_dir proto/XF86DRI
+
+    action xf86dri.h
+}
+
 symlink_proto_xf86misc() {
     src_dir include/extensions
     dst_dir proto/XF86Misc
@@ -400,6 +407,7 @@ symlink_proto() {
     symlink_proto_xext
     symlink_proto_xf86bigfont
     symlink_proto_xf86dga
+    symlink_proto_xf86dri
     symlink_proto_xf86misc
     symlink_proto_xf86rush
     symlink_proto_xf86vidmode
