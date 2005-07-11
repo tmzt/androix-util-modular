@@ -692,34 +692,18 @@ symlink_lib_x11() {
     action	Xutil.h
     action	ImUtil.h
 
-    # internal .h files
     dst_dir lib/X11/src
 
+    # internal .h files
     action	Cmap.h
     action	Cr.h
-    action	Cv.h
     action	Key.h
+    action	ks_tables.h
     action	locking.h
     action	poly.h
-    action	Xaixlcint.h
     action	Xatomtype.h
-    action	Xcmsint.h
-    action	XimImSw.h
-    action	Ximint.h
-    action	XimintL.h
-    action	XimintP.h
-    action	XimProto.h
-    action	XimThai.h
-    action	XimTrans.h
-    action	XimTrInt.h
-    action	XimTrX.h
     action	Xintatom.h
     action	Xintconn.h
-    action	XKBlibint.h
-    action	XlcGeneric.h
-    action	Xlcint.h
-    action	XlcPubI.h
-    action	XlcPublic.h
     action	XomGeneric.h
     action	Xresinternal.h
     action	XrmI.h
@@ -729,11 +713,8 @@ symlink_lib_x11() {
     action	XKeysymDB
     action	XErrorDB
     
-
     # source .c files
 
-    action	AddDIC.c
-    action	AddSF.c
     action	AllCells.c
     action	AllowEv.c
     action	AllPlanes.c
@@ -742,7 +723,6 @@ symlink_lib_x11() {
     action	BdrWidth.c
     action	Bell.c
     action	Border.c
-    action	CCC.c
     action	ChAccCon.c
     action	ChActPGb.c
     action	ChClMode.c
@@ -765,16 +745,6 @@ symlink_lib_x11() {
     action	ClDisplay.c
     action	ClearArea.c
     action	Clear.c
-    action	cmsAllCol.c
-    action	cmsAllNCol.c
-    action	cmsCmap.c
-    action	cmsColNm.c
-    action	cmsGlobls.c
-    action	cmsInt.c
-    action	cmsLkCol.c
-    action	cmsMath.c
-    action	cmsProp.c
-    action	cmsTrig.c
     action	ConfWind.c
     action	ConnDis.c
     action	Context.c
@@ -792,8 +762,6 @@ symlink_lib_x11() {
     action	CrPixmap.c
     action	CrWindow.c
     action	Cursor.c
-    action	CvCols.c
-    action	CvColW.c
     action	DefCursor.c
     action	DelProp.c
     action	Depths.c
@@ -866,90 +834,18 @@ symlink_lib_x11() {
     action	GrPointer.c
     action	GrServer.c
     action	Host.c
-    action	HVC.c
-    action	HVCGcC.c
-    action	HVCGcV.c
-    action	HVCGcVC.c
-    action	HVCMnV.c
-    action	HVCMxC.c
-    action	HVCMxV.c
-    action	HVCMxVC.c
-    action	HVCMxVs.c
-    action	HVCWpAj.c
     action	Iconify.c
-    action	ICWrap.c
-    action	IdOfPr.c
     action	IfEvent.c
-    action	imCallbk.c
     action	imConv.c
-    action	imDefFlt.c
-    action	imDefIc.c
-    action	imDefIm.c
-    action	imDefLkup.c
-    action	imDispch.c
-    action	imEvToWire.c
-    action	imExten.c
-    action	imImSw.c
-    action	imInsClbk.c
-    action	imInt.c
-    action	imKStoUCS.c
-    action	imLcFlt.c
-    action	imLcGIc.c
-    action	imLcIc.c
-    action	imLcIm.c
-    action	imLcLkup.c
-    action	imLcPrs.c
-    action	imLcSIc.c
-    action	imRmAttr.c
-    action	imRm.c
     action	ImText16.c
     action	ImText.c
-    action	imThaiFlt.c
-    action	imThaiIc.c
-    action	imThaiIm.c
-    action	imTrans.c
-    action	imTransR.c
-    action	imTrX.c
     action	ImUtil.c
-    action	IMWrap.c
     action	InitExt.c
     action	InsCmap.c
     action	IntAtom.c
     action	KeyBind.c
     action	KeysymStr.c
     action	KillCl.c
-    action	Lab.c
-    action	LabGcC.c
-    action	LabGcL.c
-    action	LabGcLC.c
-    action	LabMnL.c
-    action	LabMxC.c
-    action	LabMxL.c
-    action	LabMxLC.c
-    action	LabWpAj.c
-    action	lcCharSet.c
-    action	lcConv.c
-    action	lcCT.c
-    action	lcDB.c
-    action	lcDefConv.c
-    action	lcDynamic.c
-    action	lcEuc.c
-    action	lcFile.c
-    action	lcGenConv.c
-    action	lcGeneric.c
-    action	lcInit.c
-    action	lcJis.c
-    action	lcPrTxt.c
-    action	lcPublic.c
-    action	lcPubWrap.c
-    action	lcRM.c
-    action	lcSjis.c
-    action	lcStd.c
-    action	lcTxtPr.c
-    action	lcUTF8.c
-    action	lcUTF8Load.c
-    action	lcUtil.c
-    action	lcWrap.c
     action	LiHosts.c
     action	LiICmaps.c
     action	LiProps.c
@@ -959,38 +855,17 @@ symlink_lib_x11() {
     action	locking.c
     action	LookupCol.c
     action	LowerWin.c
-    action	LRGB.c
-    action	Luv.c
-    action	LuvGcC.c
-    action	LuvGcL.c
-    action	LuvGcLC.c
-    action	LuvMnL.c
-    action	LuvMxC.c
-    action	LuvMxL.c
-    action	LuvMxLC.c
-    action	LuvWpAj.c
     action	Macros.c
     action	MapRaised.c
     action	MapSubs.c
     action	MapWindow.c
     action	MaskEvent.c
-    action	mbWMProps.c
-    action	mbWrap.c
     action	Misc.c
     action	ModMap.c
     action	MoveWin.c
     action	NextEvent.c
     action	OCWrap.c
-    action	OfCCC.c
-    action	omDefault.c
-    action	omGeneric.c
-    action	omImText.c
-    action	omText.c
-    action	omTextEsc.c
-    action	omTextExt.c
-    action	omTextPer.c
     action	OMWrap.c
-    action	omXChar.c
     action	OpenDis.c
     action	os2Stubs.c
     action	ParseCmd.c
@@ -1005,20 +880,13 @@ symlink_lib_x11() {
     action	PolyReg.c
     action	PolyTxt16.c
     action	PolyTxt.c
-    action	PrOfId.c
     action	PropAlloc.c
     action	PutBEvent.c
     action	PutImage.c
-    action	QBlack.c
-    action	QBlue.c
-    action	QGreen.c
-    action	QRed.c
     action	Quarks.c
     action	QuBest.c
-    action	QuCol.c
     action	QuColor.c
     action	QuColors.c
-    action	QuCols.c
     action	QuCurShp.c
     action	QuExt.c
     action	QuKeybd.c
@@ -1028,7 +896,6 @@ symlink_lib_x11() {
     action	QuTextExt.c
     action	QuTileShp.c
     action	QuTree.c
-    action	QWhite.c
     action	RaiseWin.c
     action	RdBitF.c
     action	RecolorC.c
@@ -1043,7 +910,6 @@ symlink_lib_x11() {
     action	SelInput.c
     action	SendEvent.c
     action	SetBack.c
-    action	SetCCC.c
     action	SetClMask.c
     action	SetClOrig.c
     action	SetCRects.c
@@ -1052,7 +918,6 @@ symlink_lib_x11() {
     action	SetFore.c
     action	SetFPath.c
     action	SetFunc.c
-    action	SetGetCols.c
     action	SetHints.c
     action	SetIFocus.c
     action	SetLocale.c
@@ -1072,10 +937,8 @@ symlink_lib_x11() {
     action	SetWMCMapW.c
     action	SetWMProto.c
     action	StBytes.c
-    action	StCol.c
     action	StColor.c
     action	StColors.c
-    action	StCols.c
     action	StName.c
     action	StNColor.c
     action	StrKeysym.c
@@ -1091,7 +954,6 @@ symlink_lib_x11() {
     action	udcInf.c
     action	UIThrStubs.c
     action	UndefCurs.c
-    action	UNDEFINED.c
     action	UngrabBut.c
     action	UngrabKbd.c
     action	UngrabKey.c
@@ -1101,20 +963,90 @@ symlink_lib_x11() {
     action	UnldFont.c
     action	UnmapSubs.c
     action	UnmapWin.c
-    action	utf8WMProps.c
-    action	utf8Wrap.c
-    action	uvY.c
     action	VisUtil.c
     action	WarpPtr.c
-    action	wcWrap.c
     action	Window.c
     action	WinEvent.c
     action	Withdraw.c
     action	WMGeom.c
     action	WMProps.c
     action	WrBitF.c
-    action	XDefaultIMIF.c
-    action	XDefaultOMIF.c
+    action	XlibAsync.c
+    action	XlibInt.c
+    action	Xrm.c
+
+    # XCMS files
+    dst_dir lib/X11/src/xcms
+
+    action	AddDIC.c
+    action	AddSF.c
+    action	CCC.c
+    action	cmsAllCol.c
+    action	cmsAllNCol.c
+    action	cmsCmap.c
+    action	cmsColNm.c
+    action	cmsGlobls.c
+    action	cmsInt.c
+    action	cmsLkCol.c
+    action	cmsMath.c
+    action	cmsProp.c
+    action	cmsTrig.c
+    action	CvCols.c
+    action	CvColW.c
+    action	Cv.h
+    action	HVC.c
+    action	HVCGcC.c
+    action	HVCGcV.c
+    action	HVCGcVC.c
+    action	HVCMnV.c
+    action	HVCMxC.c
+    action	HVCMxV.c
+    action	HVCMxVC.c
+    action	HVCMxVs.c
+    action	HVCWpAj.c
+    action	IdOfPr.c
+    action	Lab.c
+    action	LabGcC.c
+    action	LabGcL.c
+    action	LabGcLC.c
+    action	LabMnL.c
+    action	LabMxC.c
+    action	LabMxL.c
+    action	LabMxLC.c
+    action	LabWpAj.c
+    action	LRGB.c
+    action	Luv.c
+    action	LuvGcC.c
+    action	LuvGcL.c
+    action	LuvGcLC.c
+    action	LuvMnL.c
+    action	LuvMxC.c
+    action	LuvMxL.c
+    action	LuvMxLC.c
+    action	LuvWpAj.c
+    action	OfCCC.c
+    action	PrOfId.c
+    action	QBlack.c
+    action	QBlue.c
+    action	QGreen.c
+    action	QRed.c
+    action	QuCol.c
+    action	QuCols.c
+    action	QWhite.c
+    action	SetCCC.c
+    action	SetGetCols.c
+    action	StCol.c
+    action	StCols.c
+    action	UNDEFINED.c
+    action	uvY.c
+    action	Xcmsint.h
+    action	XRGB.c
+    action	xyY.c
+    action	XYZ.c
+
+    # XKB files
+    dst_dir lib/X11/src/xkb
+
     action	XKBAlloc.c
     action	XKBBell.c
     action	XKBBind.c
@@ -1128,6 +1060,7 @@ symlink_lib_x11() {
     action	XKBGetByName.c
     action	XKBGetMap.c
     action	XKBleds.c
+    action	XKBlibint.h
     action	XKBList.c
     action	XKBMAlloc.c
     action	XKBMisc.c
@@ -1136,15 +1069,125 @@ symlink_lib_x11() {
     action	XKBSetGeom.c
     action	XKBSetMap.c
     action	XKBUse.c
-    action	XlcDL.c
-    action	XlcSL.c
-    action	XlibAsync.c
-    action	XlibInt.c
-    action	XRGB.c
-    action	Xrm.c
-    action	xyY.c
-    action	XYZ.c
+    
+    # Xlib I18n files
 
+    dst_dir lib/X11/src/xlibi18n
+    
+    action	ICWrap.c
+    action	imKStoUCS.c
+    action	IMWrap.c
+    action	lcCharSet.c
+    action	lcConv.c
+    action	lcCT.c
+    action	lcDB.c
+    action	lcDynamic.c
+    action	lcFile.c
+    action	lcGeneric.c
+    action	lcInit.c
+    action	lcPrTxt.c
+    action	lcPublic.c
+    action	lcPubWrap.c
+    action	lcRM.c
+    action	lcStd.c
+    action	lcTxtPr.c
+    action	lcUTF8.c
+    action	lcUtil.c
+    action	lcWrap.c
+    action	mbWMProps.c
+    action	mbWrap.c
+    action	utf8WMProps.c
+    action	utf8Wrap.c
+    action	wcWrap.c
+    action	Xaixlcint.h
+    action	XDefaultIMIF.c
+    action	XDefaultOMIF.c
+    action	XimImSw.h
+    action	Ximint.h
+    action	XimintL.h
+    action	XimintP.h
+    action	XimProto.h
+    action	XimThai.h
+    action	XimTrans.h
+    action	XimTrInt.h
+    action	XimTrX.h
+    action	XlcDL.c
+    action	XlcGeneric.h
+    action	Xlcint.h
+    action	XlcPubI.h
+    action	XlcPublic.h
+    action	XlcSL.c
+    
+    # XIMPC input method files
+
+    dst_dir lib/X11/src/xlibi18n/im/ximcp
+
+    action	imCallbk.c
+    action	imDefFlt.c
+    action	imDefIc.c
+    action	imDefIm.c
+    action	imDefLkup.c
+    action	imDispch.c
+    action	imEvToWire.c
+    action	imExten.c
+    action	imImSw.c
+    action	imInsClbk.c
+    action	imInt.c
+    action	imLcFlt.c
+    action	imLcGIc.c
+    action	imLcIc.c
+    action	imLcIm.c
+    action	imLcLkup.c
+    action	imLcPrs.c
+    action	imLcSIc.c
+    action	imRmAttr.c
+    action	imRm.c
+    action	imThaiFlt.c
+    action	imThaiIc.c
+    action	imThaiIm.c
+    action	imTrans.c
+    action	imTransR.c
+    action	imTrX.c
+
+    # default lc files
+
+    dst_dir lib/X11/src/xlibi18n/lc/def
+    
+    action	lcDefConv.c
+    
+    # generic lc files
+    
+    dst_dir lib/X11/src/xlibi18n/lc/gen
+    
+    action	lcGenConv.c
+
+    # UTF-8 lc files
+    
+    dst_dir lib/X11/src/xlibi18n/lc/Utf8
+    
+    action	lcUTF8Load.c
+
+    # Xlocale lc files
+    
+    dst_dir lib/X11/src/xlibi18n/lc/xlocale
+    
+    action	lcEuc.c
+    action	lcJis.c
+    action	lcSjis.c
+    
+    # Generic output method files
+
+    dst_dir lib/X11/src/xlibi18n/om/generic
+    
+    action	omDefault.c
+    action	omGeneric.c
+    action	omImText.c
+    action	omText.c
+    action	omTextEsc.c
+    action	omTextExt.c
+    action	omTextPer.c
+    action	omXChar.c
+    
     # man pages
 
     src_dir doc/man/X11/
@@ -6100,6 +6143,18 @@ symlink_xserver_hw_xfree86_dummylib() {
     src_dir lib/misc
     action	strlcat.c
     action	strlcpy.c
+}
+
+symlink_xserver_hw_xfree86_exa() {
+    src_dir programs/Xserver/hw/xfree86/exa
+    dst_dir xserver/xorg/hw/xfree86/exa
+
+    action      exaasync.c
+    action      exa.c
+    action      exa.h
+    action      exaoffscreen.c
+    action      exapict.c
+    action      exaPriv.h
 }
 
 symlink_xserver_hw_xfree86_fbdevhw() {
