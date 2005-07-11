@@ -5036,7 +5036,119 @@ symlink_app_xwininfo() {
     action	dsimple.h
 }
 
+symlink_app_xphelloworld() {
+    src_dir programs/xphelloworld/xpxmhelloworld
+    dst_dir app/xphelloworld/xpxmhelloworld
+
+    action	xpxmhelloworld.man
+    action	xpxmhelloworld.c
+    action	xpxmhelloworld.sgml
+
+    src_dir programs/xphelloworld/xpsimplehelloworld
+    dst_dir app/xphelloworld/xpsimplehelloworld
+
+    action	xpsimplehelloworld.sgml
+    action	xpsimplehelloworld.c
+    action	xpsimplehelloworld.man
+
+    src_dir programs/xphelloworld/xpxthelloworld
+    dst_dir app/xphelloworld/xpxthelloworld
+
+    action	xpxthelloworld.man
+    action	xpxthelloworld.sgml
+    action	xpxthelloworld.c
+
+    src_dir programs/xphelloworld/xpawhelloworld
+    dst_dir app/xphelloworld/xpawhelloworld
+
+    action	xpawhelloworld.c
+    action	xpawhelloworld.man
+
+    src_dir programs/xphelloworld/xphelloworld
+    dst_dir app/xphelloworld/xphelloworld
+
+    action	xphelloworld.sgml
+    action	xphelloworld.c
+    action	xphelloworld.man
+}
+
+symlink_app_lbxproxy() {
+    src_dir programs/lbxproxy/
+    dst_dir app/lbxproxy
+
+    action	design
+    action	lbxproxy.def
+    action	lbxproxy.man
+
+    src_dir programs/lbxproxy/config
+    dst_dir app/lbxproxy/config
+
+    action	AtomControl
+
+    src_dir programs/lbxproxy/di
+    dst_dir app/lbxproxy/di
+
+    action	atomcache.c
+    action	cache.c
+    action	cmap.c
+    action	cmaputil.c
+    action	dispatch.c
+    action	extensions.c
+    action	gfx.c
+    action	globals.c
+    action	init.c
+    action	lbxfuncs.c
+    action	lbxutil.c
+    action	main.c
+    action	options.c
+    action	pm.c
+    action	props.c
+    action	reqtype.c
+    action	resource.c
+    action	swaprep.c
+    action	swapreq.c
+    action	tables.c
+    action	tags.c
+    action	unsquish.c
+    action	utils.c
+    action	wire.c
+    action	zeropad.c
+
+    src_dir programs/lbxproxy/include
+    dst_dir app/lbxproxy/include
+
+    action	assert.h
+    action	atomcache.h
+    action	cache.h
+    action	colormap.h
+    action	init.h
+    action	lbxext.h
+    action	lbx.h
+    action	misc.h
+    action	os.h
+    action	pm.h
+    action	pmP.h
+    action	proxyopts.h
+    action	reqtype.h
+    action	resource.h
+    action	swap.h
+    action	tags.h
+    action	util.h
+    action	wire.h
+
+    src_dir programs/lbxproxy/os
+    dst_dir app/lbxproxy/os
+
+    action	connection.c
+    action	io.c
+    action	osdep.h
+    action	osinit.c
+    action	WaitFor.c
+}
+
 symlink_app() {
+    symlink_app_lbxproxy
+    symlink_app_xphelloworld
     symlink_app_xwininfo
     symlink_app_xwd
     symlink_app_xprop
