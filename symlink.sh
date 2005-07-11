@@ -5146,7 +5146,117 @@ symlink_app_lbxproxy() {
     action	WaitFor.c
 }
 
+symlink_app_xedit() {
+    src_dir programs/xedit
+    dst_dir app/xedit
+    
+    action	commands.c
+    action	hook.c
+    action	ispell.c
+    action	lisp.c
+    action	options.c
+    action	realpath.c
+    action	strcasecmp.c
+    action	util.c
+    action	xedit.c
+
+    action	Xedit-color.ad
+    action	Xedit-noxprint.ad
+    action	Xedit-xprint.ad
+
+    src_dir programs/xedit/lisp
+    dst_dir app/xedit/lisp
+    
+    action	bytecode.c
+    action	bytecode.h
+    action	compile.c
+    action	core.c
+    action	core.h
+    action	debugger.c
+    action	debugger.h
+    action	env.c
+    action	format.c
+    action	format.h
+    action	hash.c
+    action	hash.h
+    action	helper.c
+    action	helper.h
+    action	internal.h
+    action	io.c
+    action	io.h
+    action	lisp.c
+    action	lisp.h
+    action	lsp.c
+    action	math.c
+    action	math.h
+    action	mathimp.c
+    action	package.c
+    action	package.h
+    action	pathname.c
+    action	pathname.h
+    action	private.h
+    action	read.c
+    action	read.h
+    action	regex.c
+    action	regex.h
+    action	require.c
+    action	require.h
+    action	stream.c
+    action	stream.h
+    action	string.c
+    action	string.h
+    action	struct.c
+    action	struct.h
+    action	time.c
+    action	time.h
+    action	write.c
+    action	write.h
+    action	xedit.c
+    action	xedit.h
+    action	TODO
+    action	README
+    action	lisp.rules
+    
+    src_dir programs/xedit/lisp/modules
+    dst_dir app/xedit/lisp/modules
+    
+    action	indent.lsp
+    action	lisp.lsp
+    action	syntax.lsp
+    action	xedit.lsp
+    action	psql.c
+    action	x11.c
+    action	xaw.c
+    action	xt.c
+    
+    src_dir programs/xedit/lisp/re
+    dst_dir app/xedit/lisp/re
+    
+    action	README
+    action	re.c
+    action	rec.c
+    action	re.h
+    action	reo.c
+    action	rep.h
+    action	tests.c
+    action	tests.txt
+    
+    src_dir programs/xedit/lisp/test
+    dst_dir app/xedit/lisp/test
+    
+    action	hello.lsp
+    action	list.lsp
+    action	math.lsp
+    action	psql-1.lsp
+    action	psql-2.lsp
+    action	psql-3.lsp
+    action	regex.lsp
+    action	stream.lsp
+    action	widgets.lsp
+}
+
 symlink_app() {
+    symlink_app_xedit
     symlink_app_lbxproxy
     symlink_app_xphelloworld
     symlink_app_xwininfo
@@ -11831,7 +11941,8 @@ symlink_data_cursors() {
 }
 
 symlink_data() {
-    symlink_data_cursors
+#    symlink_data_cursors		  
+true
 }
 
 #########
