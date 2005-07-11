@@ -83,7 +83,7 @@ build_lib() {
     build lib Xpm
     build lib Xp
     build lib Xaw
-#    build lib Xcomposite
+    build lib Xcomposite
     build lib Xrender
     build lib Xfixes
     build lib Xdamage

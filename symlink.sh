@@ -698,7 +698,6 @@ symlink_lib_x11() {
     action	Cmap.h
     action	Cr.h
     action	Key.h
-    action	ks_tables.h
     action	locking.h
     action	poly.h
     action	Xatomtype.h
@@ -11978,7 +11977,7 @@ run() {
     ACTION=$1 EXPLANATION=$2 run_module font
     ACTION=$1 EXPLANATION=$2 run_module doc
     ACTION=$1 EXPLANATION=$2 run_module util
-    ACTION=$1 EXPLANATION=$2 run_module data
+#    ACTION=$1 EXPLANATION=$2 run_module data
 }
 
 src_dir() {
