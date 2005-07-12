@@ -5157,7 +5157,8 @@ symlink_app_lbxproxy() {
 symlink_app_xedit() {
     src_dir programs/xedit
     dst_dir app/xedit
-    
+
+    action	xedit.h
     action	commands.c
     action	hook.c
     action	ispell.c
@@ -5261,9 +5262,104 @@ symlink_app_xedit() {
     action	regex.lsp
     action	stream.lsp
     action	widgets.lsp
+
+    src_dir programs/xedit/lisp/mp
+    dst_dir app/xedit/lisp/mp
+
+    action	mp.c
+    action	mp.h
+    action	mpi.c
+    action	mpr.c
+
+    src_dir programs/xmore/
+    dst_dir app/xedit/
+
+    action	print.h
+    action	print.c
+    action	printdialog.h
+    action	printdialog.c
+    action	printdialogprivates.h
+}
+
+symlink_app_xfs() {
+    src_dir programs/xfs
+    dst_dir app/xfs
+    
+    action	xfs.def
+    action	xfs.man
+    action	README
+
+    src_dir programs/xfs/difs
+    dst_dir app/xfs/difs
+
+    action	atom.c
+    action	cache.c
+    action	charinfo.c
+    action	difsutils.c
+    action	dispatch.c
+    action	events.c
+    action	extensions.c
+    action	fontinfo.c
+    action	fonts.c
+    action	globals.c
+    action	initfonts.c
+    action	main.c
+    action	resource.c
+    action	swaprep.c
+    action	swapreq.c
+    action	tables.c
+
+    src_dir programs/xfs/include
+    dst_dir app/xfs/include
+
+    action	access.h
+    action	accstr.h
+    action	assert.h
+    action	auth.h
+    action	authstr.h
+    action	cache.h
+    action	cachestr.h
+    action	client.h
+    action	clientstr.h
+    action	closestr.h
+    action	closure.h
+    action	difsfn.h
+    action	difsfnst.h
+    action	difs.h
+    action	difsutils.h
+    action	dispatch.h
+    action	extentst.h
+    action	fsevents.h
+    action	fsresource.h
+    action	globals.h
+    action	misc.h
+    action	os.h
+    action	osstruct.h
+    action	servermd.h
+    action	site.h
+    action	swaprep.h
+    action	swapreq.h
+
+    src_dir programs/xfs/os
+    dst_dir app/xfs/os
+
+    action	access.c
+    action	config.c
+    action	config.h
+    action	configstr.h
+    action	connection.c
+    action	daemon.c
+    action	error.c
+    action	io.c
+    action	osdep.h
+    action	osglue.c
+    action	osinit.c
+    action	utils.c
+    action	waitfor.c
 }
 
 symlink_app() {
+    symlink_app_xfs
     symlink_app_xedit
     symlink_app_lbxproxy
     symlink_app_xphelloworld
@@ -10323,14 +10419,14 @@ symlink_font_mutt_misc() {
     src_dir extras/fonts/ClearlyU
     dst_dir font/mutt-misc
 
-    action cu12.bdf
-    action cu-alt12.bdf
-    action cu-arabic12.bdf
-    action cuarabic12.bdf
-    action cu-devnag12.bdf
-    action cudevnag12.bdf
-    action cu-lig12.bdf
-    action cu-pua12.bdf
+    action	cu12.bdf
+    action	cu-alt12.bdf
+    action	cu-arabic12.bdf
+    action	cuarabic12.bdf
+    action	cu-devnag12.bdf
+    action	cudevnag12.bdf
+    action	cu-lig12.bdf
+    action	cu-pua12.bdf
 
     action	README
 }
