@@ -9588,9 +9588,6 @@ symlink_font_bh_100dpi() {
     action	luRS24.bdf
 
     action	LU_LEGALNOTICE
-
-# XXX part of fonts.alias should be included in bh-100
-#    action	fonts.alias
 }
 
 symlink_font_bh_lucidatypewriter_100dpi() {
@@ -9611,9 +9608,6 @@ symlink_font_bh_lucidatypewriter_100dpi() {
     action	lutRS18.bdf
     action	lutRS19.bdf
     action	lutRS24.bdf
-
-# XXX part of fonts.alias should be included in bh-lut-100
-#    action	fonts.alias
 }
 
 symlink_font_bitstream_100dpi() {
@@ -9847,9 +9841,6 @@ symlink_font_bh_75dpi() {
     action	luRS24.bdf
 
     action	LU_LEGALNOTICE
-
-# XXX part of fonts.alias should be included in bh-75
-#    action	fonts.alias
 }
 
 symlink_font_bh_lucidatypewriter_75dpi() {
@@ -9870,9 +9861,6 @@ symlink_font_bh_lucidatypewriter_75dpi() {
     action	lutRS18.bdf
     action	lutRS19.bdf
     action	lutRS24.bdf
-
-# XXX part of fonts.alias should be included in bh-lut-75
-#    action	fonts.alias
 }
 
 symlink_font_bitstream_75dpi() {
@@ -9979,8 +9967,6 @@ symlink_font_cronyx_cyrillic() {
     action	koinil2.bdf
 
     action	COPYRIGHT
-
-# XXX Need to deal with fonts.alias for cyrillic fonts
 }
 
 symlink_font_misc_cyrillic() {
@@ -10112,8 +10098,6 @@ symlink_font_misc_misc() {
 
 # XXX This font does not have any COPYRIGHT
     action	nil2.bdf
-
-# XXX Need to deal with fonts.alias for misc fonts
 }
 
 symlink_font_schumacher_misc() {
@@ -10314,6 +10298,28 @@ symlink_font_mutt_misc() {
     action	README
 }
 
+symlink_font_alias() {
+    src_dir fonts/bdf/100dpi
+    dst_dir font/alias/100dpi
+
+    action	fonts.alias
+
+    src_dir fonts/bdf/75dpi
+    dst_dir font/alias/75dpi
+
+    action	fonts.alias
+
+    src_dir fonts/bdf/cyrillic
+    dst_dir font/alias/cyrillic
+
+    action	fonts.alias
+
+    src_dir fonts/bdf/misc
+    dst_dir font/alias/misc
+
+    action	fonts.alias
+}
+
 symlink_font_util() {
     src_dir fonts/util
     dst_dir font/util
@@ -10383,6 +10389,7 @@ symlink_font() {
     symlink_font_mutt_misc
     symlink_font_arabic_misc
 
+    symlink_font_alias
     symlink_font_util
 
 #    symlink_font_encodings -- This will be put into libfontenc XXX
