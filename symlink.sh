@@ -328,6 +328,7 @@ symlink_proto_xf86dri() {
     dst_dir proto/XF86DRI
 
     action xf86dri.h
+    action xf86dristr.h
 }
 
 symlink_proto_xf86misc() {
