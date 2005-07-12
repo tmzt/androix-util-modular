@@ -11,8 +11,8 @@ build() {
     # Use "sh autogen.sh" since some scripts are not executable in CVS
     sh autogen.sh --prefix=${PREFIX} ${QUIET:+--quiet} \
         ${CACHE:+--cache-file=}${CACHE}
-#    make
-    make install
+    make
+    $SUDO make install
 #    make clean
 #    make dist
 #    make distcheck
@@ -196,9 +196,10 @@ build_doc() {
 }
 
 PREFIX=$1
+SUDO=$2
 
 if test "x${PREFIX}" = "x" ; then
-    echo "Usage: $0 prefix"
+    echo "Usage: $0 prefix [sudo command]"
     exit
 fi
 
