@@ -6360,6 +6360,42 @@ symlink_xserver_hw_xfree86_ddc() {
     action      xf86DDC.h
 }
 
+symlink_xserver_hw_xfree86_x86emu() {
+    src_dir extras/x86emu/include
+    dst_dir xserver/xorg/hw/xfree86/x86emu
+
+    action      x86emu.h
+
+    src_dir extras/x86emu/src/x86emu
+
+    action debug.c
+    action decode.c  
+    action fpu.c
+    action ops2.c
+    action ops.c
+    action prim_ops.c
+    action sys.c
+    action validate.c
+
+    dst_dir xserver/xorg/hw/xfree86/x86emu/x86emu
+    src_dir extras/x86emu/include/x86emu
+
+    action fpu_regs.h
+    action regs.h
+    action types.h
+
+    src_dir extras/x86emu/src/x86emu/x86emu
+
+    action debug.h
+    action decode.h
+    action fpu.h
+    action ops.h
+    action prim_asm.h
+    action prim_ops.h
+    action x86emui.h
+}
+
+
 symlink_xserver_hw_xfree86_dixmods() {
     dst_dir xserver/xorg/hw/xfree86/dixmods
 
@@ -7771,6 +7807,7 @@ symlink_xserver() {
     symlink_xserver_hw_vfb
     symlink_xserver_hw_xfree86_common
     symlink_xserver_hw_xfree86_ddc
+    symlink_xserver_hw_xfree86_x86emu
     symlink_xserver_hw_xfree86_dixmods
     symlink_xserver_hw_xfree86_dummylib
     symlink_xserver_hw_xfree86_fbdevhw
