@@ -5376,7 +5376,7 @@ symlink_xserver_GL_apple() {
 
 symlink_xserver_GL_dri() {
     src_dir programs/Xserver/GL/dri
-    dst_dir xserver/xorg/GL/dri
+    dst_dir xserver/xorg/hw/xfree86/dri
 
     action      dri.c
     action      dri.h
@@ -5384,6 +5384,10 @@ symlink_xserver_GL_dri() {
     action      dristruct.h
     action      sarea.h
     action      xf86dri.c
+
+    # don't hate me
+    src_dir extras/drm/shared-core
+    action      drm.h
 }
 
 symlink_xserver_GL_glx() {
@@ -6361,9 +6365,6 @@ symlink_xserver_hw_xfree86_dixmods() {
 
     src_dir programs/Xserver/GL
     action      glxmodule.c
-
-    src_dir programs/Xserver/GL/dri
-    action      drimodule.c
 
     src_dir programs/Xserver/GL/mesa/GLcore
     action      GLcoremodule.c
