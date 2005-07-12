@@ -250,11 +250,9 @@ symlink_proto_video() {
 
     action	vldXvMC.h	# not used in server
     action	Xv.h
-    action	Xvlib.h		# not used in server
-    action	XvMC.h
-    action	XvMClib.h	# not used in server
-    action	XvMCproto.h
     action	Xvproto.h
+    action	XvMC.h
+    action	XvMCproto.h
 }
 
 symlink_proto_xcmisc() {
@@ -3210,6 +3208,11 @@ symlink_lib_xv() {
     action	Xv.c
     action	Xvlibint.h
 
+    src_dir include/extensions
+    dst_dir lib/Xv/include/X11/extensions
+
+    action	Xvlib.h
+
     src_dir doc/man/Xv
     dst_dir lib/Xv/man
 
@@ -3241,6 +3244,11 @@ symlink_lib_xvmc() {
 
     action	XvMC.c
     action	XvMClibint.h
+
+    src_dir include/extensions
+    dst_dir lib/XvMC/include/X11/extensions
+
+    action	XvMClib.h
 
     src_dir lib/XvMC/wrapper
 
