@@ -149,6 +149,10 @@ build_driver() {
 #   adobe-100dpi, adobe-75dpi, adobe-utopia-100dpi, adobe-utopia-75dpi,
 #   bh-100dpi, bh-75dpi, bh-lucidatypewriter-100dpi, bh-lucidatypewriter-75dpi,
 #   misc-misc and schumacher-misc
+#
+# The alias component is recommended to be installed after the other fonts
+# since the fonts.alias files reference specific fonts installed from the
+# other font components
 build_font() {
     build font util
     build font adobe-100dpi
@@ -183,6 +187,7 @@ build_font() {
     build font sun-misc
     build font winitzki-cyrillic
     build font xfree86-type1
+    build font alias
 }
 
 # TODO
