@@ -6300,6 +6300,15 @@ symlink_xserver_hw_xfree86_ddc() {
 symlink_xserver_hw_xfree86_dixmods() {
     dst_dir xserver/xorg/hw/xfree86/dixmods
 
+    src_dir programs/Xserver/GL
+    action      glxmodule.c
+
+    src_dir programs/Xserver/GL/dri
+    action      drimodule.c
+
+    src_dir programs/Xserver/GL/mesa/GLcore
+    action      GLcoremodule.c
+
     src_dir programs/Xserver/afb
     action	afbmodule.c
 
