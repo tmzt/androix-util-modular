@@ -6091,6 +6091,56 @@ symlink_xserver_hw_dmx() {
     action      dmxwindow.h
 }
 
+symlink_xserver_hw_dmx_config() {
+    src_dir programs/Xserver/hw/dmx/config
+    dst_dir xserver/xorg/hw/dmx/config
+
+    action	Canvas.c
+    action	Canvas.h
+    action	CanvasP.h
+    action	dmxcompat.c
+    action	dmxcompat.h
+    action	dmxconfig.c
+    action	dmxconfig.h
+    action	dmxparse.c
+    action	dmxparse.h
+    action	dmxprint.c
+    action	dmxprint.h
+    action	dmxtodmx.c
+    action	dmxtodmx.man
+    action	parser.y
+    action	scanner.l
+    action	test-a.in
+    action	test-a.out
+    action	test-b.in
+    action	test-b.out
+    action	test-c.in
+    action	test-c.out
+    action	test-d.in
+    action	test-d.out
+    action	test-e.in
+    action	test-e.out
+    action	test-f.in
+    action	test-f.out
+    action	test-g.in
+    action	test-g.out
+    action	test-h.in
+    action	test-h.out
+    action	test-i.in
+    action	test-i.out
+    action	test-j.in
+    action	test-j.out
+    action	test-k.in
+    action	test-k.out
+    action	test-l.in
+    action	test-l.out
+    action	TODO
+    action	vdltodmx.c
+    action	vdltodmx.man
+    action	xdmxconfig.c
+    action	xdmxconfig.man
+}
+
 symlink_xserver_hw_dmx_examples() {
     src_dir programs/Xserver/hw/dmx/examples
     dst_dir xserver/xorg/hw/dmx/examples
@@ -7704,6 +7754,7 @@ symlink_xserver() {
     symlink_xserver_hw_darwin_quartz_fullscreen
     symlink_xserver_hw_darwin_quartz_xpr
     symlink_xserver_hw_dmx
+    symlink_xserver_hw_dmx_config
     symlink_xserver_hw_dmx_examples
     symlink_xserver_hw_dmx_glxProxy
     symlink_xserver_hw_dmx_input
@@ -11757,7 +11808,7 @@ run() {
     ACTION=$1 EXPLANATION=$2 run_module font
     ACTION=$1 EXPLANATION=$2 run_module doc
     ACTION=$1 EXPLANATION=$2 run_module util
-#    ACTION=$1 EXPLANATION=$2 run_module data
+    ACTION=$1 EXPLANATION=$2 run_module data
 }
 
 src_dir() {
