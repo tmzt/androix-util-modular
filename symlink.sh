@@ -2796,64 +2796,6 @@ symlink_lib_fontenc() {
     dst_dir lib/fontenc/include/X11/fonts
 
     action	fontenc.h
-
-    src_dir fonts/encodings
-    dst_dir lib/fontenc/encodings
-
-    action	adobe-dingbats.enc
-    action	adobe-standard.enc
-    action	adobe-symbol.enc
-    action	ansi-1251.enc
-    action	armscii-8.enc
-    action	ascii-0.enc
-    action	dec-special.enc
-    action	ibm-cp437.enc
-    action	ibm-cp850.enc
-    action	ibm-cp852.enc
-    action	ibm-cp866.enc
-    action	iso8859-11.enc
-    action	iso8859-13.enc
-    action	iso8859-16.enc
-    action	iso8859-6.16.enc
-    action	iso8859-6.8x.enc
-    action	microsoft-cp1250.enc
-    action	microsoft-cp1251.enc
-    action	microsoft-cp1252.enc
-    action	microsoft-cp1253.enc
-    action	microsoft-cp1254.enc
-    action	microsoft-cp1255.enc
-    action	microsoft-cp1256.enc
-    action	microsoft-cp1257.enc
-    action	microsoft-cp1258.enc
-    action	microsoft-win3.1.enc
-    action	mulearabic-0.enc
-    action	mulearabic-1.enc
-    action	mulearabic-2.enc
-    action	mulelao-1.enc
-    action	suneu-greek.enc
-    action	tcvn-0.enc
-    action	tis620-2.enc
-    action	viscii1.1-1.enc
-
-    src_dir fonts/encodings/large
-    dst_dir lib/fontenc/encodings/large
-
-    action	big5.eten-0.enc
-    action	big5hkscs-0.enc
-    action	cns11643-1.enc
-    action	cns11643-2.enc
-    action	cns11643-3.enc
-    action	gb18030-0.enc
-    action	gb18030.2000-0.enc
-    action	gb18030.2000-1.enc
-    action	gb2312.1980-0.enc
-    action	gbk-0.enc
-    action	jisx0201.1976-0.enc
-    action	jisx0208.1990-0.enc
-    action	jisx0212.1990-0.enc
-    action	ksc5601.1987-0.enc
-    action	ksc5601.1992-3.enc
-    action	sun.unicode.india-0.enc
 }
 
 symlink_lib_xaw() {
@@ -10482,6 +10424,66 @@ symlink_font_util() {
     action	ucs2any.man
 }
 
+symlink_font_encodings() {
+    src_dir fonts/encodings
+    dst_dir font/encodings
+
+    action	adobe-dingbats.enc
+    action	adobe-standard.enc
+    action	adobe-symbol.enc
+    action	ansi-1251.enc
+    action	armscii-8.enc
+    action	ascii-0.enc
+    action	dec-special.enc
+    action	ibm-cp437.enc
+    action	ibm-cp850.enc
+    action	ibm-cp852.enc
+    action	ibm-cp866.enc
+    action	iso8859-11.enc
+    action	iso8859-13.enc
+    action	iso8859-16.enc
+    action	iso8859-6.16.enc
+    action	iso8859-6.8x.enc
+    action	microsoft-cp1250.enc
+    action	microsoft-cp1251.enc
+    action	microsoft-cp1252.enc
+    action	microsoft-cp1253.enc
+    action	microsoft-cp1254.enc
+    action	microsoft-cp1255.enc
+    action	microsoft-cp1256.enc
+    action	microsoft-cp1257.enc
+    action	microsoft-cp1258.enc
+    action	microsoft-win3.1.enc
+    action	mulearabic-0.enc
+    action	mulearabic-1.enc
+    action	mulearabic-2.enc
+    action	mulelao-1.enc
+    action	suneu-greek.enc
+    action	tcvn-0.enc
+    action	tis620-2.enc
+    action	viscii1.1-1.enc
+
+    src_dir fonts/encodings/large
+    dst_dir font/encodings/large
+
+    action	big5.eten-0.enc
+    action	big5hkscs-0.enc
+    action	cns11643-1.enc
+    action	cns11643-2.enc
+    action	cns11643-3.enc
+    action	gb18030-0.enc
+    action	gb18030.2000-0.enc
+    action	gb18030.2000-1.enc
+    action	gb2312.1980-0.enc
+    action	gbk-0.enc
+    action	jisx0201.1976-0.enc
+    action	jisx0208.1990-0.enc
+    action	jisx0212.1990-0.enc
+    action	ksc5601.1987-0.enc
+    action	ksc5601.1992-3.enc
+    action	sun.unicode.india-0.enc
+}
+
 symlink_font() {
     symlink_font_adobe_100dpi
     symlink_font_adobe_utopia_100dpi
@@ -10525,7 +10527,7 @@ symlink_font() {
     symlink_font_alias
     symlink_font_util
 
-#    symlink_font_encodings -- This will be put into libfontenc XXX
+    symlink_font_encodings
 }
 
 
