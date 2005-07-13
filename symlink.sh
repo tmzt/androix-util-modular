@@ -5535,8 +5535,6 @@ symlink_xserver_Xext() {
     action      appgroup.h
     action      bigreq.c
     action      cup.c
-    action      dgaproc.h
-    action      dmx.c
     action      dpms.c
     action      dpmsproc.h
     action      dpmsstubs.c
@@ -5559,16 +5557,9 @@ symlink_xserver_Xext() {
     action      sleepuntil.c
     action      sleepuntil.h
     action      sync.c
-    action      vidmodeproc.h
     action      xcmisc.c
     action      xevie.c
     action      xf86bigfont.c
-    action      xf86dga.c
-    action      xf86dga2.c
-    action      xf86dgaext.h
-    action      xf86misc.c
-    action      xf86miscproc.h
-    action      xf86vmode.c
     action      xprint.c
     action      xres.c
     action      xtest.c
@@ -5583,11 +5574,26 @@ symlink_xserver_Xext() {
     action      xvmcext.h
     action      xvmod.c
     action      xvmodproc.h
+
+    # some of these are really DDX-specific despite being in Xext
+
+    dst_dir xserver/xorg/hw/xfree86/dixmods/extmod
+    action      dgaproc.h
+    action      vidmodeproc.h
+    action      xf86dga.c
+    action      xf86dga2.c
+    action      xf86dgaext.h
+    action      xf86misc.c
+    action      xf86miscproto.h
+    action      xf86vmode.c
+
+    dst_dir xserver/xorg/hw/dmx
+    action      dmx.c
 }
 
 symlink_xserver_Xext_extmod() {
     src_dir programs/Xserver/Xext/extmod
-    dst_dir xserver/xorg/Xext/extmod
+    dst_dir xserver/xorg/hw/xfree86/dixmods/extmod
 
     action      modinit.c
     action      modinit.h
