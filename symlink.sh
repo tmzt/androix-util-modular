@@ -6538,6 +6538,39 @@ symlink_xserver_hw_xfree86_i2c() {
     action      xf86i2c.c
     action      xf86i2c.h
     action      xf86i2cmodule.c
+
+    src_dir programs/Xserver/hw/xfree86/drivers/i2c
+    dst_dir xserver/xorg/hw/xfree86/i2c
+    
+    action	i2c_def.h
+
+    action	bt829.c
+    action	bt829.h
+    action	bt829_module.c
+ 
+    action	fi1236.c
+    action	fi1236.h
+    action	fi1236_module.c
+    
+    action	msp3430.c
+    action	msp3430.h
+    action	msp3430_module.c
+
+    action	tda8425.c
+    action	tda8425.h
+    action	tda8425_module.c
+
+    action	tda9850.c
+    action	tda9850.h
+    action	tda9850_module.c
+
+    action	tda9885.c
+    action	tda9885.h
+    action	tda9885_module.c
+
+    action	uda1380.c
+    action	uda1380.h
+    action	uda1380_module.c
 }
 
 symlink_xserver_hw_xfree86_int10() {

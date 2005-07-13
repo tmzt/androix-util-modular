@@ -93,8 +93,13 @@ cat <<EOF >> Makefile.am
 #  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 AUTOMAKE_OPTIONS = foreign
-SUBDIRS = src man
 EOF
+
+if [ -z $man_pages ]  ; then 
+    echo SUBDIRS = src				>> Makefile.am
+else
+    echo SUBDIRS = src man			>> Makefile.am
+fi
 
 #
 #	Generate configure.ac
@@ -145,10 +150,13 @@ AC_PROG_CC
 
 AH_TOP([#include "xorg-server.h"])
 
+AC_ARG_WITH(xorg-module-dir, [  --with-xorg-module-dir=DIR ],
+                             [ moduledir="\$withval" ],
+                             [ moduledir="\$libdir/xorg/modules" ])
+AC_SUBST(moduledir)
+
 # Checks for pkg-config packages
-PKG_CHECK_MODULES(XORG, xorg-server)
-inputdir=\$(pkg-config --variable=moduledir xorg-server)/input
-AC_SUBST([inputdir])
+PKG_CHECK_MODULES(XORG, xorg-server xproto)
 sdkdir=\$(pkg-config --variable=sdkdir xorg-server)
 
 CFLAGS="\$XORG_CFLAGS "' -I\$(top_srcdir)/src'
@@ -180,11 +188,11 @@ EOF
 #
 #	man/Makefile.am
 #
-cd man
-
-rm -f Makefile.am
-
 if [ ! -z $man_pages ] ; then
+    cd man
+
+    rm -f Makefile.am
+
     cat <<EOF >> Makefile.am
 #  Copyright 2005 Adam Jackson.
 #
@@ -206,7 +214,7 @@ if [ ! -z $man_pages ] ; then
 #  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 #  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-man_MANS = \\
+dist_man_MANS = \\
 EOF
 
     for x in `ls *.4` ; do
@@ -220,9 +228,8 @@ EOF
 	    echo \ \ \ \ \ \ \ \ \ $x \\	>> Makefile.am
 	fi
     done ;
+    cd ..
 fi
-
-cd ..
 
 ############################
 #
@@ -262,7 +269,7 @@ cat <<EOF >> Makefile.am
 # TODO: -nostdlib/-Bstatic/-lgcc platform magic, not installing the .a, etc.
 ${drivername}_drv_la_LTLIBRARIES = ${drivername}_drv.la
 ${drivername}_drv_la_LDFLAGS = -module -avoid-version
-${drivername}_drv_ladir = @inputdir@
+${drivername}_drv_ladir = @moduledir@/drivers
 
 ${drivername}_drv_la_SOURCES = \\
 EOF
