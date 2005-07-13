@@ -6921,7 +6921,7 @@ symlink_xserver_hw_xfree86_ossupport_shared() {
 
 symlink_xserver_hw_xfree86_ossupport_sunos() {
     src_dir programs/Xserver/hw/xfree86/os-support/sunos
-    dst_dir xserver/xorg/hw/xfree86/os-support/sunos
+    dst_dir xserver/xorg/hw/xfree86/os-support/solaris
 
     action      sun_bios.c
     action      sun_init.c
