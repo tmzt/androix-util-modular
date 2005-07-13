@@ -5909,7 +5909,6 @@ symlink_xserver_dbe() {
     dst_dir xserver/xorg/dbe
 
     action      dbe.c
-    action      dbemodule.c
     action      dbestruct.h
     action      midbe.c
     action      midbe.h
