@@ -5584,7 +5584,7 @@ symlink_xserver_Xext() {
     action      xf86dga2.c
     action      xf86dgaext.h
     action      xf86misc.c
-    action      xf86miscproto.h
+    action      xf86miscproc.h
     action      xf86vmode.c
 
     dst_dir xserver/xorg/hw/dmx
