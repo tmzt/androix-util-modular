@@ -12,6 +12,12 @@ if [ -z $1 ] ; then
     exit
 fi
 
+if [ ! -z $2 ] ; then
+    if [ $2="dri" ] ; then
+	has_dri="yes"
+    fi
+fi
+
 MODULAR_DIR=`( cd $1 ; cd ../.. ; pwd )`
 MODULE_DIR=`( cd $1 ; pwd )`
 MODULE_NAME=`( basename $MODULE_DIR )`
@@ -150,24 +156,71 @@ AC_PROG_CC
 
 AH_TOP([#include "xorg-server.h"])
 
-AC_ARG_WITH(xorg-module-dir, [  --with-xorg-module-dir=DIR ],
-                             [ moduledir="\$withval" ],
-                             [ moduledir="\$libdir/xorg/modules" ])
-AC_SUBST(moduledir)
+AC_ARG_WITH(xorg-module-dir,
+            AC_HELP_STRING([--with-xorg-module-dir=DIR],
+                           [Default xorg module directory [[default=\$libdir/xorg/modules]]]),
+            [moduledir="\$withval"],
+            [moduledir="\$libdir/xorg/modules"])
+EOF
 
+if [ ! -z $has_dri ] ; then
+    cat <<EOF >> configure.ac
+
+AC_ARG_ENABLE(dri, AC_HELP_STRING([--disable-dri],
+                                  [Disable DRI support [[default=auto]]]),
+              [DRI="\$enableval"],
+              [DRI=auto])
+EOF
+fi
+
+cat <<EOF  >> configure.ac
 # Checks for pkg-config packages
-PKG_CHECK_MODULES(XORG, xorg-server xproto)
+PKG_CHECK_MODULES(XORG, [xorg-server xproto])
 sdkdir=\$(pkg-config --variable=sdkdir xorg-server)
-
-CFLAGS="\$XORG_CFLAGS "' -I\$(top_srcdir)/src'
-INCLUDES="\$XORG_INCS -I\${sdkdir} "'-I\$(top_srcdir)/src -I\$(prefix)/include'
-AC_SUBST([CFLAGS])
-AC_SUBST([INCLUDES])
 
 # Checks for libraries.
 
 # Checks for header files.
 AC_HEADER_STDC
+
+EOF
+
+if [ ! -z $has_dri ] ; then
+    cat <<EOF >> configure.ac
+if test "\$DRI" != no; then
+        AC_CHECK_FILE([\${sdkdir}/dri.h],
+                      [have_dri_h="yes"], [have_dri_h="no"])
+        AC_CHECK_FILE([\${sdkdir}/sarea.h],
+                      [have_sarea_h="yes"], [have_sarea_h="no"])
+        AC_CHECK_FILE([\${sdkdir}/dristruct.h],
+                      [have_dristruct_h="yes"], [have_dristruct_h="no"])
+fi
+
+AC_MSG_CHECKING([whether to include DRI support])
+if test x\$DRI = xauto; then
+        if test "\$ac_cv_header_dri_h" = yes -a \\
+                "\$ac_cv_header_sarea_h" = yes -a \\
+                "\$ac_cv_header_dristruct_h" = yes; then
+                DRI="yes"
+        else
+                DRI="no"
+        fi
+fi
+AC_MSG_RESULT([\$DRI])
+
+AM_CONDITIONAL(DRI, test x\$DRI = xyes)
+if test "\$DRI" = yes; then
+        PKG_CHECK_MODULES(DRI, [libdrm])
+        AC_DEFINE(XF86DRI,1,[Enable DRI driver support])
+        AC_DEFINE(XF86DRI_DEVEL,1,[Enable developmental DRI driver support])
+fi
+
+AC_SUBST([DRI_CFLAGS])
+EOF
+fi
+cat <<EOF >> configure.ac
+AC_SUBST([XORG_CFLAGS])
+AC_SUBST([moduledir])
 
 AC_OUTPUT([
 	Makefile
@@ -261,12 +314,24 @@ cat <<EOF >> Makefile.am
 #  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 #  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 # this is obnoxious:
 # -module lets us name the module exactly how we want
 # -avoid-version prevents gratuitous .0.0.0 version numbers on the end
 # _ladir passes a dummy rpath to libtool so the thing will actually link
 # TODO: -nostdlib/-Bstatic/-lgcc platform magic, not installing the .a, etc.
+EOF
+
+if [ ! -z $has_dri ]; then
+    cat <<EOF >> Makefile.am
+AM_CFLAGS = @XORG_CFLAGS@ @DRI_CFLAGS@
+EOF
+else
+    cat <<EOF >> Makefile.am
+AM_CFLAGS = @XORG_CFLAGS
+EOF
+fi
+
+cat <<EOF >> Makefile.am
 ${drivername}_drv_la_LTLIBRARIES = ${drivername}_drv.la
 ${drivername}_drv_la_LDFLAGS = -module -avoid-version
 ${drivername}_drv_ladir = @moduledir@/drivers
