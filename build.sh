@@ -10,12 +10,12 @@ build() {
 
     # Use "sh autogen.sh" since some scripts are not executable in CVS
     sh autogen.sh --prefix=${PREFIX} ${QUIET:+--quiet} \
-        ${CACHE:+--cache-file=}${CACHE}
-    make
-    $SUDO make install
-#    make clean
-#    make dist
-#    make distcheck
+        ${CACHE:+--cache-file=}${CACHE} || exit 1
+    make || exit 1
+    $SUDO make install || exit 1
+#    make clean || exit 1
+#    make dist || exit 1
+#    make distcheck || exit 1
 
     cd ../..
 }
