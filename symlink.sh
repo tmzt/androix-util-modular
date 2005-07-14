@@ -6460,6 +6460,9 @@ symlink_xserver_hw_xfree86_dixmods() {
     src_dir lib/font/bitmap/module
     action	bitmapmod.c
 
+    src_dir lib/font/FreeType/module
+    action      ftmodule.c
+
     src_dir programs/Xserver/cfb
     action	cfbmodule.c
 
