@@ -3266,20 +3266,6 @@ symlink_lib_oldx() {
     action	X10.h
 }
 
-symlink_lib_xvmc() {
-    src_dir lib/XvMC
-    dst_dir lib/XvMC/src
-
-    action	XvMC.c
-    action	XvMClibint.h
-    
-    src_dir lib/XvMC/wrapper
-
-    action	XvMCWrapper.c
-
-
-}
-
 symlink_lib() {
     symlink_lib_dmx
     symlink_lib_composite
