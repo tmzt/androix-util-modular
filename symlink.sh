@@ -6936,6 +6936,8 @@ symlink_xserver_hw_xfree86_ossupport_sunos() {
     src_dir programs/Xserver/hw/xfree86/os-support/sunos
     dst_dir xserver/xorg/hw/xfree86/os-support/solaris
 
+    action      sun_agp.c
+    action      agpgart.h
     action      sun_bios.c
     action      sun_init.c
     action      sun_io.c
@@ -6943,6 +6945,10 @@ symlink_xserver_hw_xfree86_ossupport_sunos() {
     action      sun_kbdEv.c
     action      sun_mouse.c
     action      sun_vid.c
+    action      sun_inout.s
+    action      solaris-amd64.S
+    action      solaris-ia32.S
+    action      solaris-sparcv8plus.S
 }
 
 symlink_xserver_hw_xfree86_ossupport_sysv() {
