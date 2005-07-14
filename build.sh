@@ -64,6 +64,7 @@ build_proto() {
 # (X11 and SM) before Xt
 # Xt before Xmu and Xpm
 # Xext before any other extension library
+# Xfixes before Xcomposite
 # Xp before XprintUtil before XprintAppUtil
 build_lib() {
     build lib xtrans
@@ -83,9 +84,9 @@ build_lib() {
     build lib Xpm
     build lib Xp
     build lib Xaw
+    build lib Xfixes
     build lib Xcomposite
     build lib Xrender
-    build lib Xfixes
     build lib Xdamage
     build lib Xcursor
     build lib Xevie
