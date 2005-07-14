@@ -377,6 +377,10 @@ symlink_proto_gl() {
     action	glxmd.h
     action	glxproto.h
     action	glxtokens.h
+
+    src_dir extras/Mesa/include/GL/internal
+
+    action	glcore.h
 }
 
 symlink_proto() {
@@ -5422,10 +5426,12 @@ symlink_xserver_GL_dri() {
     action      dristruct.h
     action      sarea.h
     action      xf86dri.c
+    action	xf86dri.h
+    action	xf86dristr.h
 
     # don't hate me
-    src_dir extras/drm/shared-core
-    action      drm.h
+#    src_dir extras/drm/shared-core
+#    action      drm.h
 }
 
 symlink_xserver_GL_glx() {
