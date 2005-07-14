@@ -5426,8 +5426,6 @@ symlink_xserver_GL_dri() {
     action      dristruct.h
     action      sarea.h
     action      xf86dri.c
-    action	xf86dri.h
-    action	xf86dristr.h
 
     # don't hate me
 #    src_dir extras/drm/shared-core
@@ -5591,7 +5589,7 @@ symlink_xserver_Xext() {
     action      xf86miscproc.h
     action      xf86vmode.c
     action      xvmod.c
-    action      xvmodproc.c
+    action      xvmodproc.h
 
     dst_dir xserver/xorg/hw/dmx
     action      dmx.c
@@ -7258,7 +7256,9 @@ symlink_xserver_hw_xnest() {
     action      XNPixmap.h
     action      XNWindow.h
     action      Xnest.h
+    action      icon
     action      os2Stub.c
+    action      screensaver
 }
 
 symlink_xserver_hw_xwin() {
