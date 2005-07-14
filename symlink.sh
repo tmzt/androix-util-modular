@@ -5578,8 +5578,6 @@ symlink_xserver_Xext() {
     action      xvmain.c
     action      xvmc.c
     action      xvmcext.h
-    action      xvmod.c
-    action      xvmodproc.h
 
     # some of these are really DDX-specific despite being in Xext
 
@@ -5592,6 +5590,8 @@ symlink_xserver_Xext() {
     action      xf86misc.c
     action      xf86miscproc.h
     action      xf86vmode.c
+    action      xvmod.c
+    action      xvmodproc.c
 
     dst_dir xserver/xorg/hw/dmx
     action      dmx.c
