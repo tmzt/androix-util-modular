@@ -126,7 +126,7 @@ build_app() {
 # The server requires at least the following libraries:
 # Xfont, Xau, Xdmcp
 build_xserver() {
-    build
+    build xserver xorg
 }
 
 # The server must be built before the drivers
@@ -245,7 +245,7 @@ date
 build_proto
 build_lib
 build_app
-# build_xserver
+build_xserver
 # build_driver
 build_font
 # build_doc
