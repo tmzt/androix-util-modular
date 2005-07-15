@@ -1906,7 +1906,7 @@ symlink_lib_x11() {
     # lcuniconv
 
     src_dir lib/X11/lcUniConv
-    dst_dir lib/X11/src/lcUniConv
+    dst_dir lib/X11/src/xlibi18n/lcUniConv
 
     action	README
 
