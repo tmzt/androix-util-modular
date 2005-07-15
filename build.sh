@@ -12,7 +12,7 @@ build() {
     sh autogen.sh --prefix=${PREFIX} ${QUIET:+--quiet} \
         ${CACHE:+--cache-file=}${CACHE} || exit 1
     make || exit 1
-    $SUDO make install || exit 1
+    $SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH make install || exit 1
 #    make clean || exit 1
 #    make dist || exit 1
 #    make distcheck || exit 1
@@ -206,7 +206,7 @@ fi
 
 # Must create local aclocal dir or aclocal fails
 ACLOCAL_LOCALDIR="${PREFIX}/share/aclocal"
-mkdir -p ${ACLOCAL_LOCALDIR}
+$SUDO mkdir -p ${ACLOCAL_LOCALDIR}
 
 # The following is required to make aclocal find our .m4 macros
 if [ x"$ACLOCAL" = x ] ; then
