@@ -3192,14 +3192,14 @@ symlink_lib_xvmc() {
     action	XvMC.c
     action	XvMClibint.h
 
+    src_dir lib/XvMC/wrapper
+
+    action	XvMCWrapper.c
+
     src_dir include/extensions
     dst_dir lib/XvMC/include/X11/extensions
 
     action	XvMClib.h
-
-    src_dir lib/XvMC/wrapper
-
-    action	XvMCWrapper.c
 }
 
 symlink_lib_xxf86rush() {
@@ -11961,8 +11961,84 @@ symlink_data_cursors() {
     symlink_data_cursors_whiteglass
 }
 
+symlink_data_bitmaps() {
+    src_dir include/bitmaps
+    dst_dir data/bitmaps
+
+    action	1x1
+    action	2x2
+    action	black
+    action	boxes
+    action	calculator
+    action	cntr_ptr
+    action	cntr_ptrmsk
+    action	cross_weave
+    action	dimple1
+    action	dimple3
+    action	dot
+    action	dropbar7
+    action	dropbar8
+    action	escherknot
+    action	flagdown
+    action	flagup
+    action	flipped_gray
+    action	gray
+    action	gray1
+    action	gray3
+    action	grid16
+    action	grid2
+    action	grid4
+    action	grid8
+    action	hlines2
+    action	hlines3
+    action	icon
+    action	keyboard16
+    action	left_ptr
+    action	left_ptrmsk
+    action	letters
+    action	light_gray
+    action	mailempty
+    action	mailemptymsk
+    action	mailfull
+    action	mailfullmsk
+    action	mensetmanus
+    action	menu10
+    action	menu12
+    action	menu16
+    action	menu6
+    action	menu8
+    action	noletters
+    action	opendot
+    action	opendotMask
+    action	plaid
+    action	right_ptr
+    action	right_ptrmsk
+    action	root_weave
+    action	scales
+    action	sipb
+    action	star
+    action	starMask
+    action	stipple
+    action	target
+    action	terminal
+    action	tie_fighter
+    action	vlines2
+    action	vlines3
+    action	weird_size
+    action	wide_weave
+    action	wingdogs
+    action	woman
+    action	xfd_icon
+    action	xlogo11
+    action	xlogo16
+    action	xlogo32
+    action	xlogo64
+    action	xsnow
+}
+
 symlink_data() {
 #    symlink_data_cursors		  
+    symlink_data_bitmaps
 true
 }
 
