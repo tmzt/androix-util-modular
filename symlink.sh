@@ -1122,7 +1122,7 @@ symlink_lib_x11() {
     
     # XIMPC input method files
 
-    dst_dir lib/X11/src/xlibi18n/im/ximcp
+    dst_dir lib/X11/modules/im/ximcp
 
     action	imCallbk.c
     action	imDefFlt.c
@@ -1153,25 +1153,25 @@ symlink_lib_x11() {
 
     # default lc files
 
-    dst_dir lib/X11/src/xlibi18n/lc/def
+    dst_dir lib/X11/modules/lc/def
     
     action	lcDefConv.c
     
     # generic lc files
     
-    dst_dir lib/X11/src/xlibi18n/lc/gen
+    dst_dir lib/X11/modules/lc/gen
     
     action	lcGenConv.c
 
     # UTF-8 lc files
     
-    dst_dir lib/X11/src/xlibi18n/lc/Utf8
+    dst_dir lib/X11/modules/lc/Utf8
     
     action	lcUTF8Load.c
 
     # Xlocale lc files
     
-    dst_dir lib/X11/src/xlibi18n/lc/xlocale
+    dst_dir lib/X11/modules/lc/xlocale
     
     action	lcEuc.c
     action	lcJis.c
@@ -1179,7 +1179,7 @@ symlink_lib_x11() {
     
     # Generic output method files
 
-    dst_dir lib/X11/src/xlibi18n/om/generic
+    dst_dir lib/X11/modules/om/generic
     
     action	omDefault.c
     action	omGeneric.c
