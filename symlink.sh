@@ -6726,6 +6726,17 @@ symlink_xserver_hw_xfree86_ossupport_dgux() {
     action      dgux_video.c
 }
 
+symlink_xserver_hw_xfree86_ossupport_drm() {
+    src_dir programs/Xserver/hw/xfree86/os-support/linux/drm
+    dst_dir xserver/xorg/hw/xfree86/os-support/drm
+
+    action      drmmodule.c
+    action      xf86drm.c
+    action      xf86drmHash.c
+    action      xf86drmRandom.c
+    action      xf86drmSL.c
+}
+
 symlink_xserver_hw_xfree86_ossupport_hurd() {
     src_dir programs/Xserver/hw/xfree86/os-support/hurd
     dst_dir xserver/xorg/hw/xfree86/os-support/hurd
@@ -6760,17 +6771,6 @@ symlink_xserver_hw_xfree86_ossupport_linux() {
     action      lnx_mouse.c
     action      lnx_pci.c
     action      lnx_video.c
-}
-
-symlink_xserver_hw_xfree86_ossupport_linux_drm() {
-    src_dir programs/Xserver/hw/xfree86/os-support/linux/drm
-    dst_dir xserver/xorg/hw/xfree86/os-support/linux/drm
-
-    action      drmmodule.c
-    action      xf86drm.c
-    action      xf86drmHash.c
-    action      xf86drmRandom.c
-    action      xf86drmSL.c
 }
 
 symlink_xserver_hw_xfree86_ossupport_linux_int10() {
@@ -7897,9 +7897,9 @@ symlink_xserver() {
     symlink_xserver_hw_xfree86_ossupport_bsdi
     symlink_xserver_hw_xfree86_ossupport_bus
     symlink_xserver_hw_xfree86_ossupport_dgux
+    symlink_xserver_hw_xfree86_ossupport_drm
     symlink_xserver_hw_xfree86_ossupport_hurd
     symlink_xserver_hw_xfree86_ossupport_linux
-    symlink_xserver_hw_xfree86_ossupport_linux_drm
     symlink_xserver_hw_xfree86_ossupport_linux_int10
     symlink_xserver_hw_xfree86_ossupport_linux_int10_vm86
     symlink_xserver_hw_xfree86_ossupport_lynxos
