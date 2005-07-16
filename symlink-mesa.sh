@@ -58,6 +58,18 @@ main() {
 
 ## actual symlinking
 
+symlink_mesa_glapi() {
+    src_dir src/mesa/glapi
+    dst_dir xserver/xorg/GL/mesa/glapi
+
+    action glapi.h
+    action glapioffsets.h
+    action glapitable.h
+    action glapitemp.h
+    action glprocs.h
+    action glthread.h
+}
+
 symlink_mesa_main() {
     src_dir src/mesa/main
     dst_dir xserver/xorg/GL/mesa/main
@@ -379,6 +391,18 @@ symlink_mesa_shader() {
     action shaderobjects.h
     action shaderobjects_3dlabs.c
     action shaderobjects_3dlabs.h
+
+    # bit of a hack
+    src_dir src/mesa/shader/grammar
+    action grammar.c
+    action grammar.h
+    action grammar_syn.h
+    action grammar_mesa.c
+    action grammar_mesa.h
+
+    # more of a hack
+    src_dir src/mesa/shader/slang
+    action slang_compile.h
 }
 
 symlink_mesa_x() {
@@ -386,7 +410,7 @@ symlink_mesa_x() {
     dst_dir xserver/xorg/GL/mesa/X
 
     # action glxapi.h
-    # action glxheader.h
+    action glxheader.h
     # action realglx.h
     # action xfonts.h
     action xm_api.c
@@ -396,6 +420,10 @@ symlink_mesa_x() {
     action xm_span.c
     action xm_tri.c
     action xmesaP.h
+
+    # another hack
+    src_dir src/mesa/drivers/common
+    action driverfuncs.h
 }
 
 symlink_mesa_glapi() {
