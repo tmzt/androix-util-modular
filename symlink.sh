@@ -5779,7 +5779,6 @@ symlink_xserver_afb() {
     action      afbimggblt.c
     action      afbline.c
     action      afbmisc.c
-    action      afbmodule.c
     action      afbpixmap.c
     action      afbply1rct.c
     action      afbplygblt.c
@@ -5825,7 +5824,6 @@ symlink_xserver_cfb() {
     action      cfbimage.c
     action      cfbline.c
     action      cfbmap.h
-    action      cfbmodule.c
     action      cfbmskbits.c
     action      cfbmskbits.h
     action      cfbpixmap.c
@@ -5850,27 +5848,11 @@ symlink_xserver_cfb() {
     action      stip68kgnu.h
 }
 
-
-symlink_xserver_cfb16() {
-    src_dir programs/Xserver/cfb16
-    dst_dir xserver/xorg/cfb16
-
-    action      cfbmodule.c
-}
-
 symlink_xserver_cfb24() {
     src_dir programs/Xserver/cfb24
     dst_dir xserver/xorg/cfb24
 
-    action      cfbmodule.c
     action      cfbrrop24.h
-}
-
-symlink_xserver_cfb32() {
-    src_dir programs/Xserver/cfb32
-    dst_dir xserver/xorg/cfb32
-
-    action      cfbmodule.c
 }
 
 symlink_xserver_composite() {
@@ -5969,7 +5951,6 @@ symlink_xserver_fb() {
     action      fbline.c
     action      fbmmx.c
     action      fbmmx.h
-    action      fbmodule.c
     action      fboverlay.c
     action      fboverlay.h
     action      fbpict.c
@@ -6466,6 +6447,9 @@ symlink_xserver_hw_xfree86_dixmods() {
 
     src_dir programs/Xserver/mfb
     action	mfbmodule.c
+
+    src_dir programs/Xserver/record
+    action	recordmod.c
 }
 
 symlink_xserver_hw_xfree86_dummylib() {
@@ -7528,7 +7512,6 @@ symlink_xserver_mfb() {
     action      mfbimggblt.c
     action      mfbline.c
     action      mfbmisc.c
-    action      mfbmodule.c
     action      mfbpixmap.c
     action      mfbply1rct.c
     action      mfbplygblt.c
@@ -7641,7 +7624,6 @@ symlink_xserver_miext_layer() {
     action      layerpict.c
     action      layerstr.h
     action      layerwin.c
-    action      laymodule.c
 }
 
 symlink_xserver_miext_rootless() {
@@ -7690,7 +7672,6 @@ symlink_xserver_miext_shadow() {
     action      shadow.c
     action      shadow.h
     action      shalloc.c
-    action      shmodule.c
     action      shpacked.c
     action      shplanar.c
     action      shplanar8.c
@@ -7749,7 +7730,6 @@ symlink_xserver_record() {
     dst_dir xserver/xorg/record
 
     action      record.c
-    action      recordmod.c
     action      set.c
     action      set.h
 }
@@ -7842,7 +7822,6 @@ symlink_xserver() {
     symlink_xserver_GL_dri
     symlink_xserver_GL_glx
     symlink_xserver_GL_include_GL
-    symlink_xserver_GL_mesa_GLcore
     symlink_xserver_GL_mesa_X
     symlink_xserver_GL_windows
     symlink_xserver_XTrap
@@ -7855,9 +7834,7 @@ symlink_xserver() {
     symlink_xserver_Xprint_raster
     symlink_xserver_afb
     symlink_xserver_cfb
-    symlink_xserver_cfb16
     symlink_xserver_cfb24
-    symlink_xserver_cfb32
     symlink_xserver_composite
     symlink_xserver_damageext
     symlink_xserver_dbe
