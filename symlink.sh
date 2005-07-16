@@ -31,6 +31,11 @@ check_exist() {
     if [ ! -e $1 ] ; then
 	error "$1 not found"
     fi
+
+    if [ -d $1 ] ; then
+	error "$1 is a directory"
+    fi
+
 }
 
 delete_existing() {
@@ -4199,6 +4204,8 @@ symlink_app_xkbcomp() {
     action	xkbscan.c
 
     action	README
+    action	README.config
+    action	README.enhancing
 
     action	action.h
     action	alias.h
@@ -12015,10 +12022,494 @@ symlink_data_bitmaps() {
     action	xsnow
 }
 
+symlink_data_xkbdata() {
+    src_dir programs/xkbcomp/torture
+    dst_dir data/xkbdata/torture
+
+    action	indicator
+    action	indicator1
+    action	indicator2
+    action	indicator3
+    action	mod_compat
+    action	mod_compat1
+    action	mod_compat2
+    action	mod_compat3
+    action	mod_compat4
+    action	sym_interp
+    action	sym_interp1
+    action	sym_interp2
+    action	sym_interp3
+    action	sym_interp4
+    action	types
+
+    src_dir programs/xkbcomp/types
+    dst_dir data/xkbdata/types
+
+    action	README
+
+    action	basic
+    action	cancel
+    action	caps
+    action	complete
+    action	default
+    action	extra
+    action	iso9995
+    action	mousekeys
+    action	numpad
+    action	pc
+    action	types.dir
+
+    src_dir programs/xkbcomp/keycodes
+    dst_dir data/xkbdata/keycodes
+
+    action	aliases
+    action	amiga
+    action	ataritt
+    action	fujitsu
+    action	hp
+    action	ibm
+    action	keycodes.dir
+    action	macintosh
+    action	powerpcps2
+    action	README
+    action	sony
+    action	sun
+    action	xfree86
+    action	xfree98
+
+    src_dir programs/xkbcomp/keycodes/digital
+    dst_dir data/xkbdata/keycodes/digital
+    
+    action	lk
+    action	pc
+    
+    src_dir programs/xkbcomp/keycodes/sgi
+    dst_dir data/xkbdata/keycodes/sgi
+    
+    action	indigo
+    action	iris
+    action	indy
+    
+    src_dir programs/xkbcomp/rules/
+    dst_dir data/xkbdata/rules
+    
+    action	README
+    action	sgi
+    action	sgi.lst
+    action	sun
+    action	sun.lst
+    action	xfree98
+    action	xfree98.lst
+    action	xkb.dtd
+    action	xml2lst.pl
+    action	xorg
+    action	xorg-it.lst
+    action	xorg.lst
+    action	xorg.xml
+    
+    src_dir programs/xkbcomp/compat
+    dst_dir data/xkbdata/compat
+
+    action	accessx
+    action	basic
+    action	compat.dir
+    action	complete
+    action	default
+    action	group_led
+    action	iso9995
+    action	japan
+    action	keypad
+    action	leds
+    action	misc
+    action	mousekeys
+    action	norepeat
+    action	pc
+    action	pc98
+    action	README
+    action	xfree86
+    action	xtest
+
+    src_dir programs/xkbcomp/geometry
+    dst_dir data/xkbdata/geometry
+    
+    action	amiga
+    action	ataritt
+    action	chicony
+    action	dell
+    action	everex
+    action	fujitsu
+    action	hp
+    action	keytronic
+    action	kinesis
+    action	macintosh
+    action	microsoft
+    action	nec
+    action	northgate
+    action	pc
+    action	README
+    action	sony
+    action	sun
+    action	winbook
+    
+    src_dir programs/xkbcomp/geometry/sgi
+    dst_dir data/xkbdata/geometry/sgi
+    
+    action	indigo
+    action	indy
+    action	O2
+    
+    src_dir programs/xkbcomp/geometry/ibm
+    dst_dir data/xkbdata/geometry/ibm
+    
+    action	thinkpad
+    
+    src_dir programs/xkbcomp/geometry/digital
+    dst_dir data/xkbdata/geometry/digital
+    
+    action	lk
+    action	pc 
+    action	unix
+    
+    src_dir programs/xkbcomp/semantics
+    dst_dir data/xkbdata/semantics
+    
+    action	basic
+    action	complete
+    action	default
+    action	xtest
+    
+    src_dir programs/xkbcomp/keymap
+    dst_dir data/xkbdata/keymap
+    
+    action	amiga
+    action	ataritt
+    action	keymap.dir
+    action	macintosh
+    action	README
+    action	sony
+    action	xfree86
+    action	xfree98
+    
+    src_dir programs/xkbcomp/keymap/digital
+    dst_dir data/xkbdata/keymap/digital
+    
+    action	us
+    
+    src_dir programs/xkbcomp/keymap/sgi
+    dst_dir data/xkbdata/keymap/sgi
+    
+    action	be
+    action	bg
+    action	ca
+    action	cz
+    action	cz_qwerty
+    action	de
+    action	de_CH
+    action	dk
+    action	dvorak
+    action	en_US
+    action	es
+    action	fi
+    action	fr
+    action	fr_CH
+    action	gb
+    action	hu
+    action	it
+    action	jp
+    action	no
+    action	pl
+    action	pt
+    action	ru
+    action	se
+    action	sk
+    action	sk_qwerty
+    action	th
+    action	us
+    
+    src_dir programs/xkbcomp/keymap/sun
+    dst_dir data/xkbdata/keymap/sun
+    
+    action	de
+    action	es
+    action	fi
+    action	fr
+    action	no
+    action	pl
+    action	ru
+    action	se
+    action	uk
+    action	us
+    
+    src_dir programs/xkbcomp/symbols
+    dst_dir data/xkbdata/symbols
+    
+    action	al
+    action	altwin
+    action	am
+    action	apple
+    action	ar
+    action	az
+    action	be
+    action	ben
+    action	bg
+    action	br
+    action	bs
+    action	by
+    action	ca
+    action	ca_enhanced
+    action	compose
+    action	ctrl
+    action	cz
+    action	cz_qwerty
+    action	czsk
+    action	de
+    action	de_CH
+    action	dev
+    action	dk
+    action	dvorak
+    action	ee
+    action	el
+    action	en_US
+    action	es
+    action	fi
+    action	fo
+    action	fr
+    action	fr_CH
+    action	gb
+    action	ge_la
+    action	ge_ru
+    action	group
+    action	guj
+    action	gur
+    action	hr
+    action	hr_US
+    action	hu
+    action	hu_qwerty
+    action	hu_US
+    action	ie
+    action	il
+    action	il_phonetic
+    action	inet
+    action	ir
+    action	is
+    action	iso9995-3
+    action	it
+    action	iu
+    action	jp
+    action	kan
+    action	keypad
+    action	la
+    action	level3
+    action	lo
+    action	lock
+    action	lt
+    action	lt_a
+    action	lt_p
+    action	lt_std
+    action	lv
+    action	mk
+    action	ml
+    action	mm
+    action	mn
+    action	mt
+    action	mt_us
+    action	nl
+    action	no
+    action	ogham
+    action	ori
+    action	pc104
+    action	pl
+    action	pl2
+    action	pt
+    action	ralt
+    action	README
+    action	ro
+    action	ro2
+    action	ru
+    action	sapmi
+    action	se
+    action	se_FI
+    action	se_NO
+    action	se_SE
+    action	si
+    action	sk
+    action	sk_qwerty
+    action	sr
+    action	srvr_ctrl
+    action	symbols.dir
+    action	syr
+    action	syr_phonetic
+    action	tel
+    action	th
+    action	th_pat
+    action	th_tis
+    action	tj
+    action	tml
+    action	tr
+    action	tr_f
+    action	ua
+    action	us
+    action	us_group2
+    action	us_group3
+    action	us_intl
+    action	uz
+    action	vn
+    action	yu
+    
+    src_dir programs/xkbcomp/symbols/sun
+    dst_dir data/xkbdata/symbols/sun
+    
+    action	se
+    action	us
+    action	usb
+    
+    src_dir programs/xkbcomp/symbols/hp
+    dst_dir data/xkbdata/symbols/hp
+    
+    action	us
+    
+    src_dir programs/xkbcomp/symbols/macintosh
+    dst_dir data/xkbdata/symbols/macintosh
+    
+    action	de
+    action	de_CH
+    action	dk
+    action	es
+    action	fi
+    action	fr
+    action	fr_CH
+    action	gb
+    action	it
+    action	nl
+    action	no
+    action	pt
+    action	se
+    action	us
+    
+    src_dir programs/xkbcomp/symbols/pc
+    dst_dir data/xkbdata/symbols/pc
+    
+    action	al
+    action	am
+    action	ar
+    action	be
+    action	ben
+    action	bg
+    action	br
+    action	by
+    action	cz
+    action	cz_qwerty
+    action	de
+    action	dev
+    action	dk
+    action	dvorak
+    action	dz
+    action	ee
+    action	el
+    action	en_US
+    action	es
+    action	fi
+    action	fo
+    action	fr
+    action	fr-latin9
+    action	gb
+    action	ge_la
+    action	ge_ru
+    action	guj
+    action	gur
+    action	hr
+    action	ie
+    action	il
+    action	il_phonetic
+    action	ir
+    action	is
+    action	it
+    action	iu
+    action	kan
+    action	la
+    action	latin
+    action	lo
+    action	lt
+    action	lv
+    action	mk
+    action	ml
+    action	mm
+    action	mt
+    action	mt_us
+    action	nl
+    action	no
+    action	ogham
+    action	ori
+    action	pc
+    action	pl
+    action	pl2
+    action	pt
+    action	ro
+    action	ru
+    action	sapmi
+    action	se
+    action	se_FI
+    action	se_NO
+    action	se_SE
+    action	si
+    action	sk
+    action	sk_qwerty
+    action	sr
+    action	syr
+    action	syr_phonetic
+    action	tel
+    action	th
+    action	th_pat
+    action	th_tis
+    action	tj
+    action	tml
+    action	tr
+    action	ua
+    action	us
+    action	us_intl
+    action	uz
+    action	yu
+    
+    src_dir programs/xkbcomp/symbols/sgi
+    dst_dir data/xkbdata/symbols/sgi
+    
+    action	jp
+    
+    src_dir programs/xkbcomp/symbols/xfree68
+    dst_dir data/xkbdata/symbols/xfree68
+    
+    action	amiga
+    action	ataritt
+    
+    src_dir programs/xkbcomp/symbols/fujitsu
+    dst_dir data/xkbdata/symbols/fujitsu
+    
+    action	jp
+    action	us
+    
+    src_dir programs/xkbcomp/symbols/digital
+    dst_dir data/xkbdata/symbols/digital
+    
+    action	lk
+    action	pc
+    action	us
+    action	vt
+    
+    src_dir programs/xkbcomp/symbols/sony
+    dst_dir data/xkbdata/symbols/sony
+    
+    action	us
+    
+    src_dir programs/xkbcomp/symbols/nec
+    dst_dir data/xkbdata/symbols/nec
+    
+    action	jp
+}
+
 symlink_data() {
 #    symlink_data_cursors		  
     symlink_data_bitmaps
-true
+    symlink_data_xkbdata
 }
 
 #########
