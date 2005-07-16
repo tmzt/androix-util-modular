@@ -34,6 +34,7 @@ build_proto() {
     build proto Input
     build proto KB
     build proto Panoramix
+    build proto PM
     build proto Print
     build proto Randr
     build proto Record
