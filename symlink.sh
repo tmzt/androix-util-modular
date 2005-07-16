@@ -183,6 +183,14 @@ symlink_proto_panoramix() {
     action	Xinerama.h	# not used in server
 }
 
+symlink_proto_pm() {
+    src_dir programs/proxymngr
+    dst_dir proto/PM
+
+    action	PM.h
+    action	PMproto.h
+}
+
 symlink_proto_print() {
     src_dir include/extensions
     dst_dir proto/Print
@@ -398,6 +406,7 @@ symlink_proto() {
     symlink_proto_input
     symlink_proto_kb
     symlink_proto_panoramix
+    symlink_proto_pm
     symlink_proto_print
     symlink_proto_randr
     symlink_proto_record
