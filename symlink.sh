@@ -5478,13 +5478,6 @@ symlink_xserver_GL_include_GL() {
     action      xf86glx.h
 }
 
-symlink_xserver_GL_mesa_GLcore() {
-    src_dir programs/Xserver/GL/mesa/GLcore
-    dst_dir xserver/xorg/GL/mesa/GLcore
-
-    action      GLcoremodule.c
-}
-
 symlink_xserver_GL_mesa_X() {
     src_dir programs/Xserver/GL/mesa/X
     dst_dir xserver/xorg/GL/mesa/X
