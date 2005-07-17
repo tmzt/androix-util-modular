@@ -12057,7 +12057,6 @@ symlink_data_xkbdata() {
     action	mousekeys
     action	numpad
     action	pc
-    action	types.dir
 
     src_dir programs/xkbcomp/keycodes
     dst_dir data/xkbdata/keycodes
@@ -12068,7 +12067,6 @@ symlink_data_xkbdata() {
     action	fujitsu
     action	hp
     action	ibm
-    action	keycodes.dir
     action	macintosh
     action	powerpcps2
     action	README
@@ -12112,7 +12110,6 @@ symlink_data_xkbdata() {
 
     action	accessx
     action	basic
-    action	compat.dir
     action	complete
     action	default
     action	group_led
@@ -12183,7 +12180,6 @@ symlink_data_xkbdata() {
     
     action	amiga
     action	ataritt
-    action	keymap.dir
     action	macintosh
     action	README
     action	sony
@@ -12336,7 +12332,6 @@ symlink_data_xkbdata() {
     action	sk_qwerty
     action	sr
     action	srvr_ctrl
-    action	symbols.dir
     action	syr
     action	syr_phonetic
     action	tel
