@@ -4616,7 +4616,7 @@ symlink_app_xsetpointer() {
 
     action	xsetpointer.c
 
-    action	xsetpnt.man
+    action	xsetpnt.man xsetpointer.man
 
 }
 
