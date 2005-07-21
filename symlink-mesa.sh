@@ -62,6 +62,7 @@ symlink_mesa_glapi() {
     src_dir src/mesa/glapi
     dst_dir xserver/xorg/GL/mesa/glapi
 
+    action dispatch.h
     action glapi.h
     action glapioffsets.h
     action glapitable.h
