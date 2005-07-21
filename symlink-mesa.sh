@@ -426,11 +426,6 @@ symlink_mesa_x() {
     action driverfuncs.h
 }
 
-symlink_mesa_glapi() {
-    src_dir src/mesa/glapi
-    dst_dir xserver/xorg/GL/mesa/glapi
-}
-
 symlink_mesa_ppc() {
     src_dir src/mesa/ppc
     dst_dir xserver/xorg/GL/mesa/ppc
