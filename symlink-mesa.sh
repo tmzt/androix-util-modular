@@ -424,6 +424,7 @@ symlink_mesa_x() {
 
     # another hack
     src_dir src/mesa/drivers/common
+    dst_dir xserver/xorg/GL/mesa/X/drivers/common
     action driverfuncs.h
 }
 
