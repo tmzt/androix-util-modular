@@ -412,7 +412,7 @@ build_proto
 build_lib
 build_app
 build_xserver
-# build_driver
+build_driver
 build_font
 # build_doc
 
