@@ -132,7 +132,6 @@ build_app() {
     build app lbxproxy
     build app listres
     build app luit
-    build app makepsres
     build app mkfontdir
     build app mkfontscale
     build app oclock
@@ -144,7 +143,6 @@ build_app() {
     build app setxkbmap
     build app showfont
     build app smproxy
-    build app texteroids
     build app twm
     build app viewres
     build app x11perf
