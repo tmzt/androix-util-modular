@@ -219,9 +219,87 @@ build_xserver() {
     build xserver xorg
 }
 
+build_driver_input() {
+    build driver xf86-input-acecad
+    build driver xf86-input-aiptek
+    build driver xf86-input-calcomp
+    build driver xf86-input-citron
+    build driver xf86-input-digitaledge
+    build driver xf86-input-dmc
+    build driver xf86-input-dynapro
+    build driver xf86-input-elo2300
+    build driver xf86-input-elographics
+    build driver xf86-input-evdev
+    build driver xf86-input-fpit
+    build driver xf86-input-hyperpen
+    build driver xf86-input-jamstudio
+    build driver xf86-input-joystick
+    build driver xf86-input-keyboard
+    build driver xf86-input-magellan
+    build driver xf86-input-magictouch
+    build driver xf86-input-microtouch
+    build driver xf86-input-mouse
+    build driver xf86-input-mutouch
+    build driver xf86-input-palmax
+    build driver xf86-input-penmount
+    build driver xf86-input-sample
+    build driver xf86-input-spaceorb
+    build driver xf86-input-summa
+    build driver xf86-input-tek4957
+    build driver xf86-input-ur98
+    build driver xf86-input-void
+}
+
+build_driver_video() {
+    build driver xf86-video-apm
+    build driver xf86-video-ark
+    build driver xf86-video-ati
+    build driver xf86-video-chips
+    build driver xf86-video-cirrus
+    build driver xf86-video-cyrix
+    build driver xf86-video-dummy
+    build driver xf86-video-fbdev
+    build driver xf86-video-glide
+    build driver xf86-video-glint
+    build driver xf86-video-i128
+    build driver xf86-video-i740
+    build driver xf86-video-i810
+    build driver xf86-video-imstt
+    build driver xf86-video-mga
+    build driver xf86-video-neomagic
+    build driver xf86-video-newport
+    build driver xf86-video-nsc
+    build driver xf86-video-nv
+    build driver xf86-video-rendition
+    build driver xf86-video-s3
+    build driver xf86-video-s3virge
+    build driver xf86-video-savage
+    build driver xf86-video-siliconmotion
+    build driver xf86-video-sis
+    build driver xf86-video-sisusb
+    build driver xf86-video-sunbw2
+    build driver xf86-video-suncg14
+    build driver xf86-video-suncg3
+    build driver xf86-video-suncg6
+    build driver xf86-video-sunffb
+    build driver xf86-video-sunleo
+    build driver xf86-video-suntcx
+    build driver xf86-video-tdfx
+    build driver xf86-video-tga
+    build driver xf86-video-trident
+    build driver xf86-video-tseng
+    build driver xf86-video-vesa
+    build driver xf86-video-vga
+    build driver xf86-video-via
+    build driver xf86-video-vmware
+    build driver xf86-video-voodoo
+    build driver xf86-video-wsfb
+}
+
 # The server must be built before the drivers
 build_driver() {
-    build
+    build_driver_input
+    #build_driver_video
 }
 
 # All fonts require mkfontscale and mkfontdir to be available
