@@ -158,13 +158,11 @@ build_app() {
     build app xditview
     build app xdm
     build app xdpyinfo
-    build app xdriinfo
     build app xedit
     build app xev
     build app xeyes
     build app xf86dga
     build app xfd
-    build app xfindproxy
     build app xfontsel
     build app xfs
     build app xfsinfo
@@ -187,7 +185,6 @@ build_app() {
     build app xman
     build app xmessage
     build app xmh
-    build app xmodmap
     build app xmore
     build app xphelloworld
     build app xplsprinters
