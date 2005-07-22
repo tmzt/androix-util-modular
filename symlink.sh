@@ -92,7 +92,7 @@ symlink_proto_core() {
     action	Xosdefs.h
     action	Xos.h
     action	Xos_r.h
-    action	Xpoll.h
+    action	Xpoll.h.in
     action	Xproto.h
     action	Xprotostr.h
     action	Xthreads.h	# not used in server
