@@ -435,6 +435,22 @@ symlink_mesa_shader_slang() {
     action traverse_wrap.h
 }
 
+symlink_mesa_shader_slang_library() {
+    src_dir src/mesa/shader/slang/library
+    dst_dir xserver/xorg/GL/mesa/shader/slang/library
+
+    action slang_common_builtin_gc_bin.h
+    action slang_common_builtin_gc.h
+    action slang_core_gc_bin.h
+    action slang_core_gc.h
+    action slang_fragment_builtin_gc_bin.h
+    action slang_fragment_builtin_gc.h
+    action slang_shader_syn.h
+    action slang_version_syn.h
+    action slang_vertex_builtin_gc_bin.h
+    action slang_vertex_builtin_gc.h
+}        
+
 symlink_mesa_x() {
     src_dir src/mesa/drivers/x11
     dst_dir xserver/xorg/GL/mesa/X
@@ -494,6 +510,7 @@ symlink_mesa() {
     symlink_mesa_shader
     symlink_mesa_shader_grammar
     symlink_mesa_shader_slang
+    symlink_mesa_shader_slang_library
     symlink_mesa_x
     symlink_mesa_glapi
     symlink_mesa_ppc
