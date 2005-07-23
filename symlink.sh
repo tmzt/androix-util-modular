@@ -699,7 +699,7 @@ symlink_lib_x11() {
     dst_dir lib/X11/include/X11
 
     action	cursorfont.h
-    action	region.h
+    action	Xregion.h
     action	Xcms.h
     action	XKBlib.h
     action	Xlib.h
