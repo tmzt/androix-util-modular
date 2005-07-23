@@ -63,11 +63,13 @@ symlink_mesa_glapi() {
     dst_dir xserver/xorg/GL/mesa/glapi
 
     action dispatch.h
+    action glapi.c
     action glapi.h
     action glapioffsets.h
     action glapitable.h
     action glapitemp.h
     action glprocs.h
+    action glthread.c
     action glthread.h
 }
 
@@ -392,18 +394,45 @@ symlink_mesa_shader() {
     action shaderobjects.h
     action shaderobjects_3dlabs.c
     action shaderobjects_3dlabs.h
+}
 
-    # bit of a hack
+symlink_mesa_shader_grammar() {
     src_dir src/mesa/shader/grammar
+    dst_dir xserver/xorg/GL/mesa/shader/grammar
+
     action grammar.c
     action grammar.h
     action grammar_syn.h
     action grammar_mesa.c
     action grammar_mesa.h
+}
 
-    # more of a hack
+symlink_mesa_shader_slang() {
     src_dir src/mesa/shader/slang
+    dst_dir xserver/xorg/GL/mesa/shader/slang
+
+    action slang_assemble_assignment.c
+    action slang_assemble_assignment.h
+    action slang_assemble.c
+    action slang_assemble_conditional.c
+    action slang_assemble_conditional.h
+    action slang_assemble_constructor.c
+    action slang_assemble_constructor.h
+    action slang_assemble.h
+    action slang_assemble_typeinfo.c
+    action slang_assemble_typeinfo.h
+    action slang_compile.c
     action slang_compile.h
+    action slang_execute.c
+    action slang_execute.h
+    action slang_mesa.h
+    action slang_preprocess.c
+    action slang_preprocess.h
+    action slang_storage.c
+    action slang_storage.h
+    action slang_utility.c
+    action slang_utility.h
+    action traverse_wrap.h
 }
 
 symlink_mesa_x() {
@@ -415,7 +444,7 @@ symlink_mesa_x() {
     # action realglx.h
     # action xfonts.h
     action xm_api.c
-    # action xm_buffer.c ?
+    action xm_buffer.c
     action xm_dd.c
     action xm_line.c
     action xm_span.c
@@ -425,7 +454,14 @@ symlink_mesa_x() {
     # another hack
     src_dir src/mesa/drivers/common
     dst_dir xserver/xorg/GL/mesa/X/drivers/common
+    action driverfuncs.c
     action driverfuncs.h
+
+    # and another
+    src_dir src/glx/x11
+    dst_dir xserver/xorg/GL/mesa/X
+    action indirect_size.c
+    action indirect_size.h
 }
 
 symlink_mesa_ppc() {
@@ -456,6 +492,8 @@ symlink_mesa() {
     symlink_mesa_ss
     symlink_mesa_tnl
     symlink_mesa_shader
+    symlink_mesa_shader_grammar
+    symlink_mesa_shader_slang
     symlink_mesa_x
     symlink_mesa_glapi
     symlink_mesa_ppc
