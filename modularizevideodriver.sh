@@ -327,7 +327,7 @@ AM_CFLAGS = @XORG_CFLAGS@ @DRI_CFLAGS@
 EOF
 else
     cat <<EOF >> Makefile.am
-AM_CFLAGS = @XORG_CFLAGS
+AM_CFLAGS = @XORG_CFLAGS@
 EOF
 fi
 

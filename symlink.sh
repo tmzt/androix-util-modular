@@ -8408,6 +8408,11 @@ symlink_driver_mga() {
     action      mga_video.c
     action      mgareg_flags.h
 
+    src_dir programs/Xserver/hw/xfree86/drivers/mga/HALlib
+
+    action	binding.h
+
+    src_dir programs/Xserver/hw/xfree86/drivers/mga
     dst_dir driver/xf86-video-mga/man
 
     action      mga.man     mga.4
@@ -8485,6 +8490,62 @@ symlink_driver_nsc() {
     dst_dir driver/xf86-video-nsc/man
 
     action      nsc.man     nsc.4
+
+    src_dir programs/Xserver/hw/xfree86/drivers/nsc/gfx
+    dst_dir driver/xf86-video-nsc/src/gfx
+
+    action	disp_gu1.c
+    action	disp_gu2.c
+    action	gfx_dcdr.c
+    action	gfx_defs.h
+    action	gfx_disp.c
+    action	gfx_i2c.c
+    action	gfx_init.c
+    action	gfx_mode.h
+    action	gfx_msr.c
+    action	gfx_regs.h
+    action	gfx_rndr.c
+    action	gfx_rtns.h
+    action	gfx_tv.c
+    action	gfx_type.h
+    action	gfx_vga.c
+    action	gfx_vid.c
+    action	gfx_vip.c
+    action	i2c_acc.c
+    action	i2c_gpio.c
+    action	init_gu1.c
+    action	init_gu2.c
+    action	msr_rdcl.c
+    action	rndr_gu1.c
+    action	rndr_gu2.c
+    action	saa7114.c
+    action	tv_1200.c
+    action	vga_gu1.c
+    action	vid_1200.c
+    action	vid_5530.c
+    action	vid_rdcl.c
+    action	vip_1200.c
+
+    src_dir programs/Xserver/hw/xfree86/drivers/nsc/panel
+    dst_dir driver/xf86-video-nsc/src/panel
+
+    action	92xx.h
+    action	cen9211.c
+    action	cen9211.h
+    action	dora9211.c
+    action	dora9211.h
+    action	drac9210.c
+    action	drac9210.h
+    action	gx2_9211.c
+    action	gx2_9211.h
+    action	panel.c
+    action	panel.h
+    action	platform.c
+    action	pnl_bios.c
+    action	pnl_defs.h
+    action	pnl_init.c
+
+    action	readme.txt
 }
 
 symlink_driver_nv() {
