@@ -54,6 +54,14 @@ build_proto() {
     build proto XF86VidMode
 }
 
+# The data module components should not depend on external packages
+# so can be built early
+build_data() {
+    build data bitmaps
+    build data cursors
+    build data xkbdata
+}
+
 # All protocol modules must be installed before the libs (okay, that's an
 # overstatement, but all protocol modules should be installed anyway)
 #
@@ -406,6 +414,7 @@ export PATH
 date
 
 build_proto
+build_data
 build_lib
 build_app
 build_xserver
