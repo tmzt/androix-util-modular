@@ -262,7 +262,7 @@ build_driver_video() {
     build driver xf86-video-cyrix
     build driver xf86-video-dummy
     build driver xf86-video-fbdev
-    build driver xf86-video-glide
+#    build driver xf86-video-glide
     build driver xf86-video-glint
     build driver xf86-video-i128
     build driver xf86-video-i740
@@ -296,7 +296,7 @@ build_driver_video() {
     build driver xf86-video-via
     build driver xf86-video-vmware
     build driver xf86-video-voodoo
-    build driver xf86-video-wsfb
+#    build driver xf86-video-wsfb
 }
 
 # The server must be built before the drivers
