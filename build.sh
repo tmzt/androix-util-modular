@@ -54,10 +54,11 @@ build_proto() {
     build proto XF86VidMode
 }
 
-# The data module components should not depend on external packages
-# so can be built early
+# bitmaps is needed for building apps, so has to be done separately first
+# cursors depends on apps/xcursorgen
+# xkbdata depends on apps/xkbcomp
 build_data() {
-    build data bitmaps
+#    build data bitmaps
     build data cursors
     build data xkbdata
 }
@@ -414,11 +415,12 @@ export PATH
 date
 
 build_proto
-build_data
 build_lib
+build data bitmaps
 build_app
 build_xserver
 build_driver
+build_data
 build_font
 # build_doc
 
