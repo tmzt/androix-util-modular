@@ -3280,7 +3280,84 @@ symlink_lib_oldx() {
     action	X10.h
 }
 
+
+symlink_lib_lbxutil() {
+    src_dir lib/lbxutil/image
+    dst_dir lib/lbxutil/src/image
+
+    action     dfaxg42d.c
+    action     dpackbits.c
+    action     efaxg42d.c
+    action     epackbits.c
+    action     lbxbwcodes.h
+    action     lbxfax.h
+    action     misc.c
+    action     mkg3states.c
+
+    src_dir lib/lbxutil/delta/
+    dst_dir lib/lbxutil/src/delta
+
+    action     lbxdelta.c
+
+    src_dir lib/lbxutil/lbx_zlib
+    dst_dir lib/lbxutil/src/lbx_zlib
+
+    action     lbx_zlib.c
+    action     lbx_zlib.h
+    action     lbx_zlib_io.c
+    action     reqstats.c
+    action     reqstats.h
+}
+
+symlink_lib_xft() {
+    src_dir lib/Xft
+    dst_dir lib/Xft
+
+    action	NEWS
+    action	README
+    action	AUTHORS
+    action	ChangeLog
+    action	AUTHORS
+    action	COPYING
+    action	INSTALL
+
+    action	xft.pc.in
+    action	xft-config.in
+
+    dst_dir lib/Xft/man/
+
+    action	Xft.3.in
+    action	xft-config.1.in
+    action	xft-config.in
+
+    dst_dir lib/Xft/include/X11/Xft
+
+    action	Xft.h
+    action	XftCompat.h
+
+    dst_dir lib/Xft/src
+
+    action	xftcolor.c
+    action	xftcore.c
+    action	xftdbg.c
+    action	xftdpy.c
+    action	xftdraw.c
+    action	xftextent.c
+    action	xftfont.c
+    action	xftfreetype.c
+    action	xftglyphs.c
+    action	xftinit.c
+    action	xftint.h
+    action	xftlist.c
+    action	xftname.c
+    action	xftrender.c
+    action	xftstr.c
+    action	xftswap.c
+    action	xftxlfd.c
+}
+
 symlink_lib() {
+    symlink_lib_xft
     symlink_lib_dmx
     symlink_lib_composite
     symlink_lib_damage
@@ -3322,34 +3399,6 @@ symlink_lib() {
     symlink_lib_oldx
     symlink_lib_xvmc
     symlink_lib_lbxutil
-}
-
-symlink_lib_lbxutil() {
-    src_dir lib/lbxutil/image
-    dst_dir lib/lbxutil/src/image
-
-    action     dfaxg42d.c
-    action     dpackbits.c
-    action     efaxg42d.c
-    action     epackbits.c
-    action     lbxbwcodes.h
-    action     lbxfax.h
-    action     misc.c
-    action     mkg3states.c
-
-    src_dir lib/lbxutil/delta/
-    dst_dir lib/lbxutil/src/delta
-
-    action     lbxdelta.c
-
-    src_dir lib/lbxutil/lbx_zlib
-    dst_dir lib/lbxutil/src/lbx_zlib
-
-    action     lbx_zlib.c
-    action     lbx_zlib.h
-    action     lbx_zlib_io.c
-    action     reqstats.c
-    action     reqstats.h
 }
 
 #########
@@ -9099,6 +9148,7 @@ symlink_driver_via() {
     action      via_xvmc.c
     action      via_xvmc.h
     action      via_xvpriv.h
+    action	via_drmclient.h
 
     dst_dir driver/xf86-video-via/man
 
