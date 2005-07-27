@@ -9069,6 +9069,7 @@ symlink_driver_via() {
 
     action      via.h
     action      via_accel.c
+    action	via_bios.h
     action      via_bandwidth.c
     action      via_cursor.c
     action      via_dga.c
