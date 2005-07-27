@@ -12564,7 +12564,7 @@ symlink_data_xkbdata() {
 }
 
 symlink_data() {
-#    symlink_data_cursors		  
+    symlink_data_cursors		  
     symlink_data_bitmaps
     symlink_data_xkbdata
 }
