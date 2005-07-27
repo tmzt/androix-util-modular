@@ -302,7 +302,7 @@ build_driver_video() {
 # The server must be built before the drivers
 build_driver() {
     build_driver_input
-    #build_driver_video
+    build_driver_video
 }
 
 # All fonts require mkfontscale and mkfontdir to be available
