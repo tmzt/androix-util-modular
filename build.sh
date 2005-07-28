@@ -420,6 +420,9 @@ if [ x"$FONTPATH" = x ] ; then
     export FONTPATH
 fi
 
+# Create the log file directory
+$SUDO mkdir -p ${PREFIX}/var/log
+
 date
 
 build_proto
