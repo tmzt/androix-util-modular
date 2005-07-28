@@ -195,6 +195,7 @@ build_app() {
     build app xman
     build app xmessage
     build app xmh
+    build app xmodmap
     build app xmore
     build app xphelloworld
     build app xplsprinters
