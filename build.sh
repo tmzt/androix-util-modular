@@ -102,6 +102,7 @@ build_lib() {
     build lib Xevie
     build lib Xfont
     build lib Xfontcache
+    build lib Xft
     build lib Xi
     build lib Xinerama
     build lib xkbfile
@@ -411,6 +412,12 @@ else
     PATH=${PREFIX}/bin:${PATH}
 fi
 export PATH
+
+# Set the default font path for xserver/xorg unless it's already set
+if [ x"$FONTPATH" = x ] ; then
+    FONTPATH="${PREFIX}/lib/X11/fonts/misc/,${PREFIX}/lib/X11/fonts/Type1/,${PREFIX}/lib/X11/fonts/75dpi/,${PREFIX}/lib/X11/fonts/100dpi/,${PREFIX}/lib/X11/fonts/cyrillic/,${PREFIX}/lib/X11/fonts/TTF/"
+    export FONTPATH
+fi
 
 date
 
