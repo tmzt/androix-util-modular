@@ -4460,6 +4460,7 @@ symlink_app_xman() {
     action	vendor.h
     action	version.h
 
+    action	xman.help
     action	xman.man
 
 }
