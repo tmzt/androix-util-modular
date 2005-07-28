@@ -5285,6 +5285,7 @@ symlink_app_xfs() {
     action	xfs.def
     action	xfs.man
     action	README
+    action	config.cpp
 
     src_dir programs/xfs/difs
     dst_dir app/xfs/difs
