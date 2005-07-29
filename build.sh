@@ -226,8 +226,21 @@ build_xserver() {
 }
 
 build_driver_input() {
+
+    HOST_OS=`uname -s`
+
+    # Some drivers are only buildable on some OS'es
+    case $HOST_OS in
+	Linux)
+	    build driver xf86-input-aiptek
+	    build driver xf86-input-evdev
+	    build driver xf86-input-ur98
+	    ;;
+	*)
+	    ;;
+    esac
+
     build driver xf86-input-acecad
-    build driver xf86-input-aiptek
     build driver xf86-input-calcomp
     build driver xf86-input-citron
     build driver xf86-input-digitaledge
@@ -235,7 +248,6 @@ build_driver_input() {
     build driver xf86-input-dynapro
     build driver xf86-input-elo2300
     build driver xf86-input-elographics
-    build driver xf86-input-evdev
     build driver xf86-input-fpit
     build driver xf86-input-hyperpen
     build driver xf86-input-jamstudio
@@ -252,11 +264,22 @@ build_driver_input() {
     build driver xf86-input-spaceorb
     build driver xf86-input-summa
     build driver xf86-input-tek4957
-    build driver xf86-input-ur98
     build driver xf86-input-void
 }
 
 build_driver_video() {
+
+    HOST_OS=`uname -s`
+
+    # Some drivers are only buildable on some OS'es
+    case $HOST_OS in
+	*BSD* | *bsd*)
+	    build driver xf86-video-wsfb
+	    ;;
+	*)
+	    ;;
+    esac
+
     build driver xf86-video-apm
     build driver xf86-video-ark
     build driver xf86-video-ati
@@ -299,7 +322,6 @@ build_driver_video() {
     build driver xf86-video-via
     build driver xf86-video-vmware
     build driver xf86-video-voodoo
-#    build driver xf86-video-wsfb
 }
 
 # The server must be built before the drivers
