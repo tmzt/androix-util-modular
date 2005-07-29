@@ -276,6 +276,9 @@ build_driver_video() {
 	*BSD* | *bsd*)
 	    build driver xf86-video-wsfb
 	    ;;
+	*Linux*)
+	    build driver xf86-video-sisusb
+	    ;;
 	*)
 	    ;;
     esac
@@ -305,7 +308,6 @@ build_driver_video() {
     build driver xf86-video-savage
     build driver xf86-video-siliconmotion
     build driver xf86-video-sis
-    build driver xf86-video-sisusb
     build driver xf86-video-sunbw2
     build driver xf86-video-suncg14
     build driver xf86-video-suncg3
