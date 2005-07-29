@@ -447,6 +447,9 @@ $SUDO mkdir -p ${PREFIX}/var/log
 
 date
 
+# We must install the gloabal macros before anything else
+build util macros
+
 build_proto
 build_lib
 build data bitmaps
