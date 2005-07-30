@@ -275,9 +275,11 @@ build_driver_video() {
     case $HOST_OS in
 	*BSD* | *bsd*)
 	    build driver xf86-video-wsfb
+	    build driver xf86-video-sunffb
 	    ;;
 	*Linux*)
 	    build driver xf86-video-sisusb
+	    build driver xf86-video-sunffb
 	    ;;
 	*)
 	    ;;
@@ -312,7 +314,6 @@ build_driver_video() {
     build driver xf86-video-suncg14
     build driver xf86-video-suncg3
     build driver xf86-video-suncg6
-    build driver xf86-video-sunffb
     build driver xf86-video-sunleo
     build driver xf86-video-suntcx
     build driver xf86-video-tdfx
