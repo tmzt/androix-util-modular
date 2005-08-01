@@ -337,7 +337,7 @@ symlink_proto_xf86dga() {
 }
 
 symlink_proto_xf86dri() {
-    src_dir lib/GL/glx
+    src_dir extras/Mesa/src/glx/x11
     dst_dir proto/XF86DRI
 
     action xf86dri.h
