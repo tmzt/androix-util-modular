@@ -7924,6 +7924,7 @@ symlink_xserver() {
     symlink_xserver_hw_xfree86_x86emu
     symlink_xserver_hw_xfree86_dixmods
     symlink_xserver_hw_xfree86_dummylib
+    symlink_xserver_hw_xfree86_exa
     symlink_xserver_hw_xfree86_fbdevhw
     symlink_xserver_hw_xfree86_i2c
     symlink_xserver_hw_xfree86_int10
