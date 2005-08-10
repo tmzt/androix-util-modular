@@ -4917,6 +4917,13 @@ symlink_app_rstart() {
     action	x11r6
 }
 
+symlink_app_sessreg() {
+    src_dir programs/xdm
+    dst_dir app/sessreg/
+
+    action	sessreg.c
+}
+
 symlink_app_xdm() {
     src_dir programs/xdm
     dst_dir app/xdm/
@@ -4942,7 +4949,6 @@ symlink_app_xdm() {
     action	rpcauth.c
     action	server.c
     action	session.c
-    action	sessreg.c
     action	socket.c
     action	streams.c
     action	util.c
@@ -5450,6 +5456,7 @@ symlink_app() {
     symlink_app_xcursorgen
     symlink_app_scripts
     symlink_app_xdm
+    symlink_app_sessreg
 #    ...
 }
 
@@ -12227,11 +12234,9 @@ symlink_data_xkbdata() {
     action	basic
     action	complete
     action	default
-    action	group_led
     action	iso9995
     action	japan
     action	keypad
-    action	leds
     action	misc
     action	mousekeys
     action	norepeat
