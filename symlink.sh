@@ -4922,6 +4922,7 @@ symlink_app_sessreg() {
     dst_dir app/sessreg/
 
     action	sessreg.c
+    action	sessreg.man
 }
 
 symlink_app_xdm() {
