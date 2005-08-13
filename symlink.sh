@@ -6979,11 +6979,11 @@ symlink_xserver_hw_xfree86_ossupport_sunos() {
     action      sun_bios.c
     action      sun_init.c
     action      sun_io.c
+    action      sun_kbd.h
     action      sun_kbd.c
     action      sun_kbdEv.c
     action      sun_mouse.c
     action      sun_vid.c
-    action      sun_inout.s
     action      solaris-amd64.S
     action      solaris-ia32.S
     action      solaris-sparcv8plus.S
@@ -12507,84 +12507,69 @@ symlink_data_xkbdata() {
     
     action	al
     action	am
-    action	ar
+    action	ara
+    action	az
+    action	ba
+    action	bd
     action	be
-    action	ben
     action	bg
     action	br
+    action	bt
     action	by
+    action	ca
+    action	ch
     action	cz
-    action	cz_qwerty
     action	de
-    action	dev
     action	dk
-    action	dvorak
-    action	dz
     action	ee
-    action	el
-    action	en_US
     action	es
     action	fi
     action	fo
     action	fr
-    action	fr-latin9
     action	gb
-    action	ge_la
-    action	ge_ru
-    action	guj
-    action	gur
+    action	ge
+    action	gr
     action	hr
+    action	hu
     action	ie
     action	il
-    action	il_phonetic
+    action	in
     action	ir
     action	is
     action	it
-    action	iu
-    action	kan
+    action	kg
     action	la
+    action	latam
     action	latin
-    action	lo
+    action	lk
     action	lt
     action	lv
-    action	mk
-    action	ml
+    action	mao
+    action	mkd
     action	mm
+    action	mn
     action	mt
-    action	mt_us
     action	nl
     action	no
-    action	ogham
-    action	ori
     action	pc
     action	pl
-    action	pl2
+    action	pk
+    action	pl
     action	pt
     action	ro
     action	ru
-    action	sapmi
     action	se
-    action	se_FI
-    action	se_NO
-    action	se_SE
     action	si
     action	sk
-    action	sk_qwerty
-    action	sr
-    action	syr
-    action	syr_phonetic
-    action	tel
+    action	srp
+    action	sy
     action	th
-    action	th_pat
-    action	th_tis
     action	tj
-    action	tml
     action	tr
     action	ua
     action	us
-    action	us_intl
     action	uz
-    action	yu
+    action	vn
     
     src_dir programs/xkbcomp/symbols/sgi
     dst_dir data/xkbdata/symbols/sgi
