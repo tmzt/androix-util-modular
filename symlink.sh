@@ -8412,6 +8412,7 @@ symlink_driver_i810() {
     action      i830_driver.c
     action      i830_memory.c
     action      i830_modes.c
+    action      i830_shadow.c
     action      i830_video.c
 
     dst_dir driver/xf86-video-i810/man
