@@ -8442,7 +8442,7 @@ symlink_driver_mga() {
     action      clientlx.c
     action      mga.h
     action      mga_arc.c
-#    action      mga_bios.h
+    action      mga_bios.c
     action      mga_common.h
     action      mga_dac3026.c
     action      mga_dacG.c
