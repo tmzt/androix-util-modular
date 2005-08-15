@@ -4963,6 +4963,8 @@ symlink_app_xdm() {
     action	dm_socket.h
     action	greet.h
 
+    action	xdm.man		xdm.man.cpp
+
     src_dir programs/xdm/greeter
     dst_dir app/xdm/greeter
 
@@ -4996,9 +4998,9 @@ symlink_app_xdm() {
     action	Xstartup
     action	Xwilling
  
-    action	Xres.cpp
-    action	Xserv.ws.cpp
-    action	xdm-conf.cpp
+    action	Xres.cpp	Xresources.cpp
+    action	Xserv.ws.cpp	Xservers.ws.cpp
+    action	xdm-conf.cpp	xdm-config.cpp
 }
 
 symlink_app_xprop() {
