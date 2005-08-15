@@ -451,7 +451,7 @@ $SUDO mkdir -p ${PREFIX}/var/log
 
 date
 
-# We must install the gloabal macros before anything else
+# We must install the global macros before anything else
 build util macros
 
 build_proto
