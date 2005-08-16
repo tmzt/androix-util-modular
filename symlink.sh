@@ -6498,6 +6498,9 @@ symlink_xserver_hw_xfree86_dixmods() {
     src_dir lib/font/FreeType/module
     action      ftmodule.c
 
+    src_dir lib/font/Type1/module
+    action	type1mod.c
+
     src_dir programs/Xserver/cfb
     action	cfbmodule.c
 
@@ -12613,7 +12616,7 @@ symlink_data_xkbdata() {
 symlink_data() {
     symlink_data_cursors		  
     symlink_data_bitmaps
-    symlink_data_xkbdata
+#    symlink_data_xkbdata
 }
 
 #########
