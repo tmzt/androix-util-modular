@@ -11272,6 +11272,14 @@ symlink_doc() {
 #
 #########
 
+symlink_util_xmkmf() {
+    src_dir config/util
+    dst_dir util/xmkmf
+
+    action	xmkmf.cpp
+    action	xmkmf.man
+}
+
 symlink_util_cf() {
     src_dir config/cf
     dst_dir util/cf
@@ -11436,6 +11444,7 @@ symlink_util() {
     symlink_util_cf
     symlink_util_imake
     symlink_util_makedepend
+    symlink_util_xmkmf
 #    ...
 }
 
