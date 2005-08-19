@@ -33,7 +33,6 @@ build_proto() {
     build proto GL
     build proto Input
     build proto KB
-    build proto Panoramix
     build proto PM
     build proto Print
     build proto Randr
@@ -52,6 +51,7 @@ build_proto() {
     build proto XF86Misc
     build proto XF86Rush
     build proto XF86VidMode
+    build proto Xinerama
 }
 
 # bitmaps is needed for building apps, so has to be done separately first
