@@ -6649,6 +6649,7 @@ symlink_xserver_hw_xfree86_loader() {
     src_dir programs/Xserver/hw/xfree86/loader
     dst_dir xserver/xorg/hw/xfree86/loader
 
+    action      SparcMulDiv.S
     action      aout.h
     action      aoutloader.c
     action      aoutloader.h
