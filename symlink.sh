@@ -1206,7 +1206,7 @@ symlink_lib_x11() {
     
     # man pages
 
-    src_dir doc/man/X11/
+    src_dir doc/man/X11
     dst_dir lib/X11/man
 
     action	AllPlanes.man	AllPlanes.man
@@ -1406,7 +1406,7 @@ symlink_lib_x11() {
     #---------------------
 
     src_dir nls
-    dst_dir lib/X11/nls/
+    dst_dir lib/X11/nls
 
     action	compose.dir	compose.dir.pre
     action	locale.dir	locale.dir
@@ -2033,7 +2033,7 @@ symlink_lib_xt() {
     
     # Public headers
 
-    dst_dir lib/Xt/include/X11/
+    dst_dir lib/Xt/include/X11
 
     action	Composite.h
     action	CompositeP.h
@@ -2141,7 +2141,7 @@ symlink_lib_xt() {
     action	StrDefs.ht
     action	string.list
 
-    src_dir config/util/
+    src_dir config/util
 
     action	makestrs.c
 
@@ -2818,7 +2818,7 @@ symlink_lib_fontenc() {
 
 symlink_lib_xaw() {
     src_dir lib/Xaw
-    dst_dir lib/Xaw/src/
+    dst_dir lib/Xaw/src
 
     action	Actions.c
     action	AllWidgets.c
@@ -3275,7 +3275,7 @@ symlink_lib_oldx() {
     action	XLookAssoc.c
     action	XMakeAssoc.c
 
-    dst_dir lib/oldX/include/X11/
+    dst_dir lib/oldX/include/X11
     
     action	X10.h
 }
@@ -3294,7 +3294,7 @@ symlink_lib_lbxutil() {
     action     misc.c
     action     mkg3states.c
 
-    src_dir lib/lbxutil/delta/
+    src_dir lib/lbxutil/delta
     dst_dir lib/lbxutil/src/delta
 
     action     lbxdelta.c
@@ -3317,14 +3317,13 @@ symlink_lib_xft() {
     action	README
     action	AUTHORS
     action	ChangeLog
-    action	AUTHORS
     action	COPYING
     action	INSTALL
 
     action	xft.pc.in
     action	xft-config.in
 
-    dst_dir lib/Xft/man/
+    dst_dir lib/Xft/man
 
     action	Xft.3.in
     action	xft-config.1.in
@@ -3758,9 +3757,7 @@ symlink_app_proxymngr() {
 
     action	config.h
     action	pmdb.h
-    action	PM.h
     action	pmint.h
-    action	PMproto.h
 
     action	proxymngr.man
 
@@ -4919,7 +4916,7 @@ symlink_app_rstart() {
 
 symlink_app_sessreg() {
     src_dir programs/xdm
-    dst_dir app/sessreg/
+    dst_dir app/sessreg
 
     action	sessreg.c
     action	sessreg.man
@@ -4927,7 +4924,7 @@ symlink_app_sessreg() {
 
 symlink_app_xdm() {
     src_dir programs/xdm
-    dst_dir app/xdm/
+    dst_dir app/xdm
 
     action	access.c
     action	auth.c
@@ -5088,7 +5085,7 @@ symlink_app_xphelloworld() {
 }
 
 symlink_app_lbxproxy() {
-    src_dir programs/lbxproxy/
+    src_dir programs/lbxproxy
     dst_dir app/lbxproxy
 
     action	design
@@ -5278,8 +5275,8 @@ symlink_app_xedit() {
     action	mpi.c
     action	mpr.c
 
-    src_dir programs/xmore/
-    dst_dir app/xedit/
+    src_dir programs/xmore
+    dst_dir app/xedit
 
     action	print.h
     action	print.c
@@ -6814,6 +6811,7 @@ symlink_xserver_hw_xfree86_ossupport_linux() {
     action      lnx.h
     action      lnxResource.c
     action      lnx_KbdMap.c
+    action      lnx_acpi.c
     action      lnx_agp.c
     action      lnx_apm.c
     action      lnx_axp.c
@@ -12227,7 +12225,7 @@ symlink_data_xkbdata() {
     action	iris
     action	indy
     
-    src_dir programs/xkbcomp/rules/
+    src_dir programs/xkbcomp/rules
     dst_dir data/xkbdata/rules
     
     action	README
