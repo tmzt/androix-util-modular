@@ -4,18 +4,35 @@
 # CACHE: absolute path to a global autoconf cache
 # QUIET: hush the configure script noise
 
+failed() {
+    if test x"$NOQUIT" = x1; then
+	echo "***** $1 failed on $2/$3"
+    else
+	exit 1
+    fi
+}
+
 build() {
     echo "Building $1 module component $2..."
     cd $1/$2
 
+    if test "$1" = "xserver" && test "$2" = "xorg" && test -n $MESAPATH; then
+	MESA=-"-with-mesa-source=${MESAPATH}"
+    else
+	MESA=
+    fi
+
     # Use "sh autogen.sh" since some scripts are not executable in CVS
-    sh autogen.sh --prefix=${PREFIX} ${QUIET:+--quiet} \
-        ${CACHE:+--cache-file=}${CACHE} || exit 1
-    make || exit 1
-    $SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH make install || exit 1
-#    make clean || exit 1
-#    make dist || exit 1
-#    make distcheck || exit 1
+    sh autogen.sh --prefix=${PREFIX} ${MESA} ${QUIET:+--quiet} \
+        ${CACHE:+--cache-file=}${CACHE} || failed autogen $1 $2
+    make || failed make $1 $2
+    $SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH make install || \
+	failed install $1 $2
+#    make clean || failed clean $1 $2
+#    make dist || failed dist $1 $2
+    if test x"$DISTCHECK" = x1; then
+	make distcheck || failed distcheck $1 $2
+    fi
 
     cd ../..
 }
@@ -396,11 +413,43 @@ build_doc() {
     build
 }
 
-PREFIX=$1
-SUDO=$2
+usage() {
+    echo "Usage: $0 [options] prefix"
+    echo "  where options are:"
+    echo "  -d : run make distcheck in addition to others"
+    echo "  -m path-to-mesa-sources-for-xserver : full path to Mesa sources"
+    echo "  -n : do not quit after error; just print error message"
+    echo "  -s sudo-command : sudo command to use"
+}
 
-if test "x${PREFIX}" = "x" ; then
-    echo "Usage: $0 prefix [sudo command]"
+# Process command line args
+while test $# != 0
+do
+    case $1 in
+    -s)
+	shift
+	SUDO=$1
+	;;
+    -m)
+	shift
+	MESAPATH=$1
+	;;
+    -n)
+	NOQUIT=1
+	;;
+    -d)
+	DISTCHECK=1
+	;;
+    *)
+	PREFIX=$1
+	;;
+    esac
+
+    shift
+done
+
+if test x"${PREFIX}" = x ; then
+    usage
     exit
 fi
 
@@ -409,7 +458,7 @@ ACLOCAL_LOCALDIR="${PREFIX}/share/aclocal"
 $SUDO mkdir -p ${ACLOCAL_LOCALDIR}
 
 # The following is required to make aclocal find our .m4 macros
-if [ x"$ACLOCAL" = x ] ; then
+if test x"$ACLOCAL" = x; then
     ACLOCAL="aclocal -I ${ACLOCAL_LOCALDIR}"
 else
     ACLOCAL="${ACLOCAL} -I ${ACLOCAL_LOCALDIR}"
@@ -417,7 +466,7 @@ fi
 export ACLOCAL
 
 # The following is required to make pkg-config find our .pc metadata files
-if [ x"$PKG_CONFIG_PATH" = x ] ; then
+if test x"$PKG_CONFIG_PATH" = x; then
     PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
 else
     PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig:${PKG_CONFIG_PATH}
@@ -425,7 +474,7 @@ fi
 export PKG_CONFIG_PATH
 
 # Set the library path so that locally built libs will be found by apps
-if [ x"$LD_LIBRARY_PATH" = x ] ; then
+if test x"$LD_LIBRARY_PATH" = x; then
     LD_LIBRARY_PATH=${PREFIX}/lib
 else
     LD_LIBRARY_PATH=${PREFIX}/lib:${LD_LIBRARY_PATH}
@@ -433,7 +482,7 @@ fi
 export LD_LIBRARY_PATH
 
 # Set the path so that locally built apps will be found and used
-if [ x"$PATH" = x ] ; then
+if test x"$PATH" = x; then
     PATH=${PREFIX}/bin
 else
     PATH=${PREFIX}/bin:${PATH}
@@ -441,7 +490,7 @@ fi
 export PATH
 
 # Set the default font path for xserver/xorg unless it's already set
-if [ x"$FONTPATH" = x ] ; then
+if test x"$FONTPATH" = x; then
     FONTPATH="${PREFIX}/lib/X11/fonts/misc/,${PREFIX}/lib/X11/fonts/Type1/,${PREFIX}/lib/X11/fonts/75dpi/,${PREFIX}/lib/X11/fonts/100dpi/,${PREFIX}/lib/X11/fonts/cyrillic/,${PREFIX}/lib/X11/fonts/TTF/"
     export FONTPATH
 fi
