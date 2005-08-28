@@ -5241,6 +5241,23 @@ symlink_app_xedit() {
     action	x11.c
     action	xaw.c
     action	xt.c
+
+    src_dir programs/xedit/lisp/modules/progmodes
+    dst_dir app/xedit/lisp/modules/progmodes
+
+    action	c.lsp
+    action	html.lsp
+    action	imake.lsp
+    action	lisp.lsp
+    action	make.lsp
+    action	man.lsp
+    action	patch.lsp
+    action	rpm.lsp
+    action	sgml.lsp
+    action	sh.lsp
+    action	xconf.lsp
+    action	xlog.lsp
+    action	xrdb.lsp
     
     src_dir programs/xedit/lisp/re
     dst_dir app/xedit/lisp/re
