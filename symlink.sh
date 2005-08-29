@@ -8439,6 +8439,12 @@ symlink_driver_i810() {
     dst_dir driver/xf86-video-i810/man
 
     action      i810.man    i810.4
+
+    src_dir lib/XvMC/hw/i810/
+    dst_dir driver/xf86-video-i810/src/xvmc/
+
+    action I810XvMC.c
+    action I810XvMC.h
 }
 
 symlink_driver_imstt() {
@@ -9186,6 +9192,28 @@ symlink_driver_via() {
     dst_dir driver/xf86-video-via/man
 
     action      via.man     via.4
+
+    src_dir lib/XvMC/hw/via/
+    dst_dir driver/xf86-video-via/src/xvmc
+
+    action	driDrawable.c
+    action	driDrawable.h
+    action	viaLowLevel.h
+    action	viaXvMC.c
+    action	viaXvMCPriv.h
+    action	xf86dri.c
+    action	xf86dri.h
+    action	xf86dristr.h
+
+    src_dir lib/XvMC/hw/via/unichrome
+    dst_dir driver/xf86-video-via/src/xvmc/unichrome
+    
+    action	viaLowLevel.c
+
+    src_dir lib/XvMC/hw/via/unichromeProA
+    dst_dir driver/xf86-video-via/src/xvmc/unichromeProA
+    
+    action	viaLowLevelPro.c
 }
 
 symlink_driver_vmware() {
