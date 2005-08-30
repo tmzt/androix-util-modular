@@ -12297,6 +12297,9 @@ symlink_data_xkbdata() {
     action	iso9995
     action	japan
     action	keypad
+    action	ledcaps
+    action	lednum
+    action	ledscroll
     action	misc
     action	mousekeys
     action	norepeat
@@ -12433,6 +12436,7 @@ symlink_data_xkbdata() {
     action	by
     action	ca
     action	ca_enhanced
+    action	capslock
     action	compose
     action	ctrl
     action	cz
@@ -12447,6 +12451,7 @@ symlink_data_xkbdata() {
     action	el
     action	en_US
     action	es
+    action	eurosign
     action	fi
     action	fo
     action	fr
@@ -12596,6 +12601,7 @@ symlink_data_xkbdata() {
     action	ir
     action	is
     action	it
+    action	jp
     action	kg
     action	la
     action	latam
@@ -12611,7 +12617,6 @@ symlink_data_xkbdata() {
     action	nl
     action	no
     action	pc
-    action	pl
     action	pk
     action	pl
     action	pt
@@ -12669,7 +12674,7 @@ symlink_data_xkbdata() {
 symlink_data() {
     symlink_data_cursors		  
     symlink_data_bitmaps
-#    symlink_data_xkbdata
+    symlink_data_xkbdata
 }
 
 #########
