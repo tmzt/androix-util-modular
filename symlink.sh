@@ -8375,6 +8375,7 @@ symlink_driver_i128() {
     action      i128_driver.c
     action      i128accel.c
     action      i128dga.c
+    action      i128exa.c
     action      i128init.c
     action      i128reg.h
 
