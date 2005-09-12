@@ -8189,6 +8189,7 @@ symlink_driver_ati() {
     action      radeon_bios.c
     action      radeon_chipset.h
     action      radeon_common.h
+    action      radeon_commonfuncs.c
     action      radeon_cursor.c
     action      radeon_dga.c
     action      radeon_dri.c
