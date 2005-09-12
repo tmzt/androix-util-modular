@@ -8196,6 +8196,9 @@ symlink_driver_ati() {
     action      radeon_dri.h
     action      radeon_dripriv.h
     action      radeon_driver.c
+    action      radeon_exa.c
+    action      radeon_exa_funcs.c
+    action      radeon_exa_render.c
     action      radeon_macros.h
     action      radeon_mergedfb.c
     action      radeon_mergedfb.h
