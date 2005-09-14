@@ -8687,6 +8687,7 @@ symlink_driver_rendition() {
     src_dir programs/Xserver/hw/xfree86/drivers/rendition
     dst_dir driver/xf86-video-rendition/src
 
+    action      README.uc
     action      accel.h
     action      accelX.c
     action      cmd2d.h
@@ -8699,6 +8700,8 @@ symlink_driver_rendition() {
     action      rendition_options.h
     action      rendition_shadow.c
     action      rendition_shadow.h
+    action      v10002d.uc
+    action      v20002d.uc
     action      v1kregs.h
     action      v1krisc.c
     action      v1krisc.h
