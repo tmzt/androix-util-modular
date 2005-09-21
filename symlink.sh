@@ -52,9 +52,7 @@ link_files() {
     fi
 }
 
-main() {
-    check_args $1 $2
-
+run_symlink() {
     run check_destinations "Creating destination directories"
     run check_exist "Checking that the source files exist"
     run delete_existing "Deleting existing files"
@@ -5417,7 +5415,7 @@ symlink_app() {
     symlink_app_xkbutils
     symlink_app_xkbprint
     symlink_app_xkbevd
-    symlink_app_xkbcomp
+#    symlink_app_xkbcomp
     symlink_app_xinit
     symlink_app_xgc
     symlink_app_xgamma
@@ -12700,6 +12698,87 @@ symlink_data() {
     symlink_data_xkbdata
 }
 
+
+generate_linked_files()
+{
+    echo $1 >> files
+}
+
+check_files() 
+{
+    rm -f symlink-linked-files
+    rm -f symlink-linked-files.sorted
+    rm -f all-monolith-files
+    rm -f all-monolith-files.sorted
+
+    run 
+
+    # generate a list of all files in the xc directory, except those that
+    # we know already should not be linked
+
+    echo source dir is $SRC_DIR
+
+    find $SRC_DIR -type f   > raw-and-uncut
+
+    find $SRC_DIR -type f | fgrep -v CVS | fgrep -v Imakefile | fgrep -v '.#' | fgrep -v 'xc/extras' | grep -v '.*~$' | fgrep -v 'xc/programs/xterm' | fgrep -v -e '-L1.bdf' | fgrep -v 'include/DPS' | fgrep -v 'lib/dps' | fgrep -v 'programs/dps' | grep -v '\.o$' > all-monolith-files
+
+    sort symlink-linked-files > symlink-linked-files.sorted
+    sort all-monolith-files > all-monolith-files.sorted
+
+    diff -u symlink-linked-files.sorted all-monolith-files.sorted  | grep -v "^-" | grep "^\+"
+}
+
+########
+#
+#     List of files that are deliberately not symlinked into
+#     the modular tree
+#
+#########
+
+symlink_non_linked_files()
+{
+    src_dir lib/Xdamage
+
+    action	AUTHORS
+    action	autogen.sh
+}
+
+print_source()
+{
+    echo $1 >> symlink-processed-files
+}
+
+list_missing()
+{
+    rm -f symlink-processed-files
+    rm -f symlink-processed-files.sorted
+    rm -f all-monolith-files
+    rm -f all-monolith-files.sorted
+
+    # generate a list of all files that this script is going to link
+    run print_source "Generating list of linked files" 
+
+    # generate a list of all files that this script is explicityly *not* going to link
+    ACTION=print_source EXPLANATION="Generating list of non-linked files" run_module non_linked_files
+
+    # generate a list of all files in the xc directory, except those that
+    # we already know we don't care about
+
+    echo -n Generating list of all monolithic files ...\ 
+
+    find $SRC_DIR -type f   > raw-and-uncut
+
+    find $SRC_DIR -type f | fgrep -v CVS | fgrep -v Imakefile | fgrep -v '.#' | fgrep -v 'xc/extras' | grep -v '.*~$' | fgrep -v 'xc/programs/xterm' | fgrep -v -e '-L1.bdf' | fgrep -v 'include/DPS' | fgrep -v 'lib/dps' | fgrep -v 'programs/dps' | grep -v '\.o$' > all-monolith-files
+
+    echo DONE
+
+    sort symlink-processed-files > symlink-processed-files.sorted
+    sort all-monolith-files > all-monolith-files.sorted
+
+    diff -u symlink-processed-files.sorted all-monolith-files.sorted  | grep -v "^-" | grep "^\+" | cut -d "+" -f2
+}
+
+
 #########
 #
 #    Helper functions
@@ -12759,13 +12838,25 @@ action() {
 }
 
 usage() {
-    echo symlink.sh src-dir dst-dir
-    echo src-dir: the xc directory of the monolithic source tree
-    echo dst-dir: the modular source tree containing proto, app, lib, ...
+    echo
+    echo Usage:
+    echo \  symlink.sh [ -m ]  src-dir dst-dir
+    echo  
+    echo \  src-dir: the xc directory of the monolithic source tree
+    echo \  dst-dir: the modular source tree containing proto, app, lib, ...
+    echo  
+    echo \  -m: List the files from the source directory that are not
+    echo \ \ \ \ \ \ processed by this script
 }
 
 # Check commandline args
 check_args() {
+    MISSING_FILES=no
+    if [ x$1 = "x-m" ] ; then
+	MISSING_FILES=yes
+	shift
+    fi
+
     if [ -z $1 ] ; then
 	echo Missing source dir
 	usage
@@ -12804,4 +12895,10 @@ check_args() {
     DST_DIR=`(cd $2 ; pwd )`
 }
 
-main $1 $2
+check_args $1 $2 $3
+
+if [ $MISSING_FILES = yes ] ; then
+    list_missing
+else
+    run_symlink
+fi
