@@ -12735,12 +12735,39 @@ check_files()
 #
 #########
 
+# exclude $1 and everything in it
+exclude_directory()
+{
+    for dir in `find $SRC_DIR/$1 -type d` ; do
+	dir=`echo $dir | sed s,$SRC_DIR/,,`
+	src_dir $dir
+
+	for file in `find $SRC_DIR/$dir -type f`; do
+	    action `basename $file`
+	done
+    done
+}
+
 symlink_non_linked_files()
 {
-    src_dir lib/Xdamage
+    echo
+    # SGI is upstream for these files. Not sure what to about them, but
+    # one place they absolutely do _not_ belong, is in the X tree.
+    exclude_directory doc/man/GL
+    exclude_directory doc/man/GLU
 
-    action	AUTHORS
-    action	autogen.sh
+    # This stuff is used to build binary distributions of the monolith.
+    # It would have to be redone to do something similar for the modular.
+    exclude_directory programs/Xserver/hw/xfree86/etc/bindist
+
+    # DPS is not part of the modular tree 
+    exclude_directory lib/dps
+    exclude_directory programs/dpsexec
+    exclude_directory programs/dpsinfo
+    exclude_directory include/DPS
+
+    # Exclude xterm
+    exclude_directory programs/xterm
 }
 
 print_source()
@@ -12768,12 +12795,12 @@ list_missing()
 
     find $SRC_DIR -type f   > raw-and-uncut
 
-    find $SRC_DIR -type f | fgrep -v CVS | fgrep -v Imakefile | fgrep -v '.#' | fgrep -v 'xc/extras' | grep -v '.*~$' | fgrep -v 'xc/programs/xterm' | fgrep -v -e '-L1.bdf' | fgrep -v 'include/DPS' | fgrep -v 'lib/dps' | fgrep -v 'programs/dps' | grep -v '\.o$' > all-monolith-files
-
-    echo DONE
+    find $SRC_DIR -type f | fgrep -v CVS | fgrep -v extras | fgrep -v Imakefile | fgrep -v '.#' | grep -v '.*~$' | fgrep -v -e '-L1.bdf' | grep -v '\.o$' > all-monolith-files
 
     sort symlink-processed-files > symlink-processed-files.sorted
     sort all-monolith-files > all-monolith-files.sorted
+
+    echo DONE
 
     diff -u symlink-processed-files.sorted all-monolith-files.sorted  | grep -v "^-" | grep "^\+" | cut -d "+" -f2
 }
@@ -12845,8 +12872,8 @@ usage() {
     echo \  src-dir: the xc directory of the monolithic source tree
     echo \  dst-dir: the modular source tree containing proto, app, lib, ...
     echo  
-    echo \  -m: List the files from the source directory that are not
-    echo \ \ \ \ \ \ processed by this script
+    echo \  -m: Instead of symlinking the files, list the files from the source
+    echo \ \ \ \ \ \ directory that are not processed by this script
 }
 
 # Check commandline args
