@@ -11786,6 +11786,7 @@ symlink_data_cursors_redglass() {
     action	xterm-32.png
     action	xterm-48.png
     action	xterm-64.png
+
     action	X_cursor.cfg
     action	based_arrow_down.cfg
     action	based_arrow_up.cfg
@@ -11823,6 +11824,54 @@ symlink_data_cursors_redglass() {
     action	top_tee.cfg
     action	watch.cfg
     action	xterm.cfg
+
+    action	based_arrow_down.xcf
+    action	based_arrow_up.xcf
+    action	basic_arrow.xcf
+    action	bottom_left_corner.xcf
+    action	bottom_right_corner.xcf
+    action	bottom_side.xcf
+    action	bottom_tee.xcf
+    action	center_ptr.xcf
+    action	circle.xcf
+    action	cross.xcf
+    action	dotbox.xcf
+    action	dot.xcf
+    action	double_arrow.xcf
+    action	draped_box.xcf
+    action	fleur.xcf
+    action	gumby.xcf
+    action	hand2.xcf
+    action	hourglass-135.xcf
+    action	hourglass-25.xcf
+    action	hourglass-45.xcf
+    action	hourglass-50.xcf
+    action	hourglass-75.xcf
+    action	hourglass-90.xcf
+    action	hourglass-empty.xcf
+    action	hourglass-full.xcf
+    action	hourglass-plain.xcf
+    action	left_ptr_watch.xcf
+    action	left_ptr.xcf
+    action	left_side.xcf
+    action	left_tee.xcf
+    action	ll_angle.xcf
+    action	pencil.xcf
+    action	right_ptr.xcf
+    action	right_side.xcf
+    action	right_tee.xcf
+    action	sb_h_double_arrow.xcf
+    action	sb_right_arrow.xcf
+    action	sb_up_arrow.xcf
+    action	sb_v_double_arrow.xcf
+    action	shuttle.xcf
+    action	top_left_corner.xcf
+    action	top_right_corner.xcf
+    action	top_side.xcf
+    action	top_tee.xcf
+    action	watch.xcf
+    action	X_cursor.xcf
+    action	xterm.xcf
 }
 
 symlink_data_cursors_whiteglass() {
@@ -12090,6 +12139,7 @@ symlink_data_cursors_whiteglass() {
     action	xterm-32.png
     action	xterm-48.png
     action	xterm-64.png
+
     action	X_cursor.cfg
     action	base_arrow_down.cfg
     action	base_arrow_up.cfg
@@ -12142,6 +12192,59 @@ symlink_data_cursors_whiteglass() {
     action	ur_angle.cfg
     action	watch.cfg
     action	xterm.cfg
+
+    action	base_arrow_down.xcf
+    action	base_arrow_up.xcf
+    action	basic_arrow.xcf
+    action	boat.xcf
+    action	bottom_left_corner.xcf
+    action	bottom_right_corner.xcf
+    action	bottom_side.xcf
+    action	bottom_tee.xcf
+    action	center_ptr.xcf
+    action	circle.xcf
+    action	cross.xcf
+    action	dot_box_mask.xcf
+    action	dot.xcf
+    action	double_arrow.xcf
+    action	draped_box.xcf
+    action	exchange.xcf
+    action	fleur.xcf
+    action	gumby.xcf
+    action	hand1.xcf
+    action	hand2.xcf
+    action	left_ptr_watch.xcf
+    action	left_ptr.xcf
+    action	left_side.xcf
+    action	left_tee.xcf
+    action	ll_angle.xcf
+    action	lr_angle.xcf
+    action	pencil.xcf
+    action	pirate.xcf
+    action	question_arrow.xcf
+    action	right_ptr.xcf
+    action	right_side.xcf
+    action	right_tee.xcf
+    action	sailboat.xcf
+    action	sb_down_arrow.xcf
+    action	sb_h_double_arrow.xcf
+    action	sb_left_arrow.xcf
+    action	sb_right_arrow.xcf
+    action	sb_up_arrow.xcf
+    action	sb_v_double_arrow.xcf
+    action	shuttle.xcf
+    action	sizing.xcf
+    action	target.xcf
+    action	top_left_corner.xcf
+    action	top_right_corner.xcf
+    action	top_side.xcf
+    action	top_tee.xcf
+    action	trek.xcf
+    action	ul_angle.xcf
+    action	ur_angle.xcf
+    action	watch.xcf
+    action	X_cursor.xcf
+    action	xterm.xcf
 }
 
 symlink_data_cursors() {
@@ -12765,6 +12868,7 @@ symlink_non_linked_files()
     exclude_directory programs/dpsexec
     exclude_directory programs/dpsinfo
     exclude_directory include/DPS
+    exclude_directory config/pswrap
 
     # Exclude xterm
     exclude_directory programs/xterm
