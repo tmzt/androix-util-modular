@@ -5415,7 +5415,7 @@ symlink_app() {
     symlink_app_xkbutils
     symlink_app_xkbprint
     symlink_app_xkbevd
-#    symlink_app_xkbcomp
+    symlink_app_xkbcomp
     symlink_app_xinit
     symlink_app_xgc
     symlink_app_xgamma
@@ -12845,15 +12845,131 @@ exclude_directory()
 	dir=`echo $dir | sed s,$SRC_DIR/,,`
 	src_dir $dir
 
-	for file in `find $SRC_DIR/$dir -type f`; do
+	for file in `find $SRC_DIR/$dir -maxdepth 1 -type f `; do
 	    action `basename $file`
 	done
     done
 }
 
+exclude_xft_buildsystem()
+{
+    # Xft already has a build system that lives in the modular tree
+
+    src_dir lib/Xft
+
+    action	aclocal.m4
+    action	autogen.sh
+    action	config.guess
+    action	config.h.in
+    action	config.sub
+    action	configure
+    action	configure.ac
+    action	depcomp
+    action	install-sh
+    action	ltmain.sh
+    action	Makefile.am
+    action	Makefile.in
+    action	missing
+    action	mkinstalldirs
+    action	Xft-def.cpp
+
+    src_dir lib/Xft/config
+    action	config-subst
+}
+
+exclude_render_buildsystem()
+{
+    # Xrender already has its own buildsystem that lives
+    # in the modular tree
+
+    src_dir lib/Xrender
+
+    action	AUTHORS
+    action	autogen.sh
+    action	ChangeLog
+    action	config.h
+    action	configure.ac
+    action	COPYING
+    action	INSTALL
+    action	NEWS
+    action	README
+    action	Xrender-def.cpp
+    action	xrender.pc.in
+}
+
+exclude_composite_buildsystem()
+{
+    src_dir lib/Xcomposite
+
+    action	autogen.sh
+    action	ChangeLog
+    action	configure.ac
+    action	COPYING
+    action	.cvsignore
+    action	INSTALL
+    action	Makefile.am
+    action	NEWS
+    action	README
+    action	xcomposite.pc.in
+}
+
+exclude_cursor_buildsystem()
+{
+    src_dir lib/Xcursor
+
+    action	AUTHORS
+    action	autogen.sh
+    action	ChangeLog
+    action	config.h
+    action	config-subst
+    action	configure.ac
+    action	COPYING
+    action	INSTALL
+    action	Makefile.am
+    action	NEWS
+    action	README
+    action	xcursor-config.in
+    action	Xcursor-def.cpp
+    action	xcursor.pc.in
+}
+
+exclude_damage_buildsystem()
+{
+    src_dir lib/Xdamage
+    
+    action	AUTHORS
+    action	autogen.sh
+    action	ChangeLog
+    action	configure.ac
+    action	COPYING
+    action	.cvsignore
+    action	INSTALL
+    action	Makefile.am
+    action	NEWS
+    action	README
+    action	xdamage.pc.in
+}
+
+exclude_fixes_buildsystem()
+{
+    src_dir lib/Xfixes
+
+    action	AUTHORS
+    action	autogen.sh
+    action	ChangeLog
+    action	configure.ac
+    action	COPYING
+    action	.cvsignore
+    action	INSTALL
+    action	Makefile.am
+    action	NEWS
+    action	README
+    action	Xfixes-def.cpp
+    action	xfixes.pc.in
+}
+
 symlink_non_linked_files()
 {
-    echo
     # SGI is upstream for these files. Not sure what to about them, but
     # one place they absolutely do _not_ belong, is in the X tree.
     exclude_directory doc/man/GL
@@ -12869,9 +12985,20 @@ symlink_non_linked_files()
     exclude_directory programs/dpsinfo
     exclude_directory include/DPS
     exclude_directory config/pswrap
+    exclude_directory lib/dpstk
 
     # Exclude xterm
     exclude_directory programs/xterm
+
+    # Nobody should really care about Xft1 anymore
+    exclude_directory lib/Xft1
+
+    exclude_xft_buildsystem
+    exclude_render_buildsystem
+    exclude_composite_buildsystem
+    exclude_cursor_buildsystem
+    exclude_damage_buildsystem
+    exclude_fixes_buildsystem
 }
 
 print_source()
@@ -12885,6 +13012,9 @@ list_missing()
     rm -f symlink-processed-files.sorted
     rm -f all-monolith-files
     rm -f all-monolith-files.sorted
+
+    # make sure we are not excluding anything that doesn't exist
+    ACTION=check_exist EXPLANATION="Checking excluded files exist" run_module non_linked_files
 
     # generate a list of all files that this script is going to link
     run print_source "Generating list of linked files" 
