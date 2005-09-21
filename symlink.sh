@@ -384,8 +384,6 @@ symlink_proto_gl() {
     src_dir include/GL
     dst_dir proto/GL
 
-    action	glu.h		# not used in server
-    action	glx.h
     action	glxint.h
     action	glxmd.h
     action	glxproto.h
