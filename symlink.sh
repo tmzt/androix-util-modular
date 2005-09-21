@@ -9134,6 +9134,22 @@ symlink_driver_tseng() {
     action      tseng.man   tseng.4
 }
 
+symlink_driver_v4l() {
+    src_dir programs/Xserver/hw/xfree86/drivers/v4l
+    dst_dir driver/xf86-video-v4l
+
+    action      README
+
+    dst_dir driver/xf86-video-v4l/src
+
+    action      v4l.c
+    action      videodev.h
+
+    dst_dir driver/xf86-video-v4l/man
+
+    action      v4l.man     v4l.4
+}
+
 symlink_driver_vesa() {
     src_dir programs/Xserver/hw/xfree86/drivers/vesa
     dst_dir driver/xf86-video-vesa/src
@@ -9625,6 +9641,7 @@ symlink_driver() {
     symlink_driver_tga
     symlink_driver_trident
     symlink_driver_tseng
+    symlink_driver_v4l
     symlink_driver_vesa
     symlink_driver_vga
     symlink_driver_via
