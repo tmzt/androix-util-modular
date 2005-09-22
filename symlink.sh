@@ -5376,6 +5376,105 @@ symlink_app_xfs() {
     action	waitfor.c
 }
 
+symlink_app_xrx()
+{
+    src_dir programs/xrx/helper
+    dst_dir app/xrx/helper
+
+    action	GetUrl.c
+    action	GetUrl.h
+    action	helper.c
+    action	httptran.c
+    action	xrx.man
+
+    src_dir programs/xrx/libxplugin
+    dst_dir app/xrx/libxplugin
+
+    action	README
+    
+    src_dir programs/xrx/rx
+    dst_dir app/xrx/rx
+    
+    action	XDpyName.h
+    action	XUrls.h
+    action	RxI.h
+    action	BuildReq.c
+    action	XDpyName.c
+    action	Rx.h
+    action	Prefs.c
+    action	Prefs.h
+    action	XAuth.c
+    action	PParse.c
+    action	XAuth.h
+    action	PRead.c
+    action	XUrls.c
+    
+    src_dir programs/xrx/xnest-plugin
+    dst_dir app/xrx/xnest-plugin
+    
+    action	PProcess.c
+    action	XnestDis.c
+    action	SetWin.c
+    action	RxPlugin.h
+    action	NewNDest.c
+    
+    src_dir programs/xrx/htdocs
+    dst_dir app/xrx/htdocs
+    
+    action	xclock
+    action	dtcm.html
+    action	excel.html
+    action	bitmap
+    action	bitmap.html
+    action	xclock.html
+    action	xload
+    action	dtcm
+    action	xload.html
+    action	excel
+    
+    src_dir programs/xrx/testplugin
+    dst_dir app/xrx/testplugin
+    
+    action	testplugin.man
+    action	testplugin.c
+    
+    src_dir programs/xrx/plugin
+    dst_dir app/xrx/plugin
+    
+    action	PProcess.c
+    action	stubs.c
+    action	libxrx.man
+    action	SetWin.c
+    action	Global.c
+    action	Main.c
+    action	RxPlugin.h
+    action	NewNDest.c
+
+    src_dir programs/xrx/plugin/common
+    dst_dir app/xrx/plugin/common
+
+    action	npunix.c
+
+    src_dir programs/xrx/plugin/include
+    dst_dir app/xrx/plugin/include
+
+    action	npapi.h
+    action	npupp.h
+    action	jri.h
+    action	jri_md.h
+    action	jritypes.h
+    
+    src_dir programs/xrx/cgi-bin
+    dst_dir app/xrx/cgi-bin
+    
+    action	xclock
+    action	dtcm.sh
+    action	bitmap
+    action	xload
+    action	dtcm
+    action	excel
+}
+
 symlink_app() {
     symlink_app_xfs
     symlink_app_xedit
@@ -5470,6 +5569,7 @@ symlink_app() {
     symlink_app_scripts
     symlink_app_xdm
     symlink_app_sessreg
+    symlink_app_xrx
 #    ...
 }
 
@@ -12992,6 +13092,13 @@ symlink_non_linked_files()
 
     # Nobody should really care about Xft1 anymore
     exclude_directory lib/Xft1
+
+    # glxgears and glxinfo are included with Mesa
+    exclude_directory programs/glxgears
+    exclude_directory programs/glxinfo
+
+    # exclude config/util - I don't think it's relevant for the modular tree
+    exclude_directory config/util
 
     exclude_xft_buildsystem
     exclude_render_buildsystem
