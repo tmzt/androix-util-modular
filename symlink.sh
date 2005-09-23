@@ -5384,7 +5384,6 @@ symlink_app_xrx()
     action	GetUrl.c
     action	GetUrl.h
     action	helper.c
-    action	httptran.c
     action	xrx.man
 
     src_dir programs/xrx/libxplugin
@@ -12953,8 +12952,6 @@ exclude_directory()
 
 exclude_xft_buildsystem()
 {
-    # Xft already has a build system that lives in the modular tree
-
     src_dir lib/Xft
 
     action	aclocal.m4
@@ -12979,9 +12976,6 @@ exclude_xft_buildsystem()
 
 exclude_render_buildsystem()
 {
-    # Xrender already has its own buildsystem that lives
-    # in the modular tree
-
     src_dir lib/Xrender
 
     action	AUTHORS
@@ -13100,12 +13094,18 @@ symlink_non_linked_files()
     # exclude config/util - I don't think it's relevant for the modular tree
     exclude_directory config/util
 
+    # These all have their own build systems in the modular tree
     exclude_xft_buildsystem
     exclude_render_buildsystem
     exclude_composite_buildsystem
     exclude_cursor_buildsystem
     exclude_damage_buildsystem
     exclude_fixes_buildsystem
+
+    # This file is replace by httptransport.c in the modular tree
+    src_dir programs/xrx/helper
+    action	httptran.c
+
 }
 
 print_source()
@@ -13133,8 +13133,6 @@ list_missing()
     # we already know we don't care about
 
     echo -n Generating list of all monolithic files ...\ 
-
-    find $SRC_DIR -type f   > raw-and-uncut
 
     find $SRC_DIR -type f | fgrep -v CVS | fgrep -v extras | fgrep -v Imakefile | fgrep -v '.#' | grep -v '.*~$' | fgrep -v -e '-L1.bdf' | grep -v '\.o$' > all-monolith-files
 
