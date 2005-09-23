@@ -12901,35 +12901,6 @@ symlink_data() {
 }
 
 
-generate_linked_files()
-{
-    echo $1 >> files
-}
-
-check_files() 
-{
-    rm -f symlink-linked-files
-    rm -f symlink-linked-files.sorted
-    rm -f all-monolith-files
-    rm -f all-monolith-files.sorted
-
-    run 
-
-    # generate a list of all files in the xc directory, except those that
-    # we know already should not be linked
-
-    echo source dir is $SRC_DIR
-
-    find $SRC_DIR -type f   > raw-and-uncut
-
-    find $SRC_DIR -type f | fgrep -v CVS | fgrep -v Imakefile | fgrep -v '.#' | fgrep -v 'xc/extras' | grep -v '.*~$' | fgrep -v 'xc/programs/xterm' | fgrep -v -e '-L1.bdf' | fgrep -v 'include/DPS' | fgrep -v 'lib/dps' | fgrep -v 'programs/dps' | grep -v '\.o$' > all-monolith-files
-
-    sort symlink-linked-files > symlink-linked-files.sorted
-    sort all-monolith-files > all-monolith-files.sorted
-
-    diff -u symlink-linked-files.sorted all-monolith-files.sorted  | grep -v "^-" | grep "^\+"
-}
-
 ########
 #
 #     List of files that are deliberately not symlinked into
@@ -12941,12 +12912,20 @@ check_files()
 exclude_directory()
 {
     for dir in `find $SRC_DIR/$1 -type d` ; do
-	dir=`echo $dir | sed s,$SRC_DIR/,,`
+	dir=`echo $dir | sed s,$SRC_DIR,, | sed s,^/,,`
 	src_dir $dir
 
 	for file in `find $SRC_DIR/$dir -maxdepth 1 -type f `; do
 	    action `basename $file`
 	done
+    done
+}
+
+exclude_glob()
+{
+    for file in `find $SRC_DIR -name "$1"` ; do
+	src_dir `dirname $file | sed s,$SRC_DIR,, | sed s,^/,,`
+	action `basename $file`
     done
 }
 
@@ -13102,15 +13081,35 @@ symlink_non_linked_files()
     exclude_damage_buildsystem
     exclude_fixes_buildsystem
 
+    # By definition the monolith is not upstream for this
+    exclude_directory extras
+
+    # These files are not needed
+    exclude_glob "*-L1.bdf"
+    exclude_glob "Imakefile"
+
     # This file is replace by httptransport.c in the modular tree
     src_dir programs/xrx/helper
     action	httptran.c
 
+    # Some toplevel monolithic stuff
+    src_dir
+    action	BUILD		# description of the monolithic build system
+    action	ChangeLog	# irrelevant to modular
 }
 
 print_source()
 {
     echo $1 >> symlink-processed-files
+}
+
+generate_monolith_files()
+{
+    for cvsdir in `find $SRC_DIR -name "CVS"` ; do
+	for file in `cat $cvsdir/Entries | grep -v "^D" | cut -d"/" -f2 `; do
+	    echo `echo $cvsdir | sed s/CVS//`$file >> all-monolith-files
+	done
+    done
 }
 
 list_missing()
@@ -13121,7 +13120,7 @@ list_missing()
     rm -f all-monolith-files.sorted
 
     # make sure we are not excluding anything that doesn't exist
-    ACTION=check_exist EXPLANATION="Checking excluded files exist" run_module non_linked_files
+    ACTION=check_exist EXPLANATION="Checking that excluded files exist" run_module non_linked_files
 
     # generate a list of all files that this script is going to link
     run print_source "Generating list of linked files" 
@@ -13134,14 +13133,16 @@ list_missing()
 
     echo -n Generating list of all monolithic files ...\ 
 
-    find $SRC_DIR -type f | fgrep -v CVS | fgrep -v extras | fgrep -v Imakefile | fgrep -v '.#' | grep -v '.*~$' | fgrep -v -e '-L1.bdf' | grep -v '\.o$' > all-monolith-files
+    generate_monolith_files
+
+    echo DONE
+
+    echo Generating list of missing files
 
     sort symlink-processed-files > symlink-processed-files.sorted
     sort all-monolith-files > all-monolith-files.sorted
 
-    echo DONE
-
-    diff -u symlink-processed-files.sorted all-monolith-files.sorted  | grep -v "^-" | grep "^\+" | cut -d "+" -f2
+    diff -u symlink-processed-files.sorted all-monolith-files.sorted  | grep -v "^-" | grep "^\+" | cut -d "+" -f2 > missing-files
 }
 
 
