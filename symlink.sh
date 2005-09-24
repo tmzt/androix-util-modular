@@ -5741,6 +5741,7 @@ symlink_xserver_Xext() {
     action      xvmain.c
     action      xvmc.c
     action      xvmcext.h
+    action	SecurityPolicy
 
     # some of these are really DDX-specific despite being in Xext
 
@@ -5868,6 +5869,11 @@ symlink_xserver_Xprint() {
     action      mediaSizes.c
     action      spooler.c
     action      spooler.h
+
+    dst_dir xserver/xorg/Xprint/doc
+    action	Xprt.html
+    action	Xprt.man
+    action	Xprt.sgml
 }
 
 symlink_xserver_Xprint_ps() {
@@ -6551,6 +6557,103 @@ symlink_xserver_hw_xfree86_ddc() {
     action      vdif.h
     action      xf86DDC.c
     action      xf86DDC.h
+}
+
+symlink_xserver_hw_xfree86_doc() {
+
+# Docs generic to all Xservers in xserver-xorg module:
+    src_dir programs/Xserver
+    dst_dir xserver/xorg/doc
+    action  Xserver.man
+
+# Docs specific to XFree86 DDX/Xorg server:
+
+    src_dir programs/Xserver/hw/xfree86
+    dst_dir xserver/xorg/hw/xfree86/doc/man
+
+    action  Xorg.man
+    action  xorg.conf.man
+
+    dst_dir xserver/xorg/hw/xfree86/doc
+    action  Registry
+
+    src_dir programs/Xserver/hw/xfree86/doc/sgml
+    dst_dir xserver/xorg/hw/xfree86/doc/sgml
+    action  DESIGN.sgml
+
+# Docs about the entire Xorg distribution:
+
+    dst_dir doc/old/sgml
+#   action  BUILD.sgml	- specific to the monolith build system
+    action  Darwin.sgml
+    action  Install.sgml
+    action  LICENSE.sgml
+    action  LynxOS.sgml
+    action  NetBSD.sgml
+    action  OS2Notes.sgml
+    action  OpenBSD.sgml
+    action  README.sgml
+    action  RELNOTES.sgml
+    action  SCO.sgml
+    action  Solaris.sgml
+#   action  Status.sgml	- obsolete
+    action  Versions.sgml
+    action  XKB-Config.sgml
+    action  XKB-Enhancing.sgml
+    action  dps.sgml
+    action  fonts.sgml
+    action  index.post
+    action  index.pre
+
+# Entity files and scripts needed for all sgml docs:
+
+    dst_dir doc/xorg-sgml-doctools
+#   action  README.build-docs - specific to monolith build
+    action  add.sh
+    action  defs.ent
+    action  mdefs.cpp	mdefs.pre
+
+# Driver-specific docs:
+
+    dst_dir driver/xf86-video-tga
+    action  DECtga.sgml
+
+    dst_dir driver/xf86-video-i128
+    action  I128.sgml
+
+    dst_dir driver/xf86-video-sis
+    action  SiS.sgml
+
+    dst_dir driver/xf86-video-apm
+    action  apm.sgml
+
+    dst_dir driver/xf86-video-ati
+    action  ati.sgml
+    action  r128.sgml
+
+    dst_dir driver/xf86-video-chips
+    action  chips.sgml
+
+    dst_dir driver/xf86-video-cyrix
+    action  cyrix.sgml
+
+    dst_dir driver/xf86-video-i740
+    action  i740.sgml
+
+    dst_dir driver/xf86-video-i810
+    action  i810.sgml
+
+    dst_dir driver/xf86-input-mouse
+    action  mouse.sgml
+
+    dst_dir driver/xf86-video-newport
+    action  newport.sgml
+
+    dst_dir driver/x86-video-rendition
+    action  rendition.sgml
+
+    dst_dir driver/x86-video-s3virge
+    action  s3virge.sgml
 }
 
 symlink_xserver_hw_xfree86_x86emu() {
@@ -8126,6 +8229,7 @@ symlink_xserver() {
     symlink_xserver_hw_xfree86_ddc
     symlink_xserver_hw_xfree86_x86emu
     symlink_xserver_hw_xfree86_dixmods
+    symlink_xserver_hw_xfree86_doc
     symlink_xserver_hw_xfree86_dummylib
     symlink_xserver_hw_xfree86_exa
     symlink_xserver_hw_xfree86_fbdevhw
