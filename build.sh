@@ -3,6 +3,7 @@
 # global environment variables you may set:
 # CACHE: absolute path to a global autoconf cache
 # QUIET: hush the configure script noise
+# CONFFLAGS: flags to pass to all configure scripts
 
 failed() {
     if test x"$NOQUIT" = x1; then
@@ -16,7 +17,7 @@ build() {
     echo "Building $1 module component $2..."
     cd $1/$2
 
-    if test "$1" = "xserver" && test "$2" = "xorg" && test -n $MESAPATH; then
+    if test "$1" = "xserver" && test "$2" = "xorg" && test -n "$MESAPATH"; then
 	MESA=-"-with-mesa-source=${MESAPATH}"
     else
 	MESA=
@@ -24,7 +25,7 @@ build() {
 
     # Use "sh autogen.sh" since some scripts are not executable in CVS
     sh autogen.sh --prefix=${PREFIX} ${MESA} ${QUIET:+--quiet} \
-        ${CACHE:+--cache-file=}${CACHE} || failed autogen $1 $2
+        ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} || failed autogen $1 $2
     make || failed make $1 $2
     $SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH make install || \
 	failed install $1 $2
