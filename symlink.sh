@@ -7193,6 +7193,11 @@ symlink_xserver_hw_xfree86_scanpci() {
 
     src_dir programs/Xserver/hw/xfree86/etc
     action	pci.ids
+    action	extrapci.ids
+
+    dst_dir xserver/xorg/hw/xfree86/utils/scanpci
+    action	scanpci.c
+    action	scanpci.man
 }
 
 symlink_xserver_hw_xfree86_shadowfb() {
@@ -7374,6 +7379,80 @@ symlink_xserver_hw_xfree86_xf8_32wid() {
     action      cfbscrinit.c
     action      cfbwid.c
     action      cfbwindow.c
+}
+
+symlink_xserver_hw_xfree86_xf86cfg() {
+    src_dir programs/Xserver/hw/xfree86/xf86cfg
+    dst_dir xserver/xorg/hw/xfree86/utils/xorgcfg
+
+    action	 TODO
+    action	 XOrgCfg.cpp XOrgCfg.pre
+    action	 accessx.c
+    action	 card-cfg.c
+    action	 card-cfg.h
+    action	 card.xbm
+    action	 card.xpm
+    action	 cards.c
+    action	 cards.h
+    action	 computer.xpm
+    action	 config.c
+    action	 config.h
+    action	 down.xbm
+    action	 expert.c
+    action	 help.c
+    action	 help.h
+    action	 interface.c
+    action	 keyboard-cfg.c
+    action	 keyboard-cfg.h
+    action	 keyboard.xbm
+    action	 keyboard.xpm
+    action	 left.xbm
+    action	 loader.c
+    action	 loader.h
+    action	 loadmod.c
+    action	 monitor-cfg.c
+    action	 monitor-cfg.h
+    action	 monitor.xbm
+    action	 monitor.xpm
+    action	 mouse-cfg.c
+    action	 mouse-cfg.h
+    action	 mouse.xbm
+    action	 mouse.xpm
+    action	 narrower.xbm
+    action	 options.c
+    action	 options.h
+    action	 right.xbm
+    action	 screen-cfg.c
+    action	 screen-cfg.h
+    action	 screen.c
+    action	 screen.h
+    action	 shorter.xbm
+    action	 startx.c
+    action	 stubs.c
+    action	 stubs.h
+    action	 taller.xbm
+    action	 text-mode.c
+    action	 up.xbm
+    action	 vidmode.c
+    action	 vidmode.h
+    action	 wider.xbm
+    action	 xf86config.c
+    action	 xf86config.h
+    action	 xorgcfg.man
+
+}
+
+symlink_xserver_hw_xfree86_xf86config() {
+    src_dir programs/Xserver/hw/xfree86/xf86config
+    dst_dir xserver/xorg/hw/xfree86/utils/xorgconfig
+
+    action	Cards
+    action	Cards98
+    action	cards.c
+    action	cards.h
+    action	xf86config.cmd
+    action	xorgconfig.c
+    action	xorgconfig.man
 }
 
 symlink_xserver_hw_xnest() {
@@ -8088,6 +8167,8 @@ symlink_xserver() {
     symlink_xserver_hw_xfree86_xf8_16bpp
     symlink_xserver_hw_xfree86_xf8_32bpp
     symlink_xserver_hw_xfree86_xf8_32wid
+    symlink_xserver_hw_xfree86_xf86cfg
+    symlink_xserver_hw_xfree86_xf86config
     symlink_xserver_hw_xnest
     symlink_xserver_hw_xwin
     symlink_xserver_ilbm
