@@ -1308,6 +1308,7 @@ symlink_lib_x11() {
     action	XPutRes.man	XrmPutResource.man
     action	XQBSize.man	XQueryBestSize.man
     action	XQColor.man	XQueryColor.man
+    action	XQExtension.man	XQueryExtension.man
     action	XQPointer.man	XQueryPointer.man
     action	XQTree.man	XQueryTree.man
     action	XREvent.man	XReparentEvent.man
@@ -2257,6 +2258,10 @@ symlink_lib_xt() {
 
 symlink_lib_xmu() {
     src_dir lib/Xmu
+
+    dst_dir lib/Xmu
+    action	README
+
     dst_dir lib/Xmu/include/X11/Xmu
 
     action	Atoms.h
@@ -6574,7 +6579,10 @@ symlink_xserver_hw_xfree86_doc() {
     action  Xorg.man
     action  xorg.conf.man
 
-    dst_dir xserver/xorg/hw/xfree86/doc
+    dst_dir xserver/xorg/hw/xfree86/doc/devel
+    action  DebuggingHints
+    action  Domain.note
+    action  RAC.Notes
     action  Registry
 
     src_dir programs/Xserver/hw/xfree86/doc/sgml
@@ -6748,6 +6756,7 @@ symlink_xserver_hw_xfree86_dummylib() {
     src_dir programs/Xserver/hw/xfree86/dummylib
     dst_dir xserver/xorg/hw/xfree86/dummylib
 
+    action	README
     action      dummylib.h
     action      fatalerror.c
     action      getvalidbios.c
