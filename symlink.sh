@@ -8734,8 +8734,8 @@ symlink_driver_i810() {
 
     action      i810.man    i810.4
 
-    src_dir lib/XvMC/hw/i810/
-    dst_dir driver/xf86-video-i810/src/xvmc/
+    src_dir lib/XvMC/hw/i810
+    dst_dir driver/xf86-video-i810/src/xvmc
 
     action I810XvMC.c
     action I810XvMC.h
@@ -9506,7 +9506,7 @@ symlink_driver_via() {
 
     action      via.man     via.4
 
-    src_dir lib/XvMC/hw/via/
+    src_dir lib/XvMC/hw/via
     dst_dir driver/xf86-video-via/src/xvmc
 
     action	driDrawable.c
@@ -13280,7 +13280,7 @@ symlink_non_linked_files()
 
     # These files are not needed
     exclude_glob "*-L1.bdf"
-    exclude_glob "Imakefile"
+    exclude_glob "Imakefile*"
 
     # This file is replace by httptransport.c in the modular tree
     src_dir programs/xrx/helper
@@ -13331,12 +13331,14 @@ list_missing()
 
     echo DONE
 
-    echo Generating list of missing files
+    echo -n Generating list of missing files ...\
 
     sort symlink-processed-files > symlink-processed-files.sorted
     sort all-monolith-files > all-monolith-files.sorted
 
     diff -u symlink-processed-files.sorted all-monolith-files.sorted  | grep -v "^-" | grep "^\+" | cut -d "+" -f2 > missing-files
+
+    echo DONE
 }
 
 
@@ -13377,7 +13379,11 @@ run() {
 }
 
 src_dir() {
-    REAL_SRC_DIR=$SRC_DIR/$1
+    if [ x$1 = x ]; then
+	REAL_SRC_DIR=$SRC_DIR
+    else
+	REAL_SRC_DIR=$SRC_DIR/$1
+    fi
     if [ ! -d $REAL_SRC_DIR ] ; then
 	error "Source directory $REAL_SRC_DIR does not exist"
     fi
@@ -13453,7 +13459,7 @@ check_args() {
     abspath="`cd \"$D\" 2>/dev/null && pwd || echo \"$D\"`/$B"
 
     SRC_DIR=`( cd $1 ; pwd )`
-    DST_DIR=`(cd $2 ; pwd )`
+    DST_DIR=`( cd $2 ; pwd )`
 }
 
 check_args $1 $2 $3
