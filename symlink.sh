@@ -8199,6 +8199,238 @@ symlink_xserver_xkb() {
     action	xkmread.c
 }
 
+symlink_xserver_xprint_config_models() {
+    # CANONBJ10E-GS
+    src_dir programs/Xserver/XpConfig/C/print/models/CANONBJ10E-GS
+    dst_dir xserver/xorg/XpConfig/C/print/models/CANONBJ10E-GS
+
+    action	model-config
+
+    # CANONC3200-PS
+    src_dir programs/Xserver/XpConfig/C/print/models/CANONC3200-PS
+    dst_dir xserver/xorg/XpConfig/C/print/models/CANONC3200-PS
+
+    action	model-config
+
+    # GSdefault
+    src_dir programs/Xserver/XpConfig/C/print/models/GSdefault
+    dst_dir xserver/xorg/XpConfig/C/print/models/GSdefault/model-config
+
+    action	model-config
+
+    # HPDJ1600C
+    src_dir programs/Xserver/XpConfig/C/print/models/HPDJ1600C
+    dst_dir xserver/xorg/XpConfig/C/print/models/HPDJ1600C/model-config
+    
+    action	model-config
+
+    src_dir programs/Xserver/XpConfig/C/print/models/HPDJ1600C/fonts
+    dst_dir xserver/xorg/XpConfig/C/print/models/HPDJ1600C/fonts
+
+    action	9nb00051.pmf
+    action	9nb00052.pmf
+    action	9nb00053.pmf
+    action	9nb00054.pmf
+    action	9nb00055.pmf
+    action	9nb00056.pmf
+    action	9nb00057.pmf
+    action	9nb00058.pmf
+    action	9nb00059.pmf
+    action	9nb00060.pmf
+    action	9nb00061.pmf
+    action	9nb00062.pmf
+    action	9nb00063.pmf
+    action	9nb00064.pmf
+    action	9nb00065.pmf
+    action	9nb00066.pmf
+    action	9nb00067.pmf
+    action	9nb00068.pmf
+    action	9nb00069.pmf
+    action	9nb00070.pmf
+    action	9nb00071.pmf
+    action	9nb00072.pmf
+    action	9nb00073.pmf
+    action	9nb00074.pmf
+    action	9nb00075.pmf
+    action	9nb00076.pmf
+    action	9nb00077.pmf
+    action	9nb00079.pmf
+    action	9nb00080.pmf
+    action	9nb00081.pmf
+    action	9nb00082.pmf
+    action	9nb00083.pmf
+    action	9nb00084.pmf
+    action	9nb00085.pmf
+    action	9nb00086.pmf
+    action	9nb00087.pmf
+    action	9nb00088.pmf
+    action	9nb00089.pmf
+    action	9nb00090.pmf
+    action	9nb00091.pmf
+    action	9nb00092.pmf
+    action	9nb00093.pmf
+    action	9nb00094.pmf
+    action	fonts.alias
+    action	fonts.dir
+    action	lpr0ye1a.pmf
+    action	README
+
+    # HPLJ4050-PS
+    src_dir programs/Xserver/XpConfig/C/print/models/HPLJ4050-PS
+    dst_dir xserver/xorg/XpConfig/C/print/models/HPLJ4050-PS/model-config
+
+    action	model-config
+
+    # HPLJ4family
+    src_dir programs/Xserver/XpConfig/C/print/models/HPLJ4family
+    dst_dir xserver/xorg/XpConfig/C/print/models/HPLJ4family
+
+    action	model-config
+
+    src_dir programs/Xserver/XpConfig/C/print/models/HPLJ4family/fonts
+    dst_dir xserver/xorg/XpConfig/C/print/models/HPLJ4family/fonts/9nb00051.pmf
+
+    action	9nb00051.pmf
+    action	9nb00052.pmf
+    action	9nb00053.pmf
+    action	9nb00054.pmf
+    action	9nb00055.pmf
+    action	9nb00056.pmf
+    action	9nb00057.pmf
+    action	9nb00058.pmf
+    action	9nb00059.pmf
+    action	9nb00060.pmf
+    action	9nb00061.pmf
+    action	9nb00062.pmf
+    action	9nb00063.pmf
+    action	9nb00064.pmf
+    action	9nb00065.pmf
+    action	9nb00066.pmf
+    action	9nb00067.pmf
+    action	9nb00068.pmf
+    action	9nb00069.pmf
+    action	9nb00070.pmf
+    action	9nb00071.pmf
+    action	9nb00072.pmf
+    action	9nb00073.pmf
+    action	9nb00074.pmf
+    action	9nb00075.pmf
+    action	9nb00076.pmf
+    action	9nb00077.pmf
+    action	9nb00079.pmf
+    action	9nb00080.pmf
+    action	9nb00081.pmf
+    action	9nb00082.pmf
+    action	9nb00083.pmf
+    action	9nb00084.pmf
+    action	9nb00085.pmf
+    action	9nb00086.pmf
+    action	9nb00087.pmf
+    action	9nb00088.pmf
+    action	9nb00089.pmf
+    action	9nb00090.pmf
+    action	9nb00091.pmf
+    action	9nb00092.pmf
+    action	9nb00093.pmf
+    action	9nb00094.pmf
+    action	fonts.alias
+    action	fonts.dir
+    action	lpr0ye1a.pmf
+    action	README
+
+    # PS2PDFspooldir-GS
+    src_dir programs/Xserver/XpConfig/C/print/models/PS2PDFspooldir-GS
+    dst_dir xserver/xorg/XpConfig/C/print/models/PS2PDFspooldir-GS/model-config
+    
+    action	model-config
+    action	ps2pdf_spooltodir.sh
+    
+    # PSdefault
+    src_dir programs/Xserver/XpConfig/C/print/models/PSdefault
+    dst_dir xserver/xorg/XpConfig/C/print/models/PSdefault/model-config
+    
+    action	model-config
+
+    src_dir programs/Xserver/XpConfig/C/print/models/PSdefault/fonts
+    dst_dir xserver/xorg/XpConfig/C/print/models/PSdefault/fonts/AvantGarde-BookOblique.pmf
+    
+    action	AvantGarde-BookOblique.pmf
+    action	AvantGarde-Book.pmf
+    action	AvantGarde-DemiOblique.pmf
+    action	AvantGarde-Demi.pmf
+    action	Courier-BoldOblique.pmf
+    action	Courier-Bold.pmf
+    action	Courier-Oblique.pmf
+    action	Courier.pmf
+    action	Helvetica-BoldOblique.pmf
+    action	Helvetica-Bold.pmf
+    action	Helvetica-Oblique.pmf
+    action	Helvetica.pmf
+    action	LubalinGraph-BookOblique.pmf
+    action	LubalinGraph-Book.pmf
+    action	LubalinGraph-DemiOblique.pmf
+    action	LubalinGraph-Demi.pmf
+    action	NewCenturySchlbk-BoldItalic.pmf
+    action	NewCenturySchlbk-Bold.pmf
+    action	NewCenturySchlbk-Italic.pmf
+    action	NewCenturySchlbk-Roman.pmf
+    action	Souvenir-DemiItalic.pmf
+    action	Souvenir-Demi.pmf
+    action	Souvenir-LightItalic.pmf
+    action	Souvenir-Light.pmf
+    action	Symbol.pmf
+    action	Times-BoldItalic.pmf
+    action	Times-Bold.pmf
+    action	Times-Italic.pmf
+    action	Times-Roman.pmf
+    action	ZapfDingbats.pmf
+    
+    # PSspooldir
+    src_dir programs/Xserver/XpConfig/C/print/models/PSspooldir
+    dst_dir xserver/xorg/XpConfig/C/print/models/PSspooldir/model-config
+
+    action	model-config
+    action	spooltodir.sh
+    
+    # SPSPARC2
+    src_dir programs/Xserver/XpConfig/C/print/models/SPSPARC2
+    dst_dir xserver/xorg/XpConfig/C/print/models/SPSPARC2/model-config
+    
+    action	model-config
+}
+
+symlink_xserver_xprint_config() {
+    src_dir programs/Xserver/XpConfig
+    dst_dir xserver/xorg/XpConfig/README
+    
+    action	README
+
+    src_dir programs/Xserver/XpConfig/C/print
+    dst_dir xserver/xorg/XpConfig/C/print/Xprinters
+    
+    action	Xprinters
+    
+    src_dir programs/Xserver/XpConfig/C/print/attributes
+    dst_dir xserver/xorg/XpConfig/C/print/attributes
+
+    action	document
+    action	job
+    action	printer
+
+    src_dir programs/Xserver/XpConfig/C/print/ddx-config/raster
+    dst_dir xserver/xorg/XpConfig/C/print/ddx-config/raster
+
+    action	pcl
+    action	postscript
+
+    src_dir programs/Xserver/XpConfig/en_US/print/attributes
+    dst_dir xserver/xorg/XpConfig/en_US/print/attributes/document
+    
+    action	document
+
+    symlink_xserver_xprint_config_models
+}
+
 symlink_xserver() {
     symlink_xserver_GL_apple
     symlink_xserver_GL_dri
@@ -8305,6 +8537,7 @@ symlink_xserver() {
     symlink_xserver_render
     symlink_xserver_xfixes
     symlink_xserver_xkb
+    symlink_xserver_xprint_config
 #    ...
 }
 
@@ -13282,7 +13515,7 @@ symlink_non_linked_files()
     exclude_glob "*-L1.bdf"
     exclude_glob "Imakefile*"
 
-    # This file is replace by httptransport.c in the modular tree
+    # This file is replaced by httptransport.c in the modular tree
     src_dir programs/xrx/helper
     action	httptran.c
 
