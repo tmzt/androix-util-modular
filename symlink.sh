@@ -6930,6 +6930,25 @@ symlink_xserver_hw_xfree86_doc() {
     action  s3virge.sgml
 }
 
+symlink_xserver_hw_xfree86_etc() {
+    src_dir programs/Xserver/hw/xfree86/etc
+
+    dst_dir xserver/xorg/hw/xfree86/common
+    action vesamodes
+    action extramodes
+
+    dst_dir xserver/xorg/hw/xfree86/utils/ioport
+    action ioport.c
+
+    dst_dir xserver/xorg/hw/xfree86/utils/pcitweak
+    action pcitweak.c
+    action pcitweak.man
+
+    dst_dir xserver/xorg/hw/xfree86/os-support/solaris
+    action apSolaris.shar
+
+}
+
 symlink_xserver_hw_xfree86_x86emu() {
     src_dir extras/x86emu/include
     dst_dir xserver/xorg/hw/xfree86/x86emu
@@ -8739,6 +8758,7 @@ symlink_xserver() {
     symlink_xserver_hw_xfree86_dixmods
     symlink_xserver_hw_xfree86_doc
     symlink_xserver_hw_xfree86_dummylib
+    symlink_xserver_hw_xfree86_etc
     symlink_xserver_hw_xfree86_exa
     symlink_xserver_hw_xfree86_fbdevhw
     symlink_xserver_hw_xfree86_i2c
