@@ -8484,13 +8484,13 @@ symlink_xserver_xprint_config_models() {
 
     # GSdefault
     src_dir programs/Xserver/XpConfig/C/print/models/GSdefault
-    dst_dir xserver/xorg/XpConfig/C/print/models/GSdefault/model-config
+    dst_dir xserver/xorg/XpConfig/C/print/models/GSdefault
 
     action	model-config
 
     # HPDJ1600C
     src_dir programs/Xserver/XpConfig/C/print/models/HPDJ1600C
-    dst_dir xserver/xorg/XpConfig/C/print/models/HPDJ1600C/model-config
+    dst_dir xserver/xorg/XpConfig/C/print/models/HPDJ1600C
     
     action	model-config
 
@@ -8547,7 +8547,7 @@ symlink_xserver_xprint_config_models() {
 
     # HPLJ4050-PS
     src_dir programs/Xserver/XpConfig/C/print/models/HPLJ4050-PS
-    dst_dir xserver/xorg/XpConfig/C/print/models/HPLJ4050-PS/model-config
+    dst_dir xserver/xorg/XpConfig/C/print/models/HPLJ4050-PS
 
     action	model-config
 
@@ -8558,7 +8558,7 @@ symlink_xserver_xprint_config_models() {
     action	model-config
 
     src_dir programs/Xserver/XpConfig/C/print/models/HPLJ4family/fonts
-    dst_dir xserver/xorg/XpConfig/C/print/models/HPLJ4family/fonts/9nb00051.pmf
+    dst_dir xserver/xorg/XpConfig/C/print/models/HPLJ4family/fonts
 
     action	9nb00051.pmf
     action	9nb00052.pmf
@@ -8610,19 +8610,19 @@ symlink_xserver_xprint_config_models() {
 
     # PS2PDFspooldir-GS
     src_dir programs/Xserver/XpConfig/C/print/models/PS2PDFspooldir-GS
-    dst_dir xserver/xorg/XpConfig/C/print/models/PS2PDFspooldir-GS/model-config
+    dst_dir xserver/xorg/XpConfig/C/print/models/PS2PDFspooldir-GS
     
     action	model-config
     action	ps2pdf_spooltodir.sh
     
     # PSdefault
     src_dir programs/Xserver/XpConfig/C/print/models/PSdefault
-    dst_dir xserver/xorg/XpConfig/C/print/models/PSdefault/model-config
+    dst_dir xserver/xorg/XpConfig/C/print/models/PSdefault
     
     action	model-config
 
     src_dir programs/Xserver/XpConfig/C/print/models/PSdefault/fonts
-    dst_dir xserver/xorg/XpConfig/C/print/models/PSdefault/fonts/AvantGarde-BookOblique.pmf
+    dst_dir xserver/xorg/XpConfig/C/print/models/PSdefault/fonts
     
     action	AvantGarde-BookOblique.pmf
     action	AvantGarde-Book.pmf
@@ -8671,12 +8671,12 @@ symlink_xserver_xprint_config_models() {
 
 symlink_xserver_xprint_config() {
     src_dir programs/Xserver/XpConfig
-    dst_dir xserver/xorg/XpConfig/README
+    dst_dir xserver/xorg/XpConfig
     
     action	README
 
     src_dir programs/Xserver/XpConfig/C/print
-    dst_dir xserver/xorg/XpConfig/C/print/Xprinters
+    dst_dir xserver/xorg/XpConfig/C/print
     
     action	Xprinters
     
@@ -8694,7 +8694,7 @@ symlink_xserver_xprint_config() {
     action	postscript
 
     src_dir programs/Xserver/XpConfig/en_US/print/attributes
-    dst_dir xserver/xorg/XpConfig/en_US/print/attributes/document
+    dst_dir xserver/xorg/XpConfig/en_US/print/attributes
     
     action	document
 
