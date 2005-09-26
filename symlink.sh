@@ -2258,10 +2258,6 @@ symlink_lib_xt() {
 
 symlink_lib_xmu() {
     src_dir lib/Xmu
-
-    dst_dir lib/Xmu
-    action	README
-
     dst_dir lib/Xmu/include/X11/Xmu
 
     action	Atoms.h
@@ -13754,6 +13750,7 @@ symlink_non_linked_files()
     exclude_directory lib/dps
     exclude_directory programs/dpsexec
     exclude_directory programs/dpsinfo
+    exclude_directory programs/texteroids
     exclude_directory include/DPS
     exclude_directory config/pswrap
     exclude_directory lib/dpstk
