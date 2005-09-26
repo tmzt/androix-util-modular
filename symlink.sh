@@ -6306,6 +6306,8 @@ symlink_xserver_hw_dmx() {
     action      dmxvisual.h
     action      dmxwindow.c
     action      dmxwindow.h
+
+    action      Xdmx.man
 }
 
 symlink_xserver_hw_dmx_config() {
@@ -6356,6 +6358,274 @@ symlink_xserver_hw_dmx_config() {
     action	vdltodmx.man
     action	xdmxconfig.c
     action	xdmxconfig.man
+}
+
+symlink_xserver_hw_dmx_doc() {
+    src_dir programs/Xserver/hw/dmx/doc
+    dst_dir xserver/xorg/hw/dmx/doc
+
+    action      dmx.sgml
+    action      DMXSpec.txt
+    action      DMXSpec-v1.txt
+    action      dmx.txt
+    action      doxygen.conf
+    action      doxygen.css
+    action      doxygen.foot
+    action      doxygen.head
+    action      Makefile.linux
+    action      scaled.sgml
+    action      scaled.txt
+
+    src_dir programs/Xserver/hw/dmx/doc/html
+    dst_dir xserver/xorg/hw/dmx/doc/html
+
+    action      annotated.html
+    action      ChkNotMaskEv_8c.html
+    action      ChkNotMaskEv_8h.html
+    action      ChkNotMaskEv_8h-source.html
+    action      classes.html
+    action      dmx_8h.html
+    action      dmx_8h-source.html
+    action      dmxarg_8c.html
+    action      dmxarg_8h.html
+    action      dmxarg_8h-source.html
+    action      dmxbackend_8c.html
+    action      dmxbackend_8h.html
+    action      dmxbackend_8h-source.html
+    action      dmxcb_8c.html
+    action      dmxcb_8h.html
+    action      dmxcb_8h-source.html
+    action      dmxclient_8h.html
+    action      dmxclient_8h-source.html
+    action      dmxcmap_8c.html
+    action      dmxcmap_8h.html
+    action      dmxcmap_8h-source.html
+    action      dmxcommon_8c.html
+    action      dmxcommon_8h.html
+    action      dmxcommon_8h-source.html
+    action      dmxcompat_8c.html
+    action      dmxcompat_8h.html
+    action      dmxcompat_8h-source.html
+    action      dmxconfig_8c.html
+    action      dmxconfig_8h.html
+    action      dmxconfig_8h-source.html
+    action      dmxconsole_8c.html
+    action      dmxconsole_8h.html
+    action      dmxconsole_8h-source.html
+    action      dmxcursor_8c.html
+    action      dmxcursor_8h.html
+    action      dmxcursor_8h-source.html
+    action      dmxdetach_8c.html
+    action      dmxdpms_8c.html
+    action      dmxdpms_8h.html
+    action      dmxdpms_8h-source.html
+    action      dmxdummy_8c.html
+    action      dmxdummy_8h.html
+    action      dmxdummy_8h-source.html
+    action      dmxeq_8c.html
+    action      dmxeq_8h.html
+    action      dmxeq_8h-source.html
+    action      dmxevents_8c.html
+    action      dmxevents_8h.html
+    action      dmxevents_8h-source.html
+    action      dmxext_8h.html
+    action      dmxext_8h-source.html
+    action      dmxextension_8c.html
+    action      dmxextension_8h.html
+    action      dmxextension_8h-source.html
+    action      dmxfont_8c.html
+    action      dmxfont_8h.html
+    action      dmxfont_8h-source.html
+    action      dmxgc_8c.html
+    action      dmxgc_8h.html
+    action      dmxgc_8h-source.html
+    action      dmxgcops_8c.html
+    action      dmxgcops_8h.html
+    action      dmxgcops_8h-source.html
+    action      dmx__glxvisuals_8h-source.html
+    action      dmxinit_8c.html
+    action      dmxinit_8h.html
+    action      dmxinit_8h-source.html
+    action      dmxinput_8c.html
+    action      dmxinput_8h.html
+    action      dmxinput_8h-source.html
+    action      dmxinputinit_8c.html
+    action      dmxinputinit_8h.html
+    action      dmxinputinit_8h-source.html
+    action      dmxlog_8c.html
+    action      dmxlog_8h.html
+    action      dmxlog_8h-source.html
+    action      dmxmap_8c.html
+    action      dmxmap_8h.html
+    action      dmxmap_8h-source.html
+    action      dmxmotion_8c.html
+    action      dmxmotion_8h.html
+    action      dmxmotion_8h-source.html
+    action      dmxparse_8c.html
+    action      dmxparse_8h.html
+    action      dmxparse_8h-source.html
+    action      dmxpict_8c.html
+    action      dmxpict_8h.html
+    action      dmxpict_8h-source.html
+    action      dmxpixmap_8c.html
+    action      dmxpixmap_8h.html
+    action      dmxpixmap_8h-source.html
+    action      dmxprint_8c.html
+    action      dmxprint_8h.html
+    action      dmxprint_8h-source.html
+    action      dmxprop_8c.html
+    action      dmxprop_8h.html
+    action      dmxprop_8h-source.html
+    action      dmxproto_8h.html
+    action      dmxproto_8h-source.html
+    action      dmxscrinit_8c.html
+    action      dmxscrinit_8h.html
+    action      dmxscrinit_8h-source.html
+    action      dmxshadow_8c.html
+    action      dmxshadow_8h.html
+    action      dmxshadow_8h-source.html
+    action      dmxsigio_8c.html
+    action      dmxsigio_8h.html
+    action      dmxsigio_8h-source.html
+    action      dmxstat_8c.html
+    action      dmxstat_8h.html
+    action      dmxstat_8h-source.html
+    action      dmxsync_8c.html
+    action      dmxsync_8h.html
+    action      dmxsync_8h-source.html
+    action      dmxvisual_8c.html
+    action      dmxvisual_8h.html
+    action      dmxvisual_8h-source.html
+    action      dmxwindow_8c.html
+    action      dmxwindow_8h.html
+    action      dmxwindow_8h-source.html
+    action      dmxxinput_8c.html
+    action      doxygen.css
+    action      doxygen.png
+    action      files.html
+    action      ftv2blank.png
+    action      ftv2doc.png
+    action      ftv2folderclosed.png
+    action      ftv2folderopen.png
+    action      ftv2lastnode.png
+    action      ftv2link.png
+    action      ftv2mlastnode.png
+    action      ftv2mnode.png
+    action      ftv2node.png
+    action      ftv2plastnode.png
+    action      ftv2pnode.png
+    action      ftv2vertline.png
+    action      functions.html
+    action      functions_vars.html
+    action      globals_defs.html
+    action      globals_enum.html
+    action      globals_eval.html
+    action      globals_func.html
+    action      globals.html
+    action      globals_type.html
+    action      globals_vars.html
+    action      index.html
+    action      lib_2dmx_2dmx_8c.html
+    action      lnx-keyboard_8c.html
+    action      lnx-keyboard_8h.html
+    action      lnx-keyboard_8h-source.html
+    action      lnx-ms_8c.html
+    action      lnx-ms_8h.html
+    action      lnx-ms_8h-source.html
+    action      lnx-ps2_8c.html
+    action      lnx-ps2_8h.html
+    action      lnx-ps2_8h-source.html
+    action      main.html
+    action      programs_2Xserver_2Xext_2dmx_8c.html
+    action      struct__dmxArg.html
+    action      struct__dmxColormapPriv.html
+    action      structDMXConfigCmdStruct.html
+    action      struct__DMXConfigComment.html
+    action      struct__DMXConfigDisplay.html
+    action      struct__DMXConfigEntry.html
+    action      struct__DMXConfigFullDim.html
+    action      structDMXConfigListStruct.html
+    action      struct__DMXConfigNumber.html
+    action      struct__DMXConfigOption.html
+    action      struct__DMXConfigPair.html
+    action      struct__DMXConfigParam.html
+    action      struct__DMXConfigPartDim.html
+    action      struct__DMXConfigString.html
+    action      struct__DMXConfigSub.html
+    action      struct__DMXConfigToken.html
+    action      struct__DMXConfigVirtual.html
+    action      struct__DMXConfigWall.html
+    action      struct__dmxCursorPriv.html
+    action      structDMXDesktopAttributes.html
+    action      structDMXDesktopAttributesRec.html
+    action      struct__DMXEventMap.html
+    action      struct__dmxFontPriv.html
+    action      struct__dmxGCPriv.html
+    action      structdmxGlxVisualPrivate.html
+    action      struct__dmxGlyphPriv.html
+    action      structDMXInputAttributes.html
+    action      structDMXInputAttributesRec.html
+    action      struct__DMXInputInfo.html
+    action      struct__DMXLocalInitInfo.html
+    action      struct__DMXLocalInputInfo.html
+    action      struct__dmxPictPriv.html
+    action      struct__dmxPixPriv.html
+    action      structDMXScreenAttributes.html
+    action      structDMXScreenAttributesRec.html
+    action      struct__DMXScreenInfo.html
+    action      struct__DMXStatAvg.html
+    action      struct__DMXStatInfo.html
+    action      structDMXWindowAttributes.html
+    action      structDMXWindowAttributesRec.html
+    action      struct__dmxWinPriv.html
+    action      struct__Event.html
+    action      struct__EventQueue.html
+    action      struct__myPrivate.html
+    action      structxDMXAddInputReply.html
+    action      structxDMXAddInputReq.html
+    action      structxDMXAddScreenReply.html
+    action      structxDMXAddScreenReq.html
+    action      structxDMXChangeDesktopAttributesReply.html
+    action      structxDMXChangeDesktopAttributesReq.html
+    action      structxDMXChangeScreensAttributesReply.html
+    action      structxDMXChangeScreensAttributesReq.html
+    action      structxDMXForceWindowCreationReply.html
+    action      structxDMXForceWindowCreationReq.html
+    action      structxDMXGetDesktopAttributesReply.html
+    action      structxDMXGetDesktopAttributesReq.html
+    action      structxDMXGetInputAttributesReply.html
+    action      structxDMXGetInputAttributesReq.html
+    action      structxDMXGetInputCountReply.html
+    action      structxDMXGetInputCountReq.html
+    action      structxDMXGetScreenAttributesReply.html
+    action      structxDMXGetScreenAttributesReq.html
+    action      structxDMXGetScreenCountReply.html
+    action      structxDMXGetScreenCountReq.html
+    action      structxDMXGetWindowAttributesReply.html
+    action      structxDMXGetWindowAttributesReq.html
+    action      structxDMXQueryVersionReply.html
+    action      structxDMXQueryVersionReq.html
+    action      structxDMXRemoveInputReply.html
+    action      structxDMXRemoveInputReq.html
+    action      structxDMXRemoveScreenReply.html
+    action      structxDMXRemoveScreenReq.html
+    action      structxDMXSyncReply.html
+    action      structxDMXSyncReq.html
+    action      tree.html
+    action      usb-common_8c.html
+    action      usb-common_8h.html
+    action      usb-common_8h-source.html
+    action      usb-keyboard_8c.html
+    action      usb-keyboard_8h.html
+    action      usb-keyboard_8h-source.html
+    action      usb-mouse_8c.html
+    action      usb-mouse_8h.html
+    action      usb-mouse_8h-source.html
+    action      usb-other_8c.html
+    action      usb-other_8h.html
+    action      usb-other_8h-source.html
+    action      usb-private_8h.html
+    action      usb-private_8h-source.html
 }
 
 symlink_xserver_hw_dmx_examples() {
@@ -8462,6 +8732,7 @@ symlink_xserver() {
     symlink_xserver_hw_darwin_quartz_xpr
     symlink_xserver_hw_dmx
     symlink_xserver_hw_dmx_config
+    symlink_xserver_hw_dmx_doc
     symlink_xserver_hw_dmx_examples
     symlink_xserver_hw_dmx_glxProxy
     symlink_xserver_hw_dmx_input
