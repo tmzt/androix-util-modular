@@ -4087,6 +4087,18 @@ symlink_app_xfd() {
 
 }
 
+symlink_app_xfindproxy() {
+    src_dir programs/xfindproxy
+    dst_dir app/xfindproxy
+
+    action	xfindproxy.c
+
+    action	xfindproxy.h
+
+    action	xfindproxy.man
+
+}
+
 symlink_app_xfontsel() {
     src_dir programs/xfontsel
     dst_dir app/xfontsel
@@ -5500,6 +5512,7 @@ symlink_app() {
     symlink_app_xfwp
     symlink_app_xfsinfo
     symlink_app_xfontsel
+    symlink_app_xfindproxy
     symlink_app_xfd
     symlink_app_xf86dga
     symlink_app_xeyes
