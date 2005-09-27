@@ -9310,7 +9310,6 @@ symlink_driver_mga() {
     action	mga_PInS.txt
     action	README_HALLIB
 
-    action	Makefile
     src_dir programs/Xserver/hw/xfree86/drivers/mga/util
     dst_dir driver/xf86-video-mga/util
 
