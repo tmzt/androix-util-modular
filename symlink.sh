@@ -9896,6 +9896,8 @@ symlink_driver_sunffb() {
     action      ffb_wid.c
     action      ffb_wline.c
     action      ffb_zeroarc.c
+    action	ffb_asm.s
+    action	VISmoveImage.s
 
     dst_dir driver/xf86-video-sunffb/man
 
