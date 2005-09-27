@@ -6303,7 +6303,7 @@ symlink_xserver_hw_dmx() {
     action      dmxwindow.c
     action      dmxwindow.h
 
-    action      Xdmx.man
+    action      Xdmx.man		Xdmx.1
 }
 
 symlink_xserver_hw_dmx_config() {
@@ -6368,7 +6368,6 @@ symlink_xserver_hw_dmx_doc() {
     action      doxygen.css
     action      doxygen.foot
     action      doxygen.head
-    action      Makefile.linux
     action      scaled.sgml
     action      scaled.txt
 
@@ -6806,6 +6805,8 @@ symlink_xserver_hw_xfree86_common() {
     action      xisb.c
     action      xisb.h
     action      xorgHelper.c
+
+    action      modeline2c.pl
 
     src_dir programs/Xserver/hw/xfree86
     action	xf86Date.h
