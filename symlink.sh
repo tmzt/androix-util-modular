@@ -8663,16 +8663,18 @@ symlink_xserver_xprint_config_models() {
     
     # PSspooldir
     src_dir programs/Xserver/XpConfig/C/print/models/PSspooldir
-    dst_dir xserver/xorg/XpConfig/C/print/models/PSspooldir/model-config
+    dst_dir xserver/xorg/XpConfig/C/print/models/PSspooldir
 
     action	model-config
     action	spooltodir.sh
     
     # SPSPARC2
     src_dir programs/Xserver/XpConfig/C/print/models/SPSPARC2
-    dst_dir xserver/xorg/XpConfig/C/print/models/SPSPARC2/model-config
+    dst_dir xserver/xorg/XpConfig/C/print/models/SPSPARC2
     
     action	model-config
+
+    
 }
 
 symlink_xserver_xprint_config() {
