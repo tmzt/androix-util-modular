@@ -9690,6 +9690,13 @@ symlink_driver_savage() {
 
 symlink_driver_siliconmotion() {
     src_dir programs/Xserver/hw/xfree86/drivers/siliconmotion
+    dst_dir driver/xf86-video-siliconmotion
+
+    action	README
+    action	CALLMAP
+    action	Release.txt
+
+    src_dir programs/Xserver/hw/xfree86/drivers/siliconmotion
     dst_dir driver/xf86-video-siliconmotion/src
 
     action      regsmi.h
