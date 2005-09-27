@@ -8817,6 +8817,11 @@ symlink_xserver() {
 
 symlink_driver_apm() {
     src_dir programs/Xserver/hw/xfree86/drivers/apm
+    dst_dir driver/xf86-video-apm
+
+    action	README
+
+    src_dir programs/Xserver/hw/xfree86/drivers/apm
     dst_dir driver/xf86-video-apm/src
 
     action      apm.h
@@ -9041,9 +9046,22 @@ symlink_driver_chips() {
     dst_dir driver/xf86-video-chips/man
 
     action      chips.man   chips.4
+
+    src_dir programs/Xserver/hw/xfree86/drivers/chips/util
+    dst_dir driver/xf86-video-chips/util
+
+    action	AsmMacros.h
+    action	dRegs.c
+    action	modClock.c
+    action	mRegs.c
 }
 
 symlink_driver_cirrus() {
+    src_dir programs/Xserver/hw/xfree86/drivers/cirrus
+    dst_dir driver/xf86-video-cirrus
+
+    action	README.multihead
+
     src_dir programs/Xserver/hw/xfree86/drivers/cirrus
     dst_dir driver/xf86-video-cirrus/src
 
@@ -9071,6 +9089,12 @@ symlink_driver_cirrus() {
 }
 
 symlink_driver_cyrix() {
+    src_dir programs/Xserver/hw/xfree86/drivers/cyrix
+    dst_dir driver/xf86-video-cyrix
+
+    action	README
+    action	ChangeLog
+
     src_dir programs/Xserver/hw/xfree86/drivers/cyrix
     dst_dir driver/xf86-video-cyrix/src
 
@@ -9122,6 +9146,12 @@ symlink_driver_glide() {
 }
 
 symlink_driver_glint() {
+    src_dir programs/Xserver/hw/xfree86/drivers/glint
+    dst_dir driver/xf86-video-glint
+
+    action	DRI.txt
+    action	README.pm3
+
     src_dir programs/Xserver/hw/xfree86/drivers/glint
     dst_dir driver/xf86-video-glint/src
 
@@ -9178,6 +9208,11 @@ symlink_driver_i128() {
 }
 
 symlink_driver_i740() {
+    src_dir programs/Xserver/hw/xfree86/drivers/i740
+    dst_dir driver/xf86-video-i740
+
+    action	README
+
     src_dir programs/Xserver/hw/xfree86/drivers/i740
     dst_dir driver/xf86-video-i740/src
 
@@ -9257,6 +9292,19 @@ symlink_driver_imstt() {
 
 symlink_driver_mga() {
     src_dir programs/Xserver/hw/xfree86/drivers/mga
+    dst_dir driver/xf86-video-mga
+
+    action	mga_PInS.txt
+    action	README_HALLIB
+
+    action	Makefile
+    src_dir programs/Xserver/hw/xfree86/drivers/mga/util
+    dst_dir driver/xf86-video-mga/util
+
+    action	README
+    action	stormdwg.c
+
+    src_dir programs/Xserver/hw/xfree86/drivers/mga
     dst_dir driver/xf86-video-mga/src
 
     action      client.h
@@ -9302,6 +9350,12 @@ symlink_driver_mga() {
 
 symlink_driver_neomagic() {
     src_dir programs/Xserver/hw/xfree86/drivers/neomagic
+    dst_dir driver/xf86-video-neomagic
+
+    action	README
+    action	TODO
+
+    src_dir programs/Xserver/hw/xfree86/drivers/neomagic
     dst_dir driver/xf86-video-neomagic/src
 
     action      neo.h
@@ -9326,6 +9380,11 @@ symlink_driver_neomagic() {
 }
 
 symlink_driver_newport() {
+    src_dir programs/Xserver/hw/xfree86/drivers/newport
+    dst_dir driver/xf86-video-newport
+
+    action	XF86Config.indy
+
     src_dir programs/Xserver/hw/xfree86/drivers/newport
     dst_dir driver/xf86-video-newport/src
 
@@ -13791,6 +13850,19 @@ symlink_non_linked_files()
     src_dir
     action	BUILD		# description of the monolithic build system
     action	ChangeLog	# irrelevant to modular
+
+    # This file is generating a list of drivers - would have to be rewritten
+    # for the modular tree
+    src_dir programs/Xserver/hw/xfree86/drivers
+    action	confdrv.sh
+
+    # This file is replaced by a Makefile.am
+    src_dir programs/Xserver/hw/xfree86/drivers/mga/util
+    dst_dir driver/xf86-video-mga/util
+
+    action	Makefile
+
+    
 }
 
 print_source()
