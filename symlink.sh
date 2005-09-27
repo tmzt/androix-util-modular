@@ -10014,6 +10014,11 @@ symlink_driver_tseng() {
     src_dir programs/Xserver/hw/xfree86/drivers/tseng
     dst_dir driver/xf86-video-tseng/src
 
+    action	README
+
+    src_dir programs/Xserver/hw/xfree86/drivers/tseng
+    dst_dir driver/xf86-video-tseng/src
+
     action      tseng.h
     action      tseng_accel.c
     action      tseng_acl.c
@@ -10139,6 +10144,11 @@ symlink_driver_via() {
 
 symlink_driver_vmware() {
     src_dir programs/Xserver/hw/xfree86/drivers/vmware
+    dst_dir driver/xf86-video-vmware
+    
+    action	README
+
+    src_dir programs/Xserver/hw/xfree86/drivers/vmware
     dst_dir driver/xf86-video-vmware/src
 
     action      bits2pixels.c
@@ -10163,6 +10173,12 @@ symlink_driver_vmware() {
 }
 
 symlink_driver_voodoo() {
+    src_dir programs/Xserver/hw/xfree86/drivers/voodoo
+    dst_dir driver/xf86-video-voodoo/src
+
+    action	README
+    action	TODO
+
     src_dir programs/Xserver/hw/xfree86/drivers/voodoo
     dst_dir driver/xf86-video-voodoo/src
 
