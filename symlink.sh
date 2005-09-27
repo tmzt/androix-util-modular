@@ -9440,6 +9440,7 @@ symlink_driver_nsc() {
     action      nsc_gx2_vga.c
     action      nsc_gx2_video.c
     action      nsc_regacc.c
+    action	nsc_msr_asm.S
     action      panel.c
 
     dst_dir driver/xf86-video-nsc/man
@@ -9480,6 +9481,20 @@ symlink_driver_nsc() {
     action	vid_5530.c
     action	vid_rdcl.c
     action	vip_1200.c
+
+    # These files are not actually used, but it probably makes sense to
+    # distribute them along with the rest of gfx
+    
+    action	durango.c
+    action	gfx_tv.h
+    action	history.h
+    action	release.txt
+    action	tv_fs450.c
+    action	tv_fs450.h
+    action	tv_fs451.c
+    action	tv_geode.c
+    action	vid_1400.c
+    action	vip_1400.c
 
     src_dir programs/Xserver/hw/xfree86/drivers/nsc/panel
     dst_dir driver/xf86-video-nsc/src/panel
@@ -13875,12 +13890,6 @@ symlink_non_linked_files()
     dst_dir driver/xf86-video-mga/util
 
     action	Makefile
-
-    # These files are not being used at all. If they should actually
-    # be distributed, the nsc maintainer, if such a person exists, should
-    # feel free to add them
-    
-    exclude_directory programs/Xserver/hw/xfree86/drivers/nsc/gfx
 }
 
 print_source()
