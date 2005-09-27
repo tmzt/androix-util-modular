@@ -9352,6 +9352,7 @@ symlink_driver_neomagic() {
     src_dir programs/Xserver/hw/xfree86/drivers/neomagic
     dst_dir driver/xf86-video-neomagic
 
+    action	NM-reg.txt
     action	README
     action	TODO
 
@@ -13862,7 +13863,11 @@ symlink_non_linked_files()
 
     action	Makefile
 
+    # These files are not being used at all. If they should actually
+    # be distributed, the nsc maintainer, if such a person exists, should
+    # feel free to add them
     
+    exclude_directory programs/Xserver/hw/xfree86/drivers/nsc/gfx
 }
 
 print_source()
