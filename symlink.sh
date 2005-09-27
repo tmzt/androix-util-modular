@@ -3810,15 +3810,6 @@ symlink_app_smproxy() {
     action	smproxy.man
 }
 
-symlink_app_texteroids() {
-    src_dir programs/texteroids
-    dst_dir app/texteroids
-
-    action	texteroids.c
-
-    action	texteroids.man
-}
-
 symlink_app_viewres() {
     src_dir programs/viewres
     dst_dir app/viewres
@@ -5538,7 +5529,6 @@ symlink_app() {
     symlink_app_xauth
     symlink_app_x11perf
     symlink_app_viewres
-    symlink_app_texteroids
     symlink_app_smproxy
     symlink_app_showfont
     symlink_app_setxkbmap
