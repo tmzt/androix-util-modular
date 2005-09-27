@@ -9596,6 +9596,10 @@ symlink_driver_rendition() {
     action      vramdac.h
     action      vtypes.h
 
+    action	vgafont-std.data
+    action	vgafont-vrx.data
+    action	vgapalette.data
+
     dst_dir driver/xf86-video-rendition/man
 
     action      rendition.man   rendition.4
