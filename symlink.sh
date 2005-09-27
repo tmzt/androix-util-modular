@@ -9628,6 +9628,13 @@ symlink_driver_s3() {
 
 symlink_driver_s3virge() {
     src_dir programs/Xserver/hw/xfree86/drivers/s3virge
+    dst_dir driver/xf86-video-s3virge
+
+    action	CALLMAP
+    action	README
+    action	TODO_NOTES
+
+    src_dir programs/Xserver/hw/xfree86/drivers/s3virge
     dst_dir driver/xf86-video-s3virge/src
 
     action      newmmio.h
