@@ -14015,12 +14015,14 @@ symlink_non_linked_files()
     src_dir programs/Xserver/hw/xfree86/drivers/via
     dst_dir driver/xf86-video-via/src
 
+    action	via_drm.h
+
+    # Obsolete docs
     src_dir programs/Xserver/hw/xfree86/doc/sgml
     action	BUILD.sgml		# - specific to the monolith
 					#   build system
     action	Status.sgml		# - obsolete
     action	README.build-docs	# - specific to monolith build
-    action	via_drm.h
 }
 
 print_source()
