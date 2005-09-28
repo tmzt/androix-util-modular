@@ -10113,6 +10113,7 @@ symlink_driver_via() {
     action      via_xvmc.h
     action      via_xvpriv.h
     action	via_drmclient.h
+    action	via_vbe.c
 
     dst_dir driver/xf86-video-via/man
 
@@ -13925,6 +13926,12 @@ symlink_non_linked_files()
     dst_dir driver/xf86-video-mga/util
 
     action	Makefile
+
+    # The via_drm.h file belongs in libdrm
+    src_dir programs/Xserver/hw/xfree86/drivers/via
+    dst_dir driver/xf86-video-via/src
+
+    action	via_drm.h
 }
 
 print_source()
