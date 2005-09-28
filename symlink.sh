@@ -6863,7 +6863,6 @@ symlink_xserver_hw_xfree86_doc() {
 # Docs about the entire Xorg distribution:
 
     dst_dir doc/old/sgml
-#   action  BUILD.sgml	- specific to the monolith build system
     action  Darwin.sgml
     action  Install.sgml
     action  LICENSE.sgml
@@ -6875,7 +6874,6 @@ symlink_xserver_hw_xfree86_doc() {
     action  RELNOTES.sgml
     action  SCO.sgml
     action  Solaris.sgml
-#   action  Status.sgml	- obsolete
     action  Versions.sgml
     action  XKB-Config.sgml
     action  XKB-Enhancing.sgml
@@ -6887,7 +6885,6 @@ symlink_xserver_hw_xfree86_doc() {
 # Entity files and scripts needed for all sgml docs:
 
     dst_dir doc/xorg-sgml-doctools
-#   action  README.build-docs - specific to monolith build
     action  add.sh
     action  defs.ent
     action  mdefs.cpp	mdefs.pre
@@ -14018,6 +14015,11 @@ symlink_non_linked_files()
     src_dir programs/Xserver/hw/xfree86/drivers/via
     dst_dir driver/xf86-video-via/src
 
+    src_dir programs/Xserver/hw/xfree86/doc/sgml
+    action	BUILD.sgml		# - specific to the monolith
+					#   build system
+    action	Status.sgml		# - obsolete
+    action	README.build-docs	# - specific to monolith build
     action	via_drm.h
 }
 
