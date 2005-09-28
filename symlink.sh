@@ -6717,6 +6717,20 @@ symlink_xserver_hw_dmx_input() {
     action      usb-private.h
 }
 
+# We skip most of Xserver/hw/sun since it's no longer maintained, but a
+# couple of files are useful still
+symlink_xserver_hw_sun() {
+    src_dir programs/Xserver/hw/sun
+
+    dst_dir xserver/xorg/hw/xfree86/utils/kbd_mode
+    action  kbd_mode.c   sun-kbd_mode.c
+    action  kbd_mode.man sun-kbd_mode.man
+
+    dst_dir app/constype
+    action  constype.c
+    action  constype.man
+}
+
 symlink_xserver_hw_vfb() {
     src_dir programs/Xserver/hw/vfb
     dst_dir xserver/xorg/hw/vfb
@@ -6930,6 +6944,10 @@ symlink_xserver_hw_xfree86_etc() {
 
     dst_dir xserver/xorg/hw/xfree86/utils/ioport
     action ioport.c
+
+    dst_dir xserver/xorg/hw/xfree86/utils/kbd_mode
+    action kbd_mode.c   bsd-kbd_mode.c
+    action kbd_mode.man bsd-kbd_mode.man
 
     dst_dir xserver/xorg/hw/xfree86/utils/pcitweak
     action pcitweak.c
@@ -8744,6 +8762,7 @@ symlink_xserver() {
     symlink_xserver_hw_dmx_examples
     symlink_xserver_hw_dmx_glxProxy
     symlink_xserver_hw_dmx_input
+    symlink_xserver_hw_sun
     symlink_xserver_hw_vfb
     symlink_xserver_hw_xfree86_common
     symlink_xserver_hw_xfree86_ddc
