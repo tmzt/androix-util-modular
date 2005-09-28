@@ -13922,8 +13922,11 @@ symlink_non_linked_files()
     # By definition the monolith is not upstream for this
     exclude_directory extras
 
-    # These files are not needed
+    # These fonts are not needed because they are generated
     exclude_glob "*-L1.bdf"
+    exclude_glob "*-JISX0201.bdf"
+
+    # These files are not needed
     exclude_glob "Imakefile*"
 
     # This file is replaced by httptransport.c in the modular tree
