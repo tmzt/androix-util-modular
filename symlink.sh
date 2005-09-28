@@ -11528,6 +11528,66 @@ symlink_font_mutt_misc() {
     action	README
 }
 
+
+symlink_font_misc_ethiopic() {
+    src_dir fonts/scaled/Ethiopic
+    dst_dir font/misc-ethiopic
+
+    action	GohaTibebZemen.otf
+    action	GohaTibebZemen.ttf
+
+    action	license.txt
+}
+
+symlink_font_misc_meltho() {
+    src_dir fonts/scaled/Meltho
+    dst_dir font/misc-meltho
+
+    action	SyrCOMAdiabene.otf
+    action	SyrCOMAntioch.otf
+    action	SyrCOMBatnanBold.otf
+    action	SyrCOMBatnan.otf
+    action	SyrCOMCtesiphon.otf
+    action	SyrCOMEdessa.otf
+    action	SyrCOMJerusalemBold.otf
+    action	SyrCOMJerusalemItalic.otf
+    action	SyrCOMJerusalem.otf
+    action	SyrCOMJerusalemOutline.otf
+    action	SyrCOMKharput.otf
+    action	SyrCOMMalankara.otf
+    action	SyrCOMMardinBold.otf
+    action	SyrCOMMardin.otf
+    action	SyrCOMMidyat.otf
+    action	SyrCOMNisibin.otf
+    action	SyrCOMNisibinOutline.otf
+    action	SyrCOMQenNeshrin.otf
+    action	SyrCOMTalada.otf
+    action	SyrCOMTurAbdin.otf
+    action	SyrCOMUrhoyBold.otf
+    action	SyrCOMUrhoy.otf
+
+    action	license.txt
+    action	README
+}
+
+symlink_font_bistream_speedo() {
+    src_dir fonts/scaled/Speedo
+    dst_dir font/bitstream-speedo
+
+    action	font0419.spd
+    action	font0582.spd
+    action	font0583.spd
+    action	font0611.spd
+    action	font0648.spd
+    action	font0649.spd
+    action	font0709.spd
+    action	font0710.spd
+
+    action	fonts.scale
+    action	COPYRIGHT
+}
+
+
 symlink_font_alias() {
     src_dir fonts/bdf/100dpi
     dst_dir font/alias/100dpi
@@ -11678,6 +11738,11 @@ symlink_font() {
 
     symlink_font_mutt_misc
     symlink_font_arabic_misc
+
+    symlink_font_misc_meltho
+    symlink_font_misc_ethiopic
+
+    symlink_font_bistream_speedo
 
     symlink_font_alias
     symlink_font_util
