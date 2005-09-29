@@ -5189,6 +5189,9 @@ symlink_app_xedit() {
     action	Xedit-noxprint.ad
     action	Xedit-xprint.ad
 
+    dst_dir app/xedit/man
+    action      xedit.man xedit.1
+    
     src_dir programs/xedit/lisp
     dst_dir app/xedit/lisp
     
@@ -6762,6 +6765,8 @@ symlink_xserver_hw_vfb() {
     action      InitInput.c
     action      InitOutput.c
     action      lk201kbd.h
+
+    action      Xvfb.man Xvfb.1
 }
 
 symlink_xserver_hw_xfree86_common() {
@@ -7925,6 +7930,8 @@ symlink_xserver_hw_xnest() {
     action      icon
     action      os2Stub.c
     action      screensaver
+
+    action      Xnest.man Xnest.1
 }
 
 symlink_xserver_hw_xwin() {
@@ -8016,6 +8023,9 @@ symlink_xserver_hw_xwin() {
     action      XWin.rc
     action      X.ico
     action      X-boxed.ico
+
+    action      XWin.man    XWin.1
+    action      XWinrc.man  XWinrc.1
 }
 
 symlink_xserver_ilbm() {
