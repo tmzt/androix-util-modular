@@ -2828,6 +2828,12 @@ symlink_lib_fontenc() {
 
 symlink_lib_xaw() {
     src_dir lib/Xaw
+
+    dst_dir lib/Xaw/old-doc
+
+    action      CHANGES
+    action      Changelog
+    
     dst_dir lib/Xaw/src
 
     action	Actions.c
@@ -5699,6 +5705,8 @@ symlink_xserver_GL_windows() {
     action      glwindows.h
     action      glwrap.c
     action      indirect.c
+
+    action      ChangeLog
 }
 
 symlink_xserver_XTrap() {
@@ -8150,6 +8158,9 @@ symlink_xserver_hw_xwin() {
 
     action      XWin.man    XWin.1
     action      XWinrc.man  XWinrc.1
+
+    action      ChangeLog
+    action      README
 }
 
 symlink_xserver_ilbm() {
@@ -14113,7 +14124,7 @@ symlink_non_linked_files()
     # one place they absolutely do _not_ belong, is in the X tree.
     exclude_directory doc/man/GL
     exclude_directory doc/man/GLU
-
+    
     # This stuff is used to build binary distributions of the monolith.
     # It would have to be redone to do something similar for the modular.
     exclude_directory programs/Xserver/hw/xfree86/etc/bindist
@@ -14145,6 +14156,7 @@ symlink_non_linked_files()
     exclude_directory programs/glxgears
     exclude_directory programs/glxinfo
     exclude_directory lib/GLw
+    exclude_directory include/GL
     
     # exclude config/util - I don't think it's relevant for the modular tree
     exclude_directory config/util
