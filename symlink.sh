@@ -4970,8 +4970,6 @@ symlink_app_xdm() {
     action	system.xsession.sequent
     action	TakeConsole
 
-    action	XFree86bw.xpm
-    action	XFree86.xpm
     action	xorg-bw.xpm
     action	xorg.xpm
 
