@@ -6925,10 +6925,10 @@ symlink_xserver_hw_xfree86_doc() {
     dst_dir driver/xf86-video-newport
     action  newport.sgml
 
-    dst_dir driver/x86-video-rendition
+    dst_dir driver/xf86-video-rendition
     action  rendition.sgml
 
-    dst_dir driver/x86-video-s3virge
+    dst_dir driver/xf86-video-s3virge
     action  s3virge.sgml
 }
 
@@ -10190,7 +10190,7 @@ symlink_driver_vmware() {
 
 symlink_driver_voodoo() {
     src_dir programs/Xserver/hw/xfree86/drivers/voodoo
-    dst_dir driver/xf86-video-voodoo/src
+    dst_dir driver/xf86-video-voodoo
 
     action	README
     action	TODO
