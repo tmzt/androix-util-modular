@@ -4965,9 +4965,6 @@ symlink_app_xdm() {
     action	README
 
     action	GiveConsole
-
-    action	system.Xdefaults.sequent
-    action	system.xsession.sequent
     action	TakeConsole
 
     action	xorg-bw.xpm
@@ -14072,6 +14069,13 @@ symlink_non_linked_files()
     # Using upstream version from Gnome
     src_dir fonts/scaled/TTF
     action	COPYRIGHT.Vera
+
+    # Don't symlink XFree86 xpm logos or sequent .Xdefaults from xdm
+    src_dir app/xdm/config
+    action	XFree86.xpm
+    action	XFree86bw.xpm
+    action	system.Xdefaults.sequent
+    action	system.xsession.sequent
 
     # Only useful for monolith
     src_dir
