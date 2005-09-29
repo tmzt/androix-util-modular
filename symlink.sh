@@ -14017,6 +14017,10 @@ symlink_non_linked_files()
 
     action	via_drm.h
 
+    # This file is only useful in the monolith
+    src_dir programs/Xserver/hw/dmx/doc/
+    action	Makefile.linux
+
     # Obsolete docs
     src_dir programs/Xserver/hw/xfree86/doc/sgml
     action	BUILD.sgml		# - specific to the monolith
