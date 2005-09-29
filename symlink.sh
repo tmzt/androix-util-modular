@@ -1068,6 +1068,7 @@ symlink_lib_x11() {
     action	XRGB.c
     action	xyY.c
     action	XYZ.c
+    action	Xcms.txt
 
     # XKB files
     dst_dir lib/X11/src/xkb
