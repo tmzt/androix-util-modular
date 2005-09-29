@@ -13873,6 +13873,7 @@ exclude_composite_buildsystem()
 {
     src_dir lib/Xcomposite
 
+    action	AUTHORS
     action	autogen.sh
     action	ChangeLog
     action	configure.ac
@@ -13959,6 +13960,11 @@ symlink_non_linked_files()
     exclude_directory include/DPS
     exclude_directory config/pswrap
     exclude_directory lib/dpstk
+    exclude_directory lib/psres
+
+    # Exclude unmaintained sun and sunLynx
+    exclude_directory programs/Xserver/hw/sun
+    exclude_directory programs/Xserver/hw/sunLynx
 
     # Exclude xterm
     exclude_directory programs/xterm
@@ -13984,12 +13990,37 @@ symlink_non_linked_files()
     # By definition the monolith is not upstream for this
     exclude_directory extras
 
+    # Exclude memleak (verified by keithp)
+    exclude_directory util/memleak
+
+    # Use upstream packaging of expat
+    exclude_directory lib/expat
+
+    # Exclude platforms that are no longer maintained
+    src_dir programs/Xserver/hw/xfree86/etc
+    action	install.sv3
+    action	mmapSVR3.shar
+    action	svr3_patch
+    action	svr3_rem_pch
+    action	svr4_patch
+    action	svr4_rem_pch
+
     # These fonts are not needed because they are generated
     exclude_glob "*-L1.bdf"
     exclude_glob "*-JISX0201.bdf"
 
     # These files are not needed
     exclude_glob "Imakefile*"
+    exclude_glob "jump_*"
+
+    # These files are only used by OS/2 and can be added back is a
+    # maintainer steps up
+    exclude_glob "*-def.cpp"
+    src_dir programs/Xserver
+    action	XFree86.def
+    action	Xnest.def
+    action	Xorg.def
+    action	Xvfb.def
 
     # This file is replaced by httptransport.c in the modular tree
     src_dir programs/xrx/helper
@@ -14007,19 +14038,19 @@ symlink_non_linked_files()
 
     # This file is replaced by a Makefile.am
     src_dir programs/Xserver/hw/xfree86/drivers/mga/util
-    dst_dir driver/xf86-video-mga/util
-
     action	Makefile
 
     # The via_drm.h file belongs in libdrm
     src_dir programs/Xserver/hw/xfree86/drivers/via
-    dst_dir driver/xf86-video-via/src
-
     action	via_drm.h
 
     # This file is only useful in the monolith
-    src_dir programs/Xserver/hw/dmx/doc/
+    src_dir programs/Xserver/hw/dmx/doc
     action	Makefile.linux
+
+    # No longer needed as dlopen modules are default
+    src_dir programs/Xserver/hw/xfree86/os-support/sunos
+    action	find_deps.pl
 
     # Obsolete docs
     src_dir programs/Xserver/hw/xfree86/doc/sgml
@@ -14027,6 +14058,21 @@ symlink_non_linked_files()
 					#   build system
     action	Status.sgml		# - obsolete
     action	README.build-docs	# - specific to monolith build
+
+    src_dir programs/Xserver/hw/xfree86
+    action	XF86Conf.man
+    action	XF98Conf.cpp
+
+    src_dir lib/Xmu
+    action	README
+
+    # Using upstream version from Gnome
+    src_dir fonts/scaled/TTF
+    action	COPYRIGHT.Vera
+
+    # Only useful for monolith
+    src_dir
+    action	Makefile
 }
 
 print_source()
