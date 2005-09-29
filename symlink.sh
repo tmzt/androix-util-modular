@@ -13970,10 +13970,11 @@ symlink_non_linked_files()
     # Nobody should really care about Xft1 anymore
     exclude_directory lib/Xft1
 
-    # glxgears and glxinfo are included with Mesa
+    # these are included with Mesa
     exclude_directory programs/glxgears
     exclude_directory programs/glxinfo
-
+    exclude_directory lib/GLw
+    
     # exclude config/util - I don't think it's relevant for the modular tree
     exclude_directory config/util
 
@@ -14034,6 +14035,10 @@ symlink_non_linked_files()
     src_dir programs/Xserver/hw/xfree86/drivers
     action	confdrv.sh
 
+    # expat is external now
+    src_dir lib/expat
+    action expat_config.h
+    
     # This file is replaced by a Makefile.am
     src_dir programs/Xserver/hw/xfree86/drivers/mga/util
     action	Makefile
