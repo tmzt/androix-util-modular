@@ -13991,8 +13991,14 @@ exclude_directory()
 	dir=`echo $dir | sed s,$SRC_DIR,, | sed s,^/,,`
 	src_dir $dir
 
-	for file in `find $SRC_DIR/$dir -maxdepth 1 -type f `; do
-	    action `basename $file`
+#       Some versions of find do not support -maxdepth
+#	for file in `find $SRC_DIR/$dir -maxdepth 1 -type f `; do
+#	    action `basename $file`
+#	done
+	for file in $SRC_DIR/$dir/*; do
+	    if [ -f $file ]; then
+		action `basename $file`
+	    fi
 	done
     done
 }
@@ -14198,6 +14204,7 @@ symlink_non_linked_files()
     # These files are not needed
     exclude_glob "Imakefile*"
     exclude_glob "jump_*"
+    exclude_glob ".cvsignore"
 
     # These files are only used by OS/2 and can be added back is a
     # maintainer steps up
