@@ -14229,7 +14229,7 @@ symlink_non_linked_files()
     action	COPYRIGHT.Vera
 
     # Don't symlink XFree86 xpm logos or sequent .Xdefaults from xdm
-    src_dir app/xdm/config
+    src_dir programs/xdm/config
     action	XFree86.xpm
     action	XFree86bw.xpm
     action	system.Xdefaults.sequent
