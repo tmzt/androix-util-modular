@@ -6221,9 +6221,13 @@ symlink_xserver_hw_darwin_bundle() {
 
     action	Credits.rtf
     action	Localizable.strings
-    action	MainMenu.nib/classes.nib
-    action	MainMenu.nib/objects.nib
     action	XDarwinHelp.html.cpp
+
+    src_dir programs/Xserver/hw/darwin/bundle/Dutch.lproj/MainMenu.nib
+    dst_dir xserver/xorg/hw/darwin/bundle/Dutch.lproj/MainMenu.nib
+
+    action classes.nib
+    action objects.nib
 
     src_dir programs/Xserver/hw/darwin/bundle/English.lproj
     dst_dir xserver/xorg/hw/darwin/bundle/English.lproj
@@ -6231,72 +6235,104 @@ symlink_xserver_hw_darwin_bundle() {
     action	Credits.rtf
     action	InfoPlist.strings.cpp
     action	Localizable.strings
-    action	MainMenu.nib/classes.nib
-    action	MainMenu.nib/objects.nib
     action	XDarwinHelp.html.cpp
+
+    src_dir programs/Xserver/hw/darwin/bundle/English.lproj/MainMenu.nib
+    dst_dir xserver/xorg/hw/darwin/bundle/English.lproj/MainMenu.nib
+
+    action classes.nib
+    action objects.nib
 
     src_dir programs/Xserver/hw/darwin/bundle/French.lproj
     dst_dir xserver/xorg/hw/darwin/bundle/French.lproj
 
     action	Credits.rtf
     action	Localizable.strings
-    action	MainMenu.nib/classes.nib
-    action	MainMenu.nib/objects.nib
     action	XDarwinHelp.html.cpp
+
+    src_dir programs/Xserver/hw/darwin/bundle/French.lproj/MainMenu.nib
+    dst_dir xserver/xorg/hw/darwin/bundle/French.lproj/MainMenu.nib
+
+    action classes.nib
+    action objects.nib
 
     src_dir programs/Xserver/hw/darwin/bundle/German.lproj
     dst_dir xserver/xorg/hw/darwin/bundle/German.lproj
 
     action	Credits.rtf
     action	Localizable.strings
-    action	MainMenu.nib/classes.nib
-    action	MainMenu.nib/objects.nib
     action	XDarwinHelp.html.cpp
+
+    src_dir programs/Xserver/hw/darwin/bundle/German.lproj/MainMenu.nib
+    dst_dir xserver/xorg/hw/darwin/bundle/German.lproj/MainMenu.nib
+
+    action classes.nib
+    action objects.nib
 
     src_dir programs/Xserver/hw/darwin/bundle/Japanese.lproj
     dst_dir xserver/xorg/hw/darwin/bundle/Japanese.lproj
 
     action	Credits.rtf
     action	Localizable.strings
-    action	MainMenu.nib/classes.nib
-    action	MainMenu.nib/objects.nib
     action	XDarwinHelp.html.cpp
+
+    src_dir programs/Xserver/hw/darwin/bundle/Japanese.lproj/MainMenu.nib
+    dst_dir xserver/xorg/hw/darwin/bundle/Japanese.lproj/MainMenu.nib
+
+    action classes.nib
+    action objects.nib
 
     src_dir programs/Xserver/hw/darwin/bundle/ko.lproj
     dst_dir xserver/xorg/hw/darwin/bundle/ko.lproj
 
     action	Credits.rtf
     action	Localizable.strings
-    action	MainMenu.nib/classes.nib
-    action	MainMenu.nib/objects.nib
     action	XDarwinHelp.html.cpp
+
+    src_dir programs/Xserver/hw/darwin/bundle/ko.lproj/MainMenu.nib
+    dst_dir xserver/xorg/hw/darwin/bundle/ko.lproj/MainMenu.nib
+
+    action classes.nib
+    action objects.nib
 
     src_dir programs/Xserver/hw/darwin/bundle/Portuguese.lproj
     dst_dir xserver/xorg/hw/darwin/bundle/Portuguese.lproj
 
     action	Credits.rtf
     action	Localizable.strings
-    action	MainMenu.nib/classes.nib
-    action	MainMenu.nib/objects.nib
     action	XDarwinHelp.html.cpp
+
+    src_dir programs/Xserver/hw/darwin/bundle/Portuguese.lproj/MainMenu.nib
+    dst_dir xserver/xorg/hw/darwin/bundle/Portuguese.lproj/MainMenu.nib
+
+    action classes.nib
+    action objects.nib
 
     src_dir programs/Xserver/hw/darwin/bundle/Spanish.lproj
     dst_dir xserver/xorg/hw/darwin/bundle/Spanish.lproj
 
     action	Credits.rtf
     action	Localizable.strings
-    action	MainMenu.nib/classes.nib
-    action	MainMenu.nib/objects.nib
     action	XDarwinHelp.html.cpp
+
+    src_dir programs/Xserver/hw/darwin/bundle/Spanish.lproj/MainMenu.nib
+    dst_dir xserver/xorg/hw/darwin/bundle/Spanish.lproj/MainMenu.nib
+
+    action classes.nib
+    action objects.nib
 
     src_dir programs/Xserver/hw/darwin/bundle/Swedish.lproj
     dst_dir xserver/xorg/hw/darwin/bundle/Swedish.lproj
 
     action	Credits.rtf
     action	Localizable.strings
-    action	MainMenu.nib/classes.nib
-    action	MainMenu.nib/objects.nib
     action	XDarwinHelp.html.cpp
+
+    src_dir programs/Xserver/hw/darwin/bundle/Swedish.lproj/MainMenu.nib
+    dst_dir xserver/xorg/hw/darwin/bundle/Swedish.lproj/MainMenu.nib
+
+    action classes.nib
+    action objects.nib
 }
 
 symlink_xserver_hw_darwin_iokit() {
