@@ -6002,6 +6002,9 @@ symlink_xserver_afb() {
     action      afbtile.c
     action      afbwindow.c
     action      afbzerarc.c
+
+    action      README
+    action      Xdaniver.doc
 }
 
 symlink_xserver_cfb() {
@@ -7825,6 +7828,8 @@ symlink_xserver_hw_xfree86_xaa() {
     action      xaalocal.h
     action      xaarop.h
     action      xaawrap.h
+
+    action      XAA.HOWTO
 }
 
 symlink_xserver_hw_xfree86_xf1bpp() {
@@ -7888,6 +7893,8 @@ symlink_xserver_hw_xfree86_xf4bpp() {
     action      wm3.c
     action      wm3.h
     action      xf4bpp.h
+
+    action      NOTES
 }
 
 symlink_xserver_hw_xfree86_xf8_16bpp() {
@@ -8181,6 +8188,8 @@ symlink_xserver_ilbm() {
     action      ilbmtile.c
     action      ilbmwindow.c
     action      ilbmzerarc.c
+
+    action      README
 }
 
 symlink_xserver_include() {
@@ -8463,6 +8472,8 @@ symlink_xserver_miext_rootless() {
     action      rootlessValTree.c
     action      rootlessWindow.c
     action      rootlessWindow.h
+
+    action      README.txt
 }
 
 symlink_xserver_miext_rootless_accel() {
@@ -10488,12 +10499,14 @@ symlink_driver_evdev() {
 
 symlink_driver_fpit() {
     src_dir programs/Xserver/hw/xfree86/input/fpit
-    dst_dir driver/xf86-input-fpit/src
 
+    dst_dir driver/xf86-input/fpit
+    action      readme.txt
+    
+    dst_dir driver/xf86-input-fpit/src
     action      xf86Fpit.c
 
     dst_dir driver/xf86-input-fpit/man
-
     action      fpit.man    fpit.4
 }
 
@@ -10629,8 +10642,8 @@ symlink_driver_sample() {
     action      sample.c
     action      sample.h
 
-    dst_dir driver/xf86-input-sample/man
-
+    dst_dir driver/xf86-input-sample
+    action      README
 }
 
 symlink_driver_spaceorb() {
@@ -14118,6 +14131,9 @@ symlink_non_linked_files()
     # Exclude unmaintained sun and sunLynx
     exclude_directory programs/Xserver/hw/sun
     exclude_directory programs/Xserver/hw/sunLynx
+
+    # Exclude deprecated wacom(4)
+    exclude_directory programs/Xserver/hw/xfree86/input/wacom
 
     # Exclude xterm
     exclude_directory programs/xterm
