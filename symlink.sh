@@ -3037,7 +3037,7 @@ symlink_lib_randr()
 }
 
 symlink_lib_windowswm() {
-    src_dir lib/apple
+    src_dir lib/windows
     dst_dir lib/WindowsWM/src
 
     action      windowswm.c
@@ -14149,6 +14149,10 @@ symlink_non_linked_files()
 
     # Use upstream packaging of expat
     exclude_directory lib/expat
+
+    # Exclude fontconfig apps
+    exclude_directory programs/fc-cache
+    exclude_directory programs/fc-list
 
     # Exclude platforms that are no longer maintained
     src_dir programs/Xserver/hw/xfree86/etc
