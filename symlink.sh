@@ -438,6 +438,19 @@ symlink_proto() {
 #
 #########
 
+symlink_lib_applewm() {
+    src_dir lib/apple
+    dst_dir lib/AppleWM/src
+
+    action      applewm.c
+    action      applewm.h
+    action      applewmstr.h
+
+    dst_dir lib/AppleWM/man
+
+    action      AppleWM.man AppleWM.4
+}
+
 symlink_lib_dmx() {
     src_dir lib/dmx
     dst_dir lib/dmx/src
@@ -3023,6 +3036,19 @@ symlink_lib_randr()
     action	Xrandr.man		Xrandr.3
 }
 
+symlink_lib_windowswm() {
+    src_dir lib/apple
+    dst_dir lib/WindowsWM/src
+
+    action      windowswm.c
+    action      windowswm.h
+    action      windowswmstr.h
+
+    dst_dir lib/WindowsWM/man
+
+    action      WindowsWM.man WindowsWM.4
+}
+
 symlink_lib_xcursor()
 {
     src_dir lib/Xcursor
@@ -3354,6 +3380,8 @@ symlink_lib_xft() {
 
 symlink_lib() {
     symlink_lib_xft
+    symlink_lib_applewm
+    symlink_lib_windowswm
     symlink_lib_dmx
     symlink_lib_composite
     symlink_lib_damage
