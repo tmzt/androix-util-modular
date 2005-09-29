@@ -14188,6 +14188,11 @@ symlink_non_linked_files()
     exclude_directory programs/fc-cache
     exclude_directory programs/fc-list
 
+    # Empty stubs for projects not yet checked into CVS
+    exclude_directory programs/Xserver/Xprint/pdf
+    exclude_directory programs/Xserver/Xprint/svg
+    exclude_directory programs/Xserver/Xprint/windows
+    
     # Exclude platforms that are no longer maintained
     src_dir programs/Xserver/hw/xfree86/etc
     action	install.sv3
@@ -14206,7 +14211,7 @@ symlink_non_linked_files()
     exclude_glob "jump_*"
     exclude_glob ".cvsignore"
 
-    # These files are only used by OS/2 and can be added back is a
+    # These files are only used by OS/2 and can be added back if a
     # maintainer steps up
     exclude_glob "*-def.cpp"
     src_dir programs/Xserver
