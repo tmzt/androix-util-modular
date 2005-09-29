@@ -6193,6 +6193,98 @@ symlink_xserver_hw_darwin() {
     action      darwinKeyboard.c
     action      darwinKeyboard.h
     action      darwinXinput.c
+
+    action      XDarwin.man
+}
+
+symlink_xserver_hw_darwin_bundle() {
+    src_dir programs/Xserver/hw/darwin/bundle
+    dst_dir xserver/xorg/hw/darwin/bundle
+
+    action	startXClients.cpp
+    action	XDarwin.icns
+
+    src_dir programs/Xserver/hw/darwin/bundle/Dutch.lproj
+    dst_dir xserver/xorg/hw/darwin/bundle/Dutch.lproj
+
+    action	Credits.rtf
+    action	Localizable.strings
+    action	MainMenu.nib/classes.nib
+    action	MainMenu.nib/objects.nib
+    action	XDarwinHelp.html.cpp
+
+    src_dir programs/Xserver/hw/darwin/bundle/English.lproj
+    dst_dir xserver/xorg/hw/darwin/bundle/English.lproj
+
+    action	Credits.rtf
+    action	InfoPlist.strings.cpp
+    action	Localizable.strings
+    action	MainMenu.nib/classes.nib
+    action	MainMenu.nib/objects.nib
+    action	XDarwinHelp.html.cpp
+
+    src_dir programs/Xserver/hw/darwin/bundle/French.lproj
+    dst_dir xserver/xorg/hw/darwin/bundle/French.lproj
+
+    action	Credits.rtf
+    action	Localizable.strings
+    action	MainMenu.nib/classes.nib
+    action	MainMenu.nib/objects.nib
+    action	XDarwinHelp.html.cpp
+
+    src_dir programs/Xserver/hw/darwin/bundle/German.lproj
+    dst_dir xserver/xorg/hw/darwin/bundle/German.lproj
+
+    action	Credits.rtf
+    action	Localizable.strings
+    action	MainMenu.nib/classes.nib
+    action	MainMenu.nib/objects.nib
+    action	XDarwinHelp.html.cpp
+
+    src_dir programs/Xserver/hw/darwin/bundle/Japanese.lproj
+    dst_dir xserver/xorg/hw/darwin/bundle/Japanese.lproj
+
+    action	Credits.rtf
+    action	Localizable.strings
+    action	MainMenu.nib/classes.nib
+    action	MainMenu.nib/objects.nib
+    action	XDarwinHelp.html.cpp
+
+    src_dir programs/Xserver/hw/darwin/bundle/ko.lproj
+    dst_dir xserver/xorg/hw/darwin/bundle/ko.lproj
+
+    action	Credits.rtf
+    action	Localizable.strings
+    action	MainMenu.nib/classes.nib
+    action	MainMenu.nib/objects.nib
+    action	XDarwinHelp.html.cpp
+
+    src_dir programs/Xserver/hw/darwin/bundle/Portuguese.lproj
+    dst_dir xserver/xorg/hw/darwin/bundle/Portuguese.lproj
+
+    action	Credits.rtf
+    action	Localizable.strings
+    action	MainMenu.nib/classes.nib
+    action	MainMenu.nib/objects.nib
+    action	XDarwinHelp.html.cpp
+
+    src_dir programs/Xserver/hw/darwin/bundle/Spanish.lproj
+    dst_dir xserver/xorg/hw/darwin/bundle/Spanish.lproj
+
+    action	Credits.rtf
+    action	Localizable.strings
+    action	MainMenu.nib/classes.nib
+    action	MainMenu.nib/objects.nib
+    action	XDarwinHelp.html.cpp
+
+    src_dir programs/Xserver/hw/darwin/bundle/Swedish.lproj
+    dst_dir xserver/xorg/hw/darwin/bundle/Swedish.lproj
+
+    action	Credits.rtf
+    action	Localizable.strings
+    action	MainMenu.nib/classes.nib
+    action	MainMenu.nib/objects.nib
+    action	XDarwinHelp.html.cpp
 }
 
 symlink_xserver_hw_darwin_iokit() {
@@ -6230,6 +6322,17 @@ symlink_xserver_hw_darwin_quartz() {
     action      quartzPasteboard.c
     action      quartzPasteboard.h
     action      quartzStartup.c
+
+    action	Preferences.m
+    action	quartzCocoa.m
+    action	XApplication.m
+    action	XServer.m
+
+    action	XDarwinStartup.man
+
+    src_dir programs/Xserver/hw/darwin/quartz/XDarwin.pbproj
+    dst_dir xserver/xorg/hw/darwin/quartz/XDarwin.pbproj
+    action	project.pbxproj
 }
 
 symlink_xserver_hw_darwin_quartz_cr() {
@@ -6238,6 +6341,11 @@ symlink_xserver_hw_darwin_quartz_cr() {
 
     action      XView.h
     action      cr.h
+
+    action	crAppleWM.m
+    action	crFrame.m
+    action	crScreen.m
+    action	XView.m
 }
 
 symlink_xserver_hw_darwin_quartz_fullscreen() {
@@ -6269,6 +6377,15 @@ symlink_xserver_hw_darwin_quartz_xpr() {
     action      xprCursor.c
     action      xprFrame.c
     action      xprScreen.c
+}
+
+symlink_xserver_hw_darwin_utils() {
+    src_dir programs/Xserver/hw/darwin/utils
+    dst_dir xserver/xorg/hw/darwin/utils
+
+    action	dumpkeymap.c
+    action	dumpkeymap.man
+    action	README.txt
 }
 
 symlink_xserver_hw_dmx() {
@@ -8782,11 +8899,13 @@ symlink_xserver() {
     symlink_xserver_dix
     symlink_xserver_fb
     symlink_xserver_hw_darwin
+    symlink_xserver_hw_darwin_bundle
     symlink_xserver_hw_darwin_iokit
     symlink_xserver_hw_darwin_quartz
     symlink_xserver_hw_darwin_quartz_cr
     symlink_xserver_hw_darwin_quartz_fullscreen
     symlink_xserver_hw_darwin_quartz_xpr
+    symlink_xserver_hw_darwin_utils
     symlink_xserver_hw_dmx
     symlink_xserver_hw_dmx_config
     symlink_xserver_hw_dmx_doc
