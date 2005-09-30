@@ -102,6 +102,14 @@ symlink_proto_core() {
 
 # Extension protocols
 
+symlink_proto_applewm() {
+    src_dir lib/apple
+    dst_dir proto/AppleWM
+
+    action      applewm.h
+    action      applewmstr.h
+}
+
 symlink_proto_bigreq() {
     src_dir include/extensions
     dst_dir proto/BigReqs
@@ -266,6 +274,14 @@ symlink_proto_video() {
     action	XvMCproto.h
 }
 
+symlink_proto_windowswm() {
+    src_dir lib/windows
+    dst_dir proto/WindowsWM
+
+    action      windowswm.h
+    action      windowswmstr.h
+}
+
 symlink_proto_xcmisc() {
     src_dir include/extensions
     dst_dir proto/XCMisc
@@ -397,6 +413,7 @@ symlink_proto() {
     symlink_proto_core
 
     # Extension protocols
+    symlink_proto_applewm
     symlink_proto_bigreq
     symlink_proto_composite
     symlink_proto_damage
@@ -415,6 +432,7 @@ symlink_proto() {
     symlink_proto_saver
     symlink_proto_trap
     symlink_proto_video
+    symlink_proto_windowswm
     symlink_proto_xcmisc
     symlink_proto_xext
     symlink_proto_xf86bigfont
@@ -443,9 +461,7 @@ symlink_lib_applewm() {
     dst_dir lib/AppleWM/src
 
     action      applewm.c
-    action      applewm.h
-    action      applewmstr.h
-
+    
     dst_dir lib/AppleWM/man
 
     action      AppleWM.man AppleWM.3
@@ -3048,8 +3064,6 @@ symlink_lib_windowswm() {
     dst_dir lib/WindowsWM/src
 
     action      windowswm.c
-    action      windowswm.h
-    action      windowswmstr.h
 
     dst_dir lib/WindowsWM/man
 
