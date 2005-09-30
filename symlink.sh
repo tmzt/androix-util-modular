@@ -4439,7 +4439,7 @@ symlink_app_xlsfonts() {
     action	dsimple.h
 
     action	xlsfonts.man
-
+    action      xlsfonts.sgml
 }
 
 symlink_app_xmag() {
@@ -4602,7 +4602,7 @@ symlink_app_xmore() {
     action	xmore.h
 
     action	xmore.man
-
+    action      xmore.sgml
 }
 
 symlink_app_xplsprinters() {
@@ -6083,6 +6083,9 @@ symlink_xserver_cfb() {
     action      cfbwindow.c
     action      cfbzerarc.c
     action      stip68kgnu.h
+    action      stipmips.s
+    action      stipsparc.s
+    action      stipsprc32.s
 }
 
 symlink_xserver_cfb24() {
@@ -7797,6 +7800,8 @@ symlink_xserver_hw_xfree86_ramdac() {
     action      xf86RamDacCmap.c
     action      xf86RamDacMod.c
     action      xf86RamDacPriv.h
+
+    action      CURSOR.NOTES
 }
 
 symlink_xserver_hw_xfree86_scanpci() {
@@ -7908,6 +7913,8 @@ symlink_xserver_hw_xfree86_xf1bpp() {
     action      mfbmodule.c
     action      mfbunmap.h
     action      xf1bpp.h
+    action      mfbmap.sh
+    action      mfbunmap.sh
 }
 
 symlink_xserver_hw_xfree86_xf4bpp() {
@@ -14204,6 +14211,9 @@ symlink_non_linked_files()
     exclude_directory lib/dpstk
     exclude_directory lib/psres
 
+    # Speedo font support is deprecated in 7.0
+    exclude_directory lib/font/Speedo
+
     # Exclude unmaintained sun and sunLynx
     exclude_directory programs/Xserver/hw/sun
     exclude_directory programs/Xserver/hw/sunLynx
@@ -14340,9 +14350,27 @@ symlink_non_linked_files()
     action	system.Xdefaults.sequent
     action	system.xsession.sequent
 
+    # Dead source file from cfb, never built in monolith
+    src_dir programs/Xserver/cfb
+    action      stipple68k.s
+    
     # Only useful for monolith
     src_dir
     action	Makefile
+
+    # Generated html, so don't symlink
+    src_dir     programs/xphelloworld/xphelloworld
+    action      xphelloworld.html
+    src_dir     programs/xphelloworld/xpsimplehelloworld
+    action      xpsimplehelloworld.html
+    src_dir     programs/xphelloworld/xpxmhelloworld
+    action      xpxmhelloworld.html
+    src_dir     programs/xphelloworld/xpxthelloworld
+    action      xpxthelloworld.html
+    src_dir     programs/xplsprinters
+    action      xplsprinters.html
+    src_dir     programs/xprehashprinterlist
+    action      xprehashprinterlist.html
 }
 
 print_source()
