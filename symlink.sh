@@ -448,7 +448,7 @@ symlink_lib_applewm() {
 
     dst_dir lib/AppleWM/man
 
-    action      AppleWM.man AppleWM.4
+    action      AppleWM.man AppleWM.3
 }
 
 symlink_lib_dmx() {
@@ -3053,7 +3053,7 @@ symlink_lib_windowswm() {
 
     dst_dir lib/WindowsWM/man
 
-    action      WindowsWM.man WindowsWM.4
+    action      WindowsWM.man WindowsWM.3
 }
 
 symlink_lib_xcursor()
