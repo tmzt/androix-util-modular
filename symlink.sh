@@ -1420,7 +1420,7 @@ symlink_lib_x11() {
     dst_dir lib/X11/nls
 
     action	compose.dir	compose.dir.pre
-    action	locale.dir	locale.dir
+    action	locale.dir	locale.dir.pre
     action	locale.alias	locale.alias.pre
 
     # armscii-8
