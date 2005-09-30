@@ -5769,6 +5769,7 @@ symlink_xserver_Xext() {
     action      xvmc.c
     action      xvmcext.h
     action	SecurityPolicy
+    action	xtest1.frags	README.xtest1-ddx
 
     # some of these are really DDX-specific despite being in Xext
 
@@ -5899,7 +5900,7 @@ symlink_xserver_Xprint() {
 
     dst_dir xserver/xorg/Xprint/doc
     action	Xprt.html
-    action	Xprt.man
+    action	Xprt.man Xprt.man.pre
     action	Xprt.sgml
 }
 
@@ -6916,7 +6917,7 @@ symlink_xserver_hw_sun() {
 
     dst_dir xserver/xorg/hw/xfree86/utils/kbd_mode
     action  kbd_mode.c   sun-kbd_mode.c
-    action  kbd_mode.man sun-kbd_mode.man
+    action  kbd_mode.man sun-kbd_mode.man.pre
 
     dst_dir app/constype
     action  constype.c
@@ -7034,21 +7035,29 @@ symlink_xserver_hw_xfree86_doc() {
 # Docs generic to all Xservers in xserver-xorg module:
     src_dir programs/Xserver
     dst_dir xserver/xorg/doc
-    action  Xserver.man
+    action  Xserver.man Xserver.man.pre
+
+    src_dir programs/Xserver/hw/xfree86/doc
+    dst_dir xserver/xorg/doc
+    action  smartsched
 
 # Docs specific to XFree86 DDX/Xorg server:
 
     src_dir programs/Xserver/hw/xfree86
     dst_dir xserver/xorg/hw/xfree86/doc/man
 
-    action  Xorg.man
-    action  xorg.conf.man
+    action  Xorg.man Xorg.man.pre
+    action  xorg.conf.man xorg.conf.man.pre
 
     dst_dir xserver/xorg/hw/xfree86/doc/devel
     action  DebuggingHints
     action  Domain.note
     action  RAC.Notes
     action  Registry
+
+    src_dir programs/Xserver/hw/xfree86/doc
+    dst_dir xserver/xorg/hw/xfree86/doc/devel
+    action  exa-driver.txt
 
     src_dir programs/Xserver/hw/xfree86/doc/sgml
     dst_dir xserver/xorg/hw/xfree86/doc/sgml
@@ -7138,11 +7147,11 @@ symlink_xserver_hw_xfree86_etc() {
 
     dst_dir xserver/xorg/hw/xfree86/utils/kbd_mode
     action kbd_mode.c   bsd-kbd_mode.c
-    action kbd_mode.man bsd-kbd_mode.man
+    action kbd_mode.man bsd-kbd_mode.man.pre
 
     dst_dir xserver/xorg/hw/xfree86/utils/pcitweak
     action pcitweak.c
-    action pcitweak.man
+    action pcitweak.man pcitweak.man.pre
 
     dst_dir xserver/xorg/hw/xfree86/os-support/solaris
     action apSolaris.shar
@@ -7794,7 +7803,7 @@ symlink_xserver_hw_xfree86_scanpci() {
 
     dst_dir xserver/xorg/hw/xfree86/utils/scanpci
     action	scanpci.c
-    action	scanpci.man
+    action	scanpci.man scanpci.man.pre
 }
 
 symlink_xserver_hw_xfree86_shadowfb() {
@@ -8039,7 +8048,7 @@ symlink_xserver_hw_xfree86_xf86cfg() {
     action	 wider.xbm
     action	 xf86config.c
     action	 xf86config.h
-    action	 xorgcfg.man
+    action	 xorgcfg.man xorgcfg.man.pre
 
 }
 
@@ -8051,9 +8060,8 @@ symlink_xserver_hw_xfree86_xf86config() {
     action	Cards98
     action	cards.c
     action	cards.h
-    action	xf86config.cmd
     action	xorgconfig.c
-    action	xorgconfig.man
+    action	xorgconfig.man xorgconfig.man.pre
 }
 
 symlink_xserver_hw_xnest() {
@@ -8100,7 +8108,7 @@ symlink_xserver_hw_xnest() {
     action      os2Stub.c
     action      screensaver
 
-    action      Xnest.man Xnest.1
+    action      Xnest.man Xnest.man.pre
 }
 
 symlink_xserver_hw_xwin() {
@@ -14256,6 +14264,8 @@ symlink_non_linked_files()
     action	Xnest.def
     action	Xorg.def
     action	Xvfb.def
+    src_dir programs/Xserver/hw/xfree86/xf86config
+    action	xf86config.cmd
 
     # This file is replaced by httptransport.c in the modular tree
     src_dir programs/xrx/helper
