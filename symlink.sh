@@ -14253,9 +14253,10 @@ symlink_non_linked_files()
     # Use upstream packaging of expat
     exclude_directory lib/expat
 
-    # Exclude fontconfig apps
+    # Exclude fontconfig
     exclude_directory programs/fc-cache
     exclude_directory programs/fc-list
+    exclude_directory lib/fontconfig
 
     # Empty stubs for projects not yet checked into CVS
     exclude_directory programs/Xserver/Xprint/pdf
@@ -14371,6 +14372,25 @@ symlink_non_linked_files()
     action      xplsprinters.html
     src_dir     programs/xprehashprinterlist
     action      xprehashprinterlist.html
+
+    # Unused symbol export control thing from Xt. No clue how this ever worked.
+    src_dir     lib/Xt
+    action      libXt.elist
+
+    # Highly non-free reimplementation of snprintf.  If your libc is so
+    # crippled as to need this, steal it from BSD's libc instead, thanks.
+    src_dir     lib/misc
+    action      snprintf.c
+    action      snprintf.h
+
+    # A do-nothing header in Xevie.  Take a drink.
+    src_dir     lib/Xevie
+    action      xevieplaceholder.h
+
+    # Script to generate the list of widgets in the Xaw set.  Hopefully
+    # no one is adding new ones anymore...
+    src_dir     lib/Xaw
+    action      genlist.sh
 }
 
 print_source()
