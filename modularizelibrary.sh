@@ -132,7 +132,7 @@ dnl Process this file with autoconf to create configure.
 
 AC_PREREQ([2.57])
 
-AC_INIT(lib$MODULE_NAME, 7.0.0, [sandmann@redhat.com], lib$MODULE_NAME)
+AC_INIT(lib$MODULE_NAME, 7.0.0, [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg], lib$MODULE_NAME)
 AM_INIT_AUTOMAKE([dist-bzip2])
 AM_MAINTAINER_MODE
 

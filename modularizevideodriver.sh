@@ -139,7 +139,7 @@ cat <<EOF >> configure.ac
 AC_PREREQ(2.57)
 AC_INIT([xf86-video-$drivername],
         0.1.0,
-        [ajax@freedesktop.org],
+        [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg],
         xf86-video-$drivername)
 
 AC_CONFIG_SRCDIR([Makefile.am])
