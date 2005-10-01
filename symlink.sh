@@ -3285,6 +3285,7 @@ symlink_lib_xkbfile() {
     action	xkmout.c
     action	xkmread.c
     action	XKBfileInt.h
+    action	magic
 
     dst_dir lib/xkbfile/include/X11/extensions
 
@@ -7045,6 +7046,8 @@ symlink_xserver_hw_xfree86_ddc() {
     action      vdif.h
     action      xf86DDC.c
     action      xf86DDC.h
+
+    action	DDC.HOWTO
 }
 
 symlink_xserver_hw_xfree86_doc() {
@@ -7316,6 +7319,8 @@ symlink_xserver_hw_xfree86_fbdevhw() {
     action      fbdevhw.h
     action      fbdevhwstub.c
     action      fbpriv.h
+    action	README
+    action	fbdevhw.man fbdevhw.man.pre
 }
 
 symlink_xserver_hw_xfree86_i2c() {
@@ -7375,6 +7380,7 @@ symlink_xserver_hw_xfree86_int10() {
     action      xf86int10module.c
     action      xf86x86emu.c
     action      xf86x86emu.h
+    action	INT10.HOWTO
 }
 
 symlink_xserver_hw_xfree86_loader() {
@@ -7427,6 +7433,8 @@ symlink_xserver_hw_xfree86_ossupport() {
     action      xf86_libc.h
     action      xf86drm.h
     action      xf86drmCompat.h
+
+    action	README.OS-lib
 }
 
 symlink_xserver_hw_xfree86_ossupport_bsd() {
@@ -7633,6 +7641,7 @@ symlink_xserver_hw_xfree86_ossupport_os2() {
     action      os2_serial.c
     action      os2_stubs.c
     action      os2_video.c
+    action	README
 }
 
 symlink_xserver_hw_xfree86_ossupport_os2_int10() {
@@ -12198,6 +12207,7 @@ symlink_doc_old() {
     action	X.man
     action	XOrgFoundation.man
     action	Xprint.man
+    action	Xprint.sgml
     action	XProjectTeam.man
 
     # FIXME: other man pages should be moved to the appropriate library
@@ -12563,6 +12573,10 @@ symlink_doc_old() {
     action	fixindex.awk
     action	indexmacros.t
     action	macros.t
+
+    src_dir
+    dst_dir doc/old
+    action	registry
 }
 
 symlink_doc() {
@@ -14258,6 +14272,10 @@ symlink_non_linked_files()
     exclude_directory programs/fc-list
     exclude_directory lib/fontconfig
 
+    # Exclude empty directory that just has README saying kdrive doesn't
+    # live here any more
+    exclude_directory programs/Xserver/hw/kdrive
+
     # Empty stubs for projects not yet checked into CVS
     exclude_directory programs/Xserver/Xprint/pdf
     exclude_directory programs/Xserver/Xprint/svg
@@ -14372,10 +14390,14 @@ symlink_non_linked_files()
     action      xplsprinters.html
     src_dir     programs/xprehashprinterlist
     action      xprehashprinterlist.html
+    src_dir	doc/man/general
+    action	Xprint.html
 
-    # Unused symbol export control thing from Xt. No clue how this ever worked.
+    # Unused symbol export control thing from Xlib & Xt. No clue how this ever worked.
     src_dir     lib/Xt
     action      libXt.elist
+    src_dir     lib/X11
+    action      libX11.elist
 
     # Highly non-free reimplementation of snprintf.  If your libc is so
     # crippled as to need this, steal it from BSD's libc instead, thanks.
