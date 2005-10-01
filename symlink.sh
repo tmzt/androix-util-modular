@@ -14411,11 +14411,8 @@ symlink_non_linked_files()
     src_dir	doc/man/general
     action	Xprint.html
 
-    # Unused symbol export control thing from Xlib & Xt. No clue how this ever worked.
-    src_dir     lib/Xt
-    action      libXt.elist
-    src_dir     lib/X11
-    action      libX11.elist
+    # Unused symbol export control thing. No clue how this ever worked.
+    exclude_glob "*.elist"
 
     # Highly non-free reimplementation of snprintf.  If your libc is so
     # crippled as to need this, steal it from BSD's libc instead, thanks.
