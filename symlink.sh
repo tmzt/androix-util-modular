@@ -7323,6 +7323,18 @@ symlink_xserver_hw_xfree86_fbdevhw() {
     action	fbdevhw.man fbdevhw.man.pre
 }
 
+symlink_xserver_hw_xfree86_getconfig() {
+    src_dir programs/Xserver/hw/xfree86/getconfig
+    dst_dir xserver/xorg/hw/xfree86/getconfig
+
+    action      cfg.man		cfg.man.pre
+    action      cfg.sample
+    action      getconfig.man	getconfig.man.pre
+    action      getconfig.pl
+    action      getconfig.sh	getconfig
+    action      xorg.cfg
+}
+
 symlink_xserver_hw_xfree86_i2c() {
     src_dir programs/Xserver/hw/xfree86/i2c
     dst_dir xserver/xorg/hw/xfree86/i2c
@@ -9020,6 +9032,7 @@ symlink_xserver() {
     symlink_xserver_hw_xfree86_etc
     symlink_xserver_hw_xfree86_exa
     symlink_xserver_hw_xfree86_fbdevhw
+    symlink_xserver_hw_xfree86_getconfig
     symlink_xserver_hw_xfree86_i2c
     symlink_xserver_hw_xfree86_int10
     symlink_xserver_hw_xfree86_loader
