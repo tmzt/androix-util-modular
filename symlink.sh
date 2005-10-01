@@ -14290,6 +14290,11 @@ symlink_non_linked_files()
     action	svr4_patch
     action	svr4_rem_pch
 
+    # Upgrades stone age (pre-1994) config files to bronze age (1994) 
+    # config files.  Not built in the monolith since XFree86 3.9 series 
+    # in 1998 and XFree86 has even deleted from their monolith.
+    exclude_directory programs/Xserver/hw/xfree86/reconfig
+
     # These fonts are not needed because they are generated
     exclude_glob "*-L1.bdf"
     exclude_glob "*-JISX0201.bdf"
@@ -14413,6 +14418,11 @@ symlink_non_linked_files()
     # no one is adding new ones anymore...
     src_dir     lib/Xaw
     action      genlist.sh
+
+    # Workarounds for long forgotten bugs in SunOS 4.1 & Solaris 2.3
+    src_dir	util/misc
+    action	dlsym.c
+    action	thr_stubs.c
 }
 
 print_source()
