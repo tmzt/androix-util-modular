@@ -4463,6 +4463,8 @@ symlink_app_xmag() {
     action	Scale.h
     action	ScaleP.h
 
+    action	Scale.doc Scale.txt
+
     action	xmag.man
 
 }
