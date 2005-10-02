@@ -4072,6 +4072,9 @@ symlink_app_xditview() {
 
     action	xdit.bm
     action	xdit_mask.bm
+
+    action	ldblarrow
+    action	rdblarrow
 }
 
 symlink_app_xdriinfo() {
