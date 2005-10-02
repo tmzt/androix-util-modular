@@ -4330,6 +4330,7 @@ symlink_app_xkbevd() {
 
     action	xkbevd.man
 
+    action      example.cf
 }
 
 symlink_app_xkbprint() {
