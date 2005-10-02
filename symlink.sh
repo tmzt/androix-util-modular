@@ -5002,6 +5002,8 @@ symlink_app_xdm() {
     action	dm_socket.h
     action	greet.h
 
+    action	Chooser.ad
+
     action	xdm.man		xdm.man.cpp
 
     src_dir programs/xdm/greeter
