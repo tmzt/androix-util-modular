@@ -7141,44 +7141,44 @@ symlink_xserver_hw_xfree86_doc() {
 # Driver-specific docs:
 
     dst_dir driver/xf86-video-tga
-    action  DECtga.sgml
+    action  DECtga.sgml		README.sgml
 
     dst_dir driver/xf86-video-i128
-    action  I128.sgml
+    action  I128.sgml		README.sgml
 
     dst_dir driver/xf86-video-sis
-    action  SiS.sgml
+    action  SiS.sgml		README.sgml
 
     dst_dir driver/xf86-video-apm
-    action  apm.sgml
+    action  apm.sgml		README.sgml
 
     dst_dir driver/xf86-video-ati
-    action  ati.sgml
-    action  r128.sgml
+    action  ati.sgml		README.ati.sgml
+    action  r128.sgml		README.r128.sgml
 
     dst_dir driver/xf86-video-chips
-    action  chips.sgml
+    action  chips.sgml		README.sgml
 
     dst_dir driver/xf86-video-cyrix
-    action  cyrix.sgml
+    action  cyrix.sgml		README.sgml
 
     dst_dir driver/xf86-video-i740
-    action  i740.sgml
+    action  i740.sgml		README.sgml
 
     dst_dir driver/xf86-video-i810
-    action  i810.sgml
+    action  i810.sgml		README.sgml
 
     dst_dir driver/xf86-input-mouse
-    action  mouse.sgml
+    action  mouse.sgml		README.sgml
 
     dst_dir driver/xf86-video-newport
-    action  newport.sgml
+    action  newport.sgml	README.sgml
 
     dst_dir driver/xf86-video-rendition
-    action  rendition.sgml
+    action  rendition.sgml	README.sgml
 
     dst_dir driver/xf86-video-s3virge
-    action  s3virge.sgml
+    action  s3virge.sgml	README.sgml
 }
 
 symlink_xserver_hw_xfree86_etc() {
@@ -9566,11 +9566,6 @@ symlink_driver_i128() {
 }
 
 symlink_driver_i740() {
-    src_dir programs/Xserver/hw/xfree86/drivers/i740
-    dst_dir driver/xf86-video-i740
-
-    action	README
-
     src_dir programs/Xserver/hw/xfree86/drivers/i740
     dst_dir driver/xf86-video-i740/src
 
@@ -14405,6 +14400,7 @@ symlink_non_linked_files()
     src_dir
     action	BUILD		# description of the monolithic build system
     action	ChangeLog	# irrelevant to modular
+    action	Makefile	# Only useful for monolith
 
     # These files generate the list of drivers (input and video) for the
     # monolithic build system and are not needed for the modular build
@@ -14462,24 +14458,26 @@ symlink_non_linked_files()
     src_dir programs/Xserver/cfb
     action      stipple68k.s
     
-    # Only useful for monolith
-    src_dir
-    action	Makefile
-
     # Generated html, so don't symlink
-    src_dir     programs/xphelloworld/xphelloworld
+    src_dir programs/xphelloworld/xphelloworld
     action      xphelloworld.html
-    src_dir     programs/xphelloworld/xpsimplehelloworld
+
+    src_dir programs/xphelloworld/xpsimplehelloworld
     action      xpsimplehelloworld.html
-    src_dir     programs/xphelloworld/xpxmhelloworld
+
+    src_dir programs/xphelloworld/xpxmhelloworld
     action      xpxmhelloworld.html
-    src_dir     programs/xphelloworld/xpxthelloworld
+
+    src_dir programs/xphelloworld/xpxthelloworld
     action      xpxthelloworld.html
-    src_dir     programs/xplsprinters
+
+    src_dir programs/xplsprinters
     action      xplsprinters.html
-    src_dir     programs/xprehashprinterlist
+
+    src_dir programs/xprehashprinterlist
     action      xprehashprinterlist.html
-    src_dir	doc/man/general
+
+    src_dir doc/man/general
     action	Xprint.html
 
     # Unused symbol export control thing. No clue how this ever worked.
@@ -14487,23 +14485,40 @@ symlink_non_linked_files()
 
     # Highly non-free reimplementation of snprintf.  If your libc is so
     # crippled as to need this, steal it from BSD's libc instead, thanks.
-    src_dir     lib/misc
+    src_dir lib/misc
     action      snprintf.c
     action      snprintf.h
 
     # A do-nothing header in Xevie.  Take a drink.
-    src_dir     lib/Xevie
+    src_dir lib/Xevie
     action      xevieplaceholder.h
 
     # Script to generate the list of widgets in the Xaw set.  Hopefully
     # no one is adding new ones anymore...
-    src_dir     lib/Xaw
+    src_dir lib/Xaw
     action      genlist.sh
 
     # Workarounds for long forgotten bugs in SunOS 4.1 & Solaris 2.3
-    src_dir	util/misc
+    src_dir util/misc
     action	dlsym.c
     action	thr_stubs.c
+
+    # Generated README files for the drivers
+    src_dir programs/Xserver/hw/xfree86/doc
+    action	README.DECtga
+    action	README.I128
+    action	README.SiS
+    action	README.apm
+    action	README.chips
+    action	README.cyrix
+    action	README.i740
+    action	README.i810
+    action	README.mouse
+    action	README.newport
+    action	README.rendition
+    action	README.s3virge
+    action	README.ati
+    action	README.r128
 
     # We use the compiled version of ucs2any, so the perl version is no
     # longer needed or used
@@ -14550,7 +14565,7 @@ list_missing()
 
     echo DONE
 
-    echo -n Generating list of missing files ...\
+    echo -n Generating list of missing files in file \"missing-files\" ...\
 
     sort symlink-processed-files > symlink-processed-files.sorted
     sort all-monolith-files > all-monolith-files.sorted
