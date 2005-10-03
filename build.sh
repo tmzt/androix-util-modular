@@ -168,6 +168,7 @@ build_app() {
     build app rgb
     build app rstart
     build app scripts
+    build app sessreg
     build app setxkbmap
     build app showfont
     build app smproxy
@@ -190,6 +191,7 @@ build_app() {
     build app xev
     build app xeyes
     build app xf86dga
+    build app xfindproxy
     build app xfd
     build app xfontsel
     build app xfs
@@ -223,6 +225,7 @@ build_app() {
     build app xrandr
     build app xrdb
     build app xrefresh
+    build app xrx
     build app xset
     build app xsetmode
     build app xsetpointer
