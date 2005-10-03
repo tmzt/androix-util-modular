@@ -2314,6 +2314,7 @@ symlink_lib_xmu() {
     action	Xct.h
     action	Xmu.h
     
+    dst_dir lib/Xmu
     action	README
 
     dst_dir lib/Xmu/src
