@@ -5927,6 +5927,24 @@ symlink_xserver_Xprint() {
     action	Xprt.sgml
 }
 
+symlink_xserver_Xprint_etc() {
+    src_dir programs/Xserver/Xprint/etc/init.d
+    dst_dir xserver/xorg/Xprint/etc/init.d
+
+    action	xprint.cpp
+
+    src_dir programs/Xserver/Xprint/etc/profile.d
+    dst_dir xserver/xorg/Xprint/etc/profile.d
+
+    action	xprint.csh
+    action	xprint.sh
+
+    src_dir programs/Xserver/Xprint/etc/Xsession.d
+    dst_dir xserver/xorg/Xprint/etc/Xsession.d
+
+    action	cde_xsessiond_xprint.sh
+}
+
 symlink_xserver_Xprint_ps() {
     src_dir programs/Xserver/Xprint/ps
     dst_dir xserver/xorg/Xprint/ps
@@ -8254,8 +8272,46 @@ symlink_xserver_hw_xwin() {
     action      XWin.man    XWin.1
     action      XWinrc.man  XWinrc.1
 
+    action	_usr_X11R6_lib_X11_system.XWinrc
+
     action      ChangeLog
     action      README
+}
+
+symlink_xserver_hw_xwin_xlaunch() {
+    src_dir programs/Xserver/hw/xwin/xlaunch
+    dst_dir xserver/xorg/hw/xwin/xlaunch
+
+    action	config.cc
+    action	config.h
+    action	COPYING
+    action	main.cc
+    action	Makefile
+
+    src_dir programs/Xserver/hw/xwin/xlaunch/resources
+    dst_dir xserver/xorg/hw/xwin/xlaunch/resources
+
+    action	dialog.rc
+    action	fullscreen.bmp
+    action	images.rc
+    action	multiwindow.bmp
+    action	nodecoration.bmp
+    action	resources.h
+    action	resources.rc
+    action	strings.rc
+    action	windowed.bmp
+
+    src_dir programs/Xserver/hw/xwin/xlaunch/window
+    dst_dir xserver/xorg/hw/xwin/xlaunch/window
+
+    action	dialog.cc
+    action	dialog.h
+    action	util.cc
+    action	util.h
+    action	window.cc
+    action	window.h
+    action	wizard.cc
+    action	wizard.h
 }
 
 symlink_xserver_ilbm() {
@@ -9004,6 +9060,7 @@ symlink_xserver() {
     symlink_xserver_Xext_extmod
     symlink_xserver_Xi
     symlink_xserver_Xprint
+    symlink_xserver_Xprint_etc
     symlink_xserver_Xprint_ps
     symlink_xserver_Xprint_pcl
     symlink_xserver_Xprint_raster
@@ -9083,6 +9140,7 @@ symlink_xserver() {
     symlink_xserver_hw_xfree86_xf86config
     symlink_xserver_hw_xnest
     symlink_xserver_hw_xwin
+    symlink_xserver_hw_xwin_xlaunch
     symlink_xserver_ilbm
     symlink_xserver_include
     symlink_xserver_iplan2p2
@@ -14302,6 +14360,9 @@ symlink_non_linked_files()
     exclude_directory programs/Xserver/Xprint/svg
     exclude_directory programs/Xserver/Xprint/windows
     
+    # Exclude monolithic tree SDK
+    exclude_directory programs/Xserver/hw/xfree86/sdk
+
     # Exclude platforms that are no longer maintained
     src_dir programs/Xserver/hw/xfree86/etc
     action	install.sv3
@@ -14345,9 +14406,11 @@ symlink_non_linked_files()
     action	BUILD		# description of the monolithic build system
     action	ChangeLog	# irrelevant to modular
 
-    # This file is generating a list of drivers - would have to be rewritten
-    # for the modular tree
+    # These files generate the list of drivers (input and video) for the
+    # monolithic build system and are not needed for the modular build
     src_dir programs/Xserver/hw/xfree86/drivers
+    action	confdrv.sh
+    src_dir programs/Xserver/hw/xfree86/input
     action	confdrv.sh
 
     # expat is external now
