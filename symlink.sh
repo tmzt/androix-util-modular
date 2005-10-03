@@ -3050,10 +3050,6 @@ symlink_lib_randr()
 
     action	Xrandr.h
 
-#    FIXME: put this file somewhere
-#    dst_dir lib/Xrandr/test
-#    action	test.c  
-
     dst_dir lib/Xrandr/man
 
     action	Xrandr.man		Xrandr.3
@@ -3590,6 +3586,8 @@ symlink_app_bitmap() {
     action	Stipple
     action	Term
     action	Up
+
+    action	bitmap.icon
 }
 
 symlink_app_editres() {
@@ -4468,6 +4466,7 @@ symlink_app_xmag() {
 
     action	xmag.man
 
+    action	xmag.icon
 }
 
 symlink_app_xman() {
@@ -5218,6 +5217,8 @@ symlink_app_xedit() {
     action	Xedit-color.ad
     action	Xedit-noxprint.ad
     action	Xedit-xprint.ad
+
+    action	Xedit-sample
 
     dst_dir app/xedit/man
     action      xedit.man xedit.1
@@ -7100,6 +7101,11 @@ symlink_xserver_hw_xfree86_doc() {
     action  Domain.note
     action  RAC.Notes
     action  Registry
+
+    dst_dir xserver/xorg/hw/xfree86/doc/changlogs
+    action	CHANGELOG
+    action	CHANGELOG.ND
+    action	CHANGELOG.R5
 
     src_dir programs/Xserver/hw/xfree86/doc
     dst_dir xserver/xorg/hw/xfree86/doc/devel
@@ -13201,6 +13207,8 @@ symlink_data_cursors_redglass() {
     action	watch.xcf
     action	X_cursor.xcf
     action	xterm.xcf
+
+    action	gumby.svg
 }
 
 symlink_data_cursors_whiteglass() {
@@ -14443,9 +14451,40 @@ symlink_non_linked_files()
     src_dir lib/Xmu
     action	README
 
+    # These docs are only useful for monolith
+    src_dir
+    action	LABEL
+    action	README
+    action	README.crypto
+    action	RELNOTES
+
+    # This file is not used by in modular tree
+    src_dir
+    action	xf86Date.h
+
+    # This should be distributed to various font components
+    src_dir fonts/bdf/misc
+    action	README
+
     # Using upstream version from Gnome
     src_dir fonts/scaled/TTF
     action	COPYRIGHT.Vera
+
+    # This file is not used by makedepend in the monolith
+    src_dir config/makedepend
+    action	cpp.ed
+
+    # This file is not used in the monolith
+    src_dir config/docbook
+    action	docbookconv.sh
+
+    # The following files are simple test files that should not be
+    # included with the library
+    src_dir lib/Xrandr
+    action	test.c
+    src_dir lib/font/Type1
+    action	minimain.c
+    action	t1test.c
 
     # Don't symlink XFree86 xpm logos or sequent .Xdefaults from xdm
     src_dir programs/xdm/config
@@ -14502,6 +14541,7 @@ symlink_non_linked_files()
     src_dir util/misc
     action	dlsym.c
     action	thr_stubs.c
+    action	rt.stdarg.h
 
     # Generated README files for the drivers
     src_dir programs/Xserver/hw/xfree86/doc
@@ -14524,6 +14564,15 @@ symlink_non_linked_files()
     # longer needed or used
     src_dir	fonts/util
     action	ucs2any.pl
+
+    # This .cf file is used only in the local xedit Imakefiles
+    src_dir programs/xedit/lisp
+    action	lisp.cf
+
+    # The following file is duplicates the copyright that is already
+    # present in the source files
+    src_dir programs/rstart
+    action	c
 }
 
 print_source()
