@@ -2314,6 +2314,8 @@ symlink_lib_xmu() {
     action	Xct.h
     action	Xmu.h
     
+    action	README
+
     dst_dir lib/Xmu/src
 
     action	AllCmap.c
@@ -14447,9 +14449,6 @@ symlink_non_linked_files()
     src_dir programs/Xserver/hw/xfree86
     action	XF86Conf.man
     action	XF98Conf.cpp
-
-    src_dir lib/Xmu
-    action	README
 
     # These docs are only useful for monolith
     src_dir
