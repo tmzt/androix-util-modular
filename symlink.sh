@@ -14441,6 +14441,11 @@ symlink_non_linked_files()
     src_dir	util/misc
     action	dlsym.c
     action	thr_stubs.c
+
+    # We use the compiled version of ucs2any, so the perl version is no
+    # longer needed or used
+    src_dir	fonts/util
+    action	ucs2any.pl
 }
 
 print_source()
