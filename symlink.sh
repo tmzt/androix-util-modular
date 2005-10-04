@@ -5277,7 +5277,6 @@ symlink_app_xedit() {
     action	xedit.h
     action	TODO
     action	README
-    action	lisp.rules
     
     src_dir programs/xedit/lisp/modules
     dst_dir app/xedit/lisp/modules
@@ -14571,9 +14570,10 @@ symlink_non_linked_files()
     src_dir	fonts/util
     action	ucs2any.pl
 
-    # This .cf file is used only in the local xedit Imakefiles
+    # The .cf and .rules files are used only in the local xedit Imakefiles
     src_dir programs/xedit/lisp
     action	lisp.cf
+    action	lisp.rules
 
     # The following file is duplicates the copyright that is already
     # present in the source files
