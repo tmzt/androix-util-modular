@@ -7214,7 +7214,6 @@ symlink_xserver_hw_xfree86_etc() {
 
     dst_dir xserver/xorg/hw/xfree86/os-support/solaris
     action apSolaris.shar
-
 }
 
 symlink_xserver_hw_xfree86_x86emu() {
@@ -14577,6 +14576,16 @@ symlink_non_linked_files()
     # present in the source files
     src_dir programs/rstart
     action	c
+
+    # These files are copies of FreeType source code
+    src_dir lib/font/FreeType/module/
+    action	ft2build.h
+    action	ftheader.h
+    action	ftmodule.h
+    action	ftoption.h
+    action	ftstdlib.h
+    action	fttypes.h
+    action	myftstdlib.h
 }
 
 print_source()
