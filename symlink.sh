@@ -9907,8 +9907,11 @@ symlink_driver_nv() {
     action      riva_xaa.c
 
     dst_dir driver/xf86-video-nv/man
-
     action      nv.man  nv.4
+
+    src_dir programs/Xserver/hw/xfree86/doc
+    dst_dir driver/xf86-video/nv
+    action	README.NV1
 }
 
 symlink_driver_rendition() {
@@ -14586,6 +14589,10 @@ symlink_non_linked_files()
     action	ftstdlib.h
     action	fttypes.h
     action	myftstdlib.h
+
+    # This file is an older version of the README file already linked into
+    # the neomagic driver
+    src_dir programs/Xserver/hw/xfree86/doc/README.neomagic
 }
 
 print_source()
