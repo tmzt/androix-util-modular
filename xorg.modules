@@ -1,0 +1,1203 @@
+<?xml version="1.0" standalone="no"?> <!--*- mode: nxml -*-->
+<!DOCTYPE moduleset SYSTEM "moduleset.dtd">
+<?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
+<moduleset>
+
+  <cvsroot name="fontconfig.freedesktop.org"
+     root=":pserver:anoncvs@cvs.freedesktop.org:/cvs/fontconfig"
+     password="" />
+
+  <cvsroot name="xorg.freedesktop.org"
+     root=":pserver:anoncvs@cvs.freedesktop.org:/cvs/xorg"
+     password="" />
+
+  <cvsroot name="dri.freedesktop.org"
+     root=":pserver:anonymous@dri.freedesktop.org:/cvs/dri"
+     password="" />
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="util/macros"/>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/BigReqs"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Composite"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Damage"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/DMX"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/EvIE"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Fixes"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Fontcache"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Fonts"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/GL"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Input"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/KB"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Print"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Randr"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Record"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Render"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Resource"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/ScrnSaver"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Trap"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Video"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XCMisc"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XExt"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XF86BigFont"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XF86DGA"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XF86DRI"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XF86Misc"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XF86Rush"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XF86VidMode"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Xinerama"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/X11"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/PM"/>
+
+  <metamodule id="xorg-protos">
+    <dependencies>
+      <dep package="proto/BigReqs"/>
+      <dep package="proto/Composite"/>
+      <dep package="proto/Damage"/>
+      <dep package="proto/DMX"/>
+      <dep package="proto/EvIE"/>
+      <dep package="proto/Fixes"/>
+      <dep package="proto/Fontcache"/>
+      <dep package="proto/Fonts"/>
+      <dep package="proto/GL"/>
+      <dep package="proto/Input"/>
+      <dep package="proto/KB"/>
+      <dep package="proto/Xinerama"/>
+      <dep package="proto/Print"/>
+      <dep package="proto/Randr"/>
+      <dep package="proto/Record"/>
+      <dep package="proto/Render"/>
+      <dep package="proto/Resource"/>
+      <dep package="proto/ScrnSaver"/>
+      <dep package="proto/Trap"/>
+      <dep package="proto/Video"/>
+      <dep package="proto/XCMisc"/>
+      <dep package="proto/XExt"/>
+      <dep package="proto/XF86BigFont"/>
+      <dep package="proto/XF86DGA"/>
+      <dep package="proto/XF86DRI"/>
+      <dep package="proto/XF86Misc"/>
+      <dep package="proto/XF86Rush"/>
+      <dep package="proto/XF86VidMode"/>
+      <dep package="proto/X11"/>
+      <dep package="proto/PM"/>
+    </dependencies>
+  </metamodule>
+
+  <!-- libs -->
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/FS">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/X11"/>
+      <dep package="proto/Fonts"/>
+      <dep package="lib/xtrans"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/ICE">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/X11"/>
+      <dep package="lib/xtrans"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/SM">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/X11"/>
+      <dep package="lib/ICE"/>
+      <dep package="lib/xtrans"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/X11">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/X11"/>
+      <dep package="proto/BigReqs"/>
+      <dep package="proto/XExt"/>
+      <dep package="lib/xtrans"/>
+      <dep package="lib/Xau"/>
+      <dep package="proto/XCMisc"/>
+      <dep package="lib/Xdmcp"/>
+      <dep package="proto/KB"/>
+      <dep package="proto/Input"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/XScrnSaver">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xext"/>
+      <dep package="proto/XExt"/>
+      <dep package="proto/ScrnSaver"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/XTrap">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xt"/>
+      <dep package="proto/Trap"/>
+      <dep package="lib/Xext"/>
+      <dep package="proto/XExt"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xau">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/X11"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xaw">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/X11"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xt"/>
+      <dep package="lib/Xmu"/>
+      <dep package="lib/Xpm"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xcomposite">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/Composite"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xfixes"/>
+      <dep package="lib/Xext"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xcursor">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/Xrender"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xfixes"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xdamage">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="proto/Damage"/>
+      <dep package="lib/Xfixes"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xdmcp">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/X11"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xevie">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/X11"/>
+      <dep package="lib/X11"/>
+      <dep package="proto/XExt"/>
+      <dep package="lib/Xext"/>
+      <dep package="proto/EvIE"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xext">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/X11"/>
+      <dep package="lib/X11"/>
+      <dep package="proto/XExt"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xfixes">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="proto/Fixes"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xfont">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/X11"/>
+      <dep package="lib/xtrans"/>
+      <dep package="proto/Fonts"/>
+      <dep package="lib/fontenc"/>
+      <dep package="proto/Fontcache"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xfontcache">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xext"/>
+      <dep package="proto/XExt"/>
+      <dep package="proto/Fontcache"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule id="fontconfig" cvsroot="fontconfig.freedesktop.org" />
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xft">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/Xrender"/>
+      <dep package="fontconfig"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xi">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/X11"/>
+      <dep package="lib/X11"/>
+      <dep package="proto/XExt"/>
+      <dep package="lib/Xext"/>
+      <dep package="proto/Input"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xinerama">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xext"/>
+      <dep package="proto/XExt"/>
+      <dep package="proto/Xinerama"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xmu">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xt"/>
+      <dep package="lib/Xext"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xp">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xext"/>
+      <dep package="lib/Xau"/>
+      <dep package="proto/Print"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xpm">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="proto/X11"/>
+      <dep package="lib/Xt"/>
+      <dep package="lib/Xext"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/XprintAppUtil">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xp"/>
+      <dep package="lib/XprintUtil"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/XprintUtil">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xp"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xrandr">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="proto/Randr"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xrender">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/Render"/>
+      <dep package="lib/X11"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/XRes">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xext"/>
+      <dep package="proto/Resource"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xt">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/SM"/>
+      <dep package="lib/X11"/>
+      <dep package="proto/X11"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xtst">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xext"/>
+      <dep package="proto/Record"/>
+      <dep package="proto/XExt"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xv">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xext"/>
+      <dep package="proto/XExt"/>
+      <dep package="proto/Video"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/XvMC">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xext"/>
+      <dep package="proto/XExt"/>
+      <dep package="proto/Video"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xxf86dga">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/X11"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xext"/>
+      <dep package="proto/XExt"/>
+      <dep package="proto/XF86DGA"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xxf86misc">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/X11"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xext"/>
+      <dep package="proto/XExt"/>
+      <dep package="proto/XF86Misc"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xxf86vm">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/X11"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xext"/>
+      <dep package="proto/XExt"/>
+      <dep package="proto/XF86VidMode"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/dmx">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xext"/>
+      <dep package="proto/XExt"/>
+      <dep package="proto/DMX"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/fontenc">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/X11"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/lbxutil">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="proto/XExt"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/oldX">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/xkbfile">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="proto/KB"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/xkbui">
+    <dependencies>
+      <dep package="util/macros"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xt"/>
+      <dep package="lib/xkbfile"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/xtrans">
+    <dependencies>
+      <dep package="util/macros"/>
+    </dependencies>
+  </cvsmodule>
+
+
+  <cvsmodule cvsroot="dri.freedesktop.org" module="drm">
+    <dependencies>
+      <dep package="util/macros"/>
+    </dependencies>
+  </cvsmodule>
+
+  <metamodule id="xorg-libs">
+    <dependencies>
+      <dep package="lib/FS"/>
+      <dep package="lib/ICE"/>
+      <dep package="lib/SM"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/XScrnSaver"/>
+      <dep package="lib/XTrap"/>
+      <dep package="lib/Xau"/>
+      <dep package="lib/Xaw"/>
+      <dep package="lib/Xcomposite"/>
+      <dep package="lib/Xcursor"/>
+      <dep package="lib/Xdamage"/>
+      <dep package="lib/Xdmcp"/>
+      <dep package="lib/Xevie"/>
+      <dep package="lib/Xext"/>
+      <dep package="lib/Xfixes"/>
+      <dep package="lib/Xfont"/>
+      <dep package="lib/Xfontcache"/>
+      <dep package="lib/Xft"/>
+      <dep package="lib/Xi"/>
+      <dep package="lib/Xinerama"/>
+      <dep package="lib/Xmu"/>
+      <dep package="lib/Xp"/>
+      <dep package="lib/Xpm"/>
+      <dep package="lib/XprintAppUtil"/>
+      <dep package="lib/XprintUtil"/>
+      <dep package="lib/Xrandr"/>
+      <dep package="lib/Xrender"/>
+      <dep package="lib/XRes"/>
+      <dep package="lib/Xt"/>
+      <dep package="lib/Xtst"/>
+      <dep package="lib/Xv"/>
+      <dep package="lib/XvMC"/>
+      <dep package="lib/Xxf86dga"/>
+      <dep package="lib/Xxf86misc"/>
+      <dep package="lib/Xxf86vm"/>
+      <dep package="lib/dmx"/>
+      <dep package="lib/fontenc"/>
+      <dep package="lib/lbxutil"/>
+      <dep package="lib/oldX"/>
+      <dep package="lib/xkbfile"/>
+      <dep package="lib/xkbui"/>
+      <dep package="lib/xtrans"/>
+      <dep package="drm"/>
+    </dependencies>
+  </metamodule>
+
+  <tarball id="encodings" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/encodings-0.99.0.tar.bz2" size="613081" md5sum="9275581cdcd7d74120a75680ed2aa1ca"/>
+  </tarball>
+
+  <tarball id="font-adobe-75dpi" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-adobe-75dpi-0.99.0.tar.bz2" size="786075" md5sum="46c7a56e2085c087ca84f6836d91fd9c"/>
+  </tarball>
+
+  <tarball id="font-adobe-100dpi" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-adobe-100dpi-0.99.0.tar.bz2" size="1012937" md5sum="a54f67c67177d2759efe92ad1f68a162"/>
+  </tarball>
+
+  <tarball id="font-adobe-utopia-75dpi" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-adobe-utopia-75dpi-0.99.0.tar.bz2" size="205347" md5sum="c7084294f3038a5d26ffbafc2651864d"/>
+  </tarball>
+
+  <tarball id="font-adobe-utopia-100dpi" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-adobe-utopia-100dpi-0.99.0.tar.bz2" size="276815" md5sum="71ef49367ab5a43209ecfd931aaf5d72"/>
+  </tarball>
+
+  <tarball id="font-adobe-utopia-type1" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-adobe-utopia-type1-0.99.0.tar.bz2" size="208528" md5sum="05e63b72340f34611de54db6940cb050"/>
+  </tarball>
+
+  <tarball id="font-alias" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-alias-0.99.0.tar.bz2" size="41632" md5sum="31344a6fad2a6ec4c8ab995231d5a746"/>
+  </tarball>
+
+  <tarball id="font-arabic-misc" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-arabic-misc-0.99.0.tar.bz2" size="52236" md5sum="bab5e8c8623f002a14c7f65140cba5e3"/>
+  </tarball>
+
+  <tarball id="font-bh-75dpi" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bh-75dpi-0.99.0.tar.bz2" size="473592" md5sum="e869d601ebef8ce830baac4682d3f430"/>
+  </tarball>
+
+  <tarball id="font-bh-100dpi" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bh-100dpi-0.99.0.tar.bz2" size="633564" md5sum="298fb3cb5ea0e9aa2788bfff93d91ed0"/>
+  </tarball>
+
+  <tarball id="font-bh-lucidatypewriter-75dpi" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bh-lucidatypewriter-75dpi" size="147513" md5sum="4e6132f4fa8e692dc9f6b12754babee5"/>
+  </tarball>
+
+  <tarball id="font-bh-lucidatypewriter-100dpi" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bh-lucidatypewriter-100dpi" size="179205" md5sum="10bd6d6371c32ed93493750f3666c333"/>
+  </tarball>
+
+  <tarball id="font-bh-ttf" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bh-ttf-0.99.0.tar.bz2" size="386316" md5sum="ab5fe2f25544d820897b61b4b73efa9a"/>
+  </tarball>
+
+  <tarball id="font-bh-type1" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bh-type1-0.99.0.tar.bz2" size="572673" md5sum="be1242ee102d2b61ab802c16bcd68c92"/>
+  </tarball>
+
+  <tarball id="font-bitstream-75dpi" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bitstream-75dpi-0.99.0.tar.bz2" size="103316" md5sum="7088317a724555929b9ca4ca7e50a1f1"/>
+  </tarball>
+
+  <tarball id="font-bitstream-100dpi" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bitstream-100dpi-0.99.0.tar.bz2" size="127681" md5sum="d5f1ac2764b3bc7e4fdd7ef6c3078af2"/>
+  </tarball>
+
+  <tarball id="font-bitstream-type1" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bitstream-type1-0.99.0.tar.bz2" size="351049" md5sum="04a9e7c622fd2b13d1a723c0ca0aee86"/>
+  </tarball>
+
+  <tarball id="font-cronyx-cyrillic" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-cronyx-cyrillic-0.99.0.tar.bz2" size="180109" md5sum="c046249bcc47d2096dd4f4a379f8949a"/>
+  </tarball>
+
+  <tarball id="font-cursor-misc" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-cursor-misc-0.99.0.tar.bz2" size="41986" md5sum="2dbcd395fc9f3ecd5791913b66c49f5d"/>
+  </tarball>
+
+  <tarball id="font-daewoo-misc" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-daewoo-misc-0.99.0.tar.bz2" size="673499" md5sum="5980c9f827a3484044c18d1f526d1bd4"/>
+  </tarball>
+
+  <tarball id="font-dec-misc" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-dec-misc-0.99.0.tar.bz2" size="40072" md5sum="b59e43dcbf887678e59a8038c3308525"/>
+  </tarball>
+
+  <tarball id="font-ibm-type1" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-ibm-type1-0.99.0.tar.bz2" size="314887" md5sum="c8232bd729fde5a3245e249acbfba444"/>
+  </tarball>
+
+  <tarball id="font-isas-misc" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-isas-misc-0.99.0.tar.bz2" size="777141" md5sum="bc69325804cada5a03f908486c2ac812"/>
+  </tarball>
+
+  <tarball id="font-jis-misc" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-jis-misc-0.99.0.tar.bz2" size="568798" md5sum="f5ccaa0cf3f9958bf6eeee7e0e32665b"/>
+  </tarball>
+
+  <tarball id="font-micro-misc" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-micro-misc-0.99.0.tar.bz2" size="38236" md5sum="2c685fff8b2e694ac164d48743fa00fb"/>
+  </tarball>
+
+  <tarball id="font-misc-cyrillic" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-misc-cyrillic-0.99.0.tar.bz2" size="64830" md5sum="2a956bd0f7c456a75eebf2b406721ea2"/>
+  </tarball>
+
+  <tarball id="font-misc-misc" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-misc-misc-0.99.0.tar.bz2" size="1816043" md5sum="40c631945183f130d3f8fd9012c6126e"/>
+  </tarball>
+
+  <tarball id="font-mutt-misc" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-mutt-misc-0.99.0.tar.bz2" size="200415" md5sum="721dd9eb39f5ecce4c4e179db3466ff1"/>
+  </tarball>
+
+  <metamodule id="xorg-fonts">
+    <dependencies>
+      <dep package="encodings"/>
+      <dep package="font-adobe-75dpi"/>
+      <dep package="font-adobe-100dpi"/>
+      <dep package="font-adobe-utopia-75dpi"/>
+      <dep package="font-adobe-utopia-100dpi"/>
+      <dep package="font-adobe-utopia-type1"/>
+      <dep package="font-alias"/>
+      <dep package="font-arabic-misc"/>
+      <dep package="font-bh-75dpi"/>
+      <dep package="font-bh-100dpi"/>
+      <dep package="font-bh-lucidatypewriter-75dpi"/>
+      <dep package="font-bh-lucidatypewriter-100dpi"/>
+      <dep package="font-bh-ttf"/>
+      <dep package="font-bh-type1"/>
+      <dep package="font-bitstream-75dpi"/>
+      <dep package="font-bitstream-100dpi"/>
+      <dep package="font-bitstream-type1"/>
+      <dep package="font-cronyx-cyrillic"/>
+      <dep package="font-cursor-misc"/>
+      <dep package="font-daewoo-misc"/>
+      <dep package="font-dec-misc"/>
+      <dep package="font-ibm-type1"/>
+      <dep package="font-isas-misc"/>
+      <dep package="font-jis-misc"/>
+      <dep package="font-micro-misc"/>
+      <dep package="font-misc-cyrillic"/>
+      <dep package="font-misc-misc"/>
+      <dep package="font-mutt-misc"/>
+    </dependencies>
+  </metamodule>
+
+  <!-- data -->
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="data/bitmaps">
+    <dependencies>
+      <dep package="util/macros"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/appres">
+    <dependencies>
+      <dep package="lib/Xt"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/bdftopcf">
+    <dependencies>
+      <dep package="lib/Xfont"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/beforelight">
+    <dependencies>
+      <dep package="lib/XScrnSaver"/>
+      <dep package="lib/Xt"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/bitmap">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+      <dep package="lib/Xmu"/>
+      <dep package="data/bitmaps"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/editres">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/fonttosfnt">
+    <dependencies>
+      <dep package="lib/X11"/>
+      <dep package="lib/fontenc"/>
+      <!-- <dep package="freetype2"/> -->
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/fslsfonts">
+    <dependencies>
+      <dep package="lib/X11"/>
+      <dep package="lib/FS"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/fstobdf">
+    <dependencies>
+      <dep package="lib/X11"/>
+      <dep package="lib/FS"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/iceauth">
+    <dependencies>
+      <dep package="lib/X11"/>
+      <dep package="lib/ICE"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/ico">
+    <dependencies>
+      <dep package="lib/X11"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/lbxproxy">
+    <dependencies>
+      <dep package="lib/xtrans"/>
+      <dep package="lib/Xext"/>
+      <dep package="lib/lbxutil"/>
+      <dep package="lib/X11"/>
+      <dep package="lib/ICE"/>
+      <dep package="proto/PM"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/listres">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/luit">
+    <dependencies>
+      <dep package="lib/X11"/>
+      <dep package="lib/fontenc"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/mkfontdir"/>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/mkfontscale">
+    <dependencies>
+      <dep package="lib/fontenc"/>
+      <!-- <dep package="freetype2"/> -->
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/oclock">
+    <dependencies>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xmu"/>
+      <dep package="lib/Xext"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/pclcomp"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/proxymngr">
+    <dependencies>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xt"/>
+      <dep package="proto/PM"/>
+      <dep package="lib/ICE"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/rgb">
+    <dependencies>
+      <dep package="proto/X11"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/rstart"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/scripts"/>
+
+  <!-- <cvsmodule cvsroot="xorg.freedesktop.org" module="app/sessreg"/> -->
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/setxkbmap"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/showfont"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/smproxy"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/twm"/>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/viewres">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/x11perf"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xauth"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xbiff">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xcalc">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xclipboard">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xclock">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xcmsdb"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xconsole">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xcursorgen"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xdbedizzy"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xditview">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xdm">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xdpyinfo">
+    <dependencies>
+      <dep package="lib/X11"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xdriinfo">
+    <dependencies>
+      <dep package="proto/GL"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xedit"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xev"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xeyes"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xf86dga"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xfd">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xfindproxy"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xfontsel"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xfs"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xfsinfo"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xfwp"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xgamma"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xgc">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xhost"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xinit"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xkbcomp"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xkbevd"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xkbprint"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xkbutils">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xkill"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xload">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xlogo">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xlsatoms"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xlsclients"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xlsfonts"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xmag">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xman">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xmessage">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xmh">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xmodmap"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xmore">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <!--
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xphelloworld"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xplsprinters"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xpr"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xprehashprinterlist"/>
+  -->
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xprop"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xrandr"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xrdb"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xrefresh"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xrx"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xset"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xsetmode"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xsetpointer"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xsetroot"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xsm">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xstdcmap"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xtrap"/>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xvidtune">
+    <dependencies>
+      <dep package="lib/Xaw"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xvinfo"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xwd"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xwininfo"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xwud"/>
+
+  <metamodule id="xorg-apps">
+    <dependencies>
+      <dep package="app/appres"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/beforelight"/>
+      <dep package="app/bitmap"/>
+      <dep package="app/editres"/>
+      <dep package="app/fonttosfnt"/>
+      <dep package="app/fslsfonts"/>
+      <dep package="app/fstobdf"/>
+      <dep package="app/iceauth"/>
+      <dep package="app/ico"/>
+      <dep package="app/lbxproxy"/>
+      <dep package="app/listres"/>
+      <dep package="app/luit"/>
+      <dep package="app/mkfontdir"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/oclock"/>
+      <dep package="app/pclcomp"/>
+      <dep package="app/proxymngr"/>
+      <dep package="app/rgb"/>
+      <dep package="app/rstart"/>
+      <dep package="app/scripts"/>
+      <dep package="app/setxkbmap"/>
+      <dep package="app/showfont"/>
+      <dep package="app/smproxy"/>
+      <dep package="app/twm"/>
+      <dep package="app/viewres"/>
+      <dep package="app/x11perf"/>
+      <dep package="app/xauth"/>
+      <dep package="app/xbiff"/>
+      <dep package="app/xcalc"/>
+      <dep package="app/xclipboard"/>
+      <dep package="app/xclock"/>
+      <dep package="app/xcmsdb"/>
+      <dep package="app/xconsole"/>
+      <dep package="app/xcursorgen"/>
+      <dep package="app/xdbedizzy"/>
+      <dep package="app/xditview"/>
+      <dep package="app/xdm"/>
+      <dep package="app/xdpyinfo"/>
+      <dep package="app/xdriinfo"/>
+      <dep package="app/xedit"/>
+      <dep package="app/xev"/>
+      <dep package="app/xeyes"/>
+      <dep package="app/xf86dga"/>
+      <dep package="app/xfd"/>
+      <dep package="app/xfindproxy"/>
+      <dep package="app/xfontsel"/>
+      <dep package="app/xfs"/>
+      <dep package="app/xfsinfo"/>
+      <dep package="app/xfwp"/>
+      <dep package="app/xgamma"/>
+      <dep package="app/xgc"/>
+      <dep package="app/xhost"/>
+      <dep package="app/xinit"/>
+      <dep package="app/xkbcomp"/>
+      <dep package="app/xkbevd"/>
+      <dep package="app/xkbprint"/>
+      <dep package="app/xkbutils"/>
+      <dep package="app/xkill"/>
+      <dep package="app/xload"/>
+      <dep package="app/xlogo"/>
+      <dep package="app/xfontsel"/>
+      <dep package="app/xlsatoms"/>
+      <dep package="app/xlsclients"/>
+      <dep package="app/xlsfonts"/>
+      <dep package="app/xmag"/>
+      <dep package="app/xman"/>
+      <dep package="app/xmessage"/>
+      <dep package="app/xmh"/>
+      <dep package="app/xmodmap"/>
+      <dep package="app/xmore"/>
+
+      <!--
+      <dep package="app/xphelloworld"/>
+      <dep package="app/xplsprinters"/>
+      <dep package="app/xpr"/>
+      <dep package="app/xprehashprinterlist"/>
+      -->
+
+      <dep package="app/xprop"/>
+      <dep package="app/xrandr"/>
+      <dep package="app/xrdb"/>
+      <dep package="app/xrefresh"/>
+      <dep package="app/xrx"/>
+      <dep package="app/xset"/>
+      <dep package="app/xsetmode"/>
+      <dep package="app/xsetpointer"/>
+      <dep package="app/xsetroot"/>
+      <dep package="app/xsm"/>
+      <dep package="app/xstdcmap"/>
+      <dep package="app/xtrap"/>
+      <dep package="app/xvidtune"/>
+      <dep package="app/xvinfo"/>
+      <dep package="app/xwd"/>
+      <dep package="app/xwininfo"/>
+      <dep package="app/xwud"/>
+    </dependencies>
+  </metamodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-evdev">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-mouse">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-keyboard">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-ati">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-fbdev">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-i810">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-nv">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-vesa">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <metamodule id="xorg-drivers">
+    <dependencies>
+      <dep package="driver/xf86-input-evdev"/>
+      <dep package="driver/xf86-input-mouse"/>
+      <dep package="driver/xf86-input-keyboard"/>
+      <dep package="driver/xf86-video-ati"/>
+      <dep package="driver/xf86-video-fbdev"/>
+      <dep package="driver/xf86-video-i810"/>
+      <dep package="driver/xf86-video-nv"/>
+      <dep package="driver/xf86-video-vesa"/>
+    </dependencies>
+  </metamodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="xserver/xorg">
+    <dependencies>
+      <dep package="proto/Randr"/>
+      <dep package="proto/Render"/>
+      <dep package="proto/Fixes"/>
+      <dep package="proto/Damage"/>
+      <dep package="proto/XExt"/>
+      <dep package="lib/Xfont"/>
+      <dep package="proto/X11"/>
+      <dep package="lib/xtrans"/>
+      <dep package="lib/Xau"/>
+      <dep package="proto/XF86DGA"/>
+      <dep package="proto/XF86Misc"/>
+      <dep package="proto/XF86Rush"/>
+      <dep package="proto/XF86VidMode"/>
+      <dep package="proto/XF86BigFont"/>
+      <dep package="proto/XF86DRI"/>
+      <dep package="lib/xkbfile"/>
+      <dep package="proto/Record"/>
+      <dep package="proto/Resource"/>
+      <dep package="proto/Xinerama"/>
+      <dep package="lib/Xdmcp"/>
+      <dep package="drm"/>
+    </dependencies>
+  </cvsmodule>
+
+  <metamodule id="xorg">
+    <dependencies>
+      <dep package="xorg-protos"/>
+      <dep package="xorg-libs"/>
+      <dep package="xorg-fonts"/>
+      <dep package="xorg-apps"/>
+      <dep package="xorg-drivers"/>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </metamodule>
+
+</moduleset>
