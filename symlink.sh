@@ -10675,7 +10675,7 @@ symlink_driver_evdev() {
 symlink_driver_fpit() {
     src_dir programs/Xserver/hw/xfree86/input/fpit
 
-    dst_dir driver/xf86-input/fpit
+    dst_dir driver/xf86-input-fpit
     action      readme.txt
     
     dst_dir driver/xf86-input-fpit/src
