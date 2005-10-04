@@ -14592,7 +14592,8 @@ symlink_non_linked_files()
 
     # This file is an older version of the README file already linked into
     # the neomagic driver
-    src_dir programs/Xserver/hw/xfree86/doc/README.neomagic
+    src_dir programs/Xserver/hw/xfree86/doc
+    action	README.neomagic
 }
 
 print_source()
