@@ -7105,7 +7105,7 @@ symlink_xserver_hw_xfree86_doc() {
     action  RAC.Notes
     action  Registry
 
-    dst_dir xserver/xorg/hw/xfree86/doc/changlogs
+    dst_dir xserver/xorg/hw/xfree86/doc/changelogs
     action	CHANGELOG
     action	CHANGELOG.ND
     action	CHANGELOG.R5
