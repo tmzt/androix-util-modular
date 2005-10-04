@@ -10850,7 +10850,7 @@ symlink_driver_tek4957() {
 
     dst_dir driver/xf86-input-tek4957/man
 
-    action      tek4957.man     tek4957.man
+    action      tek4957.man     tek4957.4
 }
 
 symlink_driver_ur98() {
@@ -14581,7 +14581,7 @@ symlink_non_linked_files()
     action	c
 
     # These files are copies of FreeType source code
-    src_dir lib/font/FreeType/module/
+    src_dir lib/font/FreeType/module
     action	ft2build.h
     action	ftheader.h
     action	ftmodule.h
