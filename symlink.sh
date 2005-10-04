@@ -9910,7 +9910,7 @@ symlink_driver_nv() {
     action      nv.man  nv.4
 
     src_dir programs/Xserver/hw/xfree86/doc
-    dst_dir driver/xf86-video/nv
+    dst_dir driver/xf86-video-nv
     action	README.NV1
 }
 
