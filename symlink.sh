@@ -7197,6 +7197,10 @@ symlink_xserver_hw_xfree86_etc() {
     action vesamodes
     action extramodes
 
+    dst_dir xserver/xorg/hw/xfree86/utils/gtf
+    action gtf.c
+    action gtf.man gtf.man.pre
+
     dst_dir xserver/xorg/hw/xfree86/utils/ioport
     action ioport.c
 
