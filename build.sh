@@ -377,6 +377,7 @@ build_driver() {
 # other font components
 build_font() {
     build font util
+    build font encodings
     build font adobe-100dpi
     build font adobe-75dpi
     build font adobe-utopia-100dpi
@@ -391,6 +392,7 @@ build_font() {
     build font bh-type1
     build font bitstream-100dpi
     build font bitstream-75dpi
+    build font bitstream-speedo
     build font bitstream-type1
     build font cronyx-cyrillic
     build font cursor-misc
@@ -401,6 +403,8 @@ build_font() {
     build font jis-misc
     build font micro-misc
     build font misc-cyrillic
+    build font misc-ethiopic
+    build font misc-meltho
     build font misc-misc
     build font mutt-misc
     build font schumacher-misc
