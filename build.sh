@@ -420,6 +420,12 @@ build_font() {
     build font alias
 }
 
+# makedepend requires xproto
+build_util() {
+    build util makedepend
+    build util xmkmf
+}
+
 # TODO
 build_doc() {
     build
@@ -523,6 +529,7 @@ build_xserver
 build_driver
 build_data
 build_font
+build_util
 # build_doc
 
 date
