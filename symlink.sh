@@ -3729,6 +3729,14 @@ symlink_app_luit() {
 
 }
 
+symlink_app_mkcfm() {
+    src_dir programs/mkcfm
+    dst_dir app/mkcfm
+
+    action	mkcfm.c
+    action	mkcfm.man
+}
+
 symlink_app_makepsres() {
     src_dir programs/makepsres
     dst_dir app/makepsres
@@ -5604,6 +5612,7 @@ symlink_app() {
     symlink_app_mkfontdir
     symlink_app_mkfontscale
     symlink_app_makepsres
+    symlink_app_mkcfm
     symlink_app_luit
     symlink_app_listres
     symlink_app_ico
@@ -14380,6 +14389,9 @@ symlink_non_linked_files()
     exclude_directory programs/fc-list
     exclude_directory lib/fontconfig
 
+    # Stuff that may be resurrected if someone complains enough
+    exclude_directory programs/Xserver/hw/xfree86/etc
+
     # Exclude empty directory that just has README saying kdrive doesn't
     # live here any more
     exclude_directory programs/Xserver/hw/kdrive
@@ -14583,7 +14595,7 @@ symlink_non_linked_files()
     action	README.ati
     action	README.r128
     
-    src_dir programs/Xserver/hw/xfree86/driver/i740
+    src_dir programs/Xserver/hw/xfree86/drivers/i740
     action	README
 
     # We use the compiled version of ucs2any, so the perl version is no
