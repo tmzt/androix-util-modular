@@ -1457,6 +1457,11 @@ symlink_lib_x11() {
     #src_dir nls/Compose
     #action		C			Compose.pre
 
+    # el_GR.UTF-8
+    dst_dir lib/X11/nls/el_GR.UTF-8
+    src_dir nls/Compose
+    action	el_GR.UTF-8			Compose.pre
+
     # en_US.UTF-8
     dst_dir lib/X11/nls/en_US.UTF-8
     src_dir nls/XLC_LOCALE
@@ -1859,8 +1864,8 @@ symlink_lib_x11() {
     action		zh_CN			XLC_LOCALE.pre
     src_dir nls/XI18N_OBJS
     action		zh_CN			XI18N_OBJS
-    #src_dir nls/Compose
-    #action		zh_CN			Compose.pre
+    # src_dir nls/Compose
+    # action		zh_CN			Compose.pre
 
     # zh_CN.gb18030
     dst_dir lib/X11/nls/zh_CN.gb18030
@@ -14594,6 +14599,17 @@ symlink_non_linked_files()
     # the neomagic driver
     src_dir programs/Xserver/hw/xfree86/doc
     action	README.neomagic
+
+    # This is just random libc implementations
+    src_dir lib/Xbsd/
+    action	Berklib.c
+
+    # A file with no entries - and we already have an empty file
+    # in the modular tree
+    src_dir nls/Compose/
+    action	zh_CN
+    
+    
 }
 
 print_source()
