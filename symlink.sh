@@ -14582,6 +14582,9 @@ symlink_non_linked_files()
     action	README.s3virge
     action	README.ati
     action	README.r128
+    
+    src_dir programs/Xserver/hw/xfree86/driver/i740
+    action	README
 
     # We use the compiled version of ucs2any, so the perl version is no
     # longer needed or used
