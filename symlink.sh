@@ -10836,17 +10836,6 @@ symlink_driver_penmount() {
     action      penmount.man    penmount.4
 }
 
-symlink_driver_sample() {
-    src_dir programs/Xserver/hw/xfree86/input/sample
-    dst_dir driver/xf86-input-sample/src
-
-    action      sample.c
-    action      sample.h
-
-    dst_dir driver/xf86-input-sample
-    action      README
-}
-
 symlink_driver_spaceorb() {
     src_dir programs/Xserver/hw/xfree86/input/spaceorb
     dst_dir driver/xf86-input-spaceorb/src
@@ -10969,7 +10958,6 @@ symlink_driver() {
     symlink_driver_mutouch
     symlink_driver_palmax
     symlink_driver_penmount
-    symlink_driver_sample
     symlink_driver_spaceorb
     symlink_driver_summa
     symlink_driver_tek4957
@@ -14351,6 +14339,9 @@ symlink_non_linked_files()
 
     # Exclude deprecated wacom(4)
     exclude_directory programs/Xserver/hw/xfree86/input/wacom
+
+    # Exclude old and known-broken sample(4)
+    exclude_directory programs/Xserver/hw/xfree86/input/sample
 
     # Exclude xterm
     exclude_directory programs/xterm
