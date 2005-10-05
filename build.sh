@@ -187,6 +187,7 @@ build_app() {
     build app xditview
     build app xdm
     build app xdpyinfo
+    build app xdriinfo
     build app xedit
     build app xev
     build app xeyes
