@@ -40,6 +40,7 @@ build() {
 
 # protocol headers have no build order dependencies
 build_proto() {
+    build proto AppleWM
     build proto BigReqs
     build proto Composite
     build proto Damage
@@ -60,6 +61,7 @@ build_proto() {
     build proto ScrnSaver
     build proto Trap
     build proto Video
+    build proto WindowsWM
     build proto X11
     build proto XCMisc
     build proto XExt
