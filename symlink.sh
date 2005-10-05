@@ -7116,9 +7116,14 @@ symlink_xserver_hw_xfree86_doc() {
     src_dir programs/Xserver/hw/xfree86/doc
     dst_dir xserver/xorg/hw/xfree86/doc/devel
     action  exa-driver.txt
+    action  README.DRIcomp
+
+    dst_dir xserver/xorg/hw/xfree86/doc
+    action  README.DRI
 
     src_dir programs/Xserver/hw/xfree86/doc/sgml
     dst_dir xserver/xorg/hw/xfree86/doc/sgml
+
     action  DESIGN.sgml
 
 # Docs about the entire Xorg distribution:
@@ -7191,6 +7196,13 @@ symlink_xserver_hw_xfree86_doc() {
 
     dst_dir driver/xf86-video-s3virge
     action  s3virge.sgml	README.sgml
+
+#   Japanese documentation
+    src_dir programs/Xserver/hw/xfree86/doc/Japanese/sgml
+    dst_dir doc/old/sgml/Japanese
+
+    action	1st.sgml
+    action	read98.sgml
 }
 
 symlink_xserver_hw_xfree86_etc() {
@@ -14607,8 +14619,38 @@ symlink_non_linked_files()
     # in the modular tree
     src_dir nls/Compose
     action	zh_CN
+
+    # These files are all generated from the sgml files in doc/old/sgml
+    # When/if those files are converted to xml, we can maybe do something
+    # with the generated results
+    src_dir programs/Xserver/hw/xfree86/doc
+
+    action	README.Darwin
+    action	README.dps
+    action	OS2.Notes
+    action	LICENSE
+    action	Install
+    action	README.LynxOS
+    action	README.NetBSD
+    action	README.OpenBSD
+    action	README.SCO
+    action	README.Solaris
+    action	Versions
+    action	README.XKB-Config
+    action	README.XKB-Enhancing
     
-    
+    # Not really useful given bugzilla
+    action	BugReport.cpp
+
+    # like anybody cared
+    action	CODING
+
+    # Generated from sgml/DESIGN.sgml
+    action	DESIGN
+
+    src_dir programs/Xserver/hw/xfree86/doc/Japanese
+    action	README98
+    action	README98.1st
 }
 
 print_source()
@@ -14650,7 +14692,7 @@ list_missing()
 
     echo DONE
 
-    echo -n Generating list of missing files in file \"missing-files\" ...\
+    echo -n Generating list of missing files in file \"missing-files\" ...\ 
 
     sort symlink-processed-files > symlink-processed-files.sorted
     sort all-monolith-files > all-monolith-files.sorted
