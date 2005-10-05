@@ -2893,7 +2893,6 @@ symlink_lib_xaw() {
     action	Sme.c
     action	SmeLine.c
     action	StripChart.c
-    action	Template.c
     action	TextAction.c
     action	Text.c
     action	TextPop.c
@@ -2967,6 +2966,7 @@ symlink_lib_xaw() {
     action	SmeP.h
     action	StripCharP.h
     action	StripChart.h
+    action	Template.c
     action	Template.h
     action	TemplateP.h
     action	Text.h
