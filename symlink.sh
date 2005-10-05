@@ -14601,12 +14601,12 @@ symlink_non_linked_files()
     action	README.neomagic
 
     # This is just random libc implementations
-    src_dir lib/Xbsd/
+    src_dir lib/Xbsd
     action	Berklib.c
 
     # A file with no entries - and we already have an empty file
     # in the modular tree
-    src_dir nls/Compose/
+    src_dir nls/Compose
     action	zh_CN
     
     
