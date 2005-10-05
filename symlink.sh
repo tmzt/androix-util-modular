@@ -7119,7 +7119,9 @@ symlink_xserver_hw_xfree86_doc() {
     action  README.DRIcomp
 
     dst_dir xserver/xorg/hw/xfree86/doc
-    action  README.DRI
+    action	README.DRI
+    action	README.fonts
+    action	README.rapidaccess
 
     src_dir programs/Xserver/hw/xfree86/doc/sgml
     dst_dir xserver/xorg/hw/xfree86/doc/sgml
@@ -14638,12 +14640,18 @@ symlink_non_linked_files()
     action	Versions
     action	README.XKB-Config
     action	README.XKB-Enhancing
-    
+    action	BUILD
+    action	README
+    action	RELNOTES
+
     # Not really useful given bugzilla
     action	BugReport.cpp
 
     # like anybody cared
     action	CODING
+
+    # Pc98 doc - FIXME maybe this is actually useful
+    action	VideoBoard98
 
     # Generated from sgml/DESIGN.sgml
     action	DESIGN
