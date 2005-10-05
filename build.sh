@@ -258,7 +258,6 @@ build_driver_input() {
 	Linux)
 	    build driver xf86-input-aiptek
 	    build driver xf86-input-evdev
-	    build driver xf86-input-v4l
 # not built in monolith, doesn't build for lots of systems
 #	    build driver xf86-input-ur98
 	    ;;
@@ -306,6 +305,7 @@ build_driver_video() {
 	*Linux*)
 	    build driver xf86-video-sisusb
 	    build driver xf86-video-sunffb
+	    build driver xf86-video-v4l
 	    ;;
 	*)
 	    ;;
