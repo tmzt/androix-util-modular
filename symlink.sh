@@ -7139,17 +7139,17 @@ symlink_xserver_hw_xfree86_doc() {
     action  Versions.sgml
     action  XKB-Config.sgml
     action  XKB-Enhancing.sgml
+    action  add.sh
     action  dps.sgml
     action  fonts.sgml
     action  index.post
     action  index.pre
+    action  mdefs.cpp	mdefs.pre
 
 # Entity files and scripts needed for all sgml docs:
 
     dst_dir doc/xorg-sgml-doctools
-    action  add.sh
     action  defs.ent
-    action  mdefs.cpp	mdefs.pre
 
 # Driver-specific docs:
 
