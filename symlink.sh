@@ -3376,7 +3376,6 @@ symlink_lib_xft() {
 
     action	Xft.3.in
     action	xft-config.1.in
-    action	xft-config.in
 
     dst_dir lib/Xft/include/X11/Xft
 
