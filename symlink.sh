@@ -3914,10 +3914,10 @@ symlink_app_x11perf() {
     action	x11perf.man
     action	Xmark.man
 
-    action	fillblnk.sh
-    action	perfboth.sh
-    action	perfratio.sh
-    action	Xmark.sh
+    action	fillblnk.sh	fillblnk
+    action	perfboth.sh	perfboth
+    action	perfratio.sh	perfratio
+    action	Xmark.sh	Xmark
 
     action	x11pcomp.cpp
 }
@@ -4853,7 +4853,7 @@ symlink_app_scripts() {
     action	fontname.sh
     action	fontprop.sh
     action	xauth_switch_to_sun-des-1.cpp
-    action	xon.sh
+    action	xon.sh xon
 
     action	xon.man
 }
