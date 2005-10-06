@@ -6992,7 +6992,7 @@ symlink_xserver_hw_vfb() {
     action      InitOutput.c
     action      lk201kbd.h
 
-    action      Xvfb.man Xvfb.1
+    action      Xvfb.man Xvfb.man.pre
 }
 
 symlink_xserver_hw_xfree86_common() {
