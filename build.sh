@@ -472,7 +472,7 @@ if test x"${PREFIX}" = x ; then
 fi
 
 # Must create local aclocal dir or aclocal fails
-ACLOCAL_LOCALDIR="${PREFIX}/share/aclocal"
+ACLOCAL_LOCALDIR="${DESTDIR}${PREFIX}/share/aclocal"
 $SUDO mkdir -p ${ACLOCAL_LOCALDIR}
 
 # The following is required to make aclocal find our .m4 macros
@@ -485,25 +485,25 @@ export ACLOCAL
 
 # The following is required to make pkg-config find our .pc metadata files
 if test x"$PKG_CONFIG_PATH" = x; then
-    PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
+    PKG_CONFIG_PATH=${DESTDIR}${PREFIX}/lib/pkgconfig
 else
-    PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig:${PKG_CONFIG_PATH}
+    PKG_CONFIG_PATH=${DESTDIR}${PREFIX}/lib/pkgconfig:${PKG_CONFIG_PATH}
 fi
 export PKG_CONFIG_PATH
 
 # Set the library path so that locally built libs will be found by apps
 if test x"$LD_LIBRARY_PATH" = x; then
-    LD_LIBRARY_PATH=${PREFIX}/lib
+    LD_LIBRARY_PATH=${DESTDIR}${PREFIX}/lib
 else
-    LD_LIBRARY_PATH=${PREFIX}/lib:${LD_LIBRARY_PATH}
+    LD_LIBRARY_PATH=${DESTDIR}${PREFIX}/lib:${LD_LIBRARY_PATH}
 fi
 export LD_LIBRARY_PATH
 
 # Set the path so that locally built apps will be found and used
 if test x"$PATH" = x; then
-    PATH=${PREFIX}/bin
+    PATH=${DESTDIR}${PREFIX}/bin
 else
-    PATH=${PREFIX}/bin:${PATH}
+    PATH=${DESTDIR}${PREFIX}/bin:${PATH}
 fi
 export PATH
 
@@ -514,7 +514,7 @@ if test x"$FONTPATH" = x; then
 fi
 
 # Create the log file directory
-$SUDO mkdir -p ${PREFIX}/var/log
+$SUDO mkdir -p ${DESTDIR}${PREFIX}/var/log
 
 date
 
