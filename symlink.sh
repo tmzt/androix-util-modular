@@ -6995,6 +6995,14 @@ symlink_xserver_hw_vfb() {
     action      Xvfb.man Xvfb.man.pre
 }
 
+symlink_xserver_hw_xfree86() {
+    src_dir programs/Xserver/hw/xfree86
+    dst_dir xserver/xorg/hw/xfree86
+
+    action	xorgconf.cpp
+    action	Options
+}
+
 symlink_xserver_hw_xfree86_common() {
     src_dir programs/Xserver/hw/xfree86/common
     dst_dir xserver/xorg/hw/xfree86/common
@@ -7548,6 +7556,8 @@ symlink_xserver_hw_xfree86_ossupport_bsd_libusb() {
     action      usage.c
     action      usb.h
     action      usbvar.h
+    action	usb.3
+    action	usb_hid_usages
 }
 
 symlink_xserver_hw_xfree86_ossupport_bsdi() {
@@ -7672,6 +7682,7 @@ symlink_xserver_hw_xfree86_ossupport_lynxos() {
     action      lynx_noinline.c
     action      lynx_ppc.c
     action      lynx_video.c
+    action	lynx_ppc.S
 }
 
 symlink_xserver_hw_xfree86_ossupport_misc() {
@@ -7684,6 +7695,12 @@ symlink_xserver_hw_xfree86_ossupport_misc() {
     action      SlowBcopy.c
     action      xf86_IlHack.c
     action      xf86_Util.c
+
+    action	BUSmemcpy.S
+    action	IODelay.S
+    action	PortIO.S
+    action	SlowBcopy.S
+    
 }
 
 symlink_xserver_hw_xfree86_ossupport_nto() {
@@ -7696,6 +7713,7 @@ symlink_xserver_hw_xfree86_ossupport_nto() {
     action      nto_kbdEv.c
     action      nto_mouse.c
     action      nto_video.c
+    action	README
 }
 
 symlink_xserver_hw_xfree86_ossupport_os2() {
@@ -7791,6 +7809,7 @@ symlink_xserver_hw_xfree86_ossupport_shared() {
     action      vidmem.c
     action      xf86Axp.c
     action      xf86Axp.h
+    action	inout.S
 }
 
 symlink_xserver_hw_xfree86_ossupport_sunos() {
@@ -7810,6 +7829,7 @@ symlink_xserver_hw_xfree86_ossupport_sunos() {
     action      solaris-amd64.S
     action      solaris-ia32.S
     action      solaris-sparcv8plus.S
+    action	sun_inout.s
 }
 
 symlink_xserver_hw_xfree86_ossupport_sysv() {
@@ -7985,6 +8005,7 @@ symlink_xserver_hw_xfree86_xaa() {
     action      xaalocal.h
     action      xaarop.h
     action      xaawrap.h
+    action	xaaTEGlyphBlt.S
 
     action      XAA.HOWTO
 }
@@ -8849,6 +8870,9 @@ symlink_xserver_xkb() {
     action	xkbout.c
     action	xkbtext.c
     action	xkmread.c
+
+    src_dir programs/xkbcomp/compiled
+    action	README		README.compiled
 }
 
 symlink_xserver_xprint_config_models() {
@@ -9125,6 +9149,7 @@ symlink_xserver() {
     symlink_xserver_hw_dmx_input
     symlink_xserver_hw_sun
     symlink_xserver_hw_vfb
+    symlink_xserver_hw_xfree86
     symlink_xserver_hw_xfree86_common
     symlink_xserver_hw_xfree86_ddc
     symlink_xserver_hw_xfree86_x86emu
@@ -14308,6 +14333,25 @@ exclude_fixes_buildsystem()
     action	xfixes.pc.in
 }
 
+exclude_gl_apple()
+{
+    # These files should be part of Mesa, 
+    # according to Adam
+    src_dir lib/GL/apple
+
+    action	appledri.c
+    action	appledri.h
+    action	appledristr.h
+    action	build-dispatch
+    action	dri_dispatch.c
+    action	dri_dispatch.defs
+    action	dri_dispatch.h
+    action	dri_driver.c
+    action	dri_driver.h
+    action	dri_glx.c
+    action	dri_glx.h
+}
+
 symlink_non_linked_files()
 {
     # SGI is upstream for these files. Not sure what to about them, but
@@ -14416,6 +14460,8 @@ symlink_non_linked_files()
     exclude_glob "Imakefile*"
     exclude_glob "jump_*"
     exclude_glob ".cvsignore"
+
+    exclude_gl_apple
 
     # These files are only used by OS/2 and can be added back if a
     # maintainer steps up
@@ -14666,6 +14712,23 @@ symlink_non_linked_files()
     src_dir programs/Xserver/hw/xfree86/doc/Japanese
     action	README98
     action	README98.1st
+
+    # These files are not even used by the monolith
+    src_dir lib/X11/xlibi18n/im/ximcp
+    action	Ximcp.mapfile
+    src_dir lib/X11/xlibi18n/lc/def
+    action	Xlc.mapfile
+    src_dir lib/X11/xlibi18n/lc/gen
+    action	Xlc.mapfile
+    src_dir lib/X11/xlibi18n/om/generic
+    action	Xom.mapfile
+
+    # This file is part of the monolithic build system
+    src_dir lib/X11/xlibi18n
+    action	Xi18nLib.conf
+
+
+    
 }
 
 print_source()
