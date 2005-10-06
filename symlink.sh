@@ -3551,7 +3551,7 @@ symlink_app_beforelight() {
 
     action	b4light.c
 
-    action	b4light.man
+    action	b4light.man	beforelight.man
 
 }
 
@@ -3910,7 +3910,7 @@ symlink_app_x11perf() {
     action	bitmaps.h
     action	x11perf.h
 
-    action	x11pcomp.man
+    action	x11pcomp.man x11perfcomp.man
     action	x11perf.man
     action	Xmark.man
 
@@ -4443,7 +4443,7 @@ symlink_app_xlsclients() {
 
     action	xlsclients.c
 
-    action	xlscli.man
+    action	xlscli.man xlsclients.man
 
 }
 
