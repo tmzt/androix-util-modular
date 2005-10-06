@@ -7489,7 +7489,6 @@ symlink_xserver_hw_xfree86_loader() {
     action      loadmod.c
     action      misym.c
     action      os.c
-    action      os2funcs.c
     action      sym.h
     action      xf86sym.c
 }
@@ -14428,6 +14427,8 @@ symlink_non_linked_files()
     action	Xvfb.def
     src_dir programs/Xserver/hw/xfree86/xf86config
     action	xf86config.cmd
+    src_dir programs/Xserver/hw/xfree86/loader
+    action      os2funcs.c
 
     # This file is replaced by httptransport.c in the modular tree
     src_dir programs/xrx/helper
