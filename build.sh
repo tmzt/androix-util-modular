@@ -421,6 +421,7 @@ build_font() {
 
 # makedepend requires xproto
 build_util() {
+    build util cf
     build util makedepend
     build util xmkmf
 }
