@@ -1163,28 +1163,19 @@
     </dependencies>
   </metamodule>
 
+  <! -- Bogosity of depending on libraries caused by Xnest.  Sigh -->
   <cvsmodule cvsroot="xorg.freedesktop.org" module="xserver/xorg">
     <dependencies>
-      <dep package="proto/Randr"/>
-      <dep package="proto/Render"/>
-      <dep package="proto/Fixes"/>
-      <dep package="proto/Damage"/>
-      <dep package="proto/XExt"/>
+      <dep package="xorg-protos"/>
+      <dep package="lib/Xaw"/>
+      <dep package="lib/xkbui"/>
       <dep package="lib/Xfont"/>
-      <dep package="proto/X11"/>
       <dep package="lib/xtrans"/>
       <dep package="lib/Xau"/>
-      <dep package="proto/XF86DGA"/>
-      <dep package="proto/XF86Misc"/>
-      <dep package="proto/XF86Rush"/>
-      <dep package="proto/XF86VidMode"/>
-      <dep package="proto/XF86BigFont"/>
-      <dep package="proto/XF86DRI"/>
       <dep package="lib/xkbfile"/>
-      <dep package="proto/Record"/>
-      <dep package="proto/Resource"/>
-      <dep package="proto/Xinerama"/>
       <dep package="lib/Xdmcp"/>
+      <dep package="lib/Xxf86misc"/>
+      <dep package="lib/Xxf86vm"/>
       <dep package="drm"/>
     </dependencies>
   </cvsmodule>
