@@ -430,7 +430,7 @@ build_util() {
 
 # TODO
 build_doc() {
-    build
+    build doc xorg-sgml-doctools
 }
 
 usage() {
@@ -523,6 +523,7 @@ date
 # We must install the global macros before anything else
 build util macros
 
+build_doc
 build_proto
 build_lib
 build data bitmaps
@@ -532,6 +533,5 @@ build_driver
 build_data
 build_font
 build_util
-# build_doc
 
 date
