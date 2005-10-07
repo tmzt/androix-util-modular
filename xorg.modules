@@ -1163,7 +1163,7 @@
     </dependencies>
   </metamodule>
 
-  <! -- Bogosity of depending on libraries caused by Xnest.  Sigh -->
+  <!-- Bogosity of depending on libraries caused by Xnest.  Sigh -->
   <cvsmodule cvsroot="xorg.freedesktop.org" module="xserver/xorg">
     <dependencies>
       <dep package="xorg-protos"/>
