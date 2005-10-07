@@ -428,7 +428,7 @@ build_util() {
     build util xmkmf
 }
 
-# TODO
+# No dependencies thus far
 build_doc() {
     build doc xorg-sgml-doctools
 }
