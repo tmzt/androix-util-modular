@@ -423,6 +423,7 @@ build_font() {
 # makedepend requires xproto
 build_util() {
     build util cf
+#    build util imake -- needs to be autotooled
     build util makedepend
     build util xmkmf
 }
