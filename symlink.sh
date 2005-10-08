@@ -12859,12 +12859,9 @@ symlink_util_imake() {
     src_dir config/imake
     dst_dir util/imake
 
-    action	ccimake.c
     action	imake.c
     action	imake.man
     action	imakemdep.h
-    action	imakesvc.cmd
-    action	Makefile.ini
 }
 
 symlink_util_makedepend() {
@@ -14727,8 +14724,11 @@ symlink_non_linked_files()
     src_dir lib/X11/xlibi18n
     action	Xi18nLib.conf
 
-
-    
+    # These files are needed for cross compilation and OS/2
+    src_dir config/imake
+    action	ccimake.c
+    action	imakesvc.cmd
+    action	Makefile.ini
 }
 
 print_source()
