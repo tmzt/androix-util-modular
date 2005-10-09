@@ -15,7 +15,6 @@
      root=":pserver:anonymous@dri.freedesktop.org:/cvs/dri"
      password="" />
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/util"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="util/macros"/>
 
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/BigReqs"/>
@@ -533,214 +532,277 @@
     </dependencies>
   </metamodule>
 
-  <tarball id="encodings" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/encodings-0.99.0.tar.bz2" size="613081" md5sum="9275581cdcd7d74120a75680ed2aa1ca"/>
-  </tarball>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/xtrans"/>
 
-  <tarball id="font-adobe-75dpi" version="0.99.0">
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/100dpi">
     <dependencies>
-	<dep package="font/util"/>
+      <dep package="font/util"/>
     </dependencies>
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-adobe-75dpi-0.99.0.tar.bz2" size="786075" md5sum="46c7a56e2085c087ca84f6836d91fd9c"/>
-  </tarball>
+  </cvsmodule>
 
-  <tarball id="font-adobe-100dpi" version="0.99.0">
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/adobe-100dpi">
     <dependencies>
-	<dep package="font/util"/>
+      <dep package="font/util"/>
     </dependencies>
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-adobe-100dpi-0.99.0.tar.bz2" size="1012937" md5sum="a54f67c67177d2759efe92ad1f68a162"/>
-  </tarball>
+  </cvsmodule>
 
-  <tarball id="font-adobe-utopia-75dpi" version="0.99.0">
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/adobe-75dpi">
     <dependencies>
-	<dep package="font/util"/>
+      <dep package="font/util"/>
     </dependencies>
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-adobe-utopia-75dpi-0.99.0.tar.bz2" size="205347" md5sum="c7084294f3038a5d26ffbafc2651864d"/>
-  </tarball>
+  </cvsmodule>
 
-  <tarball id="font-adobe-utopia-100dpi" version="0.99.0">
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/adobe-utopia-100dpi">
     <dependencies>
-	<dep package="font/util"/>
+      <dep package="font/util"/>
     </dependencies>
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-adobe-utopia-100dpi-0.99.0.tar.bz2" size="276815" md5sum="71ef49367ab5a43209ecfd931aaf5d72"/>
-  </tarball>
+  </cvsmodule>
 
-  <tarball id="font-adobe-utopia-type1" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-adobe-utopia-type1-0.99.0.tar.bz2" size="208528" md5sum="05e63b72340f34611de54db6940cb050"/>
-  </tarball>
-
-  <tarball id="font-alias" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-alias-0.99.0.tar.bz2" size="41632" md5sum="31344a6fad2a6ec4c8ab995231d5a746"/>
-  </tarball>
-
-  <tarball id="font-arabic-misc" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-arabic-misc-0.99.0.tar.bz2" size="52236" md5sum="bab5e8c8623f002a14c7f65140cba5e3"/>
-  </tarball>
-
-  <tarball id="font-bh-75dpi" version="0.99.0">
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/adobe-utopia-75dpi">
     <dependencies>
-	<dep package="font/util"/>
+      <dep package="font/util"/>
     </dependencies>
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bh-75dpi-0.99.0.tar.bz2" size="473592" md5sum="e869d601ebef8ce830baac4682d3f430"/>
-  </tarball>
+  </cvsmodule>
 
-  <tarball id="font-bh-100dpi" version="0.99.0">
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/adobe-utopia-type1">
     <dependencies>
-	<dep package="font/util"/>
+      <dep package="font/util"/>
     </dependencies>
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bh-100dpi-0.99.0.tar.bz2" size="633564" md5sum="298fb3cb5ea0e9aa2788bfff93d91ed0"/>
-  </tarball>
+  </cvsmodule>
 
-  <tarball id="font-bh-lucidatypewriter-75dpi" version="0.99.0">
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/alias">
     <dependencies>
-	<dep package="font/util"/>
+      <dep package="font/util"/>
     </dependencies>
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bh-lucidatypewriter-75dpi-0.99.0.tar.bz2" size="147513" md5sum="4e6132f4fa8e692dc9f6b12754babee5"/>
-  </tarball>
+  </cvsmodule>
 
-  <tarball id="font-bh-lucidatypewriter-100dpi" version="0.99.0">
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/arabic-misc">
     <dependencies>
-	<dep package="font/util"/>
+      <dep package="font/util"/>
     </dependencies>
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bh-lucidatypewriter-100dpi-0.99.0.tar.bz2" size="179205" md5sum="10bd6d6371c32ed93493750f3666c333"/>
-  </tarball>
+  </cvsmodule>
 
-  <tarball id="font-bh-ttf" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bh-ttf-0.99.0.tar.bz2" size="386316" md5sum="ab5fe2f25544d820897b61b4b73efa9a"/>
-  </tarball>
-
-  <tarball id="font-bh-type1" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bh-type1-0.99.0.tar.bz2" size="572673" md5sum="be1242ee102d2b61ab802c16bcd68c92"/>
-  </tarball>
-
-  <tarball id="font-bitstream-75dpi" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bitstream-75dpi-0.99.0.tar.bz2" size="103316" md5sum="7088317a724555929b9ca4ca7e50a1f1"/>
-  </tarball>
-
-  <tarball id="font-bitstream-100dpi" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bitstream-100dpi-0.99.0.tar.bz2" size="127681" md5sum="d5f1ac2764b3bc7e4fdd7ef6c3078af2"/>
-  </tarball>
-
-  <tarball id="font-bitstream-type1" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bitstream-type1-0.99.0.tar.bz2" size="351049" md5sum="04a9e7c622fd2b13d1a723c0ca0aee86"/>
-  </tarball>
-
-  <tarball id="font-cronyx-cyrillic" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-cronyx-cyrillic-0.99.0.tar.bz2" size="180109" md5sum="c046249bcc47d2096dd4f4a379f8949a"/>
-  </tarball>
-
-  <tarball id="font-cursor-misc" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-cursor-misc-0.99.0.tar.bz2" size="41986" md5sum="2dbcd395fc9f3ecd5791913b66c49f5d"/>
-  </tarball>
-
-  <tarball id="font-daewoo-misc" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-daewoo-misc-0.99.0.tar.bz2" size="673499" md5sum="5980c9f827a3484044c18d1f526d1bd4"/>
-  </tarball>
-
-  <tarball id="font-dec-misc" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-dec-misc-0.99.0.tar.bz2" size="40072" md5sum="b59e43dcbf887678e59a8038c3308525"/>
-  </tarball>
-
-  <tarball id="font-ibm-type1" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-ibm-type1-0.99.0.tar.bz2" size="314887" md5sum="c8232bd729fde5a3245e249acbfba444"/>
-  </tarball>
-
-  <tarball id="font-isas-misc" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-isas-misc-0.99.0.tar.bz2" size="777141" md5sum="bc69325804cada5a03f908486c2ac812"/>
-  </tarball>
-
-  <tarball id="font-jis-misc" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-jis-misc-0.99.0.tar.bz2" size="568798" md5sum="f5ccaa0cf3f9958bf6eeee7e0e32665b"/>
-  </tarball>
-
-  <tarball id="font-micro-misc" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-micro-misc-0.99.0.tar.bz2" size="38236" md5sum="2c685fff8b2e694ac164d48743fa00fb"/>
-  </tarball>
-
-  <tarball id="font-misc-cyrillic" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-misc-cyrillic-0.99.0.tar.bz2" size="64830" md5sum="2a956bd0f7c456a75eebf2b406721ea2"/>
-  </tarball>
-
-  <tarball id="font-misc-misc" version="0.99.0">
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bh-100dpi">
     <dependencies>
-	<dep package="font/util"/>
+      <dep package="font/util"/>
     </dependencies>
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-misc-misc-0.99.0.tar.bz2" size="1816043" md5sum="40c631945183f130d3f8fd9012c6126e"/>
-  </tarball>
+  </cvsmodule>
 
-  <tarball id="font-mutt-misc" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-mutt-misc-0.99.0.tar.bz2" size="200415" md5sum="721dd9eb39f5ecce4c4e179db3466ff1"/>
-  </tarball>
-
-  <tarball id="font-schumacher-misc" version="0.99.0">
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bh-75dpi">
     <dependencies>
-	<dep package="font/util"/>
+      <dep package="font/util"/>
     </dependencies>
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-schumacher-misc-0.99.0.tar.bz2" size="73991" md5sum="de86cb21f9f977347687087420dde958"/>
-  </tarball>
+  </cvsmodule>
 
-  <tarball id="font-screen-cyrillic" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-screen-cyrillic-0.99.0.tar.bz2" size="42254" md5sum="8b50c5570076d96c15911a4f8268ca7d"/>
-  </tarball>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bh-lucidatypewriter-100dpi">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
 
-  <tarball id="font-sony-misc" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-sony-misc-0.99.0.tar.bz2" size="47925" md5sum="3c3b9121809bc3fc1b6325f9018b48fb"/>
-  </tarball>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bh-lucidatypewriter-75dpi">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
 
-  <tarball id="font-sun-misc" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-sun-misc-0.99.0.tar.bz2" size="55809" md5sum="618a631a9406a1f7014b60234892f091"/>
-  </tarball>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bh-ttf">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
 
-  <tarball id="font-util" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-util-0.99.0.tar.bz2" size="70949" md5sum="fecdf7a03dac02b8b103492f55537b32"/>
-  </tarball>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bh-type1">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
 
-  <tarball id="font-winitzki-cyrillic" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-winitzki-cyrillic-0.99.0.tar.bz2" size="40443" md5sum="1f074ba59affffc7d10b5bb53fd697f5"/>
-  </tarball>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bitstream-100dpi">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
 
-  <tarball id="font-xfree86-type1" version="0.99.0">
-    <source href="http://xorg.freedesktop.org/X11R7.0-RC0/font/font-xfree86-type1-0.99.0.tar.bz2" size="65474" md5sum="a610c452f2df698895d40532a9431137"/>
-  </tarball>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bitstream-75dpi">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
 
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bitstream-speedo">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bitstream-type1">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/cronyx-cyrillic">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/cursor-misc">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/CVS">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/daewoo-misc">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/dec-misc">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/encodings">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/ibm-type1">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/isas-misc">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/jis-misc">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/micro-misc">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/misc-cyrillic">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/misc-ethiopic">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/misc-meltho">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/misc-misc">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/mutt-misc">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/schumacher-misc">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/screen-cyrillic">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/sony-misc">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/sun-misc">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/util">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/winitzki-cyrillic">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/xfree86-type1">
+    <dependencies>
+      <dep package="font/util"/>
+    </dependencies>
+  </cvsmodule>
 
   <metamodule id="xorg-fonts">
     <dependencies>
-      <dep package="encodings"/>
-      <dep package="font-adobe-75dpi"/>
-      <dep package="font-adobe-100dpi"/>
-      <dep package="font-adobe-utopia-75dpi"/>
-      <dep package="font-adobe-utopia-100dpi"/>
-      <dep package="font-adobe-utopia-type1"/>
-      <dep package="font-alias"/>
-      <dep package="font-arabic-misc"/>
-      <dep package="font-bh-75dpi"/>
-      <dep package="font-bh-100dpi"/>
-      <dep package="font-bh-lucidatypewriter-75dpi"/>
-      <dep package="font-bh-lucidatypewriter-100dpi"/>
-      <dep package="font-bh-ttf"/>
-      <dep package="font-bh-type1"/>
-      <dep package="font-bitstream-75dpi"/>
-      <dep package="font-bitstream-100dpi"/>
-      <dep package="font-bitstream-type1"/>
-      <dep package="font-cronyx-cyrillic"/>
-      <dep package="font-cursor-misc"/>
-      <dep package="font-daewoo-misc"/>
-      <dep package="font-dec-misc"/>
-      <dep package="font-ibm-type1"/>
-      <dep package="font-isas-misc"/>
-      <dep package="font-jis-misc"/>
-      <dep package="font-micro-misc"/>
-      <dep package="font-misc-cyrillic"/>
-      <dep package="font-misc-misc"/>
-      <dep package="font-mutt-misc"/>
-      <dep package="font-schumacher-misc"/>
-      <dep package="font-screen-cyrillic"/>
-      <dep package="font-sony-misc"/>
-      <dep package="font-sun-misc"/>
-      <dep package="font-util"/>
-      <dep package="font-winitzki-cyrillic"/>
-      <dep package="font-xfree86-type1"/>
+      <dep package="font/encodings"/>
+      <dep package="font/adobe-75dpi"/>
+      <dep package="font/adobe-100dpi"/>
+      <dep package="font/adobe-utopia-75dpi"/>
+      <dep package="font/adobe-utopia-100dpi"/>
+      <dep package="font/adobe-utopia-type1"/>
+      <dep package="font/alias"/>      <dep package="font/arabic-misc"/>
+      <dep package="font/bh-75dpi"/>
+      <dep package="font/bh-100dpi"/>
+      <dep package="font/bh-lucidatypewriter-75dpi"/>
+      <dep package="font/bh-lucidatypewriter-100dpi"/>
+      <dep package="font/bh-ttf"/>
+      <dep package="font/bh-type1"/>
+      <dep package="font/bitstream-75dpi"/>
+      <dep package="font/bitstream-100dpi"/>
+      <dep package="font/bitstream-type1"/>
+      <dep package="font/cronyx-cyrillic"/>
+      <dep package="font/cursor-misc"/>
+      <dep package="font/daewoo-misc"/>
+      <dep package="font/dec-misc"/>
+      <dep package="font/ibm-type1"/>
+      <dep package="font/isas-misc"/>
+      <dep package="font/jis-misc"/>
+      <dep package="font/micro-misc"/>
+      <dep package="font/misc-cyrillic"/>
+      <dep package="font/misc-misc"/>
+      <dep package="font/mutt-misc"/>
     </dependencies>
   </metamodule>
 
@@ -1069,7 +1131,7 @@
   <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xwud"/>
 
   <metamodule id="xorg-apps">
-     <dependencies>
+    <dependencies>
       <dep package="app/appres"/>
       <dep package="app/bdftopcf"/>
       <dep package="app/beforelight"/>
