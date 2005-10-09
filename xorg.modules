@@ -1105,8 +1105,19 @@
   <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xrandr"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xrdb"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xrefresh"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xrx"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xset"/>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xrx">
+    <dependencies>
+      <dep package="lib/Xext"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xset">
+    <dependencies>
+      <dep package="lib/Xext"/>
+    </dependencies>
+  </cvsmodule>
+
   <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xsetmode"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xsetpointer"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xsetroot"/>
