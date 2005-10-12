@@ -3177,7 +3177,7 @@ symlink_lib_xxf86dga() {
 
     dst_dir lib/Xxf86dga/man
 
-    action	XDGA.man		XDGA.3
+    action	XDGA.man
 }
 
 symlink_lib_xxf86misc() {
