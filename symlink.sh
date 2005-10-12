@@ -3188,7 +3188,7 @@ symlink_lib_xxf86misc() {
 
     dst_dir lib/Xxf86misc/man
 
-    action	XF86Misc.man		XF86Misc.3
+    action	XF86Misc.man
 }
 
 symlink_lib_xxf86vm() {
