@@ -590,7 +590,7 @@ symlink_lib_xau() {
     src_dir doc/man/Xau
     dst_dir lib/Xau
 
-    action	Xau.man		Xau.3
+    action	Xau.man
 }
 
 symlink_lib_xtrans() {
