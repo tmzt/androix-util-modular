@@ -3165,7 +3165,7 @@ symlink_lib_xss()
 
     dst_dir lib/XScrnSaver/man
 
-    action	Xss.man			Xss.3
+    action	Xss.man
 }
 
 symlink_lib_xxf86dga() {
