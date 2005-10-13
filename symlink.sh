@@ -3225,26 +3225,26 @@ symlink_lib_xv() {
     src_dir doc/man/Xv
     dst_dir lib/Xv/man
 
-    action	XvFreeAdaptorInfo.man	XvFreeAdaptorInfo.3
-    action	XvFreeEncodingInfo.man	XvFreeEncodingInfo.3
-    action	XvGetPortAttribute.man	XvGetPortAttribute.3
-    action	XvGetStill.man		XvGetStill.3
-    action	XvGetVideo.man		XvGetVideo.3
-    action	XvGrabPort.man		XvGrabPort.3
-    action	Xv.man			Xv.3
-    action	XvPortNotify.man	XvPortNotify.3
-    action	XvPutStill.man		XvPutStill.3
-    action	XvPutVideo.man		XvPutVideo.3
-    action	XvQueryAdaptors.man	XvQueryAdaptors.3
-    action	XvQueryBestSize.man	XvQueryBestSize.3
-    action	XvQueryEncodings.man	XvQueryEncodings.3
-    action	XvQueryExtension.man	XvQueryExtension.3
-    action	XvSelectPortNotify.man	XvSelectPortNotify.3
-    action	XvSelectVideoNotify.man	XvSelectVideoNotify.3
-    action	XvSetPortAttribute.man	XvSetPortAttribute.3
-    action	XvStopVideo.man		XvStopVideo.3
-    action	XvUngrabPort.man	XvUngrabPort.3
-    action	XvVideoNotify.man	XvVideoNotify.3
+    action	XvFreeAdaptorInfo.man
+    action	XvFreeEncodingInfo.man
+    action	XvGetPortAttribute.man
+    action	XvGetStill.man		
+    action	XvGetVideo.man		
+    action	XvGrabPort.man		
+    action	Xv.man			
+    action	XvPortNotify.man	
+    action	XvPutStill.man		
+    action	XvPutVideo.man		
+    action	XvQueryAdaptors.man	
+    action	XvQueryBestSize.man	
+    action	XvQueryEncodings.man	
+    action	XvQueryExtension.man	
+    action	XvSelectPortNotify.man	
+    action	XvSelectVideoNotify.man	
+    action	XvSetPortAttribute.man	
+    action	XvStopVideo.man		
+    action	XvUngrabPort.man	
+    action	XvVideoNotify.man	
 }
 
 symlink_lib_xvmc() {
