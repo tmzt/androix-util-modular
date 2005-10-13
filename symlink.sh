@@ -3060,7 +3060,7 @@ symlink_lib_randr()
 
     dst_dir lib/Xrandr/man
 
-    action	Xrandr.man		Xrandr.3
+    action	Xrandr.man
 }
 
 symlink_lib_windowswm() {
