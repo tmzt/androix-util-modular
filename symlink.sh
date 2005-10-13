@@ -3547,7 +3547,7 @@ symlink_app_beforelight() {
     src_dir programs/beforelight
     dst_dir app/beforelight
 
-    action	B4light.ad
+    action	B4light.ad	Beforelight.ad
 
     action	b4light.c
 
@@ -3601,7 +3601,7 @@ symlink_app_editres() {
     src_dir programs/editres
     dst_dir app/editres
 
-    action	Edit-col.ad
+    action	Edit-col.ad Editres-color.ad
     action	Editres.ad
 
     action	actions.c
@@ -3779,7 +3779,7 @@ symlink_app_oclock() {
     src_dir programs/oclock
     dst_dir app/oclock
 
-    action	Clock-col.ad
+    action	Clock-col.ad Clock-color.ad
 
     action	Clock.c
     action	oclock.c
@@ -3962,7 +3962,7 @@ symlink_app_xcalc() {
     dst_dir app/xcalc
 
     action	XCalc.ad
-    action	XCalc-col.ad
+    action	XCalc-col.ad XCalc-color.ad
 
     action	actions.c
     action	math.c
@@ -3993,7 +3993,7 @@ symlink_app_xclock() {
     src_dir programs/xclock
     dst_dir app/xclock
 
-    action	XClk-col.ad
+    action	XClk-col.ad XClock-color.ad
     action	XClock.ad
 
     action	Clock.c
@@ -4410,7 +4410,7 @@ symlink_app_xlogo() {
     dst_dir app/xlogo
 
     action	XLogo.ad
-    action	XLogo-co.ad
+    action	XLogo-co.ad XLogo-color.ad
 
     action	Logo.c
     action	print.c
