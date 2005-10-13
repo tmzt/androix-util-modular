@@ -3199,7 +3199,7 @@ symlink_lib_xxf86vm() {
 
     dst_dir lib/Xxf86vm/man
 
-    action	XF86VM.man		XF86VM.3
+    action	XF86VM.man
 }
 
 symlink_lib_xtst() {
