@@ -2398,40 +2398,40 @@ symlink_lib_xp() {
     src_dir doc/man/Xp
     dst_dir lib/Xp/man
 
-    action	libXp.man			libXp.3
-    action	XpCancelDoc.man			XpCancelDoc.3
-    action	XpCancelJob.man			XpCancelJob.3
-    action	XpCancelPage.man		XpCancelPage.3
-    action	XpCreateContext.man		XpCreateContext.3
-    action	XpDestroyContext.man		XpDestroyContext.3
-    action	XpEndDoc.man			XpEndDoc.3
-    action	XpEndJob.man			XpEndJob.3
-    action	XpEndPage.man			XpEndPage.3
-    action	XpFreePrinterList.man		XpFreePrinterList.3
-    action	XpGetAttributes.man		XpGetAttributes.3
-    action	XpGetContext.man		XpGetContext.3
-    action	XpGetDocumentData.man		XpGetDocumentData.3
-    action	XpGetImageResolution.man	XpGetImageResolution.3
-    action	XpGetLocaleHinter.man		XpGetLocaleHinter.3
-    action	XpGetOneAttribute.man		XpGetOneAttribute.3
-    action	XpGetPageDimensions.man		XpGetPageDimensions.3
-    action	XpGetPdmStartParams.man		XpGetPdmStartParams.3
-    action	XpGetPrinterList.man		XpGetPrinterList.3
-    action	XpGetScreenOfContext.man	XpGetScreenOfContext.3
-    action	XpInputSelected.man		XpInputSelected.3
-    action	XpPutDocumentData.man		XpPutDocumentData.3
-    action	XpQueryExtension.man		XpQueryExtension.3
-    action	XpQueryScreens.man		XpQueryScreens.3
-    action	XpQueryVersion.man		XpQueryVersion.3
-    action	XpRehashPrinterList.man		XpRehashPrinterList.3
-    action	XpSelectInput.man		XpSelectInput.3
-    action	XpSetAttributes.man		XpSetAttributes.3
-    action	XpSetContext.man		XpSetContext.3
-    action	XpSetImageResolution.man	XpSetImageResolution.3
-    action	XpSetLocaleHinter.man		XpSetLocaleHinter.3
-    action	XpStartDoc.man			XpStartDoc.3
-    action	XpStartJob.man			XpStartJob.3
-    action	XpStartPage.man			XpStartPage.3
+    action	libXp.man
+    action	XpCancelDoc.man
+    action	XpCancelJob.man
+    action	XpCancelPage.man
+    action	XpCreateContext.man
+    action	XpDestroyContext.man
+    action	XpEndDoc.man
+    action	XpEndJob.man
+    action	XpEndPage.man
+    action	XpFreePrinterList.man
+    action	XpGetAttributes.man
+    action	XpGetContext.man
+    action	XpGetDocumentData.man
+    action	XpGetImageResolution.man
+    action	XpGetLocaleHinter.man
+    action	XpGetOneAttribute.man
+    action	XpGetPageDimensions.man
+    action	XpGetPdmStartParams.man
+    action	XpGetPrinterList.man
+    action	XpGetScreenOfContext.man
+    action	XpInputSelected.man
+    action	XpPutDocumentData.man
+    action	XpQueryExtension.man
+    action	XpQueryScreens.man
+    action	XpQueryVersion.man
+    action	XpRehashPrinterList.man
+    action	XpSelectInput.man
+    action	XpSetAttributes.man
+    action	XpSetContext.man
+    action	XpSetImageResolution.man
+    action	XpSetLocaleHinter.man
+    action	XpStartDoc.man
+    action	XpStartJob.man
+    action	XpStartPage.man
 }
 
 symlink_lib_xpm() {
