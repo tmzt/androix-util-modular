@@ -7635,7 +7635,6 @@ symlink_xserver_hw_xfree86_ossupport_linux() {
     src_dir programs/Xserver/hw/xfree86/os-support/linux
     dst_dir xserver/xorg/hw/xfree86/os-support/linux
 
-    action      agpgart.h
     action      lnx.h
     action      lnxResource.c
     action      lnx_KbdMap.c
