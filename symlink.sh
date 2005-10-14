@@ -7560,16 +7560,6 @@ symlink_xserver_hw_xfree86_ossupport_bsd_libusb() {
     action	usb_hid_usages
 }
 
-symlink_xserver_hw_xfree86_ossupport_bsdi() {
-    src_dir programs/Xserver/hw/xfree86/os-support/bsdi
-    dst_dir xserver/xorg/hw/xfree86/os-support/bsdi
-
-    action      bsdi_init.c
-    action      bsdi_io.c
-    action      bsdi_mouse.c
-    action      bsdi_video.c
-}
-
 symlink_xserver_hw_xfree86_ossupport_bus() {
     src_dir programs/Xserver/hw/xfree86/os-support/bus
     dst_dir xserver/xorg/hw/xfree86/os-support/bus
@@ -7700,73 +7690,6 @@ symlink_xserver_hw_xfree86_ossupport_misc() {
     action	PortIO.S
     action	SlowBcopy.S
     
-}
-
-symlink_xserver_hw_xfree86_ossupport_nto() {
-    src_dir programs/Xserver/hw/xfree86/os-support/nto
-    dst_dir xserver/xorg/hw/xfree86/os-support/nto
-
-    action      nto_init.c
-    action      nto_io.c
-    action      nto_ioperm.c
-    action      nto_kbdEv.c
-    action      nto_mouse.c
-    action      nto_video.c
-    action	README
-}
-
-symlink_xserver_hw_xfree86_ossupport_os2() {
-    src_dir programs/Xserver/hw/xfree86/os-support/os2
-    dst_dir xserver/xorg/hw/xfree86/os-support/os2
-
-    action      os2_VTsw.c
-    action      os2_bios.c
-    action      os2_diag.c
-    action      os2_init.c
-    action      os2_io.c
-    action      os2_ioperm.c
-    action      os2_kbd.c
-    action      os2_kbdEv.c
-    action      os2_mouse.c
-    action      os2_select.c
-    action      os2_select.h
-    action      os2_serial.c
-    action      os2_stubs.c
-    action      os2_video.c
-    action	README
-}
-
-symlink_xserver_hw_xfree86_ossupport_os2_int10() {
-    src_dir programs/Xserver/hw/xfree86/os-support/os2/int10
-    dst_dir xserver/xorg/hw/xfree86/os-support/os2/int10
-
-    action      os2.c
-}
-
-symlink_xserver_hw_xfree86_ossupport_pmax() {
-    src_dir programs/Xserver/hw/xfree86/os-support/pmax
-    dst_dir xserver/xorg/hw/xfree86/os-support/pmax
-
-    action      pmax_devs.c
-    action      pmax_init.c
-    action      pmax_map.c
-    action      pmax_mouse.c
-    action      pmax_pci.c
-    action      pmax_ppc.c
-}
-
-symlink_xserver_hw_xfree86_ossupport_qnx4() {
-    src_dir programs/Xserver/hw/xfree86/os-support/qnx4
-    dst_dir xserver/xorg/hw/xfree86/os-support/qnx4
-
-    action      qnx_VTsw.c
-    action      qnx_init.c
-    action      qnx_io.c
-    action      qnx_kbd.c
-    action      qnx_mouse.c
-    action      qnx_select.c
-    action      qnx_utils.c
-    action      qnx_video.c
 }
 
 symlink_xserver_hw_xfree86_ossupport_sco() {
@@ -9165,7 +9088,6 @@ symlink_xserver() {
     symlink_xserver_hw_xfree86_ossupport
     symlink_xserver_hw_xfree86_ossupport_bsd
     symlink_xserver_hw_xfree86_ossupport_bsd_libusb
-    symlink_xserver_hw_xfree86_ossupport_bsdi
     symlink_xserver_hw_xfree86_ossupport_bus
     symlink_xserver_hw_xfree86_ossupport_dgux
     symlink_xserver_hw_xfree86_ossupport_drm
@@ -9175,11 +9097,6 @@ symlink_xserver() {
     symlink_xserver_hw_xfree86_ossupport_linux_int10_vm86
     symlink_xserver_hw_xfree86_ossupport_lynxos
     symlink_xserver_hw_xfree86_ossupport_misc
-    symlink_xserver_hw_xfree86_ossupport_nto
-    symlink_xserver_hw_xfree86_ossupport_os2
-    symlink_xserver_hw_xfree86_ossupport_os2_int10
-    symlink_xserver_hw_xfree86_ossupport_pmax
-    symlink_xserver_hw_xfree86_ossupport_qnx4
     symlink_xserver_hw_xfree86_ossupport_sco
     symlink_xserver_hw_xfree86_ossupport_shared
     symlink_xserver_hw_xfree86_ossupport_sunos
@@ -14471,6 +14388,14 @@ symlink_non_linked_files()
     action	xf86config.cmd
     src_dir programs/Xserver/hw/xfree86/loader
     action      os2funcs.c
+    exclude_directory programs/Xserver/hw/xfree86/os-support/os2
+    exclude_directory programs/Xserver/hw/xfree86/os-support/os2/int10
+
+    # Exclude unsupported os-support directories.
+    exclude_directory programs/Xserver/hw/xfree86/os-support/nto
+    exclude_directory programs/Xserver/hw/xfree86/os-support/pmax
+    exclude_directory programs/Xserver/hw/xfree86/os-support/qnx4
+    exclude_directory programs/Xserver/hw/xfree86/os-support/bsdi
 
     # This file is replaced by httptransport.c in the modular tree
     src_dir programs/xrx/helper
