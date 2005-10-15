@@ -7586,19 +7586,6 @@ symlink_xserver_hw_xfree86_ossupport_bus() {
     action      zx1PCI.h
 }
 
-symlink_xserver_hw_xfree86_ossupport_dgux() {
-    src_dir programs/Xserver/hw/xfree86/os-support/dgux
-    dst_dir xserver/xorg/hw/xfree86/os-support/dgux
-
-    action      bios_DGmmap.c
-    action      dgux_init.c
-    action      dgux_io.c
-    action      dgux_kbd.c
-    action      dgux_kbdEv.c
-    action      dgux_tty.c
-    action      dgux_video.c
-}
-
 symlink_xserver_hw_xfree86_ossupport_drm() {
     src_dir programs/Xserver/hw/xfree86/os-support/linux/drm
     dst_dir xserver/xorg/hw/xfree86/os-support/drm
@@ -7608,17 +7595,6 @@ symlink_xserver_hw_xfree86_ossupport_drm() {
     action      xf86drmHash.c
     action      xf86drmRandom.c
     action      xf86drmSL.c
-}
-
-symlink_xserver_hw_xfree86_ossupport_hurd() {
-    src_dir programs/Xserver/hw/xfree86/os-support/hurd
-    dst_dir xserver/xorg/hw/xfree86/os-support/hurd
-
-    action      bios_mmap.c
-    action      hurd_init.c
-    action      hurd_io.c
-    action      hurd_mouse.c
-    action      hurd_video.c
 }
 
 symlink_xserver_hw_xfree86_ossupport_linux() {
@@ -9089,9 +9065,7 @@ symlink_xserver() {
     symlink_xserver_hw_xfree86_ossupport_bsd
     symlink_xserver_hw_xfree86_ossupport_bsd_libusb
     symlink_xserver_hw_xfree86_ossupport_bus
-    symlink_xserver_hw_xfree86_ossupport_dgux
     symlink_xserver_hw_xfree86_ossupport_drm
-    symlink_xserver_hw_xfree86_ossupport_hurd
     symlink_xserver_hw_xfree86_ossupport_linux
     symlink_xserver_hw_xfree86_ossupport_linux_int10
     symlink_xserver_hw_xfree86_ossupport_linux_int10_vm86
@@ -14396,6 +14370,8 @@ symlink_non_linked_files()
     exclude_directory programs/Xserver/hw/xfree86/os-support/pmax
     exclude_directory programs/Xserver/hw/xfree86/os-support/qnx4
     exclude_directory programs/Xserver/hw/xfree86/os-support/bsdi
+    exclude_directory programs/Xserver/hw/xfree86/os-support/dgux
+    exclude_directory programs/Xserver/hw/xfree86/os-support/hurd
 
     # This file is replaced by httptransport.c in the modular tree
     src_dir programs/xrx/helper
