@@ -54,7 +54,7 @@ make -C $dir clean
 
 tarball=$dir/*.tar.bz2
 
-blacklist="config.log config.status autogen.sh$ Makefile.in$ Makefile$ config.h$ .libs/ .deps/ configure$ ^autom4te.cache.* CVS/.* .*/$ .cvsignore$ .*tar.bz2$ .*tar.gz$ .*\.o$ .*\.lo$ .*\.Plo$ .*\.la$ .*\.pc$ stamp-h1$ ^libtool$ .*~$"
+blacklist="config.log config.status autogen.sh$ Makefile.in$ Makefile$ config.h$ .libs/ .deps/ configure$ ^autom4te.cache.* CVS/.* .*/$ .cvsignore$ .*tar.bz2$ .*tar.gz$ .*\.o$ .*\.lo$ .*\.Plo$ .*\.la$ .*\.pc$ stamp-h.$ ^libtool$ .*~$"
 
 # handle grep escape madness
 escaped_blacklist=$(for f in $blacklist; do echo -n '\('$f'\)\|'; done)
