@@ -1,4 +1,8 @@
 <?xml version="1.0" standalone="no"?> <!--*- mode: nxml -*-->
+<!-- TODO: what to do about AppleWM and WindowsWM? -->
+<!-- TODO: what to do about doc/sgml-tools? -->
+<!-- TODO: util/cf has problems, commented out -->
+
 <!DOCTYPE moduleset SYSTEM "moduleset.dtd">
 <?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
 <moduleset>
@@ -16,7 +20,20 @@
      password="" />
 
   <cvsmodule cvsroot="xorg.freedesktop.org" module="util/macros"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="util/cf"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="util/imake">
+    <dependencies>
+	<!--      <dep package="util/cf"/> -->
+    </dependencies>
+  </cvsmodule>
 
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="util/xmkmf">
+    <dependencies>
+      <dep package="util/imake"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/AppleWM"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/BigReqs"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Composite"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Damage"/>
@@ -29,6 +46,7 @@
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Input"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/KB"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Print"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/PM"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Randr"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Record"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Render"/>
@@ -36,6 +54,7 @@
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/ScrnSaver"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Trap"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Video"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/WindowsWM"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XCMisc"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XExt"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XF86BigFont"/>
@@ -46,7 +65,6 @@
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XF86VidMode"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Xinerama"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/X11"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/PM"/>
 
   <metamodule id="xorg-protos">
     <dependencies>
@@ -782,7 +800,8 @@
       <dep package="font/adobe-utopia-75dpi"/>
       <dep package="font/adobe-utopia-100dpi"/>
       <dep package="font/adobe-utopia-type1"/>
-      <dep package="font/alias"/>      <dep package="font/arabic-misc"/>
+      <dep package="font/alias"/>      
+      <dep package="font/arabic-misc"/>
       <dep package="font/bh-75dpi"/>
       <dep package="font/bh-100dpi"/>
       <dep package="font/bh-lucidatypewriter-75dpi"/>
@@ -807,12 +826,25 @@
   </metamodule>
 
   <!-- data -->
-
   <cvsmodule cvsroot="xorg.freedesktop.org" module="data/bitmaps">
     <dependencies>
       <dep package="util/macros"/>
     </dependencies>
   </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="data/cursors">
+    <dependencies>
+      <dep package="app/xcursorgen"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="data/xkbdata">
+    <dependencies>
+      <dep package="app/xkbcomp"/>
+    </dependencies>
+  </cvsmodule>
+
+  <!-- apps -->
 
   <cvsmodule cvsroot="xorg.freedesktop.org" module="app/appres">
     <dependencies>
@@ -905,6 +937,8 @@
       <dep package="lib/fontenc"/>
     </dependencies>
   </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/mkcfm"/>
 
   <cvsmodule cvsroot="xorg.freedesktop.org" module="app/mkfontdir"/>
 
@@ -1143,6 +1177,7 @@
 
   <metamodule id="xorg-apps">
     <dependencies>
+      <dep package="util/xmkmf"/> <!-- For backwards compatibility sake -->
       <dep package="app/appres"/>
       <dep package="app/bdftopcf"/>
       <dep package="app/beforelight"/>
@@ -1156,6 +1191,7 @@
       <dep package="app/lbxproxy"/>
       <dep package="app/listres"/>
       <dep package="app/luit"/>
+      <dep package="app/mkcfm"/>
       <dep package="app/mkfontdir"/>
       <dep package="app/mkfontscale"/>
       <dep package="app/oclock"/>
@@ -1242,13 +1278,87 @@
     </dependencies>
   </metamodule>
 
+  <!-- input drivers -->
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-acecad">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-aiptek">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-calcomp">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-citron">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-digitaledge">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-dmc">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-dynapro">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-elo2300">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-elographics">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
   <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-evdev">
     <dependencies>
       <dep package="xserver/xorg"/>
     </dependencies>
   </cvsmodule>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-mouse">
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-fpit">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-hyperpen">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-jamstudio">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-joystick">
     <dependencies>
       <dep package="xserver/xorg"/>
     </dependencies>
@@ -1260,7 +1370,115 @@
     </dependencies>
   </cvsmodule>
 
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-magellan">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-magictouch">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-microtouch">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-mouse">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-mutouch">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-palmax">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-penmount">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-spaceorb">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-summa">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-tek4957">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-ur98">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-void">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-apm">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-ark">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
   <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-ati">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-chips">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-cirrus">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-cyrix">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-dummy">
     <dependencies>
       <dep package="xserver/xorg"/>
     </dependencies>
@@ -1272,7 +1490,62 @@
     </dependencies>
   </cvsmodule>
 
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-glide">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-glint">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-i128">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-i740">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-imstt">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
   <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-i810">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-mga">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-neomagic">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-newport">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-nsc">
     <dependencies>
       <dep package="xserver/xorg"/>
     </dependencies>
@@ -1284,7 +1557,151 @@
     </dependencies>
   </cvsmodule>
 
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-rendition">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-s3">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-s3virge">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-savage">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-siliconmotion">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-sis">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-sisusb">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-sunbw2">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-suncg14">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-suncg3">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-suncg6">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-sunffb">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-sunleo">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-suntcx">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-tdfx">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-tga">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-trident">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-tseng">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-v4l">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
   <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-vesa">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-vga">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-via">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-vmware">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-voodoo">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-wsfb">
     <dependencies>
       <dep package="xserver/xorg"/>
     </dependencies>
@@ -1292,16 +1709,93 @@
 
   <metamodule id="xorg-drivers">
     <dependencies>
+      <dep package="driver/xf86-input-acecad"/>
+      <dep package="driver/xf86-input-aiptek"/>
+      <dep package="driver/xf86-input-calcomp"/>
+      <dep package="driver/xf86-input-citron"/>
+      <dep package="driver/xf86-input-digitaledge"/>
+      <dep package="driver/xf86-input-dmc"/>
+      <dep package="driver/xf86-input-dynapro"/>
+      <dep package="driver/xf86-input-elo2300"/>
+      <dep package="driver/xf86-input-elographics"/>
       <dep package="driver/xf86-input-evdev"/>
-      <dep package="driver/xf86-input-mouse"/>
+      <dep package="driver/xf86-input-fpit"/>
+      <dep package="driver/xf86-input-hyperpen"/>
+      <dep package="driver/xf86-input-jamstudio"/>
+      <dep package="driver/xf86-input-joystick"/>
       <dep package="driver/xf86-input-keyboard"/>
+      <dep package="driver/xf86-input-magellan"/>
+      <dep package="driver/xf86-input-magictouch"/>
+      <dep package="driver/xf86-input-microtouch"/>
+      <dep package="driver/xf86-input-mouse"/>
+      <dep package="driver/xf86-input-mutouch"/>
+      <dep package="driver/xf86-input-palmax"/>
+      <dep package="driver/xf86-input-penmount"/>
+      <dep package="driver/xf86-input-spaceorb"/>
+      <dep package="driver/xf86-input-tek4957"/>
+      <dep package="driver/xf86-input-ur98"/>
+      <dep package="driver/xf86-input-void"/>
+      <dep package="driver/xf86-video-apm"/>
+      <dep package="driver/xf86-video-ark"/>
       <dep package="driver/xf86-video-ati"/>
+      <dep package="driver/xf86-video-chips"/>
+      <dep package="driver/xf86-video-cirrus"/>
+      <dep package="driver/xf86-video-cyrix"/>
+      <dep package="driver/xf86-video-dummy"/>
       <dep package="driver/xf86-video-fbdev"/>
+      <dep package="driver/xf86-video-glide"/>
+      <dep package="driver/xf86-video-glint"/>
+      <dep package="driver/xf86-video-i128"/>
+      <dep package="driver/xf86-video-i740"/>
       <dep package="driver/xf86-video-i810"/>
+      <dep package="driver/xf86-video-imstt"/>
+      <dep package="driver/xf86-video-mga"/>
+      <dep package="driver/xf86-video-neomagic"/>
+      <dep package="driver/xf86-video-newport"/>
+      <dep package="driver/xf86-video-nsc"/>
       <dep package="driver/xf86-video-nv"/>
+      <dep package="driver/xf86-video-rendition"/>
+      <dep package="driver/xf86-video-s3"/>
+      <dep package="driver/xf86-video-s3virge"/>
+      <dep package="driver/xf86-video-savage"/>
+      <dep package="driver/xf86-video-siliconmotion"/>
+      <dep package="driver/xf86-video-sis"/>
+      <dep package="driver/xf86-video-sisusb"/>
+      <dep package="driver/xf86-video-sunbw2"/>
+      <dep package="driver/xf86-video-suncg14"/>
+      <dep package="driver/xf86-video-suncg3"/>
+      <dep package="driver/xf86-video-suncg6"/>
+      <dep package="driver/xf86-video-sunffb"/>
+      <dep package="driver/xf86-video-sunleo"/>
+      <dep package="driver/xf86-video-suntcx"/>
+      <dep package="driver/xf86-video-tdfx"/>
+      <dep package="driver/xf86-video-tga"/>
+      <dep package="driver/xf86-video-trident"/>
+      <dep package="driver/xf86-video-tseng"/>
+      <dep package="driver/xf86-video-v4l"/>
       <dep package="driver/xf86-video-vesa"/>
+      <dep package="driver/xf86-video-vga"/>
+      <dep package="driver/xf86-video-via"/>
+      <dep package="driver/xf86-video-vmware"/>
+      <dep package="driver/xf86-video-voodoo"/>
+      <dep package="driver/xf86-video-wsfb"/>
     </dependencies>
   </metamodule>
+
+  <!-- This probably isn't sufficient, but it is a start -->
+
+  <metamodule id="xorg-sun-drivers">
+    <dependencies>
+      <dep package="driver/xf86-video-sunbw2"/>
+      <dep package="driver/xf86-video-suncg14"/>
+      <dep package="driver/xf86-video-suncg3"/>
+      <dep package="driver/xf86-video-suncg6"/>
+      <dep package="driver/xf86-video-sunffb"/>
+      <dep package="driver/xf86-video-sunleo"/>
+      <dep package="driver/xf86-video-suntcx"/>
+    </dependencies>
+  </metamodule>
+
 
   <!-- Bogosity of depending on libraries caused by Xnest.  Sigh -->
   <cvsmodule cvsroot="xorg.freedesktop.org" module="xserver/xorg">
