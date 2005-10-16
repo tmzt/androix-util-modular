@@ -9146,7 +9146,7 @@ symlink_driver_apm() {
 
     dst_dir driver/xf86-video-apm/man
 
-    action      apm.man     apm.4
+    action      apm.man
 }
 
 symlink_driver_ark() {
@@ -9329,9 +9329,9 @@ symlink_driver_ati() {
 
     dst_dir driver/xf86-video-ati/man
 
-    action      ati.man     ati.4
-    action      r128.man    r128.4
-    action      radeon.man  radeon.4
+    action      ati.man
+    action      r128.man
+    action      radeon.man
 }
 
 symlink_driver_chips() {
@@ -9354,7 +9354,7 @@ symlink_driver_chips() {
 
     dst_dir driver/xf86-video-chips/man
 
-    action      chips.man   chips.4
+    action      chips.man
 
     src_dir programs/Xserver/hw/xfree86/drivers/chips/util
     dst_dir driver/xf86-video-chips/util
@@ -9394,7 +9394,7 @@ symlink_driver_cirrus() {
 
     dst_dir driver/xf86-video-cirrus/man
 
-    action      cirrus.man  cirrus.4
+    action      cirrus.man
 }
 
 symlink_driver_cyrix() {
@@ -9416,7 +9416,7 @@ symlink_driver_cyrix() {
 
     dst_dir driver/xf86-video-cyrix/man
 
-    action      cyrix.man   cyrix.4
+    action      cyrix.man
 }
 
 symlink_driver_dummy() {
@@ -9440,7 +9440,7 @@ symlink_driver_fbdev() {
 
     dst_dir driver/xf86-video-fbdev/man
 
-    action      fbdev.man   fbdev.4
+    action      fbdev.man
 }
 
 symlink_driver_glide() {
@@ -9451,7 +9451,7 @@ symlink_driver_glide() {
 
     dst_dir driver/xf86-video-glide/man
 
-    action      glide.man   glide.4
+    action      glide.man
 }
 
 symlink_driver_glint() {
@@ -9493,7 +9493,7 @@ symlink_driver_glint() {
 
     dst_dir driver/xf86-video-glint/man
 
-    action      glint.man   glint.4
+    action      glint.man
 }
 
 symlink_driver_i128() {
@@ -9513,7 +9513,7 @@ symlink_driver_i128() {
 
     dst_dir driver/xf86-video-i128/man
 
-    action      i128.man    i128.4
+    action      i128.man
 }
 
 symlink_driver_i740() {
@@ -9534,7 +9534,7 @@ symlink_driver_i740() {
 
     dst_dir driver/xf86-video-i740/man
 
-    action      i740.man    i740.4
+    action      i740.man
 }
 
 symlink_driver_i810() {
@@ -9571,7 +9571,7 @@ symlink_driver_i810() {
 
     dst_dir driver/xf86-video-i810/man
 
-    action      i810.man    i810.4
+    action      i810.man
 
     src_dir lib/XvMC/hw/i810
     dst_dir driver/xf86-video-i810/src/xvmc
@@ -9591,7 +9591,7 @@ symlink_driver_imstt() {
 
     dst_dir driver/xf86-video-imstt/man
 
-    action      imstt.man   imstt.4
+    action      imstt.man
 }
 
 symlink_driver_mga() {
@@ -9648,7 +9648,7 @@ symlink_driver_mga() {
     src_dir programs/Xserver/hw/xfree86/drivers/mga
     dst_dir driver/xf86-video-mga/man
 
-    action      mga.man     mga.4
+    action      mga.man
 }
 
 symlink_driver_neomagic() {
@@ -9680,7 +9680,7 @@ symlink_driver_neomagic() {
 
     dst_dir driver/xf86-video-neomagic/man
 
-    action      neomagic.man    neomagic.4
+    action      neomagic.man
 }
 
 symlink_driver_newport() {
@@ -9703,7 +9703,7 @@ symlink_driver_newport() {
 
     dst_dir driver/xf86-video-newport/man
 
-    action      newport.man     newport.4
+    action      newport.man
 }
 
 symlink_driver_nsc() {
@@ -9735,7 +9735,7 @@ symlink_driver_nsc() {
 
     dst_dir driver/xf86-video-nsc/man
 
-    action      nsc.man     nsc.4
+    action      nsc.man
 
     src_dir programs/Xserver/hw/xfree86/drivers/nsc/gfx
     dst_dir driver/xf86-video-nsc/src/gfx
@@ -9846,7 +9846,7 @@ symlink_driver_nv() {
     action      riva_xaa.c
 
     dst_dir driver/xf86-video-nv/man
-    action      nv.man  nv.4
+    action      nv.man
 
     src_dir programs/Xserver/hw/xfree86/doc
     dst_dir driver/xf86-video-nv
@@ -9895,7 +9895,7 @@ symlink_driver_rendition() {
 
     dst_dir driver/xf86-video-rendition/man
 
-    action      rendition.man   rendition.4
+    action      rendition.man
 }
 
 symlink_driver_s3() {
@@ -9946,7 +9946,7 @@ symlink_driver_s3virge() {
 
     dst_dir driver/xf86-video-s3virge/man
 
-    action      s3virge.man     s3virge.4
+    action      s3virge.man
 }
 
 symlink_driver_savage() {
@@ -9978,7 +9978,7 @@ symlink_driver_savage() {
 
     dst_dir driver/xf86-video-savage/man
 
-    action      savage.man      savage.4
+    action      savage.man
 }
 
 symlink_driver_siliconmotion() {
@@ -10006,7 +10006,7 @@ symlink_driver_siliconmotion() {
 
     dst_dir driver/xf86-video-siliconmotion/man
 
-    action      siliconmotion.man   siliconmotion.4
+    action      siliconmotion.man
 }
 
 symlink_driver_sis() {
@@ -10059,7 +10059,7 @@ symlink_driver_sis() {
 
     dst_dir driver/xf86-video-sis/man
 
-    action      sis.man     sis.4
+    action      sis.man
 }
 
 symlink_driver_sisusb() {
@@ -10092,7 +10092,7 @@ symlink_driver_sisusb() {
 
     dst_dir driver/xf86-video-sisusb/man
 
-    action      sisusb.man      sisusb.4
+    action      sisusb.man
 }
 
 symlink_driver_sunbw2() {
@@ -10104,7 +10104,7 @@ symlink_driver_sunbw2() {
 
     dst_dir driver/xf86-video-sunbw2/man
 
-    action      sunbw2.man  sunbw2.4
+    action      sunbw2.man
 }
 
 symlink_driver_suncg14() {
@@ -10116,7 +10116,7 @@ symlink_driver_suncg14() {
 
     dst_dir driver/xf86-video-suncg14/man
 
-    action      suncg14.man     subcg14.4
+    action      suncg14.man
 }
 
 symlink_driver_suncg3() {
@@ -10128,7 +10128,7 @@ symlink_driver_suncg3() {
 
     dst_dir driver/xf86-video-suncg3/man
 
-    action      suncg3.man  subcg3.4
+    action      suncg3.man
 }
 
 symlink_driver_suncg6() {
@@ -10142,7 +10142,7 @@ symlink_driver_suncg6() {
 
     dst_dir driver/xf86-video-suncg6/man
 
-    action      suncg6.man  subcg6.4
+    action      suncg6.man
 }
 
 symlink_driver_sunffb() {
@@ -10194,7 +10194,7 @@ symlink_driver_sunffb() {
 
     dst_dir driver/xf86-video-sunffb/man
 
-    action      sunffb.man      sunffb.4
+    action      sunffb.man
 }
 
 symlink_driver_sunleo() {
@@ -10215,7 +10215,7 @@ symlink_driver_sunleo() {
 
     dst_dir driver/xf86-video-sunleo/man
 
-    action      sunleo.man  sunleo.4
+    action      sunleo.man
 }
 
 symlink_driver_suntcx() {
@@ -10229,7 +10229,7 @@ symlink_driver_suntcx() {
 
     dst_dir driver/xf86-video-suntcx/man
 
-    action      suntcx.man  suntcx.4
+    action      suntcx.man
 }
 
 symlink_driver_tdfx() {
@@ -10253,7 +10253,7 @@ symlink_driver_tdfx() {
 
     dst_dir driver/xf86-video-tdfx/man
 
-    action      tdfx.man    tdfx.4
+    action      tdfx.man
 }
 
 symlink_driver_tga() {
@@ -10300,7 +10300,7 @@ symlink_driver_trident() {
 
     dst_dir driver/xf86-video-trident/man
 
-    action      trident.man     trident.4
+    action      trident.man
 }
 
 symlink_driver_tseng() {
@@ -10328,7 +10328,7 @@ symlink_driver_tseng() {
 
     dst_dir driver/xf86-video-tseng/man
 
-    action      tseng.man   tseng.4
+    action      tseng.man
 }
 
 symlink_driver_v4l() {
@@ -10344,7 +10344,7 @@ symlink_driver_v4l() {
 
     dst_dir driver/xf86-video-v4l/man
 
-    action      v4l.man     v4l.4
+    action      v4l.man
 }
 
 symlink_driver_vesa() {
@@ -10356,7 +10356,7 @@ symlink_driver_vesa() {
 
     dst_dir driver/xf86-video-vesa/man
 
-    action      vesa.man    vesa.4
+    action      vesa.man
 }
 
 symlink_driver_vga() {
@@ -10367,7 +10367,7 @@ symlink_driver_vga() {
 
     dst_dir driver/xf86-video-vga/man
 
-    action      vga.man     vga.4
+    action      vga.man
 }
 
 symlink_driver_via() {
@@ -10411,7 +10411,7 @@ symlink_driver_via() {
 
     dst_dir driver/xf86-video-via/man
 
-    action      via.man     via.4
+    action      via.man
 
     src_dir lib/XvMC/hw/via
     dst_dir driver/xf86-video-via/src/xvmc
@@ -10463,7 +10463,7 @@ symlink_driver_vmware() {
 
     dst_dir driver/xf86-video-vmware/man
 
-    action      vmware.man  vmware.4
+    action      vmware.man
 }
 
 symlink_driver_voodoo() {
@@ -10483,7 +10483,7 @@ symlink_driver_voodoo() {
 
     dst_dir driver/xf86-video-voodoo/man
 
-    action      voodoo.man  voodoo.4
+    action      voodoo.man
 }
 
 symlink_driver_wsfb() {
@@ -10494,7 +10494,7 @@ symlink_driver_wsfb() {
 
     dst_dir driver/xf86-video-wsfb/man
 
-    action      wsfb.man    wsfb.4
+    action      wsfb.man
 }
 
 symlink_driver_acecad() {
@@ -10506,7 +10506,7 @@ symlink_driver_acecad() {
 
     dst_dir driver/xf86-input-acecad/man
 
-    action      acecad.man  acecad.4
+    action      acecad.man
 }
 
 symlink_driver_aiptek() {
@@ -10518,7 +10518,7 @@ symlink_driver_aiptek() {
 
     dst_dir driver/xf86-input-aiptek/man
 
-    action      aiptek.man  aiptek.4
+    action      aiptek.man
 }
 
 symlink_driver_calcomp() {
@@ -10530,7 +10530,7 @@ symlink_driver_calcomp() {
 
     dst_dir driver/xf86-input-calcomp/man
 
-    action      calcomp.man     calcomp.4
+    action      calcomp.man
 }
 
 symlink_driver_citron() {
@@ -10542,7 +10542,7 @@ symlink_driver_citron() {
 
     dst_dir driver/xf86-input-citron/man
 
-    action      citron.man  citron.4
+    action      citron.man
 }
 
 symlink_driver_digitaledge() {
@@ -10564,7 +10564,7 @@ symlink_driver_dmc() {
 
     dst_dir driver/xf86-input-dmc/man
 
-    action      dmc.man     dmc.4
+    action      dmc.man
 }
 
 symlink_driver_dynapro() {
@@ -10576,7 +10576,7 @@ symlink_driver_dynapro() {
 
     dst_dir driver/xf86-input-dynapro/man
 
-    action      dynapro.man     dynapro.4
+    action      dynapro.man
 }
 
 symlink_driver_elo2300() {
@@ -10598,7 +10598,7 @@ symlink_driver_elographics() {
 
     dst_dir driver/xf86-input-elographics/man
 
-    action      elographics.man     elographics.4
+    action      elographics.man
 }
 
 symlink_driver_evdev() {
@@ -10621,7 +10621,7 @@ symlink_driver_fpit() {
     action      xf86Fpit.c
 
     dst_dir driver/xf86-input-fpit/man
-    action      fpit.man    fpit.4
+    action      fpit.man
 }
 
 symlink_driver_hyperpen() {
@@ -10642,7 +10642,7 @@ symlink_driver_jamstudio() {
 
     dst_dir driver/xf86-input-jamstudio/man
 
-    action      js_x.man    js_x.4
+    action      js_x.man
 }
 
 symlink_driver_joystick() {
@@ -10663,8 +10663,8 @@ symlink_driver_keyboard() {
 
     dst_dir driver/xf86-input-keyboard/man
 
-    action      kbd.man         kbd.4
-    action      keyboard.man    keyboard.4
+    action      kbd.man
+    action      keyboard.man
 }
 
 symlink_driver_magellan() {
@@ -10686,7 +10686,7 @@ symlink_driver_magictouch() {
 
     dst_dir driver/xf86-input-magictouch/man
 
-    action      magictouch.man  magictouch.4
+    action      magictouch.man
 }
 
 symlink_driver_microtouch() {
@@ -10698,7 +10698,7 @@ symlink_driver_microtouch() {
 
     dst_dir driver/xf86-input-microtouch/man
 
-    action      microtouch.man  microtouch.4
+    action      microtouch.man
 }
 
 symlink_driver_mouse() {
@@ -10712,7 +10712,7 @@ symlink_driver_mouse() {
 
     dst_dir driver/xf86-input-mouse/man
 
-    action	mouse.man   mouse.4
+    action	mouse.man
 }
 
 symlink_driver_mutouch() {
@@ -10723,7 +10723,7 @@ symlink_driver_mutouch() {
 
     dst_dir driver/xf86-input-mutouch/man
 
-    action      mutouch.man     mutouch.4
+    action      mutouch.man
 }
 
 symlink_driver_palmax() {
@@ -10734,7 +10734,7 @@ symlink_driver_palmax() {
 
     dst_dir driver/xf86-input-palmax/man
 
-    action      palmax.man  palmax.4
+    action      palmax.man
 }
 
 symlink_driver_penmount() {
@@ -10746,7 +10746,7 @@ symlink_driver_penmount() {
 
     dst_dir driver/xf86-input-penmount/man
 
-    action      penmount.man    penmount.4
+    action      penmount.man
 }
 
 symlink_driver_spaceorb() {
@@ -10778,7 +10778,7 @@ symlink_driver_tek4957() {
 
     dst_dir driver/xf86-input-tek4957/man
 
-    action      tek4957.man     tek4957.4
+    action      tek4957.man
 }
 
 symlink_driver_ur98() {
@@ -10789,7 +10789,7 @@ symlink_driver_ur98() {
 
     dst_dir driver/xf86-input-ur98/man
 
-    action      ur98.man    ur98.4
+    action      ur98.man
 }
 
 symlink_driver_void() {
@@ -10800,7 +10800,7 @@ symlink_driver_void() {
 
     dst_dir driver/xf86-input-void/man
 
-    action      void.man    void.4
+    action      void.man
 }
 
 symlink_driver() {
