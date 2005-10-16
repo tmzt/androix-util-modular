@@ -5235,8 +5235,7 @@ symlink_app_xedit() {
 
     action	Xedit-sample
 
-    dst_dir app/xedit/man
-    action      xedit.man xedit.1
+    action      xedit.man
     
     src_dir programs/xedit/lisp
     dst_dir app/xedit/lisp
