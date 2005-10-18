@@ -356,6 +356,10 @@ symlink_proto_xf86dri() {
 
     action xf86dri.h
     action xf86dristr.h
+
+    src_dir extras/Mesa/include/GL/internal
+
+    action dri_interface.h
 }
 
 symlink_proto_xf86misc() {
