@@ -5756,11 +5756,13 @@ symlink_xserver_XTrap() {
     src_dir programs/Xserver/XTrap
     dst_dir xserver/xorg/XTrap
 
-    action      xf86XTrapModule.c
     action      xtrapddmi.c
     action      xtrapdi.c
     action      xtrapdiswp.c
     action      xtrapditbl.c
+    
+    dst_dir xserver/xorg/hw/xfree86/dixmods/extmod
+    action      xf86XTrapModule.c
 }
 
 symlink_xserver_Xext() {
