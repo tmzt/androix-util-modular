@@ -102,6 +102,8 @@ build_lib() {
     build lib Xdmcp
     build lib X11
     build lib Xext
+    build lib AppleWM
+    build lib WindowsWM
     build lib dmx
     build lib fontenc
     build lib FS
