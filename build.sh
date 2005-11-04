@@ -261,8 +261,7 @@ build_driver_input() {
 	Linux)
 	    build driver xf86-input-aiptek
 	    build driver xf86-input-evdev
-# not built in monolith, doesn't build for lots of systems
-#	    build driver xf86-input-ur98
+	    build driver xf86-input-ur98
 	    ;;
 	*)
 	    ;;
