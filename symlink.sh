@@ -5050,7 +5050,7 @@ symlink_app_xdm() {
     action	Xreset
     action	Xaccess
     action	Xservers.fs
-    action	Xsession
+    action	Xsession.cpp
     action	Xsetup_0
     action	Xstartup
     action	Xwilling
