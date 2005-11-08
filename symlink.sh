@@ -7678,9 +7678,12 @@ symlink_xserver_hw_xfree86_ossupport_sco() {
     dst_dir xserver/xorg/hw/xfree86/os-support/sco
 
     action      VTsw_sco.c
+    action      sco_KbdMap.c
     action      sco_init.c
     action      sco_io.c
     action      sco_iop.c
+    action      sco_kbd.c
+    action      sco_kbd.h
     action      sco_mouse.c
     action      sco_video.c
 }
@@ -7745,6 +7748,23 @@ symlink_xserver_hw_xfree86_ossupport_sysv() {
     action      sysv_video.c
     action      xqueue.c
     action      xqueue.h
+}
+
+symlink_xserver_hw_xfree86_ossupport_usl() {
+    src_dir programs/Xserver/hw/xfree86/os-support/usl
+    dst_dir xserver/xorg/hw/xfree86/os-support/usl
+
+    action	usl_init.c
+    action	usl_io.c
+    action	usl_iop.c
+    action	usl_kbd.c
+    action	usl_kbd.h
+    action	usl_KbdMap.c
+    action	usl_mouse.c
+    action	usl_video.c
+    action	usl_vtsw.c
+    action	usl_xqueue.c
+    action	usl_xqueue.h
 }
 
 symlink_xserver_hw_xfree86_parser() {
@@ -9080,6 +9100,7 @@ symlink_xserver() {
     symlink_xserver_hw_xfree86_ossupport_shared
     symlink_xserver_hw_xfree86_ossupport_sunos
     symlink_xserver_hw_xfree86_ossupport_sysv
+    symlink_xserver_hw_xfree86_ossupport_usl
     symlink_xserver_hw_xfree86_parser
     symlink_xserver_hw_xfree86_rac
     symlink_xserver_hw_xfree86_ramdac
