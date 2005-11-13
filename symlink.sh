@@ -567,7 +567,7 @@ symlink_lib_fixes() {
 
     dst_dir lib/Xfixes/man
 
-    action	Xfixes.man	Xfixes.3
+    action	Xfixes.man
 }
 
 symlink_lib_xau() {
@@ -2513,13 +2513,13 @@ symlink_lib_xpm() {
     dst_dir lib/Xpm/cxpm
 
     action	cxpm.c
-    action	cxpm.man	cxpm.1
+    action	cxpm.man
     
     src_dir extras/Xpm/sxpm
     dst_dir lib/Xpm/sxpm
 
     action	sxpm.c
-    action	sxpm.man	sxpm.1
+    action	sxpm.man
     action	plaid_ext.xpm
     action	plaid_mask.xpm
     action	plaid.xpm
@@ -3097,7 +3097,7 @@ symlink_lib_xcursor()
 
     dst_dir lib/Xcursor/man
 
-    action	Xcursor.man		Xcursor.3
+    action	Xcursor.man
 }
 
 symlink_lib_xtrap()
@@ -3124,7 +3124,7 @@ symlink_lib_xfontcache()
 
     dst_dir lib/Xfontcache/man
 
-    action	Xfontcache.man		Xfontcache.3
+    action	Xfontcache.man
 }
 
 symlink_lib_xinerama()
@@ -6551,7 +6551,7 @@ symlink_xserver_hw_dmx() {
     action      dmxwindow.c
     action      dmxwindow.h
 
-    action      Xdmx.man		Xdmx.1
+    action      Xdmx.man
 }
 
 symlink_xserver_hw_dmx_config() {
@@ -8250,8 +8250,8 @@ symlink_xserver_hw_xwin() {
     action      X.ico
     action      X-boxed.ico
 
-    action      XWin.man    XWin.1
-    action      XWinrc.man  XWinrc.1
+    action      XWin.man
+    action      XWinrc.man
 
     action	_usr_X11R6_lib_X11_system.XWinrc
 
