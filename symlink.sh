@@ -12778,6 +12778,10 @@ symlink_util_imake() {
     action	imake.c
     action	imake.man
     action	imakemdep.h
+
+    src_dir config/util
+    action	makeg.man
+    action	makeg.sh	makeg
 }
 
 symlink_util_makedepend() {
