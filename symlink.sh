@@ -7370,10 +7370,6 @@ symlink_xserver_hw_xfree86_dummylib() {
     action      xf86screens.c
     action      xf86servisinit.c
     action      xf86verbose.c
-
-    src_dir lib/misc
-    action	strlcat.c
-    action	strlcpy.c
 }
 
 symlink_xserver_hw_xfree86_exa() {
@@ -8692,6 +8688,10 @@ symlink_xserver_os() {
     action      xdmauth.c
     action      xdmcp.c
     action      xprintf.c
+
+    src_dir lib/misc
+    action	strlcat.c
+    action	strlcpy.c
 }
 
 symlink_xserver_randr() {
