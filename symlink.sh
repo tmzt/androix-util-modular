@@ -7515,10 +7515,13 @@ symlink_xserver_hw_xfree86_ossupport() {
     action      xf86_OSproc.h
     action      xf86_ansic.h
     action      xf86_libc.h
+
+    action      README.OS-lib
+
+    src_dir extras/drm/libdrm
+    
     action      xf86drm.h
     action      xf86drmCompat.h
-
-    action	README.OS-lib
 }
 
 symlink_xserver_hw_xfree86_ossupport_bsd() {
@@ -7592,6 +7595,9 @@ symlink_xserver_hw_xfree86_ossupport_drm() {
     dst_dir xserver/xorg/hw/xfree86/os-support/drm
 
     action      drmmodule.c
+
+    src_dir extras/drm/libdrm
+    
     action      xf86drm.c
     action      xf86drmHash.c
     action      xf86drmRandom.c
