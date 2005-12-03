@@ -83,7 +83,7 @@ symlink_proto_core() {
     action	Xatom.h
     action	Xdefs.h
     action	XF86keysym.h	# only used in server
-    action	Xfuncproto.h
+#    action	Xfuncproto.h      this file is configurable in the modular tree
     action	Xfuncs.h
     action	X.h
     action	Xmd.h
@@ -14665,6 +14665,10 @@ symlink_non_linked_files()
     action	ccimake.c
     action	imakesvc.cmd
     action	Makefile.ini
+
+    # Xfuncproto.h is now configurable in the modular tree
+    src_dir include
+    action	Xfuncproto.h
 }
 
 print_source()
