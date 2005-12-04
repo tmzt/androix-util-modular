@@ -1,0 +1,4832 @@
+<?xml version="1.0" standalone="no"?> <!--*- mode: nxml -*-->
+
+<!DOCTYPE moduleset SYSTEM "moduleset.dtd">
+<?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
+<moduleset>
+
+  <!--
+       Note that all of the dependencies below are in metamodules.  The
+       reason for using this scheme is because the list of tarballs can
+       be automatically generated whereas the dependency information
+       currently cannot.
+
+       The dependencies work as follows: Each tarball depends on a
+       metamodule with the same name (see below for the metamodule and
+       tarball id naming scheme used), and each metamodule can have
+       dependencies on other tarballs.
+
+       Each metamodule id is "<module name>-<tarballname>".
+       Each tarball id is "<module name>/<tarballname>"
+
+       For example, if you need to add a new dependency on
+       lib/foo-1.2.3.tar.bz2 to app/bar-4.5.6.tar.bz2, then you would
+       add a <dep package="lib/foo"/> to <metamodule id="app-bar">.
+    -->
+
+  <!-- util -->
+
+  <metamodule id="util-util-macros"/>
+
+  <metamodule id="util-xorg-cf-files">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="util-makedepend">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="util-imake">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="util/xorg-cf-files"/>
+      <dep package="proto/xproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="util-xmkmf">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="util/imake"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="util">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="util/xorg-cf-files"/>
+      <dep package="util/imake"/>
+      <dep package="util/makedepend"/>
+      <dep package="util/xmkmf"/>
+    </dependencies>
+  </metamodule>
+
+
+  <!-- doc -->
+
+  <metamodule id="doc-xorg-sgml-doctools">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="doc">
+    <dependencies>
+      <dep package="doc/xorg-sgml-doctools"/>
+    </dependencies>
+  </metamodule>
+
+
+  <!-- proto -->
+
+  <metamodule id="proto-applewmproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-bigreqsproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-compositeproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-damageproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-dmxproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-evieext">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-fixesproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-fontcacheproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-fontsproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-glproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-inputproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-kbproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-printproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-xproxymanagementprotocol">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-randrproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-recordproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-renderproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-resourceproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-scrnsaverproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-trapproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-videoproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-windowswmproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-xcmiscproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-xextproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-xf86bigfontproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-xf86dgaproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-xf86driproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-xf86miscproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-xf86rushproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-xf86vidmodeproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-xineramaproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto-xproto">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="proto">
+    <dependencies>
+      <!-- <dep package="proto/applewmproto"/> -->
+      <dep package="proto/bigreqsproto"/>
+      <dep package="proto/compositeproto"/>
+      <dep package="proto/damageproto"/>
+      <dep package="proto/dmxproto"/>
+      <dep package="proto/evieext"/>
+      <dep package="proto/fixesproto"/>
+      <dep package="proto/fontcacheproto"/>
+      <dep package="proto/fontsproto"/>
+      <dep package="proto/glproto"/>
+      <dep package="proto/inputproto"/>
+      <dep package="proto/kbproto"/>
+      <dep package="proto/printproto"/>
+      <dep package="proto/xproxymanagementprotocol"/>
+      <dep package="proto/randrproto"/>
+      <dep package="proto/recordproto"/>
+      <dep package="proto/renderproto"/>
+      <dep package="proto/resourceproto"/>
+      <dep package="proto/scrnsaverproto"/>
+      <dep package="proto/trapproto"/>
+      <dep package="proto/videoproto"/>
+      <!-- <dep package="proto/windowswmproto"/> -->
+      <dep package="proto/xcmiscproto"/>
+      <dep package="proto/xextproto"/>
+      <dep package="proto/xf86bigfontproto"/>
+      <dep package="proto/xf86dgaproto"/>
+      <dep package="proto/xf86driproto"/>
+      <dep package="proto/xf86miscproto"/>
+      <dep package="proto/xf86rushproto"/>
+      <dep package="proto/xf86vidmodeproto"/>
+      <dep package="proto/xineramaproto"/>
+      <dep package="proto/xproto"/>
+    </dependencies>
+  </metamodule>
+
+
+  <!-- lib -->
+
+  <metamodule id="lib-libdmx">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXext"/>
+      <dep package="proto/xextproto"/>
+      <dep package="proto/dmxproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libfontenc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libAppleWM">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXext"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libFS">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="proto/fontsproto"/>
+      <dep package="lib/xtrans"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libICE">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="lib/xtrans"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-liblbxutil">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xextproto"/>
+      <dep package="proto/xproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-liboldX">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libSM">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="lib/libICE"/>
+      <dep package="lib/xtrans"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libX11">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="proto/bigreqsproto"/>
+      <dep package="proto/xextproto"/>
+      <dep package="lib/xtrans"/>
+      <dep package="lib/libXau"/>
+      <dep package="proto/xcmiscproto"/>
+      <dep package="proto/xf86bigfontproto"/>
+      <dep package="lib/libXdmcp"/>
+      <dep package="proto/kbproto"/>
+      <dep package="proto/inputproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXau">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXaw">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXt"/>
+      <dep package="lib/libXmu"/>
+      <dep package="lib/libXpm"/>
+    </dependencies>
+    <suggests>
+      <dep package="lib/libXp"/>
+    </suggests>
+  </metamodule>
+
+  <metamodule id="lib-libXcomposite">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/compositeproto"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXfixes"/>
+      <dep package="lib/libXext"/>
+      <dep package="proto/fixesproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXcursor">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXrender"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXfixes"/>
+      <dep package="proto/fixesproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXdamage">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="proto/damageproto"/>
+      <dep package="lib/libXfixes"/>
+      <dep package="proto/fixesproto"/>
+      <dep package="proto/xextproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXdmcp">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXevie">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="lib/libX11"/>
+      <dep package="proto/xextproto"/>
+      <dep package="lib/libXext"/>
+      <dep package="proto/evieext"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXext">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="lib/libX11"/>
+      <dep package="proto/xextproto"/>
+      <dep package="lib/libXau"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXfixes">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="proto/xproto"/>
+      <dep package="proto/fixesproto"/>
+      <dep package="proto/xextproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXfont">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="lib/xtrans"/>
+      <dep package="proto/fontsproto"/>
+      <dep package="lib/libfontenc"/>
+      <dep package="proto/fontcacheproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXfontcache">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXext"/>
+      <dep package="proto/xextproto"/>
+      <dep package="proto/fontcacheproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXft">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXrender"/>
+      <dep package="fontconfig"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXi">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="lib/libX11"/>
+      <dep package="proto/xextproto"/>
+      <dep package="lib/libXext"/>
+      <dep package="proto/inputproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXinerama">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXext"/>
+      <dep package="proto/xextproto"/>
+      <dep package="proto/xineramaproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libxkbfile">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="proto/kbproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libxkbui">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXt"/>
+      <dep package="lib/libxkbfile"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXmu">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXt"/>
+      <dep package="lib/libXext"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXp">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXext"/>
+      <dep package="lib/libXau"/>
+      <dep package="proto/printproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXpm">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="proto/xproto"/>
+      <dep package="lib/libXt"/>
+      <dep package="lib/libXext"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXprintAppUtil">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXp"/>
+      <dep package="lib/libXprintUtil"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXprintUtil">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXp"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXrandr">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXext"/>
+      <dep package="lib/libXrender"/>
+      <dep package="proto/randrproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXrender">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/renderproto"/>
+      <dep package="lib/libX11"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXres">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXext"/>
+      <dep package="proto/resourceproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXScrnSaver">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXext"/>
+      <dep package="proto/xextproto"/>
+      <dep package="proto/scrnsaverproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXt">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libSM"/>
+      <dep package="lib/libX11"/>
+      <dep package="proto/xproto"/>
+      <dep package="proto/kbproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXTrap">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXt"/>
+      <dep package="proto/trapproto"/>
+      <dep package="lib/libXext"/>
+      <dep package="proto/xextproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXtst">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXext"/>
+      <dep package="proto/recordproto"/>
+      <dep package="proto/xextproto"/>
+      <dep package="proto/inputproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXv">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXext"/>
+      <dep package="proto/xextproto"/>
+      <dep package="proto/videoproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXvMC">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXext"/>
+      <dep package="proto/xextproto"/>
+      <dep package="proto/videoproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXxf86dga">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXext"/>
+      <dep package="proto/xextproto"/>
+      <dep package="proto/xf86dgaproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXxf86misc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXext"/>
+      <dep package="proto/xextproto"/>
+      <dep package="proto/xf86miscproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-libXxf86vm">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXext"/>
+      <dep package="proto/xextproto"/>
+      <dep package="proto/xf86vidmodeproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib-xtrans">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="lib">
+    <dependencies>
+      <!-- <dep package="lib/libAppleWM"/> -->
+      <dep package="lib/libdmx"/>
+      <dep package="lib/libfontenc"/>
+      <dep package="lib/libFS"/>
+      <dep package="lib/libICE"/>
+      <dep package="lib/liblbxutil"/>
+      <dep package="lib/liboldX"/>
+      <dep package="lib/libSM"/>
+      <!-- <dep package="lib/libWindowsWM"/> -->
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXau"/>
+      <dep package="lib/libXaw"/>
+      <dep package="lib/libXcomposite"/>
+      <dep package="lib/libXcursor"/>
+      <dep package="lib/libXdamage"/>
+      <dep package="lib/libXdmcp"/>
+      <dep package="lib/libXevie"/>
+      <dep package="lib/libXext"/>
+      <dep package="lib/libXfixes"/>
+      <dep package="lib/libXfont"/>
+      <dep package="lib/libXfontcache"/>
+      <dep package="lib/libXft"/>
+      <dep package="lib/libXi"/>
+      <dep package="lib/libXinerama"/>
+      <dep package="lib/libxkbfile"/>
+      <dep package="lib/libxkbui"/>
+      <dep package="lib/libXmu"/>
+      <dep package="lib/libXp"/>
+      <dep package="lib/libXpm"/>
+      <dep package="lib/libXprintAppUtil"/>
+      <dep package="lib/libXprintUtil"/>
+      <dep package="lib/libXrandr"/>
+      <dep package="lib/libXrender"/>
+      <dep package="lib/libXres"/>
+      <dep package="lib/libXScrnSaver"/>
+      <dep package="lib/libXt"/>
+      <dep package="lib/libXTrap"/>
+      <dep package="lib/libXtst"/>
+      <dep package="lib/libXv"/>
+      <dep package="lib/libXvMC"/>
+      <dep package="lib/libXxf86dga"/>
+      <dep package="lib/libXxf86misc"/>
+      <dep package="lib/libXxf86vm"/>
+      <dep package="lib/xtrans"/>
+    </dependencies>
+  </metamodule>
+
+
+  <!-- font -->
+
+  <metamodule id="font-encodings">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/mkfontscale"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-adobe-100dpi">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="font/font-util"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-adobe-75dpi">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="font/font-util"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-adobe-utopia-100dpi">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="font/font-util"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-adobe-utopia-75dpi">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="font/font-util"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-adobe-utopia-type1">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+      <dep package="fontconfig"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-alias">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-arabic-misc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-bh-100dpi">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="font/font-util"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-bh-75dpi">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="font/font-util"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-bh-lucidatypewriter-100dpi">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="font/font-util"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-bh-lucidatypewriter-75dpi">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="font/font-util"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-bh-ttf">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+      <dep package="fontconfig"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-bh-type1">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+      <dep package="fontconfig"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-bitstream-100dpi">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-bitstream-75dpi">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-bitstream-speedo">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-bitstream-type1">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+      <dep package="fontconfig"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-cronyx-cyrillic">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-cursor-misc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-daewoo-misc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-dec-misc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-ibm-type1">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+      <dep package="fontconfig"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-isas-misc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-jis-misc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-micro-misc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-misc-cyrillic">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-misc-ethiopic">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+      <dep package="fontconfig"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-misc-meltho">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+      <dep package="fontconfig"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-misc-misc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="font/font-util"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-mutt-misc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-schumacher-misc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="font/font-util"/>n
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-screen-cyrillic">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-sony-misc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-sun-misc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-util">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-winitzki-cyrillic">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font-font-xfree86-type1">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/mkfontdir"/>
+      <dep package="fontconfig"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="font">
+    <dependencies>
+      <dep package="font/encodings"/>
+      <dep package="font/font-adobe-100dpi"/>
+      <dep package="font/font-adobe-75dpi"/>
+      <dep package="font/font-adobe-utopia-100dpi"/>
+      <dep package="font/font-adobe-utopia-75dpi"/>
+      <dep package="font/font-adobe-utopia-type1"/>
+      <dep package="font/font-alias"/>      
+      <dep package="font/font-arabic-misc"/>
+      <dep package="font/font-bh-100dpi"/>
+      <dep package="font/font-bh-75dpi"/>
+      <dep package="font/font-bh-lucidatypewriter-100dpi"/>
+      <dep package="font/font-bh-lucidatypewriter-75dpi"/>
+      <dep package="font/font-bh-ttf"/>
+      <dep package="font/font-bh-type1"/>
+      <dep package="font/font-bitstream-100dpi"/>
+      <dep package="font/font-bitstream-75dpi"/>
+      <dep package="font/font-bitstream-speedo"/>
+      <dep package="font/font-bitstream-type1"/>
+      <dep package="font/font-cronyx-cyrillic"/>
+      <dep package="font/font-cursor-misc"/>
+      <dep package="font/font-daewoo-misc"/>
+      <dep package="font/font-dec-misc"/>
+      <dep package="font/font-ibm-type1"/>
+      <dep package="font/font-isas-misc"/>
+      <dep package="font/font-jis-misc"/>
+      <dep package="font/font-micro-misc"/>
+      <dep package="font/font-misc-cyrillic"/>
+      <dep package="font/font-misc-ethiopic"/>
+      <dep package="font/font-misc-meltho"/>
+      <dep package="font/font-misc-misc"/>
+      <dep package="font/font-mutt-misc"/>
+      <dep package="font/font-schumacher-misc"/>
+      <dep package="font/font-screen-cyrillic"/>
+      <dep package="font/font-sony-misc"/>
+      <dep package="font/font-sun-misc"/>
+      <dep package="font/font-util"/>
+      <dep package="font/font-winitzki-cyrillic"/>
+      <dep package="font/font-xfree86-type1"/>
+    </dependencies>
+  </metamodule>
+
+
+  <!-- data -->
+
+  <metamodule id="data-xbitmaps">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="data-xcursor-themes">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/xcursorgen"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="data-xkbdata">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="app/xkbcomp"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="data">
+    <dependencies>
+      <dep package="data/xbitmaps"/>
+      <dep package="data/xcursor-themes"/>
+      <dep package="data/xkbdata"/>
+    </dependencies>
+  </metamodule>
+
+
+  <!-- app -->
+
+  <metamodule id="app-appres">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXt"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-bdftopcf">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXfont"/>
+      <dep package="proto/fontsproto"/>
+      <dep package="proto/xproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-beforelight">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXScrnSaver"/>
+      <dep package="lib/libXt"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-bitmap">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXmu"/>
+      <dep package="lib/libXaw"/>
+      <dep package="data/xbitmaps"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-constype">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-editres">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXt"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-fonttosfnt">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libfontenc"/>
+      <dep package="freetype2"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-fslsfonts">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libFS"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-fstobdf">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libFS"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-iceauth">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libICE"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-ico">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-lbxproxy">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/xtrans"/>
+      <dep package="lib/libXext"/>
+      <dep package="lib/liblbxutil"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libICE"/>
+      <dep package="proto/xproxymanagementprotocol"/>
+      <dep package="proto/bigreqsproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-listres">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXt"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-luit">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libfontenc"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-mkcfm">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXfont"/>
+      <dep package="lib/libFS"/>
+      <dep package="proto/fontsproto"/>
+      <dep package="lib/libfontenc"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-mkfontdir">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-mkfontscale">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libfontenc"/>
+      <dep package="freetype2"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-oclock">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXmu"/>
+      <dep package="lib/libXext"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-pclcomp">
+    <dependencies>
+      <dep package="util/util-macros"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-proxymngr">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXt"/>
+      <dep package="lib/libICE"/>
+      <dep package="proto/xproxymanagementprotocol"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-rgb">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-rstart">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-scripts">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-sessreg">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-setxkbmap">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libxkbfile"/>
+      <dep package="lib/libX11"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-showfont">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libFS"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-smproxy">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXt"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-twm">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXt"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-viewres">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-x11perf">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xauth">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXau"/>
+      <dep package="lib/libXext"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xbiff">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+      <dep package="data/xbitmaps"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xcalc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xclipboard">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xclock">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xcmsdb">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xconsole">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xcursorgen">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXcursor"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xdbedizzy">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXext"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xditview">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xdm">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+      <dep package="lib/libXdmcp"/>
+      <dep package="proto/xproto"/>
+      <dep package="lib/libXau"/>
+      <dep package="lib/libXt"/>
+    </dependencies>
+    <suggests>
+      <dep package="lib/libXinerama"/>
+      <dep package="lib/libXpm"/>
+    </suggests>
+  </metamodule>
+
+  <metamodule id="app-xdpyinfo">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXext"/>
+      <dep package="lib/libXtst"/>
+    </dependencies>
+    <suggests>
+      <dep package="proto/xextproto"/>
+      <dep package="proto/kbproto"/>
+      <dep package="proto/xf86vidmodeproto"/>
+      <dep package="lib/libXxf86vm"/>
+      <dep package="proto/xf86dgaproto"/>
+      <dep package="lib/libXxf86dga"/>
+      <dep package="proto/xf86miscproto"/>
+      <dep package="lib/libXxf86misc"/>
+      <dep package="proto/inputproto"/>
+      <dep package="lib/libXi"/>
+      <dep package="proto/renderproto"/>
+      <dep package="lib/libXrender"/>
+      <dep package="proto/xineramaproto"/>
+      <dep package="lib/libXinerama"/>
+      <dep package="proto/dmxproto"/>
+      <dep package="lib/libdmx"/>
+      <dep package="proto/printproto"/>
+      <dep package="lib/libXp"/>
+    </suggests>
+  </metamodule>
+
+  <metamodule id="app-xdriinfo">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="proto/glproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xedit">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xev">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xeyes">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXt"/>
+      <dep package="lib/libXext"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xf86dga">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXxf86dga"/>
+      <dep package="lib/libXt"/>
+      <dep package="lib/libXaw"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xfd">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+      <dep package="lib/libXft"/>
+      <dep package="freetype2"/>
+      <dep package="fontconfig"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xfindproxy">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libICE"/>
+      <dep package="lib/libXt"/>
+      <dep package="proto/xproxymanagementprotocol"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xfontsel">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xfs">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libFS"/>
+      <dep package="lib/libXfont"/>
+      <dep package="proto/fontsproto"/>
+      <dep package="lib/xtrans"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xfsinfo">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libFS"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xfwp">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libICE"/>
+      <dep package="proto/xproxymanagementprotocol"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xgamma">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXxf86vm"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xgc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xhost">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXmu"/>
+      <dep package="lib/libXau"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xinit">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xkbcomp">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libxkbfile"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xkbevd">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libxkbfile"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xkbprint">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libxkbfile"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xkbutils">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libxkbfile"/>
+      <dep package="lib/libXaw"/>
+      <dep package="proto/inputproto"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xkill">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xload">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xlogo">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xlsatoms">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xlsclients">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xlsfonts">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xmag">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xman">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xmessage">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xmh">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xmodmap">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xmore">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xphelloworld">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXaw"/>
+      <dep package="lib/libXprintUtil"/>
+      <dep package="lib/libXt"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xplsprinters">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXprintUtil"/>
+      <dep package="lib/libXt"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xpr">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xprehashprinterlist">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXp"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xprop">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xrandr">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXrandr"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xrdb">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xrefresh">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xrx">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXt"/>
+      <dep package="lib/libXext"/>
+      <dep package="lib/xtrans"/>
+      <dep package="proto/xproxymanagementprotocol"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xset">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+    <suggests>
+      <dep package="proto/xextproto"/>
+      <dep package="lib/libXext"/>
+      <dep package="proto/kbproto"/>
+      <dep package="lib/libX11"/>
+      <dep package="proto/xf86miscproto"/>
+      <dep package="lib/libXxf86misc"/>
+      <dep package="proto/fontcacheproto"/>
+      <dep package="lib/libXfontcache"/>
+      <dep package="proto/printproto"/>
+      <dep package="lib/libXp"/>
+    </suggests>
+  </metamodule>
+
+  <metamodule id="app-xsetmode">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXi"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xsetpointer">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXi"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xsetroot">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXmu"/>
+      <dep package="data/xbitmaps"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xsm">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xstdcmap">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xtrap">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXTrap"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xvidtune">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libXaw"/>
+      <dep package="lib/libXxf86vm"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xvinfo">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXv"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xwd">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xwininfo">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+      <dep package="lib/libXmu"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app-xwud">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="lib/libX11"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="app">
+    <dependencies>
+      <dep package="app/appres"/>
+      <dep package="app/bdftopcf"/>
+      <dep package="app/beforelight"/>
+      <dep package="app/bitmap"/>
+      <!-- <dep package="app/constype"/> -->
+      <dep package="app/editres"/>
+      <dep package="app/fonttosfnt"/>
+      <dep package="app/fslsfonts"/>
+      <dep package="app/fstobdf"/>
+      <dep package="app/iceauth"/>
+      <dep package="app/ico"/>
+      <dep package="app/lbxproxy"/>
+      <dep package="app/listres"/>
+      <dep package="app/luit"/>
+      <dep package="app/mkcfm"/>
+      <dep package="app/mkfontdir"/>
+      <dep package="app/mkfontscale"/>
+      <dep package="app/oclock"/>
+      <dep package="app/pclcomp"/>
+      <dep package="app/proxymngr"/>
+      <dep package="app/rgb"/>
+      <dep package="app/rstart"/>
+      <dep package="app/scripts"/>
+      <dep package="app/sessreg"/>
+      <dep package="app/setxkbmap"/>
+      <dep package="app/showfont"/>
+      <dep package="app/smproxy"/>
+      <dep package="app/twm"/>
+      <dep package="app/viewres"/>
+      <dep package="app/x11perf"/>
+      <dep package="app/xauth"/>
+      <dep package="app/xbiff"/>
+      <dep package="app/xcalc"/>
+      <dep package="app/xclipboard"/>
+      <dep package="app/xclock"/>
+      <dep package="app/xcmsdb"/>
+      <dep package="app/xconsole"/>
+      <dep package="app/xcursorgen"/>
+      <dep package="app/xdbedizzy"/>
+      <dep package="app/xditview"/>
+      <dep package="app/xdm"/>
+      <dep package="app/xdpyinfo"/>
+      <dep package="app/xdriinfo"/>
+      <dep package="app/xedit"/>
+      <dep package="app/xev"/>
+      <dep package="app/xeyes"/>
+      <dep package="app/xf86dga"/>
+      <dep package="app/xfd"/>
+      <dep package="app/xfindproxy"/>
+      <dep package="app/xfontsel"/>
+      <dep package="app/xfs"/>
+      <dep package="app/xfsinfo"/>
+      <dep package="app/xfwp"/>
+      <dep package="app/xgamma"/>
+      <dep package="app/xgc"/>
+      <dep package="app/xhost"/>
+      <dep package="app/xinit"/>
+      <dep package="app/xkbcomp"/>
+      <dep package="app/xkbevd"/>
+      <dep package="app/xkbprint"/>
+      <dep package="app/xkbutils"/>
+      <dep package="app/xkill"/>
+      <dep package="app/xload"/>
+      <dep package="app/xlogo"/>
+      <dep package="app/xlsatoms"/>
+      <dep package="app/xlsclients"/>
+      <dep package="app/xlsfonts"/>
+      <dep package="app/xmag"/>
+      <dep package="app/xman"/>
+      <dep package="app/xmessage"/>
+      <dep package="app/xmh"/>
+      <dep package="app/xmodmap"/>
+      <dep package="app/xmore"/>
+      <dep package="app/xphelloworld"/>
+      <dep package="app/xplsprinters"/>
+      <dep package="app/xpr"/>
+      <dep package="app/xprehashprinterlist"/>
+      <dep package="app/xprop"/>
+      <dep package="app/xrandr"/>
+      <dep package="app/xrdb"/>
+      <dep package="app/xrefresh"/>
+      <dep package="app/xrx"/>
+      <dep package="app/xset"/>
+      <dep package="app/xsetmode"/>
+      <dep package="app/xsetpointer"/>
+      <dep package="app/xsetroot"/>
+      <dep package="app/xsm"/>
+      <dep package="app/xstdcmap"/>
+      <dep package="app/xtrap"/>
+      <dep package="app/xvidtune"/>
+      <dep package="app/xvinfo"/>
+      <dep package="app/xwd"/>
+      <dep package="app/xwininfo"/>
+      <dep package="app/xwud"/>
+    </dependencies>
+  </metamodule>
+
+
+  <!-- input drivers -->
+
+  <metamodule id="driver-xf86-input-acecad">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-aiptek">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-calcomp">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-citron">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-digitaledge">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-dmc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-dynapro">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-elo2300">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-elographics">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-evdev">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-fpit">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-hyperpen">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-jamstudio">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-joystick">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-keyboard">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-magellan">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-magictouch">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-microtouch">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-mouse">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-mutouch">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-palmax">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-penmount">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-spaceorb">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-summa">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-tek4957">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-ur98">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-input-void">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+
+  <!-- video drivers -->
+
+  <metamodule id="driver-xf86-video-apm">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-ark">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-ati">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-chips">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-cirrus">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-cyrix">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-dummy">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-fbdev">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-glide">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-glint">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-i128">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-i740">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-i810">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-imstt">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-mga">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-neomagic">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-newport">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-nsc">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-nv">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-rendition">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-s3">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-s3virge">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-savage">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-siliconmotion">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-sis">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-sisusb">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-sunbw2">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-suncg14">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-suncg3">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-suncg6">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-sunffb">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-sunleo">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-suntcx">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-tdfx">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-tga">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-trident">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-tseng">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-v4l">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-vesa">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-vga">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-via">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+      <dep package="drm"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-vmware">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-voodoo">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-xf86-video-wsfb">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto/xproto"/>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-input">
+    <dependencies>
+      <dep package="driver/xf86-input-acecad"/>
+      <dep package="driver/xf86-input-aiptek"/>
+      <dep package="driver/xf86-input-calcomp"/>
+      <dep package="driver/xf86-input-citron"/>
+      <dep package="driver/xf86-input-digitaledge"/>
+      <dep package="driver/xf86-input-dmc"/>
+      <dep package="driver/xf86-input-dynapro"/>
+      <dep package="driver/xf86-input-elo2300"/>
+      <dep package="driver/xf86-input-elographics"/>
+      <dep package="driver/xf86-input-evdev"/>
+      <dep package="driver/xf86-input-fpit"/>
+      <dep package="driver/xf86-input-hyperpen"/>
+      <dep package="driver/xf86-input-jamstudio"/>
+      <dep package="driver/xf86-input-joystick"/>
+      <dep package="driver/xf86-input-keyboard"/>
+      <dep package="driver/xf86-input-magellan"/>
+      <dep package="driver/xf86-input-magictouch"/>
+      <dep package="driver/xf86-input-microtouch"/>
+      <dep package="driver/xf86-input-mouse"/>
+      <dep package="driver/xf86-input-mutouch"/>
+      <dep package="driver/xf86-input-palmax"/>
+      <dep package="driver/xf86-input-penmount"/>
+      <dep package="driver/xf86-input-spaceorb"/>
+      <dep package="driver/xf86-input-summa"/>
+      <dep package="driver/xf86-input-tek4957"/>
+      <!-- <dep package="driver/xf86-input-ur98"/> -->
+      <dep package="driver/xf86-input-void"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-video">
+    <dependencies>
+      <dep package="driver/xf86-video-apm"/>
+      <dep package="driver/xf86-video-ark"/>
+      <dep package="driver/xf86-video-ati"/>
+      <dep package="driver/xf86-video-chips"/>
+      <dep package="driver/xf86-video-cirrus"/>
+      <dep package="driver/xf86-video-cyrix"/>
+      <dep package="driver/xf86-video-dummy"/>
+      <dep package="driver/xf86-video-fbdev"/>
+      <!-- <dep package="driver/xf86-video-glide"/> -->
+      <dep package="driver/xf86-video-glint"/>
+      <dep package="driver/xf86-video-i128"/>
+      <dep package="driver/xf86-video-i740"/>
+      <dep package="driver/xf86-video-i810"/>
+      <dep package="driver/xf86-video-imstt"/>
+      <dep package="driver/xf86-video-mga"/>
+      <dep package="driver/xf86-video-neomagic"/>
+      <dep package="driver/xf86-video-newport"/>
+      <dep package="driver/xf86-video-nsc"/>
+      <dep package="driver/xf86-video-nv"/>
+      <dep package="driver/xf86-video-rendition"/>
+      <dep package="driver/xf86-video-s3"/>
+      <dep package="driver/xf86-video-s3virge"/>
+      <dep package="driver/xf86-video-savage"/>
+      <dep package="driver/xf86-video-siliconmotion"/>
+      <dep package="driver/xf86-video-sis"/>
+      <dep package="driver/xf86-video-sisusb"/>  <!-- Linux only -->
+      <dep package="driver/xf86-video-sunbw2"/>
+      <dep package="driver/xf86-video-suncg14"/>
+      <dep package="driver/xf86-video-suncg3"/>
+      <dep package="driver/xf86-video-suncg6"/>
+      <dep package="driver/xf86-video-sunffb"/>
+      <dep package="driver/xf86-video-sunleo"/>
+      <dep package="driver/xf86-video-suntcx"/>
+      <dep package="driver/xf86-video-tdfx"/>
+      <dep package="driver/xf86-video-tga"/>
+      <dep package="driver/xf86-video-trident"/>
+      <dep package="driver/xf86-video-tseng"/>
+      <dep package="driver/xf86-video-v4l"/>  <!-- Linux only -->
+      <dep package="driver/xf86-video-vesa"/>
+      <dep package="driver/xf86-video-vga"/>
+      <dep package="driver/xf86-video-via"/>
+      <dep package="driver/xf86-video-vmware"/>
+      <dep package="driver/xf86-video-voodoo"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver-sun">
+    <dependencies>
+      <dep package="driver/xf86-video-wsfb"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="driver">
+    <dependencies>
+      <dep package="driver-input"/>
+      <dep package="driver-video"/>
+    </dependencies>
+  </metamodule>
+
+
+  <!-- X servers -->
+
+  <!-- TODO: Lots more work is needed here for deps -->
+  <metamodule id="xserver-xorg-server">
+    <dependencies>
+      <dep package="util/util-macros"/>
+      <dep package="proto"/>
+      <dep package="lib/libXaw"/>
+      <dep package="lib/libxkbui"/>
+      <dep package="lib/libXfont"/>
+      <dep package="lib/xtrans"/>
+      <dep package="lib/libXau"/>
+      <dep package="lib/libxkbfile"/>
+      <dep package="lib/libXdmcp"/>
+      <dep package="lib/libXxf86misc"/>
+      <dep package="lib/libXxf86vm"/>
+      <dep package="drm"/>
+    </dependencies>
+  </metamodule>
+
+  <metamodule id="xserver">
+    <dependencies>
+      <dep package="xserver/xorg-server"/>
+    </dependencies>
+  </metamodule>
+
+
+  <!-- everything -->
+
+  <!-- Note that data and utils are brought in from dependencies -->
+  <metamodule id="xorg">
+    <dependencies>
+      <dep package="doc"/>
+      <dep package="proto"/>
+      <dep package="lib"/>
+      <dep package="app"/>
+      <dep package="xserver"/>
+      <dep package="driver"/>
+      <dep package="data"/>
+      <dep package="font"/>
+      <dep package="util"/>
+    </dependencies>
+  </metamodule>
+
+
+  <!-- Extras -->
+
+  <tarball id="freetype2" version="2.1.9">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/extras/freetype-2.1.9.tar.gz"
+            size="1334560" md5sum="1336a6851753c962495ff02ff7ea71c1"/>
+  </tarball>
+  <tarball id="fontconfig" version="2.2.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/extras/fontconfig-2.2.3.tar.gz"
+            size="750035" md5sum="2466a797d645cda5eb466080fdaec416"/>
+  </tarball>
+  <tarball id="drm" version="2.0">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/extras/libdrm-2.0.tar.gz"
+            size="370965" md5sum="9d1aab104eb757ceeb2c1a6d38d57411"/>
+  </tarball>
+
+
+  <!-- Tarball set for X11R7-RC3 -->
+
+  <tarball id="app/appres" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/appres-0.99.2.tar.bz2"
+            size="73637" md5sum="5616bd807596d8dfc4ca66871dbe2d82"/>
+    <dependencies>
+      <dep package="app-appres"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/bdftopcf" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/bdftopcf-0.99.3.tar.bz2"
+            size="73701" md5sum="1cc9372cdc01979260cc4bac5c9dee36"/>
+    <dependencies>
+      <dep package="app-bdftopcf"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/beforelight" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/beforelight-0.99.3.tar.bz2"
+            size="75598" md5sum="f02d9de3a5508ac446f474b7ed5c4477"/>
+    <dependencies>
+      <dep package="app-beforelight"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/bitmap" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/bitmap-0.99.2.tar.bz2"
+            size="116094" md5sum="8ac9c282836577abd085a6e8b75b3a30"/>
+    <dependencies>
+      <dep package="app-bitmap"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/editres" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/editres-0.99.2.tar.bz2"
+            size="114505" md5sum="2e404b57bf5be03ab3104a350aa30210"/>
+    <dependencies>
+      <dep package="app-editres"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/fonttosfnt" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/fonttosfnt-0.99.3.tar.bz2"
+            size="89245" md5sum="b2cc6665493f0a9ca0102248979acbac"/>
+    <dependencies>
+      <dep package="app-fonttosfnt"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/fslsfonts" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/fslsfonts-0.99.2.tar.bz2"
+            size="75686" md5sum="0f01907ac3291121217fd280de7c42b0"/>
+    <dependencies>
+      <dep package="app-fslsfonts"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/fstobdf" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/fstobdf-0.99.3.tar.bz2"
+            size="77533" md5sum="a41e838d8fef471f6f0243faec6e1e0e"/>
+    <dependencies>
+      <dep package="app-fstobdf"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/iceauth" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/iceauth-0.99.2.tar.bz2"
+            size="83237" md5sum="0ed81ddc7512d24901e9128bed50d3ba"/>
+    <dependencies>
+      <dep package="app-iceauth"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/ico" version="0.99.4">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/ico-0.99.4.tar.bz2"
+            size="84571" md5sum="162bdb7c2960aa02553888d43bbc5104"/>
+    <dependencies>
+      <dep package="app-ico"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/lbxproxy" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/lbxproxy-0.99.3.tar.bz2"
+            size="182030" md5sum="73dbec7ee523ba6abe2e301f888cb717"/>
+    <dependencies>
+      <dep package="app-lbxproxy"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/listres" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/listres-0.99.2.tar.bz2"
+            size="75429" md5sum="96263a4b8170e502d3a94f1dda776240"/>
+    <dependencies>
+      <dep package="app-listres"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/luit" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/luit-0.99.2.tar.bz2"
+            size="90631" md5sum="7b710538c3b7ebe52a2fa87ef84c063f"/>
+    <dependencies>
+      <dep package="app-luit"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/mkcfm" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/mkcfm-0.99.3.tar.bz2"
+            size="74621" md5sum="d904eeab82e09536704b63ec01592ceb"/>
+    <dependencies>
+      <dep package="app-mkcfm"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/mkfontdir" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/mkfontdir-0.99.2.tar.bz2"
+            size="60273" md5sum="04875394c88a6bb6ff6c02561c56e87b"/>
+    <dependencies>
+      <dep package="app-mkfontdir"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/mkfontscale" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/mkfontscale-0.99.2.tar.bz2"
+            size="86465" md5sum="35f2b80b163894f0067391cf5c4f219d"/>
+    <dependencies>
+      <dep package="app-mkfontscale"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/oclock" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/oclock-0.99.2.tar.bz2"
+            size="81653" md5sum="cdde4a3adeb40e134646a354de3cdf81"/>
+    <dependencies>
+      <dep package="app-oclock"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/pclcomp" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/pclcomp-0.99.2.tar.bz2"
+            size="89091" md5sum="8b8f20662da6a85c965718c0174d2cfd"/>
+    <dependencies>
+      <dep package="app-pclcomp"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/proxymngr" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/proxymngr-0.99.2.tar.bz2"
+            size="90328" md5sum="44f9c9b4d38dfcbc09d7accb3b382446"/>
+    <dependencies>
+      <dep package="app-proxymngr"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/rgb" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/rgb-0.99.3.tar.bz2"
+            size="86292" md5sum="b8b58f314056ac4253d7920934562251"/>
+    <dependencies>
+      <dep package="app-rgb"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/rstart" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/rstart-0.99.2.tar.bz2"
+            size="87574" md5sum="c9a757fc2c1afc3df59da61ed67555be"/>
+    <dependencies>
+      <dep package="app-rstart"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/scripts" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/scripts-0.99.2.tar.bz2"
+            size="71101" md5sum="014a1119c2c207b302903157deec55f2"/>
+    <dependencies>
+      <dep package="app-scripts"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/sessreg" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/sessreg-0.99.2.tar.bz2"
+            size="81095" md5sum="7ffe219a450071bc4054b4cd9d8454e1"/>
+    <dependencies>
+      <dep package="app-sessreg"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/setxkbmap" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/setxkbmap-0.99.3.tar.bz2"
+            size="78842" md5sum="092af411f774440d49f92ef01e581382"/>
+    <dependencies>
+      <dep package="app-setxkbmap"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/showfont" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/showfont-0.99.2.tar.bz2"
+            size="75785" md5sum="1086bbf3493adab31e24ddc8d4a6e204"/>
+    <dependencies>
+      <dep package="app-showfont"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/smproxy" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/smproxy-0.99.2.tar.bz2"
+            size="81672" md5sum="f58e8f8b4179c600706cd443305d20a3"/>
+    <dependencies>
+      <dep package="app-smproxy"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/twm" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/twm-0.99.2.tar.bz2"
+            size="223283" md5sum="ce0cf9c9b5917a4c65b70985e2fc4570"/>
+    <dependencies>
+      <dep package="app-twm"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/viewres" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/viewres-0.99.2.tar.bz2"
+            size="83208" md5sum="e08bac9cea1a868ac7f0b332d83cd099"/>
+    <dependencies>
+      <dep package="app-viewres"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/x11perf" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/x11perf-0.99.2.tar.bz2"
+            size="126091" md5sum="fc21c7698b27b5672e457e92fafce975"/>
+    <dependencies>
+      <dep package="app-x11perf"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xauth" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xauth-0.99.3.tar.bz2"
+            size="94649" md5sum="e54c7cc9596988ab0da31fd7596e75c0"/>
+    <dependencies>
+      <dep package="app-xauth"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xbiff" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xbiff-0.99.2.tar.bz2"
+            size="82412" md5sum="6b3b2754601608be44dc8f245d17fcb5"/>
+    <dependencies>
+      <dep package="app-xbiff"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xcalc" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xcalc-0.99.2.tar.bz2"
+            size="92254" md5sum="f7e80a11b2dc5ca931087bbb635b1838"/>
+    <dependencies>
+      <dep package="app-xcalc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xclipboard" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xclipboard-0.99.2.tar.bz2"
+            size="82001" md5sum="abd378102ccfda63a99f45c0889fe459"/>
+    <dependencies>
+      <dep package="app-xclipboard"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xclock" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xclock-0.99.2.tar.bz2"
+            size="98299" md5sum="961b07d38ea0c964c5a3a1c9d04a1124"/>
+    <dependencies>
+      <dep package="app-xclock"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xcmsdb" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xcmsdb-0.99.2.tar.bz2"
+            size="95318" md5sum="4571428cb4fd2ef7926b0b2f79457b25"/>
+    <dependencies>
+      <dep package="app-xcmsdb"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xconsole" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xconsole-0.99.3.tar.bz2"
+            size="80690" md5sum="8dbbb4d183266e697ed49ec814c98768"/>
+    <dependencies>
+      <dep package="app-xconsole"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xcursorgen" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xcursorgen-0.99.2.tar.bz2"
+            size="77102" md5sum="5327ce370089d4e7a30b1dc3a2961999"/>
+    <dependencies>
+      <dep package="app-xcursorgen"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xdbedizzy" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xdbedizzy-0.99.3.tar.bz2"
+            size="81893" md5sum="5c5a249839d0b2d0a880d46db9141c2f"/>
+    <dependencies>
+      <dep package="app-xdbedizzy"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xditview" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xditview-0.99.2.tar.bz2"
+            size="101190" md5sum="feeea439c548a59f8b7bdd8cc7f33f6f"/>
+    <dependencies>
+      <dep package="app-xditview"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xdm" version="0.99.4">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xdm-0.99.4.tar.bz2"
+            size="291986" md5sum="8ea0b887baf9d702c883f8e85fb100b8"/>
+    <dependencies>
+      <dep package="app-xdm"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xdpyinfo" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xdpyinfo-0.99.2.tar.bz2"
+            size="86141" md5sum="3bb5b7d3650fce39ab1911813cb0f012"/>
+    <dependencies>
+      <dep package="app-xdpyinfo"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xdriinfo" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xdriinfo-0.99.2.tar.bz2"
+            size="76346" md5sum="76ffe35f42e4f51d73349f8c3b1812cc"/>
+    <dependencies>
+      <dep package="app-xdriinfo"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xedit" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xedit-0.99.3.tar.bz2"
+            size="439712" md5sum="ec0c82ba9b80186ce6792f3fa9eff19d"/>
+    <dependencies>
+      <dep package="app-xedit"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xev" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xev-0.99.2.tar.bz2"
+            size="78673" md5sum="a264918cd4f90db7c87afe68f98d3582"/>
+    <dependencies>
+      <dep package="app-xev"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xeyes" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xeyes-0.99.2.tar.bz2"
+            size="79831" md5sum="a8e1485e466607f6d3c2af75192a0af3"/>
+    <dependencies>
+      <dep package="app-xeyes"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xf86dga" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xf86dga-0.99.3.tar.bz2"
+            size="73971" md5sum="233d5c219723dcda459290d4ac638347"/>
+    <dependencies>
+      <dep package="app-xf86dga"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xfd" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xfd-0.99.2.tar.bz2"
+            size="87311" md5sum="0b44706f52656d1762a00fcf4a522f33"/>
+    <dependencies>
+      <dep package="app-xfd"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xfindproxy" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xfindproxy-0.99.3.tar.bz2"
+            size="76470" md5sum="b4d27764923c88211abbfaa9f8cf767a"/>
+    <dependencies>
+      <dep package="app-xfindproxy"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xfontsel" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xfontsel-0.99.2.tar.bz2"
+            size="94219" md5sum="2ba71df364afe06ee9c48a4ecce13e34"/>
+    <dependencies>
+      <dep package="app-xfontsel"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xfs" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xfs-0.99.3.tar.bz2"
+            size="139886" md5sum="d2995737ceddc99d2f62b2cf835e92ff"/>
+    <dependencies>
+      <dep package="app-xfs"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xfsinfo" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xfsinfo-0.99.2.tar.bz2"
+            size="73162" md5sum="5c801a0ab3c98d990cd819f186e527be"/>
+    <dependencies>
+      <dep package="app-xfsinfo"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xfwp" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xfwp-0.99.2.tar.bz2"
+            size="103315" md5sum="423b0aa95d5c0d6e1dc62a25c9455ab4"/>
+    <dependencies>
+      <dep package="app-xfwp"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xgamma" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xgamma-0.99.2.tar.bz2"
+            size="73825" md5sum="d2fa330b2f3f66564d31f6eb8b38cc1b"/>
+    <dependencies>
+      <dep package="app-xgamma"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xgc" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xgc-0.99.2.tar.bz2"
+            size="127131" md5sum="247841f01b9196d7ba0dae5f9e941a26"/>
+    <dependencies>
+      <dep package="app-xgc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xhost" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xhost-0.99.3.tar.bz2"
+            size="84683" md5sum="57dbd8de9bae4659e9e7ad8b8ad13d40"/>
+    <dependencies>
+      <dep package="app-xhost"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xinit" version="0.99.4">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xinit-0.99.4.tar.bz2"
+            size="91094" md5sum="bb443db632476d4b2bd42e1558004267"/>
+    <dependencies>
+      <dep package="app-xinit"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xkbcomp" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xkbcomp-0.99.2.tar.bz2"
+            size="176458" md5sum="9b6984a2cfb2eaf272fc39b0cdcd56e3"/>
+    <dependencies>
+      <dep package="app-xkbcomp"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xkbevd" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xkbevd-0.99.3.tar.bz2"
+            size="100954" md5sum="1053861185d47b8d87a64c1b89acacb2"/>
+    <dependencies>
+      <dep package="app-xkbevd"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xkbprint" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xkbprint-0.99.2.tar.bz2"
+            size="113971" md5sum="ff363cd429fd03bb3a686a3159daceec"/>
+    <dependencies>
+      <dep package="app-xkbprint"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xkbutils" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xkbutils-0.99.2.tar.bz2"
+            size="64614" md5sum="24177761ac1fd1ac1443f0f6c328af39"/>
+    <dependencies>
+      <dep package="app-xkbutils"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xkill" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xkill-0.99.2.tar.bz2"
+            size="75965" md5sum="bfe44de60770d1ad4f4568b75d8934b8"/>
+    <dependencies>
+      <dep package="app-xkill"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xload" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xload-0.99.2.tar.bz2"
+            size="85824" md5sum="c95cc92f24d7c654f6c572c4b4fe3e2c"/>
+    <dependencies>
+      <dep package="app-xload"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xlogo" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xlogo-0.99.2.tar.bz2"
+            size="85470" md5sum="cfd0edf86d457e34af01fdaab36eeb03"/>
+    <dependencies>
+      <dep package="app-xlogo"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xlsatoms" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xlsatoms-0.99.2.tar.bz2"
+            size="73635" md5sum="9e7d96a4060dbd4483ba07f4a0fd324c"/>
+    <dependencies>
+      <dep package="app-xlsatoms"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xlsclients" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xlsclients-0.99.2.tar.bz2"
+            size="74265" md5sum="3b05bf9e4e01bd89bf5f60b34834d890"/>
+    <dependencies>
+      <dep package="app-xlsclients"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xlsfonts" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xlsfonts-0.99.2.tar.bz2"
+            size="86529" md5sum="b69f32ffd70fff3fe38c6dd09efdabfe"/>
+    <dependencies>
+      <dep package="app-xlsfonts"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xmag" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xmag-0.99.2.tar.bz2"
+            size="92037" md5sum="3712619f2096587dbdcdac7385ebbd6d"/>
+    <dependencies>
+      <dep package="app-xmag"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xman" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xman-0.99.3.tar.bz2"
+            size="131853" md5sum="0bd1276f1b105148eba05374ca42789d"/>
+    <dependencies>
+      <dep package="app-xman"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xmessage" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xmessage-0.99.2.tar.bz2"
+            size="81781" md5sum="dd32e7c1e4af23c3b001e530b5707f68"/>
+    <dependencies>
+      <dep package="app-xmessage"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xmh" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xmh-0.99.3.tar.bz2"
+            size="151460" md5sum="c7819c7b6f2ad39f8404d05645d8ecaa"/>
+    <dependencies>
+      <dep package="app-xmh"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xmodmap" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xmodmap-0.99.2.tar.bz2"
+            size="88709" md5sum="e9807c74d11d256447857deb85762f16"/>
+    <dependencies>
+      <dep package="app-xmodmap"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xmore" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xmore-0.99.2.tar.bz2"
+            size="90433" md5sum="8d5840d3cd8799ccb9fe499131e4a022"/>
+    <dependencies>
+      <dep package="app-xmore"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xphelloworld" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xphelloworld-0.99.2.tar.bz2"
+            size="71921" md5sum="740b6a82429d57029ee59244df7348d2"/>
+    <dependencies>
+      <dep package="app-xphelloworld"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xplsprinters" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xplsprinters-0.99.2.tar.bz2"
+            size="76033" md5sum="6a3d095f4358b739e08611c29c8a48b9"/>
+    <dependencies>
+      <dep package="app-xplsprinters"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xpr" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xpr-0.99.2.tar.bz2"
+            size="106354" md5sum="763ed298618509870499ba190ed8770d"/>
+    <dependencies>
+      <dep package="app-xpr"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xprehashprinterlist" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xprehashprinterlist-0.99.2.tar.bz2"
+            size="74371" md5sum="fbc8963bf3ae77783012925d55f04434"/>
+    <dependencies>
+      <dep package="app-xprehashprinterlist"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xprop" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xprop-0.99.2.tar.bz2"
+            size="91442" md5sum="edf6834512b6b26e8d0e970b1112994b"/>
+    <dependencies>
+      <dep package="app-xprop"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xrandr" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xrandr-0.99.2.tar.bz2"
+            size="75006" md5sum="a2568462f7d228f1ec1403d1e4c1ff1f"/>
+    <dependencies>
+      <dep package="app-xrandr"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xrdb" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xrdb-0.99.2.tar.bz2"
+            size="84343" md5sum="2801e13462c2194821c3f5ef446261cd"/>
+    <dependencies>
+      <dep package="app-xrdb"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xrefresh" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xrefresh-0.99.2.tar.bz2"
+            size="75214" md5sum="3f7673415109b5fb2e554af8e1d302d3"/>
+    <dependencies>
+      <dep package="app-xrefresh"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xrx" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xrx-0.99.3.tar.bz2"
+            size="228419" md5sum="789e76a1ead048d8ec782d92f7f16583"/>
+    <dependencies>
+      <dep package="app-xrx"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xset" version="0.99.4">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xset-0.99.4.tar.bz2"
+            size="87361" md5sum="1b9028c139e8611e357f18bbafa6b1c0"/>
+    <dependencies>
+      <dep package="app-xset"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xsetmode" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xsetmode-0.99.2.tar.bz2"
+            size="72719" md5sum="87c62ae43c026e09c677f71d08466420"/>
+    <dependencies>
+      <dep package="app-xsetmode"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xsetpointer" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xsetpointer-0.99.3.tar.bz2"
+            size="72866" md5sum="4592cb12d327a395fc902a6bc491baf0"/>
+    <dependencies>
+      <dep package="app-xsetpointer"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xsetroot" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xsetroot-0.99.2.tar.bz2"
+            size="76517" md5sum="f3fad277408d283266b17c3695a3c888"/>
+    <dependencies>
+      <dep package="app-xsetroot"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xsm" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xsm-0.99.3.tar.bz2"
+            size="115121" md5sum="c3f985ef0615cf2e83045643c901e786"/>
+    <dependencies>
+      <dep package="app-xsm"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xstdcmap" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xstdcmap-0.99.2.tar.bz2"
+            size="75138" md5sum="9656f3ff422c8aff7068ac6b6517d3bb"/>
+    <dependencies>
+      <dep package="app-xstdcmap"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xtrap" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xtrap-0.99.2.tar.bz2"
+            size="90154" md5sum="0c94b9b666e121487a8e7b34fd11056e"/>
+    <dependencies>
+      <dep package="app-xtrap"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xvidtune" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xvidtune-0.99.2.tar.bz2"
+            size="86407" md5sum="5f96b3edeecdccd25a888f44cfdbebfe"/>
+    <dependencies>
+      <dep package="app-xvidtune"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xvinfo" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xvinfo-0.99.2.tar.bz2"
+            size="73630" md5sum="b410e30662bd765b74a61b321bded6b9"/>
+    <dependencies>
+      <dep package="app-xvinfo"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xwd" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xwd-0.99.2.tar.bz2"
+            size="95807" md5sum="143d2e4752cf2f3913935cc03ffea89d"/>
+    <dependencies>
+      <dep package="app-xwd"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xwininfo" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xwininfo-0.99.2.tar.bz2"
+            size="86233" md5sum="2ef413a80aa6579c0a97cd071a4cc14a"/>
+    <dependencies>
+      <dep package="app-xwininfo"/>
+    </dependencies>
+  </tarball>
+  <tarball id="app/xwud" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/app/xwud-0.99.2.tar.bz2"
+            size="81939" md5sum="8b234385a7bf9573718519142164bb93"/>
+    <dependencies>
+      <dep package="app-xwud"/>
+    </dependencies>
+  </tarball>
+  <tarball id="data/xbitmaps" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/data/xbitmaps-0.99.1.tar.bz2"
+            size="55006" md5sum="384ac767bba58062251f6f658b210071"/>
+    <dependencies>
+      <dep package="data-xbitmaps"/>
+    </dependencies>
+  </tarball>
+  <tarball id="data/xcursor-themes" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/data/xcursor-themes-0.99.1.tar.bz2"
+            size="2207710" md5sum="a86608399b872b9ca3ed56d864918794"/>
+    <dependencies>
+      <dep package="data-xcursor-themes"/>
+    </dependencies>
+  </tarball>
+  <tarball id="data/xkbdata" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/data/xkbdata-0.99.1.tar.bz2"
+            size="279120" md5sum="ea8b66b888f15f7f0feea994c867558b"/>
+    <dependencies>
+      <dep package="data-xkbdata"/>
+    </dependencies>
+  </tarball>
+  <tarball id="doc/xorg-sgml-doctools" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/doc/xorg-sgml-doctools-0.99.1.tar.bz2"
+            size="36340" md5sum="94ad622e56df53d571fe19b43f37f7a4"/>
+    <dependencies>
+      <dep package="doc-xorg-sgml-doctools"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-acecad" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-acecad-1.0.0.3.tar.bz2"
+            size="156600" md5sum="0dc6881e961e9661a2a5dbef9a45f32f"/>
+    <dependencies>
+      <dep package="driver-xf86-input-acecad"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-aiptek" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-aiptek-1.0.0.3.tar.bz2"
+            size="174302" md5sum="21deb9f3f252e194dca7d9cb1aae983b"/>
+    <dependencies>
+      <dep package="driver-xf86-input-aiptek"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-calcomp" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-calcomp-1.0.0.3.tar.bz2"
+            size="158108" md5sum="be20435301333f8a5a9c8f1d0b413e4c"/>
+    <dependencies>
+      <dep package="driver-xf86-input-calcomp"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-citron" version="2.1.1.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-citron-2.1.1.3.tar.bz2"
+            size="184926" md5sum="fad378f536423e9812db6e6c13f6d987"/>
+    <dependencies>
+      <dep package="driver-xf86-input-citron"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-digitaledge" version="1.0.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-digitaledge-1.0.1.1.tar.bz2"
+            size="159270" md5sum="63b3095cec75b8d06c18a4eb4d5c62c5"/>
+    <dependencies>
+      <dep package="driver-xf86-input-digitaledge"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-dmc" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-dmc-1.0.0.3.tar.bz2"
+            size="155147" md5sum="06bbb865d4ce55a7331650a0340ae168"/>
+    <dependencies>
+      <dep package="driver-xf86-input-dmc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-dynapro" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-dynapro-1.0.0.3.tar.bz2"
+            size="154536" md5sum="84263223441c96a5935110f96fedd1ca"/>
+    <dependencies>
+      <dep package="driver-xf86-input-dynapro"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-elo2300" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-elo2300-1.0.0.3.tar.bz2"
+            size="156876" md5sum="e6d9f71918d9c3ac87d3b3aeba8d1dee"/>
+    <dependencies>
+      <dep package="driver-xf86-input-elo2300"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-elographics" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-elographics-1.0.0.3.tar.bz2"
+            size="162534" md5sum="0877ab8f4c8594fab7f413d78c5bb696"/>
+    <dependencies>
+      <dep package="driver-xf86-input-elographics"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-evdev" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-evdev-1.0.0.3.tar.bz2"
+            size="154815" md5sum="c406fbaf6fcf37b5e78d9d43290a8c67"/>
+    <dependencies>
+      <dep package="driver-xf86-input-evdev"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-fpit" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-fpit-1.0.0.3.tar.bz2"
+            size="158801" md5sum="dfe8b8500a935f48f3f44a1c67dd0e7a"/>
+    <dependencies>
+      <dep package="driver-xf86-input-fpit"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-hyperpen" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-hyperpen-1.0.0.3.tar.bz2"
+            size="161145" md5sum="8662a43e2d18965fe19d9b32ce104a21"/>
+    <dependencies>
+      <dep package="driver-xf86-input-hyperpen"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-jamstudio" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-jamstudio-1.0.0.3.tar.bz2"
+            size="153059" md5sum="e8656e6bdda5d00d58c02779e920a9cf"/>
+    <dependencies>
+      <dep package="driver-xf86-input-jamstudio"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-joystick" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-joystick-1.0.0.3.tar.bz2"
+            size="154879" md5sum="a0c10370aeace655317773b393df77fa"/>
+    <dependencies>
+      <dep package="driver-xf86-input-joystick"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-keyboard" version="1.0.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-keyboard-1.0.1.1.tar.bz2"
+            size="158168" md5sum="39b536b8e90dde45e6a4c1d254b28bb3"/>
+    <dependencies>
+      <dep package="driver-xf86-input-keyboard"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-magellan" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-magellan-1.0.0.3.tar.bz2"
+            size="154821" md5sum="23f8f90bfb3c83dcca2cd5a617f16000"/>
+    <dependencies>
+      <dep package="driver-xf86-input-magellan"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-magictouch" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-magictouch-1.0.0.3.tar.bz2"
+            size="156824" md5sum="a352b8446b9a61e4456e62e752e55f35"/>
+    <dependencies>
+      <dep package="driver-xf86-input-magictouch"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-microtouch" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-microtouch-1.0.0.3.tar.bz2"
+            size="157848" md5sum="2d4dc23ed1d5396549cb3c51269921d0"/>
+    <dependencies>
+      <dep package="driver-xf86-input-microtouch"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-mouse" version="1.0.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-mouse-1.0.2.tar.bz2"
+            size="199087" md5sum="26dd9db1eeb2ad5ebe86f1de3be67e0b"/>
+    <dependencies>
+      <dep package="driver-xf86-input-mouse"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-mutouch" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-mutouch-1.0.0.3.tar.bz2"
+            size="162645" md5sum="956d04f19230ffaace223bf9b360ce7a"/>
+    <dependencies>
+      <dep package="driver-xf86-input-mutouch"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-palmax" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-palmax-1.0.0.3.tar.bz2"
+            size="156113" md5sum="fd969f63642527dcfbbef709a5d22cba"/>
+    <dependencies>
+      <dep package="driver-xf86-input-palmax"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-penmount" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-penmount-1.0.0.3.tar.bz2"
+            size="155248" md5sum="363e2f4ae667753d88ef4e84d9f2336d"/>
+    <dependencies>
+      <dep package="driver-xf86-input-penmount"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-spaceorb" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-spaceorb-1.0.0.3.tar.bz2"
+            size="154185" md5sum="967a2c91f232e6a2d57cb41ffe00d98c"/>
+    <dependencies>
+      <dep package="driver-xf86-input-spaceorb"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-summa" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-summa-1.0.0.3.tar.bz2"
+            size="160834" md5sum="b59caf886098f120d593ed11a7da4bbf"/>
+    <dependencies>
+      <dep package="driver-xf86-input-summa"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-tek4957" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-tek4957-1.0.0.3.tar.bz2"
+            size="155898" md5sum="884e900a87799cd691579b030544c196"/>
+    <dependencies>
+      <dep package="driver-xf86-input-tek4957"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-ur98" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-ur98-1.0.0.3.tar.bz2"
+            size="156319" md5sum="c98105c7e7f1ca121809bf5920b6e9bf"/>
+    <dependencies>
+      <dep package="driver-xf86-input-ur98"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-input-void" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-input-void-1.0.0.3.tar.bz2"
+            size="152992" md5sum="2315010baa82cf014edae574b6252273"/>
+    <dependencies>
+      <dep package="driver-xf86-input-void"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-apm" version="1.0.1.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-apm-1.0.1.3.tar.bz2"
+            size="201957" md5sum="50843ecd9f3e51a02156c6d5fd21a7d1"/>
+    <dependencies>
+      <dep package="driver-xf86-video-apm"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-ark" version="0.5.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-ark-0.5.0.3.tar.bz2"
+            size="158104" md5sum="0aaf1edd709881059a7235409cf2db6f"/>
+    <dependencies>
+      <dep package="driver-xf86-video-ark"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-ati" version="6.5.7.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-ati-6.5.7.1.tar.bz2"
+            size="600734" md5sum="7c584d62026d8ac84b7624f8bb4c8340"/>
+    <dependencies>
+      <dep package="driver-xf86-video-ati"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-chips" version="1.0.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-chips-1.0.1.1.tar.bz2"
+            size="262877" md5sum="65195d2deb8273777be6b4fa08f61f9b"/>
+    <dependencies>
+      <dep package="driver-xf86-video-chips"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-cirrus" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-cirrus-1.0.0.3.tar.bz2"
+            size="202349" md5sum="5f12d5bbe1d8cf3774dd9833af325d25"/>
+    <dependencies>
+      <dep package="driver-xf86-video-cirrus"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-cyrix" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-cyrix-1.0.0.3.tar.bz2"
+            size="179439" md5sum="4712c9e81985f6e7fb34ab667b85a5c9"/>
+    <dependencies>
+      <dep package="driver-xf86-video-cyrix"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-dummy" version="0.1.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-dummy-0.1.0.3.tar.bz2"
+            size="156305" md5sum="12e8118af543e3190063100a43a39227"/>
+    <dependencies>
+      <dep package="driver-xf86-video-dummy"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-fbdev" version="0.1.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-fbdev-0.1.0.3.tar.bz2"
+            size="158096" md5sum="af2aeb7619b2a8ff29d56f0d528fe6a2"/>
+    <dependencies>
+      <dep package="driver-xf86-video-fbdev"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-glint" version="1.0.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-glint-1.0.1.1.tar.bz2"
+            size="266394" md5sum="ecfc4aac8cb479d17805ee1167ae47fa"/>
+    <dependencies>
+      <dep package="driver-xf86-video-glint"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-i128" version="1.1.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-i128-1.1.0.3.tar.bz2"
+            size="196516" md5sum="948830669e1d3d418838b21aab600c21"/>
+    <dependencies>
+      <dep package="driver-xf86-video-i128"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-i740" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-i740-1.0.0.3.tar.bz2"
+            size="189078" md5sum="c08d13e1914a652cc665c9b00c929832"/>
+    <dependencies>
+      <dep package="driver-xf86-video-i740"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-i810" version="1.4.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-i810-1.4.1.1.tar.bz2"
+            size="305482" md5sum="a583b5af8765dd7ce2771f564d758ac9"/>
+    <dependencies>
+      <dep package="driver-xf86-video-i810"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-imstt" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-imstt-1.0.0.3.tar.bz2"
+            size="160549" md5sum="094af2728f69019e6d25e9e5bef6c312"/>
+    <dependencies>
+      <dep package="driver-xf86-video-imstt"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-mga" version="1.2.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-mga-1.2.1.1.tar.bz2"
+            size="283550" md5sum="66400bd9846c6d6ecb0065f5965b80c3"/>
+    <dependencies>
+      <dep package="driver-xf86-video-mga"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-neomagic" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-neomagic-1.0.0.3.tar.bz2"
+            size="197913" md5sum="1598177ab12b3128d944d5c74a28d405"/>
+    <dependencies>
+      <dep package="driver-xf86-video-neomagic"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-newport" version="0.1.3.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-newport-0.1.3.3.tar.bz2"
+            size="182426" md5sum="602da39ee47f9bacb0bf50ea0ec3f371"/>
+    <dependencies>
+      <dep package="driver-xf86-video-newport"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-nsc" version="2.7.6.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-nsc-2.7.6.3.tar.bz2"
+            size="412251" md5sum="9f74489aaeaf9536d476ddc37c354af8"/>
+    <dependencies>
+      <dep package="driver-xf86-video-nsc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-nv" version="1.0.1.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-nv-1.0.1.3.tar.bz2"
+            size="228018" md5sum="834e765b7a41f8da18f19817b58694d0"/>
+    <dependencies>
+      <dep package="driver-xf86-video-nv"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-rendition" version="4.0.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-rendition-4.0.1.1.tar.bz2"
+            size="224220" md5sum="97a1cc4ebe5d340e44234d3abbc500b5"/>
+    <dependencies>
+      <dep package="driver-xf86-video-rendition"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-s3" version="0.3.5.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-s3-0.3.5.3.tar.bz2"
+            size="182479" md5sum="dd5ae7fb174be7a2fdb8a18b5ba22467"/>
+    <dependencies>
+      <dep package="driver-xf86-video-s3"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-s3virge" version="1.8.6.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-s3virge-1.8.6.3.tar.bz2"
+            size="218187" md5sum="b6a9070a84b963078046eb801c44ac4d"/>
+    <dependencies>
+      <dep package="driver-xf86-video-s3virge"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-savage" version="2.0.2.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-savage-2.0.2.1.tar.bz2"
+            size="244510" md5sum="a067f3cca2c3a4b732eb7f98ee43db96"/>
+    <dependencies>
+      <dep package="driver-xf86-video-savage"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-siliconmotion" version="1.3.1.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-siliconmotion-1.3.1.3.tar.bz2"
+            size="206598" md5sum="9c6edb02ae464f67f0e71b09b8d8e9a2"/>
+    <dependencies>
+      <dep package="driver-xf86-video-siliconmotion"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-sis" version="0.8.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-sis-0.8.1.1.tar.bz2"
+            size="543364" md5sum="e020050bfbc3c20fef0704ee1bdd47bf"/>
+    <dependencies>
+      <dep package="driver-xf86-video-sis"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-sisusb" version="0.7.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-sisusb-0.7.1.1.tar.bz2"
+            size="245284" md5sum="4ff8bc0783c0568e94d5fa2704483d27"/>
+    <dependencies>
+      <dep package="driver-xf86-video-sisusb"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-sunbw2" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-sunbw2-1.0.0.3.tar.bz2"
+            size="153720" md5sum="aa6ad34c71e85ed03f5102d5e1bcf31c"/>
+    <dependencies>
+      <dep package="driver-xf86-video-sunbw2"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-suncg14" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-suncg14-1.0.0.3.tar.bz2"
+            size="154782" md5sum="6ebd0380898c2f29141663fd357af9f7"/>
+    <dependencies>
+      <dep package="driver-xf86-video-suncg14"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-suncg3" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-suncg3-1.0.0.3.tar.bz2"
+            size="153876" md5sum="49073d4e993a53fe49e4abe5a9c2b303"/>
+    <dependencies>
+      <dep package="driver-xf86-video-suncg3"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-suncg6" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-suncg6-1.0.0.3.tar.bz2"
+            size="157422" md5sum="dbfe9496621e96c9bc6de77447549a12"/>
+    <dependencies>
+      <dep package="driver-xf86-video-suncg6"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-sunffb" version="1.0.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-sunffb-1.0.1.1.tar.bz2"
+            size="242709" md5sum="7b5aecbf8e05dd2a800fa8e850ced8b8"/>
+    <dependencies>
+      <dep package="driver-xf86-video-sunffb"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-sunleo" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-sunleo-1.0.0.3.tar.bz2"
+            size="168451" md5sum="f7cd6e9ce394d270a51ff5059418786e"/>
+    <dependencies>
+      <dep package="driver-xf86-video-sunleo"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-suntcx" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-suntcx-1.0.0.3.tar.bz2"
+            size="156933" md5sum="2bc8bf14284154ad1fa740cbda4dd1f1"/>
+    <dependencies>
+      <dep package="driver-xf86-video-suntcx"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-tdfx" version="1.1.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-tdfx-1.1.1.1.tar.bz2"
+            size="206793" md5sum="39256fc9ea885686ecde215d4510ed84"/>
+    <dependencies>
+      <dep package="driver-xf86-video-tdfx"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-tga" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-tga-1.0.0.3.tar.bz2"
+            size="189656" md5sum="da408a4b24359fffd3b2f71247224e60"/>
+    <dependencies>
+      <dep package="driver-xf86-video-tga"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-trident" version="1.0.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-trident-1.0.1.tar.bz2"
+            size="211237" md5sum="67e92c372135548bd2a401df846099a0"/>
+    <dependencies>
+      <dep package="driver-xf86-video-trident"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-tseng" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-tseng-1.0.0.3.tar.bz2"
+            size="210937" md5sum="f483c1352aaad1e18e10ba12427a55a0"/>
+    <dependencies>
+      <dep package="driver-xf86-video-tseng"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-v4l" version="0.0.1.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-v4l-0.0.1.3.tar.bz2"
+            size="160490" md5sum="6e46a0bdaf982dc464b2a6872f81cd9f"/>
+    <dependencies>
+      <dep package="driver-xf86-video-v4l"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-vesa" version="1.0.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-vesa-1.0.1.1.tar.bz2"
+            size="162185" md5sum="f54f38679072d4f094b5b2bad2b4acca"/>
+    <dependencies>
+      <dep package="driver-xf86-video-vesa"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-vga" version="4.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-vga-4.0.0.3.tar.bz2"
+            size="159043" md5sum="3af0192ef064b63b35eb6699605d1980"/>
+    <dependencies>
+      <dep package="driver-xf86-video-vga"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-via" version="0.1.33">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-via-0.1.33.tar.bz2"
+            size="304997" md5sum="c3c5e8fcd86d07a92067eb951f18e6a4"/>
+    <dependencies>
+      <dep package="driver-xf86-video-via"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-vmware" version="10.11.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-vmware-10.11.1.1.tar.bz2"
+            size="187219" md5sum="4b4532b9746086e3cbc6745d5e7b390d"/>
+    <dependencies>
+      <dep package="driver-xf86-video-vmware"/>
+    </dependencies>
+  </tarball>
+  <tarball id="driver/xf86-video-voodoo" version="1.0.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-voodoo-1.0.0.3.tar.bz2"
+            size="174627" md5sum="e9815b889eca9938beb33c9481a8aa76"/>
+    <dependencies>
+      <dep package="driver-xf86-video-voodoo"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/encodings" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/encodings-0.99.1.tar.bz2"
+            size="564048" md5sum="94a6c7af7516c05b66827121bafd6b70"/>
+    <dependencies>
+      <dep package="font-encodings"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-adobe-100dpi" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-adobe-100dpi-0.99.2.tar.bz2"
+            size="1017881" md5sum="52721996e39042133d7a0fea4e7c0647"/>
+    <dependencies>
+      <dep package="font-font-adobe-100dpi"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-adobe-75dpi" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-adobe-75dpi-0.99.2.tar.bz2"
+            size="786955" md5sum="316c7c9bd8c7ad8d192bb5d7860614c6"/>
+    <dependencies>
+      <dep package="font-font-adobe-75dpi"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-adobe-utopia-100dpi" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-adobe-utopia-100dpi-0.99.2.tar.bz2"
+            size="280484" md5sum="b55f84f807595ed7ca74d15e2585e94f"/>
+    <dependencies>
+      <dep package="font-font-adobe-utopia-100dpi"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-adobe-utopia-75dpi" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-adobe-utopia-75dpi-0.99.2.tar.bz2"
+            size="207921" md5sum="421a4f1a9e4d784b3e4d37f1f639c776"/>
+    <dependencies>
+      <dep package="font-font-adobe-utopia-75dpi"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-adobe-utopia-type1" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-adobe-utopia-type1-0.99.1.tar.bz2"
+            size="208976" md5sum="1846b1add5c2bf610ba9606fb833cd6e"/>
+    <dependencies>
+      <dep package="font-font-adobe-utopia-type1"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-alias" version="0.99.0">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-alias-0.99.0.tar.bz2"
+            size="41705" md5sum="ab102077178a9dbfc90ac091c62ead03"/>
+    <dependencies>
+      <dep package="font-font-alias"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-arabic-misc" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-arabic-misc-0.99.1.tar.bz2"
+            size="52528" md5sum="005ac1257e928ecb5bc6be3e97d8398b"/>
+    <dependencies>
+      <dep package="font-font-arabic-misc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-bh-100dpi" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-bh-100dpi-0.99.2.tar.bz2"
+            size="634239" md5sum="1b6e610d7ed0848af5aed3f5fa18975a"/>
+    <dependencies>
+      <dep package="font-font-bh-100dpi"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-bh-75dpi" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-bh-75dpi-0.99.2.tar.bz2"
+            size="477616" md5sum="ee914ec11cb03df27f205f4753f325ad"/>
+    <dependencies>
+      <dep package="font-font-bh-75dpi"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-bh-lucidatypewriter-100dpi" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-bh-lucidatypewriter-100dpi-0.99.2.tar.bz2"
+            size="183298" md5sum="17ac22e593fb2c1e7454035fd29552c9"/>
+    <dependencies>
+      <dep package="font-font-bh-lucidatypewriter-100dpi"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-bh-lucidatypewriter-75dpi" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-bh-lucidatypewriter-75dpi-0.99.2.tar.bz2"
+            size="151253" md5sum="393ce49f816c0de2c924f3e97acf0c2d"/>
+    <dependencies>
+      <dep package="font-font-bh-lucidatypewriter-75dpi"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-bh-ttf" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-bh-ttf-0.99.1.tar.bz2"
+            size="386878" md5sum="98ba09761791c7ac31d9fd6baec66f04"/>
+    <dependencies>
+      <dep package="font-font-bh-ttf"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-bh-type1" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-bh-type1-0.99.1.tar.bz2"
+            size="572587" md5sum="867ff907066a1e57031e7c11034f95e3"/>
+    <dependencies>
+      <dep package="font-font-bh-type1"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-bitstream-100dpi" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-bitstream-100dpi-0.99.1.tar.bz2"
+            size="128203" md5sum="31892d08774016a55f58a57f4e5e95be"/>
+    <dependencies>
+      <dep package="font-font-bitstream-100dpi"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-bitstream-75dpi" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-bitstream-75dpi-0.99.1.tar.bz2"
+            size="103584" md5sum="18196a20475eb9cbc9016883e1e689b5"/>
+    <dependencies>
+      <dep package="font-font-bitstream-75dpi"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-bitstream-speedo" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-bitstream-speedo-0.99.2.tar.bz2"
+            size="337028" md5sum="08c360334c1a1ab43238b48643bb7d26"/>
+    <dependencies>
+      <dep package="font-font-bitstream-speedo"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-bitstream-type1" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-bitstream-type1-0.99.1.tar.bz2"
+            size="351514" md5sum="2778f47899db62332edd118387f6da75"/>
+    <dependencies>
+      <dep package="font-font-bitstream-type1"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-cronyx-cyrillic" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-cronyx-cyrillic-0.99.1.tar.bz2"
+            size="180590" md5sum="8e40b63ad1ba1c581720c0534119851d"/>
+    <dependencies>
+      <dep package="font-font-cronyx-cyrillic"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-cursor-misc" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-cursor-misc-0.99.1.tar.bz2"
+            size="42400" md5sum="632c6f6c95e8fa42b0731f14cab30079"/>
+    <dependencies>
+      <dep package="font-font-cursor-misc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-daewoo-misc" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-daewoo-misc-0.99.1.tar.bz2"
+            size="672853" md5sum="b7763794b0c90ad6f8a240ee90a9a17c"/>
+    <dependencies>
+      <dep package="font-font-daewoo-misc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-dec-misc" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-dec-misc-0.99.1.tar.bz2"
+            size="40439" md5sum="b00998015f91206077af06ccdb8b0a25"/>
+    <dependencies>
+      <dep package="font-font-dec-misc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-ibm-type1" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-ibm-type1-0.99.1.tar.bz2"
+            size="315129" md5sum="8c881ca1f01909222e5cbe4abe2aeea2"/>
+    <dependencies>
+      <dep package="font-font-ibm-type1"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-isas-misc" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-isas-misc-0.99.1.tar.bz2"
+            size="778284" md5sum="713866d06798b0feb913a3db6e94a33c"/>
+    <dependencies>
+      <dep package="font-font-isas-misc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-jis-misc" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-jis-misc-0.99.1.tar.bz2"
+            size="569515" md5sum="1f6609bfa9912831d73df177fbe535b3"/>
+    <dependencies>
+      <dep package="font-font-jis-misc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-micro-misc" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-micro-misc-0.99.1.tar.bz2"
+            size="38623" md5sum="a4b0a2f13315a2c52223cbf9eb5c1837"/>
+    <dependencies>
+      <dep package="font-font-micro-misc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-misc-cyrillic" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-misc-cyrillic-0.99.1.tar.bz2"
+            size="65458" md5sum="71f5b4fcadf5dd156da186457f76058e"/>
+    <dependencies>
+      <dep package="font-font-misc-cyrillic"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-misc-ethiopic" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-misc-ethiopic-0.99.2.tar.bz2"
+            size="183915" md5sum="1d1af126018d683bf67822835a3c38a7"/>
+    <dependencies>
+      <dep package="font-font-misc-ethiopic"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-misc-meltho" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-misc-meltho-0.99.2.tar.bz2"
+            size="1465456" md5sum="cc2b3370104fea946f283f2a8ec822a6"/>
+    <dependencies>
+      <dep package="font-font-misc-meltho"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-misc-misc" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-misc-misc-0.99.2.tar.bz2"
+            size="1819315" md5sum="8051f8f3b245ef505f3d2092ed4ec0c3"/>
+    <dependencies>
+      <dep package="font-font-misc-misc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-mutt-misc" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-mutt-misc-0.99.1.tar.bz2"
+            size="201082" md5sum="ffe1bf4a8898702f34e20bf52c917605"/>
+    <dependencies>
+      <dep package="font-font-mutt-misc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-schumacher-misc" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-schumacher-misc-0.99.2.tar.bz2"
+            size="77623" md5sum="1493bc36bf4252ae1ad25c5e658419fb"/>
+    <dependencies>
+      <dep package="font-font-schumacher-misc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-screen-cyrillic" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-screen-cyrillic-0.99.1.tar.bz2"
+            size="42610" md5sum="30ce35ef3a1e34ae66b5114685adc003"/>
+    <dependencies>
+      <dep package="font-font-screen-cyrillic"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-sony-misc" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-sony-misc-0.99.1.tar.bz2"
+            size="48318" md5sum="83a05cd92a00ea6a93202909f572526f"/>
+    <dependencies>
+      <dep package="font-font-sony-misc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-sun-misc" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-sun-misc-0.99.1.tar.bz2"
+            size="56149" md5sum="9b3b55a357c956bb4536aa236225b007"/>
+    <dependencies>
+      <dep package="font-font-sun-misc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-util" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-util-0.99.2.tar.bz2"
+            size="93663" md5sum="035da3fb58569c21fafc855d0dd3b906"/>
+    <dependencies>
+      <dep package="font-font-util"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-winitzki-cyrillic" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-winitzki-cyrillic-0.99.1.tar.bz2"
+            size="40765" md5sum="512f22880a73d4bf9c70102d0a60e8f8"/>
+    <dependencies>
+      <dep package="font-font-winitzki-cyrillic"/>
+    </dependencies>
+  </tarball>
+  <tarball id="font/font-xfree86-type1" version="0.99.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-xfree86-type1-0.99.1.tar.bz2"
+            size="65819" md5sum="5b6688cea95067886574c191992c3bc5"/>
+    <dependencies>
+      <dep package="font-font-xfree86-type1"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libAppleWM" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libAppleWM-0.99.3.tar.bz2"
+            size="154179" md5sum="d680d85253604b0b6031ec9a138c5f13"/>
+    <dependencies>
+      <dep package="lib-libAppleWM"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libdmx" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libdmx-0.99.2.tar.bz2"
+            size="159335" md5sum="f470296629b6627bcc6d4c9e3517ab08"/>
+    <dependencies>
+      <dep package="lib-libdmx"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libfontenc" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libfontenc-0.99.3.tar.bz2"
+            size="157301" md5sum="4ccb051962f067ec076dc12b0b43913d"/>
+    <dependencies>
+      <dep package="lib-libfontenc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libFS" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libFS-0.99.3.tar.bz2"
+            size="179081" md5sum="97c05cd1b2cb3b0a68c773ab613c6148"/>
+    <dependencies>
+      <dep package="lib-libFS"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libICE" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libICE-0.99.2.tar.bz2"
+            size="187798" md5sum="a3b78b90537055c8dbb9fb6cf77abe2b"/>
+    <dependencies>
+      <dep package="lib-libICE"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/liblbxutil" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/liblbxutil-0.99.3.tar.bz2"
+            size="173706" md5sum="c3016869aa170f990f9c0a095d6375fa"/>
+    <dependencies>
+      <dep package="lib-liblbxutil"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/liboldX" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/liboldX-0.99.2.tar.bz2"
+            size="156254" md5sum="cf3faee62f1682f3e305d3834bcde343"/>
+    <dependencies>
+      <dep package="lib-liboldX"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libSM" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libSM-0.99.3.tar.bz2"
+            size="168361" md5sum="4b26938eac1763e4674ad8786025af65"/>
+    <dependencies>
+      <dep package="lib-libSM"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libWindowsWM" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libWindowsWM-0.99.3.tar.bz2"
+            size="156104" md5sum="8c2527fb562ceabf721aad8afac6139e"/>
+    <dependencies>
+      <dep package="lib-libWindowsWM"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libX11" version="0.99.4">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libX11-0.99.4.tar.bz2"
+            size="1303543" md5sum="8ebb385dfa65fd8b1e5a672cb29b28ef"/>
+    <dependencies>
+      <dep package="lib-libX11"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXau" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXau-0.99.2.tar.bz2"
+            size="159045" md5sum="71cab3fa6d86a3e7de907949be419be7"/>
+    <dependencies>
+      <dep package="lib-libXau"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXaw" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXaw-0.99.3.tar.bz2"
+            size="453585" md5sum="250612be2f9a83739a465407e21fc21d"/>
+    <dependencies>
+      <dep package="lib-libXaw"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXcomposite" version="0.2.2.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXcomposite-0.2.2.1.tar.bz2"
+            size="148606" md5sum="374182cfcf7fa4f90727b49d4916a817"/>
+    <dependencies>
+      <dep package="lib-libXcomposite"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXcursor" version="1.1.5.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXcursor-1.1.5.1.tar.bz2"
+            size="177710" md5sum="ca793776537ce25422134f3dc7b7e55f"/>
+    <dependencies>
+      <dep package="lib-libXcursor"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXdamage" version="1.0.2.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXdamage-1.0.2.1.tar.bz2"
+            size="152356" md5sum="caaf2d2542953f9c604ba2618b97e1ea"/>
+    <dependencies>
+      <dep package="lib-libXdamage"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXdmcp" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXdmcp-0.99.2.tar.bz2"
+            size="161102" md5sum="d9005e15aabc27efbc78644fc04fe285"/>
+    <dependencies>
+      <dep package="lib-libXdmcp"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXevie" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXevie-0.99.3.tar.bz2"
+            size="153597" md5sum="b3ddbc0170b987278a213a51df15bc99"/>
+    <dependencies>
+      <dep package="lib-libXevie"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXext" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXext-0.99.3.tar.bz2"
+            size="199966" md5sum="9d9cf469ecea874853aeabc301e91221"/>
+    <dependencies>
+      <dep package="lib-libXext"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXfixes" version="3.0.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXfixes-3.0.1.1.tar.bz2"
+            size="155747" md5sum="66c5e3c97a53cdea61a7228379e8b89c"/>
+    <dependencies>
+      <dep package="lib-libXfixes"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXfont" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXfont-0.99.3.tar.bz2"
+            size="540069" md5sum="08ed359995921a1092c3bdcd6da8853a"/>
+    <dependencies>
+      <dep package="lib-libXfont"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXfontcache" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXfontcache-0.99.2.tar.bz2"
+            size="150859" md5sum="a0438e4367d252e8dafaea832c6b314a"/>
+    <dependencies>
+      <dep package="lib-libXfontcache"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXft" version="2.1.8.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXft-2.1.8.1.tar.bz2"
+            size="204964" md5sum="185a52e8043aaafcd9cbaa59c206012b"/>
+    <dependencies>
+      <dep package="lib-libXft"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXi" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXi-0.99.2.tar.bz2"
+            size="191018" md5sum="9393849a4d06a433024e0d6df9b8b19e"/>
+    <dependencies>
+      <dep package="lib-libXi"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXinerama" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXinerama-0.99.2.tar.bz2"
+            size="148589" md5sum="f5083b2cddf67f55103d9c0d846994b5"/>
+    <dependencies>
+      <dep package="lib-libXinerama"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libxkbfile" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libxkbfile-0.99.2.tar.bz2"
+            size="204123" md5sum="a2e1631fbd598ba3865a8f995602b965"/>
+    <dependencies>
+      <dep package="lib-libxkbfile"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libxkbui" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libxkbui-0.99.2.tar.bz2"
+            size="151190" md5sum="bfc2e48393a56468960f7d751e9c4899"/>
+    <dependencies>
+      <dep package="lib-libxkbui"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXmu" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXmu-0.99.2.tar.bz2"
+            size="228038" md5sum="875035887ade2cb42ef15afb3a3b28c7"/>
+    <dependencies>
+      <dep package="lib-libXmu"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXp" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXp-0.99.2.tar.bz2"
+            size="187866" md5sum="f49b4dcdf782601e91945d3d1605d4be"/>
+    <dependencies>
+      <dep package="lib-libXp"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXpm" version="3.5.4.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXpm-3.5.4.1.tar.bz2"
+            size="291806" md5sum="a23e253e0da7ec4c4be1edaa682bbb52"/>
+    <dependencies>
+      <dep package="lib-libXpm"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXprintAppUtil" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXprintAppUtil-0.99.2.tar.bz2"
+            size="149519" md5sum="70d72b1bf5d8b690362d7bd044662907"/>
+    <dependencies>
+      <dep package="lib-libXprintAppUtil"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXprintUtil" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXprintUtil-0.99.3.tar.bz2"
+            size="162302" md5sum="e178e7a88f3530b5b5c9c3fe8e8bb82d"/>
+    <dependencies>
+      <dep package="lib-libXprintUtil"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXrandr" version="1.1.0.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXrandr-1.1.0.1.tar.bz2"
+            size="160154" md5sum="e93f7aa4dfd1b99ce3e08fac2fa6608b"/>
+    <dependencies>
+      <dep package="lib-libXrandr"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXrender" version="0.9.0.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXrender-0.9.0.1.tar.bz2"
+            size="171400" md5sum="57bf83d2cf3f012f2619c13c15081942"/>
+    <dependencies>
+      <dep package="lib-libXrender"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXres" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXres-0.99.3.tar.bz2"
+            size="154576" md5sum="6da6abb97a69524d909700ce46cc26cf"/>
+    <dependencies>
+      <dep package="lib-libXres"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXScrnSaver" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXScrnSaver-0.99.3.tar.bz2"
+            size="154902" md5sum="2c1477c90f3fdca4363ad792047dfdcd"/>
+    <dependencies>
+      <dep package="lib-libXScrnSaver"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXt" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXt-0.99.3.tar.bz2"
+            size="427700" md5sum="82059b90d704a3e09a338c2034918275"/>
+    <dependencies>
+      <dep package="lib-libXt"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXTrap" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXTrap-0.99.2.tar.bz2"
+            size="160806" md5sum="56915bfdc77140f49b15b243bb336c18"/>
+    <dependencies>
+      <dep package="lib-libXTrap"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXtst" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXtst-0.99.3.tar.bz2"
+            size="153514" md5sum="1763aa33c7df6007233cf18c23049d71"/>
+    <dependencies>
+      <dep package="lib-libXtst"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXv" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXv-0.99.2.tar.bz2"
+            size="169393" md5sum="bc022226cb2d1e1dbdde4dbb5b4c9d32"/>
+    <dependencies>
+      <dep package="lib-libXv"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXvMC" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXvMC-0.99.2.tar.bz2"
+            size="158317" md5sum="f061617fa90633c4955bb0342574cf2b"/>
+    <dependencies>
+      <dep package="lib-libXvMC"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXxf86dga" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXxf86dga-0.99.3.tar.bz2"
+            size="159937" md5sum="0f70bbf4d8d9477002a5295952643504"/>
+    <dependencies>
+      <dep package="lib-libXxf86dga"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXxf86misc" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXxf86misc-0.99.2.tar.bz2"
+            size="152033" md5sum="6f293994d1b478dfb322ec9c7e182bdb"/>
+    <dependencies>
+      <dep package="lib-libXxf86misc"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/libXxf86vm" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/libXxf86vm-0.99.2.tar.bz2"
+            size="156275" md5sum="cfd6fb1994972c56b09d5e9e2a4cb333"/>
+    <dependencies>
+      <dep package="lib-libXxf86vm"/>
+    </dependencies>
+  </tarball>
+  <tarball id="lib/xtrans" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/lib/xtrans-0.99.2.tar.bz2"
+            size="88366" md5sum="15b2a02d77e7810ff872ba09f0b32875"/>
+    <dependencies>
+      <dep package="lib-xtrans"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/applewmproto" version="1.0.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/applewmproto-1.0.1.tar.bz2"
+            size="38459" md5sum="3e63ff6ff6dd74a0adf419aa3c7d61b0"/>
+    <dependencies>
+      <dep package="proto-applewmproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/bigreqsproto" version="1.0.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/bigreqsproto-1.0.1.tar.bz2"
+            size="36354" md5sum="fb5b31482d67661d29931d816736aa50"/>
+    <dependencies>
+      <dep package="proto-bigreqsproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/compositeproto" version="0.2.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/compositeproto-0.2.1.tar.bz2"
+            size="37040" md5sum="163f8e87555bcf9c402ae2be9d7ac7c3"/>
+    <dependencies>
+      <dep package="proto-compositeproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/damageproto" version="1.0.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/damageproto-1.0.1.tar.bz2"
+            size="37109" md5sum="ba4363b50409e53d5370f86f06ca8ae0"/>
+    <dependencies>
+      <dep package="proto-damageproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/dmxproto" version="2.2.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/dmxproto-2.2.1.tar.bz2"
+            size="39045" md5sum="4ad016fe64688c54730b47551e96f7c1"/>
+    <dependencies>
+      <dep package="proto-dmxproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/evieext" version="1.0.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/evieext-1.0.1.tar.bz2"
+            size="37207" md5sum="f20be452f3953ef3778982a669225115"/>
+    <dependencies>
+      <dep package="proto-evieext"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/fixesproto" version="3.0.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/fixesproto-3.0.1.tar.bz2"
+            size="38446" md5sum="dc3c1df35b16bfd673e55b83cab8b361"/>
+    <dependencies>
+      <dep package="proto-fixesproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/fontcacheproto" version="0.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/fontcacheproto-0.1.1.tar.bz2"
+            size="37901" md5sum="c603e10bbc73689f5bd4ffa5e24f3d29"/>
+    <dependencies>
+      <dep package="proto-fontcacheproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/fontsproto" version="2.0.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/fontsproto-2.0.1.tar.bz2"
+            size="44913" md5sum="ec23e17f0cb54b15ff31e846704c849f"/>
+    <dependencies>
+      <dep package="proto-fontsproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/glproto" version="1.4.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/glproto-1.4.1.tar.bz2"
+            size="53278" md5sum="dd439aa517177697d60d7ee6cdbc614f"/>
+    <dependencies>
+      <dep package="proto-glproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/inputproto" version="1.3.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/inputproto-1.3.1.tar.bz2"
+            size="46076" md5sum="6710bb1961bcceb099a1635c1f101016"/>
+    <dependencies>
+      <dep package="proto-inputproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/kbproto" version="1.0.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/kbproto-1.0.1.tar.bz2"
+            size="57630" md5sum="3506c6d4698afc5ecc9927cd06ab4329"/>
+    <dependencies>
+      <dep package="proto-kbproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/printproto" version="1.0.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/printproto-1.0.2.tar.bz2"
+            size="43256" md5sum="4157e786622f2d061edc82b91bff45e0"/>
+    <dependencies>
+      <dep package="proto-printproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/randrproto" version="1.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/randrproto-1.1.1.tar.bz2"
+            size="38020" md5sum="ea9b416b620041352a67670bac2cc017"/>
+    <dependencies>
+      <dep package="proto-randrproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/recordproto" version="1.13.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/recordproto-1.13.1.tar.bz2"
+            size="39003" md5sum="e858fe69ff4ce7bcdaa850d8a3631b17"/>
+    <dependencies>
+      <dep package="proto-recordproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/renderproto" version="0.9.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/renderproto-0.9.1.tar.bz2"
+            size="39675" md5sum="41b7006bb3de16df85380fa0309bb3fd"/>
+    <dependencies>
+      <dep package="proto-renderproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/resourceproto" version="1.0.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/resourceproto-1.0.1.tar.bz2"
+            size="36566" md5sum="2cd11f087cca67382808c5f64579bdf7"/>
+    <dependencies>
+      <dep package="proto-resourceproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/scrnsaverproto" version="1.0.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/scrnsaverproto-1.0.1.tar.bz2"
+            size="38134" md5sum="9f82f6ce451b0d2543af405c91631a73"/>
+    <dependencies>
+      <dep package="proto-scrnsaverproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/trapproto" version="3.4.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/trapproto-3.4.2.tar.bz2"
+            size="48484" md5sum="61645d301d27f0f9a3c3113a451f949c"/>
+    <dependencies>
+      <dep package="proto-trapproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/videoproto" version="2.2.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/videoproto-2.2.1.tar.bz2"
+            size="42425" md5sum="83245b434f77aeef2ba69b88153422a2"/>
+    <dependencies>
+      <dep package="proto-videoproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/windowswmproto" version="1.0.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/windowswmproto-1.0.1.tar.bz2"
+            size="38390" md5sum="31a784e69f19a5a704b16c6b51ed0ee1"/>
+    <dependencies>
+      <dep package="proto-windowswmproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/xcmiscproto" version="1.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/xcmiscproto-1.1.1.tar.bz2"
+            size="36471" md5sum="e3e6ee6862982f2b2d7a0fc7f483869e"/>
+    <dependencies>
+      <dep package="proto-xcmiscproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/xextproto" version="7.0.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/xextproto-7.0.1.tar.bz2"
+            size="67970" md5sum="2ad511ee64710d58497f294fa3035423"/>
+    <dependencies>
+      <dep package="proto-xextproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/xf86bigfontproto" version="1.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/xf86bigfontproto-1.1.1.tar.bz2"
+            size="37084" md5sum="e93b1b833a0531e546bf6f4cfbde4786"/>
+    <dependencies>
+      <dep package="proto-xf86bigfontproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/xf86dgaproto" version="2.0.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/xf86dgaproto-2.0.1.tar.bz2"
+            size="39793" md5sum="a853ac74324824f259ce536ad2a43eea"/>
+    <dependencies>
+      <dep package="proto-xf86dgaproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/xf86driproto" version="2.0.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/xf86driproto-2.0.1.tar.bz2"
+            size="42289" md5sum="705f6b2ae275dce556689f7774770847"/>
+    <dependencies>
+      <dep package="proto-xf86driproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/xf86miscproto" version="0.9.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/xf86miscproto-0.9.1.tar.bz2"
+            size="38113" md5sum="4abf4c8338ae6319c14fb6661c4f35f0"/>
+    <dependencies>
+      <dep package="proto-xf86miscproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/xf86rushproto" version="1.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/xf86rushproto-1.1.1.tar.bz2"
+            size="37382" md5sum="eb2e5a127aa828b13c50b0f396f28f18"/>
+    <dependencies>
+      <dep package="proto-xf86rushproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/xf86vidmodeproto" version="2.2.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/xf86vidmodeproto-2.2.1.tar.bz2"
+            size="39223" md5sum="e125b82299fa2e9c955e2277744694c6"/>
+    <dependencies>
+      <dep package="proto-xf86vidmodeproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/xineramaproto" version="1.1.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/xineramaproto-1.1.1.tar.bz2"
+            size="38066" md5sum="dc7a13f4a128513ebad675b35eb36b58"/>
+    <dependencies>
+      <dep package="proto-xineramaproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/xproto" version="7.0.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/xproto-7.0.3.tar.bz2"
+            size="126731" md5sum="50752661e54fa922479c0ec5bea02316"/>
+    <dependencies>
+      <dep package="proto-xproto"/>
+    </dependencies>
+  </tarball>
+  <tarball id="proto/xproxymanagementprotocol" version="1.0.1">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/proto/xproxymanagementprotocol-1.0.1.tar.bz2"
+            size="36723" md5sum="2951543a1d5687d54db825bac2bffaed"/>
+    <dependencies>
+      <dep package="proto-xproxymanagementprotocol"/>
+    </dependencies>
+  </tarball>
+  <tarball id="util/imake" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/util/imake-0.99.3.tar.bz2"
+            size="95479" md5sum="59ae6dd5359b3c30c74fa92a1be4a949"/>
+    <dependencies>
+      <dep package="util-imake"/>
+    </dependencies>
+  </tarball>
+  <tarball id="util/makedepend" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/util/makedepend-0.99.3.tar.bz2"
+            size="102109" md5sum="2f94794b7d9ab2b829153223a79aeb18"/>
+    <dependencies>
+      <dep package="util-makedepend"/>
+    </dependencies>
+  </tarball>
+  <tarball id="util/util-macros" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/util/util-macros-0.99.2.tar.bz2"
+            size="37726" md5sum="3e628a879e5d1a3b0d29217fc54cfcea"/>
+    <dependencies>
+      <dep package="util-util-macros"/>
+    </dependencies>
+  </tarball>
+  <tarball id="util/xmkmf" version="0.99.2">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/util/xmkmf-0.99.2.tar.bz2"
+            size="66667" md5sum="b5f1e59672cc9f08a8340e9700465c77"/>
+    <dependencies>
+      <dep package="util-xmkmf"/>
+    </dependencies>
+  </tarball>
+  <tarball id="util/xorg-cf-files" version="0.99.3">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/util/xorg-cf-files-0.99.3.tar.bz2"
+            size="254666" md5sum="fc999fc2a508af0735798a8c59164b19"/>
+    <dependencies>
+      <dep package="util-xorg-cf-files"/>
+    </dependencies>
+  </tarball>
+  <tarball id="xserver/xorg-server" version="0.99.4">
+    <source href="http://xorg.freedesktop.org/releases/X11R7.0-RC3/xserver/xorg-server-0.99.4.tar.bz2"
+            size="5804941" md5sum="a4354b15e6ef7462c070f74bcc7532da"/>
+    <dependencies>
+      <dep package="xserver-xorg-server"/>
+    </dependencies>
+  </tarball>
+
+</moduleset>
