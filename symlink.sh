@@ -12777,6 +12777,14 @@ symlink_util_cf() {
     action	xprint_host.def
 }
 
+symlink_util_gccmakedep() {
+    src_dir config/util
+    dst_dir util/gccmakedep
+
+    action	gccmdep.cpp
+    action	gccmakedep.man
+}
+
 symlink_util_imake() {
     src_dir config/imake
     dst_dir util/imake
@@ -12812,6 +12820,7 @@ symlink_util_makedepend() {
 
 symlink_util() {
     symlink_util_cf
+    symlink_util_gccmakedep
     symlink_util_imake
     symlink_util_makedepend
     symlink_util_xmkmf
