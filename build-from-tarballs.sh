@@ -450,9 +450,10 @@ build_util() {
     build util xmkmf
 }
 
-# No dependencies thus far
+# xorg-docs requires xorg-sgml-doctools
 build_doc() {
     build doc xorg-sgml-doctools
+    build doc xorg-docs
 }
 
 usage() {

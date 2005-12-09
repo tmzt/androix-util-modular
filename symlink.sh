@@ -7152,7 +7152,7 @@ symlink_xserver_hw_xfree86_doc() {
 
 # Docs about the entire Xorg distribution:
 
-    dst_dir doc/old/sgml
+    dst_dir doc/xorg-docs/sgml
     action  Darwin.sgml
     action  Install.sgml
     action  LICENSE.sgml
@@ -7223,7 +7223,7 @@ symlink_xserver_hw_xfree86_doc() {
 
 #   Japanese documentation
     src_dir programs/Xserver/hw/xfree86/doc/Japanese/sgml
-    dst_dir doc/old/sgml/Japanese
+    dst_dir doc/xorg-docs/sgml/Japanese
 
     action	1st.sgml
     action	read98.sgml
@@ -12057,87 +12057,87 @@ symlink_font() {
 
 symlink_doc_old() {
     src_dir doc/hardcopy
-    dst_dir doc/old/hardcopy
+    dst_dir doc/xorg-docs/hardcopy
 
     src_dir doc/hardcopy/BDF
-    dst_dir doc/old/hardcopy/BDF
+    dst_dir doc/xorg-docs/hardcopy/BDF
 
     action	bdf.PS.gz
 
     src_dir doc/hardcopy/CTEXT
-    dst_dir doc/old/hardcopy/CTEXT
+    dst_dir doc/xorg-docs/hardcopy/CTEXT
 
     action	ctext.PS.gz
 
     src_dir doc/hardcopy/FSProtocol
-    dst_dir doc/old/hardcopy/FSProtocol
+    dst_dir doc/xorg-docs/hardcopy/FSProtocol
 
     action	fsproto.PS.gz
 
     src_dir doc/hardcopy/i18n
-    dst_dir doc/old/hardcopy/i18n
+    dst_dir doc/xorg-docs/hardcopy/i18n
 
     action	Framework.PS.gz
     action	LocaleDB.PS.gz
     action	Trans.PS.gz
 
     src_dir doc/hardcopy/ICCCM
-    dst_dir doc/old/hardcopy/ICCCM
+    dst_dir doc/xorg-docs/hardcopy/ICCCM
 
     action	icccm.PS.gz
     action	icccm.idx.PS.gz
 
     src_dir doc/hardcopy/ICE
-    dst_dir doc/old/hardcopy/ICE
+    dst_dir doc/xorg-docs/hardcopy/ICE
 
     action	ICElib.PS.gz
     action	ice.PS.gz
 
     src_dir doc/hardcopy/man
-    dst_dir doc/old/hardcopy/man
+    dst_dir doc/xorg-docs/hardcopy/man
 
     action	man.PS.gz
 
     src_dir doc/hardcopy/rstart
-    dst_dir doc/old/hardcopy/rstart
+    dst_dir doc/xorg-docs/hardcopy/rstart
 
     action	rstart.PS.gz
 
     src_dir doc/hardcopy/RX
-    dst_dir doc/old/hardcopy/RX
+    dst_dir doc/xorg-docs/hardcopy/RX
 
     action	RX.PS.gz
 
     src_dir doc/hardcopy/saver
-    dst_dir doc/old/hardcopy/saver
+    dst_dir doc/xorg-docs/hardcopy/saver
 
     action	saver.PS.gz
 
     src_dir doc/hardcopy/SM
-    dst_dir doc/old/hardcopy/SM
+    dst_dir doc/xorg-docs/hardcopy/SM
 
     action	SMlib.PS.gz
     action	xsmp.PS.gz
 
     src_dir doc/hardcopy/X11
-    dst_dir doc/old/hardcopy/X11
+    dst_dir doc/xorg-docs/hardcopy/X11
 
     action	xlib.PS.gz
     action	xlib.idx.PS.gz
 
     src_dir doc/hardcopy/Xaw
-    dst_dir doc/old/hardcopy/Xaw
+    dst_dir doc/xorg-docs/hardcopy/Xaw
 
     action	widg.idx.PS.gz
     action	widgets.PS.gz
 
     src_dir doc/hardcopy/XDMCP
-    dst_dir doc/old/hardcopy/XDMCP
+    dst_dir doc/xorg-docs/hardcopy/XDMCP
 
     action	xdmcp.PS.gz
 
     src_dir doc/hardcopy/Xext
-    dst_dir doc/old/hardcopy/Xext
+    dst_dir doc/xorg-docs/hardcopy/Xext
 
     action	AppGroup.PS.gz
     action	DPMS.PS.gz
@@ -12165,40 +12165,40 @@ symlink_doc_old() {
     action	xtestlib.PS.gz
 
     src_dir doc/hardcopy/xfs
-    dst_dir doc/old/hardcopy/xfs
+    dst_dir doc/xorg-docs/hardcopy/xfs
 
     action	design.PS.gz
 
     src_dir doc/hardcopy/Xi
-    dst_dir doc/old/hardcopy/Xi
+    dst_dir doc/xorg-docs/hardcopy/Xi
 
     action	lib.PS.gz
     action	port.PS.gz
     action	proto.PS.gz
 
     src_dir doc/hardcopy/XIM
-    dst_dir doc/old/hardcopy/XIM
+    dst_dir doc/xorg-docs/hardcopy/XIM
 
     action	xim.PS.gz
 
     src_dir doc/hardcopy/XKB
-    dst_dir doc/old/hardcopy/XKB
+    dst_dir doc/xorg-docs/hardcopy/XKB
 
     action	XKBlib.ps.gz
     action	XKBproto.ps.gz
 
     src_dir doc/hardcopy/XLFD
-    dst_dir doc/old/hardcopy/XLFD
+    dst_dir doc/xorg-docs/hardcopy/XLFD
 
     action	xlfd.PS.gz
 
     src_dir doc/hardcopy/Xmu
-    dst_dir doc/old/hardcopy/Xmu
+    dst_dir doc/xorg-docs/hardcopy/Xmu
 
     action	xmu.PS.gz
 
     src_dir doc/hardcopy/XPRINT
-    dst_dir doc/old/hardcopy/XPRINT
+    dst_dir doc/xorg-docs/hardcopy/XPRINT
 
     action	Xprint_FAQ.html
     action	Xprint_FAQ.txt
@@ -12210,13 +12210,13 @@ symlink_doc_old() {
     action	xp_proto.PS.gz
 
     src_dir doc/hardcopy/XProtocol
-    dst_dir doc/old/hardcopy/XProtocol
+    dst_dir doc/xorg-docs/hardcopy/XProtocol
 
     action	proto.PS.gz
     action	proto.idx.PS.gz
 
     src_dir doc/hardcopy/Xserver
-    dst_dir doc/old/hardcopy/Xserver
+    dst_dir doc/xorg-docs/hardcopy/Xserver
 
     action	Xprt.PS.gz
     action	analysis.PS.gz
@@ -12226,29 +12226,29 @@ symlink_doc_old() {
     action	secint.PS.gz
 
     src_dir doc/hardcopy/Xt
-    dst_dir doc/old/hardcopy/Xt
+    dst_dir doc/xorg-docs/hardcopy/Xt
 
     action	intr.idx.PS.gz
     action	intrinsics.PS.gz
 
-    src_dir doc/hardcopy/xterm
-    dst_dir doc/old/hardcopy/xterm
-
-    action	ctlseqs.PS.gz
+#    src_dir doc/hardcopy/xterm
+#    dst_dir doc/xorg-docs/hardcopy/xterm
+#
+#    action	ctlseqs.PS.gz
 
     src_dir doc/hardcopy/xtrans
-    dst_dir doc/old/hardcopy/xtrans
+    dst_dir doc/xorg-docs/hardcopy/xtrans
 
     action	Xtrans.PS.gz
 
     src_dir doc/hardcopy/Xv
-    dst_dir doc/old/hardcopy/Xv
+    dst_dir doc/xorg-docs/hardcopy/Xv
 
     action	video
     action	xv-protocol-v2.PS
 
     src_dir doc/man/general
-    dst_dir doc/old/man/general
+    dst_dir doc/xorg-docs/man/general
 
     action	Consortium.man
     action	security.man
@@ -12262,74 +12262,74 @@ symlink_doc_old() {
     # FIXME: other man pages should be moved to the appropriate library
 
     src_dir doc/misc
-    dst_dir doc/old/misc
+    dst_dir doc/xorg-docs/misc
 
     action	xlogo.epsi
 
     src_dir doc/specs
-    dst_dir doc/old/specs
+    dst_dir doc/xorg-docs/specs
 
     action	specindex.html
 
     src_dir doc/specs/BDF
-    dst_dir doc/old/specs/BDF
+    dst_dir doc/xorg-docs/specs/BDF
 
     action	bdf.ms
     action	fig1.ps
     action	fig2.ps
 
     src_dir doc/specs/CTEXT
-    dst_dir doc/old/specs/CTEXT
+    dst_dir doc/xorg-docs/specs/CTEXT
 
     action	ctext.tbl.ms
 
     src_dir doc/specs/FSProtocol
-    dst_dir doc/old/specs/FSProtocol
+    dst_dir doc/xorg-docs/specs/FSProtocol
 
     action	protocol.ms
 
     src_dir doc/specs/GL
-    dst_dir doc/old/specs/GL
+    dst_dir doc/xorg-docs/specs/GL
 
     action	libGL.txt
 
     src_dir doc/specs/i18n
-    dst_dir doc/old/specs/i18n
+    dst_dir doc/xorg-docs/specs/i18n
 
     action	Framework.ms
     action	LocaleDB.ms
     action	Trans.ms
 
     src_dir doc/specs/ICCCM
-    dst_dir doc/old/specs/ICCCM
+    dst_dir doc/xorg-docs/specs/ICCCM
 
     action	icccm.ms
     action	indexmacros.t
 
     src_dir doc/specs/ICE
-    dst_dir doc/old/specs/ICE
+    dst_dir doc/xorg-docs/specs/ICE
 
     action	ICElib.ms
     action	ice.ms
 
     src_dir doc/specs/PM
-    dst_dir doc/old/specs/PM
+    dst_dir doc/xorg-docs/specs/PM
 
     action	PM_spec
 
     src_dir doc/specs/Randr
-    dst_dir doc/old/specs/Randr
+    dst_dir doc/xorg-docs/specs/Randr
 
     action	protocol.txt
 
     src_dir doc/specs/Render
-    dst_dir doc/old/specs/Render
+    dst_dir doc/xorg-docs/specs/Render
 
     action	library
     action	protocol
 
     src_dir doc/specs/rstart
-    dst_dir doc/old/specs/rstart
+    dst_dir doc/xorg-docs/specs/rstart
 
     action	fix.awk
     action	fix.nawk
@@ -12339,17 +12339,17 @@ symlink_doc_old() {
     action	tmac.rfc
 
     src_dir doc/specs/RX
-    dst_dir doc/old/specs/RX
+    dst_dir doc/xorg-docs/specs/RX
 
     action	RX.mif
 
     src_dir doc/specs/saver
-    dst_dir doc/old/specs/saver
+    dst_dir doc/xorg-docs/specs/saver
 
     action	saver.ms
 
     src_dir doc/specs/SIAddresses
-    dst_dir doc/old/specs/SIAddresses
+    dst_dir doc/xorg-docs/specs/SIAddresses
 
     action	IPv6.txt
     action	README
@@ -12357,13 +12357,13 @@ symlink_doc_old() {
     action	localuser.txt
 
     src_dir doc/specs/SM
-    dst_dir doc/old/specs/SM
+    dst_dir doc/xorg-docs/specs/SM
 
     action	SMlib.ms
     action	xsmp.ms
 
     src_dir doc/specs/X11
-    dst_dir doc/old/specs/X11
+    dst_dir doc/xorg-docs/specs/X11
 
     action	AppA
     action	AppB
@@ -12392,7 +12392,7 @@ symlink_doc_old() {
     action	postproc
 
     src_dir doc/specs/Xaw
-    dst_dir doc/old/specs/Xaw
+    dst_dir doc/xorg-docs/specs/Xaw
 
     action	AsciiSink
     action	AsciiSource
@@ -12443,12 +12443,12 @@ symlink_doc_old() {
     action	widg.idxmac.t
 
     src_dir doc/specs/XDMCP
-    dst_dir doc/old/specs/XDMCP
+    dst_dir doc/xorg-docs/specs/XDMCP
 
     action	xdmcp.ms
 
     src_dir doc/specs/Xext
-    dst_dir doc/old/specs/Xext
+    dst_dir doc/xorg-docs/specs/Xext
 
     action	AppGroup.mif
     action	DPMS.ms
@@ -12477,13 +12477,13 @@ symlink_doc_old() {
     action	xtestlib.ms
 
     src_dir doc/specs/xfs
-    dst_dir doc/old/specs/xfs
+    dst_dir doc/xorg-docs/specs/xfs
 
     action	FSlib.doc
     action	design.ms
 
     src_dir doc/specs/Xi
-    dst_dir doc/old/specs/Xi
+    dst_dir doc/xorg-docs/specs/Xi
 
     action	encoding.ms
     action	library.ms
@@ -12491,12 +12491,12 @@ symlink_doc_old() {
     action	protocol.ms
 
     src_dir doc/specs/XIM
-    dst_dir doc/old/specs/XIM
+    dst_dir doc/xorg-docs/specs/XIM
 
     action	xim.ms
 
     src_dir doc/specs/XKB/Proto
-    dst_dir doc/old/specs/XKB/Proto
+    dst_dir doc/xorg-docs/specs/XKB/Proto
 
     action	XKBproto.book
     action	dflttrns.fm5
@@ -12508,7 +12508,7 @@ symlink_doc_old() {
     action	types.fm5
 
     src_dir doc/specs/XKB/XKBlib
-    dst_dir doc/old/specs/XKB/XKBlib
+    dst_dir doc/xorg-docs/specs/XKB/XKBlib
 
     action	XKBlib.book
     action	allchaps.fm5
@@ -12521,17 +12521,17 @@ symlink_doc_old() {
     action	title.fm5
 
     src_dir doc/specs/XLFD
-    dst_dir doc/old/specs/XLFD
+    dst_dir doc/xorg-docs/specs/XLFD
 
     action	xlfd.tbl.ms
 
     src_dir doc/specs/Xmu
-    dst_dir doc/old/specs/Xmu
+    dst_dir doc/xorg-docs/specs/Xmu
 
     action	Xmu.ms
 
     src_dir doc/specs/XPRINT
-    dst_dir doc/old/specs/XPRINT
+    dst_dir doc/xorg-docs/specs/XPRINT
 
     action	xp_library.book
     action	xp_library.mif
@@ -12545,7 +12545,7 @@ symlink_doc_old() {
     action	xp_proto_cov.mif
 
     src_dir doc/specs/XProtocol
-    dst_dir doc/old/specs/XProtocol
+    dst_dir doc/xorg-docs/specs/XProtocol
 
     action	X11.encoding
     action	X11.keysyms
@@ -12555,7 +12555,7 @@ symlink_doc_old() {
     action	postproc
 
     src_dir doc/specs/Xserver
-    dst_dir doc/old/specs/Xserver
+    dst_dir doc/xorg-docs/specs/Xserver
 
     action	Xprt.book
     action	Xprt.mif
@@ -12569,7 +12569,7 @@ symlink_doc_old() {
     action	secint.tex
 
     src_dir doc/specs/Xt
-    dst_dir doc/old/specs/Xt
+    dst_dir doc/xorg-docs/specs/Xt
 
     action	CH01
     action	CH02
@@ -12595,28 +12595,28 @@ symlink_doc_old() {
     action	postproc
     action	strings.mit
 
-    src_dir doc/specs/xterm
-    dst_dir doc/old/specs/xterm
-
-    action	ctlseqs.ms
+#    src_dir doc/specs/xterm
+#    dst_dir doc/xorg-docs/specs/xterm
+#
+#    action	ctlseqs.ms
 
     src_dir doc/specs/xtrans
-    dst_dir doc/old/specs/xtrans
+    dst_dir doc/xorg-docs/specs/xtrans
 
     action	Xtrans.mm
 
     src_dir doc/specs/Xv
-    dst_dir doc/old/specs/Xv
+    dst_dir doc/xorg-docs/specs/Xv
 
     action	xv-protocol-v2.txt
 
     src_dir doc/specs/XvMC
-    dst_dir doc/old/specs/XvMC
+    dst_dir doc/xorg-docs/specs/XvMC
 
     action	XvMC_API.txt
 
     src_dir doc/util
-    dst_dir doc/old/util
+    dst_dir doc/xorg-docs/util
 
     action	block.awk
     action	fixindex.awk
@@ -12624,7 +12624,7 @@ symlink_doc_old() {
     action	macros.t
 
     src_dir
-    dst_dir doc/old
+    dst_dir doc/xorg-docs
     action	registry
 }
 
@@ -14320,6 +14320,10 @@ symlink_non_linked_files()
 
     # Exclude xterm
     exclude_directory programs/xterm
+    src_dir doc/hardcopy/xterm
+    action	ctlseqs.PS.gz
+    src_dir doc/specs/xterm
+    action	ctlseqs.ms
 
     # Nobody should really care about Xft1 anymore
     exclude_directory lib/Xft1
@@ -14617,9 +14621,9 @@ symlink_non_linked_files()
     src_dir nls/Compose
     action	zh_CN
 
-    # These files are all generated from the sgml files in doc/old/sgml
-    # When/if those files are converted to xml, we can maybe do something
-    # with the generated results
+    # These files are all generated from the sgml files in
+    # doc/xorg-docs/sgml.  When/if those files are converted to xml,
+    # we can maybe do something with the generated results.
     src_dir programs/Xserver/hw/xfree86/doc
 
     action	README.Darwin
