@@ -27,13 +27,17 @@ build() {
     sh autogen.sh --prefix=${PREFIX} ${MESA} ${QUIET:+--quiet} \
         ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} || failed autogen $1 $2
     make || failed make $1 $2
-    $SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH make install || \
-	failed install $1 $2
-#    make clean || failed clean $1 $2
-#    make dist || failed dist $1 $2
+    if test x"$CLEAN" = x1; then
+	make clean || failed clean $1 $2
+    fi
+    if test x"$DIST" = x1; then
+	make dist || failed dist $1 $2
+    fi
     if test x"$DISTCHECK" = x1; then
 	make distcheck || failed distcheck $1 $2
     fi
+    $SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH make install || \
+	failed install $1 $2
 
     cd ../..
 }
@@ -440,6 +444,8 @@ usage() {
     echo "Usage: $0 [options] prefix"
     echo "  where options are:"
     echo "  -d : run make distcheck in addition to others"
+    echo "  -D : run make dist in addition to others"
+    echo "  -c : run make clean in addition to others"
     echo "  -m path-to-mesa-sources-for-xserver : full path to Mesa sources"
     echo "  -n : do not quit after error; just print error message"
     echo "  -s sudo-command : sudo command to use"
@@ -462,6 +468,12 @@ do
 	;;
     -d)
 	DISTCHECK=1
+	;;
+    -D)
+	DIST=1
+	;;
+    -c)
+	CLEAN=1
 	;;
     *)
 	PREFIX=$1
