@@ -3799,18 +3799,18 @@ symlink_app_oclock() {
     action	oclmask.bit
 }
 
-symlink_app_pclcomp() {
-    src_dir programs/pclcomp
-    dst_dir app/pclcomp
-
-    action	pclcomp.c
-
-    action	README
-    action	printer.note
-
-    action	pclcomp.man
-
-}
+#symlink_app_pclcomp() {
+#    src_dir programs/pclcomp
+#    dst_dir app/pclcomp
+#
+#    action	pclcomp.c
+#
+#    action	README
+#    action	printer.note
+#
+#    action	pclcomp.man
+#
+#}
 
 symlink_app_proxymngr() {
     src_dir programs/proxymngr
@@ -5610,7 +5610,7 @@ symlink_app() {
     symlink_app_rstart
     symlink_app_rgb
     symlink_app_proxymngr
-    symlink_app_pclcomp
+#    symlink_app_pclcomp
     symlink_app_oclock
     symlink_app_mkfontdir
     symlink_app_mkfontscale
