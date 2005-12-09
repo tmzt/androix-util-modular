@@ -448,6 +448,7 @@ build_util() {
     build util imake
     build util makedepend
     build util xmkmf
+    build util gccmakedep
 }
 
 # xorg-docs requires xorg-sgml-doctools
