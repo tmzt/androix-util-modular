@@ -2180,6 +2180,7 @@ symlink_lib_xt() {
     src_dir config/util
 
     action	makestrs.c
+    action	makestrs.man
 
     # man pages
 
@@ -12641,14 +12642,6 @@ symlink_doc() {
 #
 #########
 
-symlink_util_xmkmf() {
-    src_dir config/util
-    dst_dir util/xmkmf
-
-    action	xmkmf.cpp
-    action	xmkmf.man
-}
-
 symlink_util_cf() {
     src_dir config/cf
     dst_dir util/cf
@@ -12796,6 +12789,28 @@ symlink_util_imake() {
     src_dir config/util
     action	makeg.man
     action	makeg.sh	makeg
+
+    action	xmkmf.cpp
+    action	xmkmf.man
+
+    action	ccmakedep.man
+    action	mdepend.cpp
+
+    action	mergelib.cpp
+    action	mergelib.man
+
+    action	revpath.c
+    action	revpath.man
+
+    action	mkdirhier.sh	mkdirhier
+    action	mkdirhier.man
+
+    action	cleanlinks.sh	cleanlinks
+    action	cleanlinks.man
+
+    action	mkhtmlindex.sh
+    action	mkhtmlindex.pl
+    action	mkhtmlindex.man
 }
 
 symlink_util_lndir() {
@@ -12832,7 +12847,6 @@ symlink_util() {
     symlink_util_imake
     symlink_util_lndir
     symlink_util_makedepend
-    symlink_util_xmkmf
 #    ...
 }
 
