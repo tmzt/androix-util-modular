@@ -12798,6 +12798,14 @@ symlink_util_imake() {
     action	makeg.sh	makeg
 }
 
+symlink_util_lndir() {
+    src_dir config/util
+    dst_dir util/lndir
+
+    action	lndir.c
+    action	lndir.man
+}
+
 symlink_util_makedepend() {
     src_dir config/makedepend
     dst_dir util/makedepend
@@ -12822,6 +12830,7 @@ symlink_util() {
     symlink_util_cf
     symlink_util_gccmakedep
     symlink_util_imake
+    symlink_util_lndir
     symlink_util_makedepend
     symlink_util_xmkmf
 #    ...

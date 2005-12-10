@@ -453,6 +453,7 @@ build_util() {
     build util makedepend
     build util xmkmf
     build util gccmakedep
+    build util lndir
 }
 
 # xorg-docs requires xorg-sgml-doctools
