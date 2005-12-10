@@ -451,7 +451,6 @@ build_util() {
     build util xorg-cf-files
     build util imake
     build util makedepend
-    build util xmkmf
     build util gccmakedep
     build util lndir
 }
