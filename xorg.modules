@@ -20,6 +20,7 @@
      password="" />
 
   <cvsmodule cvsroot="xorg.freedesktop.org" module="util/macros"/>
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="util/makedepend"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="util/cf"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="util/imake">
     <dependencies>
@@ -403,6 +404,7 @@
       <dep package="util/macros"/>
       <dep package="lib/X11"/>
       <dep package="lib/Xext"/>
+      <dep package="lib/Xv"/>
       <dep package="proto/XExt"/>
       <dep package="proto/Video"/>
     </dependencies>
@@ -1039,6 +1041,8 @@
   <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xdpyinfo">
     <dependencies>
       <dep package="lib/X11"/>
+      <dep package="lib/Xext"/>
+      <dep package="lib/Xtst"/>
     </dependencies>
   </cvsmodule>
 
@@ -1154,7 +1158,15 @@
 
   <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xsetmode"/>
   <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xsetpointer"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xsetroot"/>
+
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xsetroot">
+    <dependencies>
+      <dep package="lib/X11"/>
+      <dep package="lib/Xmu"/>
+      <dep package="data/bitmaps"/>
+    </dependencies>
+  </cvsmodule>
+
   <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xsm">
     <dependencies>
       <dep package="lib/Xaw"/>
@@ -1524,6 +1536,8 @@
   <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-i810">
     <dependencies>
       <dep package="xserver/xorg"/>
+      <dep package="proto/X11"/>
+      <dep package="lib/XvMC"/>
     </dependencies>
   </cvsmodule>
 
@@ -1810,6 +1824,7 @@
       <dep package="lib/Xdmcp"/>
       <dep package="lib/Xxf86misc"/>
       <dep package="lib/Xxf86vm"/>
+      <dep package="lib/lbxutil"/>
       <dep package="drm"/>
     </dependencies>
   </cvsmodule>
