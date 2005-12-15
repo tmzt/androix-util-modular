@@ -193,7 +193,7 @@ build_app() {
     build app mkfontdir
     build app mkfontscale
     build app oclock
-    build app pclcomp
+#    build app pclcomp
     build app proxymngr
     build app rgb
     build app rstart
