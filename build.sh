@@ -303,7 +303,17 @@ build_driver_video() {
 
     # Some drivers are only buildable on some OS'es
     case $HOST_OS in
-	*BSD* | *bsd*)
+	*FreeBSD*)
+	    HOST_CPU=`uname -m`
+	    case $HOST_CPU in
+		sparc64)
+		    build driver xf86-video-sunffb
+		    ;;
+		*)
+		    ;;
+	    esac
+	    ;;
+	*NetBSD* | *OpenBSD*)
 	    build driver xf86-video-wsfb
 	    build driver xf86-video-sunffb
 	    ;;
