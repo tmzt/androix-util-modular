@@ -1448,6 +1448,12 @@
     </dependencies>
   </cvsmodule>
 
+  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-vmmouse">
+    <dependencies>
+      <dep package="xserver/xorg"/>
+    </dependencies>
+  </cvsmodule>
+
   <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-void">
     <dependencies>
       <dep package="xserver/xorg"/>

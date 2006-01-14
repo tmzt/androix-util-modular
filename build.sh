@@ -259,6 +259,7 @@ build_xserver() {
 build_driver_input() {
 
     HOST_OS=`uname -s`
+    HOST_CPU=`uname -m`
 
     # Some drivers are only buildable on some OS'es
     case $HOST_OS in
@@ -266,6 +267,15 @@ build_driver_input() {
 	    build driver xf86-input-aiptek
 	    build driver xf86-input-evdev
 	    build driver xf86-input-ur98
+	    ;;
+	*)
+	    ;;
+    esac
+
+    # And some drivers are only buildable on some CPUs.
+    case $HOST_CPU in
+	i*86* | amd64* | x86*64*)
+	    build driver xf86-input-vmmouse
 	    ;;
 	*)
 	    ;;
