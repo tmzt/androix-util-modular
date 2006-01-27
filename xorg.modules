@@ -1802,6 +1802,14 @@
     </dependencies>
   </metamodule>
 
+  <!-- Modules that only build on x86 (32 and 64bit) -->
+
+  <metamodule id="xorg-x86-drivers">
+    <dependencies>
+      <dep package="driver/xf86-input-vmmouse"/>
+    </dependencies>
+  </metamodule>
+
   <!-- This probably isn't sufficient, but it is a start -->
 
   <metamodule id="xorg-sun-drivers">
