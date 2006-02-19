@@ -14,6 +14,15 @@ failed() {
 }
 
 build() {
+    if [ -n "$RESUME" ]; then
+	if [ "$RESUME" == "$1/$2" ]; then
+	    unset RESUME
+	    # Resume build at this module
+	else
+	    echo "Skipping $1 module component $2..."
+	    return 0
+	fi
+    fi
     echo "Building $1 module component $2..."
     cd $1/$2
 
@@ -494,6 +503,10 @@ do
 	;;
     -c)
 	CLEAN=1
+	;;
+    -r)
+	shift
+	RESUME=$1
 	;;
     *)
 	PREFIX=$1
