@@ -15,7 +15,7 @@ failed() {
 
 build() {
     if [ -n "$RESUME" ]; then
-	if [ "$RESUME" == "$1/$2" ]; then
+	if [ "$RESUME" = "$1/$2" ]; then
 	    unset RESUME
 	    # Resume build at this module
 	else
