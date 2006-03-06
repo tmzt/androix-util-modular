@@ -184,6 +184,7 @@ build_app() {
 #    build app pclcomp
     build app proxymngr
     build app rgb
+    build app rendercheck
     build app rstart
     build app scripts
     build app sessreg
