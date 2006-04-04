@@ -44,7 +44,7 @@ build() {
 	MESA=
     fi
 
-    sh configure --prefix=${PREFIX} ${MESA} ${QUIET:+--quiet} \
+    eval sh configure --prefix=${PREFIX} ${MESA} ${QUIET:+--quiet} \
         ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} || failed configure $1 $2
     make || failed make $1 $2
     if test x"$CLEAN" = x1; then
