@@ -26,26 +26,30 @@ build() {
     echo "Building $1 module component $2..."
     cd $1/$2
 
-    if test "$1" = "xserver" && test "$2" = "xorg" && test -n "$MESAPATH"; then
-	MESA=-"-with-mesa-source=${MESAPATH}"
-    else
-	MESA=
+    # Special configure flags for certain modules
+    MOD_SPECIFIC=
+
+    if test "$1" = "xserver" && test -n "$MESAPATH"; then
+	MOD_SPECIFIC="--with-mesa-source=${MESAPATH}"
+    fi
+    if test "$1" = "lib" && test "$2" = "libX11" && test x"$USE_XCB" = xNO; then
+	MOD_SPECIFIC="--with-xcb=no"
     fi
 
     # Use "sh autogen.sh" since some scripts are not executable in CVS
-    sh autogen.sh --prefix=${PREFIX} ${MESA} ${QUIET:+--quiet} \
+    sh autogen.sh --prefix=${PREFIX} ${MOD_SPECIFIC} ${QUIET:+--quiet} \
         ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} || failed autogen $1 $2
-    make || failed make $1 $2
+    ${MAKE} || failed make $1 $2
     if test x"$CLEAN" = x1; then
-	make clean || failed clean $1 $2
+	${MAKE} clean || failed clean $1 $2
     fi
     if test x"$DIST" = x1; then
-	make dist || failed dist $1 $2
+	${MAKE} dist || failed dist $1 $2
     fi
     if test x"$DISTCHECK" = x1; then
-	make distcheck || failed distcheck $1 $2
+	${MAKE} distcheck || failed distcheck $1 $2
     fi
-    $SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH make install || \
+    $SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH ${MAKE} install || \
 	failed install $1 $2
 
     cd ../..
@@ -85,6 +89,9 @@ build_proto() {
     build proto XF86Rush
     build proto XF86VidMode
     build proto Xinerama
+    if test x"$USE_XCB" != xNO ; then
+	build xcb xcb-proto
+    fi
 }
 
 # bitmaps is needed for building apps, so has to be done separately first
@@ -109,11 +116,19 @@ build_data() {
 # Xext before any other extension library
 # Xfixes before Xcomposite
 # Xp before XprintUtil before XprintAppUtil
+#
+# If xcb is being used for libX11, it must be built before libX11, but after
+# Xau & Xdmcp
+#
 build_lib() {
     build lib xtrans
     build lib Xau
     build lib Xdmcp
-    build lib X11
+    if test x"$USE_XCB" != xNO ; then
+	build xcb xcb
+	build xcb xcb-util
+    fi
+    build lib libX11
     build lib Xext
     build lib AppleWM
     build lib WindowsWM
@@ -258,12 +273,15 @@ build_app() {
     build app xwd
     build app xwininfo
     build app xwud
+    if test x"$USE_XCB" != xNO ; then
+	build xcb xcb-demo
+    fi
 }
 
 # The server requires at least the following libraries:
 # Xfont, Xau, Xdmcp
 build_xserver() {
-    build xserver xorg
+    build xserver ""
 }
 
 build_driver_input() {
@@ -359,7 +377,7 @@ build_driver_video() {
     build driver xf86-video-glint
     build driver xf86-video-i128
     build driver xf86-video-i740
-    build driver xf86-video-i810
+    build driver xf86-video-intel
     build driver xf86-video-imstt
     build driver xf86-video-mga
     build driver xf86-video-neomagic
@@ -558,6 +576,11 @@ else
     PATH=${DESTDIR}${PREFIX}/bin:${PATH}
 fi
 export PATH
+
+# Choose which make program to use
+if test x"$MAKE" = x; then
+    MAKE=make
+fi
 
 # Set the default font path for xserver/xorg unless it's already set
 if test x"$FONTPATH" = x; then
