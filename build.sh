@@ -24,6 +24,7 @@ build() {
 	fi
     fi
     echo "Building $1 module component $2..."
+    old_pwd=$(pwd)
     cd $1/$2
 
     # Special configure flags for certain modules
@@ -52,7 +53,7 @@ build() {
     $SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH ${MAKE} install || \
 	failed install $1 $2
 
-    cd ../..
+    cd ${old_pwd}
 }
 
 # protocol headers have no build order dependencies
