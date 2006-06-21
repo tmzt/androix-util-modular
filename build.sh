@@ -24,7 +24,7 @@ build() {
 	fi
     fi
     echo "Building $1 module component $2..."
-    old_pwd=$(pwd)
+    old_pwd=`pwd`
     cd $1/$2
 
     # Special configure flags for certain modules
