@@ -25,7 +25,7 @@ build() {
     fi
     echo "Building $1 module component $2..."
     old_pwd=`pwd`
-    cd $1/$2
+    cd $1/$2 || failed cd $1 $2
 
     # Special configure flags for certain modules
     MOD_SPECIFIC=
@@ -58,38 +58,38 @@ build() {
 
 # protocol headers have no build order dependencies
 build_proto() {
-    build proto AppleWM
-    build proto BigReqs
-    build proto Composite
-    build proto Damage
-    build proto DMX
-    build proto EvIE
-    build proto Fixes
-    build proto Fontcache
-    build proto Fonts
-    build proto GL
-    build proto Input
-    build proto KB
-    build proto PM
-    build proto Print
-    build proto Randr
-    build proto Record
-    build proto Render
-    build proto Resource
-    build proto ScrnSaver
-    build proto Trap
-    build proto Video
-    build proto WindowsWM
-    build proto X11
-    build proto XCMisc
-    build proto XExt
-    build proto XF86BigFont
-    build proto XF86DGA
-    build proto XF86DRI
-    build proto XF86Misc
-    build proto XF86Rush
-    build proto XF86VidMode
-    build proto Xinerama
+    build proto applewmproto
+    build proto bigreqsproto
+    build proto compositeproto
+    build proto damageproto
+    build proto dmxproto
+    build proto evieproto
+    build proto fixesproto
+    build proto fontcacheproto
+    build proto fontsproto
+    build proto glproto
+    build proto inputproto
+    build proto kbproto
+    build proto pmproto
+    build proto printproto
+    build proto randrproto
+    build proto recordproto
+    build proto renderproto
+    build proto resourceproto
+    build proto scrnsaverproto
+    build proto trapproto
+    build proto videoproto
+    build proto windowswmproto
+    build proto x11proto
+    build proto xcmiscproto
+    build proto xextproto
+    build proto xf86bigfontproto
+    build proto xf86dgaproto
+    build proto xf86driproto
+    build proto xf86miscproto
+    build proto xf86rushproto
+    build proto xf86vidmodeproto
+    build proto xineramaproto
     if test x"$USE_XCB" != xNO ; then
 	build xcb xcb-proto
     fi
@@ -122,54 +122,54 @@ build_data() {
 # Xau & Xdmcp
 #
 build_lib() {
-    build lib xtrans
-    build lib Xau
-    build lib Xdmcp
+    build lib libxtrans
+    build lib libXau
+    build lib libXdmcp
     if test x"$USE_XCB" != xNO ; then
 	build xcb xcb
 	build xcb xcb-util
     fi
     build lib libX11
-    build lib Xext
-    build lib AppleWM
-    build lib WindowsWM
-    build lib dmx
-    build lib fontenc
-    build lib FS
-    build lib ICE
-    build lib lbxutil
-    build lib oldX
-    build lib SM
-    build lib Xt
-    build lib Xmu
-    build lib Xpm
-    build lib Xp
-    build lib Xaw
-    build lib Xfixes
-    build lib Xcomposite
-    build lib Xrender
-    build lib Xdamage
-    build lib Xcursor
-    build lib Xevie
-    build lib Xfont
-    build lib Xfontcache
-    build lib Xft
-    build lib Xi
-    build lib Xinerama
-    build lib xkbfile
-    build lib xkbui
-    build lib XprintUtil
-    build lib XprintAppUtil
-    build lib Xrandr
-    build lib XRes
-    build lib XScrnSaver
-    build lib XTrap
-    build lib Xtst
-    build lib Xv
-    build lib XvMC
-    build lib Xxf86dga
-    build lib Xxf86misc
-    build lib Xxf86vm
+    build lib libXext
+    build lib libAppleWM
+    build lib libWindowsWM
+    build lib libdmx
+    build lib libfontenc
+    build lib libFS
+    build lib libICE
+    build lib liblbxutil
+    build lib liboldX
+    build lib libSM
+    build lib libXt
+    build lib libXmu
+    build lib libXpm
+    build lib libXp
+    build lib libXaw
+    build lib libXfixes
+    build lib libXcomposite
+    build lib libXrender
+    build lib libXdamage
+    build lib libXcursor
+    build lib libXevie
+    build lib libXfont
+    build lib libXfontcache
+    build lib libXft
+    build lib libXi
+    build lib libXinerama
+    build lib libxkbfile
+    build lib libxkbui
+    build lib libXprintUtil
+    build lib libXprintAppUtil
+    build lib libXrandr
+    build lib libXRes
+    build lib libXScrnSaver
+    build lib libXTrap
+    build lib libXtst
+    build lib libXv
+    build lib libXvMC
+    build lib libXxf86dga
+    build lib libXxf86misc
+    build lib libXxf86vm
 }
 
 # Most apps depend at least on libX11.
@@ -499,6 +499,7 @@ usage() {
     echo "  -m path-to-mesa-sources-for-xserver : full path to Mesa sources"
     echo "  -n : do not quit after error; just print error message"
     echo "  -s sudo-command : sudo command to use"
+    echo "  -r module/component : resume building with this comonent"
 }
 
 # Process command line args
