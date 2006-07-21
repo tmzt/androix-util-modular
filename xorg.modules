@@ -6,1799 +6,2163 @@
 <!DOCTYPE moduleset SYSTEM "moduleset.dtd">
 <?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
 <moduleset>
+  <repository type="git" name="git.freedesktop.org"
+      href="git://anongit.freedesktop.org/git/"/>
 
   <cvsroot name="fontconfig.freedesktop.org"
      root=":pserver:anoncvs@cvs.freedesktop.org:/cvs/fontconfig"
      password="" />
 
-  <cvsroot name="xorg.freedesktop.org"
-     root=":pserver:anoncvs@cvs.freedesktop.org:/cvs/xorg"
-     password="" />
-
-  <cvsroot name="dri.freedesktop.org"
-     root=":pserver:anonymous@dri.freedesktop.org:/cvs/dri"
-     password="" />
-
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="util/macros"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="util/makedepend"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="util/cf"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="util/imake">
+  <autotools id="macros">
+    <branch repo="git.freedesktop.org" module="xorg/util/macros" checkoutdir="xorg/util/macros" />
+  </autotools>
+  <autotools id="makedepend">
+    <branch repo="git.freedesktop.org" module="xorg/util/makedepend" checkoutdir="xorg/util/makedepend" />
+  </autotools>
+  <autotools id="cf">
+    <branch repo="git.freedesktop.org" module="xorg/util/cf" checkoutdir="xorg/util/cf" />
+  </autotools>
+  <autotools id="imake">
+    <branch repo="git.freedesktop.org" module="xorg/util/imake" checkoutdir="xorg/util/imake" />
     <dependencies>
 	<!--      <dep package="util/cf"/> -->
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="util/xmkmf">
+  <autotools id="xmkmf">
+    <branch repo="git.freedesktop.org" module="xorg/util/xmkmf" checkoutdir="xorg/util/xmkmf" />
     <dependencies>
-      <dep package="util/imake"/>
+	<dep package="imake"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/AppleWM"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/BigReqs"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Composite"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Damage"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/DMX"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/EvIE"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Fixes"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Fontcache"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Fonts"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/GL"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Input"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/KB"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Print"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/PM"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Randr"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Record"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Render"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Resource"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/ScrnSaver"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Trap"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Video"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/WindowsWM"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XCMisc"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XExt"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XF86BigFont"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XF86DGA"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XF86DRI"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XF86Misc"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XF86Rush"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/XF86VidMode"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/Xinerama"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="proto/X11"/>
+  <autotools id="bigreqsproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/bigreqsproto" checkoutdir="proto/bigreqsproto" />
+  </autotools>
+  <autotools id="compositeproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/compositeproto" checkoutdir="proto/compositeproto" />
+  </autotools>
+  <autotools id="damageproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/damageproto" checkoutdir="proto/damageproto" />
+  </autotools>
+  <autotools id="dmxproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/dmxproto" checkoutdir="proto/dmxproto" />
+  </autotools>
+  <autotools id="evieproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/evieproto" checkoutdir="proto/evieproto" />
+  </autotools>
+  <autotools id="fixesproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/fixesproto" checkoutdir="proto/fixesproto" />
+  </autotools>
+  <autotools id="fontcacheproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/fontcacheproto" checkoutdir="proto/fontcacheproto" />
+  </autotools>
+  <autotools id="fontsproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/fontsproto" checkoutdir="proto/fontsproto" />
+  </autotools>
+  <autotools id="glproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/glproto" checkoutdir="proto/glproto" />
+  </autotools>
+  <autotools id="inputproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/inputproto" checkoutdir="proto/inputproto" />
+  </autotools>
+  <autotools id="kbproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/kbproto" checkoutdir="proto/kbproto" />
+  </autotools>
+  <autotools id="pmproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/pmproto" checkoutdir="proto/pmproto" />
+  </autotools>
+  <autotools id="printproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/printproto" checkoutdir="proto/printproto" />
+  </autotools>
+  <autotools id="randrproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/randrproto" checkoutdir="proto/randrproto" />
+  </autotools>
+  <autotools id="recordproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/recordproto" checkoutdir="proto/recordproto" />
+  </autotools>
+  <autotools id="renderproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/renderproto" checkoutdir="proto/renderproto" />
+  </autotools>
+  <autotools id="resourceproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/resourceproto" checkoutdir="proto/resourceproto" />
+  </autotools>
+  <autotools id="scrnsaverproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/scrnsaverproto" checkoutdir="proto/scrnsaverproto" />
+  </autotools>
+  <autotools id="trapproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/trapproto" checkoutdir="proto/trapproto" />
+  </autotools>
+  <autotools id="videoproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/videoproto" checkoutdir="proto/videoproto" />
+  </autotools>
+  <autotools id="windowswmproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/windowswmproto" checkoutdir="proto/windowswmproto" />
+  </autotools>
+  <autotools id="xcmiscproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/xcmiscproto" checkoutdir="proto/xcmiscproto" />
+  </autotools>
+  <autotools id="xextproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/xextproto" checkoutdir="proto/xextproto" />
+  </autotools>
+  <autotools id="xf86bigfontproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/xf86bigfontproto" checkoutdir="proto/xf86bigfontproto" />
+  </autotools>
+  <autotools id="xf86dgaproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/xf86dgaproto" checkoutdir="proto/xf86dgaproto" />
+  </autotools>
+  <autotools id="xf86driproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/xf86driproto" checkoutdir="proto/xf86driproto" />
+  </autotools>
+  <autotools id="xf86miscproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/xf86miscproto" checkoutdir="proto/xf86miscproto" />
+  </autotools>
+  <autotools id="xf86rushproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/xf86rushproto" checkoutdir="proto/xf86rushproto" />
+  </autotools>
+  <autotools id="xf86vidmodeproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/xf86vidmodeproto" checkoutdir="proto/xf86vidmodeproto" />
+  </autotools>
+  <autotools id="xineramaproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/xineramaproto" checkoutdir="proto/xineramaproto" />
+  </autotools>
+  <autotools id="xproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/xproto" checkoutdir="proto/xproto" />
+  </autotools>
 
   <metamodule id="xorg-protos">
     <dependencies>
-      <dep package="proto/BigReqs"/>
-      <dep package="proto/Composite"/>
-      <dep package="proto/Damage"/>
-      <dep package="proto/DMX"/>
-      <dep package="proto/EvIE"/>
-      <dep package="proto/Fixes"/>
-      <dep package="proto/Fontcache"/>
-      <dep package="proto/Fonts"/>
-      <dep package="proto/GL"/>
-      <dep package="proto/Input"/>
-      <dep package="proto/KB"/>
-      <dep package="proto/Xinerama"/>
-      <dep package="proto/Print"/>
-      <dep package="proto/Randr"/>
-      <dep package="proto/Record"/>
-      <dep package="proto/Render"/>
-      <dep package="proto/Resource"/>
-      <dep package="proto/ScrnSaver"/>
-      <dep package="proto/Trap"/>
-      <dep package="proto/Video"/>
-      <dep package="proto/XCMisc"/>
-      <dep package="proto/XExt"/>
-      <dep package="proto/XF86BigFont"/>
-      <dep package="proto/XF86DGA"/>
-      <dep package="proto/XF86DRI"/>
-      <dep package="proto/XF86Misc"/>
-      <dep package="proto/XF86Rush"/>
-      <dep package="proto/XF86VidMode"/>
-      <dep package="proto/X11"/>
-      <dep package="proto/PM"/>
+      <dep package="bigreqsproto"/>
+      <dep package="compositeproto"/>
+      <dep package="damageproto"/>
+      <dep package="dmxproto"/>
+      <dep package="evieproto"/>
+      <dep package="fixesproto"/>
+      <dep package="fontcacheproto"/>
+      <dep package="fontsproto"/>
+      <dep package="glproto"/>
+      <dep package="inputproto"/>
+      <dep package="kbproto"/>
+      <dep package="xineramaproto"/>
+      <dep package="printproto"/>
+      <dep package="randrproto"/>
+      <dep package="recordproto"/>
+      <dep package="renderproto"/>
+      <dep package="resourceproto"/>
+      <dep package="scrnsaverproto"/>
+      <dep package="trapproto"/>
+      <dep package="videoproto"/>
+      <dep package="xcmiscproto"/>
+      <dep package="xextproto"/>
+      <dep package="xf86bigfontproto"/>
+      <dep package="xf86dgaproto"/>
+      <dep package="xf86driproto"/>
+      <dep package="xf86miscproto"/>
+      <dep package="xf86rushproto"/>
+      <dep package="xf86vidmodeproto"/>
+      <dep package="xproto"/>
+      <dep package="pmproto"/>
     </dependencies>
   </metamodule>
 
   <!-- libs -->
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/FS">
+  <autotools id="libFS">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libFS" checkoutdir="lib/libFS" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/X11"/>
-      <dep package="proto/Fonts"/>
-      <dep package="lib/xtrans"/>
+      <dep package="macros"/>
+      <dep package="xproto"/>
+      <dep package="fontsproto"/>
+      <dep package="libxtrans"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/ICE">
+  <autotools id="libICE">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libICE" checkoutdir="lib/libICE" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/X11"/>
-      <dep package="lib/xtrans"/>
+      <dep package="macros"/>
+      <dep package="xproto"/>
+      <dep package="libxtrans"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/SM">
+  <autotools id="libSM">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libSM" checkoutdir="lib/libSM" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/X11"/>
-      <dep package="lib/ICE"/>
-      <dep package="lib/xtrans"/>
+      <dep package="macros"/>
+      <dep package="xproto"/>
+      <dep package="libICE"/>
+      <dep package="libxtrans"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/X11">
+  <autotools id="libX11">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libX11" checkoutdir="lib/libX11" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/X11"/>
-      <dep package="proto/BigReqs"/>
-      <dep package="proto/XExt"/>
-      <dep package="lib/xtrans"/>
-      <dep package="lib/Xau"/>
-      <dep package="proto/XCMisc"/>
-      <dep package="lib/Xdmcp"/>
-      <dep package="proto/KB"/>
-      <dep package="proto/Input"/>
+      <dep package="macros"/>
+      <dep package="xproto"/>
+      <dep package="bigreqsproto"/>
+      <dep package="xextproto"/>
+      <dep package="libxtrans"/>
+      <dep package="libXau"/>
+      <dep package="xcmiscproto"/>
+      <dep package="libXdmcp"/>
+      <dep package="kbproto"/>
+      <dep package="inputproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/XScrnSaver">
+  <autotools id="libXScrnSaver">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXScrnSaver" checkoutdir="lib/libXScrnSaver" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xext"/>
-      <dep package="proto/XExt"/>
-      <dep package="proto/ScrnSaver"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="libXext"/>
+      <dep package="xextproto"/>
+      <dep package="scrnsaverproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/XTrap">
+  <autotools id="libXTrap">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXTrap" checkoutdir="lib/libXTrap" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xt"/>
-      <dep package="proto/Trap"/>
-      <dep package="lib/Xext"/>
-      <dep package="proto/XExt"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="libXt"/>
+      <dep package="trapproto"/>
+      <dep package="libXext"/>
+      <dep package="xextproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xau">
+  <autotools id="libXau">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXau" checkoutdir="lib/libXau" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/X11"/>
+      <dep package="macros"/>
+      <dep package="xproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xaw">
+  <autotools id="libXaw">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXaw" checkoutdir="lib/libXaw" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/X11"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xt"/>
-      <dep package="lib/Xmu"/>
-      <dep package="lib/Xpm"/>
+      <dep package="macros"/>
+      <dep package="xproto"/>
+      <dep package="libX11"/>
+      <dep package="libXt"/>
+      <dep package="libXmu"/>
+      <dep package="libXpm"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xcomposite">
+  <autotools id="libXcomposite">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXcomposite" checkoutdir="lib/libXcomposite" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/Composite"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xfixes"/>
-      <dep package="lib/Xext"/>
+      <dep package="macros"/>
+      <dep package="compositeproto"/>
+      <dep package="libX11"/>
+      <dep package="libXfixes"/>
+      <dep package="libXext"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xcursor">
+  <autotools id="libXcursor">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXcursor" checkoutdir="lib/libXcursor" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/Xrender"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xfixes"/>
+      <dep package="macros"/>
+      <dep package="libXrender"/>
+      <dep package="libX11"/>
+      <dep package="libXfixes"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xdamage">
+  <autotools id="libXdamage">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXdamage" checkoutdir="lib/libXdamage" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="proto/Damage"/>
-      <dep package="lib/Xfixes"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="damageproto"/>
+      <dep package="libXfixes"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xdmcp">
+  <autotools id="libXdmcp">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXdmcp" checkoutdir="lib/libXdmcp" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/X11"/>
+      <dep package="macros"/>
+      <dep package="xproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xevie">
+  <autotools id="libXevie">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXevie" checkoutdir="lib/libXevie" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/X11"/>
-      <dep package="lib/X11"/>
-      <dep package="proto/XExt"/>
-      <dep package="lib/Xext"/>
-      <dep package="proto/EvIE"/>
+      <dep package="macros"/>
+      <dep package="xproto"/>
+      <dep package="libX11"/>
+      <dep package="xextproto"/>
+      <dep package="libXext"/>
+      <dep package="evieproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xext">
+  <autotools id="libXext">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXext" checkoutdir="lib/libXext" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/X11"/>
-      <dep package="lib/X11"/>
-      <dep package="proto/XExt"/>
+      <dep package="macros"/>
+      <dep package="xproto"/>
+      <dep package="libX11"/>
+      <dep package="xextproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xfixes">
+  <autotools id="libXfixes">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXfixes" checkoutdir="lib/libXfixes" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="proto/Fixes"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="fixesproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xfont">
+  <autotools id="libXfont">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXfont" checkoutdir="lib/libXfont" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/X11"/>
-      <dep package="lib/xtrans"/>
-      <dep package="proto/Fonts"/>
-      <dep package="lib/fontenc"/>
-      <dep package="proto/Fontcache"/>
+      <dep package="macros"/>
+      <dep package="xproto"/>
+      <dep package="libxtrans"/>
+      <dep package="fontsproto"/>
+      <dep package="libfontenc"/>
+      <dep package="fontcacheproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xfontcache">
+  <autotools id="libXfontcache">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXfontcache" checkoutdir="lib/libXfontcache" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xext"/>
-      <dep package="proto/XExt"/>
-      <dep package="proto/Fontcache"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="libXext"/>
+      <dep package="xextproto"/>
+      <dep package="fontcacheproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
   <cvsmodule id="fontconfig" cvsroot="fontconfig.freedesktop.org" />
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xft">
+  <autotools id="libXft">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXft" checkoutdir="lib/libXft" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/Xrender"/>
+      <dep package="macros"/>
+      <dep package="libXrender"/>
       <dep package="fontconfig"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xi">
+  <autotools id="libXi">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXi" checkoutdir="lib/libXi" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/X11"/>
-      <dep package="lib/X11"/>
-      <dep package="proto/XExt"/>
-      <dep package="lib/Xext"/>
-      <dep package="proto/Input"/>
+      <dep package="macros"/>
+      <dep package="xproto"/>
+      <dep package="libX11"/>
+      <dep package="xextproto"/>
+      <dep package="libXext"/>
+      <dep package="inputproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xinerama">
+  <autotools id="libXinerama">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXinerama" checkoutdir="lib/libXinerama" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xext"/>
-      <dep package="proto/XExt"/>
-      <dep package="proto/Xinerama"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="libXext"/>
+      <dep package="xextproto"/>
+      <dep package="xineramaproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xmu">
+  <autotools id="libXmu">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXmu" checkoutdir="lib/libXmu" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xt"/>
-      <dep package="lib/Xext"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="libXt"/>
+      <dep package="libXext"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xp">
+  <autotools id="libXp">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXp" checkoutdir="lib/libXp" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xext"/>
-      <dep package="lib/Xau"/>
-      <dep package="proto/Print"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="libXext"/>
+      <dep package="libXau"/>
+      <dep package="printproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xpm">
+  <autotools id="libXpm">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXpm" checkoutdir="lib/libXpm" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="proto/X11"/>
-      <dep package="lib/Xt"/>
-      <dep package="lib/Xext"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="xproto"/>
+      <dep package="libXt"/>
+      <dep package="libXext"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/XprintAppUtil">
+  <autotools id="libXprintAppUtil">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXprintAppUtil" checkoutdir="lib/libXprintAppUtil" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xp"/>
-      <dep package="lib/XprintUtil"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="libXp"/>
+      <dep package="libXprintUtil"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/XprintUtil">
+  <autotools id="libXprintUtil">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXprintUtil" checkoutdir="lib/libXprintUtil" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xp"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="libXp"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xrandr">
+  <autotools id="libXrandr">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXrandr" checkoutdir="lib/libXrandr" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="proto/Randr"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="randrproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xrender">
+  <autotools id="libXrender">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXrender" checkoutdir="lib/libXrender" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/Render"/>
-      <dep package="lib/X11"/>
+      <dep package="macros"/>
+      <dep package="renderproto"/>
+      <dep package="libX11"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/XRes">
+  <autotools id="libXRes">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXRes" checkoutdir="lib/libXRes" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xext"/>
-      <dep package="proto/Resource"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="libXext"/>
+      <dep package="resourceproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xt">
+  <autotools id="libXt">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXt" checkoutdir="lib/libXt" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/SM"/>
-      <dep package="lib/X11"/>
-      <dep package="proto/X11"/>
+      <dep package="macros"/>
+      <dep package="libSM"/>
+      <dep package="libX11"/>
+      <dep package="xproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xtst">
+  <autotools id="libXtst">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXtst" checkoutdir="lib/libXtst" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xext"/>
-      <dep package="proto/Record"/>
-      <dep package="proto/XExt"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="libXext"/>
+      <dep package="recordproto"/>
+      <dep package="xextproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xv">
+  <autotools id="libXv">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXv" checkoutdir="lib/libXv" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xext"/>
-      <dep package="proto/XExt"/>
-      <dep package="proto/Video"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="libXext"/>
+      <dep package="xextproto"/>
+      <dep package="videoproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/XvMC">
+  <autotools id="libXvMC">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXvMC" checkoutdir="lib/libXvMC" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xext"/>
-      <dep package="lib/Xv"/>
-      <dep package="proto/XExt"/>
-      <dep package="proto/Video"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="libXext"/>
+      <dep package="libXv"/>
+      <dep package="xextproto"/>
+      <dep package="videoproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xxf86dga">
+  <autotools id="libXxf86dga">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXxf86dga" checkoutdir="lib/libXxf86dga" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/X11"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xext"/>
-      <dep package="proto/XExt"/>
-      <dep package="proto/XF86DGA"/>
+      <dep package="macros"/>
+      <dep package="xproto"/>
+      <dep package="libX11"/>
+      <dep package="libXext"/>
+      <dep package="xextproto"/>
+      <dep package="xf86dgaproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xxf86misc">
+  <autotools id="libXxf86misc">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXxf86misc" checkoutdir="lib/libXxf86misc" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/X11"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xext"/>
-      <dep package="proto/XExt"/>
-      <dep package="proto/XF86Misc"/>
+      <dep package="macros"/>
+      <dep package="xproto"/>
+      <dep package="libX11"/>
+      <dep package="libXext"/>
+      <dep package="xextproto"/>
+      <dep package="xf86miscproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/Xxf86vm">
+  <autotools id="libXxf86vm">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libXxf86vm" checkoutdir="lib/libXxf86vm" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/X11"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xext"/>
-      <dep package="proto/XExt"/>
-      <dep package="proto/XF86VidMode"/>
+      <dep package="macros"/>
+      <dep package="xproto"/>
+      <dep package="libX11"/>
+      <dep package="libXext"/>
+      <dep package="xextproto"/>
+      <dep package="xf86vidmodeproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/dmx">
+  <autotools id="libdmx">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libdmx" checkoutdir="lib/libdmx" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xext"/>
-      <dep package="proto/XExt"/>
-      <dep package="proto/DMX"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="libXext"/>
+      <dep package="xextproto"/>
+      <dep package="dmxproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/fontenc">
+  <autotools id="libfontenc">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libfontenc" checkoutdir="lib/libfontenc" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/X11"/>
+      <dep package="macros"/>
+      <dep package="xproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/lbxutil">
+  <autotools id="liblbxutil">
+    <branch repo="git.freedesktop.org" module="xorg/lib/liblbxutil" checkoutdir="lib/liblbxutil" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="proto/XExt"/>
+      <dep package="macros"/>
+      <dep package="xextproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/oldX">
+  <autotools id="liboldX">
+    <branch repo="git.freedesktop.org" module="xorg/lib/liboldX" checkoutdir="lib/liboldX" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/xkbfile">
+  <autotools id="libxkbfile">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libxkbfile" checkoutdir="lib/libxkbfile" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="proto/KB"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="kbproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/xkbui">
+  <autotools id="libxkbui">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libxkbui" checkoutdir="lib/libxkbui" />
     <dependencies>
-      <dep package="util/macros"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xt"/>
-      <dep package="lib/xkbfile"/>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="libXt"/>
+      <dep package="libxkbfile"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/xtrans">
+  <autotools id="libxtrans">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libxtrans" checkoutdir="lib/libxtrans"/>
     <dependencies>
-      <dep package="util/macros"/>
+      <dep package="macros"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-
-  <cvsmodule cvsroot="dri.freedesktop.org" module="drm">
+  <autotools id="libdrm">
+    <branch repo="git.freedesktop.org" module="mesa/drm"/>
     <dependencies>
-      <dep package="util/macros"/>
+      <dep package="macros"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
   <metamodule id="xorg-libs">
     <dependencies>
-      <dep package="lib/FS"/>
-      <dep package="lib/ICE"/>
-      <dep package="lib/SM"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/XScrnSaver"/>
-      <dep package="lib/XTrap"/>
-      <dep package="lib/Xau"/>
-      <dep package="lib/Xaw"/>
-      <dep package="lib/Xcomposite"/>
-      <dep package="lib/Xcursor"/>
-      <dep package="lib/Xdamage"/>
-      <dep package="lib/Xdmcp"/>
-      <dep package="lib/Xevie"/>
-      <dep package="lib/Xext"/>
-      <dep package="lib/Xfixes"/>
-      <dep package="lib/Xfont"/>
-      <dep package="lib/Xfontcache"/>
-      <dep package="lib/Xft"/>
-      <dep package="lib/Xi"/>
-      <dep package="lib/Xinerama"/>
-      <dep package="lib/Xmu"/>
-      <dep package="lib/Xp"/>
-      <dep package="lib/Xpm"/>
-      <dep package="lib/XprintAppUtil"/>
-      <dep package="lib/XprintUtil"/>
-      <dep package="lib/Xrandr"/>
-      <dep package="lib/Xrender"/>
-      <dep package="lib/XRes"/>
-      <dep package="lib/Xt"/>
-      <dep package="lib/Xtst"/>
-      <dep package="lib/Xv"/>
-      <dep package="lib/XvMC"/>
-      <dep package="lib/Xxf86dga"/>
-      <dep package="lib/Xxf86misc"/>
-      <dep package="lib/Xxf86vm"/>
-      <dep package="lib/dmx"/>
-      <dep package="lib/fontenc"/>
-      <dep package="lib/lbxutil"/>
-      <dep package="lib/oldX"/>
-      <dep package="lib/xkbfile"/>
-      <dep package="lib/xkbui"/>
-      <dep package="lib/xtrans"/>
-      <dep package="drm"/>
+      <dep package="libFS"/>
+      <dep package="libICE"/>
+      <dep package="libSM"/>
+      <dep package="libX11"/>
+      <dep package="libXScrnSaver"/>
+      <dep package="libXTrap"/>
+      <dep package="libXau"/>
+      <dep package="libXaw"/>
+      <dep package="libXcomposite"/>
+      <dep package="libXcursor"/>
+      <dep package="libXdamage"/>
+      <dep package="libXdmcp"/>
+      <dep package="libXevie"/>
+      <dep package="libXext"/>
+      <dep package="libXfixes"/>
+      <dep package="libXfont"/>
+      <dep package="libXfontcache"/>
+      <dep package="libXft"/>
+      <dep package="libXi"/>
+      <dep package="libXinerama"/>
+      <dep package="libXmu"/>
+      <dep package="libXp"/>
+      <dep package="libXpm"/>
+      <dep package="libXprintAppUtil"/>
+      <dep package="libXprintUtil"/>
+      <dep package="libXrandr"/>
+      <dep package="libXrender"/>
+      <dep package="libXRes"/>
+      <dep package="libXt"/>
+      <dep package="libXtst"/>
+      <dep package="libXv"/>
+      <dep package="libXvMC"/>
+      <dep package="libXxf86dga"/>
+      <dep package="libXxf86misc"/>
+      <dep package="libXxf86vm"/>
+      <dep package="libdmx"/>
+      <dep package="libfontenc"/>
+      <dep package="liblbxutil"/>
+      <dep package="liboldX"/>
+      <dep package="libxkbfile"/>
+      <dep package="libxkbui"/>
+      <dep package="libxtrans"/>
+      <dep package="libdrm"/>
     </dependencies>
   </metamodule>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="lib/xtrans"/>
+  <autotools id="xtrans">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libxtrans" checkoutdir="lib/libxtrans" />
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/100dpi">
+  <autotools id="100dpi">
+    <branch repo="git.freedesktop.org" module="xorg/font/100dpi" checkoutdir="font/100dpi" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/adobe-100dpi">
+  <autotools id="adobe-100dpi">
+    <branch repo="git.freedesktop.org" module="xorg/font/adobe-100dpi" checkoutdir="font/adobe-100dpi" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/adobe-75dpi">
+  <autotools id="adobe-75dpi">
+    <branch repo="git.freedesktop.org" module="xorg/font/adobe-75dpi" checkoutdir="font/adobe-75dpi" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/adobe-utopia-100dpi">
+  <autotools id="adobe-utopia-100dpi">
+    <branch repo="git.freedesktop.org" module="xorg/font/adobe-utopia-100dpi" checkoutdir="font/adobe-utopia-100dpi" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/adobe-utopia-75dpi">
+  <autotools id="adobe-utopia-75dpi">
+    <branch repo="git.freedesktop.org" module="xorg/font/adobe-utopia-75dpi" checkoutdir="font/adobe-utopia-75dpi" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/adobe-utopia-type1">
+  <autotools id="adobe-utopia-type1">
+    <branch repo="git.freedesktop.org" module="xorg/font/adobe-utopia-type1" checkoutdir="font/adobe-utopia-type1" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/alias">
+  <autotools id="alias">
+    <branch repo="git.freedesktop.org" module="xorg/font/alias" checkoutdir="font/alias" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/arabic-misc">
+  <autotools id="arabic-misc">
+    <branch repo="git.freedesktop.org" module="xorg/font/arabic-misc" checkoutdir="font/arabic-misc" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bh-100dpi">
+  <autotools id="bh-100dpi">
+    <branch repo="git.freedesktop.org" module="xorg/font/bh-100dpi" checkoutdir="font/bh-100dpi" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bh-75dpi">
+  <autotools id="bh-75dpi">
+    <branch repo="git.freedesktop.org" module="xorg/font/bh-75dpi" checkoutdir="font/bh-75dpi" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bh-lucidatypewriter-100dpi">
+  <autotools id="bh-lucidatypewriter-100dpi">
+    <branch repo="git.freedesktop.org" module="xorg/font/bh-lucidatypewriter-100dpi" checkoutdir="font/bh-lucidatypewriter-100dpi" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bh-lucidatypewriter-75dpi">
+  <autotools id="bh-lucidatypewriter-75dpi">
+    <branch repo="git.freedesktop.org" module="xorg/font/bh-lucidatypewriter-75dpi" checkoutdir="font/bh-lucidatypewriter-75dpi" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bh-ttf">
+  <autotools id="bh-ttf">
+    <branch repo="git.freedesktop.org" module="xorg/font/bh-ttf" checkoutdir="font/bh-ttf" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bh-type1">
+  <autotools id="bh-type1">
+    <branch repo="git.freedesktop.org" module="xorg/font/bh-type1" checkoutdir="font/bh-type1" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bitstream-100dpi">
+  <autotools id="bitstream-100dpi">
+    <branch repo="git.freedesktop.org" module="xorg/font/bitstream-100dpi" checkoutdir="font/bitstream-100dpi" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bitstream-75dpi">
+  <autotools id="bitstream-75dpi">
+    <branch repo="git.freedesktop.org" module="xorg/font/bitstream-75dpi" checkoutdir="font/bitstream-75dpi" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bitstream-speedo">
+  <autotools id="bitstream-speedo">
+    <branch repo="git.freedesktop.org" module="xorg/font/bitstream-speedo" checkoutdir="font/bitstream-speedo" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/bitstream-type1">
+  <autotools id="bitstream-type1">
+    <branch repo="git.freedesktop.org" module="xorg/font/bitstream-type1" checkoutdir="font/bitstream-type1" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/cronyx-cyrillic">
+  <autotools id="cronyx-cyrillic">
+    <branch repo="git.freedesktop.org" module="xorg/font/cronyx-cyrillic" checkoutdir="font/cronyx-cyrillic" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/cursor-misc">
+  <autotools id="cursor-misc">
+    <branch repo="git.freedesktop.org" module="xorg/font/cursor-misc" checkoutdir="font/cursor-misc" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/CVS">
+  <autotools id="CVS">
+    <branch repo="git.freedesktop.org" module="xorg/font/CVS" checkoutdir="font/CVS" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/daewoo-misc">
+  <autotools id="daewoo-misc">
+    <branch repo="git.freedesktop.org" module="xorg/font/daewoo-misc" checkoutdir="font/daewoo-misc" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/dec-misc">
+  <autotools id="dec-misc">
+    <branch repo="git.freedesktop.org" module="xorg/font/dec-misc" checkoutdir="font/dec-misc" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/encodings">
+  <autotools id="encodings">
+    <branch repo="git.freedesktop.org" module="xorg/font/encodings" checkoutdir="font/encodings" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/ibm-type1">
+  <autotools id="ibm-type1">
+    <branch repo="git.freedesktop.org" module="xorg/font/ibm-type1" checkoutdir="font/ibm-type1" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/isas-misc">
+  <autotools id="isas-misc">
+    <branch repo="git.freedesktop.org" module="xorg/font/isas-misc" checkoutdir="font/isas-misc" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/jis-misc">
+  <autotools id="jis-misc">
+    <branch repo="git.freedesktop.org" module="xorg/font/jis-misc" checkoutdir="font/jis-misc" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/micro-misc">
+  <autotools id="micro-misc">
+    <branch repo="git.freedesktop.org" module="xorg/font/micro-misc" checkoutdir="font/micro-misc" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/misc-cyrillic">
+  <autotools id="misc-cyrillic">
+    <branch repo="git.freedesktop.org" module="xorg/font/misc-cyrillic" checkoutdir="font/misc-cyrillic" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/misc-ethiopic">
+  <autotools id="misc-ethiopic">
+    <branch repo="git.freedesktop.org" module="xorg/font/misc-ethiopic" checkoutdir="font/misc-ethiopic" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/misc-meltho">
+  <autotools id="misc-meltho">
+    <branch repo="git.freedesktop.org" module="xorg/font/misc-meltho" checkoutdir="font/misc-meltho" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/misc-misc">
+  <autotools id="misc-misc">
+    <branch repo="git.freedesktop.org" module="xorg/font/misc-misc" checkoutdir="font/misc-misc" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/mutt-misc">
+  <autotools id="mutt-misc">
+    <branch repo="git.freedesktop.org" module="xorg/font/mutt-misc" checkoutdir="font/mutt-misc" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/schumacher-misc">
+  <autotools id="schumacher-misc">
+    <branch repo="git.freedesktop.org" module="xorg/font/schumacher-misc" checkoutdir="font/schumacher-misc" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/screen-cyrillic">
+  <autotools id="screen-cyrillic">
+    <branch repo="git.freedesktop.org" module="xorg/font/screen-cyrillic" checkoutdir="font/screen-cyrillic" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/sony-misc">
+  <autotools id="sony-misc">
+    <branch repo="git.freedesktop.org" module="xorg/font/sony-misc" checkoutdir="font/sony-misc" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/sun-misc">
+  <autotools id="sun-misc">
+    <branch repo="git.freedesktop.org" module="xorg/font/sun-misc" checkoutdir="font/sun-misc" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/util">
+  <autotools id="util">
+    <branch repo="git.freedesktop.org" module="xorg/font/util" checkoutdir="font/util" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/winitzki-cyrillic">
+  <autotools id="winitzki-cyrillic">
+    <branch repo="git.freedesktop.org" module="xorg/font/winitzki-cyrillic" checkoutdir="font/winitzki-cyrillic" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="font/xfree86-type1">
+  <autotools id="xfree86-type1">
+    <branch repo="git.freedesktop.org" module="xorg/font/xfree86-type1" checkoutdir="font/xfree86-type1" />
     <dependencies>
-      <dep package="font/util"/>
+      <dep package="util"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
   <metamodule id="xorg-fonts">
     <dependencies>
-      <dep package="font/encodings"/>
-      <dep package="font/adobe-75dpi"/>
-      <dep package="font/adobe-100dpi"/>
-      <dep package="font/adobe-utopia-75dpi"/>
-      <dep package="font/adobe-utopia-100dpi"/>
-      <dep package="font/adobe-utopia-type1"/>
-      <dep package="font/alias"/>      
-      <dep package="font/arabic-misc"/>
-      <dep package="font/bh-75dpi"/>
-      <dep package="font/bh-100dpi"/>
-      <dep package="font/bh-lucidatypewriter-75dpi"/>
-      <dep package="font/bh-lucidatypewriter-100dpi"/>
-      <dep package="font/bh-ttf"/>
-      <dep package="font/bh-type1"/>
-      <dep package="font/bitstream-75dpi"/>
-      <dep package="font/bitstream-100dpi"/>
-      <dep package="font/bitstream-type1"/>
-      <dep package="font/cronyx-cyrillic"/>
-      <dep package="font/cursor-misc"/>
-      <dep package="font/daewoo-misc"/>
-      <dep package="font/dec-misc"/>
-      <dep package="font/ibm-type1"/>
-      <dep package="font/isas-misc"/>
-      <dep package="font/jis-misc"/>
-      <dep package="font/micro-misc"/>
-      <dep package="font/misc-cyrillic"/>
-      <dep package="font/misc-misc"/>
-      <dep package="font/mutt-misc"/>
+      <dep package="encodings"/>
+      <dep package="adobe-75dpi"/>
+      <dep package="adobe-100dpi"/>
+      <dep package="adobe-utopia-75dpi"/>
+      <dep package="adobe-utopia-100dpi"/>
+      <dep package="adobe-utopia-type1"/>
+      <dep package="alias"/>      
+      <dep package="arabic-misc"/>
+      <dep package="bh-75dpi"/>
+      <dep package="bh-100dpi"/>
+      <dep package="bh-lucidatypewriter-75dpi"/>
+      <dep package="bh-lucidatypewriter-100dpi"/>
+      <dep package="bh-ttf"/>
+      <dep package="bh-type1"/>
+      <dep package="bitstream-75dpi"/>
+      <dep package="bitstream-100dpi"/>
+      <dep package="bitstream-type1"/>
+      <dep package="cronyx-cyrillic"/>
+      <dep package="cursor-misc"/>
+      <dep package="daewoo-misc"/>
+      <dep package="dec-misc"/>
+      <dep package="ibm-type1"/>
+      <dep package="isas-misc"/>
+      <dep package="jis-misc"/>
+      <dep package="micro-misc"/>
+      <dep package="misc-cyrillic"/>
+      <dep package="misc-misc"/>
+      <dep package="mutt-misc"/>
     </dependencies>
   </metamodule>
 
   <!-- data -->
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="data/bitmaps">
+  <autotools id="bitmaps">
+    <branch repo="git.freedesktop.org" module="xorg/data/bitmaps" checkoutdir="data/bitmaps" />
     <dependencies>
-      <dep package="util/macros"/>
+      <dep package="macros"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="data/cursors">
+  <autotools id="cursors">
+    <branch repo="git.freedesktop.org" module="xorg/data/cursors" checkoutdir="data/cursors" />
     <dependencies>
       <dep package="app/xcursorgen"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="data/xkbdata">
+  <autotools id="xkbdata">
+    <branch repo="git.freedesktop.org" module="xorg/data/xkbdata" checkoutdir="data/xkbdata" />
     <dependencies>
       <dep package="app/xkbcomp"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
   <!-- apps -->
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/appres">
+  <autotools id="appres">
+    <branch repo="git.freedesktop.org" module="xorg/app/appres" checkoutdir="app/appres" />
     <dependencies>
-      <dep package="lib/Xt"/>
+      <dep package="libXt"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/bdftopcf">
+  <autotools id="bdftopcf">
+    <branch repo="git.freedesktop.org" module="xorg/app/bdftopcf" checkoutdir="app/bdftopcf" />
     <dependencies>
-      <dep package="lib/Xfont"/>
+      <dep package="libXfont"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/beforelight">
+  <autotools id="beforelight">
+    <branch repo="git.freedesktop.org" module="xorg/app/beforelight" checkoutdir="app/beforelight" />
     <dependencies>
-      <dep package="lib/XScrnSaver"/>
-      <dep package="lib/Xt"/>
+      <dep package="libXScrnSaver"/>
+      <dep package="libXt"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/bitmap">
+  <autotools id="bitmap">
+    <branch repo="git.freedesktop.org" module="xorg/app/bitmap" checkoutdir="app/bitmap" />
     <dependencies>
-      <dep package="lib/Xaw"/>
-      <dep package="lib/Xmu"/>
-      <dep package="data/bitmaps"/>
+      <dep package="libXaw"/>
+      <dep package="libXmu"/>
+      <dep package="bitmaps"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/editres">
+  <autotools id="editres">
+    <branch repo="git.freedesktop.org" module="xorg/app/editres" checkoutdir="app/editres" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/fonttosfnt">
+  <autotools id="fonttosfnt">
+    <branch repo="git.freedesktop.org" module="xorg/app/fonttosfnt" checkoutdir="app/fonttosfnt" />
     <dependencies>
-      <dep package="lib/X11"/>
-      <dep package="lib/fontenc"/>
+      <dep package="libX11"/>
+      <dep package="libfontenc"/>
       <!-- <dep package="freetype2"/> -->
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/fslsfonts">
+  <autotools id="fslsfonts">
+    <branch repo="git.freedesktop.org" module="xorg/app/fslsfonts" checkoutdir="app/fslsfonts" />
     <dependencies>
-      <dep package="lib/X11"/>
-      <dep package="lib/FS"/>
+      <dep package="libX11"/>
+      <dep package="libFS"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/fstobdf">
+  <autotools id="fstobdf">
+    <branch repo="git.freedesktop.org" module="xorg/app/fstobdf" checkoutdir="app/fstobdf" />
     <dependencies>
-      <dep package="lib/X11"/>
-      <dep package="lib/FS"/>
+      <dep package="libX11"/>
+      <dep package="libFS"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/iceauth">
+  <autotools id="iceauth">
+    <branch repo="git.freedesktop.org" module="xorg/app/iceauth" checkoutdir="app/iceauth" />
     <dependencies>
-      <dep package="lib/X11"/>
-      <dep package="lib/ICE"/>
+      <dep package="libX11"/>
+      <dep package="libICE"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/ico">
+  <autotools id="ico">
+    <branch repo="git.freedesktop.org" module="xorg/app/ico" checkoutdir="app/ico" />
     <dependencies>
-      <dep package="lib/X11"/>
+      <dep package="libX11"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/lbxproxy">
+  <autotools id="lbxproxy">
+    <branch repo="git.freedesktop.org" module="xorg/app/lbxproxy" checkoutdir="app/lbxproxy" />
     <dependencies>
-      <dep package="lib/xtrans"/>
-      <dep package="lib/Xext"/>
-      <dep package="lib/lbxutil"/>
-      <dep package="lib/X11"/>
-      <dep package="lib/ICE"/>
-      <dep package="proto/PM"/>
+      <dep package="libxtrans"/>
+      <dep package="libXext"/>
+      <dep package="liblbxutil"/>
+      <dep package="libX11"/>
+      <dep package="libICE"/>
+      <dep package="pmproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/listres">
+  <autotools id="listres">
+    <branch repo="git.freedesktop.org" module="xorg/app/listres" checkoutdir="app/listres" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/luit">
+  <autotools id="luit">
+    <branch repo="git.freedesktop.org" module="xorg/app/luit" checkoutdir="app/luit" />
     <dependencies>
-      <dep package="lib/X11"/>
-      <dep package="lib/fontenc"/>
+      <dep package="libX11"/>
+      <dep package="libfontenc"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/mkcfm"/>
+  <autotools id="mkcfm">
+    <branch repo="git.freedesktop.org" module="xorg/app/mkcfm" checkoutdir="app/mkcfm" />
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/mkfontdir"/>
+  <autotools id="mkfontdir">
+    <branch repo="git.freedesktop.org" module="xorg/app/mkfontdir" checkoutdir="app/mkfontdir" />
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/mkfontscale">
+  <autotools id="mkfontscale">
+    <branch repo="git.freedesktop.org" module="xorg/app/mkfontscale" checkoutdir="app/mkfontscale" />
     <dependencies>
-      <dep package="lib/fontenc"/>
+      <dep package="libfontenc"/>
       <!-- <dep package="freetype2"/> -->
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/oclock">
+  <autotools id="oclock">
+    <branch repo="git.freedesktop.org" module="xorg/app/oclock" checkoutdir="app/oclock" />
     <dependencies>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xmu"/>
-      <dep package="lib/Xext"/>
+      <dep package="libX11"/>
+      <dep package="libXmu"/>
+      <dep package="libXext"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/pclcomp"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/proxymngr">
+  <autotools id="pclcomp">
+    <branch repo="git.freedesktop.org" module="xorg/app/pclcomp" checkoutdir="app/pclcomp" />
+  </autotools>
+  <autotools id="proxymngr">
+    <branch repo="git.freedesktop.org" module="xorg/app/proxymngr" checkoutdir="app/proxymngr" />
     <dependencies>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xt"/>
-      <dep package="proto/PM"/>
-      <dep package="lib/ICE"/>
+      <dep package="libX11"/>
+      <dep package="libXt"/>
+      <dep package="pmproto"/>
+      <dep package="libICE"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/rgb">
+  <autotools id="rgb">
+    <branch repo="git.freedesktop.org" module="xorg/app/rgb" checkoutdir="app/rgb" />
     <dependencies>
-      <dep package="proto/X11"/>
+      <dep package="xproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/rstart"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/scripts"/>
+  <autotools id="rstart">
+    <branch repo="git.freedesktop.org" module="xorg/app/rstart" checkoutdir="app/rstart" />
+  </autotools>
+  <autotools id="scripts">
+    <branch repo="git.freedesktop.org" module="xorg/app/scripts" checkoutdir="app/scripts" />
+  </autotools>
 
-  <!-- <cvsmodule cvsroot="xorg.freedesktop.org" module="app/sessreg"/> -->
+  <!-- <branch repo="git.freedesktop.org" module="xorg/app/sessreg"/> -->
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/setxkbmap"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/showfont"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/smproxy"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/twm"/>
+  <autotools id="setxkbmap">
+    <branch repo="git.freedesktop.org" module="xorg/app/setxkbmap" checkoutdir="app/setxkbmap" />
+  </autotools>
+  <autotools id="showfont">
+    <branch repo="git.freedesktop.org" module="xorg/app/showfont" checkoutdir="app/showfont" />
+  </autotools>
+  <autotools id="smproxy">
+    <branch repo="git.freedesktop.org" module="xorg/app/smproxy" checkoutdir="app/smproxy" />
+  </autotools>
+  <autotools id="twm">
+    <branch repo="git.freedesktop.org" module="xorg/app/twm" checkoutdir="app/twm" />
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/viewres">
+  <autotools id="viewres">
+    <branch repo="git.freedesktop.org" module="xorg/app/viewres" checkoutdir="app/viewres" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/x11perf"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xauth"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xbiff">
+  <autotools id="x11perf">
+    <branch repo="git.freedesktop.org" module="xorg/app/x11perf" checkoutdir="app/x11perf" />
+  </autotools>
+  <autotools id="xauth">
+    <branch repo="git.freedesktop.org" module="xorg/app/xauth" checkoutdir="app/xauth" />
+  </autotools>
+  <autotools id="xbiff">
+    <branch repo="git.freedesktop.org" module="xorg/app/xbiff" checkoutdir="app/xbiff" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xcalc">
+  <autotools id="xcalc">
+    <branch repo="git.freedesktop.org" module="xorg/app/xcalc" checkoutdir="app/xcalc" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xclipboard">
+  <autotools id="xclipboard">
+    <branch repo="git.freedesktop.org" module="xorg/app/xclipboard" checkoutdir="app/xclipboard" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xclock">
+  <autotools id="xclock">
+    <branch repo="git.freedesktop.org" module="xorg/app/xclock" checkoutdir="app/xclock" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xcmsdb"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xconsole">
+  <autotools id="xcmsdb">
+    <branch repo="git.freedesktop.org" module="xorg/app/xcmsdb" checkoutdir="app/xcmsdb" />
+  </autotools>
+  <autotools id="xconsole">
+    <branch repo="git.freedesktop.org" module="xorg/app/xconsole" checkoutdir="app/xconsole" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xcursorgen"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xdbedizzy"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xditview">
+  <autotools id="xcursorgen">
+    <branch repo="git.freedesktop.org" module="xorg/app/xcursorgen" checkoutdir="app/xcursorgen" />
+  </autotools>
+  <autotools id="xdbedizzy">
+    <branch repo="git.freedesktop.org" module="xorg/app/xdbedizzy" checkoutdir="app/xdbedizzy" />
+  </autotools>
+  <autotools id="xditview">
+    <branch repo="git.freedesktop.org" module="xorg/app/xditview" checkoutdir="app/xditview" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xdm">
+  <autotools id="xdm">
+    <branch repo="git.freedesktop.org" module="xorg/app/xdm" checkoutdir="app/xdm" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xdpyinfo">
+  <autotools id="xdpyinfo">
+    <branch repo="git.freedesktop.org" module="xorg/app/xdpyinfo" checkoutdir="app/xdpyinfo" />
     <dependencies>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xext"/>
-      <dep package="lib/Xtst"/>
+      <dep package="libX11"/>
+      <dep package="libXext"/>
+      <dep package="libXtst"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xdriinfo">
+  <autotools id="xdriinfo">
+    <branch repo="git.freedesktop.org" module="xorg/app/xdriinfo" checkoutdir="app/xdriinfo" />
     <dependencies>
-      <dep package="proto/GL"/>
+      <dep package="glproto"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xedit"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xev"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xeyes"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xf86dga"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xfd">
+  <autotools id="xedit">
+    <branch repo="git.freedesktop.org" module="xorg/app/xedit" checkoutdir="app/xedit" />
+  </autotools>
+  <autotools id="xev">
+    <branch repo="git.freedesktop.org" module="xorg/app/xev" checkoutdir="app/xev" />
+  </autotools>
+  <autotools id="xeyes">
+    <branch repo="git.freedesktop.org" module="xorg/app/xeyes" checkoutdir="app/xeyes" />
+  </autotools>
+  <autotools id="xf86dga">
+    <branch repo="git.freedesktop.org" module="xorg/app/xf86dga" checkoutdir="app/xf86dga" />
+  </autotools>
+  <autotools id="xfd">
+    <branch repo="git.freedesktop.org" module="xorg/app/xfd" checkoutdir="app/xfd" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xfindproxy"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xfontsel"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xfs"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xfsinfo"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xfwp"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xgamma"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xgc">
+  <autotools id="xfindproxy">
+    <branch repo="git.freedesktop.org" module="xorg/app/xfindproxy" checkoutdir="app/xfindproxy" />
+  </autotools>
+  <autotools id="xfontsel">
+    <branch repo="git.freedesktop.org" module="xorg/app/xfontsel" checkoutdir="app/xfontsel" />
+  </autotools>
+  <autotools id="xfs">
+    <branch repo="git.freedesktop.org" module="xorg/app/xfs" checkoutdir="app/xfs" />
+  </autotools>
+  <autotools id="xfsinfo">
+    <branch repo="git.freedesktop.org" module="xorg/app/xfsinfo" checkoutdir="app/xfsinfo" />
+  </autotools>
+  <autotools id="xfwp">
+    <branch repo="git.freedesktop.org" module="xorg/app/xfwp" checkoutdir="app/xfwp" />
+  </autotools>
+  <autotools id="xgamma">
+    <branch repo="git.freedesktop.org" module="xorg/app/xgamma" checkoutdir="app/xgamma" />
+  </autotools>
+  <autotools id="xgc">
+    <branch repo="git.freedesktop.org" module="xorg/app/xgc" checkoutdir="app/xgc" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xhost"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xinit"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xkbcomp"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xkbevd"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xkbprint"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xkbutils">
+  <autotools id="xhost">
+    <branch repo="git.freedesktop.org" module="xorg/app/xhost" checkoutdir="app/xhost" />
+  </autotools>
+  <autotools id="xinit">
+    <branch repo="git.freedesktop.org" module="xorg/app/xinit" checkoutdir="app/xinit" />
+  </autotools>
+  <autotools id="xkbcomp">
+    <branch repo="git.freedesktop.org" module="xorg/app/xkbcomp" checkoutdir="app/xkbcomp" />
+  </autotools>
+  <autotools id="xkbevd">
+    <branch repo="git.freedesktop.org" module="xorg/app/xkbevd" checkoutdir="app/xkbevd" />
+  </autotools>
+  <autotools id="xkbprint">
+    <branch repo="git.freedesktop.org" module="xorg/app/xkbprint" checkoutdir="app/xkbprint" />
+  </autotools>
+  <autotools id="xkbutils">
+    <branch repo="git.freedesktop.org" module="xorg/app/xkbutils" checkoutdir="app/xkbutils" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xkill"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xload">
+  <autotools id="xkill">
+    <branch repo="git.freedesktop.org" module="xorg/app/xkill" checkoutdir="app/xkill" />
+  </autotools>
+  <autotools id="xload">
+    <branch repo="git.freedesktop.org" module="xorg/app/xload" checkoutdir="app/xload" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xlogo">
+  <autotools id="xlogo">
+    <branch repo="git.freedesktop.org" module="xorg/app/xlogo" checkoutdir="app/xlogo" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xlsatoms"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xlsclients"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xlsfonts"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xmag">
+  <autotools id="xlsatoms">
+    <branch repo="git.freedesktop.org" module="xorg/app/xlsatoms" checkoutdir="app/xlsatoms" />
+  </autotools>
+  <autotools id="xlsclients">
+    <branch repo="git.freedesktop.org" module="xorg/app/xlsclients" checkoutdir="app/xlsclients" />
+  </autotools>
+  <autotools id="xlsfonts">
+    <branch repo="git.freedesktop.org" module="xorg/app/xlsfonts" checkoutdir="app/xlsfonts" />
+  </autotools>
+  <autotools id="xmag">
+    <branch repo="git.freedesktop.org" module="xorg/app/xmag" checkoutdir="app/xmag" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xman">
+  <autotools id="xman">
+    <branch repo="git.freedesktop.org" module="xorg/app/xman" checkoutdir="app/xman" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xmessage">
+  <autotools id="xmessage">
+    <branch repo="git.freedesktop.org" module="xorg/app/xmessage" checkoutdir="app/xmessage" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xmh">
+  <autotools id="xmh">
+    <branch repo="git.freedesktop.org" module="xorg/app/xmh" checkoutdir="app/xmh" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xmodmap"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xmore">
+  <autotools id="xmodmap">
+    <branch repo="git.freedesktop.org" module="xorg/app/xmodmap" checkoutdir="app/xmodmap" />
+  </autotools>
+  <autotools id="xmore">
+    <branch repo="git.freedesktop.org" module="xorg/app/xmore" checkoutdir="app/xmore" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
   <!--
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xphelloworld"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xplsprinters"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xpr"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xprehashprinterlist"/>
+  <autotools id="xphelloworld">
+    <branch repo="git.freedesktop.org" module="xorg/app/xphelloworld" checkoutdir="app/xphelloworld" />
+  </autotools>
+  <autotools id="xplsprinters">
+    <branch repo="git.freedesktop.org" module="xorg/app/xplsprinters" checkoutdir="app/xplsprinters" />
+  </autotools>
+  <autotools id="xpr">
+    <branch repo="git.freedesktop.org" module="xorg/app/xpr" checkoutdir="app/xpr" />
+  </autotools>
+  <autotools id="xprehashprinterlist">
+    <branch repo="git.freedesktop.org" module="xorg/app/xprehashprinterlist" checkoutdir="app/xprehashprinterlist" />
+  </autotools>
   -->
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xprop"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xrandr"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xrdb"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xrefresh"/>
+  <autotools id="xprop">
+    <branch repo="git.freedesktop.org" module="xorg/app/xprop" checkoutdir="app/xprop" />
+  </autotools>
+  <autotools id="xrandr">
+    <branch repo="git.freedesktop.org" module="xorg/app/xrandr" checkoutdir="app/xrandr" />
+  </autotools>
+  <autotools id="xrdb">
+    <branch repo="git.freedesktop.org" module="xorg/app/xrdb" checkoutdir="app/xrdb" />
+  </autotools>
+  <autotools id="xrefresh">
+    <branch repo="git.freedesktop.org" module="xorg/app/xrefresh" checkoutdir="app/xrefresh" />
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xrx">
+  <autotools id="xrx">
+    <branch repo="git.freedesktop.org" module="xorg/app/xrx" checkoutdir="app/xrx" />
     <dependencies>
-      <dep package="lib/Xext"/>
+      <dep package="libXext"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xset">
+  <autotools id="xset">
+    <branch repo="git.freedesktop.org" module="xorg/app/xset" checkoutdir="app/xset" />
     <dependencies>
-      <dep package="lib/Xext"/>
+      <dep package="libXext"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xsetmode"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xsetpointer"/>
+  <autotools id="xsetmode">
+    <branch repo="git.freedesktop.org" module="xorg/app/xsetmode" checkoutdir="app/xsetmode" />
+  </autotools>
+  <autotools id="xsetpointer">
+    <branch repo="git.freedesktop.org" module="xorg/app/xsetpointer" checkoutdir="app/xsetpointer" />
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xsetroot">
+  <autotools id="xsetroot">
+    <branch repo="git.freedesktop.org" module="xorg/app/xsetroot" checkoutdir="app/xsetroot" />
     <dependencies>
-      <dep package="lib/X11"/>
-      <dep package="lib/Xmu"/>
-      <dep package="data/bitmaps"/>
+      <dep package="libX11"/>
+      <dep package="libXmu"/>
+      <dep package="bitmaps"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xsm">
+  <autotools id="xsm">
+    <branch repo="git.freedesktop.org" module="xorg/app/xsm" checkoutdir="app/xsm" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xstdcmap"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xtrap"/>
+  <autotools id="xstdcmap">
+    <branch repo="git.freedesktop.org" module="xorg/app/xstdcmap" checkoutdir="app/xstdcmap" />
+  </autotools>
+  <autotools id="xtrap">
+    <branch repo="git.freedesktop.org" module="xorg/app/xtrap" checkoutdir="app/xtrap" />
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xvidtune">
+  <autotools id="xvidtune">
+    <branch repo="git.freedesktop.org" module="xorg/app/xvidtune" checkoutdir="app/xvidtune" />
     <dependencies>
-      <dep package="lib/Xaw"/>
+      <dep package="libXaw"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xvinfo"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xwd"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xwininfo"/>
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="app/xwud"/>
+  <autotools id="xvinfo">
+    <branch repo="git.freedesktop.org" module="xorg/app/xvinfo" checkoutdir="app/xvinfo" />
+  </autotools>
+  <autotools id="xwd">
+    <branch repo="git.freedesktop.org" module="xorg/app/xwd" checkoutdir="app/xwd" />
+  </autotools>
+  <autotools id="xwininfo">
+    <branch repo="git.freedesktop.org" module="xorg/app/xwininfo" checkoutdir="app/xwininfo" />
+  </autotools>
+  <autotools id="xwud">
+    <branch repo="git.freedesktop.org" module="xorg/app/xwud" checkoutdir="app/xwud" />
+  </autotools>
 
   <metamodule id="xorg-apps">
     <dependencies>
-      <dep package="util/xmkmf"/> <!-- For backwards compatibility sake -->
-      <dep package="app/appres"/>
-      <dep package="app/bdftopcf"/>
-      <dep package="app/beforelight"/>
-      <dep package="app/bitmap"/>
-      <dep package="app/editres"/>
-      <dep package="app/fonttosfnt"/>
-      <dep package="app/fslsfonts"/>
-      <dep package="app/fstobdf"/>
-      <dep package="app/iceauth"/>
-      <dep package="app/ico"/>
-      <dep package="app/lbxproxy"/>
-      <dep package="app/listres"/>
-      <dep package="app/luit"/>
-      <dep package="app/mkcfm"/>
-      <dep package="app/mkfontdir"/>
-      <dep package="app/mkfontscale"/>
-      <dep package="app/oclock"/>
-      <dep package="app/pclcomp"/>
-      <dep package="app/proxymngr"/>
-      <dep package="app/rgb"/>
-      <dep package="app/rstart"/>
-      <dep package="app/scripts"/>
-      <dep package="app/setxkbmap"/>
-      <dep package="app/showfont"/>
-      <dep package="app/smproxy"/>
-      <dep package="app/twm"/>
-      <dep package="app/viewres"/>
-      <dep package="app/x11perf"/>
-      <dep package="app/xauth"/>
-      <dep package="app/xbiff"/>
-      <dep package="app/xcalc"/>
-      <dep package="app/xclipboard"/>
-      <dep package="app/xclock"/>
-      <dep package="app/xcmsdb"/>
-      <dep package="app/xconsole"/>
-      <dep package="app/xcursorgen"/>
-      <dep package="app/xdbedizzy"/>
-      <dep package="app/xditview"/>
-      <dep package="app/xdm"/>
-      <dep package="app/xdpyinfo"/>
-      <dep package="app/xdriinfo"/>
-      <dep package="app/xedit"/>
-      <dep package="app/xev"/>
-      <dep package="app/xeyes"/>
-      <dep package="app/xf86dga"/>
-      <dep package="app/xfd"/>
-      <dep package="app/xfindproxy"/>
-      <dep package="app/xfontsel"/>
-      <dep package="app/xfs"/>
-      <dep package="app/xfsinfo"/>
-      <dep package="app/xfwp"/>
-      <dep package="app/xgamma"/>
-      <dep package="app/xgc"/>
-      <dep package="app/xhost"/>
-      <dep package="app/xinit"/>
-      <dep package="app/xkbcomp"/>
-      <dep package="app/xkbevd"/>
-      <dep package="app/xkbprint"/>
-      <dep package="app/xkbutils"/>
-      <dep package="app/xkill"/>
-      <dep package="app/xload"/>
-      <dep package="app/xlogo"/>
-      <dep package="app/xfontsel"/>
-      <dep package="app/xlsatoms"/>
-      <dep package="app/xlsclients"/>
-      <dep package="app/xlsfonts"/>
-      <dep package="app/xmag"/>
-      <dep package="app/xman"/>
-      <dep package="app/xmessage"/>
-      <dep package="app/xmh"/>
-      <dep package="app/xmodmap"/>
-      <dep package="app/xmore"/>
+      <dep package="xmkmf"/> <!-- For backwards compatibility sake -->
+      <dep package="appres"/>
+      <dep package="bdftopcf"/>
+      <dep package="beforelight"/>
+      <dep package="bitmap"/>
+      <dep package="editres"/>
+      <dep package="fonttosfnt"/>
+      <dep package="fslsfonts"/>
+      <dep package="fstobdf"/>
+      <dep package="iceauth"/>
+      <dep package="ico"/>
+      <dep package="lbxproxy"/>
+      <dep package="listres"/>
+      <dep package="luit"/>
+      <dep package="mkcfm"/>
+      <dep package="mkfontdir"/>
+      <dep package="mkfontscale"/>
+      <dep package="oclock"/>
+      <dep package="pclcomp"/>
+      <dep package="proxymngr"/>
+      <dep package="rgb"/>
+      <dep package="rstart"/>
+      <dep package="scripts"/>
+      <dep package="setxkbmap"/>
+      <dep package="showfont"/>
+      <dep package="smproxy"/>
+      <dep package="twm"/>
+      <dep package="viewres"/>
+      <dep package="x11perf"/>
+      <dep package="xauth"/>
+      <dep package="xbiff"/>
+      <dep package="xcalc"/>
+      <dep package="xclipboard"/>
+      <dep package="xclock"/>
+      <dep package="xcmsdb"/>
+      <dep package="xconsole"/>
+      <dep package="xcursorgen"/>
+      <dep package="xdbedizzy"/>
+      <dep package="xditview"/>
+      <dep package="xdm"/>
+      <dep package="xdpyinfo"/>
+      <dep package="xdriinfo"/>
+      <dep package="xedit"/>
+      <dep package="xev"/>
+      <dep package="xeyes"/>
+      <dep package="xf86dga"/>
+      <dep package="xfd"/>
+      <dep package="xfindproxy"/>
+      <dep package="xfontsel"/>
+      <dep package="xfs"/>
+      <dep package="xfsinfo"/>
+      <dep package="xfwp"/>
+      <dep package="xgamma"/>
+      <dep package="xgc"/>
+      <dep package="xhost"/>
+      <dep package="xinit"/>
+      <dep package="xkbcomp"/>
+      <dep package="xkbevd"/>
+      <dep package="xkbprint"/>
+      <dep package="xkbutils"/>
+      <dep package="xkill"/>
+      <dep package="xload"/>
+      <dep package="xlogo"/>
+      <dep package="xfontsel"/>
+      <dep package="xlsatoms"/>
+      <dep package="xlsclients"/>
+      <dep package="xlsfonts"/>
+      <dep package="xmag"/>
+      <dep package="xman"/>
+      <dep package="xmessage"/>
+      <dep package="xmh"/>
+      <dep package="xmodmap"/>
+      <dep package="xmore"/>
 
       <!--
-      <dep package="app/xphelloworld"/>
-      <dep package="app/xplsprinters"/>
-      <dep package="app/xpr"/>
-      <dep package="app/xprehashprinterlist"/>
+      <dep package="xphelloworld"/>
+      <dep package="xplsprinters"/>
+      <dep package="xpr"/>
+      <dep package="xprehashprinterlist"/>
       -->
 
-      <dep package="app/xprop"/>
-      <dep package="app/xrandr"/>
-      <dep package="app/xrdb"/>
-      <dep package="app/xrefresh"/>
-      <dep package="app/xrx"/>
-      <dep package="app/xset"/>
-      <dep package="app/xsetmode"/>
-      <dep package="app/xsetpointer"/>
-      <dep package="app/xsetroot"/>
-      <dep package="app/xsm"/>
-      <dep package="app/xstdcmap"/>
-      <dep package="app/xtrap"/>
-      <dep package="app/xvidtune"/>
-      <dep package="app/xvinfo"/>
-      <dep package="app/xwd"/>
-      <dep package="app/xwininfo"/>
-      <dep package="app/xwud"/>
+      <dep package="xprop"/>
+      <dep package="xrandr"/>
+      <dep package="xrdb"/>
+      <dep package="xrefresh"/>
+      <dep package="xrx"/>
+      <dep package="xset"/>
+      <dep package="xsetmode"/>
+      <dep package="xsetpointer"/>
+      <dep package="xsetroot"/>
+      <dep package="xsm"/>
+      <dep package="xstdcmap"/>
+      <dep package="xtrap"/>
+      <dep package="xvidtune"/>
+      <dep package="xvinfo"/>
+      <dep package="xwd"/>
+      <dep package="xwininfo"/>
+      <dep package="xwud"/>
     </dependencies>
   </metamodule>
 
   <!-- input drivers -->
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-acecad">
+  <autotools id="xf86-input-acecad">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-acecad" checkoutdir="driver/xf86-input-acecad" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-aiptek">
+  <autotools id="xf86-input-aiptek">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-aiptek" checkoutdir="driver/xf86-input-aiptek" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-calcomp">
+  <autotools id="xf86-input-calcomp">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-calcomp" checkoutdir="driver/xf86-input-calcomp" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-citron">
+  <autotools id="xf86-input-citron">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-citron" checkoutdir="driver/xf86-input-citron" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-digitaledge">
+  <autotools id="xf86-input-digitaledge">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-digitaledge" checkoutdir="driver/xf86-input-digitaledge" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-dmc">
+  <autotools id="xf86-input-dmc">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-dmc" checkoutdir="driver/xf86-input-dmc" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-dynapro">
+  <autotools id="xf86-input-dynapro">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-dynapro" checkoutdir="driver/xf86-input-dynapro" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-elo2300">
+  <autotools id="xf86-input-elo2300">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-elo2300" checkoutdir="driver/xf86-input-elo2300" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-elographics">
+  <autotools id="xf86-input-elographics">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-elographics" checkoutdir="driver/xf86-input-elographics" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-evdev">
+  <autotools id="xf86-input-evdev">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-evdev" checkoutdir="driver/xf86-input-evdev" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-fpit">
+  <autotools id="xf86-input-fpit">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-fpit" checkoutdir="driver/xf86-input-fpit" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-hyperpen">
+  <autotools id="xf86-input-hyperpen">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-hyperpen" checkoutdir="driver/xf86-input-hyperpen" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-jamstudio">
+  <autotools id="xf86-input-jamstudio">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-jamstudio" checkoutdir="driver/xf86-input-jamstudio" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-joystick">
+  <autotools id="xf86-input-joystick">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-joystick" checkoutdir="driver/xf86-input-joystick" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-keyboard">
+  <autotools id="xf86-input-keyboard">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-keyboard" checkoutdir="driver/xf86-input-keyboard" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-magellan">
+  <autotools id="xf86-input-magellan">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-magellan" checkoutdir="driver/xf86-input-magellan" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-magictouch">
+  <autotools id="xf86-input-magictouch">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-magictouch" checkoutdir="driver/xf86-input-magictouch" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-microtouch">
+  <autotools id="xf86-input-microtouch">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-microtouch" checkoutdir="driver/xf86-input-microtouch" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-mouse">
+  <autotools id="xf86-input-mouse">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-mouse" checkoutdir="driver/xf86-input-mouse" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-mutouch">
+  <autotools id="xf86-input-mutouch">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-mutouch" checkoutdir="driver/xf86-input-mutouch" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-palmax">
+  <autotools id="xf86-input-palmax">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-palmax" checkoutdir="driver/xf86-input-palmax" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-penmount">
+  <autotools id="xf86-input-penmount">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-penmount" checkoutdir="driver/xf86-input-penmount" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-spaceorb">
+  <autotools id="xf86-input-spaceorb">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-spaceorb" checkoutdir="driver/xf86-input-spaceorb" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-summa">
+  <autotools id="xf86-input-summa">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-summa" checkoutdir="driver/xf86-input-summa" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-tek4957">
+  <autotools id="xf86-input-tek4957">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-tek4957" checkoutdir="driver/xf86-input-tek4957" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-ur98">
+  <autotools id="xf86-input-ur98">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-ur98" checkoutdir="driver/xf86-input-ur98" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-vmmouse">
+  <autotools id="xf86-input-vmmouse">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-vmmouse" checkoutdir="driver/xf86-input-vmmouse" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-input-void">
+  <autotools id="xf86-input-void">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-void" checkoutdir="driver/xf86-input-void" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-apm">
+  <autotools id="xf86-video-apm">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-apm" checkoutdir="driver/xf86-video-apm" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-ark">
+  <autotools id="xf86-video-ark">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-ark" checkoutdir="driver/xf86-video-ark" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-ati">
+  <autotools id="xf86-video-ati">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-ati" checkoutdir="driver/xf86-video-ati" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-chips">
+  <autotools id="xf86-video-chips">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-chips" checkoutdir="driver/xf86-video-chips" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-cirrus">
+  <autotools id="xf86-video-cirrus">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-cirrus" checkoutdir="driver/xf86-video-cirrus" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-cyrix">
+  <autotools id="xf86-video-cyrix">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-cyrix" checkoutdir="driver/xf86-video-cyrix" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-dummy">
+  <autotools id="xf86-video-dummy">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-dummy" checkoutdir="driver/xf86-video-dummy" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-fbdev">
+  <autotools id="xf86-video-fbdev">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-fbdev" checkoutdir="driver/xf86-video-fbdev" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-glide">
+  <autotools id="xf86-video-glide">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-glide" checkoutdir="driver/xf86-video-glide" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-glint">
+  <autotools id="xf86-video-glint">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-glint" checkoutdir="driver/xf86-video-glint" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-i128">
+  <autotools id="xf86-video-i128">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-i128" checkoutdir="driver/xf86-video-i128" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-i740">
+  <autotools id="xf86-video-i740">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-i740" checkoutdir="driver/xf86-video-i740" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-imstt">
+  <autotools id="xf86-video-imstt">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-imstt" checkoutdir="driver/xf86-video-imstt" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-i810">
+  <autotools id="xf86-video-i810">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-i810" checkoutdir="driver/xf86-video-i810" />
     <dependencies>
-      <dep package="xserver/xorg"/>
-      <dep package="proto/X11"/>
-      <dep package="lib/XvMC"/>
+      <dep package="xserver"/>
+      <dep package="xproto"/>
+      <dep package="libXvMC"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-mga">
+  <autotools id="xf86-video-mga">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-mga" checkoutdir="driver/xf86-video-mga" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-neomagic">
+  <autotools id="xf86-video-neomagic">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-neomagic" checkoutdir="driver/xf86-video-neomagic" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-newport">
+  <autotools id="xf86-video-newport">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-newport" checkoutdir="driver/xf86-video-newport" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-nsc">
+  <autotools id="xf86-video-nsc">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-nsc" checkoutdir="driver/xf86-video-nsc" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-nv">
+  <autotools id="xf86-video-nv">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-nv" checkoutdir="driver/xf86-video-nv" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-rendition">
+  <autotools id="xf86-video-rendition">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-rendition" checkoutdir="driver/xf86-video-rendition" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-s3">
+  <autotools id="xf86-video-s3">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-s3" checkoutdir="driver/xf86-video-s3" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-s3virge">
+  <autotools id="xf86-video-s3virge">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-s3virge" checkoutdir="driver/xf86-video-s3virge" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-savage">
+  <autotools id="xf86-video-savage">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-savage" checkoutdir="driver/xf86-video-savage" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-siliconmotion">
+  <autotools id="xf86-video-siliconmotion">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-siliconmotion" checkoutdir="driver/xf86-video-siliconmotion" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-sis">
+  <autotools id="xf86-video-sis">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-sis" checkoutdir="driver/xf86-video-sis" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-sisusb">
+  <autotools id="xf86-video-sisusb">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-sisusb" checkoutdir="driver/xf86-video-sisusb" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-sunbw2">
+  <autotools id="xf86-video-sunbw2">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-sunbw2" checkoutdir="driver/xf86-video-sunbw2" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-suncg14">
+  <autotools id="xf86-video-suncg14">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-suncg14" checkoutdir="driver/xf86-video-suncg14" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-suncg3">
+  <autotools id="xf86-video-suncg3">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-suncg3" checkoutdir="driver/xf86-video-suncg3" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-suncg6">
+  <autotools id="xf86-video-suncg6">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-suncg6" checkoutdir="driver/xf86-video-suncg6" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-sunffb">
+  <autotools id="xf86-video-sunffb">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-sunffb" checkoutdir="driver/xf86-video-sunffb" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-sunleo">
+  <autotools id="xf86-video-sunleo">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-sunleo" checkoutdir="driver/xf86-video-sunleo" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-suntcx">
+  <autotools id="xf86-video-suntcx">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-suntcx" checkoutdir="driver/xf86-video-suntcx" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-tdfx">
+  <autotools id="xf86-video-tdfx">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-tdfx" checkoutdir="driver/xf86-video-tdfx" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-tga">
+  <autotools id="xf86-video-tga">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-tga" checkoutdir="driver/xf86-video-tga" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-trident">
+  <autotools id="xf86-video-trident">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-trident" checkoutdir="driver/xf86-video-trident" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-tseng">
+  <autotools id="xf86-video-tseng">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-tseng" checkoutdir="driver/xf86-video-tseng" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-v4l">
+  <autotools id="xf86-video-v4l">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-v4l" checkoutdir="driver/xf86-video-v4l" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-vesa">
+  <autotools id="xf86-video-vesa">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-vesa" checkoutdir="driver/xf86-video-vesa" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-vga">
+  <autotools id="xf86-video-vga">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-vga" checkoutdir="driver/xf86-video-vga" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-via">
+  <autotools id="xf86-video-via">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-via" checkoutdir="driver/xf86-video-via" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-vmware">
+  <autotools id="xf86-video-vmware">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-vmware" checkoutdir="driver/xf86-video-vmware" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-voodoo">
+  <autotools id="xf86-video-voodoo">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-voodoo" checkoutdir="driver/xf86-video-voodoo" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="driver/xf86-video-wsfb">
+  <autotools id="xf86-video-wsfb">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-wsfb" checkoutdir="driver/xf86-video-wsfb" />
     <dependencies>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
   <metamodule id="xorg-drivers">
     <dependencies>
-      <dep package="driver/xf86-input-acecad"/>
-      <dep package="driver/xf86-input-aiptek"/>
-      <dep package="driver/xf86-input-calcomp"/>
-      <dep package="driver/xf86-input-citron"/>
-      <dep package="driver/xf86-input-digitaledge"/>
-      <dep package="driver/xf86-input-dmc"/>
-      <dep package="driver/xf86-input-dynapro"/>
-      <dep package="driver/xf86-input-elo2300"/>
-      <dep package="driver/xf86-input-elographics"/>
-      <dep package="driver/xf86-input-evdev"/>
-      <dep package="driver/xf86-input-fpit"/>
-      <dep package="driver/xf86-input-hyperpen"/>
-      <dep package="driver/xf86-input-jamstudio"/>
-      <dep package="driver/xf86-input-joystick"/>
-      <dep package="driver/xf86-input-keyboard"/>
-      <dep package="driver/xf86-input-magellan"/>
-      <dep package="driver/xf86-input-magictouch"/>
-      <dep package="driver/xf86-input-microtouch"/>
-      <dep package="driver/xf86-input-mouse"/>
-      <dep package="driver/xf86-input-mutouch"/>
-      <dep package="driver/xf86-input-palmax"/>
-      <dep package="driver/xf86-input-penmount"/>
-      <dep package="driver/xf86-input-spaceorb"/>
-      <dep package="driver/xf86-input-tek4957"/>
-      <dep package="driver/xf86-input-ur98"/>
-      <dep package="driver/xf86-input-void"/>
-      <dep package="driver/xf86-video-apm"/>
-      <dep package="driver/xf86-video-ark"/>
-      <dep package="driver/xf86-video-ati"/>
-      <dep package="driver/xf86-video-chips"/>
-      <dep package="driver/xf86-video-cirrus"/>
-      <dep package="driver/xf86-video-cyrix"/>
-      <dep package="driver/xf86-video-dummy"/>
-      <dep package="driver/xf86-video-fbdev"/>
-      <dep package="driver/xf86-video-glide"/>
-      <dep package="driver/xf86-video-glint"/>
-      <dep package="driver/xf86-video-i128"/>
-      <dep package="driver/xf86-video-i740"/>
-      <dep package="driver/xf86-video-i810"/>
-      <dep package="driver/xf86-video-imstt"/>
-      <dep package="driver/xf86-video-mga"/>
-      <dep package="driver/xf86-video-neomagic"/>
-      <dep package="driver/xf86-video-newport"/>
-      <dep package="driver/xf86-video-nsc"/>
-      <dep package="driver/xf86-video-nv"/>
-      <dep package="driver/xf86-video-rendition"/>
-      <dep package="driver/xf86-video-s3"/>
-      <dep package="driver/xf86-video-s3virge"/>
-      <dep package="driver/xf86-video-savage"/>
-      <dep package="driver/xf86-video-siliconmotion"/>
-      <dep package="driver/xf86-video-sis"/>
-      <dep package="driver/xf86-video-sisusb"/>
-      <dep package="driver/xf86-video-sunbw2"/>
-      <dep package="driver/xf86-video-suncg14"/>
-      <dep package="driver/xf86-video-suncg3"/>
-      <dep package="driver/xf86-video-suncg6"/>
-      <dep package="driver/xf86-video-sunffb"/>
-      <dep package="driver/xf86-video-sunleo"/>
-      <dep package="driver/xf86-video-suntcx"/>
-      <dep package="driver/xf86-video-tdfx"/>
-      <dep package="driver/xf86-video-tga"/>
-      <dep package="driver/xf86-video-trident"/>
-      <dep package="driver/xf86-video-tseng"/>
-      <dep package="driver/xf86-video-v4l"/>
-      <dep package="driver/xf86-video-vesa"/>
-      <dep package="driver/xf86-video-vga"/>
-      <dep package="driver/xf86-video-via"/>
-      <dep package="driver/xf86-video-vmware"/>
-      <dep package="driver/xf86-video-voodoo"/>
-      <dep package="driver/xf86-video-wsfb"/>
+      <dep package="xf86-input-acecad"/>
+      <dep package="xf86-input-aiptek"/>
+      <dep package="xf86-input-calcomp"/>
+      <dep package="xf86-input-citron"/>
+      <dep package="xf86-input-digitaledge"/>
+      <dep package="xf86-input-dmc"/>
+      <dep package="xf86-input-dynapro"/>
+      <dep package="xf86-input-elo2300"/>
+      <dep package="xf86-input-elographics"/>
+      <dep package="xf86-input-evdev"/>
+      <dep package="xf86-input-fpit"/>
+      <dep package="xf86-input-hyperpen"/>
+      <dep package="xf86-input-jamstudio"/>
+      <dep package="xf86-input-joystick"/>
+      <dep package="xf86-input-keyboard"/>
+      <dep package="xf86-input-magellan"/>
+      <dep package="xf86-input-magictouch"/>
+      <dep package="xf86-input-microtouch"/>
+      <dep package="xf86-input-mouse"/>
+      <dep package="xf86-input-mutouch"/>
+      <dep package="xf86-input-palmax"/>
+      <dep package="xf86-input-penmount"/>
+      <dep package="xf86-input-spaceorb"/>
+      <dep package="xf86-input-tek4957"/>
+      <dep package="xf86-input-ur98"/>
+      <dep package="xf86-input-void"/>
+      <dep package="xf86-video-apm"/>
+      <dep package="xf86-video-ark"/>
+      <dep package="xf86-video-ati"/>
+      <dep package="xf86-video-chips"/>
+      <dep package="xf86-video-cirrus"/>
+      <dep package="xf86-video-cyrix"/>
+      <dep package="xf86-video-dummy"/>
+      <dep package="xf86-video-fbdev"/>
+      <dep package="xf86-video-glide"/>
+      <dep package="xf86-video-glint"/>
+      <dep package="xf86-video-i128"/>
+      <dep package="xf86-video-i740"/>
+      <dep package="xf86-video-i810"/>
+      <dep package="xf86-video-imstt"/>
+      <dep package="xf86-video-mga"/>
+      <dep package="xf86-video-neomagic"/>
+      <dep package="xf86-video-newport"/>
+      <dep package="xf86-video-nsc"/>
+      <dep package="xf86-video-nv"/>
+      <dep package="xf86-video-rendition"/>
+      <dep package="xf86-video-s3"/>
+      <dep package="xf86-video-s3virge"/>
+      <dep package="xf86-video-savage"/>
+      <dep package="xf86-video-siliconmotion"/>
+      <dep package="xf86-video-sis"/>
+      <dep package="xf86-video-sisusb"/>
+      <dep package="xf86-video-sunbw2"/>
+      <dep package="xf86-video-suncg14"/>
+      <dep package="xf86-video-suncg3"/>
+      <dep package="xf86-video-suncg6"/>
+      <dep package="xf86-video-sunffb"/>
+      <dep package="xf86-video-sunleo"/>
+      <dep package="xf86-video-suntcx"/>
+      <dep package="xf86-video-tdfx"/>
+      <dep package="xf86-video-tga"/>
+      <dep package="xf86-video-trident"/>
+      <dep package="xf86-video-tseng"/>
+      <dep package="xf86-video-v4l"/>
+      <dep package="xf86-video-vesa"/>
+      <dep package="xf86-video-vga"/>
+      <dep package="xf86-video-via"/>
+      <dep package="xf86-video-vmware"/>
+      <dep package="xf86-video-voodoo"/>
+      <dep package="xf86-video-wsfb"/>
     </dependencies>
   </metamodule>
 
@@ -1806,7 +2170,7 @@
 
   <metamodule id="xorg-x86-drivers">
     <dependencies>
-      <dep package="driver/xf86-input-vmmouse"/>
+      <dep package="xf86-input-vmmouse"/>
     </dependencies>
   </metamodule>
 
@@ -1814,34 +2178,35 @@
 
   <metamodule id="xorg-sun-drivers">
     <dependencies>
-      <dep package="driver/xf86-video-sunbw2"/>
-      <dep package="driver/xf86-video-suncg14"/>
-      <dep package="driver/xf86-video-suncg3"/>
-      <dep package="driver/xf86-video-suncg6"/>
-      <dep package="driver/xf86-video-sunffb"/>
-      <dep package="driver/xf86-video-sunleo"/>
-      <dep package="driver/xf86-video-suntcx"/>
+      <dep package="xf86-video-sunbw2"/>
+      <dep package="xf86-video-suncg14"/>
+      <dep package="xf86-video-suncg3"/>
+      <dep package="xf86-video-suncg6"/>
+      <dep package="xf86-video-sunffb"/>
+      <dep package="xf86-video-sunleo"/>
+      <dep package="xf86-video-suntcx"/>
     </dependencies>
   </metamodule>
 
 
   <!-- Bogosity of depending on libraries caused by Xnest.  Sigh -->
-  <cvsmodule cvsroot="xorg.freedesktop.org" module="xserver/xorg">
+  <autotools id="xserver">
+    <branch repo="git.freedesktop.org" module="xorg/xserver"/>
     <dependencies>
       <dep package="xorg-protos"/>
-      <dep package="lib/Xaw"/>
-      <dep package="lib/xkbui"/>
-      <dep package="lib/Xfont"/>
-      <dep package="lib/xtrans"/>
-      <dep package="lib/Xau"/>
-      <dep package="lib/xkbfile"/>
-      <dep package="lib/Xdmcp"/>
-      <dep package="lib/Xxf86misc"/>
-      <dep package="lib/Xxf86vm"/>
-      <dep package="lib/lbxutil"/>
-      <dep package="drm"/>
+      <dep package="libXaw"/>
+      <dep package="libxkbui"/>
+      <dep package="libXfont"/>
+      <dep package="libxtrans"/>
+      <dep package="libXau"/>
+      <dep package="libxkbfile"/>
+      <dep package="libXdmcp"/>
+      <dep package="libXxf86misc"/>
+      <dep package="libXxf86vm"/>
+      <dep package="liblbxutil"/>
+      <dep package="libdrm"/>
     </dependencies>
-  </cvsmodule>
+  </autotools>
 
   <metamodule id="xorg">
     <dependencies>
@@ -1850,7 +2215,7 @@
       <dep package="xorg-fonts"/>
       <dep package="xorg-apps"/>
       <dep package="xorg-drivers"/>
-      <dep package="xserver/xorg"/>
+      <dep package="xserver"/>
     </dependencies>
   </metamodule>
 
