@@ -1121,9 +1121,6 @@
     </dependencies>
   </autotools>
 
-  <autotools id="pclcomp">
-    <branch repo="git.freedesktop.org" module="xorg/app/pclcomp" checkoutdir="app/pclcomp" />
-  </autotools>
   <autotools id="proxymngr">
     <branch repo="git.freedesktop.org" module="xorg/app/proxymngr" checkoutdir="app/proxymngr" />
     <dependencies>
@@ -1474,7 +1471,6 @@
 
   <metamodule id="xorg-apps">
     <dependencies>
-      <dep package="xmkmf"/> <!-- For backwards compatibility sake -->
       <dep package="appres"/>
       <dep package="bdftopcf"/>
       <dep package="beforelight"/>
@@ -1492,7 +1488,6 @@
       <dep package="mkfontdir"/>
       <dep package="mkfontscale"/>
       <dep package="oclock"/>
-      <dep package="pclcomp"/>
       <dep package="proxymngr"/>
       <dep package="rgb"/>
       <dep package="rstart"/>
