@@ -29,13 +29,6 @@
     </dependencies>
   </autotools>
 
-  <autotools id="xmkmf">
-    <branch repo="git.freedesktop.org" module="xorg/util/xmkmf" checkoutdir="xorg/util/xmkmf" />
-    <dependencies>
-	<dep package="imake"/>
-    </dependencies>
-  </autotools>
-
   <autotools id="bigreqsproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/bigreqsproto" checkoutdir="proto/bigreqsproto" />
   </autotools>
