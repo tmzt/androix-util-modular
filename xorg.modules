@@ -126,8 +126,8 @@
   <autotools id="xineramaproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/xineramaproto" checkoutdir="proto/xineramaproto" />
   </autotools>
-  <autotools id="xproto">
-    <branch repo="git.freedesktop.org" module="xorg/proto/xproto" checkoutdir="proto/xproto" />
+  <autotools id="x11proto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/x11proto" checkoutdir="proto/x11proto" />
   </autotools>
 
   <metamodule id="xorg-protos">
@@ -160,7 +160,7 @@
       <dep package="xf86miscproto"/>
       <dep package="xf86rushproto"/>
       <dep package="xf86vidmodeproto"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
       <dep package="pmproto"/>
     </dependencies>
   </metamodule>
@@ -171,7 +171,7 @@
     <branch repo="git.freedesktop.org" module="xorg/lib/libFS" checkoutdir="lib/libFS" />
     <dependencies>
       <dep package="macros"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
       <dep package="fontsproto"/>
       <dep package="libxtrans"/>
     </dependencies>
@@ -181,7 +181,7 @@
     <branch repo="git.freedesktop.org" module="xorg/lib/libICE" checkoutdir="lib/libICE" />
     <dependencies>
       <dep package="macros"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
       <dep package="libxtrans"/>
     </dependencies>
   </autotools>
@@ -190,7 +190,7 @@
     <branch repo="git.freedesktop.org" module="xorg/lib/libSM" checkoutdir="lib/libSM" />
     <dependencies>
       <dep package="macros"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
       <dep package="libICE"/>
       <dep package="libxtrans"/>
     </dependencies>
@@ -200,7 +200,7 @@
     <branch repo="git.freedesktop.org" module="xorg/lib/libX11" checkoutdir="lib/libX11" />
     <dependencies>
       <dep package="macros"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
       <dep package="bigreqsproto"/>
       <dep package="xextproto"/>
       <dep package="libxtrans"/>
@@ -239,7 +239,7 @@
     <branch repo="git.freedesktop.org" module="xorg/lib/libXau" checkoutdir="lib/libXau" />
     <dependencies>
       <dep package="macros"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
     </dependencies>
   </autotools>
 
@@ -247,7 +247,7 @@
     <branch repo="git.freedesktop.org" module="xorg/lib/libXaw" checkoutdir="lib/libXaw" />
     <dependencies>
       <dep package="macros"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
       <dep package="libX11"/>
       <dep package="libXt"/>
       <dep package="libXmu"/>
@@ -290,7 +290,7 @@
     <branch repo="git.freedesktop.org" module="xorg/lib/libXdmcp" checkoutdir="lib/libXdmcp" />
     <dependencies>
       <dep package="macros"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
     </dependencies>
   </autotools>
 
@@ -298,7 +298,7 @@
     <branch repo="git.freedesktop.org" module="xorg/lib/libXevie" checkoutdir="lib/libXevie" />
     <dependencies>
       <dep package="macros"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
       <dep package="libX11"/>
       <dep package="xextproto"/>
       <dep package="libXext"/>
@@ -310,7 +310,7 @@
     <branch repo="git.freedesktop.org" module="xorg/lib/libXext" checkoutdir="lib/libXext" />
     <dependencies>
       <dep package="macros"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
       <dep package="libX11"/>
       <dep package="xextproto"/>
     </dependencies>
@@ -329,7 +329,7 @@
     <branch repo="git.freedesktop.org" module="xorg/lib/libXfont" checkoutdir="lib/libXfont" />
     <dependencies>
       <dep package="macros"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
       <dep package="libxtrans"/>
       <dep package="fontsproto"/>
       <dep package="libfontenc"/>
@@ -363,7 +363,7 @@
     <branch repo="git.freedesktop.org" module="xorg/lib/libXi" checkoutdir="lib/libXi" />
     <dependencies>
       <dep package="macros"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
       <dep package="libX11"/>
       <dep package="xextproto"/>
       <dep package="libXext"/>
@@ -408,7 +408,7 @@
     <dependencies>
       <dep package="macros"/>
       <dep package="libX11"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
       <dep package="libXt"/>
       <dep package="libXext"/>
     </dependencies>
@@ -467,7 +467,7 @@
       <dep package="macros"/>
       <dep package="libSM"/>
       <dep package="libX11"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
     </dependencies>
   </autotools>
 
@@ -509,7 +509,7 @@
     <branch repo="git.freedesktop.org" module="xorg/lib/libXxf86dga" checkoutdir="lib/libXxf86dga" />
     <dependencies>
       <dep package="macros"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
       <dep package="libX11"/>
       <dep package="libXext"/>
       <dep package="xextproto"/>
@@ -521,7 +521,7 @@
     <branch repo="git.freedesktop.org" module="xorg/lib/libXxf86misc" checkoutdir="lib/libXxf86misc" />
     <dependencies>
       <dep package="macros"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
       <dep package="libX11"/>
       <dep package="libXext"/>
       <dep package="xextproto"/>
@@ -533,7 +533,7 @@
     <branch repo="git.freedesktop.org" module="xorg/lib/libXxf86vm" checkoutdir="lib/libXxf86vm" />
     <dependencies>
       <dep package="macros"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
       <dep package="libX11"/>
       <dep package="libXext"/>
       <dep package="xextproto"/>
@@ -556,7 +556,7 @@
     <branch repo="git.freedesktop.org" module="xorg/lib/libfontenc" checkoutdir="lib/libfontenc" />
     <dependencies>
       <dep package="macros"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
     </dependencies>
   </autotools>
 
@@ -1144,7 +1144,7 @@
   <autotools id="rgb">
     <branch repo="git.freedesktop.org" module="xorg/app/rgb" checkoutdir="app/rgb" />
     <dependencies>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
     </dependencies>
   </autotools>
 
@@ -1876,7 +1876,7 @@
     <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-i810" checkoutdir="driver/xf86-video-i810" />
     <dependencies>
       <dep package="xserver"/>
-      <dep package="xproto"/>
+      <dep package="x11proto"/>
       <dep package="libXvMC"/>
     </dependencies>
   </autotools>
