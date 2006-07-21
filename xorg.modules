@@ -14,16 +14,16 @@
      password="" />
 
   <autotools id="macros">
-    <branch repo="git.freedesktop.org" module="xorg/util/macros" checkoutdir="xorg/util/macros" />
+    <branch repo="git.freedesktop.org" module="xorg/util/macros" checkoutdir="util/macros" />
   </autotools>
   <autotools id="makedepend">
-    <branch repo="git.freedesktop.org" module="xorg/util/makedepend" checkoutdir="xorg/util/makedepend" />
+    <branch repo="git.freedesktop.org" module="xorg/util/makedepend" checkoutdir="util/makedepend" />
   </autotools>
   <autotools id="cf">
-    <branch repo="git.freedesktop.org" module="xorg/util/cf" checkoutdir="xorg/util/cf" />
+    <branch repo="git.freedesktop.org" module="xorg/util/cf" checkoutdir="util/cf" />
   </autotools>
   <autotools id="imake">
-    <branch repo="git.freedesktop.org" module="xorg/util/imake" checkoutdir="xorg/util/imake" />
+    <branch repo="git.freedesktop.org" module="xorg/util/imake" checkoutdir="util/imake" />
     <dependencies>
 	<!--      <dep package="util/cf"/> -->
     </dependencies>
