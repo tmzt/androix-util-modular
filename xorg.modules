@@ -1852,8 +1852,8 @@
     </dependencies>
   </autotools>
 
-  <autotools id="xf86-video-i810">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-i810" />
+  <autotools id="xf86-video-intel">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-intel" />
     <dependencies>
       <dep package="xserver"/>
       <dep package="x11proto"/>
@@ -2110,7 +2110,7 @@
       <dep package="xf86-video-glint"/>
       <dep package="xf86-video-i128"/>
       <dep package="xf86-video-i740"/>
-      <dep package="xf86-video-i810"/>
+      <dep package="xf86-video-intel"/>
       <dep package="xf86-video-imstt"/>
       <dep package="xf86-video-mga"/>
       <dep package="xf86-video-neomagic"/>
