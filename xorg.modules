@@ -1824,14 +1824,6 @@
     </dependencies>
   </autotools>
 
-
-  <autotools id="xf86-video-glide">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-glide" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
   <autotools id="xf86-video-glint">
     <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-glint" />
     <dependencies>
@@ -2115,7 +2107,6 @@
       <dep package="xf86-video-cyrix"/>
       <dep package="xf86-video-dummy"/>
       <dep package="xf86-video-fbdev"/>
-      <dep package="xf86-video-glide"/>
       <dep package="xf86-video-glint"/>
       <dep package="xf86-video-i128"/>
       <dep package="xf86-video-i740"/>
