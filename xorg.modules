@@ -2183,6 +2183,7 @@
       <dep package="libXxf86vm"/>
       <dep package="liblbxutil"/>
       <dep package="libdrm"/>
+      <dep package="libdmx"/>
     </dependencies>
   </autotools>
 
