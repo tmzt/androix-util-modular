@@ -9,9 +9,10 @@
   <repository type="git" name="git.freedesktop.org"
       href="git://anongit.freedesktop.org/git/"/>
 
-  <cvsroot name="fontconfig.freedesktop.org"
-     root=":pserver:anoncvs@cvs.freedesktop.org:/cvs/fontconfig"
-     password="" />
+  <autotools id="fontconfig">
+    <branch repo="git.freedesktop.org" module="fontconfig" checkoutdir="fontconfig" />
+  </autotools> 
+
 
   <autotools id="macros">
     <branch repo="git.freedesktop.org" module="xorg/util/macros" checkoutdir="xorg/util/macros" />
@@ -340,8 +341,6 @@
       <dep package="fontcacheproto"/>
     </dependencies>
   </autotools>
-
-  <cvsmodule id="fontconfig" cvsroot="fontconfig.freedesktop.org" />
 
   <autotools id="libXft">
     <branch repo="git.freedesktop.org" module="xorg/lib/libXft" checkoutdir="xorg/lib/libXft" />
