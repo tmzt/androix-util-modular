@@ -1767,6 +1767,13 @@
     </dependencies>
   </autotools>
 
+  <autotools id="xf86-video-amd">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-amd" checkoutdir="xorg/driver/xf86-video-amd" />
+    <dependencies>
+      <dep package="xserver"/>
+    </dependencies>
+  </autotools>
+
   <autotools id="xf86-video-apm">
     <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-apm" checkoutdir="xorg/driver/xf86-video-apm" />
     <dependencies>
@@ -2098,6 +2105,7 @@
       <dep package="xf86-input-tek4957"/>
       <dep package="xf86-input-ur98"/>
       <dep package="xf86-input-void"/>
+      <dep package="xf86-video-amd"/>
       <dep package="xf86-video-apm"/>
       <dep package="xf86-video-ark"/>
       <dep package="xf86-video-ati"/>
