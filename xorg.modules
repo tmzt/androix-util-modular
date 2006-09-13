@@ -814,7 +814,7 @@
       <dep package="util"/>
     </dependencies>
   </autotools>
-
+b
   <autotools id="encodings">
     <branch repo="git.freedesktop.org" module="xorg/font/encodings" checkoutdir="xorg/font/encodings" />
     <dependencies>
@@ -2088,6 +2088,13 @@
     </dependencies>
   </metamodule>
 
+  <!-- This driver is BSD specific, and should not be built on all platforms -->
+  <metamodule id="xorg-unmaintained-broken-drivers">
+    <dependencies>
+      <dep package="xf86-video-wsfb"/>
+    </dependencies>
+  </metamodule>
+
   <metamodule id="xorg-drivers">
     <dependencies>
       <dep package="xf86-input-acecad"/>
@@ -2157,7 +2164,6 @@
       <dep package="xf86-video-vga"/>
       <dep package="xf86-video-vmware"/>
       <dep package="xf86-video-voodoo"/>
-      <dep package="xf86-video-wsfb"/>
     </dependencies>
   </metamodule>
 
