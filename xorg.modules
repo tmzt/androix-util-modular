@@ -126,6 +126,7 @@
 
   <metamodule id="xorg-protos">
     <dependencies>
+      <dep package="macros"/>
       <dep package="bigreqsproto"/>
       <dep package="compositeproto"/>
       <dep package="damageproto"/>
