@@ -818,7 +818,6 @@
   <autotools id="encodings">
     <branch repo="git.freedesktop.org" module="xorg/font/encodings" checkoutdir="xorg/font/encodings" />
     <dependencies>
-      <dep package="mkfontscale"/>
       <dep package="util"/>
     </dependencies>
   </autotools>
@@ -937,6 +936,8 @@
 
   <metamodule id="xorg-fonts">
     <dependencies>
+      <dep package="mkfontscale"/>
+      <dep package="mkfontdir"/>
       <dep package="encodings"/>
       <dep package="adobe-75dpi"/>
       <dep package="adobe-100dpi"/>
