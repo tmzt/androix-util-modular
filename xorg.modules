@@ -2079,6 +2079,14 @@
     </dependencies>
   </autotools>
 
+  <!-- These drivers are marked unmaintained in xorg/doc/xorg-docs/MAINTAINERS and are also broken -->
+  <metamodule id="xorg-unmaintained-broken-drivers">
+    <dependencies>
+      <dep package="xf86-video-siliconmotion"/>
+      <dep package="xf86-video-via"/>
+    </dependencies>
+  </metamodule>
+
   <metamodule id="xorg-drivers">
     <dependencies>
       <dep package="xf86-input-acecad"/>
@@ -2130,7 +2138,6 @@
       <dep package="xf86-video-s3"/>
       <dep package="xf86-video-s3virge"/>
       <dep package="xf86-video-savage"/>
-      <dep package="xf86-video-siliconmotion"/>
       <dep package="xf86-video-sis"/>
       <dep package="xf86-video-sisusb"/>
       <dep package="xf86-video-sunbw2"/>
@@ -2147,7 +2154,6 @@
       <dep package="xf86-video-v4l"/>
       <dep package="xf86-video-vesa"/>
       <dep package="xf86-video-vga"/>
-      <dep package="xf86-video-via"/>
       <dep package="xf86-video-vmware"/>
       <dep package="xf86-video-voodoo"/>
       <dep package="xf86-video-wsfb"/>
