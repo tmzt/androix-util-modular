@@ -814,7 +814,7 @@
       <dep package="util"/>
     </dependencies>
   </autotools>
-b
+
   <autotools id="encodings">
     <branch repo="git.freedesktop.org" module="xorg/font/encodings" checkoutdir="xorg/font/encodings" />
     <dependencies>
