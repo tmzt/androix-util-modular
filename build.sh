@@ -91,7 +91,7 @@ build_proto() {
     build proto xf86vidmodeproto
     build proto xineramaproto
     if test x"$USE_XCB" != xNO ; then
-	build xcb xcb-proto
+	build xcb proto
     fi
 }
 
@@ -126,8 +126,7 @@ build_lib() {
     build lib libXau
     build lib libXdmcp
     if test x"$USE_XCB" != xNO ; then
-	build xcb xcb
-	build xcb xcb-util
+	build xcb libxcb
     fi
     build lib libX11
     build lib libXext
@@ -274,9 +273,9 @@ build_app() {
     build app xwd
     build app xwininfo
     build app xwud
-    if test x"$USE_XCB" != xNO ; then
-	build xcb xcb-demo
-    fi
+#    if test x"$USE_XCB" != xNO ; then
+#	build xcb demo
+#    fi
 }
 
 # The server requires at least the following libraries:
