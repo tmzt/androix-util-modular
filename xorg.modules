@@ -14,6 +14,16 @@
   </autotools> 
 
 
+  <autotools id="xcb-proto">
+    <branch repo="git.freedesktop.org" module="xcb/proto" checkoutdir="xcb/proto"/>
+  </autotools>
+  <autotools id="libxcb">
+    <dependencies>
+      <dep package="xcb-proto"/>
+    </dependencies>
+    <branch repo="git.freedesktop.org" module="xcb/libxcb" checkoutdir="xcb/libxcb"/>
+  </autotools>
+
   <autotools id="macros">
     <branch repo="git.freedesktop.org" module="xorg/util/macros" checkoutdir="xorg/util/macros" />
   </autotools>
@@ -194,6 +204,7 @@
   <autotools id="libX11">
     <branch repo="git.freedesktop.org" module="xorg/lib/libX11" checkoutdir="xorg/lib/libX11" />
     <dependencies>
+      <dep package="libxcb"/>
       <dep package="macros"/>
       <dep package="x11proto"/>
       <dep package="bigreqsproto"/>
