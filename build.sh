@@ -97,11 +97,11 @@ build_proto() {
 
 # bitmaps is needed for building apps, so has to be done separately first
 # cursors depends on apps/xcursorgen
-# xkbdata depends on apps/xkbcomp
+# xkbdata is obsolete - use xkbdesc from xkeyboard-config instead
 build_data() {
 #    build data bitmaps
     build data cursors
-    build data xkbdata
+#    build data xkbdata
 }
 
 # All protocol modules must be installed before the libs (okay, that's an
