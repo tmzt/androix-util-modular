@@ -192,7 +192,7 @@ build_app() {
     build app lbxproxy
     build app listres
     build app luit
-    build app mkcfm
+#    build app mkcfm
     build app mkfontdir
     build app mkfontscale
     build app oclock
