@@ -14,12 +14,17 @@
   </autotools> 
 
 
+  <autotools id="pthread-stubs">
+    <branch repo="git.freedesktop.org" module="xcb/pthread-stubs" checkoutdir="xcb/pthread-stubs"/>
+  </autotools>
+
   <autotools id="xcb-proto">
     <branch repo="git.freedesktop.org" module="xcb/proto" checkoutdir="xcb/proto"/>
   </autotools>
   <autotools id="libxcb">
     <dependencies>
       <dep package="xcb-proto"/>
+      <dep package="pthread-stubs"/>
     </dependencies>
     <branch repo="git.freedesktop.org" module="xcb/libxcb" checkoutdir="xcb/libxcb"/>
   </autotools>
