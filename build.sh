@@ -338,11 +338,11 @@ build_driver_input() {
 build_driver_video() {
 
     HOST_OS=`uname -s`
+    HOST_CPU=`uname -m`
 
     # Some drivers are only buildable on some OS'es
     case $HOST_OS in
 	*FreeBSD*)
-	    HOST_CPU=`uname -m`
 	    case $HOST_CPU in
 		sparc64)
 		    build driver xf86-video-sunffb
@@ -359,6 +359,20 @@ build_driver_video() {
 	    build driver xf86-video-sisusb
 	    build driver xf86-video-sunffb
 	    build driver xf86-video-v4l
+	    ;;
+	*)
+	    ;;
+    esac
+
+    # Some drivers are only buildable on some architectures
+    case $HOST_CPU in
+	*sparc*)
+	    build driver xf86-video-sunbw2
+	    build driver xf86-video-suncg14
+	    build driver xf86-video-suncg3
+	    build driver xf86-video-suncg6
+	    build driver xf86-video-sunleo
+	    build driver xf86-video-suntcx
 	    ;;
 	*)
 	    ;;
@@ -390,12 +404,6 @@ build_driver_video() {
     build driver xf86-video-savage
     build driver xf86-video-siliconmotion
     build driver xf86-video-sis
-    build driver xf86-video-sunbw2
-    build driver xf86-video-suncg14
-    build driver xf86-video-suncg3
-    build driver xf86-video-suncg6
-    build driver xf86-video-sunleo
-    build driver xf86-video-suntcx
     build driver xf86-video-tdfx
     build driver xf86-video-tga
     build driver xf86-video-trident
