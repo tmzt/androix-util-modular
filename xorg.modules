@@ -9,6 +9,10 @@
   <repository type="git" name="git.freedesktop.org"
       href="git://anongit.freedesktop.org/git/"/>
 
+  <cvsroot name="xkeyboard-config"
+     root=":pserver:anoncvs@cvs.freedesktop.org:/cvs/xkeyboard-config"
+     password="" />
+
   <autotools id="fontconfig">
     <branch repo="git.freedesktop.org" module="fontconfig" checkoutdir="fontconfig" />
   </autotools> 
@@ -997,6 +1001,13 @@
     <branch repo="git.freedesktop.org" module="xorg/data/cursors" checkoutdir="xorg/data/cursors" />
     <dependencies>
       <dep package="app/xcursorgen"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="xkeyboard-config">
+    <branch repo="xkeyboard-config" module="xkeyboard-config"/>
+    <dependencies>
+      <dep package="xkbcomp"/>
     </dependencies>
   </autotools>
 
@@ -2227,6 +2238,7 @@
       <dep package="xorg-apps"/>
       <dep package="xorg-drivers"/>
       <dep package="xserver"/>
+      <dep package="xkeyboard-config"/>
     </dependencies>
   </metamodule>
 
