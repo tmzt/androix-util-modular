@@ -1000,13 +1000,6 @@
     </dependencies>
   </autotools>
 
-  <autotools id="xkbdata">
-    <branch repo="git.freedesktop.org" module="xorg/data/xkbdata" checkoutdir="xorg/data/xkbdata" />
-    <dependencies>
-      <dep package="app/xkbcomp"/>
-    </dependencies>
-  </autotools>
-
   <!-- apps -->
 
   <autotools id="appres">
