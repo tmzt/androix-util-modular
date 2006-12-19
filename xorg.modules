@@ -1419,6 +1419,9 @@
   </autotools>
   <autotools id="xrandr">
     <branch repo="git.freedesktop.org" module="xorg/app/xrandr" checkoutdir="xorg/app/xrandr" />
+    <dependencies>
+      <dep package="libXrandr"/>
+    </dependencies>
   </autotools>
   <autotools id="xrdb">
     <branch repo="git.freedesktop.org" module="xorg/app/xrdb" checkoutdir="xorg/app/xrdb" />
