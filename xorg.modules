@@ -1233,6 +1233,14 @@
     </dependencies>
   </autotools>
 
+  <autotools id="xcompmgr">
+    <branch repo="git.freedesktop.org" module="xorg/app/xcompmgr" checkoutdir="xorg/app/xcompmgr" />
+    <dependencies>
+      <dep package="libXcomposite"/>
+      <dep package="libXdamage"/>
+    </dependencies>
+  </autotools>
+
   <autotools id="xcursorgen">
     <branch repo="git.freedesktop.org" module="xorg/app/xcursorgen" checkoutdir="xorg/app/xcursorgen" />
   </autotools>
