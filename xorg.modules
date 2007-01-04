@@ -1153,6 +1153,13 @@
     </dependencies>
   </autotools>
 
+  <autotools id="rendercheck">
+    <branch repo="git.freedesktop.org" module="xorg/app/rendercheck" checkoutdir="xorg/app/rendercheck" />
+    <dependencies>
+      <dep package="libXrender"/>
+    </dependencies>
+  </autotools>
+
   <autotools id="rgb">
     <branch repo="git.freedesktop.org" module="xorg/app/rgb" checkoutdir="xorg/app/rgb" />
     <dependencies>
@@ -1522,6 +1529,7 @@
       <dep package="mkfontscale"/>
       <dep package="oclock"/>
       <dep package="proxymngr"/>
+      <dep package="rendercheck"/>
       <dep package="rgb"/>
       <dep package="rstart"/>
       <dep package="scripts"/>
