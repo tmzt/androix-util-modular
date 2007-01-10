@@ -17,7 +17,6 @@
     <branch repo="git.freedesktop.org" module="fontconfig" checkoutdir="fontconfig" />
   </autotools> 
 
-
   <autotools id="pthread-stubs">
     <branch repo="git.freedesktop.org" module="xcb/pthread-stubs" checkoutdir="xcb/pthread-stubs"/>
   </autotools>
@@ -622,6 +621,18 @@
     </dependencies>
   </autotools>
 
+  <!-- the Mesa module, which provides libGL, libGLU, and DRI drivers -->
+  <mesa id="libGL">
+    <branch repo="git.freedesktop.org" module="mesa/mesa"/>
+    <dependencies>
+      <dep package="xf86driproto"/>
+      <dep package="glproto"/>
+      <dep package="libXxf86vm"/>
+      <dep package="libXdamage"/>
+      <dep package="libdrm"/>
+    </dependencies>
+  </mesa>
+
   <metamodule id="xorg-libs">
     <dependencies>
       <dep package="libFS"/>
@@ -667,6 +678,7 @@
       <dep package="libxkbui"/>
       <dep package="libxtrans"/>
       <dep package="libdrm"/>
+      <dep package="libGL"/>
     </dependencies>
   </metamodule>
 
