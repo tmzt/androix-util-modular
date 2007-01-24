@@ -126,6 +126,7 @@ build_lib() {
     build lib libXau
     build lib libXdmcp
     if test x"$USE_XCB" != xNO ; then
+        build xcb pthread-stubs
 	build xcb libxcb
     fi
     build lib libX11
