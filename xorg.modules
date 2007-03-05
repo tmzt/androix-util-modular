@@ -48,6 +48,25 @@
     </dependencies>
   </autotools>
 
+  <autotools id="xorg-sgml-doctools">
+    <branch repo="git.freedesktop.org"
+	module="xorg/doc/xorg-sgml-doctools"
+	checkoutdir="xorg/doc/xorg-sgml-doctools" />
+    <dependencies>
+      <dep package="macros"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="xorg-docs">
+    <branch repo="git.freedesktop.org"
+	module="xorg/doc/xorg-docs"
+	checkoutdir="xorg/doc/xorg-docs" />
+    <dependencies>
+      <dep package="xorg-sgml-doctools"/>
+      <dep package="macros"/>
+    </dependencies>
+  </autotools>
+
   <autotools id="bigreqsproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/bigreqsproto" checkoutdir="xorg/proto/bigreqsproto" />
   </autotools>
@@ -2269,6 +2288,7 @@
       <dep package="xorg-fonts"/>
       <dep package="xorg-apps"/>
       <dep package="xorg-drivers"/>
+      <dep package="xorg-docs"/>
       <dep package="xserver"/>
       <dep package="xkeyboard-config"/>
     </dependencies>
