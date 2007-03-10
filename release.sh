@@ -81,7 +81,19 @@ if ! [ -f "$tarball_dir/$tarbz2" ] ||
     exit 1
 fi
 
-echo "checking for existing releases"
+echo "checking for proper current dir"
+if ! [ -d .git ]; then
+    echo "error: do this from your git dir, weenie"
+    exit 1
+fi
+
+echo "checking for an existing tag"
+if ! git tag -l $tag_current >/dev/null; then
+    echo "error: you must tag your release first!"
+    exit 1
+fi
+
+echo "checking for an existing release"
 if ssh $host_people ls $srv_path/$targz >/dev/null 2>&1 ||
    ssh $host_people ls $srv_path/$tarbz2 >/dev/null 2>&1; then
     if [ "x$force" = "xyes" ]; then
@@ -90,12 +102,6 @@ if ssh $host_people ls $srv_path/$targz >/dev/null 2>&1 ||
         echo "error: file already exists!"
         exit 1
     fi
-fi
-
-echo "checking for proper current dir"
-if ! [ -d .git ]; then
-    echo "error: do this from your git dir, weenie"
-    exit 1
 fi
 
 echo "generating announce mail template, remember to sign it"
