@@ -1,55 +1,110 @@
 #!/bin/sh
 
-if [ -d "obj-i386" ]; then
-    OBJDIR="obj-i386"
-elif [ -d "obj-amd64" ]; then
-    OBJDIR="obj-amd64"
-else
-    OBJDIR="."
-fi
+set -e
 
-tarball="$1"
-section="$2"
-file="$HOME/x/xorg/final/$tarball"
-module="$(echo $tarball | cut -f1 -d-)"
-version="$(echo $tarball | cut -f2 -d-)"
-tarbz2="$tarball.tar.bz2"
-targz="$tarball.tar.gz"
+section="$1"
+tag_previous="$2"
+tag_current="$3"
 
-if ! [ -f "$OBJDIR/$tarbz2" ] || ! [ -f "$OBJDIR/$targz" ] || [ -z "$section" ]; then
-    echo "incorrect parameters!"
+shift 3
+
+announce_list="xorg-announce@lists.freedesktop.org"
+host_people=annarchy.freedesktop.org
+host_xorg=xorg.freedesktop.org
+
+usage()
+{
+    cat <<HELP
+Usage: `basename $0` [options] <section> <tag_previous> <tag_current>
+
+Options:
+  --force       force overwritting an existing release
+  --help        this help message
+HELP
+}
+
+gen_announce_mail()
+{
+    cat <<RELEASE
+Subject: [ANNOUNCE] $module $version
+To: $announce_list
+
+`git-log --no-merges $tag_previous..'HEAD^1' | git shortlog`
+
+git tag: $tag_current
+
+http://$host_xorg/$section_path/$targz
+MD5: `cd $tarball_dir && md5sum $tarbz2`
+SHA1: `cd $tarball_dir && sha1sum $tarbz2`
+
+http://$host_xorg/$section_path/$targz
+MD5: `cd $tarball_dir && md5sum $targz`
+SHA1: `cd $tarball_dir && sha1sum $targz`
+
+RELEASE
+}
+
+for arg do
+    case "$arg" in
+    --force)
+        force="yes"
+        ;;
+    --help)
+        usage
+        exit 0
+        ;;
+    *)
+        echo "error: unknown option"
+        usage
+        exit 1
+        ;;
+    esac
+done
+
+tarball_dir="$(dirname $(find -name config.status))"
+module="${tag_current%-*}"
+version="${tag_current##*-}"
+tarbz2="$tag_current.tar.bz2"
+targz="$tag_current.tar.bz2"
+announce="$tarball_dir/$tag_current.announce"
+
+section_path="archive/individual/$section"
+srv_path="/srv/$host_xorg/$section_path"
+
+echo "checking parameters"
+if ! [ -f "$tarball_dir/$tarbz2" ] ||
+   ! [ -f "$tarball_dir/$targz" ] ||
+     [ -z "$tag_previous" ] ||
+     [ -z "$section" ]; then
+    echo "error: incorrect parameters!"
+    usage
     exit 1
 fi
 
-if ssh annarchy.freedesktop.org ls /srv/xorg.freedesktop.org/archive/individual/${section}/${targz} >/dev/null 2>&1 ||
-   ssh annarchy.freedesktop.org ls /srv/xorg.freedesktop.org/archive/individual/${section}/${tarbz2} >/dev/null 2>&1; then
-    if ! [ "x$3" = "xforce" ]; then
-        echo "file already exists!"
-        exit 1
+echo "checking for existing releases"
+if ssh $host_people ls $srv_path/$targz >/dev/null 2>&1 ||
+   ssh $host_people ls $srv_path/$tarbz2 >/dev/null 2>&1; then
+    if [ "x$force" = "xyes" ]; then
+        echo "warning: overriding released file ... here be dragons."
     else
-        echo "overriding released file ... here be dragons."
+        echo "error: file already exists!"
+        exit 1
     fi
 fi
 
+echo "checking for proper current dir"
 if ! [ -d .git ]; then
-    echo "do this from your git dir, weenie"
+    echo "error: do this from your git dir, weenie"
     exit 1
 fi
 
-echo "git tag: ${tarball}" >> $file
-echo >> $file
-echo "http://xorg.freedesktop.org/archive/individual/${section}/${tarbz2}" >> $file
-echo -n "MD5: " >> $file
-(cd $OBJDIR && md5sum ${tarbz2}) >> $file
-echo -n "SHA1: " >> $file
-(cd $OBJDIR && sha1sum ${tarbz2}) >> $file
-echo >> $file
-echo "http://xorg.freedesktop.org/archive/individual/${section}/${targz}" >> $file
-echo -n "MD5: " >> $file
-(cd $OBJDIR && md5sum ${targz}) >> $file
-echo -n "SHA1: " >> $file
-(cd $OBJDIR && sha1sum ${targz}) >> $file
+echo "generating announce mail template, remember to sign it"
+gen_announce_mail >$announce
+echo "    at: $announce"
 
-scp $OBJDIR/$targz $OBJDIR/$tarbz2 annarchy.freedesktop.org:/srv/xorg.freedesktop.org/archive/individual/${section}
+echo "installing release into server"
+scp $tarball_dir/$targz $tarball_dir/$tarbz2 $host_people:$section_path
+
+echo "pushing changes upstream"
 git push origin
 git push --tags origin
