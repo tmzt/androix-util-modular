@@ -2,12 +2,6 @@
 
 set -e
 
-section="$1"
-tag_previous="$2"
-tag_current="$3"
-
-shift 3
-
 announce_list="xorg-announce@lists.freedesktop.org"
 host_people=annarchy.freedesktop.org
 host_xorg=xorg.freedesktop.org
@@ -29,11 +23,11 @@ gen_announce_mail()
 Subject: [ANNOUNCE] $module $version
 To: $announce_list
 
-`git-log --no-merges $tag_previous..'HEAD^1' | git shortlog`
+`git-log --no-merges $tag_previous..$tag_current | git shortlog`
 
 git tag: $tag_current
 
-http://$host_xorg/$section_path/$targz
+http://$host_xorg/$section_path/$tarbz2
 MD5: `cd $tarball_dir && md5sum $tarbz2`
 SHA1: `cd $tarball_dir && sha1sum $tarbz2`
 
@@ -44,19 +38,33 @@ SHA1: `cd $tarball_dir && sha1sum $targz`
 RELEASE
 }
 
-for arg do
-    case "$arg" in
+export LC_ALL=C
+
+while [ $# != 0 ]; do
+    case "$1" in
     --force)
         force="yes"
+        shift
         ;;
     --help)
         usage
         exit 0
         ;;
-    *)
+    --*)
         echo "error: unknown option"
         usage
         exit 1
+        ;;
+    *)
+        section="$1"
+        tag_previous="$2"
+        tag_current="$3"
+        shift 3
+        if [ $# != 0 ]; then
+            echo "error: unknown parameter"
+            usage
+            exit 1
+        fi
         ;;
     esac
 done
@@ -65,7 +73,7 @@ tarball_dir="$(dirname $(find -name config.status))"
 module="${tag_current%-*}"
 version="${tag_current##*-}"
 tarbz2="$tag_current.tar.bz2"
-targz="$tag_current.tar.bz2"
+targz="$tag_current.tar.gz"
 announce="$tarball_dir/$tag_current.announce"
 
 section_path="archive/individual/$section"
@@ -109,7 +117,7 @@ gen_announce_mail >$announce
 echo "    at: $announce"
 
 echo "installing release into server"
-scp $tarball_dir/$targz $tarball_dir/$tarbz2 $host_people:$section_path
+scp $tarball_dir/$targz $tarball_dir/$tarbz2 $host_people:$srv_path
 
 echo "pushing changes upstream"
 git push origin
