@@ -120,5 +120,5 @@ echo "installing release into server"
 scp $tarball_dir/$targz $tarball_dir/$tarbz2 $host_people:$srv_path
 
 echo "pushing changes upstream"
-git push origin
-git push --tags origin
+git push origin $tag_current
+
