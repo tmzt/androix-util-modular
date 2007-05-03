@@ -69,7 +69,7 @@ while [ $# != 0 ]; do
     esac
 done
 
-tarball_dir="$(dirname $(find -name config.status))"
+tarball_dir="$(dirname $(find . -name config.status))"
 module="${tag_current%-*}"
 version="${tag_current##*-}"
 tarbz2="$tag_current.tar.bz2"
