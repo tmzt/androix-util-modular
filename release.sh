@@ -19,11 +19,20 @@ HELP
 
 gen_announce_mail()
 {
+case "$tag_previous" in
+initial)
+	range="$tag_current"
+	;;
+*)
+	range="$tag_previous".."$tag_current"
+	;;
+esac
+
     cat <<RELEASE
 Subject: [ANNOUNCE] $module $version
 To: $announce_list
 
-`git-log --no-merges $tag_previous..$tag_current | git shortlog`
+`git-log --no-merges "$range" | git shortlog`
 
 git tag: $tag_current
 
