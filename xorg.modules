@@ -641,12 +641,12 @@
   </autotools>
 
   <autotools id="pixman">
-    <branch repo="git.freedesktop.org" module="pixman"/>
+    <branch repo="git.freedesktop.org" module="pixman" checkoutdir="xorg/lib/pixman"/>
     <dependencies/>
   </autotools>
 
   <autotools id="libpciaccess">
-    <branch repo="git.freedesktop.org" module="xorg/lib/libpciaccess"/>
+    <branch repo="git.freedesktop.org" module="xorg/lib/libpciaccess" checkoutdir="xorg/lib/libpciaccess"/>
     <dependencies/>
   </autotools>
 
