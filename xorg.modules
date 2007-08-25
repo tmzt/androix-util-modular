@@ -640,6 +640,16 @@
     </dependencies>
   </autotools>
 
+  <autotools id="pixman">
+    <branch repo="git.freedesktop.org" module="pixman"/>
+    <dependencies/>
+  </autotools>
+
+  <autotools id="libpciaccess">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libpciaccess"/>
+    <dependencies/>
+  </autotools>
+
   <!-- the Mesa module, which provides libGL, libGLU, and DRI drivers -->
   <mesa id="libGL">
     <branch repo="git.freedesktop.org" module="mesa/mesa"/>
@@ -698,6 +708,8 @@
       <dep package="libxtrans"/>
       <dep package="libdrm"/>
       <dep package="libGL"/>
+      <dep package="pixman"/>
+      <dep package="libpciaccess"/>
     </dependencies>
   </metamodule>
 
@@ -2150,6 +2162,13 @@
     </dependencies>
   </autotools>
 
+  <autotools id="xf86-video-avivo">
+    <branch repo="git.freedesktop.org" module="avivo/xf86-video-avivo" checkoutdir="xorg/driver/xf86-video-avivo" />
+    <dependencies>
+      <dep package="xserver"/>
+    </dependencies>
+  </autotools>
+
   <!-- These drivers are marked unmaintained in xorg/doc/xorg-docs/MAINTAINERS and are also broken -->
   <metamodule id="xorg-unmaintained-broken-drivers">
     <dependencies>
@@ -2234,6 +2253,7 @@
       <dep package="xf86-video-vga"/>
       <dep package="xf86-video-vmware"/>
       <dep package="xf86-video-voodoo"/>
+      <dep package="xf86-video-avivo"/>
     </dependencies>
   </metamodule>
 
@@ -2278,6 +2298,8 @@
       <dep package="liblbxutil"/>
       <dep package="libdrm"/>
       <dep package="libdmx"/>
+      <dep package="pixman"/>
+      <dep package="libpciaccess"/>
     </dependencies>
   </autotools>
 
