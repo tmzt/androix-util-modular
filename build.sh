@@ -24,6 +24,12 @@ build() {
 	    return 0
 	fi
     fi
+
+    if [ ! -d $1/$2 ]; then
+        echo "$1 module component $2 does not exist, skipping."
+        return
+    fi
+
     echo "Building $1 module component $2..."
     old_pwd=`pwd`
     cd $1/$2 || failed cd $1 $2
