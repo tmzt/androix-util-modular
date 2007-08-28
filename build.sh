@@ -423,6 +423,8 @@ build_driver_video() {
     build driver xf86-video-vga
     build driver xf86-video-vmware
     build driver xf86-video-voodoo
+    build driver xf86-video-xgi
+    build driver xf86-video-xgixp
 }
 
 # The server must be built before the drivers
