@@ -286,10 +286,6 @@ build_xserver() {
 }
 
 build_driver_input() {
-
-    HOST_OS=`uname -s`
-    HOST_CPU=`uname -m`
-
     # Some drivers are only buildable on some OS'es
     case $HOST_OS in
 	Linux)
@@ -337,10 +333,6 @@ build_driver_input() {
 }
 
 build_driver_video() {
-
-    HOST_OS=`uname -s`
-    HOST_CPU=`uname -m`
-
     # Some drivers are only buildable on some OS'es
     case $HOST_OS in
 	*FreeBSD*)
@@ -550,6 +542,14 @@ if test x"${PREFIX}" = x ; then
     usage
     exit
 fi
+
+HOST_OS=`uname -s`
+HOST_CPU=`uname -m`
+
+export HOST_OS
+export HOST_CPU
+
+echo "Building to run $HOST_OS / $HOST_CPU ($HOST)"
 
 # Must create local aclocal dir or aclocal fails
 ACLOCAL_LOCALDIR="${DESTDIR}${PREFIX}/share/aclocal"
