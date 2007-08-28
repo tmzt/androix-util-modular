@@ -294,7 +294,7 @@ build_app() {
 }
 
 # The server requires at least the following libraries:
-# Xfont, Xau, Xdmcp
+# Xfont, Xau, Xdmcp, pciaccess
 build_xserver() {
     build pixman ""
     build xserver ""
