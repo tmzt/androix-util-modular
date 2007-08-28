@@ -367,6 +367,11 @@ build_driver_video() {
 	    build driver xf86-video-sunleo
 	    build driver xf86-video-suntcx
 	    ;;
+	i*86* | amd64* | x86*64*)
+            build driver xf86-video-i740
+            build driver xf86-video-intel
+            build driver xf86-video-via
+	    ;;
 	*)
 	    ;;
     esac
@@ -383,8 +388,6 @@ build_driver_video() {
 #    build driver xf86-video-glide
     build driver xf86-video-glint
     build driver xf86-video-i128
-    build driver xf86-video-i740
-    build driver xf86-video-intel
     build driver xf86-video-imstt
     build driver xf86-video-mga
     build driver xf86-video-neomagic
@@ -403,7 +406,6 @@ build_driver_video() {
     build driver xf86-video-tseng
     build driver xf86-video-vesa
     build driver xf86-video-vga
-    build driver xf86-video-via
     build driver xf86-video-vmware
     build driver xf86-video-voodoo
 }
