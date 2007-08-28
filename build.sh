@@ -4,6 +4,7 @@
 # CACHE: absolute path to a global autoconf cache
 # QUIET: hush the configure script noise
 # CONFFLAGS: flags to pass to all configure scripts
+# LIBDIR: Path under $prefix for libraries (e.g., lib64)
 
 failed() {
     if test x"$NOQUIT" = x1; then
@@ -37,9 +38,15 @@ build() {
 	MOD_SPECIFIC="--with-xcb=no"
     fi
 
+    LIB_FLAGS=
+    if test x$LIBDIR != x ; then
+        LIB_FLAGS="--libdir=${PREFIX}/${LIBDIR}"
+    fi
+
     # Use "sh autogen.sh" since some scripts are not executable in CVS
-    sh autogen.sh --prefix=${PREFIX} ${MOD_SPECIFIC} ${QUIET:+--quiet} \
-        ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} || failed autogen $1 $2
+    sh autogen.sh --prefix=${PREFIX} ${LIB_FLAGS} ${MOD_SPECIFIC} \
+        ${QUIET:+--quiet} ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} \
+        || failed autogen $1 $2
     ${MAKE} || failed make $1 $2
     if test x"$CLEAN" = x1; then
 	${MAKE} clean || failed clean $1 $2
@@ -548,8 +555,13 @@ fi
 HOST_OS=`uname -s`
 HOST_CPU=`uname -m`
 
+if test x$LIBDIR = x ; then
+    LIBDIR=lib
+fi
+
 export HOST_OS
 export HOST_CPU
+export LIBDIR
 
 echo "Building to run $HOST_OS / $HOST_CPU ($HOST)"
 
@@ -567,17 +579,17 @@ export ACLOCAL
 
 # The following is required to make pkg-config find our .pc metadata files
 if test x"$PKG_CONFIG_PATH" = x; then
-    PKG_CONFIG_PATH=${DESTDIR}${PREFIX}/lib/pkgconfig
+    PKG_CONFIG_PATH=${DESTDIR}${PREFIX}/${LIBDIR}/pkgconfig
 else
-    PKG_CONFIG_PATH=${DESTDIR}${PREFIX}/lib/pkgconfig:${PKG_CONFIG_PATH}
+    PKG_CONFIG_PATH=${DESTDIR}${PREFIX}/${LIBDIR}/pkgconfig:${PKG_CONFIG_PATH}
 fi
 export PKG_CONFIG_PATH
 
 # Set the library path so that locally built libs will be found by apps
 if test x"$LD_LIBRARY_PATH" = x; then
-    LD_LIBRARY_PATH=${DESTDIR}${PREFIX}/lib
+    LD_LIBRARY_PATH=${DESTDIR}${PREFIX}/${LIBDIR}
 else
-    LD_LIBRARY_PATH=${DESTDIR}${PREFIX}/lib:${LD_LIBRARY_PATH}
+    LD_LIBRARY_PATH=${DESTDIR}${PREFIX}/${LIBDIR}:${LD_LIBRARY_PATH}
 fi
 export LD_LIBRARY_PATH
 
@@ -596,7 +608,7 @@ fi
 
 # Set the default font path for xserver/xorg unless it's already set
 if test x"$FONTPATH" = x; then
-    FONTPATH="${PREFIX}/lib/X11/fonts/misc/,${PREFIX}/lib/X11/fonts/Type1/,${PREFIX}/lib/X11/fonts/75dpi/,${PREFIX}/lib/X11/fonts/100dpi/,${PREFIX}/lib/X11/fonts/cyrillic/,${PREFIX}/lib/X11/fonts/TTF/"
+    FONTPATH="${PREFIX}/${LIBDIR}/X11/fonts/misc/,${PREFIX}/${LIBDIR}/X11/fonts/Type1/,${PREFIX}/${LIBDIR}/X11/fonts/75dpi/,${PREFIX}/${LIBDIR}/X11/fonts/100dpi/,${PREFIX}/${LIBDIR}/X11/fonts/cyrillic/,${PREFIX}/${LIBDIR}/X11/fonts/TTF/"
     export FONTPATH
 fi
 
