@@ -2169,6 +2169,13 @@
     </dependencies>
   </autotools>
 
+  <autotools id="xf86-video-radeonhd">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-radeonhd" checkoutdir="xorg/driver/xf86-video-radeonhd" />
+    <dependencies>
+      <dep package="xserver"/>
+    </dependencies>
+  </autotools>
+
   <!-- These drivers are marked unmaintained in xorg/doc/xorg-docs/MAINTAINERS and are also broken -->
   <metamodule id="xorg-unmaintained-broken-drivers">
     <dependencies>
@@ -2254,6 +2261,7 @@
       <dep package="xf86-video-vmware"/>
       <dep package="xf86-video-voodoo"/>
       <dep package="xf86-video-avivo"/>
+      <dep package="xf86-video-radeonhd"/>
     </dependencies>
   </metamodule>
 
