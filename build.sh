@@ -4,6 +4,7 @@
 # CACHE: absolute path to a global autoconf cache
 # QUIET: hush the configure script noise
 # CONFFLAGS: flags to pass to all configure scripts
+# CONFCFLAGS: flags to pass to all configure scripts in ""
 # MAKEFLAGS: flags to pass to all make calls
 # LIBDIR: Path under $prefix for libraries (e.g., lib64)
 
@@ -58,7 +59,7 @@ build() {
     # Use "sh autogen.sh" since some scripts are not executable in CVS
     sh autogen.sh --prefix=${PREFIX} ${LIB_FLAGS} ${MOD_SPECIFIC} \
         ${QUIET:+--quiet} ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} \
-        || failed autogen $1 $2
+        "$CONFCFLAGS" || failed autogen $1 $2
     ${MAKE} $MAKEFLAGS || failed make $1 $2
     if test x"$CLEAN" = x1; then
 	${MAKE} $MAKEFLAGS clean || failed clean $1 $2
@@ -521,6 +522,7 @@ usage() {
     echo "  -c : run make clean in addition to others"
     echo "  -d : run make distcheck in addition to others"
     echo "  -D : run make dist in addition to others"
+    echo "  -g : build with debug information"
     echo "  -m path-to-mesa-sources-for-xserver : full path to Mesa sources"
     echo "  -n : do not quit after error; just print error message"
     echo "  -r module/component : resume building with this comonent"
@@ -539,6 +541,11 @@ do
 	;;
     -D)
 	DIST=1
+	;;
+    -g)
+	CFLAGS="-g3 -O0"
+	export CFLAGS
+	CONFCFLAGS="CFLAGS=-g3 -O0"
 	;;
     -m)
 	shift
