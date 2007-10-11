@@ -41,6 +41,16 @@ build() {
     old_pwd=`pwd`
     cd $1/$2 || failed cd $1 $2
 
+    # Build outside source directory
+    if [ "x$DIR_ARCH" != x ] ; then
+	mkdir -p "$DIR_ARCH" || failed mkdir $1 $2
+	if cd "$DIR_ARCH" ; then :; else
+	    failed cd2 $1 $2
+	    cd ${old_pwd}
+	    return
+	fi
+    fi
+
     # Special configure flags for certain modules
     MOD_SPECIFIC=
 
@@ -58,9 +68,10 @@ build() {
 
     # Use "sh autogen.sh" since some scripts are not executable in CVS
     if test "x$NOAUTOGEN" != x1 ; then
-        sh autogen.sh --prefix=${PREFIX} ${LIB_FLAGS} ${MOD_SPECIFIC} \
-            ${QUIET:+--quiet} ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} \
-            "$CONFCFLAGS" || failed autogen $1 $2
+        sh ${DIR_CONFIG}autogen.sh --prefix=${PREFIX} ${LIB_FLAGS} \
+	    ${MOD_SPECIFIC} ${QUIET:+--quiet} \
+	    ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} "$CONFCFLAGS" || \
+	    failed autogen $1 $2
     fi
     ${MAKE} $MAKEFLAGS || failed make $1 $2
     if test x"$CLEAN" = x1; then
@@ -528,6 +539,7 @@ usage() {
     echo "Usage: $0 [options] prefix"
     echo "  where options are:"
     echo "  -a : do NOT run autogen.sh"
+    echo "  -b : use .build.$HAVE_ARCH build directory"
     echo "  -c : run make clean in addition to others"
     echo "  -d : run make distcheck in addition to others"
     echo "  -D : run make dist in addition to others"
@@ -538,12 +550,20 @@ usage() {
     echo "  -s sudo-command : sudo command to use"
 }
 
+HAVE_ARCH="`uname -i`"
+DIR_ARCH=""
+DIR_CONFIG=""
+
 # Process command line args
 while test $# != 0
 do
     case $1 in
     -a)
 	NOAUTOGEN=1
+	;;
+    -b)
+	DIR_ARCH=".build.$HAVE_ARCH"
+	DIR_CONFIG="../"
 	;;
     -c)
 	CLEAN=1
