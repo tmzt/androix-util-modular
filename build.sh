@@ -7,9 +7,13 @@
 # MAKEFLAGS: flags to pass to all make calls
 # LIBDIR: Path under $prefix for libraries (e.g., lib64)
 
+failed_components=""
+nonexistent_components=""
+
 failed() {
     if test x"$NOQUIT" = x1; then
 	echo "***** $1 failed on $2/$3"
+	failed_components="$failed_components $2/$3"
     else
 	exit 1
     fi
@@ -28,6 +32,7 @@ build() {
 
     if [ ! -d $1/$2 ]; then
         echo "$1 module component $2 does not exist, skipping."
+	nonexistent_components="$nonexistent_components $2/$3"
         return
     fi
 
@@ -513,22 +518,27 @@ build_doc() {
 usage() {
     echo "Usage: $0 [options] prefix"
     echo "  where options are:"
+    echo "  -c : run make clean in addition to others"
     echo "  -d : run make distcheck in addition to others"
     echo "  -D : run make dist in addition to others"
-    echo "  -c : run make clean in addition to others"
     echo "  -m path-to-mesa-sources-for-xserver : full path to Mesa sources"
     echo "  -n : do not quit after error; just print error message"
-    echo "  -s sudo-command : sudo command to use"
     echo "  -r module/component : resume building with this comonent"
+    echo "  -s sudo-command : sudo command to use"
 }
 
 # Process command line args
 while test $# != 0
 do
     case $1 in
-    -s)
-	shift
-	SUDO=$1
+    -c)
+	CLEAN=1
+	;;
+    -d)
+	DISTCHECK=1
+	;;
+    -D)
+	DIST=1
 	;;
     -m)
 	shift
@@ -537,18 +547,13 @@ do
     -n)
 	NOQUIT=1
 	;;
-    -d)
-	DISTCHECK=1
-	;;
-    -D)
-	DIST=1
-	;;
-    -c)
-	CLEAN=1
-	;;
     -r)
 	shift
 	RESUME=$1
+	;;
+    -s)
+	shift
+	SUDO=$1
 	;;
     *)
 	PREFIX=$1
@@ -643,3 +648,17 @@ build_font
 build_util
 
 date
+
+if test "x$nonexistent_components" != x ; then
+    echo ""
+    echo "***** Skipped components (not available) *****"
+    echo "$nonexistent_components"
+    echo ""
+fi
+
+if test "x$failed_components" != x ; then
+    echo ""
+    echo "***** Failed components *****"
+    echo "$failed_components"
+    echo ""
+fi
