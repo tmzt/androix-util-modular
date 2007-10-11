@@ -57,9 +57,11 @@ build() {
     fi
 
     # Use "sh autogen.sh" since some scripts are not executable in CVS
-    sh autogen.sh --prefix=${PREFIX} ${LIB_FLAGS} ${MOD_SPECIFIC} \
-        ${QUIET:+--quiet} ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} \
-        "$CONFCFLAGS" || failed autogen $1 $2
+    if test "x$NOAUTOGEN" != x1 ; then
+        sh autogen.sh --prefix=${PREFIX} ${LIB_FLAGS} ${MOD_SPECIFIC} \
+            ${QUIET:+--quiet} ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} \
+            "$CONFCFLAGS" || failed autogen $1 $2
+    fi
     ${MAKE} $MAKEFLAGS || failed make $1 $2
     if test x"$CLEAN" = x1; then
 	${MAKE} $MAKEFLAGS clean || failed clean $1 $2
@@ -525,6 +527,7 @@ build_doc() {
 usage() {
     echo "Usage: $0 [options] prefix"
     echo "  where options are:"
+    echo "  -a : do NOT run autogen.sh"
     echo "  -c : run make clean in addition to others"
     echo "  -d : run make distcheck in addition to others"
     echo "  -D : run make dist in addition to others"
@@ -539,6 +542,9 @@ usage() {
 while test $# != 0
 do
     case $1 in
+    -a)
+	NOAUTOGEN=1
+	;;
     -c)
 	CLEAN=1
 	;;
