@@ -315,7 +315,7 @@ build_app() {
 
 build_mesa() {
     build mesa drm
-    build mesa mesa
+    #build mesa mesa
 }
 
 # The server requires at least the following libraries:
