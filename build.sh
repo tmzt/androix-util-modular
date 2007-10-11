@@ -416,6 +416,7 @@ build_driver_video() {
     build driver xf86-video-newport
     build driver xf86-video-nsc
     build driver xf86-video-nv
+    build driver xf86-video-radeonhd
     build driver xf86-video-rendition
     build driver xf86-video-s3
     build driver xf86-video-s3virge
