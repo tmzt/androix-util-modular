@@ -4,6 +4,7 @@
 # CACHE: absolute path to a global autoconf cache
 # QUIET: hush the configure script noise
 # CONFFLAGS: flags to pass to all configure scripts
+# MAKEFLAGS: flags to pass to all make calls
 # LIBDIR: Path under $prefix for libraries (e.g., lib64)
 
 failed() {
@@ -53,17 +54,17 @@ build() {
     sh autogen.sh --prefix=${PREFIX} ${LIB_FLAGS} ${MOD_SPECIFIC} \
         ${QUIET:+--quiet} ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} \
         || failed autogen $1 $2
-    ${MAKE} || failed make $1 $2
+    ${MAKE} $MAKEFLAGS || failed make $1 $2
     if test x"$CLEAN" = x1; then
-	${MAKE} clean || failed clean $1 $2
+	${MAKE} $MAKEFLAGS clean || failed clean $1 $2
     fi
     if test x"$DIST" = x1; then
-	${MAKE} dist || failed dist $1 $2
+	${MAKE} $MAKEFLAGS dist || failed dist $1 $2
     fi
     if test x"$DISTCHECK" = x1; then
-	${MAKE} distcheck || failed distcheck $1 $2
+	${MAKE} $MAKEFLAGS distcheck || failed distcheck $1 $2
     fi
-    $SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH ${MAKE} install || \
+    $SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH ${MAKE} $MAKEFLAGS install || \
 	failed install $1 $2
 
     cd ${old_pwd}
