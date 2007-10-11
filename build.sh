@@ -300,6 +300,11 @@ build_app() {
 #    fi
 }
 
+build_mesa() {
+    build mesa drm
+    build mesa mesa
+}
+
 # The server requires at least the following libraries:
 # Xfont, Xau, Xdmcp, pciaccess
 build_xserver() {
@@ -649,6 +654,7 @@ build_proto
 build_lib
 build data bitmaps
 build_app
+build_mesa
 build_xserver
 build_driver
 build_data
