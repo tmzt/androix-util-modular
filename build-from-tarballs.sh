@@ -232,6 +232,7 @@ build_app() {
     build app xgc
     build app xhost
     build app xinit
+    build app xinput
     build app xkbcomp
     build app xkbevd
     build app xkbprint

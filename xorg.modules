@@ -1377,6 +1377,9 @@
   <autotools id="xinit">
     <branch repo="git.freedesktop.org" module="xorg/app/xinit" checkoutdir="xorg/app/xinit" />
   </autotools>
+  <autotools id="xinput">
+    <branch repo="git.freedesktop.org" module="xorg/app/xinput" checkoutdir="xorg/app/xinput" />
+  </autotools>
   <autotools id="xkbcomp">
     <branch repo="git.freedesktop.org" module="xorg/app/xkbcomp" checkoutdir="xorg/app/xkbcomp" />
   </autotools>
@@ -1609,6 +1612,7 @@
       <dep package="xgc"/>
       <dep package="xhost"/>
       <dep package="xinit"/>
+      <dep package="xinput"/>
       <dep package="xkbcomp"/>
       <dep package="xkbevd"/>
       <dep package="xkbprint"/>
