@@ -332,7 +332,7 @@ build_driver_input() {
 	Linux)
 	    build driver xf86-input-aiptek
 	    build driver xf86-input-evdev
-	    build driver xf86-input-ur98
+	    #build driver xf86-input-ur98
 	    ;;
 	*)
 	    ;;
@@ -348,28 +348,28 @@ build_driver_input() {
     esac
 
     build driver xf86-input-acecad
-    build driver xf86-input-calcomp
-    build driver xf86-input-citron
-    build driver xf86-input-digitaledge
-    build driver xf86-input-dmc
-    build driver xf86-input-dynapro
-    build driver xf86-input-elo2300
-    build driver xf86-input-elographics
-    build driver xf86-input-fpit
-    build driver xf86-input-hyperpen
-    build driver xf86-input-jamstudio
+    #build driver xf86-input-calcomp
+    #build driver xf86-input-citron
+    #build driver xf86-input-digitaledge
+    #build driver xf86-input-dmc
+    #build driver xf86-input-dynapro
+    #build driver xf86-input-elo2300
+    #build driver xf86-input-elographics
+    #build driver xf86-input-fpit
+    #build driver xf86-input-hyperpen
+    #build driver xf86-input-jamstudio
     build driver xf86-input-joystick
     build driver xf86-input-keyboard
-    build driver xf86-input-magellan
-    build driver xf86-input-magictouch
-    build driver xf86-input-microtouch
+    #build driver xf86-input-magellan
+    #build driver xf86-input-magictouch
+    #build driver xf86-input-microtouch
     build driver xf86-input-mouse
-    build driver xf86-input-mutouch
-    build driver xf86-input-palmax
-    build driver xf86-input-penmount
-    build driver xf86-input-spaceorb
-    build driver xf86-input-summa
-    build driver xf86-input-tek4957
+    #build driver xf86-input-mutouch
+    #build driver xf86-input-palmax
+    #build driver xf86-input-penmount
+    #build driver xf86-input-spaceorb
+    #build driver xf86-input-summa
+    #build driver xf86-input-tek4957
     build driver xf86-input-void
 }
 
