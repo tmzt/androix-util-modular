@@ -2183,7 +2183,17 @@
   <!-- These drivers are marked unmaintained in xorg/doc/xorg-docs/MAINTAINERS and are also broken -->
   <metamodule id="xorg-unmaintained-broken-drivers">
     <dependencies>
+      <dep package="xf86-video-apm"/>
+      <dep package="xf86-video-ark"/>
+      <dep package="xf86-video-cirrus"/>
+      <dep package="xf86-video-cyrix"/>
+      <dep package="xf86-video-i740"/>
+      <dep package="xf86-video-imstt"/>
+      <dep package="xf86-video-newport"/>
+      <dep package="xf86-video-s3"/>
+      <dep package="xf86-video-s3virge"/>
       <dep package="xf86-video-siliconmotion"/>
+      <dep package="xf86-video-v4l"/>
       <dep package="xf86-video-via"/>
     </dependencies>
   </metamodule>
@@ -2224,29 +2234,20 @@
       <dep package="xf86-input-ur98"/>
       <dep package="xf86-input-void"/>
       <dep package="xf86-video-amd"/>
-      <dep package="xf86-video-apm"/>
-      <dep package="xf86-video-ark"/>
       <dep package="xf86-video-ati"/>
       <dep package="xf86-video-avivo"/>
       <dep package="xf86-video-chips"/>
-      <dep package="xf86-video-cirrus"/>
-      <dep package="xf86-video-cyrix"/>
       <dep package="xf86-video-dummy"/>
       <dep package="xf86-video-fbdev"/>
       <dep package="xf86-video-glint"/>
       <dep package="xf86-video-i128"/>
-      <dep package="xf86-video-i740"/>
       <dep package="xf86-video-intel"/>
-      <dep package="xf86-video-imstt"/>
       <dep package="xf86-video-mga"/>
       <dep package="xf86-video-neomagic"/>
-      <dep package="xf86-video-newport"/>
       <dep package="xf86-video-nsc"/>
       <dep package="xf86-video-nv"/>
       <dep package="xf86-video-radeonhd"/>
       <dep package="xf86-video-rendition"/>
-      <dep package="xf86-video-s3"/>
-      <dep package="xf86-video-s3virge"/>
       <dep package="xf86-video-savage"/>
       <dep package="xf86-video-sis"/>
       <dep package="xf86-video-sisusb"/>
@@ -2261,7 +2262,6 @@
       <dep package="xf86-video-tga"/>
       <dep package="xf86-video-trident"/>
       <dep package="xf86-video-tseng"/>
-      <dep package="xf86-video-v4l"/>
       <dep package="xf86-video-vesa"/>
       <dep package="xf86-video-vga"/>
       <dep package="xf86-video-vmware"/>
