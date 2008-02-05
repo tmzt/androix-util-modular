@@ -1884,6 +1884,13 @@
     </dependencies>
   </autotools>
 
+  <autotools id="xf86-video-avivo">
+    <branch repo="git.freedesktop.org" module="avivo/xf86-video-avivo" checkoutdir="xorg/driver/xf86-video-avivo" />
+    <dependencies>
+      <dep package="xserver"/>
+    </dependencies>
+  </autotools>
+
   <autotools id="xf86-video-chips">
     <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-chips" checkoutdir="xorg/driver/xf86-video-chips" />
     <dependencies>
@@ -1986,6 +1993,13 @@
 
   <autotools id="xf86-video-nv">
     <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-nv" checkoutdir="xorg/driver/xf86-video-nv" />
+    <dependencies>
+      <dep package="xserver"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="xf86-video-radeonhd">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-radeonhd" checkoutdir="xorg/driver/xf86-video-radeonhd" />
     <dependencies>
       <dep package="xserver"/>
     </dependencies>
@@ -2166,20 +2180,6 @@
     </dependencies>
   </autotools>
 
-  <autotools id="xf86-video-avivo">
-    <branch repo="git.freedesktop.org" module="avivo/xf86-video-avivo" checkoutdir="xorg/driver/xf86-video-avivo" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-video-radeonhd">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-radeonhd" checkoutdir="xorg/driver/xf86-video-radeonhd" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
   <!-- These drivers are marked unmaintained in xorg/doc/xorg-docs/MAINTAINERS and are also broken -->
   <metamodule id="xorg-unmaintained-broken-drivers">
     <dependencies>
@@ -2227,6 +2227,7 @@
       <dep package="xf86-video-apm"/>
       <dep package="xf86-video-ark"/>
       <dep package="xf86-video-ati"/>
+      <dep package="xf86-video-avivo"/>
       <dep package="xf86-video-chips"/>
       <dep package="xf86-video-cirrus"/>
       <dep package="xf86-video-cyrix"/>
@@ -2242,6 +2243,7 @@
       <dep package="xf86-video-newport"/>
       <dep package="xf86-video-nsc"/>
       <dep package="xf86-video-nv"/>
+      <dep package="xf86-video-radeonhd"/>
       <dep package="xf86-video-rendition"/>
       <dep package="xf86-video-s3"/>
       <dep package="xf86-video-s3virge"/>
@@ -2264,8 +2266,6 @@
       <dep package="xf86-video-vga"/>
       <dep package="xf86-video-vmware"/>
       <dep package="xf86-video-voodoo"/>
-      <dep package="xf86-video-avivo"/>
-      <dep package="xf86-video-radeonhd"/>
     </dependencies>
   </metamodule>
 
