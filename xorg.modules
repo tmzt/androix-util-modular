@@ -1984,6 +1984,13 @@
     </dependencies>
   </autotools>
 
+  <autotools id="xf86-video-nouveau">
+    <branch repo="git.freedesktop.org" module="nouveau/xf86-video-nouveau" checkoutdir="xorg/driver/xf86-video-nouveau" />
+    <dependencies>
+      <dep package="xserver"/>
+    </dependencies>
+  </autotools>
+  
   <autotools id="xf86-video-nsc">
     <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-nsc" checkoutdir="xorg/driver/xf86-video-nsc" />
     <dependencies>
@@ -2244,6 +2251,7 @@
       <dep package="xf86-video-intel"/>
       <dep package="xf86-video-mga"/>
       <dep package="xf86-video-neomagic"/>
+      <dep package="xf86-video-nouveau"/>
       <dep package="xf86-video-nsc"/>
       <dep package="xf86-video-nv"/>
       <dep package="xf86-video-radeonhd"/>
