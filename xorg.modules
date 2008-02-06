@@ -1570,7 +1570,6 @@
       <dep package="lbxproxy"/>
       <dep package="listres"/>
       <dep package="luit"/>
-      <dep package="mkcfm"/>
       <dep package="mkfontdir"/>
       <dep package="mkfontscale"/>
       <dep package="oclock"/>
