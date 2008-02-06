@@ -2192,7 +2192,6 @@
     <dependencies>
       <dep package="xf86-video-apm"/>
       <dep package="xf86-video-ark"/>
-      <dep package="xf86-video-cirrus"/>
       <dep package="xf86-video-cyrix"/>
       <dep package="xf86-video-i740"/>
       <dep package="xf86-video-imstt"/>
@@ -2217,6 +2216,7 @@
       <dep package="xf86-input-acecad"/>
       <dep package="xf86-input-aiptek"/>
       <dep package="xf86-input-calcomp"/>
+      <dep package="xf86-input-cirrus"/>      
       <dep package="xf86-input-citron"/>
       <dep package="xf86-input-digitaledge"/>
       <dep package="xf86-input-dmc"/>
