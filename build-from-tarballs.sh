@@ -133,8 +133,8 @@ build_lib() {
     build lib libfontenc
     build lib libFS
     build lib libICE
-    build lib liblbxutil
-    build lib liboldX
+    #build lib liblbxutil
+    #build lib liboldX
     build lib libSM
     build lib libXt
     build lib libXmu
@@ -186,7 +186,7 @@ build_app() {
     build app fstobdf
     build app iceauth
     build app ico
-    build app lbxproxy
+    #build app lbxproxy
     build app listres
     build app luit
     build app mkcfm
