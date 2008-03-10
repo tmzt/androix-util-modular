@@ -978,9 +978,6 @@
 
   <autotools id="util">
     <branch repo="git.freedesktop.org" module="xorg/font/util" checkoutdir="xorg/font/util" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
   </autotools>
 
   <autotools id="winitzki-cyrillic">
