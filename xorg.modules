@@ -160,6 +160,9 @@
   <autotools id="x11proto">
     <branch repo="git.freedesktop.org" module="xorg/proto/x11proto" checkoutdir="xorg/proto/x11proto" />
   </autotools>
+  <autotools id="dri2proto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/dri2proto" checkoutdir="xorg/proto/dri2proto" />
+  </autotools>
 
   <metamodule id="xorg-protos">
     <dependencies>
@@ -194,6 +197,7 @@
       <dep package="xf86vidmodeproto"/>
       <dep package="x11proto"/>
       <dep package="pmproto"/>
+      <dep package="dri2proto"/>
     </dependencies>
   </metamodule>
 
@@ -655,6 +659,7 @@
     <branch repo="git.freedesktop.org" module="mesa/mesa"/>
     <dependencies>
       <dep package="xf86driproto"/>
+      <dep package="dri2proto"/>
       <dep package="glproto"/>
       <dep package="libXxf86vm"/>
       <dep package="libXdamage"/>
