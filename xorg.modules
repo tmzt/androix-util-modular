@@ -655,7 +655,7 @@
   </autotools>
 
   <!-- the Mesa module, which provides libGL, libGLU, and DRI drivers -->
-  <mesa id="libGL">
+  <autotools id="libGL">
     <branch repo="git.freedesktop.org" module="mesa/mesa"/>
     <dependencies>
       <dep package="xf86driproto"/>
@@ -665,7 +665,7 @@
       <dep package="libXdamage"/>
       <dep package="libdrm"/>
     </dependencies>
-  </mesa>
+  </autotools>
 
   <metamodule id="xorg-libs">
     <dependencies>
