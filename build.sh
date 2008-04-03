@@ -232,7 +232,7 @@ build_app() {
     build app mkfontscale
     build app oclock
 #    build app pclcomp
-    build app proxymngr
+#    build app proxymngr
     build app rgb
     build app rendercheck
     build app rstart
