@@ -20,6 +20,73 @@ failed() {
     fi
 }
 
+checkfortars() {
+    M=$1
+    C=$2
+    case $M in
+        "data")
+            case $C in
+                "cursors") C="xcursor-themes" ;;
+                "bitmaps") C="xbitmaps" ;;
+            esac
+            ;;
+        "font")
+            if [ "$C" != "encodings" ]; then
+                C="font-$C"
+            fi
+            ;;
+        "lib")
+            case $C in
+                "libXRes") C="libXres" ;;
+                "libxtrans") C="xtrans" ;;
+            esac
+            ;;
+        "pixman")
+            M="lib"
+            C="pixman"
+            ;;
+        "proto")
+            case $C in
+                "evieproto") C="evieext" ;;
+                "pmproto") C="xproxymanagementprotocol" ;;
+                "x11proto") C="xproto" ;;
+            esac
+            ;;
+        "util")
+            case $C in
+                "cf") C="xorg-cf-files" ;;
+                "macros") C="util-macros" ;;
+            esac
+            ;;
+        "xcb")
+            case $C in
+                "proto") C="xcb-proto" ;;
+                "pthread-stubs") M="lib"; C="libpthread-stubs" ;;
+                "util") C="xcb-util" ;;
+            esac
+            ;;
+        "xserver")
+            C="xorg-server"
+            ;;
+    esac
+    for ii in $M .; do
+        for jj in bz2 gz; do
+            TARFILE=`ls -1rt $ii/$C-*.tar.$jj 2> /dev/null | tail -1`
+            if [ -n "$TARFILE" ]; then
+                SRCDIR=`echo $TARFILE | sed "s,.tar.$jj,,"`
+                if [ ! -d $SRCDIR ]; then
+                    TAROPTS=xjf
+                    if [ "$jj" = "gz" ]; then
+                        TAROPTS=xzf
+                    fi
+                    tar $TAROPTS $TARFILE -C $ii || failed tar $1 $2
+                fi
+                return
+            fi
+        done
+    done
+}
+
 build() {
     if [ -n "$RESUME" ]; then
 	if [ "$RESUME" = "$1/$2" ]; then
@@ -31,15 +98,25 @@ build() {
 	fi
     fi
 
-    if [ ! -d $1/$2 ]; then
+    SRCDIR=""
+    CONFCMD=""
+    if [ -f $1/$2/autogen.sh ]; then
+        SRCDIR="$1/$2"
+        CONFCMD="autogen.sh"
+    else
+        checkfortars $1 $2
+        CONFCMD="configure"
+    fi
+
+    if [ -z $SRCDIR ]; then
         echo "$1 module component $2 does not exist, skipping."
-	nonexistent_components="$nonexistent_components $2/$3"
+        nonexistent_components="$nonexistent_components $1/$2"
         return
     fi
 
     echo "Building $1 module component $2..."
     old_pwd=`pwd`
-    cd $1/$2 || failed cd $1 $2
+    cd $SRCDIR || failed cd1 $1 $2
 
     # Build outside source directory
     if [ "x$DIR_ARCH" != x ] ; then
@@ -68,10 +145,10 @@ build() {
 
     # Use "sh autogen.sh" since some scripts are not executable in CVS
     if test "x$NOAUTOGEN" != x1 ; then
-        sh ${DIR_CONFIG}autogen.sh --prefix=${PREFIX} ${LIB_FLAGS} \
+        sh ${DIR_CONFIG}/${CONFCMD} --prefix=${PREFIX} ${LIB_FLAGS} \
 	    ${MOD_SPECIFIC} ${QUIET:+--quiet} \
 	    ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} "$CONFCFLAGS" || \
-	    failed autogen $1 $2
+	    failed ${CONFCMD} $1 $2
     fi
     ${MAKE} $MAKEFLAGS || failed make $1 $2
     if test x"$CLEAN" = x1; then
@@ -547,7 +624,7 @@ build_doc() {
 usage() {
     echo "Usage: $0 [options] prefix"
     echo "  where options are:"
-    echo "  -a : do NOT run autogen.sh"
+    echo "  -a : do NOT run auto config tools (autogen.sh, configure)"
     echo "  -b : use .build.$HAVE_ARCH build directory"
     echo "  -c : run make clean in addition to others"
     echo "  -d : run make distcheck in addition to others"
@@ -561,7 +638,7 @@ usage() {
 
 HAVE_ARCH="`uname -i`"
 DIR_ARCH=""
-DIR_CONFIG=""
+DIR_CONFIG="."
 
 # Process command line args
 while test $# != 0
@@ -572,7 +649,7 @@ do
 	;;
     -b)
 	DIR_ARCH=".build.$HAVE_ARCH"
-	DIR_CONFIG="../"
+	DIR_CONFIG=".."
 	;;
     -c)
 	CLEAN=1
