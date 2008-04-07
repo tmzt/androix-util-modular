@@ -96,6 +96,7 @@ build_proto() {
     build proto compositeproto
     build proto damageproto
     build proto dmxproto
+    build proto dri2proto
     build proto evieproto
     build proto fixesproto
     build proto fontcacheproto
@@ -246,6 +247,7 @@ build_app() {
     build app viewres
     build app x11perf
     build app xauth
+    build app xbacklight
     build app xbiff
     build app xcalc
     build app xclipboard
@@ -421,11 +423,13 @@ build_driver_video() {
     build driver xf86-video-ark
     build driver xf86-video-ast
     build driver xf86-video-ati
+    build driver xf86-video-avivo
     build driver xf86-video-chips
     build driver xf86-video-cirrus
     build driver xf86-video-cyrix
     build driver xf86-video-dummy
     build driver xf86-video-fbdev
+    build driver xf86-video-geode
 #    build driver xf86-video-glide
     build driver xf86-video-glint
     build driver xf86-video-i128
@@ -433,6 +437,7 @@ build_driver_video() {
     build driver xf86-video-mga
     build driver xf86-video-neomagic
     build driver xf86-video-newport
+    build driver xf86-video-nouveau
     build driver xf86-video-nsc
     build driver xf86-video-nv
     build driver xf86-video-radeonhd
@@ -528,6 +533,9 @@ build_util() {
     build util makedepend
     build util gccmakedep
     build util lndir
+    if test x"$USE_XCB" != xNO ; then
+        build xcb util
+    fi
 }
 
 # xorg-docs requires xorg-sgml-doctools
