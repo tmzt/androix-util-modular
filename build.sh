@@ -204,6 +204,7 @@ build_lib() {
     build lib libXxf86misc
     build lib libXxf86vm
     build lib libpciaccess
+    build pixman ""
 }
 
 # Most apps depend at least on libX11.
@@ -322,7 +323,6 @@ build_mesa() {
 # The server requires at least the following libraries:
 # Xfont, Xau, Xdmcp, pciaccess
 build_xserver() {
-    build pixman ""
     build xserver ""
 }
 
