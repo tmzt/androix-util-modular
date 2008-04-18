@@ -1326,6 +1326,7 @@
     <branch repo="git.freedesktop.org" module="xorg/app/xdriinfo" checkoutdir="xorg/app/xdriinfo" />
     <dependencies>
       <dep package="glproto"/>
+      <dep package="libGL"/>
     </dependencies>
   </autotools>
 
