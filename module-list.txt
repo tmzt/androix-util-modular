@@ -232,6 +232,7 @@ xf86-video-vga-4.1.0
 xf86-video-via-0.2.2
 xf86-video-vmware-10.15.2
 xf86-video-voodoo-1.1.1
+xf86-video-xgixp-1.7.99.3
 xf86vidmodeproto-2.2.2
 xfd-1.0.1
 xfindproxy-1.0.1
