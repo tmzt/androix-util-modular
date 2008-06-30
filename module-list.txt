@@ -3,7 +3,7 @@ appres-1.0.1
 bigreqsproto-1.0.2
 bitmap-1.0.3
 compositeproto-0.4
-damageproto-1.0.3
+damageproto-1.1.0
 dmxproto-2.2.2
 encodings-1.0.2
 evieext-1.0.2
