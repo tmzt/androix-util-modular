@@ -164,7 +164,7 @@ xf86-video-imstt-1.1.0
 xf86-video-mga-1.4.8
 xf86-video-neomagic-1.2.1
 xf86-video-newport-0.2.1
-xf86-video-nv-2.1.9
+xf86-video-nv-2.1.10
 xf86-video-rendition-4.2.0
 xf86-video-s3-0.6.0
 xf86-video-s3virge-1.10.1
