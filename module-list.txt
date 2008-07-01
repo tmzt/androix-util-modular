@@ -88,6 +88,7 @@ libXxf86dga-1.0.2
 libXxf86misc-1.0.1
 libXxf86vm-1.0.1
 luit-1.0.3
+makedepend-1.0.1
 mkfontdir-1.0.4
 mkfontscale-1.0.5
 randrproto-1.2.1
