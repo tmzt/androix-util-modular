@@ -194,7 +194,6 @@ xf86vidmodeproto-2.2.2
 xgamma-1.0.2
 xhost-1.0.2
 xineramaproto-1.1.2
-xinit-1.1.0
 xkbcomp-1.0.5
 xkbevd-1.0.2
 xkbutils-1.0.1
