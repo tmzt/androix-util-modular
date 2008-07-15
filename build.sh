@@ -503,7 +503,6 @@ build_driver_video() {
     build driver xf86-video-avivo
     build driver xf86-video-chips
     build driver xf86-video-cirrus
-    build driver xf86-video-cyrix
     build driver xf86-video-dummy
     build driver xf86-video-fbdev
     build driver xf86-video-geode
@@ -515,7 +514,6 @@ build_driver_video() {
     build driver xf86-video-neomagic
     build driver xf86-video-newport
     build driver xf86-video-nouveau
-    build driver xf86-video-nsc
     build driver xf86-video-nv
     build driver xf86-video-radeonhd
     build driver xf86-video-rendition
@@ -529,7 +527,6 @@ build_driver_video() {
     build driver xf86-video-trident
     build driver xf86-video-tseng
     build driver xf86-video-vesa
-    build driver xf86-video-vga
     build driver xf86-video-vmware
     build driver xf86-video-voodoo
     build driver xf86-video-xgi
