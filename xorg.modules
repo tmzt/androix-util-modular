@@ -1830,6 +1830,13 @@
     </dependencies>
   </autotools>
 
+  <autotools id="xf86-input-synaptics">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-synaptics" checkoutdir="xorg/driver/xf86-input-synaptics" />
+    <dependencies>
+      <dep package="xserver"/>
+    </dependencies>
+  </autotools>
+
   <autotools id="xf86-input-tek4957">
     <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-tek4957" checkoutdir="xorg/driver/xf86-input-tek4957" />
     <dependencies>
@@ -2238,6 +2245,7 @@
       <dep package="xf86-input-palmax"/>
       <dep package="xf86-input-penmount"/>
       <dep package="xf86-input-spaceorb"/>
+      <dep package="xf86-input-synaptics"/>
       <dep package="xf86-input-tek4957"/>
       <dep package="xf86-input-ur98"/>
       <dep package="xf86-input-void"/>
