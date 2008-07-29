@@ -49,7 +49,7 @@ font-winitzki-cyrillic-1.0.0
 font-xfree86-type1-1.0.1
 glproto-1.4.9
 iceauth-1.0.2
-inputproto-1.4.3
+inputproto-1.4.4
 kbproto-1.0.3
 libAppleWM-1.0.0
 libdmx-1.0.2
