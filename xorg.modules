@@ -9,10 +9,6 @@
   <repository type="git" name="git.freedesktop.org"
       href="git://anongit.freedesktop.org/git/"/>
 
-  <cvsroot name="xkeyboard-config"
-     root=":pserver:anoncvs@cvs.freedesktop.org:/cvs/xkeyboard-config"
-     password="" />
-
   <autotools id="fontconfig">
     <branch repo="git.freedesktop.org" module="fontconfig" checkoutdir="fontconfig" />
   </autotools> 
@@ -1050,7 +1046,7 @@
   </autotools>
 
   <autotools id="xkeyboard-config">
-    <branch repo="xkeyboard-config" module="xkeyboard-config"/>
+    <branch repo="git.freedesktop.org" module="xkeyboard-config" checkoutdir="xkeyboard-config" />
     <dependencies>
       <dep package="xkbcomp"/>
     </dependencies>
