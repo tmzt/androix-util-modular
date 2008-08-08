@@ -508,6 +508,7 @@
       <dep package="macros"/>
       <dep package="libX11"/>
       <dep package="libXext"/>
+      <dep package="libXi"/>
       <dep package="recordproto"/>
       <dep package="xextproto"/>
     </dependencies>
