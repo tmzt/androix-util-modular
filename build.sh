@@ -48,7 +48,6 @@ checkfortars() {
         "proto")
             case $C in
                 "evieproto") C="evieext" ;;
-                "pmproto") C="xproxymanagementprotocol" ;;
                 "x11proto") C="xproto" ;;
             esac
             ;;
@@ -181,8 +180,6 @@ build_proto() {
     build proto glproto
     build proto inputproto
     build proto kbproto
-    build proto pmproto
-    build proto printproto
     build proto randrproto
     build proto recordproto
     build proto renderproto
@@ -198,7 +195,6 @@ build_proto() {
     build proto xf86dgaproto
     build proto xf86driproto
     build proto xf86miscproto
-    build proto xf86rushproto
     build proto xf86vidmodeproto
     build proto xineramaproto
     if test x"$USE_XCB" != xNO ; then
@@ -254,7 +250,6 @@ build_lib() {
     build lib libXt
     build lib libXmu
     build lib libXpm
-    build lib libXp
     build lib libXaw
     build lib libXfixes
     build lib libXcomposite
@@ -269,8 +264,6 @@ build_lib() {
     build lib libXinerama
     build lib libxkbfile
     build lib libxkbui
-    build lib libXprintUtil
-    build lib libXprintAppUtil
     build lib libXrandr
     build lib libXRes
     build lib libXScrnSaver
@@ -303,7 +296,6 @@ build_app() {
     build app fstobdf
     build app iceauth
     build app ico
-    #build app lbxproxy
     build app listres
     build app luit
 #    build app mkcfm
@@ -311,7 +303,6 @@ build_app() {
     build app mkfontscale
     build app oclock
 #    build app pclcomp
-#    build app proxymngr
     build app rgb
     build app rendercheck
     build app rstart

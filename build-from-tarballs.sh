@@ -77,7 +77,6 @@ build_proto() {
     build proto glproto
     build proto inputproto
     build proto kbproto
-    build proto printproto
     build proto randrproto
     build proto recordproto
     build proto renderproto
@@ -92,11 +91,9 @@ build_proto() {
     build proto xf86dgaproto
     build proto xf86driproto
     build proto xf86miscproto
-    build proto xf86rushproto
     build proto xf86vidmodeproto
     build proto xineramaproto
     build proto xproto
-    build proto xproxymanagementprotocol
 }
 
 # bitmaps is needed for building apps, so has to be done separately first
@@ -139,7 +136,6 @@ build_lib() {
     build lib libXt
     build lib libXmu
     build lib libXpm
-    build lib libXp
     build lib libXaw
     build lib libXfixes
     build lib libXcomposite
@@ -154,8 +150,6 @@ build_lib() {
     build lib libXinerama
     build lib libxkbfile
     build lib libxkbui
-    build lib libXprintUtil
-    build lib libXprintAppUtil
     build lib libXrandr
     build lib libXres
     build lib libXScrnSaver
@@ -186,7 +180,6 @@ build_app() {
     build app fstobdf
     build app iceauth
     build app ico
-    #build app lbxproxy
     build app listres
     build app luit
     build app mkcfm

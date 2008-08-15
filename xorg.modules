@@ -96,12 +96,6 @@
   <autotools id="kbproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/kbproto" checkoutdir="xorg/proto/kbproto" />
   </autotools>
-  <autotools id="pmproto">
-    <branch repo="git.freedesktop.org" module="xorg/proto/pmproto" checkoutdir="xorg/proto/pmproto" />
-  </autotools>
-  <autotools id="printproto">
-    <branch repo="git.freedesktop.org" module="xorg/proto/printproto" checkoutdir="xorg/proto/printproto" />
-  </autotools>
   <autotools id="randrproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/randrproto" checkoutdir="xorg/proto/randrproto" />
   </autotools>
@@ -175,7 +169,6 @@
       <dep package="inputproto"/>
       <dep package="kbproto"/>
       <dep package="xineramaproto"/>
-      <dep package="printproto"/>
       <dep package="randrproto"/>
       <dep package="recordproto"/>
       <dep package="renderproto"/>
@@ -192,7 +185,6 @@
       <dep package="xf86rushproto"/>
       <dep package="xf86vidmodeproto"/>
       <dep package="x11proto"/>
-      <dep package="pmproto"/>
       <dep package="dri2proto"/>
     </dependencies>
   </metamodule>
@@ -423,17 +415,6 @@
     </dependencies>
   </autotools>
 
-  <autotools id="libXp">
-    <branch repo="git.freedesktop.org" module="xorg/lib/libXp" checkoutdir="xorg/lib/libXp" />
-    <dependencies>
-      <dep package="macros"/>
-      <dep package="libX11"/>
-      <dep package="libXext"/>
-      <dep package="libXau"/>
-      <dep package="printproto"/>
-    </dependencies>
-  </autotools>
-
   <autotools id="libXpm">
     <branch repo="git.freedesktop.org" module="xorg/lib/libXpm" checkoutdir="xorg/lib/libXpm" />
     <dependencies>
@@ -442,25 +423,6 @@
       <dep package="x11proto"/>
       <dep package="libXt"/>
       <dep package="libXext"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="libXprintAppUtil">
-    <branch repo="git.freedesktop.org" module="xorg/lib/libXprintAppUtil" checkoutdir="xorg/lib/libXprintAppUtil" />
-    <dependencies>
-      <dep package="macros"/>
-      <dep package="libX11"/>
-      <dep package="libXp"/>
-      <dep package="libXprintUtil"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="libXprintUtil">
-    <branch repo="git.freedesktop.org" module="xorg/lib/libXprintUtil" checkoutdir="xorg/lib/libXprintUtil" />
-    <dependencies>
-      <dep package="macros"/>
-      <dep package="libX11"/>
-      <dep package="libXp"/>
     </dependencies>
   </autotools>
 
@@ -687,10 +649,7 @@
       <dep package="libXi"/>
       <dep package="libXinerama"/>
       <dep package="libXmu"/>
-      <dep package="libXp"/>
       <dep package="libXpm"/>
-      <dep package="libXprintAppUtil"/>
-      <dep package="libXprintUtil"/>
       <dep package="libXrandr"/>
       <dep package="libXrender"/>
       <dep package="libXRes"/>
@@ -1133,18 +1092,6 @@
     </dependencies>
   </autotools>
 
-  <autotools id="lbxproxy">
-    <branch repo="git.freedesktop.org" module="xorg/app/lbxproxy" checkoutdir="xorg/app/lbxproxy" />
-    <dependencies>
-      <dep package="libxtrans"/>
-      <dep package="libXext"/>
-      <dep package="liblbxutil"/>
-      <dep package="libX11"/>
-      <dep package="libICE"/>
-      <dep package="pmproto"/>
-    </dependencies>
-  </autotools>
-
   <autotools id="listres">
     <branch repo="git.freedesktop.org" module="xorg/app/listres" checkoutdir="xorg/app/listres" />
     <dependencies>
@@ -1182,16 +1129,6 @@
       <dep package="libX11"/>
       <dep package="libXmu"/>
       <dep package="libXext"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="proxymngr">
-    <branch repo="git.freedesktop.org" module="xorg/app/proxymngr" checkoutdir="xorg/app/proxymngr" />
-    <dependencies>
-      <dep package="libX11"/>
-      <dep package="libXt"/>
-      <dep package="pmproto"/>
-      <dep package="libICE"/>
     </dependencies>
   </autotools>
 
@@ -1567,13 +1504,11 @@
       <dep package="fstobdf"/>
       <dep package="iceauth"/>
       <dep package="ico"/>
-      <dep package="lbxproxy"/>
       <dep package="listres"/>
       <dep package="luit"/>
       <dep package="mkfontdir"/>
       <dep package="mkfontscale"/>
       <dep package="oclock"/>
-      <dep package="proxymngr"/>
       <dep package="rendercheck"/>
       <dep package="rgb"/>
       <dep package="rstart"/>
