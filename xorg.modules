@@ -1846,13 +1846,6 @@
     </dependencies>
   </autotools>
 
-  <autotools id="xf86-video-cyrix">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-cyrix" checkoutdir="xorg/driver/xf86-video-cyrix" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
   <autotools id="xf86-video-dummy">
     <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-dummy" checkoutdir="xorg/driver/xf86-video-dummy" />
     <dependencies>
@@ -1932,13 +1925,6 @@
     </dependencies>
   </autotools>
   
-  <autotools id="xf86-video-nsc">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-nsc" checkoutdir="xorg/driver/xf86-video-nsc" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
   <autotools id="xf86-video-nv">
     <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-nv" checkoutdir="xorg/driver/xf86-video-nv" />
     <dependencies>
