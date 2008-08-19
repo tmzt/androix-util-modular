@@ -2119,7 +2119,6 @@
     <dependencies>
       <dep package="xf86-video-apm"/>
       <dep package="xf86-video-ark"/>
-      <dep package="xf86-video-cyrix"/>
       <dep package="xf86-video-i740"/>
       <dep package="xf86-video-imstt"/>
       <dep package="xf86-video-newport"/>
@@ -2180,7 +2179,6 @@
       <dep package="xf86-video-mga"/>
       <dep package="xf86-video-neomagic"/>
       <dep package="xf86-video-nouveau"/>
-      <dep package="xf86-video-nsc"/>
       <dep package="xf86-video-nv"/>
       <dep package="xf86-video-radeonhd"/>
       <dep package="xf86-video-rendition"/>
