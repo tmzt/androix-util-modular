@@ -439,6 +439,7 @@ build_driver_input() {
     #build driver xf86-input-penmount
     #build driver xf86-input-spaceorb
     #build driver xf86-input-summa
+    build driver xf86-input-synaptics
     #build driver xf86-input-tek4957
     build driver xf86-input-void
 }
