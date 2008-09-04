@@ -59,7 +59,7 @@ libFS-1.0.1
 libICE-1.0.4
 libSM-1.0.3
 libWindowsWM-1.0.0
-libX11-1.1.4
+libX11-1.1.5
 libXau-1.0.3
 libXaw-1.0.4
 libXcomposite-0.4.0
@@ -202,7 +202,7 @@ xlsatoms-1.0.1
 xlsclients-1.0.1
 xmodmap-1.0.3
 xorg-docs-1.4
-xorg-server-1.4
+xorg-server-1.5.0
 xorg-sgml-doctools-1.2
 xpr-1.0.2
 xprop-1.0.4
