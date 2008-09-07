@@ -34,7 +34,7 @@ esac
 Subject: [ANNOUNCE] $module $version
 To: $announce_list
 
-`git-log --no-merges "$range" | git shortlog`
+`git log --no-merges "$range" | git shortlog`
 
 git tag: $tag_current
 
