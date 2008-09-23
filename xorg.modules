@@ -24,24 +24,13 @@
     <dependencies>
       <dep package="xcb-proto"/>
       <dep package="pthread-stubs"/>
+      <dep package="libXau"/>
     </dependencies>
     <branch repo="git.freedesktop.org" module="xcb/libxcb" checkoutdir="xcb/libxcb"/>
   </autotools>
 
   <autotools id="macros">
     <branch repo="git.freedesktop.org" module="xorg/util/macros" checkoutdir="xorg/util/macros" />
-  </autotools>
-  <autotools id="makedepend">
-    <branch repo="git.freedesktop.org" module="xorg/util/makedepend" checkoutdir="xorg/util/makedepend" />
-  </autotools>
-  <autotools id="cf">
-    <branch repo="git.freedesktop.org" module="xorg/util/cf" checkoutdir="xorg/util/cf" />
-  </autotools>
-  <autotools id="imake">
-    <branch repo="git.freedesktop.org" module="xorg/util/imake" checkoutdir="xorg/util/imake" />
-    <dependencies>
-	<!--      <dep package="util/cf"/> -->
-    </dependencies>
   </autotools>
 
   <autotools id="xorg-sgml-doctools">
@@ -75,14 +64,8 @@
   <autotools id="dmxproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/dmxproto" checkoutdir="xorg/proto/dmxproto" />
   </autotools>
-  <autotools id="evieproto">
-    <branch repo="git.freedesktop.org" module="xorg/proto/evieproto" checkoutdir="xorg/proto/evieproto" />
-  </autotools>
   <autotools id="fixesproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/fixesproto" checkoutdir="xorg/proto/fixesproto" />
-  </autotools>
-  <autotools id="fontcacheproto">
-    <branch repo="git.freedesktop.org" module="xorg/proto/fontcacheproto" checkoutdir="xorg/proto/fontcacheproto" />
   </autotools>
   <autotools id="fontsproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/fontsproto" checkoutdir="xorg/proto/fontsproto" />
@@ -111,9 +94,6 @@
   <autotools id="scrnsaverproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/scrnsaverproto" checkoutdir="xorg/proto/scrnsaverproto" />
   </autotools>
-  <autotools id="trapproto">
-    <branch repo="git.freedesktop.org" module="xorg/proto/trapproto" checkoutdir="xorg/proto/trapproto" />
-  </autotools>
   <autotools id="videoproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/videoproto" checkoutdir="xorg/proto/videoproto" />
   </autotools>
@@ -126,20 +106,11 @@
   <autotools id="xextproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/xextproto" checkoutdir="xorg/proto/xextproto" />
   </autotools>
-  <autotools id="xf86bigfontproto">
-    <branch repo="git.freedesktop.org" module="xorg/proto/xf86bigfontproto" checkoutdir="xorg/proto/xf86bigfontproto" />
-  </autotools>
   <autotools id="xf86dgaproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/xf86dgaproto" checkoutdir="xorg/proto/xf86dgaproto" />
   </autotools>
   <autotools id="xf86driproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/xf86driproto" checkoutdir="xorg/proto/xf86driproto" />
-  </autotools>
-  <autotools id="xf86miscproto">
-    <branch repo="git.freedesktop.org" module="xorg/proto/xf86miscproto" checkoutdir="xorg/proto/xf86miscproto" />
-  </autotools>
-  <autotools id="xf86rushproto">
-    <branch repo="git.freedesktop.org" module="xorg/proto/xf86rushproto" checkoutdir="xorg/proto/xf86rushproto" />
   </autotools>
   <autotools id="xf86vidmodeproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/xf86vidmodeproto" checkoutdir="xorg/proto/xf86vidmodeproto" />
@@ -161,9 +132,7 @@
       <dep package="compositeproto"/>
       <dep package="damageproto"/>
       <dep package="dmxproto"/>
-      <dep package="evieproto"/>
       <dep package="fixesproto"/>
-      <dep package="fontcacheproto"/>
       <dep package="fontsproto"/>
       <dep package="glproto"/>
       <dep package="inputproto"/>
@@ -174,15 +143,11 @@
       <dep package="renderproto"/>
       <dep package="resourceproto"/>
       <dep package="scrnsaverproto"/>
-      <dep package="trapproto"/>
       <dep package="videoproto"/>
       <dep package="xcmiscproto"/>
       <dep package="xextproto"/>
-      <dep package="xf86bigfontproto"/>
       <dep package="xf86dgaproto"/>
       <dep package="xf86driproto"/>
-      <dep package="xf86miscproto"/>
-      <dep package="xf86rushproto"/>
       <dep package="xf86vidmodeproto"/>
       <dep package="x11proto"/>
       <dep package="dri2proto"/>
@@ -248,18 +213,6 @@
     </dependencies>
   </autotools>
 
-  <autotools id="libXTrap">
-    <branch repo="git.freedesktop.org" module="xorg/lib/libXTrap" checkoutdir="xorg/lib/libXTrap" />
-    <dependencies>
-      <dep package="macros"/>
-      <dep package="libX11"/>
-      <dep package="libXt"/>
-      <dep package="trapproto"/>
-      <dep package="libXext"/>
-      <dep package="xextproto"/>
-    </dependencies>
-  </autotools>
-
   <autotools id="libXau">
     <branch repo="git.freedesktop.org" module="xorg/lib/libXau" checkoutdir="xorg/lib/libXau" />
     <dependencies>
@@ -319,18 +272,6 @@
     </dependencies>
   </autotools>
 
-  <autotools id="libXevie">
-    <branch repo="git.freedesktop.org" module="xorg/lib/libXevie" checkoutdir="xorg/lib/libXevie" />
-    <dependencies>
-      <dep package="macros"/>
-      <dep package="x11proto"/>
-      <dep package="libX11"/>
-      <dep package="xextproto"/>
-      <dep package="libXext"/>
-      <dep package="evieproto"/>
-    </dependencies>
-  </autotools>
-
   <autotools id="libXext">
     <branch repo="git.freedesktop.org" module="xorg/lib/libXext" checkoutdir="xorg/lib/libXext" />
     <dependencies>
@@ -358,18 +299,6 @@
       <dep package="libxtrans"/>
       <dep package="fontsproto"/>
       <dep package="libfontenc"/>
-      <dep package="fontcacheproto"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="libXfontcache">
-    <branch repo="git.freedesktop.org" module="xorg/lib/libXfontcache" checkoutdir="xorg/lib/libXfontcache" />
-    <dependencies>
-      <dep package="macros"/>
-      <dep package="libX11"/>
-      <dep package="libXext"/>
-      <dep package="xextproto"/>
-      <dep package="fontcacheproto"/>
     </dependencies>
   </autotools>
 
@@ -511,18 +440,6 @@
     </dependencies>
   </autotools>
 
-  <autotools id="libXxf86misc">
-    <branch repo="git.freedesktop.org" module="xorg/lib/libXxf86misc" checkoutdir="xorg/lib/libXxf86misc" />
-    <dependencies>
-      <dep package="macros"/>
-      <dep package="x11proto"/>
-      <dep package="libX11"/>
-      <dep package="libXext"/>
-      <dep package="xextproto"/>
-      <dep package="xf86miscproto"/>
-    </dependencies>
-  </autotools>
-
   <autotools id="libXxf86vm">
     <branch repo="git.freedesktop.org" module="xorg/lib/libXxf86vm" checkoutdir="xorg/lib/libXxf86vm" />
     <dependencies>
@@ -551,22 +468,6 @@
     <dependencies>
       <dep package="macros"/>
       <dep package="x11proto"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="liblbxutil">
-    <branch repo="git.freedesktop.org" module="xorg/lib/liblbxutil" checkoutdir="xorg/lib/liblbxutil" />
-    <dependencies>
-      <dep package="macros"/>
-      <dep package="xextproto"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="liboldX">
-    <branch repo="git.freedesktop.org" module="xorg/lib/liboldX" checkoutdir="xorg/lib/liboldX" />
-    <dependencies>
-      <dep package="macros"/>
-      <dep package="libX11"/>
     </dependencies>
   </autotools>
 
@@ -623,6 +524,10 @@
       <dep package="libXxf86vm"/>
       <dep package="libXdamage"/>
       <dep package="libdrm"/>
+      <dep package="libX11"/>
+      <dep package="libXext"/>
+      <dep package="libXi"/>
+      <dep package="libXmu"/>
     </dependencies>
   </autotools>
 
@@ -633,18 +538,15 @@
       <dep package="libSM"/>
       <dep package="libX11"/>
       <dep package="libXScrnSaver"/>
-      <dep package="libXTrap"/>
       <dep package="libXau"/>
       <dep package="libXaw"/>
       <dep package="libXcomposite"/>
       <dep package="libXcursor"/>
       <dep package="libXdamage"/>
       <dep package="libXdmcp"/>
-      <dep package="libXevie"/>
       <dep package="libXext"/>
       <dep package="libXfixes"/>
       <dep package="libXfont"/>
-      <dep package="libXfontcache"/>
       <dep package="libXft"/>
       <dep package="libXi"/>
       <dep package="libXinerama"/>
@@ -658,12 +560,9 @@
       <dep package="libXv"/>
       <dep package="libXvMC"/>
       <dep package="libXxf86dga"/>
-      <dep package="libXxf86misc"/>
       <dep package="libXxf86vm"/>
       <dep package="libdmx"/>
       <dep package="libfontenc"/>
-      <dep package="liblbxutil"/>
-      <dep package="liboldX"/>
       <dep package="libxkbfile"/>
       <dep package="libxkbui"/>
       <dep package="libxtrans"/>
@@ -677,318 +576,6 @@
   <autotools id="xtrans">
     <branch repo="git.freedesktop.org" module="xorg/lib/libxtrans" checkoutdir="xorg/lib/libxtrans" />
   </autotools>
-
-  <autotools id="100dpi">
-    <branch repo="git.freedesktop.org" module="xorg/font/100dpi" checkoutdir="xorg/font/100dpi" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="adobe-100dpi">
-    <branch repo="git.freedesktop.org" module="xorg/font/adobe-100dpi" checkoutdir="xorg/font/adobe-100dpi" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="adobe-75dpi">
-    <branch repo="git.freedesktop.org" module="xorg/font/adobe-75dpi" checkoutdir="xorg/font/adobe-75dpi" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="adobe-utopia-100dpi">
-    <branch repo="git.freedesktop.org" module="xorg/font/adobe-utopia-100dpi" checkoutdir="xorg/font/adobe-utopia-100dpi" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="adobe-utopia-75dpi">
-    <branch repo="git.freedesktop.org" module="xorg/font/adobe-utopia-75dpi" checkoutdir="xorg/font/adobe-utopia-75dpi" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="adobe-utopia-type1">
-    <branch repo="git.freedesktop.org" module="xorg/font/adobe-utopia-type1" checkoutdir="xorg/font/adobe-utopia-type1" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="alias">
-    <branch repo="git.freedesktop.org" module="xorg/font/alias" checkoutdir="xorg/font/alias" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="arabic-misc">
-    <branch repo="git.freedesktop.org" module="xorg/font/arabic-misc" checkoutdir="xorg/font/arabic-misc" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="bh-100dpi">
-    <branch repo="git.freedesktop.org" module="xorg/font/bh-100dpi" checkoutdir="xorg/font/bh-100dpi" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="bh-75dpi">
-    <branch repo="git.freedesktop.org" module="xorg/font/bh-75dpi" checkoutdir="xorg/font/bh-75dpi" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="bh-lucidatypewriter-100dpi">
-    <branch repo="git.freedesktop.org" module="xorg/font/bh-lucidatypewriter-100dpi" checkoutdir="xorg/font/bh-lucidatypewriter-100dpi" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="bh-lucidatypewriter-75dpi">
-    <branch repo="git.freedesktop.org" module="xorg/font/bh-lucidatypewriter-75dpi" checkoutdir="xorg/font/bh-lucidatypewriter-75dpi" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="bh-ttf">
-    <branch repo="git.freedesktop.org" module="xorg/font/bh-ttf" checkoutdir="xorg/font/bh-ttf" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="bh-type1">
-    <branch repo="git.freedesktop.org" module="xorg/font/bh-type1" checkoutdir="xorg/font/bh-type1" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="bitstream-100dpi">
-    <branch repo="git.freedesktop.org" module="xorg/font/bitstream-100dpi" checkoutdir="xorg/font/bitstream-100dpi" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="bitstream-75dpi">
-    <branch repo="git.freedesktop.org" module="xorg/font/bitstream-75dpi" checkoutdir="xorg/font/bitstream-75dpi" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="bitstream-speedo">
-    <branch repo="git.freedesktop.org" module="xorg/font/bitstream-speedo" checkoutdir="xorg/font/bitstream-speedo" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="bitstream-type1">
-    <branch repo="git.freedesktop.org" module="xorg/font/bitstream-type1" checkoutdir="xorg/font/bitstream-type1" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="cronyx-cyrillic">
-    <branch repo="git.freedesktop.org" module="xorg/font/cronyx-cyrillic" checkoutdir="xorg/font/cronyx-cyrillic" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="cursor-misc">
-    <branch repo="git.freedesktop.org" module="xorg/font/cursor-misc" checkoutdir="xorg/font/cursor-misc" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="CVS">
-    <branch repo="git.freedesktop.org" module="xorg/font/CVS" checkoutdir="xorg/font/CVS" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="daewoo-misc">
-    <branch repo="git.freedesktop.org" module="xorg/font/daewoo-misc" checkoutdir="xorg/font/daewoo-misc" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="dec-misc">
-    <branch repo="git.freedesktop.org" module="xorg/font/dec-misc" checkoutdir="xorg/font/dec-misc" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="encodings">
-    <branch repo="git.freedesktop.org" module="xorg/font/encodings" checkoutdir="xorg/font/encodings" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="ibm-type1">
-    <branch repo="git.freedesktop.org" module="xorg/font/ibm-type1" checkoutdir="xorg/font/ibm-type1" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="isas-misc">
-    <branch repo="git.freedesktop.org" module="xorg/font/isas-misc" checkoutdir="xorg/font/isas-misc" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="jis-misc">
-    <branch repo="git.freedesktop.org" module="xorg/font/jis-misc" checkoutdir="xorg/font/jis-misc" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="micro-misc">
-    <branch repo="git.freedesktop.org" module="xorg/font/micro-misc" checkoutdir="xorg/font/micro-misc" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="misc-cyrillic">
-    <branch repo="git.freedesktop.org" module="xorg/font/misc-cyrillic" checkoutdir="xorg/font/misc-cyrillic" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="misc-ethiopic">
-    <branch repo="git.freedesktop.org" module="xorg/font/misc-ethiopic" checkoutdir="xorg/font/misc-ethiopic" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="misc-meltho">
-    <branch repo="git.freedesktop.org" module="xorg/font/misc-meltho" checkoutdir="xorg/font/misc-meltho" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="misc-misc">
-    <branch repo="git.freedesktop.org" module="xorg/font/misc-misc" checkoutdir="xorg/font/misc-misc" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="mutt-misc">
-    <branch repo="git.freedesktop.org" module="xorg/font/mutt-misc" checkoutdir="xorg/font/mutt-misc" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="schumacher-misc">
-    <branch repo="git.freedesktop.org" module="xorg/font/schumacher-misc" checkoutdir="xorg/font/schumacher-misc" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="screen-cyrillic">
-    <branch repo="git.freedesktop.org" module="xorg/font/screen-cyrillic" checkoutdir="xorg/font/screen-cyrillic" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="sony-misc">
-    <branch repo="git.freedesktop.org" module="xorg/font/sony-misc" checkoutdir="xorg/font/sony-misc" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="sun-misc">
-    <branch repo="git.freedesktop.org" module="xorg/font/sun-misc" checkoutdir="xorg/font/sun-misc" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="util">
-    <branch repo="git.freedesktop.org" module="xorg/font/util" checkoutdir="xorg/font/util" />
-  </autotools>
-
-  <autotools id="winitzki-cyrillic">
-    <branch repo="git.freedesktop.org" module="xorg/font/winitzki-cyrillic" checkoutdir="xorg/font/winitzki-cyrillic" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xfree86-type1">
-    <branch repo="git.freedesktop.org" module="xorg/font/xfree86-type1" checkoutdir="xorg/font/xfree86-type1" />
-    <dependencies>
-      <dep package="util"/>
-    </dependencies>
-  </autotools>
-
-  <metamodule id="xorg-fonts">
-    <dependencies>
-      <dep package="mkfontscale"/>
-      <dep package="mkfontdir"/>
-      <dep package="encodings"/>
-      <dep package="adobe-75dpi"/>
-      <dep package="adobe-100dpi"/>
-      <dep package="adobe-utopia-75dpi"/>
-      <dep package="adobe-utopia-100dpi"/>
-      <dep package="adobe-utopia-type1"/>
-      <dep package="alias"/>      
-      <dep package="arabic-misc"/>
-      <dep package="bh-75dpi"/>
-      <dep package="bh-100dpi"/>
-      <dep package="bh-lucidatypewriter-75dpi"/>
-      <dep package="bh-lucidatypewriter-100dpi"/>
-      <dep package="bh-ttf"/>
-      <dep package="bh-type1"/>
-      <dep package="bitstream-75dpi"/>
-      <dep package="bitstream-100dpi"/>
-      <dep package="bitstream-type1"/>
-      <dep package="cronyx-cyrillic"/>
-      <dep package="cursor-misc"/>
-      <dep package="daewoo-misc"/>
-      <dep package="dec-misc"/>
-      <dep package="ibm-type1"/>
-      <dep package="isas-misc"/>
-      <dep package="jis-misc"/>
-      <dep package="micro-misc"/>
-      <dep package="misc-cyrillic"/>
-      <dep package="misc-misc"/>
-      <dep package="mutt-misc"/>
-    </dependencies>
-  </metamodule>
 
   <!-- data -->
   <autotools id="bitmaps">
@@ -1013,89 +600,11 @@
   </autotools>
 
   <!-- apps -->
-
-  <autotools id="appres">
-    <branch repo="git.freedesktop.org" module="xorg/app/appres" checkoutdir="xorg/app/appres" />
-    <dependencies>
-      <dep package="libXt"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="bdftopcf">
-    <branch repo="git.freedesktop.org" module="xorg/app/bdftopcf" checkoutdir="xorg/app/bdftopcf" />
-    <dependencies>
-      <dep package="libXfont"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="beforelight">
-    <branch repo="git.freedesktop.org" module="xorg/app/beforelight" checkoutdir="xorg/app/beforelight" />
-    <dependencies>
-      <dep package="libXScrnSaver"/>
-      <dep package="libXt"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="bitmap">
-    <branch repo="git.freedesktop.org" module="xorg/app/bitmap" checkoutdir="xorg/app/bitmap" />
-    <dependencies>
-      <dep package="libXaw"/>
-      <dep package="libXmu"/>
-      <dep package="bitmaps"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="editres">
-    <branch repo="git.freedesktop.org" module="xorg/app/editres" checkoutdir="xorg/app/editres" />
-    <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="fonttosfnt">
-    <branch repo="git.freedesktop.org" module="xorg/app/fonttosfnt" checkoutdir="xorg/app/fonttosfnt" />
-    <dependencies>
-      <dep package="libX11"/>
-      <dep package="libfontenc"/>
-      <!-- <dep package="freetype2"/> -->
-    </dependencies>
-  </autotools>
-
-  <autotools id="fslsfonts">
-    <branch repo="git.freedesktop.org" module="xorg/app/fslsfonts" checkoutdir="xorg/app/fslsfonts" />
-    <dependencies>
-      <dep package="libX11"/>
-      <dep package="libFS"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="fstobdf">
-    <branch repo="git.freedesktop.org" module="xorg/app/fstobdf" checkoutdir="xorg/app/fstobdf" />
-    <dependencies>
-      <dep package="libX11"/>
-      <dep package="libFS"/>
-    </dependencies>
-  </autotools>
-
   <autotools id="iceauth">
     <branch repo="git.freedesktop.org" module="xorg/app/iceauth" checkoutdir="xorg/app/iceauth" />
     <dependencies>
       <dep package="libX11"/>
       <dep package="libICE"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="ico">
-    <branch repo="git.freedesktop.org" module="xorg/app/ico" checkoutdir="xorg/app/ico" />
-    <dependencies>
-      <dep package="libX11"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="listres">
-    <branch repo="git.freedesktop.org" module="xorg/app/listres" checkoutdir="xorg/app/listres" />
-    <dependencies>
-      <dep package="libXaw"/>
     </dependencies>
   </autotools>
 
@@ -1107,31 +616,6 @@
     </dependencies>
   </autotools>
 
-  <autotools id="mkcfm">
-    <branch repo="git.freedesktop.org" module="xorg/app/mkcfm" checkoutdir="xorg/app/mkcfm" />
-  </autotools>
-
-  <autotools id="mkfontdir">
-    <branch repo="git.freedesktop.org" module="xorg/app/mkfontdir" checkoutdir="xorg/app/mkfontdir" />
-  </autotools>
-
-  <autotools id="mkfontscale">
-    <branch repo="git.freedesktop.org" module="xorg/app/mkfontscale" checkoutdir="xorg/app/mkfontscale" />
-    <dependencies>
-      <dep package="libfontenc"/>
-      <!-- <dep package="freetype2"/> -->
-    </dependencies>
-  </autotools>
-
-  <autotools id="oclock">
-    <branch repo="git.freedesktop.org" module="xorg/app/oclock" checkoutdir="xorg/app/oclock" />
-    <dependencies>
-      <dep package="libX11"/>
-      <dep package="libXmu"/>
-      <dep package="libXext"/>
-    </dependencies>
-  </autotools>
-
   <autotools id="rendercheck">
     <branch repo="git.freedesktop.org" module="xorg/app/rendercheck" checkoutdir="xorg/app/rendercheck" />
     <dependencies>
@@ -1139,27 +623,12 @@
     </dependencies>
   </autotools>
 
-  <autotools id="rgb">
-    <branch repo="git.freedesktop.org" module="xorg/app/rgb" checkoutdir="xorg/app/rgb" />
-    <dependencies>
-      <dep package="x11proto"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="rstart">
-    <branch repo="git.freedesktop.org" module="xorg/app/rstart" checkoutdir="xorg/app/rstart" />
-  </autotools>
   <autotools id="scripts">
     <branch repo="git.freedesktop.org" module="xorg/app/scripts" checkoutdir="xorg/app/scripts" />
   </autotools>
 
-  <!-- <branch repo="git.freedesktop.org" module="xorg/app/sessreg"/> -->
-
   <autotools id="setxkbmap">
     <branch repo="git.freedesktop.org" module="xorg/app/setxkbmap" checkoutdir="xorg/app/setxkbmap" />
-  </autotools>
-  <autotools id="showfont">
-    <branch repo="git.freedesktop.org" module="xorg/app/showfont" checkoutdir="xorg/app/showfont" />
   </autotools>
   <autotools id="smproxy">
     <branch repo="git.freedesktop.org" module="xorg/app/smproxy" checkoutdir="xorg/app/smproxy" />
@@ -1168,82 +637,13 @@
     <branch repo="git.freedesktop.org" module="xorg/app/twm" checkoutdir="xorg/app/twm" />
   </autotools>
 
-  <autotools id="viewres">
-    <branch repo="git.freedesktop.org" module="xorg/app/viewres" checkoutdir="xorg/app/viewres" />
-    <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
-  </autotools>
-
   <autotools id="x11perf">
     <branch repo="git.freedesktop.org" module="xorg/app/x11perf" checkoutdir="xorg/app/x11perf" />
   </autotools>
   <autotools id="xauth">
     <branch repo="git.freedesktop.org" module="xorg/app/xauth" checkoutdir="xorg/app/xauth" />
-  </autotools>
-  <autotools id="xbiff">
-    <branch repo="git.freedesktop.org" module="xorg/app/xbiff" checkoutdir="xorg/app/xbiff" />
     <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xcalc">
-    <branch repo="git.freedesktop.org" module="xorg/app/xcalc" checkoutdir="xorg/app/xcalc" />
-    <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xclipboard">
-    <branch repo="git.freedesktop.org" module="xorg/app/xclipboard" checkoutdir="xorg/app/xclipboard" />
-    <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xclock">
-    <branch repo="git.freedesktop.org" module="xorg/app/xclock" checkoutdir="xorg/app/xclock" />
-    <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xcmsdb">
-    <branch repo="git.freedesktop.org" module="xorg/app/xcmsdb" checkoutdir="xorg/app/xcmsdb" />
-  </autotools>
-  <autotools id="xconsole">
-    <branch repo="git.freedesktop.org" module="xorg/app/xconsole" checkoutdir="xorg/app/xconsole" />
-    <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xcompmgr">
-    <branch repo="git.freedesktop.org" module="xorg/app/xcompmgr" checkoutdir="xorg/app/xcompmgr" />
-    <dependencies>
-      <dep package="libXcomposite"/>
-      <dep package="libXdamage"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xcursorgen">
-    <branch repo="git.freedesktop.org" module="xorg/app/xcursorgen" checkoutdir="xorg/app/xcursorgen" />
-  </autotools>
-  <autotools id="xdbedizzy">
-    <branch repo="git.freedesktop.org" module="xorg/app/xdbedizzy" checkoutdir="xorg/app/xdbedizzy" />
-  </autotools>
-  <autotools id="xditview">
-    <branch repo="git.freedesktop.org" module="xorg/app/xditview" checkoutdir="xorg/app/xditview" />
-    <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xdm">
-    <branch repo="git.freedesktop.org" module="xorg/app/xdm" checkoutdir="xorg/app/xdm" />
-    <dependencies>
-      <dep package="libXaw"/>
+      <dep package="libXext"/>
     </dependencies>
   </autotools>
 
@@ -1264,48 +664,11 @@
     </dependencies>
   </autotools>
 
-  <autotools id="xedit">
-    <branch repo="git.freedesktop.org" module="xorg/app/xedit" checkoutdir="xorg/app/xedit" />
-  </autotools>
   <autotools id="xev">
     <branch repo="git.freedesktop.org" module="xorg/app/xev" checkoutdir="xorg/app/xev" />
   </autotools>
   <autotools id="xeyes">
     <branch repo="git.freedesktop.org" module="xorg/app/xeyes" checkoutdir="xorg/app/xeyes" />
-  </autotools>
-  <autotools id="xf86dga">
-    <branch repo="git.freedesktop.org" module="xorg/app/xf86dga" checkoutdir="xorg/app/xf86dga" />
-  </autotools>
-  <autotools id="xfd">
-    <branch repo="git.freedesktop.org" module="xorg/app/xfd" checkoutdir="xorg/app/xfd" />
-    <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xfindproxy">
-    <branch repo="git.freedesktop.org" module="xorg/app/xfindproxy" checkoutdir="xorg/app/xfindproxy" />
-  </autotools>
-  <autotools id="xfontsel">
-    <branch repo="git.freedesktop.org" module="xorg/app/xfontsel" checkoutdir="xorg/app/xfontsel" />
-  </autotools>
-  <autotools id="xfs">
-    <branch repo="git.freedesktop.org" module="xorg/app/xfs" checkoutdir="xorg/app/xfs" />
-  </autotools>
-  <autotools id="xfsinfo">
-    <branch repo="git.freedesktop.org" module="xorg/app/xfsinfo" checkoutdir="xorg/app/xfsinfo" />
-  </autotools>
-  <autotools id="xfwp">
-    <branch repo="git.freedesktop.org" module="xorg/app/xfwp" checkoutdir="xorg/app/xfwp" />
-  </autotools>
-  <autotools id="xgamma">
-    <branch repo="git.freedesktop.org" module="xorg/app/xgamma" checkoutdir="xorg/app/xgamma" />
-  </autotools>
-  <autotools id="xgc">
-    <branch repo="git.freedesktop.org" module="xorg/app/xgc" checkoutdir="xorg/app/xgc" />
-    <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
   </autotools>
 
   <autotools id="xhost">
@@ -1320,27 +683,9 @@
   <autotools id="xkbcomp">
     <branch repo="git.freedesktop.org" module="xorg/app/xkbcomp" checkoutdir="xorg/app/xkbcomp" />
   </autotools>
-  <autotools id="xkbevd">
-    <branch repo="git.freedesktop.org" module="xorg/app/xkbevd" checkoutdir="xorg/app/xkbevd" />
-  </autotools>
-  <autotools id="xkbprint">
-    <branch repo="git.freedesktop.org" module="xorg/app/xkbprint" checkoutdir="xorg/app/xkbprint" />
-  </autotools>
-  <autotools id="xkbutils">
-    <branch repo="git.freedesktop.org" module="xorg/app/xkbutils" checkoutdir="xorg/app/xkbutils" />
-    <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
-  </autotools>
 
   <autotools id="xkill">
     <branch repo="git.freedesktop.org" module="xorg/app/xkill" checkoutdir="xorg/app/xkill" />
-  </autotools>
-  <autotools id="xload">
-    <branch repo="git.freedesktop.org" module="xorg/app/xload" checkoutdir="xorg/app/xload" />
-    <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
   </autotools>
 
   <autotools id="xlogo">
@@ -1356,61 +701,10 @@
   <autotools id="xlsclients">
     <branch repo="git.freedesktop.org" module="xorg/app/xlsclients" checkoutdir="xorg/app/xlsclients" />
   </autotools>
-  <autotools id="xlsfonts">
-    <branch repo="git.freedesktop.org" module="xorg/app/xlsfonts" checkoutdir="xorg/app/xlsfonts" />
-  </autotools>
-  <autotools id="xmag">
-    <branch repo="git.freedesktop.org" module="xorg/app/xmag" checkoutdir="xorg/app/xmag" />
-    <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xman">
-    <branch repo="git.freedesktop.org" module="xorg/app/xman" checkoutdir="xorg/app/xman" />
-    <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xmessage">
-    <branch repo="git.freedesktop.org" module="xorg/app/xmessage" checkoutdir="xorg/app/xmessage" />
-    <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xmh">
-    <branch repo="git.freedesktop.org" module="xorg/app/xmh" checkoutdir="xorg/app/xmh" />
-    <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
-  </autotools>
 
   <autotools id="xmodmap">
     <branch repo="git.freedesktop.org" module="xorg/app/xmodmap" checkoutdir="xorg/app/xmodmap" />
   </autotools>
-  <autotools id="xmore">
-    <branch repo="git.freedesktop.org" module="xorg/app/xmore" checkoutdir="xorg/app/xmore" />
-    <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
-  </autotools>
-
-  <!--
-  <autotools id="xphelloworld">
-    <branch repo="git.freedesktop.org" module="xorg/app/xphelloworld" checkoutdir="xorg/app/xphelloworld" />
-  </autotools>
-  <autotools id="xplsprinters">
-    <branch repo="git.freedesktop.org" module="xorg/app/xplsprinters" checkoutdir="xorg/app/xplsprinters" />
-  </autotools>
-  <autotools id="xpr">
-    <branch repo="git.freedesktop.org" module="xorg/app/xpr" checkoutdir="xorg/app/xpr" />
-  </autotools>
-  <autotools id="xprehashprinterlist">
-    <branch repo="git.freedesktop.org" module="xorg/app/xprehashprinterlist" checkoutdir="xorg/app/xprehashprinterlist" />
-  </autotools>
-  -->
 
   <autotools id="xprop">
     <branch repo="git.freedesktop.org" module="xorg/app/xprop" checkoutdir="xorg/app/xprop" />
@@ -1424,16 +718,6 @@
   <autotools id="xrdb">
     <branch repo="git.freedesktop.org" module="xorg/app/xrdb" checkoutdir="xorg/app/xrdb" />
   </autotools>
-  <autotools id="xrefresh">
-    <branch repo="git.freedesktop.org" module="xorg/app/xrefresh" checkoutdir="xorg/app/xrefresh" />
-  </autotools>
-
-  <autotools id="xrx">
-    <branch repo="git.freedesktop.org" module="xorg/app/xrx" checkoutdir="xorg/app/xrx" />
-    <dependencies>
-      <dep package="libXext"/>
-    </dependencies>
-  </autotools>
 
   <autotools id="xset">
     <branch repo="git.freedesktop.org" module="xorg/app/xset" checkoutdir="xorg/app/xset" />
@@ -1442,40 +726,12 @@
     </dependencies>
   </autotools>
 
-  <autotools id="xsetmode">
-    <branch repo="git.freedesktop.org" module="xorg/app/xsetmode" checkoutdir="xorg/app/xsetmode" />
-  </autotools>
-  <autotools id="xsetpointer">
-    <branch repo="git.freedesktop.org" module="xorg/app/xsetpointer" checkoutdir="xorg/app/xsetpointer" />
-  </autotools>
-
   <autotools id="xsetroot">
     <branch repo="git.freedesktop.org" module="xorg/app/xsetroot" checkoutdir="xorg/app/xsetroot" />
     <dependencies>
       <dep package="libX11"/>
       <dep package="libXmu"/>
       <dep package="bitmaps"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xsm">
-    <branch repo="git.freedesktop.org" module="xorg/app/xsm" checkoutdir="xorg/app/xsm" />
-    <dependencies>
-      <dep package="libXaw"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xstdcmap">
-    <branch repo="git.freedesktop.org" module="xorg/app/xstdcmap" checkoutdir="xorg/app/xstdcmap" />
-  </autotools>
-  <autotools id="xtrap">
-    <branch repo="git.freedesktop.org" module="xorg/app/xtrap" checkoutdir="xorg/app/xtrap" />
-  </autotools>
-
-  <autotools id="xvidtune">
-    <branch repo="git.freedesktop.org" module="xorg/app/xvidtune" checkoutdir="xorg/app/xvidtune" />
-    <dependencies>
-      <dep package="libXaw"/>
     </dependencies>
   </autotools>
 
@@ -1494,97 +750,33 @@
 
   <metamodule id="xorg-apps">
     <dependencies>
-      <dep package="appres"/>
-      <dep package="bdftopcf"/>
-      <dep package="beforelight"/>
-      <dep package="bitmap"/>
-      <dep package="editres"/>
-      <dep package="fonttosfnt"/>
-      <dep package="fslsfonts"/>
-      <dep package="fstobdf"/>
       <dep package="iceauth"/>
-      <dep package="ico"/>
-      <dep package="listres"/>
       <dep package="luit"/>
-      <dep package="mkfontdir"/>
-      <dep package="mkfontscale"/>
-      <dep package="oclock"/>
       <dep package="rendercheck"/>
-      <dep package="rgb"/>
-      <dep package="rstart"/>
       <dep package="scripts"/>
       <dep package="setxkbmap"/>
-      <dep package="showfont"/>
       <dep package="smproxy"/>
       <dep package="twm"/>
-      <dep package="viewres"/>
       <dep package="x11perf"/>
       <dep package="xauth"/>
-      <dep package="xbiff"/>
-      <dep package="xcalc"/>
-      <dep package="xclipboard"/>
-      <dep package="xclock"/>
-      <dep package="xcmsdb"/>
-      <dep package="xconsole"/>
-      <dep package="xcursorgen"/>
-      <dep package="xdbedizzy"/>
-      <dep package="xditview"/>
-      <dep package="xdm"/>
       <dep package="xdpyinfo"/>
       <dep package="xdriinfo"/>
-      <dep package="xedit"/>
       <dep package="xev"/>
       <dep package="xeyes"/>
-      <dep package="xf86dga"/>
-      <dep package="xfd"/>
-      <dep package="xfindproxy"/>
-      <dep package="xfontsel"/>
-      <dep package="xfs"/>
-      <dep package="xfsinfo"/>
-      <dep package="xfwp"/>
-      <dep package="xgamma"/>
-      <dep package="xgc"/>
       <dep package="xhost"/>
       <dep package="xinit"/>
       <dep package="xinput"/>
       <dep package="xkbcomp"/>
-      <dep package="xkbevd"/>
-      <dep package="xkbprint"/>
-      <dep package="xkbutils"/>
       <dep package="xkill"/>
-      <dep package="xload"/>
       <dep package="xlogo"/>
-      <dep package="xfontsel"/>
       <dep package="xlsatoms"/>
       <dep package="xlsclients"/>
-      <dep package="xlsfonts"/>
-      <dep package="xmag"/>
-      <dep package="xman"/>
-      <dep package="xmessage"/>
-      <dep package="xmh"/>
       <dep package="xmodmap"/>
-      <dep package="xmore"/>
-
-      <!--
-      <dep package="xphelloworld"/>
-      <dep package="xplsprinters"/>
-      <dep package="xpr"/>
-      <dep package="xprehashprinterlist"/>
-      -->
-
       <dep package="xprop"/>
       <dep package="xrandr"/>
       <dep package="xrdb"/>
-      <dep package="xrefresh"/>
-      <dep package="xrx"/>
       <dep package="xset"/>
-      <dep package="xsetmode"/>
-      <dep package="xsetpointer"/>
       <dep package="xsetroot"/>
-      <dep package="xsm"/>
-      <dep package="xstdcmap"/>
-      <dep package="xtrap"/>
-      <dep package="xvidtune"/>
       <dep package="xvinfo"/>
       <dep package="xwd"/>
       <dep package="xwininfo"/>
@@ -1608,78 +800,8 @@
     </dependencies>
   </autotools>
 
-  <autotools id="xf86-input-calcomp">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-calcomp" checkoutdir="xorg/driver/xf86-input-calcomp" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-input-citron">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-citron" checkoutdir="xorg/driver/xf86-input-citron" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-input-digitaledge">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-digitaledge" checkoutdir="xorg/driver/xf86-input-digitaledge" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-input-dmc">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-dmc" checkoutdir="xorg/driver/xf86-input-dmc" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-input-dynapro">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-dynapro" checkoutdir="xorg/driver/xf86-input-dynapro" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-input-elo2300">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-elo2300" checkoutdir="xorg/driver/xf86-input-elo2300" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-input-elographics">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-elographics" checkoutdir="xorg/driver/xf86-input-elographics" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
   <autotools id="xf86-input-evdev">
     <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-evdev" checkoutdir="xorg/driver/xf86-input-evdev" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-input-fpit">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-fpit" checkoutdir="xorg/driver/xf86-input-fpit" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-input-hyperpen">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-hyperpen" checkoutdir="xorg/driver/xf86-input-hyperpen" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-input-jamstudio">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-jamstudio" checkoutdir="xorg/driver/xf86-input-jamstudio" />
     <dependencies>
       <dep package="xserver"/>
     </dependencies>
@@ -1699,27 +821,6 @@
     </dependencies>
   </autotools>
 
-  <autotools id="xf86-input-magellan">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-magellan" checkoutdir="xorg/driver/xf86-input-magellan" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-input-magictouch">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-magictouch" checkoutdir="xorg/driver/xf86-input-magictouch" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-input-microtouch">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-microtouch" checkoutdir="xorg/driver/xf86-input-microtouch" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
   <autotools id="xf86-input-mouse">
     <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-mouse" checkoutdir="xorg/driver/xf86-input-mouse" />
     <dependencies>
@@ -1727,57 +828,8 @@
     </dependencies>
   </autotools>
 
-  <autotools id="xf86-input-mutouch">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-mutouch" checkoutdir="xorg/driver/xf86-input-mutouch" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-input-palmax">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-palmax" checkoutdir="xorg/driver/xf86-input-palmax" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-input-penmount">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-penmount" checkoutdir="xorg/driver/xf86-input-penmount" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-input-spaceorb">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-spaceorb" checkoutdir="xorg/driver/xf86-input-spaceorb" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-input-summa">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-summa" checkoutdir="xorg/driver/xf86-input-summa" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
   <autotools id="xf86-input-synaptics">
     <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-synaptics" checkoutdir="xorg/driver/xf86-input-synaptics" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-input-tek4957">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-tek4957" checkoutdir="xorg/driver/xf86-input-tek4957" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-input-ur98">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-input-ur98" checkoutdir="xorg/driver/xf86-input-ur98" />
     <dependencies>
       <dep package="xserver"/>
     </dependencies>
@@ -1797,13 +849,6 @@
     </dependencies>
   </autotools>
 
-  <autotools id="xf86-video-geode">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-geode" checkoutdir="xorg/driver/xf86-video-geode" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
   <autotools id="xf86-video-apm">
     <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-apm" checkoutdir="xorg/driver/xf86-video-apm" />
     <dependencies>
@@ -1818,15 +863,15 @@
     </dependencies>
   </autotools>
 
-  <autotools id="xf86-video-ati">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-ati" checkoutdir="xorg/driver/xf86-video-ati" />
+  <autotools id="xf86-video-ast">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-ast" checkoutdir="xorg/driver/xf86-video-ast" />
     <dependencies>
       <dep package="xserver"/>
     </dependencies>
   </autotools>
 
-  <autotools id="xf86-video-avivo">
-    <branch repo="git.freedesktop.org" module="avivo/xf86-video-avivo" checkoutdir="xorg/driver/xf86-video-avivo" />
+  <autotools id="xf86-video-ati">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-ati" checkoutdir="xorg/driver/xf86-video-ati" />
     <dependencies>
       <dep package="xserver"/>
     </dependencies>
@@ -1860,6 +905,20 @@
     </dependencies>
   </autotools>
 
+  <autotools id="xf86-video-geode">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-geode" checkoutdir="xorg/driver/xf86-video-geode" />
+    <dependencies>
+      <dep package="xserver"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="xf86-video-glide">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-glide" checkoutdir="xorg/driver/xf86-video-glide" />
+    <dependencies>
+      <dep package="xserver"/>
+    </dependencies>
+  </autotools>
+
   <autotools id="xf86-video-glint">
     <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-glint" checkoutdir="xorg/driver/xf86-video-glint" />
     <dependencies>
@@ -1881,8 +940,8 @@
     </dependencies>
   </autotools>
 
-  <autotools id="xf86-video-imstt">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-imstt" checkoutdir="xorg/driver/xf86-video-imstt" />
+  <autotools id="xf86-video-impact">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-impact" checkoutdir="xorg/driver/xf86-video-impact" />
     <dependencies>
       <dep package="xserver"/>
     </dependencies>
@@ -1894,6 +953,13 @@
       <dep package="xserver"/>
       <dep package="x11proto"/>
       <dep package="libXvMC"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="xf86-video-mach64">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-mach64" checkoutdir="xorg/driver/xf86-video-mach64" />
+    <dependencies>
+      <dep package="xserver"/>
     </dependencies>
   </autotools>
 
@@ -1931,9 +997,9 @@
       <dep package="xserver"/>
     </dependencies>
   </autotools>
-
-  <autotools id="xf86-video-radeonhd">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-radeonhd" checkoutdir="xorg/driver/xf86-video-radeonhd" />
+  
+  <autotools id="xf86-video-r128">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-r128" checkoutdir="xorg/driver/xf86-video-r128" />
     <dependencies>
       <dep package="xserver"/>
     </dependencies>
@@ -2079,20 +1145,6 @@
     </dependencies>
   </autotools>
 
-  <autotools id="xf86-video-vga">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-vga" checkoutdir="xorg/driver/xf86-video-vga" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
-  <autotools id="xf86-video-via">
-    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-via" checkoutdir="xorg/driver/xf86-video-via" />
-    <dependencies>
-      <dep package="xserver"/>
-    </dependencies>
-  </autotools>
-
   <autotools id="xf86-video-vmware">
     <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-vmware" checkoutdir="xorg/driver/xf86-video-vmware" />
     <dependencies>
@@ -2114,11 +1166,26 @@
     </dependencies>
   </autotools>
 
+  <autotools id="xf86-video-xgi">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-xgi" checkoutdir="xorg/driver/xf86-video-xgi" />
+    <dependencies>
+      <dep package="xserver"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="xf86-video-xgixp">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-xgixp" checkoutdir="xorg/driver/xf86-video-xgixp" />
+    <dependencies>
+      <dep package="xserver"/>
+    </dependencies>
+  </autotools>
+
   <!-- These drivers are marked unmaintained in xorg/doc/xorg-docs/MAINTAINERS and are also broken -->
   <metamodule id="xorg-unmaintained-broken-drivers">
     <dependencies>
       <dep package="xf86-video-apm"/>
       <dep package="xf86-video-ark"/>
+      <dep package="xf86-video-ast"/>
       <dep package="xf86-video-i740"/>
       <dep package="xf86-video-imstt"/>
       <dep package="xf86-video-newport"/>
@@ -2126,7 +1193,6 @@
       <dep package="xf86-video-s3virge"/>
       <dep package="xf86-video-siliconmotion"/>
       <dep package="xf86-video-v4l"/>
-      <dep package="xf86-video-via"/>
     </dependencies>
   </metamodule>
 
@@ -2141,46 +1207,28 @@
     <dependencies>
       <dep package="xf86-input-acecad"/>
       <dep package="xf86-input-aiptek"/>
-      <dep package="xf86-input-calcomp"/>
-      <dep package="xf86-input-citron"/>
-      <dep package="xf86-input-digitaledge"/>
-      <dep package="xf86-input-dmc"/>
-      <dep package="xf86-input-dynapro"/>
-      <dep package="xf86-input-elo2300"/>
-      <dep package="xf86-input-elographics"/>
       <dep package="xf86-input-evdev"/>
-      <dep package="xf86-input-fpit"/>
-      <dep package="xf86-input-hyperpen"/>
-      <dep package="xf86-input-jamstudio"/>
       <dep package="xf86-input-joystick"/>
       <dep package="xf86-input-keyboard"/>
-      <dep package="xf86-input-magellan"/>
-      <dep package="xf86-input-magictouch"/>
-      <dep package="xf86-input-microtouch"/>
       <dep package="xf86-input-mouse"/>
-      <dep package="xf86-input-mutouch"/>
-      <dep package="xf86-input-palmax"/>
-      <dep package="xf86-input-penmount"/>
-      <dep package="xf86-input-spaceorb"/>
-      <dep package="xf86-input-synaptics"/>
-      <dep package="xf86-input-tek4957"/>
-      <dep package="xf86-input-ur98"/>
       <dep package="xf86-input-void"/>
-      <dep package="xf86-video-geode"/>
       <dep package="xf86-video-ati"/>
       <dep package="xf86-video-avivo"/>
       <dep package="xf86-video-chips"/>
       <dep package="xf86-video-cirrus"/>
       <dep package="xf86-video-dummy"/>
       <dep package="xf86-video-fbdev"/>
+      <dep package="xf86-video-geode"/>
       <dep package="xf86-video-glint"/>
       <dep package="xf86-video-i128"/>
+      <dep package="xf86-video-impact"/>
       <dep package="xf86-video-intel"/>
+      <dep package="xf86-video-mach64"/>
       <dep package="xf86-video-mga"/>
       <dep package="xf86-video-neomagic"/>
       <dep package="xf86-video-nouveau"/>
       <dep package="xf86-video-nv"/>
-      <dep package="xf86-video-radeonhd"/>
+      <dep package="xf86-video-r128"/>
       <dep package="xf86-video-rendition"/>
       <dep package="xf86-video-savage"/>
       <dep package="xf86-video-sis"/>
@@ -2197,9 +1245,10 @@
       <dep package="xf86-video-trident"/>
       <dep package="xf86-video-tseng"/>
       <dep package="xf86-video-vesa"/>
-      <dep package="xf86-video-vga"/>
       <dep package="xf86-video-vmware"/>
       <dep package="xf86-video-voodoo"/>
+      <dep package="xf86-video-xgi"/>
+      <dep package="xf86-video-xgixp"/>
     </dependencies>
   </metamodule>
 
@@ -2241,7 +1290,7 @@
       <dep package="libXdmcp"/>
       <dep package="libXxf86misc"/>
       <dep package="libXxf86vm"/>
-      <dep package="liblbxutil"/>
+      <dep package="libXinerama"/>
       <dep package="libdrm"/>
       <dep package="libdmx"/>
       <dep package="pixman"/>
