@@ -1213,7 +1213,6 @@
       <dep package="xf86-input-mouse"/>
       <dep package="xf86-input-void"/>
       <dep package="xf86-video-ati"/>
-      <dep package="xf86-video-avivo"/>
       <dep package="xf86-video-chips"/>
       <dep package="xf86-video-cirrus"/>
       <dep package="xf86-video-dummy"/>
@@ -1288,7 +1287,6 @@
       <dep package="libXau"/>
       <dep package="libxkbfile"/>
       <dep package="libXdmcp"/>
-      <dep package="libXxf86misc"/>
       <dep package="libXxf86vm"/>
       <dep package="libXinerama"/>
       <dep package="libdrm"/>
@@ -1302,7 +1300,6 @@
     <dependencies>
       <dep package="xorg-protos"/>
       <dep package="xorg-libs"/>
-      <dep package="xorg-fonts"/>
       <dep package="xorg-apps"/>
       <dep package="xorg-drivers"/>
       <dep package="xorg-docs"/>
