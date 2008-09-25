@@ -1,0 +1,8 @@
+#moduleset = 'http://cgit.freedesktop.org/xorg/util/modular/blob/xorg.modules'
+moduleset = '/home/daniels/x/xorg/util/modular/xorg.modules'
+modules = [ 'xorg' ]
+checkoutroot = '/home/daniels/x/xorg'
+prefix = '/home/daniels/tmp/jhbuild'
+#autogenargs='--cache-file=/usr/src/jhmodular/configure-cache --disable-static'
+#os.environ['INSTALL'] = os.path.join(os.environ['HOME'], 'bin', 'install-check')
+os.environ['ACLOCAL'] = 'aclocal -I /home/daniels/tmp/jhbuild/share/aclocal'
