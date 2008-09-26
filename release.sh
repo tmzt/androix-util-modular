@@ -30,6 +30,9 @@ initial)
 	;;
 esac
 
+MD5SUM=`which md5sum || which gmd5sum`
+SHA1SUM=`which sha1sum || which gsha1sum`
+
     cat <<RELEASE
 Subject: [ANNOUNCE] $module $version
 To: $announce_list
@@ -39,12 +42,12 @@ To: $announce_list
 git tag: $tag_current
 
 http://$host_xorg/$section_path/$tarbz2
-MD5: `cd $tarball_dir && md5sum $tarbz2`
-SHA1: `cd $tarball_dir && sha1sum $tarbz2`
+MD5: `cd $tarball_dir && $MD5SUM $tarbz2`
+SHA1: `cd $tarball_dir && $SHA1SUM $tarbz2`
 
 http://$host_xorg/$section_path/$targz
-MD5: `cd $tarball_dir && md5sum $targz`
-SHA1: `cd $tarball_dir && sha1sum $targz`
+MD5: `cd $tarball_dir && $MD5SUM $targz`
+SHA1: `cd $tarball_dir && $SHA1SUM $targz`
 
 RELEASE
 }
