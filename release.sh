@@ -3,6 +3,7 @@
 set -e
 
 announce_list="xorg-announce@lists.freedesktop.org"
+xorg_list="xorg@lists.freedesktop.org"
 host_people=annarchy.freedesktop.org
 host_xorg=xorg.freedesktop.org
 user=`whoami`
@@ -36,6 +37,7 @@ SHA1SUM=`which sha1sum || which gsha1sum`
     cat <<RELEASE
 Subject: [ANNOUNCE] $module $version
 To: $announce_list
+CC: $xorg_list
 
 `git log --no-merges "$range" | git shortlog`
 
