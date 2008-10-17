@@ -242,10 +242,6 @@ build_app() {
     build app xmh
     build app xmodmap
     build app xmore
-    build app xphelloworld
-    build app xplsprinters
-    build app xpr
-    build app xprehashprinterlist
     build app xprop
     build app xrandr
     build app xrdb
