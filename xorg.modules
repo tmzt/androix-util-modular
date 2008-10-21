@@ -1005,6 +1005,13 @@
     </dependencies>
   </autotools>
 
+  <autotools id="xf86-video-radeonhd">
+    <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-radeonhd" checkoutdir="xorg/driver/xf86-video-radeonhd" />
+    <dependencies>
+      <dep package="xserver"/>
+    </dependencies>
+  </autotools>
+
   <autotools id="xf86-video-rendition">
     <branch repo="git.freedesktop.org" module="xorg/driver/xf86-video-rendition" checkoutdir="xorg/driver/xf86-video-rendition" />
     <dependencies>
@@ -1228,6 +1235,7 @@
       <dep package="xf86-video-nouveau"/>
       <dep package="xf86-video-nv"/>
       <dep package="xf86-video-r128"/>
+      <dep package="xf86-video-radeonhd"/>
       <dep package="xf86-video-rendition"/>
       <dep package="xf86-video-savage"/>
       <dep package="xf86-video-sis"/>
