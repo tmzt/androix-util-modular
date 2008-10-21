@@ -488,7 +488,6 @@ build_driver_video() {
     build driver xf86-video-ark
     build driver xf86-video-ast
     build driver xf86-video-ati
-    build driver xf86-video-avivo
     build driver xf86-video-chips
     build driver xf86-video-cirrus
     build driver xf86-video-dummy
