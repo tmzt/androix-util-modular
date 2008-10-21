@@ -1228,7 +1228,6 @@
       <dep package="xf86-video-nouveau"/>
       <dep package="xf86-video-nv"/>
       <dep package="xf86-video-r128"/>
-      <dep package="xf86-video-radeonhd"/>
       <dep package="xf86-video-rendition"/>
       <dep package="xf86-video-savage"/>
       <dep package="xf86-video-sis"/>
