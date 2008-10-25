@@ -298,11 +298,9 @@ build_app() {
     build app ico
     build app listres
     build app luit
-#    build app mkcfm
     build app mkfontdir
     build app mkfontscale
     build app oclock
-#    build app pclcomp
     build app rgb
     build app rendercheck
     build app rstart
@@ -332,12 +330,10 @@ build_app() {
     build app xev
     build app xeyes
     build app xf86dga
-    build app xfindproxy
     build app xfd
     build app xfontsel
     build app xfs
     build app xfsinfo
-    build app xfwp
     build app xgamma
     build app xgc
     build app xhost
@@ -363,7 +359,6 @@ build_app() {
     build app xrandr
     build app xrdb
     build app xrefresh
-    build app xrx
     build app xset
     build app xsetmode
     build app xsetpointer
