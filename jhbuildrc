@@ -1,8 +1,24 @@
+# how to use this file?
+#
+# mkdir -p $HOME/xorg/util
+# git clone git://anongit.freedesktop.org/git/xorg/util/modular/ $HOME/xorg/util/modular
+# jhbuild -f $HOME/xorg/util/modular/jhbuildrc
+#
+# Source tree will be in $HOME/xorg
+# Binaries will be in $HOME/xorg-build
+#
+
 #moduleset = 'http://cgit.freedesktop.org/xorg/util/modular/blob/xorg.modules'
-moduleset = '/home/daniels/x/xorg/util/modular/xorg.modules'
+# Requires the module set be in $HOME/xorg/util/modular/
+moduleset = os.path.join(os.environ['HOME'], 'xorg', 'util', 'modular', 'xorg.modules')
+
 modules = [ 'xorg' ]
-checkoutroot = '/home/daniels/x/xorg'
-prefix = '/home/daniels/tmp/jhbuild'
+
+# All modules will be in $HOME/xorg/ after the checkout
+checkoutroot = os.environ['HOME']
+prefix = os.path.join(os.environ['HOME'], 'xorg-build')
+os.environ['ACLOCAL'] = 'aclocal -I ' + os.path.join(prefix, 'share', 'aclocal')
+os.environ['PKG_CONFIG_PATH'] = os.path.join(prefix, 'lib', 'pkgconfig')
+
 #autogenargs='--cache-file=/usr/src/jhmodular/configure-cache --disable-static'
 #os.environ['INSTALL'] = os.path.join(os.environ['HOME'], 'bin', 'install-check')
-os.environ['ACLOCAL'] = 'aclocal -I /home/daniels/tmp/jhbuild/share/aclocal'
