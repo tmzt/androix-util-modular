@@ -106,6 +106,9 @@
   <autotools id="xextproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/xextproto" checkoutdir="xorg/proto/xextproto" />
   </autotools>
+  <autotools id="xf86bigfontproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/xf86bigfontproto" checkoutdir="xorg/proto/xf86bigfontproto" />
+  </autotools>
   <autotools id="xf86dgaproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/xf86dgaproto" checkoutdir="xorg/proto/xf86dgaproto" />
   </autotools>
@@ -146,6 +149,7 @@
       <dep package="videoproto"/>
       <dep package="xcmiscproto"/>
       <dep package="xextproto"/>
+      <dep package="xf86bigfontproto"/>
       <dep package="xf86dgaproto"/>
       <dep package="xf86driproto"/>
       <dep package="xf86vidmodeproto"/>
@@ -199,6 +203,7 @@
       <dep package="libXdmcp"/>
       <dep package="kbproto"/>
       <dep package="inputproto"/>
+      <dep package="xf86bigfontproto"/>
     </dependencies>
   </autotools>
 
