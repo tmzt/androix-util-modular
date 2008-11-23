@@ -517,6 +517,11 @@ build_driver_video() {
 
 # The server must be built before the drivers
 build_driver() {
+    # XQuartz doesn't need these...
+    case $HOST_OS in
+        Darwin*) return 0 ;;
+    esac
+
     build_driver_input
     build_driver_video
 }
