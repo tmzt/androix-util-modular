@@ -473,7 +473,7 @@ build_driver_video() {
 	i*86* | amd64* | x86*64*)
             build driver xf86-video-i740
             build driver xf86-video-intel
-            build driver xf86-video-via
+#           build driver xf86-video-via
 	    ;;
 	*)
 	    ;;
