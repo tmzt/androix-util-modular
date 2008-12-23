@@ -4,8 +4,10 @@ set -e
 
 announce_list="xorg-announce@lists.freedesktop.org"
 xorg_list="xorg@lists.freedesktop.org"
+dri_list="dri@lists.freedesktop.org"
 host_people=annarchy.freedesktop.org
 host_xorg=xorg.freedesktop.org
+host_dri=dri.freedesktop.org
 user=`whoami`
 
 usage()
@@ -34,20 +36,28 @@ esac
 MD5SUM=`which md5sum || which gmd5sum`
 SHA1SUM=`which sha1sum || which gsha1sum`
 
+if [ $section = libdrm ]; then
+    host=$host_dri
+    list=$dri_list
+else
+    host=$host_xorg
+    list=$xorg_list
+fi
+
     cat <<RELEASE
 Subject: [ANNOUNCE] $module $version
 To: $announce_list
-CC: $xorg_list
+CC: $list
 
 `git log --no-merges "$range" | git shortlog`
 
 git tag: $tag_current
 
-http://$host_xorg/$section_path/$tarbz2
+http://$host/$section_path/$tarbz2
 MD5: `cd $tarball_dir && $MD5SUM $tarbz2`
 SHA1: `cd $tarball_dir && $SHA1SUM $tarbz2`
 
-http://$host_xorg/$section_path/$targz
+http://$host/$section_path/$targz
 MD5: `cd $tarball_dir && $MD5SUM $targz`
 SHA1: `cd $tarball_dir && $SHA1SUM $targz`
 
@@ -97,8 +107,13 @@ tarbz2="$tag_current.tar.bz2"
 targz="$tag_current.tar.gz"
 announce="$tarball_dir/$tag_current.announce"
 
-section_path="archive/individual/$section"
-srv_path="/srv/$host_xorg/$section_path"
+if [ $section = "libdrm" ]; then
+    section_path="libdrm"
+    srv_path="/srv/$host_dri/www/$section_path"
+else
+    section_path="archive/individual/$section"
+    srv_path="/srv/$host_xorg/$section_path"
+fi
 
 echo "checking parameters"
 if ! [ -f "$tarball_dir/$tarbz2" ] ||
