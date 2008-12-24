@@ -16,7 +16,7 @@ failed() {
 build() {
     test "$USEMODULEDIRS" = "yes" && cd $1
 
-    TARBALL=`ls -1rt $2-*.tar.$COMPRESSION 2> /dev/null | tail -1`
+    TARBALL=`ls -1rt $2-*.tar.$COMPRESSION 2> /dev/null | tail -n 1`
 
     if test x"$TARBALL" = x; then
 	echo "WARNING: $2 does not exist -- skipping"

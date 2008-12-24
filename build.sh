@@ -70,7 +70,7 @@ checkfortars() {
     esac
     for ii in $M .; do
         for jj in bz2 gz; do
-            TARFILE=`ls -1rt $ii/$C-*.tar.$jj 2> /dev/null | tail -1`
+            TARFILE=`ls -1rt $ii/$C-*.tar.$jj 2> /dev/null | tail -n 1`
             if [ -n "$TARFILE" ]; then
                 SRCDIR=`echo $TARFILE | sed "s,.tar.$jj,,"`
                 if [ ! -d $SRCDIR ]; then
