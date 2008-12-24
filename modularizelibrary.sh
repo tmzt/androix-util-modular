@@ -206,7 +206,7 @@ done
 
 if [ $HAS_INCLUDE_DIR = yes ] ; then
     
-    HEADERFILE=`find ../include -name "*.h" | head -1`
+    HEADERFILE=`find ../include -name "*.h" | head -n 1`
 
     INCLUDE_SRC_DIR=`dirname $HEADERFILE | sed "s/../\\$(top_srcdir)/"`
 
