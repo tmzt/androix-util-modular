@@ -393,7 +393,11 @@ build_driver_input() {
 	Linux)
 	    build driver xf86-input-aiptek
 	    build driver xf86-input-evdev
+	    build driver xf86-input-joystick
 	    #build driver xf86-input-ur98
+	    ;;
+	*BSD*)
+	    build driver xf86-input-joystick
 	    ;;
 	*)
 	    ;;
@@ -419,7 +423,6 @@ build_driver_input() {
     #build driver xf86-input-fpit
     #build driver xf86-input-hyperpen
     #build driver xf86-input-jamstudio
-    build driver xf86-input-joystick
     build driver xf86-input-keyboard
     #build driver xf86-input-magellan
     #build driver xf86-input-magictouch
