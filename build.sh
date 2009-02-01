@@ -117,6 +117,10 @@ build() {
     old_pwd=`pwd`
     cd $SRCDIR || failed cd1 $1 $2
 
+    if test x"$PULL" = x1; then
+	git pull --rebase || failed "git pull" $1 $2
+    fi
+
     # Build outside source directory
     if [ "x$DIR_ARCH" != x ] ; then
 	mkdir -p "$DIR_ARCH" || failed mkdir $1 $2
@@ -623,6 +627,7 @@ usage() {
     echo "  -g : build with debug information"
     echo "  -n : do not quit after error; just print error message"
     echo "  -o module/component : build just this component"
+    echo "  -p : run git pull on each component"
     echo "  -r module/component : resume building with this comonent"
     echo "  -s sudo-command : sudo command to use"
 }
@@ -667,6 +672,9 @@ do
 	shift
 	RESUME=$1
 	BUILD_ONE=1
+	;;
+    -p)
+	PULL=1
 	;;
     -r)
 	shift
