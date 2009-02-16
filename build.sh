@@ -163,6 +163,11 @@ build() {
 	failed install $1 $2
 
     cd ${old_pwd}
+
+    if test x"$BUILD_ONE" = x1; then
+	echo "Single-component build complete"
+	exit 0
+    fi
 }
 
 # protocol headers have no build order dependencies
@@ -619,6 +624,7 @@ usage() {
     echo "  -g : build with debug information"
     echo "  -m path-to-mesa-sources-for-xserver : full path to Mesa sources"
     echo "  -n : do not quit after error; just print error message"
+    echo "  -o module/component : build just this component"
     echo "  -r module/component : resume building with this comonent"
     echo "  -s sudo-command : sudo command to use"
 }
@@ -658,6 +664,11 @@ do
 	;;
     -n)
 	NOQUIT=1
+	;;
+    -o)
+	shift
+	RESUME=$1
+	BUILD_ONE=1
 	;;
     -r)
 	shift
