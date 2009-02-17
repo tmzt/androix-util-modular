@@ -602,6 +602,8 @@ build_util() {
     if test x"$USE_XCB" != xNO ; then
         build xcb util
     fi
+
+    build xkeyboard-config ""
 }
 
 # xorg-docs requires xorg-sgml-doctools
