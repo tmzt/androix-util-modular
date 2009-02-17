@@ -130,9 +130,6 @@ build() {
     # Special configure flags for certain modules
     MOD_SPECIFIC=
 
-    if test "$1" = "xserver" && test -n "$MESAPATH"; then
-	MOD_SPECIFIC="--with-mesa-source=${MESAPATH}"
-    fi
     if test "$1" = "lib" && test "$2" = "libX11" && test x"$USE_XCB" = xNO; then
 	MOD_SPECIFIC="--with-xcb=no"
     fi
@@ -622,7 +619,6 @@ usage() {
     echo "  -d : run make distcheck in addition to others"
     echo "  -D : run make dist in addition to others"
     echo "  -g : build with debug information"
-    echo "  -m path-to-mesa-sources-for-xserver : full path to Mesa sources"
     echo "  -n : do not quit after error; just print error message"
     echo "  -o module/component : build just this component"
     echo "  -r module/component : resume building with this comonent"
@@ -657,10 +653,6 @@ do
 	CFLAGS="-g3 -O0"
 	export CFLAGS
 	CONFCFLAGS="CFLAGS=-g3 -O0"
-	;;
-    -m)
-	shift
-	MESAPATH=$1
 	;;
     -n)
 	NOQUIT=1
