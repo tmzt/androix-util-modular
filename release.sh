@@ -107,14 +107,6 @@ tarbz2="$tag_current.tar.bz2"
 targz="$tag_current.tar.gz"
 announce="$tarball_dir/$tag_current.announce"
 
-if [ $section = "libdrm" ]; then
-    section_path="libdrm"
-    srv_path="/srv/$host_dri/www/$section_path"
-else
-    section_path="archive/individual/$section"
-    srv_path="/srv/$host_xorg/$section_path"
-fi
-
 echo "checking parameters"
 if ! [ -f "$tarball_dir/$tarbz2" ] ||
    ! [ -f "$tarball_dir/$targz" ] ||
@@ -123,6 +115,14 @@ if ! [ -f "$tarball_dir/$tarbz2" ] ||
     echo "error: incorrect parameters!"
     usage
     exit 1
+fi
+
+if [ "$section" = "libdrm" ]; then
+    section_path="libdrm"
+    srv_path="/srv/$host_dri/www/$section_path"
+else
+    section_path="archive/individual/$section"
+    srv_path="/srv/$host_xorg/$section_path"
 fi
 
 echo "checking for proper current dir"
