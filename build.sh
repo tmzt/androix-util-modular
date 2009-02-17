@@ -628,6 +628,7 @@ usage() {
 HAVE_ARCH="`uname -i`"
 DIR_ARCH=""
 DIR_CONFIG="."
+LIB_ONLY=0
 
 # Process command line args
 while test $# != 0
@@ -653,6 +654,9 @@ do
 	CFLAGS="-g3 -O0"
 	export CFLAGS
 	CONFCFLAGS="CFLAGS=-g3 -O0"
+	;;
+    -l)
+	LIB_ONLY=1
 	;;
     -n)
 	NOQUIT=1
@@ -751,17 +755,20 @@ date
 # We must install the global macros before anything else
 build util macros
 
-build_doc
 build_proto
 build_lib
-build data bitmaps
-build_app
 build_mesa
-build_xserver
-build_driver
-build_data
-build_font
-build_util
+
+if test $LIB_ONLY -eq 0; then
+    build_doc
+    build data bitmaps
+    build_app
+    build_xserver
+    build_driver
+    build_data
+    build_font
+    build_util
+fi
 
 date
 
