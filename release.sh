@@ -102,10 +102,20 @@ done
 
 tarball_dir="$(dirname $(find . -name config.status))"
 module="${tag_current%-*}"
-version="${tag_current##*-}"
-tarbz2="$tag_current.tar.bz2"
-targz="$tag_current.tar.gz"
-announce="$tarball_dir/$tag_current.announce"
+if [ "x$module" = "x$tag_current" ]; then
+    # version-number-only tag.
+    pwd=`pwd`
+    module=`basename $pwd`
+    version="$tag_current"
+else
+    # module-and-version style tag
+    version="${tag_current##*-}"
+fi
+
+modulever=$module-$version
+tarbz2="$modulever.tar.bz2"
+targz="$modulever.tar.gz"
+announce="$tarball_dir/$modulever.announce"
 
 echo "checking parameters"
 if ! [ -f "$tarball_dir/$tarbz2" ] ||
