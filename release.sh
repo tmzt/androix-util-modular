@@ -112,6 +112,11 @@ else
     version="${tag_current##*-}"
 fi
 
+detected_module=`grep 'PACKAGE = ' Makefile | sed 's|PACKAGE = ||'`
+if [ -f $detected_module-$version.tar.bz2 ]; then
+    module=$detected_module
+fi
+
 modulever=$module-$version
 tarbz2="$modulever.tar.bz2"
 targz="$modulever.tar.gz"
