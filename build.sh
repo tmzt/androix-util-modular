@@ -114,6 +114,11 @@ build() {
     fi
 
     echo "Building $1 module component $2..."
+
+    if test x"$BUILT_MODULES_FILE" != "x"; then
+        echo "$1/$2" >> $BUILT_MODULES_FILE
+    fi
+
     old_pwd=`pwd`
     cd $SRCDIR || failed cd1 $1 $2
 
@@ -624,6 +629,8 @@ usage() {
     echo "  -c : run make clean in addition to others"
     echo "  -d : run make distcheck in addition to others"
     echo "  -D : run make dist in addition to others"
+    echo "  -f file: append module being built to file. The last line of this"
+    echo "           file can be used for resuming with -r."
     echo "  -g : build with debug information"
     echo "  -n : do not quit after error; just print error message"
     echo "  -o module/component : build just this component"
@@ -657,6 +664,10 @@ do
     -D)
 	DIST=1
 	;;
+    -f)
+        shift
+        BUILT_MODULES_FILE=$1
+        ;;
     -g)
 	CFLAGS="-g3 -O0"
 	export CFLAGS
