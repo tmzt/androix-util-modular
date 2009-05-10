@@ -506,6 +506,7 @@ build_driver_video() {
     build driver xf86-video-glint
     build driver xf86-video-i128
     build driver xf86-video-imstt
+    build driver xf86-video-mach64
     build driver xf86-video-mga
     build driver xf86-video-neomagic
     build driver xf86-video-newport
@@ -513,6 +514,7 @@ build_driver_video() {
     build driver xf86-video-nv
     build driver xf86-video-radeonhd
     build driver xf86-video-rendition
+    build driver xf86-video-r128
     build driver xf86-video-s3
     build driver xf86-video-s3virge
     build driver xf86-video-savage
