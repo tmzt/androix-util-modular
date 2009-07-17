@@ -587,7 +587,6 @@ build_driver_video() {
     build driver xf86-video-mga
     build driver xf86-video-neomagic
     build driver xf86-video-newport
-    build driver xf86-video-nouveau
     build driver xf86-video-nv
     build driver xf86-video-radeonhd
     build driver xf86-video-rendition
