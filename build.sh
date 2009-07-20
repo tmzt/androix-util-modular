@@ -7,9 +7,11 @@
 # CONFCFLAGS: flags to pass to all configure scripts in ""
 # MAKEFLAGS: flags to pass to all make calls
 # LIBDIR: Path under $prefix for libraries (e.g., lib64)
+# GITROOT: Path to freedesktop.org git root (default: git://anongit.freedesktop.org/git). Only needed for --clone
 
 failed_components=""
 nonexistent_components=""
+clonefailed_components=""
 
 failed() {
     if test x"$NOQUIT" = x1; then
@@ -86,6 +88,44 @@ checkfortars() {
     done
 }
 
+clone() {
+    case $1 in
+        "pixman")
+        BASEDIR=""
+        ;;
+        "xcb")
+        BASEDIR=""
+        ;;
+        "mesa")
+        BASEDIR=""
+        ;;
+        "xkeyboard-config")
+        BASEDIR=""
+        ;;
+        *)
+        BASEDIR="xorg/"
+        ;;
+    esac
+
+    DIR="$1/$2"
+
+    if ! test -d "$DIR"; then
+        mkdir -p "$DIR"
+    fi
+
+    if test -z "$GITROOT"; then
+        GITROOT="git://anongit.freedesktop.org/git"
+    fi
+
+    git clone "$GITROOT/$BASEDIR$DIR" "$DIR"
+
+    if test "$?" -ne 0 && ! test -d "$DIR"; then
+        return 1
+    fi
+
+    return 0
+}
+
 build() {
     if [ -n "$RESUME" ]; then
 	if [ "$RESUME" = "$1/$2" ]; then
@@ -100,6 +140,18 @@ build() {
     SRCDIR=""
     CONFCMD=""
     if [ -f $1/$2/autogen.sh ]; then
+        SRCDIR="$1/$2"
+        CONFCMD="autogen.sh"
+    elif [ "x$CLONE" != "x" ]; then
+        clone $1 $2
+        if [ $? -ne 0 ]; then
+            echo "Failed to clone $1 component $2. Ignoring."
+            clonefailed_components="$clonefailed_components $1/$2"
+            if test x"$BUILD_ONE" = x1; then
+                exit 1
+            fi
+            return
+        fi
         SRCDIR="$1/$2"
         CONFCMD="autogen.sh"
     else
@@ -655,6 +707,7 @@ usage() {
     echo "  -p : run git pull on each component"
     echo "  -r module/component : resume building with this comonent"
     echo "  -s sudo-command : sudo command to use"
+    echo "  --clone : clone non-existing repositories (uses \$GITROOT if set)"
 }
 
 HAVE_ARCH="`uname -i`"
@@ -704,6 +757,9 @@ do
 	;;
     -p)
 	PULL=1
+	;;
+    --clone)
+	CLONE=1
 	;;
     -r)
 	shift
@@ -824,3 +880,11 @@ if test "x$failed_components" != x ; then
     echo "$failed_components"
     echo ""
 fi
+
+if test "x$CLONE" != x && test "x$clonefailed_components" != x ;  then
+    echo ""
+    echo "***** Components failed to clone *****"
+    echo "$clonefailed_components"
+    echo ""
+fi
+
