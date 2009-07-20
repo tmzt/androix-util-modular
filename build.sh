@@ -178,7 +178,16 @@ build() {
 
 # protocol headers have no build order dependencies
 build_proto() {
-    build proto applewmproto
+    case $HOST_OS in
+        Darwin*)
+            build proto applewmproto
+        ;;
+        CYGWIN*)
+            build proto windowswmproto
+        ;;
+        *)
+        ;;
+    esac
     build proto bigreqsproto
     build proto compositeproto
     build proto damageproto
@@ -198,7 +207,6 @@ build_proto() {
     build proto scrnsaverproto
     build proto trapproto
     build proto videoproto
-    build proto windowswmproto
     build proto x11proto
     build proto xcmiscproto
     build proto xextproto
@@ -249,8 +257,16 @@ build_lib() {
     fi
     build lib libX11
     build lib libXext
-    build lib libAppleWM
-    build lib libWindowsWM
+    case $HOST_OS in
+        Darwin*)
+            build lib libAppleWM
+        ;;
+        CYGWIN*)
+            build lib libWindowsWM
+        ;;
+        *)
+        ;;
+    esac
     build lib libdmx
     build lib libfontenc
     build lib libFS
