@@ -573,7 +573,7 @@ build_driver_video() {
 #    build driver xf86-video-glide
     build driver xf86-video-glint
     build driver xf86-video-i128
-    build driver xf86-video-imstt
+#    build driver xf86-video-imstt
     build driver xf86-video-mach64
     build driver xf86-video-mga
     build driver xf86-video-neomagic
