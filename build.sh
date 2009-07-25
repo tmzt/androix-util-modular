@@ -145,7 +145,7 @@ build() {
     elif [ "x$CLONE" != "x" ]; then
         clone $1 $2
         if [ $? -ne 0 ]; then
-            echo "Failed to clone $1 component $2. Ignoring."
+            echo "Failed to clone $1 module component $2. Ignoring."
             clonefailed_components="$clonefailed_components $1/$2"
             if test x"$BUILD_ONE" = x1; then
                 exit 1
@@ -708,7 +708,7 @@ usage() {
     echo "  -n : do not quit after error; just print error message"
     echo "  -o module/component : build just this component"
     echo "  -p : run git pull on each component"
-    echo "  -r module/component : resume building with this comonent"
+    echo "  -r module/component : resume building with this component"
     echo "  -s sudo-command : sudo command to use"
     echo "  --clone : clone non-existing repositories (uses \$GITROOT if set)"
     echo "  --check : run make check in addition to others"
