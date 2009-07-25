@@ -109,18 +109,18 @@ clone() {
 
     DIR="$1/$2"
 
-    if ! test -d "$DIR"; then
-        mkdir -p "$DIR"
-    fi
-
     if test -z "$GITROOT"; then
         GITROOT="git://anongit.freedesktop.org/git"
     fi
 
-    git clone "$GITROOT/$BASEDIR$DIR" "$DIR"
-
-    if test "$?" -ne 0 && ! test -d "$DIR"; then
-        return 1
+    if ! test -d "$DIR"; then
+        git clone "$GITROOT/$BASEDIR$DIR" "$DIR"
+        if test "$?" -ne 0 && ! test -d "$DIR"; then
+            return 1
+        fi
+    else
+        # git cannot clone into an existing directory
+	return 1
     fi
 
     return 0
