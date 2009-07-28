@@ -733,6 +733,12 @@ do
     -c)
 	CLEAN=1
 	;;
+    --check)
+	CHECK=1
+	;;
+    --clone)
+	CLONE=1
+	;;
     -d)
 	DISTCHECK=1
 	;;
@@ -762,12 +768,6 @@ do
     -p)
 	PULL=1
 	;;
-    --clone)
-	CLONE=1
-	;;
-    --check)
-        CHECK=1
-        ;;
     -r)
 	shift
 	RESUME=$1
