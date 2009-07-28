@@ -754,6 +754,14 @@ do
 	export CFLAGS
 	CONFCFLAGS="CFLAGS=-g3 -O0"
 	;;
+    -h)
+	usage
+	exit
+	;;
+    --help)
+	usage
+	exit
+	;;
     -l)
 	LIB_ONLY=1
 	;;
