@@ -19,7 +19,17 @@ Options:
   --force       force overwritting an existing release
   --user <name> username on $host_people (default "`whoami`")
   --help        this help message
+  --ignore-local-changes        don't abort on uncommitted local changes
 HELP
+}
+
+abort_for_changes()
+{
+    cat <<ERR
+Uncommitted changes found. Did you forget to commit? Aborting.
+Use --ignore-local-changes to skip this check.
+ERR
+    exit 1
 }
 
 gen_announce_mail()
@@ -81,6 +91,10 @@ while [ $# != 0 ]; do
 	user=$1
 	shift
 	;;
+    --ignore-local-changes)
+        ignorechanges=1
+        shift
+        ;;
     --*)
         echo "error: unknown option"
         usage
@@ -99,6 +113,21 @@ while [ $# != 0 ]; do
         ;;
     esac
 done
+
+# Check for uncommitted/queued changes.
+if [ "x$ignorechanges" != "x1" ]; then
+    set +e
+    git diff --exit-code > /dev/null 2>&1
+    if [ $? -ne 0 ]; then
+        abort_for_changes
+    fi
+
+    git status > /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        abort_for_changes
+    fi
+    set -e
+fi
 
 tarball_dir="$(dirname $(find . -name config.status))"
 module="${tag_current%-*}"
