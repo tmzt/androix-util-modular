@@ -129,6 +129,31 @@ if [ "x$ignorechanges" != "x1" ]; then
     set -e
 fi
 
+# Check if the object has been pushed. Do do so
+# 1. Check if the current branch has the object. If not, abort.
+# 2. Check if the object is on origin/branchname. If not, abort.
+local_sha=`git rev-list -1 $tag_current`
+current_branch=`git branch | grep "\*" | sed -e "s/\* //"`
+set +e
+git rev-list $current_branch | grep $local_sha > /dev/null
+if [ $? -eq 1 ]; then
+    echo "Cannot find tag '$tag_current' on current branch. Aborting."
+    echo "Switch to the correct branch and re-run the script."
+    exit 1
+fi
+
+revs=`git rev-list origin/$current_branch..$current_branch | wc -l`
+if [ $revs -ne 0 ]; then
+    git rev-list origin/$current_branch..$current_branch | grep $local_sha > /dev/null
+
+    if [ $? -ne 1 ]; then
+        echo "origin/$current_branch doesn't have object $local_sha"
+        echo "for tag '$tag_current'. Did you push branch first? Aborting."
+        exit 1
+    fi
+fi
+set -e
+
 tarball_dir="$(dirname $(find . -name config.status))"
 module="${tag_current%-*}"
 if [ "x$module" = "x$tag_current" ]; then
@@ -199,7 +224,6 @@ echo "    at: $announce"
 echo "installing release into server"
 scp $tarball_dir/$targz $tarball_dir/$tarbz2 $user@$host_people:$srv_path
 
-echo "pushing changes upstream"
-git push origin
+echo "pushing tag upstream"
 git push origin $tag_current
 
