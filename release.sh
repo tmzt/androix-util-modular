@@ -8,7 +8,7 @@ dri_list="dri-devel@lists.freedesktop.org"
 host_people=annarchy.freedesktop.org
 host_xorg=xorg.freedesktop.org
 host_dri=dri.freedesktop.org
-user=`whoami`
+user=
 remote=origin
 
 usage()
@@ -18,7 +18,7 @@ Usage: `basename $0` [options] <section> <tag_previous> <tag_current>
 
 Options:
   --force       force overwritting an existing release
-  --user <name> username on $host_people (default "`whoami`")
+  --user <name> username on $host_people
   --help        this help message
   --ignore-local-changes        don't abort on uncommitted local changes
   --remote      git remote where the change should be pushed (default "origin")
@@ -90,7 +90,7 @@ while [ $# != 0 ]; do
         ;;
     --user)
 	shift
-	user=$1
+	user=$1@
 	shift
 	;;
     --ignore-local-changes)
@@ -214,8 +214,8 @@ if ! git tag -l $tag_current >/dev/null; then
 fi
 
 echo "checking for an existing release"
-if ssh $user@$host_people ls $srv_path/$targz >/dev/null 2>&1 ||
-   ssh $user@$host_people ls $srv_path/$tarbz2 >/dev/null 2>&1; then
+if ssh $user$host_people ls $srv_path/$targz >/dev/null 2>&1 ||
+   ssh $user$host_people ls $srv_path/$tarbz2 >/dev/null 2>&1; then
     if [ "x$force" = "xyes" ]; then
         echo "warning: overriding released file ... here be dragons."
     else
@@ -229,7 +229,7 @@ gen_announce_mail >$announce
 echo "    at: $announce"
 
 echo "installing release into server"
-scp $tarball_dir/$targz $tarball_dir/$tarbz2 $user@$host_people:$srv_path
+scp $tarball_dir/$targz $tarball_dir/$tarbz2 $user$host_people:$srv_path
 
 echo "pushing tag upstream"
 git push $remote $tag_current
