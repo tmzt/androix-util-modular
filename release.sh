@@ -9,6 +9,7 @@ host_people=annarchy.freedesktop.org
 host_xorg=xorg.freedesktop.org
 host_dri=dri.freedesktop.org
 user=`whoami`
+remote=origin
 
 usage()
 {
@@ -20,6 +21,7 @@ Options:
   --user <name> username on $host_people (default "`whoami`")
   --help        this help message
   --ignore-local-changes        don't abort on uncommitted local changes
+  --remote      git remote where the change should be pushed (default "origin")
 HELP
 }
 
@@ -93,6 +95,11 @@ while [ $# != 0 ]; do
 	;;
     --ignore-local-changes)
         ignorechanges=1
+        shift
+        ;;
+    --remote)
+        shift
+        remote=$1
         shift
         ;;
     --*)
@@ -225,5 +232,5 @@ echo "installing release into server"
 scp $tarball_dir/$targz $tarball_dir/$tarbz2 $user@$host_people:$srv_path
 
 echo "pushing tag upstream"
-git push origin $tag_current
+git push $remote $tag_current
 
