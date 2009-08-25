@@ -572,7 +572,13 @@ build_driver_video() {
     build driver xf86-video-cirrus
     build driver xf86-video-dummy
     build driver xf86-video-fbdev
-    build driver xf86-video-geode
+    case $HOST_CPU in
+	i*86*)
+	    build driver xf86-video-geode
+	    ;;
+	*)
+	    ;;
+    esac
 #    build driver xf86-video-glide
     build driver xf86-video-glint
     build driver xf86-video-i128
