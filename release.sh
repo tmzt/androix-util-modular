@@ -66,11 +66,11 @@ CC: $list
 git tag: $tag_current
 
 http://$host/$section_path/$tarbz2
-MD5: `cd $tarball_dir && $MD5SUM $tarbz2`
+MD5:  `cd $tarball_dir && $MD5SUM $tarbz2`
 SHA1: `cd $tarball_dir && $SHA1SUM $tarbz2`
 
 http://$host/$section_path/$targz
-MD5: `cd $tarball_dir && $MD5SUM $targz`
+MD5:  `cd $tarball_dir && $MD5SUM $targz`
 SHA1: `cd $tarball_dir && $SHA1SUM $targz`
 
 RELEASE
@@ -173,7 +173,7 @@ else
     version="${tag_current##*-}"
 fi
 
-detected_module=`grep 'PACKAGE = ' Makefile | sed 's|PACKAGE = ||'`
+detected_module=`grep 'PACKAGE = ' $tarball_dir/Makefile | sed 's|PACKAGE = ||'`
 if [ -f $detected_module-$version.tar.bz2 ]; then
     module=$detected_module
 fi
