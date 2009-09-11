@@ -644,6 +644,11 @@
 
   <autotools id="x11perf">
     <branch repo="git.freedesktop.org" module="xorg/app/x11perf" checkoutdir="xorg/app/x11perf" />
+    <dependencies>
+      <dep package="libXrender"/>
+      <dep package="libXft"/>
+      <dep package="libXext"/>
+    </dependencies>
   </autotools>
   <autotools id="xauth">
     <branch repo="git.freedesktop.org" module="xorg/app/xauth" checkoutdir="xorg/app/xauth" />
