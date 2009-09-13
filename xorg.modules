@@ -1301,6 +1301,7 @@
       <dep package="libXinerama"/>
       <dep package="libdrm"/>
       <dep package="libdmx"/>
+      <dep package="libXtst"/>
       <dep package="pixman"/>
       <dep package="libpciaccess"/>
     </dependencies>
