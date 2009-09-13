@@ -1302,6 +1302,7 @@
       <dep package="libdrm"/>
       <dep package="libdmx"/>
       <dep package="libXtst"/>
+      <dep package="libXRes"/>
       <dep package="pixman"/>
       <dep package="libpciaccess"/>
     </dependencies>
