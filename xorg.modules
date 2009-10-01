@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?> <!--*- mode: nxml -*-->
-<!-- TODO: what to do about AppleWM and WindowsWM? -->
+<!-- TODO: what to do about WindowsWM? -->
 <!-- TODO: what to do about doc/sgml-tools? -->
 <!-- TODO: util/cf has problems, commented out -->
 
@@ -52,6 +52,9 @@
     </dependencies>
   </autotools>
 
+  <autotools id="applewmproto">
+    <branch repo="git.freedesktop.org" module="xorg/proto/applewmproto" checkoutdir="xorg/proto/applewmproto" />
+  </autotools>
   <autotools id="bigreqsproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/bigreqsproto" checkoutdir="xorg/proto/bigreqsproto" />
   </autotools>
@@ -159,6 +162,17 @@
   </metamodule>
 
   <!-- libs -->
+
+  <autotools id="libAppleWM">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libAppleWM" checkoutdir="xorg/lib/libAppleWM" />
+    <dependencies>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="libXext"/>
+      <dep package="xextproto"/>
+      <dep package="applewmproto"/>
+    </dependencies>
+  </autotools>
 
   <autotools id="libFS">
     <branch repo="git.freedesktop.org" module="xorg/lib/libFS" checkoutdir="xorg/lib/libFS" />
