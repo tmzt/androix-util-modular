@@ -487,6 +487,7 @@
     <dependencies>
       <dep package="macros"/>
       <dep package="x11proto"/>
+      <dep package="mkfontscale"/>
     </dependencies>
   </autotools>
 
