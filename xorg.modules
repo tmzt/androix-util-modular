@@ -1205,6 +1205,154 @@
     </dependencies>
   </autotools>
 
+  <!-- core font support, still required for some configurations  -->
+
+  <autotools id="bdftopcf">
+    <branch repo="git.freedesktop.org" module="xorg/app/bdftopcf" checkoutdir="xorg/app/bdftopcf"/>
+    <dependencies>
+      <dep package="libXfont"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="mkfontscale">
+    <branch repo="git.freedesktop.org" module="xorg/app/mkfontscale" checkoutdir="xorg/app/mkfontscale"/>
+  </autotools>
+
+  <autotools id="mkfontdir">
+    <branch repo="git.freedesktop.org" module="xorg/app/mkfontdir" checkoutdir="xorg/app/mkfontdir"/>
+    <dependencies>
+      <dep package="mkfontscale"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="bitstream-75dpi">
+    <branch repo="git.freedesktop.org" module="xorg/font/bitstream-75dpi" checkoutdir="xorg/font/bitstream-75dpi"/>
+    <dependencies>
+      <dep package="bdftopcf"/>
+      <dep package="mkfontscale"/>
+      <dep package="mkfontdir"/>
+      <dep package="fontconfig"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="bitstream-100dpi">
+    <branch repo="git.freedesktop.org" module="xorg/font/bitstream-100dpi" checkoutdir="xorg/font/bitstream-100dpi"/>
+    <dependencies>
+      <dep package="bdftopcf"/>
+      <dep package="mkfontscale"/>
+      <dep package="mkfontdir"/>
+      <dep package="fontconfig"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="bitstream-type1">
+    <branch repo="git.freedesktop.org" module="xorg/font/bitstream-type1" checkoutdir="xorg/font/bitstream-type1"/>
+    <dependencies>
+      <dep package="mkfontscale"/>
+      <dep package="mkfontdir"/>
+      <dep package="fontconfig"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="adobe-75dpi">
+    <branch repo="git.freedesktop.org" module="xorg/font/adobe-75dpi" checkoutdir="xorg/font/adobe-75dpi"/>
+    <dependencies>
+      <dep package="mkfontscale"/>
+      <dep package="mkfontdir"/>
+      <dep package="fontconfig"/>
+      <dep package="fonts-util"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="adobe-100dpi">
+    <branch repo="git.freedesktop.org" module="xorg/font/adobe-100dpi" checkoutdir="xorg/font/adobe-100dpi"/>
+    <dependencies>
+      <dep package="mkfontscale"/>
+      <dep package="mkfontdir"/>
+      <dep package="fontconfig"/>
+      <dep package="fonts-util"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="adobe-utopia-75dpi">
+    <branch repo="git.freedesktop.org" module="xorg/font/adobe-utopia-75dpi" checkoutdir="xorg/font/adobe-75dpi"/>
+    <dependencies>
+      <dep package="mkfontscale"/>
+      <dep package="mkfontdir"/>
+      <dep package="fontconfig"/>
+      <dep package="fonts-util"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="adobe-utopia-100dpi">
+    <branch repo="git.freedesktop.org" module="xorg/font/adobe-utopia-100dpi" checkoutdir="xorg/font/adobe-utopia-100dpi"/>
+    <dependencies>
+      <dep package="mkfontscale"/>
+      <dep package="mkfontdir"/>
+      <dep package="fontconfig"/>
+      <dep package="fonts-util"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="adobe-utopia-type1">
+    <branch repo="git.freedesktop.org" module="xorg/font/adobe-utopia-type1" checkoutdir="xorg/font/adobe-utopia-type1"/>
+    <dependencies>
+      <dep package="mkfontscale"/>
+      <dep package="mkfontdir"/>
+      <dep package="fontconfig"/>
+      <dep package="fonts-util"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="fonts-cursor">
+    <branch repo="git.freedesktop.org" module="xorg/font/cursor-misc" checkoutdir="xorg/font/cursor-misc"/>
+    <dependencies>
+      <dep package="mkfontscale"/>
+      <dep package="mkfontdir"/>
+      <dep package="fontconfig"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="fonts-misc">
+    <branch repo="git.freedesktop.org" module="xorg/font/misc-misc" checkoutdir="xorg/font/misc-misc"/>
+    <dependencies>
+      <dep package="mkfontscale"/>
+      <dep package="mkfontdir"/>
+      <dep package="fontconfig"/>
+      <dep package="fonts-util"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="fonts-alias">
+    <branch repo="git.freedesktop.org" module="xorg/font/alias" checkoutdir="xorg/font/alias"/>
+  </autotools>
+
+  <autotools id="fonts-util">
+    <branch repo="git.freedesktop.org" module="xorg/font/util" checkoutdir="xorg/font/util"/>
+  </autotools>
+
+  <autotools id="fonts-encodings">
+    <branch repo="git.freedesktop.org" module="xorg/font/encodings" checkoutdir="xorg/font/encodings"/>
+  </autotools>
+
+  <metamodule id="xorg-fonts">
+    <dependencies>
+      <dep package="fonts-util"/>
+      <dep package="fonts-encodings"/>
+      <dep package="adobe-75dpi"/>
+      <dep package="adobe-100dpi"/>
+      <dep package="adobe-utopia-75dpi"/>
+      <dep package="adobe-utopia-100dpi"/>
+      <dep package="adobe-utopia-type1"/>
+      <dep package="bitstream-75dpi"/>
+      <dep package="bitstream-100dpi"/>
+      <dep package="bitstream-type1"/>
+      <dep package="fonts-cursor"/>
+      <dep package="fonts-misc"/>
+      <dep package="fonts-alias"/>
+    </dependencies>
+  </metamodule>
+
   <!-- These drivers are marked unmaintained in xorg/doc/xorg-docs/MAINTAINERS and are also broken -->
   <metamodule id="xorg-unmaintained-broken-drivers">
     <dependencies>
@@ -1328,6 +1476,7 @@
       <dep package="xorg-protos"/>
       <dep package="xorg-libs"/>
       <dep package="xorg-apps"/>
+      <dep package="xorg-fonts"/>
       <dep package="xorg-drivers"/>
       <dep package="xorg-docs"/>
       <dep package="xserver"/>
