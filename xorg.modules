@@ -183,6 +183,7 @@
       <dep package="x11proto"/>
       <dep package="fontsproto"/>
       <dep package="libxtrans"/>
+      <dep package="libX11"/>
     </dependencies>
   </autotools>
 
@@ -192,6 +193,7 @@
       <dep package="macros"/>
       <dep package="x11proto"/>
       <dep package="libxtrans"/>
+      <dep package="libX11"/>
     </dependencies>
   </autotools>
 
@@ -320,6 +322,7 @@
       <dep package="libxtrans"/>
       <dep package="fontsproto"/>
       <dep package="libfontenc"/>
+      <dep package="libX11"/>
     </dependencies>
   </autotools>
 
@@ -662,26 +665,43 @@
 
   <autotools id="setxkbmap">
     <branch repo="git.freedesktop.org" module="xorg/app/setxkbmap" checkoutdir="xorg/app/setxkbmap" />
+    <dependencies>
+      <dep package="libX11"/>
+    </dependencies>
   </autotools>
+
   <autotools id="smproxy">
     <branch repo="git.freedesktop.org" module="xorg/app/smproxy" checkoutdir="xorg/app/smproxy" />
+    <dependencies>
+      <dep package="libX11"/>
+      <dep package="libSM"/>
+      <dep package="libXt"/>
+    </dependencies>
   </autotools>
+
   <autotools id="twm">
     <branch repo="git.freedesktop.org" module="xorg/app/twm" checkoutdir="xorg/app/twm" />
+    <dependencies>
+      <dep package="libX11"/>
+      <dep package="libXt"/>
+    </dependencies>
   </autotools>
 
   <autotools id="x11perf">
     <branch repo="git.freedesktop.org" module="xorg/app/x11perf" checkoutdir="xorg/app/x11perf" />
     <dependencies>
+      <dep package="libX11"/>
       <dep package="libXrender"/>
       <dep package="libXft"/>
       <dep package="libXext"/>
     </dependencies>
   </autotools>
+
   <autotools id="xauth">
     <branch repo="git.freedesktop.org" module="xorg/app/xauth" checkoutdir="xorg/app/xauth" />
     <dependencies>
       <dep package="libXext"/>
+      <dep package="libXmu"/>
     </dependencies>
   </autotools>
 
@@ -704,26 +724,56 @@
 
   <autotools id="xev">
     <branch repo="git.freedesktop.org" module="xorg/app/xev" checkoutdir="xorg/app/xev" />
+    <dependencies>
+      <dep package="libX11"/>
+    </dependencies>
   </autotools>
+
   <autotools id="xeyes">
     <branch repo="git.freedesktop.org" module="xorg/app/xeyes" checkoutdir="xorg/app/xeyes" />
+    <dependencies>
+      <dep package="libX11"/>
+      <dep package="libXt"/>
+      <dep package="libXmu"/>
+    </dependencies>
   </autotools>
 
   <autotools id="xhost">
     <branch repo="git.freedesktop.org" module="xorg/app/xhost" checkoutdir="xorg/app/xhost" />
+    <dependencies>
+      <dep package="libX11"/>
+      <dep package="libXmu"/>
+    </dependencies>
   </autotools>
+
   <autotools id="xinit">
     <branch repo="git.freedesktop.org" module="xorg/app/xinit" checkoutdir="xorg/app/xinit" />
+    <dependencies>
+      <dep package="libX11"/>
+    </dependencies>
   </autotools>
+
   <autotools id="xinput">
     <branch repo="git.freedesktop.org" module="xorg/app/xinput" checkoutdir="xorg/app/xinput" />
+    <dependencies>
+      <dep package="libX11"/>
+      <dep package="libXi"/>
+    </dependencies>
   </autotools>
+
   <autotools id="xkbcomp">
     <branch repo="git.freedesktop.org" module="xorg/app/xkbcomp" checkoutdir="xorg/app/xkbcomp" />
+    <dependencies>
+      <dep package="libX11"/>
+    </dependencies>
   </autotools>
 
   <autotools id="xkill">
     <branch repo="git.freedesktop.org" module="xorg/app/xkill" checkoutdir="xorg/app/xkill" />
+    <dependencies>
+      <dep package="libX11"/>
+      <dep package="libXmu"/>
+    </dependencies>
   </autotools>
 
   <autotools id="xlogo">
@@ -735,32 +785,54 @@
 
   <autotools id="xlsatoms">
     <branch repo="git.freedesktop.org" module="xorg/app/xlsatoms" checkoutdir="xorg/app/xlsatoms" />
+    <dependencies>
+      <dep package="libX11"/>
+      <dep package="libXmu"/>
+    </dependencies>
   </autotools>
+
   <autotools id="xlsclients">
     <branch repo="git.freedesktop.org" module="xorg/app/xlsclients" checkoutdir="xorg/app/xlsclients" />
+    <dependencies>
+      <dep package="libX11"/>
+      <dep package="libXmu"/>
+    </dependencies>
   </autotools>
 
   <autotools id="xmodmap">
     <branch repo="git.freedesktop.org" module="xorg/app/xmodmap" checkoutdir="xorg/app/xmodmap" />
+    <dependencies>
+      <dep package="libX11"/>
+    </dependencies>
   </autotools>
 
   <autotools id="xprop">
     <branch repo="git.freedesktop.org" module="xorg/app/xprop" checkoutdir="xorg/app/xprop" />
+    <dependencies>
+      <dep package="libX11"/>
+    </dependencies>
   </autotools>
+
   <autotools id="xrandr">
     <branch repo="git.freedesktop.org" module="xorg/app/xrandr" checkoutdir="xorg/app/xrandr" />
     <dependencies>
       <dep package="libXrandr"/>
     </dependencies>
   </autotools>
+
   <autotools id="xrdb">
     <branch repo="git.freedesktop.org" module="xorg/app/xrdb" checkoutdir="xorg/app/xrdb" />
+    <dependencies>
+      <dep package="libX11"/>
+      <dep package="libXmu"/>
+    </dependencies>
   </autotools>
 
   <autotools id="xset">
     <branch repo="git.freedesktop.org" module="xorg/app/xset" checkoutdir="xorg/app/xset" />
     <dependencies>
       <dep package="libXext"/>
+      <dep package="libXmu"/>
     </dependencies>
   </autotools>
 
@@ -778,12 +850,24 @@
   </autotools>
   <autotools id="xwd">
     <branch repo="git.freedesktop.org" module="xorg/app/xwd" checkoutdir="xorg/app/xwd" />
+    <dependencies>
+      <dep package="libX11"/>
+    </dependencies>
   </autotools>
+
   <autotools id="xwininfo">
     <branch repo="git.freedesktop.org" module="xorg/app/xwininfo" checkoutdir="xorg/app/xwininfo" />
+    <dependencies>
+      <dep package="libX11"/>
+      <dep package="libXext"/>
+    </dependencies>
   </autotools>
+
   <autotools id="xwud">
     <branch repo="git.freedesktop.org" module="xorg/app/xwud" checkoutdir="xorg/app/xwud" />
+    <dependencies>
+      <dep package="libX11"/>
+    </dependencies>
   </autotools>
 
   <metamodule id="xorg-apps">
