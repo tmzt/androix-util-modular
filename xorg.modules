@@ -1,5 +1,4 @@
 <?xml version="1.0" standalone="no"?> <!--*- mode: nxml -*-->
-<!-- TODO: what to do about WindowsWM? -->
 <!-- TODO: what to do about doc/sgml-tools? -->
 <!-- TODO: util/cf has problems, commented out -->
 
@@ -102,6 +101,9 @@
   </autotools>
   <autotools id="windowswmproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/windowswmproto" checkoutdir="xorg/proto/windowswmproto" />
+    <dependencies>
+      <dep package="macros"/>
+    </dependencies>
   </autotools>
   <autotools id="xcmiscproto">
     <branch repo="git.freedesktop.org" module="xorg/proto/xcmiscproto" checkoutdir="xorg/proto/xcmiscproto" />
@@ -548,6 +550,17 @@
       <dep package="libXext"/>
       <dep package="libXi"/>
       <dep package="libXmu"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="libWindowsWM">
+    <branch repo="git.freedesktop.org" module="xorg/lib/libWindowsWM" checkoutdir="xorg/lib/libWindowsWM"/>
+    <dependencies>
+      <dep package="macros"/>
+      <dep package="libX11"/>
+      <dep package="libXext"/>
+      <dep package="xextproto"/>
+      <dep package="windowswmproto"/>
     </dependencies>
   </autotools>
 
