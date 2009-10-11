@@ -1288,7 +1288,7 @@
   </autotools>
 
   <autotools id="adobe-utopia-75dpi">
-    <branch repo="git.freedesktop.org" module="xorg/font/adobe-utopia-75dpi" checkoutdir="xorg/font/adobe-75dpi"/>
+    <branch repo="git.freedesktop.org" module="xorg/font/adobe-utopia-75dpi" checkoutdir="xorg/font/adobe-utopia-75dpi"/>
     <dependencies>
       <dep package="mkfontscale"/>
       <dep package="mkfontdir"/>
