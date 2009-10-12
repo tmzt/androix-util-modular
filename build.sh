@@ -629,17 +629,14 @@ build_driver() {
 #   schumacher-misc, screen-cyrillic, sony-misc, sun-misc and
 #   winitzki-cyrillic
 #
-# Within the font module, the util component must be built before the
-# following fonts:
-#   adobe-100dpi, adobe-75dpi, adobe-utopia-100dpi, adobe-utopia-75dpi,
-#   bh-100dpi, bh-75dpi, bh-lucidatypewriter-100dpi, bh-lucidatypewriter-75dpi,
-#   misc-misc and schumacher-misc
+# The font util component must be built before any of the fonts, since they
+# use the fontutil.m4 installed by it.   (As do several other modules, such
+# as libfontenc and app/xfs, which is why it is moved up to the top.)
 #
 # The alias component is recommended to be installed after the other fonts
 # since the fonts.alias files reference specific fonts installed from the
 # other font components
 build_font() {
-    build font util
     build font encodings
     build font adobe-100dpi
     build font adobe-75dpi
@@ -869,6 +866,7 @@ date
 
 # We must install the global macros before anything else
 build util macros
+build font util
 
 build_proto
 build_lib
