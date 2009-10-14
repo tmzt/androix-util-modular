@@ -489,7 +489,6 @@
     <dependencies>
       <dep package="macros"/>
       <dep package="x11proto"/>
-      <dep package="mkfontscale"/>
     </dependencies>
   </autotools>
 
@@ -1229,6 +1228,9 @@
 
   <autotools id="mkfontscale">
     <branch repo="git.freedesktop.org" module="xorg/app/mkfontscale" checkoutdir="xorg/app/mkfontscale"/>
+    <dependencies>
+      <dep package="libfontenc"/>
+    </dependencies>
   </autotools>
 
   <autotools id="mkfontdir">
