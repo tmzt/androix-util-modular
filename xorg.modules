@@ -489,6 +489,7 @@
     <dependencies>
       <dep package="macros"/>
       <dep package="x11proto"/>
+      <dep package="fonts-util"/>
     </dependencies>
   </autotools>
 
