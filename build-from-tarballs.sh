@@ -539,9 +539,9 @@ export ACLOCAL
 
 # The following is required to make pkg-config find our .pc metadata files
 if test x"$PKG_CONFIG_PATH" = x; then
-    PKG_CONFIG_PATH=${DESTDIR}${PREFIX}/lib/pkgconfig
+    PKG_CONFIG_PATH=${DESTDIR}${PREFIX}/share/pkgconfig:${DESTDIR}${PREFIX}/lib/pkgconfig
 else
-    PKG_CONFIG_PATH=${DESTDIR}${PREFIX}/lib/pkgconfig:${PKG_CONFIG_PATH}
+    PKG_CONFIG_PATH=${DESTDIR}${PREFIX}/share/pkgconfig:${DESTDIR}${PREFIX}/lib/pkgconfig:${PKG_CONFIG_PATH}
 fi
 export PKG_CONFIG_PATH
 
