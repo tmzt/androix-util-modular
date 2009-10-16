@@ -18,7 +18,8 @@ modules = [ 'xorg' ]
 checkoutroot = os.environ['HOME']
 prefix = os.path.join(os.environ['HOME'], 'xorg-build')
 os.environ['ACLOCAL'] = 'aclocal -I ' + os.path.join(prefix, 'share', 'aclocal')
-os.environ['PKG_CONFIG_PATH'] = os.path.join(prefix, 'lib', 'pkgconfig')
+os.environ['PKG_CONFIG_PATH'] = os.path.join(prefix, 'lib', 'pkgconfig') \
+    + ':' + os.path.join(prefix, 'share', 'pkgconfig')
 
 #autogenargs='--cache-file=/usr/src/jhmodular/configure-cache --disable-static'
 #os.environ['INSTALL'] = os.path.join(os.environ['HOME'], 'bin', 'install-check')
