@@ -380,6 +380,7 @@ build_app() {
     build app ico
     build app listres
     build app luit
+    build app mkcomposecache
     build app mkfontdir
     build app mkfontscale
     build app oclock
@@ -441,6 +442,7 @@ build_app() {
     build app xrandr
     build app xrdb
     build app xrefresh
+    build app xscope
     build app xset
     build app xsetmode
     build app xsetpointer
