@@ -19,6 +19,7 @@
   <autotools id="xcb-proto">
     <branch repo="git.freedesktop.org" module="xcb/proto" checkoutdir="xcb/proto"/>
   </autotools>
+
   <autotools id="libxcb">
     <dependencies>
       <dep package="xcb-proto"/>
@@ -26,6 +27,10 @@
       <dep package="libXau"/>
     </dependencies>
     <branch repo="git.freedesktop.org" module="xcb/libxcb" checkoutdir="xcb/libxcb"/>
+  </autotools>
+
+  <autotools id="xcb-util">
+    <branch repo="git.freedesktop.org" module="xcb/util" checkoutdir="xcb/xcb-util"/>
   </autotools>
 
   <autotools id="macros">
@@ -606,6 +611,8 @@
       <dep package="libGL"/>
       <dep package="pixman"/>
       <dep package="libpciaccess"/>
+      <dep package="libxcb"/>
+      <dep package="xcb-util"/>
     </dependencies>
   </metamodule>
 
@@ -794,8 +801,8 @@
   <autotools id="xlsclients">
     <branch repo="git.freedesktop.org" module="xorg/app/xlsclients" checkoutdir="xorg/app/xlsclients" />
     <dependencies>
-      <dep package="libX11"/>
-      <dep package="libXmu"/>
+      <dep package="libxcb"/>
+      <dep package="xcb-util"/>
     </dependencies>
   </autotools>
 
