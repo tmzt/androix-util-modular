@@ -309,6 +309,7 @@ build_lib() {
     if test x"$USE_XCB" != xNO ; then
         build xcb pthread-stubs
 	build xcb libxcb
+        build xcb util
     fi
     build lib libX11
     build lib libXext
@@ -685,9 +686,6 @@ build_util() {
     build util makedepend
     build util gccmakedep
     build util lndir
-    if test x"$USE_XCB" != xNO ; then
-        build xcb util
-    fi
 
     build xkeyboard-config ""
 }
