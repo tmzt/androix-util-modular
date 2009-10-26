@@ -131,7 +131,7 @@ xf86-video-glide-1.0.3
 xf86-video-glint-1.2.4
 xf86-video-i128-1.3.3
 xf86-video-i740-1.3.2
-xf86-video-intel-2.9.0
+xf86-video-intel-2.9.1
 xf86-video-mach64-6.8.2
 xf86-video-mga-1.4.11
 xf86-video-neomagic-1.2.4
