@@ -138,7 +138,7 @@ fi
 
 # Check if the object has been pushed. Do do so
 # 1. Check if the current branch has the object. If not, abort.
-# 2. Check if the object is on origin/branchname. If not, abort.
+# 2. Check if the object is on $remote/branchname. If not, abort.
 local_sha=`git rev-list -1 $tag_current`
 current_branch=`git branch | grep "\*" | sed -e "s/\* //"`
 set +e
@@ -149,12 +149,12 @@ if [ $? -eq 1 ]; then
     exit 1
 fi
 
-revs=`git rev-list origin/$current_branch..$current_branch | wc -l`
+revs=`git rev-list $remote/$current_branch..$current_branch | wc -l`
 if [ $revs -ne 0 ]; then
-    git rev-list origin/$current_branch..$current_branch | grep $local_sha > /dev/null
+    git rev-list $remote/$current_branch..$current_branch | grep $local_sha > /dev/null
 
     if [ $? -ne 1 ]; then
-        echo "origin/$current_branch doesn't have object $local_sha"
+        echo "$remote/$current_branch doesn't have object $local_sha"
         echo "for tag '$tag_current'. Did you push branch first? Aborting."
         exit 1
     fi
