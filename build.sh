@@ -260,7 +260,6 @@ build_proto() {
     build proto renderproto
     build proto resourceproto
     build proto scrnsaverproto
-    build proto trapproto
     build proto videoproto
     build proto x11proto
     build proto xcmiscproto
@@ -350,7 +349,6 @@ build_lib() {
     build lib libXrandr
     build lib libXRes
     build lib libXScrnSaver
-    build lib libXTrap
     build lib libXtst
     build lib libXv
     build lib libXvMC
@@ -450,7 +448,6 @@ build_app() {
     build app xsetroot
     build app xsm
     build app xstdcmap
-    build app xtrap
     build app xvidtune
     build app xvinfo
     build app xwd
