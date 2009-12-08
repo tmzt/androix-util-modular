@@ -49,7 +49,6 @@ checkfortars() {
             ;;
         "proto")
             case $C in
-                "evieproto") C="evieext" ;;
                 "x11proto") C="xproto" ;;
             esac
             ;;
@@ -248,9 +247,7 @@ build_proto() {
     build proto damageproto
     build proto dmxproto
     build proto dri2proto
-    build proto evieproto
     build proto fixesproto
-    build proto fontcacheproto
     build proto fontsproto
     build proto glproto
     build proto inputproto
@@ -267,7 +264,6 @@ build_proto() {
     build proto xf86bigfontproto
     build proto xf86dgaproto
     build proto xf86driproto
-    build proto xf86miscproto
     build proto xf86vidmodeproto
     build proto xineramaproto
     if test x"$USE_XCB" != xNO ; then
@@ -338,9 +334,7 @@ build_lib() {
     build lib libXrender
     build lib libXdamage
     build lib libXcursor
-    build lib libXevie
     build lib libXfont
-    build lib libXfontcache
     build lib libXft
     build lib libXi
     build lib libXinerama
@@ -353,7 +347,6 @@ build_lib() {
     build lib libXv
     build lib libXvMC
     build lib libXxf86dga
-    build lib libXxf86misc
     build lib libXxf86vm
     build lib libpciaccess
     build pixman ""
