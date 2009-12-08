@@ -444,7 +444,6 @@ build_app() {
     build app xscope
     build app xset
     build app xsetmode
-    build app xsetpointer
     build app xsetroot
     build app xsm
     build app xstdcmap
