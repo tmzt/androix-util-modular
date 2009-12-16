@@ -540,7 +540,6 @@ build_driver_video() {
     # Some drivers are only buildable on some architectures
     case $HOST_CPU in
 	*sparc*)
-	    build driver xf86-video-sunbw2
 	    build driver xf86-video-suncg14
 	    build driver xf86-video-suncg3
 	    build driver xf86-video-suncg6
