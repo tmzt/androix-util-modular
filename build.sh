@@ -339,7 +339,6 @@ build_lib() {
     build lib libXi
     build lib libXinerama
     build lib libxkbfile
-    build lib libxkbui
     build lib libXrandr
     build lib libXRes
     build lib libXScrnSaver
