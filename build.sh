@@ -277,7 +277,6 @@ build_proto() {
 build_data() {
 #    build data bitmaps
     build data cursors
-#    build data xkbdata
 }
 
 # All protocol modules must be installed before the libs (okay, that's an
@@ -322,8 +321,6 @@ build_lib() {
     build lib libfontenc
     build lib libFS
     build lib libICE
-    #build lib liblbxutil
-    #build lib liboldX
     build lib libSM
     build lib libXt
     build lib libXmu
@@ -467,7 +464,6 @@ build_driver_input() {
 	    build driver xf86-input-aiptek
 	    build driver xf86-input-evdev
 	    build driver xf86-input-joystick
-	    #build driver xf86-input-ur98
 	    ;;
 	*BSD*)
 	    build driver xf86-input-joystick
@@ -486,28 +482,9 @@ build_driver_input() {
     esac
 
     build driver xf86-input-acecad
-    #build driver xf86-input-calcomp
-    #build driver xf86-input-citron
-    #build driver xf86-input-digitaledge
-    #build driver xf86-input-dmc
-    #build driver xf86-input-dynapro
-    #build driver xf86-input-elo2300
-    #build driver xf86-input-elographics
-    #build driver xf86-input-fpit
-    #build driver xf86-input-hyperpen
-    #build driver xf86-input-jamstudio
     build driver xf86-input-keyboard
-    #build driver xf86-input-magellan
-    #build driver xf86-input-magictouch
-    #build driver xf86-input-microtouch
     build driver xf86-input-mouse
-    #build driver xf86-input-mutouch
-    #build driver xf86-input-palmax
-    #build driver xf86-input-penmount
-    #build driver xf86-input-spaceorb
-    #build driver xf86-input-summa
     build driver xf86-input-synaptics
-    #build driver xf86-input-tek4957
     build driver xf86-input-void
 }
 
@@ -548,7 +525,6 @@ build_driver_video() {
 	i*86* | amd64* | x86*64*)
             build driver xf86-video-i740
             build driver xf86-video-intel
-#           build driver xf86-video-via
 	    ;;
 	*)
 	    ;;
@@ -572,7 +548,6 @@ build_driver_video() {
 #    build driver xf86-video-glide
     build driver xf86-video-glint
     build driver xf86-video-i128
-#    build driver xf86-video-imstt
     build driver xf86-video-mach64
     build driver xf86-video-mga
     build driver xf86-video-neomagic
