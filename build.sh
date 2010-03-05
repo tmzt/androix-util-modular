@@ -484,6 +484,7 @@ build_driver_input() {
     build driver xf86-input-acecad
     build driver xf86-input-keyboard
     build driver xf86-input-mouse
+    build driver xf86-input-penmount
     build driver xf86-input-synaptics
     build driver xf86-input-void
 }
