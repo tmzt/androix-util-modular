@@ -1364,6 +1364,7 @@
   <autotools id="adobe-75dpi">
     <branch repo="git.freedesktop.org" module="xorg/font/adobe-75dpi" checkoutdir="xorg/font/adobe-75dpi"/>
     <dependencies>
+      <dep package="bdftopcf"/>
       <dep package="mkfontscale"/>
       <dep package="mkfontdir"/>
       <dep package="fontconfig"/>
@@ -1374,6 +1375,7 @@
   <autotools id="adobe-100dpi">
     <branch repo="git.freedesktop.org" module="xorg/font/adobe-100dpi" checkoutdir="xorg/font/adobe-100dpi"/>
     <dependencies>
+      <dep package="bdftopcf"/>
       <dep package="mkfontscale"/>
       <dep package="mkfontdir"/>
       <dep package="fontconfig"/>
@@ -1384,6 +1386,7 @@
   <autotools id="adobe-utopia-75dpi">
     <branch repo="git.freedesktop.org" module="xorg/font/adobe-utopia-75dpi" checkoutdir="xorg/font/adobe-utopia-75dpi"/>
     <dependencies>
+      <dep package="bdftopcf"/>
       <dep package="mkfontscale"/>
       <dep package="mkfontdir"/>
       <dep package="fontconfig"/>
@@ -1394,6 +1397,7 @@
   <autotools id="adobe-utopia-100dpi">
     <branch repo="git.freedesktop.org" module="xorg/font/adobe-utopia-100dpi" checkoutdir="xorg/font/adobe-utopia-100dpi"/>
     <dependencies>
+      <dep package="bdftopcf"/>
       <dep package="mkfontscale"/>
       <dep package="mkfontdir"/>
       <dep package="fontconfig"/>
@@ -1404,6 +1408,7 @@
   <autotools id="adobe-utopia-type1">
     <branch repo="git.freedesktop.org" module="xorg/font/adobe-utopia-type1" checkoutdir="xorg/font/adobe-utopia-type1"/>
     <dependencies>
+      <dep package="bdftopcf"/>
       <dep package="mkfontscale"/>
       <dep package="mkfontdir"/>
       <dep package="fontconfig"/>
