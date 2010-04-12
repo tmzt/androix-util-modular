@@ -782,34 +782,22 @@ $SUDO mkdir -p ${ACLOCAL_LOCALDIR}
 
 # The following is required to make aclocal find our .m4 macros
 if test x"$ACLOCAL" = x; then
-    ACLOCAL="aclocal -I ${ACLOCAL_LOCALDIR}"
-else
-    ACLOCAL="${ACLOCAL} -I ${ACLOCAL_LOCALDIR}"
+    ACLOCAL="aclocal"
 fi
+
+ACLOCAL="${ACLOCAL} -I ${ACLOCAL_LOCALDIR}"
 export ACLOCAL
 
 # The following is required to make pkg-config find our .pc metadata files
-if test x"$PKG_CONFIG_PATH" = x; then
-    PKG_CONFIG_PATH=${DESTDIR}${PREFIX}/share/pkgconfig:${DESTDIR}${PREFIX}/${LIBDIR}/pkgconfig
-else
-    PKG_CONFIG_PATH=${DESTDIR}${PREFIX}/share/pkgconfig:${DESTDIR}${PREFIX}/${LIBDIR}/pkgconfig:${PKG_CONFIG_PATH}
-fi
+PKG_CONFIG_PATH=${DESTDIR}${PREFIX}/share/pkgconfig:${DESTDIR}${PREFIX}/${LIBDIR}/pkgconfig${PKG_CONFIG_PATH+:$PKG_CONFIG_PATH}
 export PKG_CONFIG_PATH
 
 # Set the library path so that locally built libs will be found by apps
-if test x"$LD_LIBRARY_PATH" = x; then
-    LD_LIBRARY_PATH=${DESTDIR}${PREFIX}/${LIBDIR}
-else
-    LD_LIBRARY_PATH=${DESTDIR}${PREFIX}/${LIBDIR}:${LD_LIBRARY_PATH}
-fi
+LD_LIBRARY_PATH=${DESTDIR}${PREFIX}/${LIBDIR}${LD_LIBRARY_PATH+:$LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH
 
 # Set the path so that locally built apps will be found and used
-if test x"$PATH" = x; then
-    PATH=${DESTDIR}${PREFIX}/bin
-else
-    PATH=${DESTDIR}${PREFIX}/bin:${PATH}
-fi
+PATH=${DESTDIR}${PREFIX}/bin${PATH+:$PATH}
 export PATH
 
 # Choose which make program to use
