@@ -124,13 +124,8 @@ done
 # Check for uncommitted/queued changes.
 if [ "x$ignorechanges" != "x1" ]; then
     set +e
-    git diff --exit-code > /dev/null 2>&1
+    git diff --quiet HEAD > /dev/null 2>&1
     if [ $? -ne 0 ]; then
-        abort_for_changes
-    fi
-
-    git status > /dev/null 2>&1
-    if [ $? -eq 0 ]; then
         abort_for_changes
     fi
     set -e
