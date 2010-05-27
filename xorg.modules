@@ -546,7 +546,7 @@
 
   <!-- the Mesa module, which provides libGL, libGLU, and DRI drivers -->
   <autotools id="libGL" supports-non-srcdir-builds="no" check-target="false" skip-autogen="never">
-    <branch repo="git.freedesktop.org" module="mesa/mesa"/>
+    <branch repo="git.freedesktop.org" module="mesa/mesa"/ checkoutdir="mesa/mesa">
     <dependencies>
       <dep package="xf86driproto"/>
       <dep package="dri2proto"/>
@@ -558,6 +558,13 @@
       <dep package="libXext"/>
       <dep package="libXi"/>
       <dep package="libXmu"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="mesa-demos">
+    <branch repo="git.freedesktop.org" module="mesa/demos" checkoutdir="mesa/demos"/>
+    <dependencies>
+      <dep package="libGL"/>
     </dependencies>
   </autotools>
 
