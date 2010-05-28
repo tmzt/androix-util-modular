@@ -677,6 +677,7 @@ usage() {
     echo "  -r module/component : resume building with this component"
     echo "  -s sudo-command : sudo command to use"
     echo "  --clone : clone non-existing repositories (uses \$GITROOT if set)"
+    echo "  --autoresume file : autoresume from file"
     echo "  --check : run make check in addition to others"
 }
 
@@ -745,6 +746,11 @@ do
     -r)
 	shift
 	RESUME=$1
+	;;
+    --autoresume)
+	shift
+	BUILT_MODULES_FILE=$1
+	[ -f $1 ] && RESUME=`tail -n 1 $1`
 	;;
     -s)
 	shift
