@@ -185,10 +185,15 @@ announce="$tarball_dir/$modulever.announce"
 
 echo "checking parameters"
 if ! [ -f "$tarball_dir/$tarbz2" ] ||
-   ! [ -f "$tarball_dir/$targz" ] ||
-     [ -z "$tag_previous" ] ||
-     [ -z "$section" ]; then
-    echo "error: incorrect parameters!"
+   ! [ -f "$tarball_dir/$targz" ]; then
+    echo "error: tarballs not found.  Did you run make dist?"
+    usage
+    exit 1
+fi
+
+if [ -z "$tag_previous" ] ||
+   [ -z "$section" ]; then
+    echo "error: previous tag or section not found."
     usage
     exit 1
 fi
