@@ -5,6 +5,8 @@ set -e
 announce_list="xorg-announce@lists.freedesktop.org"
 xorg_list="xorg@lists.freedesktop.org"
 dri_list="dri-devel@lists.sourceforge.net"
+xkb_list="xkb@listserv.bat.ru"
+
 host_people=annarchy.freedesktop.org
 host_xorg=xorg.freedesktop.org
 host_dri=dri.freedesktop.org
@@ -48,9 +50,12 @@ esac
 MD5SUM=`which md5sum || which gmd5sum`
 SHA1SUM=`which sha1sum || which gsha1sum`
 
-if [ $section = libdrm ]; then
+if [ "$section" = "libdrm" ]; then
     host=$host_dri
     list=$dri_list
+elif [ "$section" = "xkeyboard-config" ]; then
+    host=$host_xorg
+    list=$xkb_list
 else
     host=$host_xorg
     list=$xorg_list
@@ -191,6 +196,9 @@ fi
 if [ "$section" = "libdrm" ]; then
     section_path="libdrm"
     srv_path="/srv/$host_dri/www/$section_path"
+elif [ "$section" = "xkeyboard-config" ]; then
+    section_path="archive/individual/data"
+    srv_path="/srv/$host_xorg/$section_path"
 else
     section_path="archive/individual/$section"
     srv_path="/srv/$host_xorg/$section_path"
