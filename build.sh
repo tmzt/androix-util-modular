@@ -509,6 +509,7 @@ build_driver_video() {
 	    build driver xf86-video-sisusb
 	    build driver xf86-video-sunffb
 	    build driver xf86-video-v4l
+	    build driver xf86-video-xgixp
 	    ;;
 	*)
 	    ;;
@@ -531,6 +532,15 @@ build_driver_video() {
 	    ;;
     esac
 
+    # Some drivers are only buildable on some architectures of some OS's
+    case "$HOST_CPU"-"$HOST_OS" in
+	i*86*-*Linux*)
+	    build driver xf86-video-geode
+	    ;;
+	*)
+	    ;;
+    esac
+
     build driver xf86-video-apm
     build driver xf86-video-ark
     build driver xf86-video-ast
@@ -539,13 +549,6 @@ build_driver_video() {
     build driver xf86-video-cirrus
     build driver xf86-video-dummy
     build driver xf86-video-fbdev
-    case $HOST_CPU in
-	i*86*)
-	    build driver xf86-video-geode
-	    ;;
-	*)
-	    ;;
-    esac
 #    build driver xf86-video-glide
     build driver xf86-video-glint
     build driver xf86-video-i128
@@ -571,7 +574,6 @@ build_driver_video() {
     build driver xf86-video-vmware
     build driver xf86-video-voodoo
     build driver xf86-video-xgi
-    build driver xf86-video-xgixp
 }
 
 # The server must be built before the drivers
