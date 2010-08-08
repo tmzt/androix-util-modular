@@ -1,13 +1,32 @@
 #!/bin/sh
 
-# global environment variables you may set:
-# CACHE: absolute path to a global autoconf cache
-# QUIET: hush the configure script noise
-# CONFFLAGS: flags to pass to all configure scripts
-# CONFCFLAGS: flags to pass to all configure scripts in ""
-# MAKEFLAGS: flags to pass to all make calls
-# LIBDIR: Path under $prefix for libraries (e.g., lib64)
-# GITROOT: Path to freedesktop.org git root (default: git://anongit.freedesktop.org/git). Only needed for --clone
+envoptions() {
+cat << EOF
+global environment variables you may set:
+  CACHE: absolute path to a global autoconf cache
+  QUIET: hush the configure script noise
+
+global environment variables you may set to replace default functionality:
+  ACLOCAL:  alternate invocation for 'aclocal' (default: aclocal)
+  MAKE:     program to use instead of 'make' (default: make)
+  FONTPATH: font path to use (defaults under: \$PREFIX/\$LIBDIR...)
+  LIBDIR:   path under \$PREFIX for libraries (e.g., lib64) (default: lib)
+  GITROOT:  path to freedesktop.org git root, only needed for --clone
+            (default: git://anongit.freedesktop.org/git)
+
+global environment variables you may set to augment functionality:
+  CONFFLAGS:  additional flags to pass to all configure scripts
+  CONFCFLAGS: additional compile flags to pass to all configure scripts
+  MAKEFLAGS:  additional flags to pass to all make invocations
+  PKG_CONFIG_PATH: include paths in addition to:
+                   \$DESTDIR/\$PREFIX/share/pkgconfig
+                   \$DESTDIR/\$PREFIX/\$LIBDIR/pkgconfig
+  LD_LIBRARY_PATH: include paths in addition to:
+                   \$DESTDIR/\$PREFIX/\$LIBDIR
+  PATH:            include paths in addition to:
+                   \$DESTDIR/\$PREFIX/bin
+EOF
+}
 
 failed_components=""
 nonexistent_components=""
@@ -681,6 +700,8 @@ usage() {
     echo "  --clone : clone non-existing repositories (uses \$GITROOT if set)"
     echo "  --autoresume file : autoresume from file"
     echo "  --check : run make check in addition to others"
+    echo ""
+    envoptions
 }
 
 HAVE_ARCH="`uname -i`"
