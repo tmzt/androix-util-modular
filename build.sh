@@ -28,6 +28,47 @@ global environment variables you may set to augment functionality:
 EOF
 }
 
+setup_buildenv() {
+    export HOST_OS=`uname -s`
+    export HOST_CPU=`uname -m`
+
+    if test x$LIBDIR = x ; then
+	export LIBDIR=lib
+    fi
+
+    # Must create local aclocal dir or aclocal fails
+    ACLOCAL_LOCALDIR="${DESTDIR}${PREFIX}/share/aclocal"
+    $SUDO mkdir -p ${ACLOCAL_LOCALDIR}
+
+    # The following is required to make aclocal find our .m4 macros
+    if test x"$ACLOCAL" = x; then
+	ACLOCAL="aclocal"
+    fi
+    export ACLOCAL="${ACLOCAL} -I ${ACLOCAL_LOCALDIR}"
+
+    # The following is required to make pkg-config find our .pc metadata files
+    export PKG_CONFIG_PATH=${DESTDIR}${PREFIX}/share/pkgconfig:${DESTDIR}${PREFIX}/${LIBDIR}/pkgconfig${PKG_CONFIG_PATH+:$PKG_CONFIG_PATH}
+
+    # Set the library path so that locally built libs will be found by apps
+    export LD_LIBRARY_PATH=${DESTDIR}${PREFIX}/${LIBDIR}${LD_LIBRARY_PATH+:$LD_LIBRARY_PATH}
+
+    # Set the path so that locally built apps will be found and used
+    export PATH=${DESTDIR}${PREFIX}/bin${PATH+:$PATH}
+
+    # Choose which make program to use
+    if test x"$MAKE" = x; then
+	MAKE=make
+    fi
+
+    # Set the default font path for xserver/xorg unless it's already set
+    if test x"$FONTPATH" = x; then
+	export FONTPATH="${PREFIX}/${LIBDIR}/X11/fonts/misc/,${PREFIX}/${LIBDIR}/X11/fonts/Type1/,${PREFIX}/${LIBDIR}/X11/fonts/75dpi/,${PREFIX}/${LIBDIR}/X11/fonts/100dpi/,${PREFIX}/${LIBDIR}/X11/fonts/cyrillic/,${PREFIX}/${LIBDIR}/X11/fonts/TTF/"
+    fi
+
+    # Create the log file directory
+    $SUDO mkdir -p ${DESTDIR}${PREFIX}/var/log
+}
+
 failed_components=""
 nonexistent_components=""
 clonefailed_components=""
@@ -145,6 +186,11 @@ clone() {
 }
 
 build() {
+    if [ -n "$LISTONLY" ]; then
+	echo "$1/$2"
+	return 0
+    fi
+
     if [ -n "$RESUME" ]; then
 	if [ "$RESUME" = "$1/$2" ]; then
 	    unset RESUME
@@ -701,6 +747,9 @@ usage() {
     echo "  --autoresume file : autoresume from file"
     echo "  --check : run make check in addition to others"
     echo ""
+    echo "Usage: $0 -L"
+    echo "  -L : just list modules to build"
+    echo ""
     envoptions
 }
 
@@ -779,6 +828,9 @@ do
 	shift
 	SUDO=$1
 	;;
+    -L)
+	LISTONLY=1
+	;;
     *)
 	PREFIX=$1
 	;;
@@ -787,63 +839,16 @@ do
     shift
 done
 
-if test x"${PREFIX}" = x ; then
+if test x"${PREFIX}" = x && test -z "$LISTONLY" ; then
     usage
     exit
 fi
 
-HOST_OS=`uname -s`
-HOST_CPU=`uname -m`
-
-if test x$LIBDIR = x ; then
-    LIBDIR=lib
+if test -z "$LISTONLY" ; then
+    setup_buildenv
+    echo "Building to run $HOST_OS / $HOST_CPU ($HOST)"
+    date
 fi
-
-export HOST_OS
-export HOST_CPU
-export LIBDIR
-
-echo "Building to run $HOST_OS / $HOST_CPU ($HOST)"
-
-# Must create local aclocal dir or aclocal fails
-ACLOCAL_LOCALDIR="${DESTDIR}${PREFIX}/share/aclocal"
-$SUDO mkdir -p ${ACLOCAL_LOCALDIR}
-
-# The following is required to make aclocal find our .m4 macros
-if test x"$ACLOCAL" = x; then
-    ACLOCAL="aclocal"
-fi
-
-ACLOCAL="${ACLOCAL} -I ${ACLOCAL_LOCALDIR}"
-export ACLOCAL
-
-# The following is required to make pkg-config find our .pc metadata files
-PKG_CONFIG_PATH=${DESTDIR}${PREFIX}/share/pkgconfig:${DESTDIR}${PREFIX}/${LIBDIR}/pkgconfig${PKG_CONFIG_PATH+:$PKG_CONFIG_PATH}
-export PKG_CONFIG_PATH
-
-# Set the library path so that locally built libs will be found by apps
-LD_LIBRARY_PATH=${DESTDIR}${PREFIX}/${LIBDIR}${LD_LIBRARY_PATH+:$LD_LIBRARY_PATH}
-export LD_LIBRARY_PATH
-
-# Set the path so that locally built apps will be found and used
-PATH=${DESTDIR}${PREFIX}/bin${PATH+:$PATH}
-export PATH
-
-# Choose which make program to use
-if test x"$MAKE" = x; then
-    MAKE=make
-fi
-
-# Set the default font path for xserver/xorg unless it's already set
-if test x"$FONTPATH" = x; then
-    FONTPATH="${PREFIX}/${LIBDIR}/X11/fonts/misc/,${PREFIX}/${LIBDIR}/X11/fonts/Type1/,${PREFIX}/${LIBDIR}/X11/fonts/75dpi/,${PREFIX}/${LIBDIR}/X11/fonts/100dpi/,${PREFIX}/${LIBDIR}/X11/fonts/cyrillic/,${PREFIX}/${LIBDIR}/X11/fonts/TTF/"
-    export FONTPATH
-fi
-
-# Create the log file directory
-$SUDO mkdir -p ${DESTDIR}${PREFIX}/var/log
-
-date
 
 # We must install the global macros before anything else
 build util macros
@@ -862,6 +867,10 @@ if test $LIB_ONLY -eq 0; then
     build_data
     build_font
     build_util
+fi
+
+if test -n "$LISTONLY" ; then
+    exit 0
 fi
 
 date
