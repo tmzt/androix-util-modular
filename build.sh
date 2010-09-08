@@ -740,6 +740,7 @@ usage() {
     echo "           file can be used for resuming with -r."
     echo "  -g : build with debug information"
     echo "  -h | --help : display this help and exit successfully"
+    echo "  -l : build libraries only (i.e. no drivers, no docs, etc.)"
     echo "  -n : do not quit after error; just print error message"
     echo "  -o module/component : build just this component"
     echo "  -p : run git pull on each component"
