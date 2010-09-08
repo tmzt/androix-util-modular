@@ -5,6 +5,7 @@ cat << EOF
 global environment variables you may set:
   CACHE: absolute path to a global autoconf cache
   QUIET: hush the configure script noise
+  USE_XCB: set to "NO" to not use or build xcb
 
 global environment variables you may set to replace default functionality:
   ACLOCAL:  alternate invocation for 'aclocal' (default: aclocal)
