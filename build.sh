@@ -739,6 +739,7 @@ usage() {
     echo "  -f file: append module being built to file. The last line of this"
     echo "           file can be used for resuming with -r."
     echo "  -g : build with debug information"
+    echo "  -h | --help : display this help and exit successfully"
     echo "  -n : do not quit after error; just print error message"
     echo "  -o module/component : build just this component"
     echo "  -p : run git pull on each component"
@@ -794,13 +795,9 @@ do
 	export CFLAGS
 	CONFCFLAGS="CFLAGS=-g3 -O0"
 	;;
-    -h)
+    -h|--help)
 	usage
-	exit
-	;;
-    --help)
-	usage
-	exit
+	exit 0
 	;;
     -l)
 	LIB_ONLY=1
