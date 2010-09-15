@@ -33,7 +33,7 @@ setup_buildenv() {
     export HOST_OS=`uname -s`
     export HOST_CPU=`uname -m`
 
-    if test x$LIBDIR = x ; then
+    if [ x$LIBDIR = x ]; then
 	export LIBDIR=lib
     fi
 
@@ -42,7 +42,7 @@ setup_buildenv() {
     $SUDO mkdir -p ${ACLOCAL_LOCALDIR}
 
     # The following is required to make aclocal find our .m4 macros
-    if test x"$ACLOCAL" = x; then
+    if [ x"$ACLOCAL" = x ]; then
 	ACLOCAL="aclocal"
     fi
     export ACLOCAL="${ACLOCAL} -I ${ACLOCAL_LOCALDIR}"
@@ -57,12 +57,12 @@ setup_buildenv() {
     export PATH=${DESTDIR}${PREFIX}/bin${PATH+:$PATH}
 
     # Choose which make program to use
-    if test x"$MAKE" = x; then
+    if [ x"$MAKE" = x ]; then
 	MAKE=make
     fi
 
     # Set the default font path for xserver/xorg unless it's already set
-    if test x"$FONTPATH" = x; then
+    if [ x"$FONTPATH" = x ]; then
 	export FONTPATH="${PREFIX}/${LIBDIR}/X11/fonts/misc/,${PREFIX}/${LIBDIR}/X11/fonts/Type1/,${PREFIX}/${LIBDIR}/X11/fonts/75dpi/,${PREFIX}/${LIBDIR}/X11/fonts/100dpi/,${PREFIX}/${LIBDIR}/X11/fonts/cyrillic/,${PREFIX}/${LIBDIR}/X11/fonts/TTF/"
     fi
 
@@ -75,7 +75,7 @@ nonexistent_components=""
 clonefailed_components=""
 
 failed() {
-    if test x"$NOQUIT" = x1; then
+    if [ x"$NOQUIT" = x1 ]; then
 	echo "***** $1 failed on $2/$3"
 	failed_components="$failed_components $2/$3"
     else
@@ -169,13 +169,13 @@ clone() {
 
     DIR="$1/$2"
 
-    if test -z "$GITROOT"; then
+    if [ -z "$GITROOT" ]; then
         GITROOT="git://anongit.freedesktop.org/git"
     fi
 
-    if ! test -d "$DIR"; then
+    if [ ! -d "$DIR" ]; then
         git clone "$GITROOT/$BASEDIR$DIR" "$DIR"
-        if test "$?" -ne 0 && ! test -d "$DIR"; then
+        if [ "$?" -ne 0 ] && [ ! -d "$DIR" ]; then
             return 1
         fi
     else
@@ -212,7 +212,7 @@ build() {
         if [ $? -ne 0 ]; then
             echo "Failed to clone $1 module component $2. Ignoring."
             clonefailed_components="$clonefailed_components $1/$2"
-            if test x"$BUILD_ONE" = x1; then
+            if [ x"$BUILD_ONE" = x1 ]; then
                 exit 1
             fi
             return
@@ -232,14 +232,14 @@ build() {
 
     echo "Building $1 module component $2..."
 
-    if test x"$BUILT_MODULES_FILE" != "x"; then
+    if [ x"$BUILT_MODULES_FILE" != "x" ]; then
         echo "$1/$2" >> $BUILT_MODULES_FILE
     fi
 
     old_pwd=`pwd`
     cd $SRCDIR || failed cd1 $1 $2
 
-    if test x"$PULL" = x1; then
+    if [ x"$PULL" = x1 ]; then
 	git pull --rebase || failed "git pull" $1 $2
     fi
 
@@ -256,33 +256,33 @@ build() {
     # Special configure flags for certain modules
     MOD_SPECIFIC=
 
-    if test "$1" = "lib" && test "$2" = "libX11" && test x"$USE_XCB" = xNO; then
+    if [ "$1" = "lib" ] && [ "$2" = "libX11" ] && [ x"$USE_XCB" = xNO ]; then
 	MOD_SPECIFIC="--with-xcb=no"
     fi
 
     LIB_FLAGS=
-    if test x$LIBDIR != x ; then
+    if [ x$LIBDIR != x ]; then
         LIB_FLAGS="--libdir=${PREFIX}/${LIBDIR}"
     fi
 
     # Use "sh autogen.sh" since some scripts are not executable in CVS
-    if test "x$NOAUTOGEN" != x1 ; then
+    if [ "x$NOAUTOGEN" != x1 ]; then
         sh ${DIR_CONFIG}/${CONFCMD} --prefix=${PREFIX} ${LIB_FLAGS} \
 	    ${MOD_SPECIFIC} ${QUIET:+--quiet} \
 	    ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} "$CONFCFLAGS" || \
 	    failed ${CONFCMD} $1 $2
     fi
     ${MAKE} $MAKEFLAGS || failed make $1 $2
-    if test x"$CHECK" = x1; then
+    if [ x"$CHECK" = x1 ]; then
         ${MAKE} $MAKEFLAGS check || failed check $1 $2
     fi
-    if test x"$CLEAN" = x1; then
+    if [ x"$CLEAN" = x1 ]; then
 	${MAKE} $MAKEFLAGS clean || failed clean $1 $2
     fi
-    if test x"$DIST" = x1; then
+    if [ x"$DIST" = x1 ]; then
 	${MAKE} $MAKEFLAGS dist || failed dist $1 $2
     fi
-    if test x"$DISTCHECK" = x1; then
+    if [ x"$DISTCHECK" = x1 ]; then
 	${MAKE} $MAKEFLAGS distcheck || failed distcheck $1 $2
     fi
     $SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH ${MAKE} $MAKEFLAGS install || \
@@ -290,7 +290,7 @@ build() {
 
     cd ${old_pwd}
 
-    if test x"$BUILD_ONE" = x1; then
+    if [ x"$BUILD_ONE" = x1 ]; then
 	echo "Single-component build complete"
 	exit 0
     fi
@@ -332,7 +332,7 @@ build_proto() {
     build proto xf86driproto
     build proto xf86vidmodeproto
     build proto xineramaproto
-    if test x"$USE_XCB" != xNO ; then
+    if [ x"$USE_XCB" != xNO ]; then
 	build xcb proto
     fi
 }
@@ -366,7 +366,7 @@ build_lib() {
     build lib libxtrans
     build lib libXau
     build lib libXdmcp
-    if test x"$USE_XCB" != xNO ; then
+    if [ x"$USE_XCB" != xNO ]; then
         build xcb pthread-stubs
 	build xcb libxcb
         build xcb util
@@ -507,7 +507,7 @@ build_app() {
     build app xwd
     build app xwininfo
     build app xwud
-#    if test x"$USE_XCB" != xNO ; then
+#    if [ x"$USE_XCB" != xNO ]; then
 #	build xcb demo
 #    fi
 }
@@ -762,7 +762,7 @@ DIR_CONFIG="."
 LIB_ONLY=0
 
 # Process command line args
-while test $# != 0
+while [ $# != 0 ]
 do
     case $1 in
     -a)
@@ -838,12 +838,12 @@ do
     shift
 done
 
-if test x"${PREFIX}" = x && test -z "$LISTONLY" ; then
+if [ x"${PREFIX}" = x ] && [ -z "$LISTONLY" ]; then
     usage
     exit
 fi
 
-if test -z "$LISTONLY" ; then
+if [ -z "$LISTONLY" ]; then
     setup_buildenv
     echo "Building to run $HOST_OS / $HOST_CPU ($HOST)"
     date
@@ -857,7 +857,7 @@ build_proto
 build_lib
 build_mesa
 
-if test $LIB_ONLY -eq 0; then
+if [ $LIB_ONLY -eq 0 ]; then
     build_doc
     build data bitmaps
     build_app
@@ -868,27 +868,27 @@ if test $LIB_ONLY -eq 0; then
     build_util
 fi
 
-if test -n "$LISTONLY" ; then
+if [ -n "$LISTONLY" ]; then
     exit 0
 fi
 
 date
 
-if test "x$nonexistent_components" != x ; then
+if [ "x$nonexistent_components" != x ]; then
     echo ""
     echo "***** Skipped components (not available) *****"
     echo "$nonexistent_components"
     echo ""
 fi
 
-if test "x$failed_components" != x ; then
+if [ "x$failed_components" != x ]; then
     echo ""
     echo "***** Failed components *****"
     echo "$failed_components"
     echo ""
 fi
 
-if test "x$CLONE" != x && test "x$clonefailed_components" != x ;  then
+if [ "x$CLONE" != x ] && [ "x$clonefailed_components" != x ];  then
     echo ""
     echo "***** Components failed to clone *****"
     echo "$clonefailed_components"
