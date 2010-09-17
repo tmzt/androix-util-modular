@@ -839,7 +839,7 @@ PREFIX=$1
 
 if [ -z "${PREFIX}" ] && [ -z "$LISTONLY" ]; then
     usage
-    exit
+    exit 1
 fi
 
 export HOST_OS=`uname -s`
