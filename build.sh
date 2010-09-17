@@ -30,9 +30,6 @@ EOF
 }
 
 setup_buildenv() {
-    export HOST_OS=`uname -s`
-    export HOST_CPU=`uname -m`
-
     export LIBDIR=${LIBDIR:="lib"}
 
     # Must create local aclocal dir or aclocal fails
@@ -833,6 +830,9 @@ if [ -z "${PREFIX}" ] && [ -z "$LISTONLY" ]; then
     usage
     exit
 fi
+
+export HOST_OS=`uname -s`
+export HOST_CPU=`uname -m`
 
 if [ -z "$LISTONLY" ]; then
     setup_buildenv
