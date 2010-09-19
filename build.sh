@@ -53,7 +53,7 @@ setup_buildenv() {
     MAKE=${MAKE:="make"}
 
     # Set the default font path for xserver/xorg unless it's already set
-    if [ -z "$FONTPATH" ]; then
+    if [ X"$FONTPATH" = X ]; then
 	export FONTPATH="${PREFIX}/${LIBDIR}/X11/fonts/misc/,${PREFIX}/${LIBDIR}/X11/fonts/Type1/,${PREFIX}/${LIBDIR}/X11/fonts/75dpi/,${PREFIX}/${LIBDIR}/X11/fonts/100dpi/,${PREFIX}/${LIBDIR}/X11/fonts/cyrillic/,${PREFIX}/${LIBDIR}/X11/fonts/TTF/"
     fi
 
@@ -66,7 +66,7 @@ nonexistent_components=""
 clonefailed_components=""
 
 failed() {
-    if [ -n "${NOQUIT}" ]; then
+    if [ X"${NOQUIT}" != X ]; then
 	echo "***** $1 failed on $2/$3"
 	failed_components="$failed_components $2/$3"
     else
@@ -85,7 +85,7 @@ checkfortars() {
             esac
             ;;
         "font")
-            if [ "$C" != "encodings" ]; then
+            if [ X"$C" != X"encodings" ]; then
                 C="font-$C"
             fi
             ;;
@@ -124,11 +124,11 @@ checkfortars() {
     for ii in $M .; do
         for jj in bz2 gz; do
             TARFILE=`ls -1rt $ii/$C-*.tar.$jj 2> /dev/null | tail -n 1`
-            if [ -n "$TARFILE" ]; then
+            if [ X"$TARFILE" != X ]; then
                 SRCDIR=`echo $TARFILE | sed "s,.tar.$jj,,"`
                 if [ ! -d $SRCDIR ]; then
                     TAROPTS=xjf
-                    if [ "$jj" = "gz" ]; then
+                    if [ X"$jj" = X"gz" ]; then
                         TAROPTS=xzf
                     fi
                     tar $TAROPTS $TARFILE -C $ii || failed tar $1 $2
@@ -175,13 +175,13 @@ clone() {
 }
 
 build() {
-    if [ -n "$LISTONLY" ]; then
+    if [ X"$LISTONLY" != X ]; then
 	echo "$1/$2"
 	return 0
     fi
 
-    if [ -n "$RESUME" ]; then
-	if [ "$RESUME" = "$1/$2" ]; then
+    if [ X"$RESUME" != X ]; then
+	if [ X"$RESUME" = X"$1/$2" ]; then
 	    unset RESUME
 	    # Resume build at this module
 	else
@@ -195,12 +195,12 @@ build() {
     if [ -f $1/$2/autogen.sh ]; then
         SRCDIR="$1/$2"
         CONFCMD="autogen.sh"
-    elif [ -n "$CLONE" ]; then
+    elif [ X"$CLONE" != X ]; then
         clone $1 $2
         if [ $? -ne 0 ]; then
             echo "Failed to clone $1 module component $2. Ignoring."
             clonefailed_components="$clonefailed_components $1/$2"
-            if [ -n "$BUILD_ONE" ]; then
+            if [ X"$BUILD_ONE" != X ]; then
                 exit 1
             fi
             return
@@ -212,7 +212,7 @@ build() {
         CONFCMD="configure"
     fi
 
-    if [ -z "$SRCDIR" ]; then
+    if [ X"$SRCDIR" = X ]; then
         echo "$1 module component $2 does not exist, skipping."
         nonexistent_components="$nonexistent_components $1/$2"
         return
@@ -220,19 +220,19 @@ build() {
 
     echo "Building $1 module component $2..."
 
-    if [ -n "$BUILT_MODULES_FILE" ]; then
+    if [ X"$BUILT_MODULES_FILE" != X ]; then
         echo "$1/$2" >> $BUILT_MODULES_FILE
     fi
 
     old_pwd=`pwd`
     cd $SRCDIR || failed cd1 $1 $2
 
-    if [ -n "$PULL" ]; then
+    if [ X"$PULL" != X ]; then
 	git pull --rebase || failed "git pull" $1 $2
     fi
 
     # Build outside source directory
-    if [ -n "$DIR_ARCH" ] ; then
+    if [ X"$DIR_ARCH" != X ] ; then
 	mkdir -p "$DIR_ARCH" || failed mkdir $1 $2
 	if cd "$DIR_ARCH" ; then :; else
 	    failed cd2 $1 $2
@@ -244,33 +244,33 @@ build() {
     # Special configure flags for certain modules
     MOD_SPECIFIC=
 
-    if [ "$1" = "lib" ] && [ "$2" = "libX11" ] && [ "${USE_XCB}" = "NO" ]; then
+    if [ X"$1" = X"lib" ] && [ X"$2" = X"libX11" ] && [ X"${USE_XCB}" = X"NO" ]; then
 	MOD_SPECIFIC="--with-xcb=no"
     fi
 
     LIB_FLAGS=
-    if [ -n "$LIBDIR" ]; then
+    if [ X"$LIBDIR" != X ]; then
         LIB_FLAGS="--libdir=${PREFIX}/${LIBDIR}"
     fi
 
     # Use "sh autogen.sh" since some scripts are not executable in CVS
-    if [ -z "$NOAUTOGEN" ]; then
+    if [ X"$NOAUTOGEN" = X ]; then
         sh ${DIR_CONFIG}/${CONFCMD} --prefix=${PREFIX} ${LIB_FLAGS} \
 	    ${MOD_SPECIFIC} ${QUIET:+--quiet} \
 	    ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} "$CONFCFLAGS" || \
 	    failed ${CONFCMD} $1 $2
     fi
     ${MAKE} $MAKEFLAGS || failed make $1 $2
-    if [ -n "$CHECK" ]; then
+    if [ X"$CHECK" != X ]; then
         ${MAKE} $MAKEFLAGS check || failed check $1 $2
     fi
-    if [ -n "$CLEAN" ]; then
+    if [ X"$CLEAN" != X ]; then
 	${MAKE} $MAKEFLAGS clean || failed clean $1 $2
     fi
-    if [ -n "$DIST" ]; then
+    if [ X"$DIST" != X ]; then
 	${MAKE} $MAKEFLAGS dist || failed dist $1 $2
     fi
-    if [ -n "$DISTCHECK" ]; then
+    if [ X"$DISTCHECK" != X ]; then
 	${MAKE} $MAKEFLAGS distcheck || failed distcheck $1 $2
     fi
     $SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH ${MAKE} $MAKEFLAGS install || \
@@ -278,7 +278,7 @@ build() {
 
     cd ${old_pwd}
 
-    if [ -n "$BUILD_ONE" ]; then
+    if [ X"$BUILD_ONE" != X ]; then
 	echo "Single-component build complete"
 	exit 0
     fi
@@ -320,7 +320,7 @@ build_proto() {
     build proto xf86driproto
     build proto xf86vidmodeproto
     build proto xineramaproto
-    if [ "${USE_XCB}" != "NO" ]; then
+    if [ X"${USE_XCB}" != X"NO" ]; then
 	build xcb proto
     fi
 }
@@ -354,7 +354,7 @@ build_lib() {
     build lib libxtrans
     build lib libXau
     build lib libXdmcp
-    if [ "${USE_XCB}" != "NO" ]; then
+    if [ X"${USE_XCB}" != X"NO" ]; then
         build xcb pthread-stubs
 	build xcb libxcb
         build xcb util
@@ -495,7 +495,7 @@ build_app() {
     build app xwd
     build app xwininfo
     build app xwud
-#    if [ "${USE_XCB}" != "NO" ]; then
+#    if [ X"${USE_XCB}" != X"NO" ]; then
 #	build xcb demo
 #    fi
 }
@@ -837,7 +837,7 @@ while [ 1 ]; do
 done
 PREFIX=$1
 
-if [ -z "${PREFIX}" ] && [ -z "$LISTONLY" ]; then
+if [ X"${PREFIX}" = X ] && [ X"$LISTONLY" = X ]; then
     usage
     exit 1
 fi
@@ -845,7 +845,7 @@ fi
 export HOST_OS=`uname -s`
 export HOST_CPU=`uname -m`
 
-if [ -z "$LISTONLY" ]; then
+if [ X"$LISTONLY" = X ]; then
     setup_buildenv
     echo "Building to run $HOST_OS / $HOST_CPU ($HOST)"
     date
@@ -870,27 +870,27 @@ if [ $LIB_ONLY -eq 0 ]; then
     build_util
 fi
 
-if [ -n "$LISTONLY" ]; then
+if [ X"$LISTONLY" != X ]; then
     exit 0
 fi
 
 date
 
-if [ -n "$nonexistent_components" ]; then
+if [ X"$nonexistent_components" != X ]; then
     echo ""
     echo "***** Skipped components (not available) *****"
     echo "$nonexistent_components"
     echo ""
 fi
 
-if [ -n "$failed_components" ]; then
+if [ X"$failed_components" != X ]; then
     echo ""
     echo "***** Failed components *****"
     echo "$failed_components"
     echo ""
 fi
 
-if [ -n "$CLONE" ] && [ -n "$clonefailed_components" ];  then
+if [ X"$CLONE" != X ] && [ X"$clonefailed_components" != X ];  then
     echo ""
     echo "***** Components failed to clone *****"
     echo "$clonefailed_components"
