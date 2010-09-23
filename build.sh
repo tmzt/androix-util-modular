@@ -750,13 +750,8 @@ DIR_CONFIG="."
 LIB_ONLY=0
 
 # Process command line args
-CMDLINE=`getopt -o abcdDf:ghlno:pr:s:L --long check,clone,help,autoresume: -n $0 -- "$@"`
-if [ $? != 0 ]; then
-    echo "getopt(1) invocation error"
-    exit 1
-fi
-eval set -- "$CMDLINE"
-while [ 1 ]; do
+while [ $# != 0 ]
+do
     case $1 in
     -a)
 	NOAUTOGEN=1
@@ -823,19 +818,13 @@ while [ 1 ]; do
     -L)
 	LISTONLY=1
 	;;
-    --)
-	shift
-	break
-	;;
     *)
-	echo "internal getopt(1) error!"
-	exit 1
+	PREFIX=$1
 	;;
     esac
 
     shift
 done
-PREFIX=$1
 
 if [ X"${PREFIX}" = X ] && [ X"$LISTONLY" = X ]; then
     usage
