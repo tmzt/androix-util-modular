@@ -218,7 +218,7 @@ build() {
         return
     fi
 
-    echo "Building $1 module component $2..."
+    echo "Processing module/component $1/$2"
 
     if [ X"$BUILT_MODULES_FILE" != X ]; then
         echo "$1/$2" >> $BUILT_MODULES_FILE
