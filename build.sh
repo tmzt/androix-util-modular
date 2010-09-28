@@ -722,8 +722,8 @@ usage() {
     echo "  -a : do NOT run auto config tools (autogen.sh, configure)"
     echo "  -b : use .build.$HAVE_ARCH build directory"
     echo "  -c : run make clean in addition to others"
-    echo "  -d : run make distcheck in addition to others"
     echo "  -D : run make dist in addition to others"
+    echo "  -d : run make distcheck in addition to others"
     echo "  -f file: append module being built to file. The last line of this"
     echo "           file can be used for resuming with -r."
     echo "  -g : build with debug information"
@@ -734,9 +734,9 @@ usage() {
     echo "  -p : run git pull on each component"
     echo "  -r module/component : resume building with this component"
     echo "  -s sudo-command : sudo command to use"
-    echo "  --clone : clone non-existing repositories (uses \$GITROOT if set)"
     echo "  --autoresume file : autoresume from file"
     echo "  --check : run make check in addition to others"
+    echo "  --clone : clone non-existing repositories (uses \$GITROOT if set)"
     echo ""
     echo "Usage: $0 -L"
     echo "  -L : just list modules to build"
@@ -763,17 +763,11 @@ do
     -c)
 	CLEAN=1
 	;;
-    --check)
-	CHECK=1
-	;;
-    --clone)
-	CLONE=1
+    -D)
+	DIST=1
 	;;
     -d)
 	DISTCHECK=1
-	;;
-    -D)
-	DIST=1
 	;;
     -f)
         shift
@@ -787,6 +781,9 @@ do
     -h|--help)
 	usage
 	exit 0
+	;;
+    -L)
+	LISTONLY=1
 	;;
     -l)
 	LIB_ONLY=1
@@ -806,17 +803,20 @@ do
 	shift
 	RESUME=$1
 	;;
+    -s)
+	shift
+	SUDO=$1
+	;;
     --autoresume)
 	shift
 	BUILT_MODULES_FILE=$1
 	[ -f $1 ] && RESUME=`tail -n 1 $1`
 	;;
-    -s)
-	shift
-	SUDO=$1
+    --check)
+	CHECK=1
 	;;
-    -L)
-	LISTONLY=1
+    --clone)
+	CLONE=1
 	;;
     *)
 	PREFIX=$1
