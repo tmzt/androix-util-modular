@@ -227,6 +227,20 @@ build() {
     old_pwd=`pwd`
     cd $SRCDIR || failed cd1 $1 $2
 
+    if [ X"$GITCMD" != X ]; then
+	$GITCMD
+	if [ $? -ne 0 ]; then
+	    failed "$GITCMD $1 $2"
+	fi
+	cd $old_pwd
+
+	if [ X"$BUILD_ONE" != X ]; then
+	    echo "Single-component git command complete"
+	    exit 0
+	fi
+	return 0
+    fi
+
     if [ X"$PULL" != X ]; then
 	git pull --rebase || failed "git pull" $1 $2
     fi
@@ -241,40 +255,44 @@ build() {
 	fi
     fi
 
-    # Special configure flags for certain modules
-    MOD_SPECIFIC=
+    if [ X"$MAKECMD" != X ]; then
+	$MAKECMD || failed "$MAKECMD" $1 $2
+    else
+	# Special configure flags for certain modules
+	MOD_SPECIFIC=
 
-    if [ X"$1" = X"lib" ] && [ X"$2" = X"libX11" ] && [ X"${USE_XCB}" = X"NO" ]; then
-	MOD_SPECIFIC="--with-xcb=no"
-    fi
+	if [ X"$1" = X"lib" ] && [ X"$2" = X"libX11" ] && [ X"${USE_XCB}" = X"NO" ]; then
+	    MOD_SPECIFIC="--with-xcb=no"
+	fi
 
-    LIB_FLAGS=
-    if [ X"$LIBDIR" != X ]; then
-        LIB_FLAGS="--libdir=${PREFIX}/${LIBDIR}"
-    fi
+	LIB_FLAGS=
+	if [ X"$LIBDIR" != X ]; then
+	    LIB_FLAGS="--libdir=${PREFIX}/${LIBDIR}"
+	fi
 
-    # Use "sh autogen.sh" since some scripts are not executable in CVS
-    if [ X"$NOAUTOGEN" = X ]; then
-        sh ${DIR_CONFIG}/${CONFCMD} --prefix=${PREFIX} ${LIB_FLAGS} \
-	    ${MOD_SPECIFIC} ${QUIET:+--quiet} \
-	    ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} "$CONFCFLAGS" || \
-	    failed ${CONFCMD} $1 $2
+	# Use "sh autogen.sh" since some scripts are not executable in CVS
+	if [ X"$NOAUTOGEN" = X ]; then
+	    sh ${DIR_CONFIG}/${CONFCMD} --prefix=${PREFIX} ${LIB_FLAGS} \
+		${MOD_SPECIFIC} ${QUIET:+--quiet} \
+		${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} "$CONFCFLAGS" || \
+		failed ${CONFCMD} $1 $2
+	fi
+	${MAKE} $MAKEFLAGS || failed make $1 $2
+	if [ X"$CHECK" != X ]; then
+	    ${MAKE} $MAKEFLAGS check || failed check $1 $2
+	fi
+	if [ X"$CLEAN" != X ]; then
+	    ${MAKE} $MAKEFLAGS clean || failed clean $1 $2
+	fi
+	if [ X"$DIST" != X ]; then
+	    ${MAKE} $MAKEFLAGS dist || failed dist $1 $2
+	fi
+	if [ X"$DISTCHECK" != X ]; then
+	    ${MAKE} $MAKEFLAGS distcheck || failed distcheck $1 $2
+	fi
+	$SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH ${MAKE} $MAKEFLAGS install || \
+	    failed install $1 $2
     fi
-    ${MAKE} $MAKEFLAGS || failed make $1 $2
-    if [ X"$CHECK" != X ]; then
-        ${MAKE} $MAKEFLAGS check || failed check $1 $2
-    fi
-    if [ X"$CLEAN" != X ]; then
-	${MAKE} $MAKEFLAGS clean || failed clean $1 $2
-    fi
-    if [ X"$DIST" != X ]; then
-	${MAKE} $MAKEFLAGS dist || failed dist $1 $2
-    fi
-    if [ X"$DISTCHECK" != X ]; then
-	${MAKE} $MAKEFLAGS distcheck || failed distcheck $1 $2
-    fi
-    $SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH ${MAKE} $MAKEFLAGS install || \
-	failed install $1 $2
 
     cd ${old_pwd}
 
@@ -737,6 +755,7 @@ usage() {
     echo "  --autoresume file : autoresume from file"
     echo "  --check : run make check in addition to others"
     echo "  --clone : clone non-existing repositories (uses \$GITROOT if set)"
+    echo "  --cmd cmd : execute arbitrary git or make command 'cmd'"
     echo ""
     echo "Usage: $0 -L"
     echo "  -L : just list modules to build"
@@ -817,6 +836,22 @@ do
 	;;
     --clone)
 	CLONE=1
+	;;
+    --cmd)
+	shift
+	cmd1=`echo $1 | cut -d' ' -f1`
+	cmd2=`echo $1 | cut -d' ' -f2`
+	if [ X"$cmd1" = X"git" ]; then
+	    GITCMD=$1
+	elif [ X"$cmd1" = X"make" ]; then
+	    MAKECMD=$1
+	else
+	    echo "The script can only process 'make' or 'git' commands"
+	    echo "It can't process '$cmd1' commands"
+	    echo ""
+	    usage
+	    exit 1
+	fi
 	;;
     *)
 	PREFIX=$1
