@@ -65,6 +65,13 @@ failed_components=""
 nonexistent_components=""
 clonefailed_components=""
 
+# explain where a failured occurred
+# if you find this message in the build output it can help tell you where the failure occurred
+# arguments:
+#   $1 - which command failed
+#   $2/$3 - which module/component failed
+# returns:
+#   (irrelevant)
 failed() {
     echo "***** $1 failed on $2/$3"
     failed_components="$failed_components $2/$3"
@@ -157,6 +164,15 @@ checkfortars() {
     return 0
 }
 
+# perform a clone of a git repository
+# this function provides the mapping between module/component names
+# and their location in the fd.o repository
+# arguments:
+#   $1 - module
+#   $2 - component (optional)
+# returns:
+#   0 - good
+#   1 - bad
 clone() {
     case $1 in
         "pixman")
@@ -192,6 +208,13 @@ clone() {
     return 0
 }
 
+# perform processing of each module/component
+# arguments:
+#   $1 - module
+#   $2 - component (optional)
+# returns:
+#   0 - good
+#   1 - bad
 process() {
     local rtn
 
@@ -357,6 +380,14 @@ process() {
     return 0
 }
 
+# process each module/component and handle:
+# LISTONLY, RESUME, NOQUIT, and BUILD_ONE
+# arguments:
+#   $1 - module
+#   $2 - component (optional)
+# returns:
+#   0 - good
+#   1 - bad
 build() {
     if [ X"$LISTONLY" != X ]; then
 	echo "$1/$2"
