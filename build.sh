@@ -1033,21 +1033,27 @@ date
 if [ X"$nonexistent_components" != X ]; then
     echo ""
     echo "***** Skipped components (not available) *****"
-    echo "$nonexistent_components"
+    for mod in $nonexistent_components; do
+	echo "    $mod"
+    done
     echo ""
 fi
 
 if [ X"$failed_components" != X ]; then
     echo ""
     echo "***** Failed components *****"
-    echo "$failed_components"
+    for mod in $failed_components; do
+	echo "    $mod"
+    done
     echo ""
 fi
 
 if [ X"$CLONE" != X ] && [ X"$clonefailed_components" != X ];  then
     echo ""
     echo "***** Components failed to clone *****"
-    echo "$clonefailed_components"
+    for mod in $clonefailed_components; do
+	echo "    $mod"
+    done
     echo ""
 fi
 
