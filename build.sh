@@ -204,10 +204,12 @@ clone() {
     if [ ! -d "$DIR" ]; then
         git clone "$GITROOT/$BASEDIR$DIR" "$DIR"
         if [ $? -ne 0 ] && [ ! -d "$DIR" ]; then
+            echo "Failed to clone $1 module component $2. Ignoring."
+            clonefailed_components="$clonefailed_components $1/$2"
             return 1
         fi
     else
-        # git cannot clone into an existing directory
+        echo "git cannot clone into an existing directory $1/$2"
 	return 1
     fi
 
@@ -239,13 +241,10 @@ process() {
         CONFCMD="autogen.sh"
     elif [ X"$CLONE" != X ]; then
         clone $1 $2
-        if [ $? -ne 0 ]; then
-            echo "Failed to clone $1 module component $2. Ignoring."
-            clonefailed_components="$clonefailed_components $1/$2"
-            return 1
+        if [ $? -eq 0 ]; then
+	    SRCDIR="$1/$2"
+	    CONFCMD="autogen.sh"
         fi
-        SRCDIR="$1/$2"
-        CONFCMD="autogen.sh"
     else
         checkfortars $1 $2
         CONFCMD="configure"
