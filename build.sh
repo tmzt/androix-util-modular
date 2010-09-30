@@ -74,6 +74,22 @@ failed() {
     fi
 }
 
+# print a pretty title to separate the processing of each module
+# arguments:
+#   $1 - string to format into title
+# returns:
+#   (irrelevant)
+module_title() {
+    # preconds
+    if [ X"$1" = X ]; then
+	return
+    fi
+
+    echo ""
+    echo "======================================================================"
+    echo "==  Processing module/component:  \"$1/$2\""
+}
+
 checkfortars() {
     M=$1
     C=$2
@@ -218,7 +234,7 @@ build() {
         return
     fi
 
-    echo "Processing module/component $1/$2"
+    module_title $1 $2
 
     if [ X"$BUILT_MODULES_FILE" != X ]; then
         echo "$1/$2" >> $BUILT_MODULES_FILE
