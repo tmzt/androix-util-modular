@@ -307,85 +307,88 @@ process() {
 
     if [ X"$MAKECMD" != X ]; then
 	$MAKECMD
-	if [ $? -ne 0 ]; then
+	rtn=$?
+	cd $old_pwd
+
+	if [ $rtn -ne 0 ]; then
 	    failed "$MAKECMD" $1 $2
-	    cd $old_pwd
 	    return 1
 	fi
-    else
-	# Special configure flags for certain modules
-	MOD_SPECIFIC=
+	return 0
+    fi
 
-	if [ X"$1" = X"lib" ] && [ X"$2" = X"libX11" ] && [ X"${USE_XCB}" = X"NO" ]; then
-	    MOD_SPECIFIC="--with-xcb=no"
-	fi
+    # Special configure flags for certain modules
+    MOD_SPECIFIC=
 
-	LIB_FLAGS=
-	if [ X"$LIBDIR" != X ]; then
-	    LIB_FLAGS="--libdir=${PREFIX}/${LIBDIR}"
-	fi
+    if [ X"$1" = X"lib" ] && [ X"$2" = X"libX11" ] && [ X"${USE_XCB}" = X"NO" ]; then
+	MOD_SPECIFIC="--with-xcb=no"
+    fi
 
-	# Use "sh autogen.sh" since some scripts are not executable in CVS
-	if [ X"$NOAUTOGEN" = X ]; then
-	    sh ${DIR_CONFIG}/${CONFCMD} --prefix=${PREFIX} ${LIB_FLAGS} \
-		${MOD_SPECIFIC} ${QUIET:+--quiet} \
-		${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} "$CONFCFLAGS"
-	    if [ $? -ne 0 ]; then
-		failed ${CONFCMD} $1 $2
-		cd $old_pwd
-		return 1
-	    fi
-	fi
+    LIB_FLAGS=
+    if [ X"$LIBDIR" != X ]; then
+	LIB_FLAGS="--libdir=${PREFIX}/${LIBDIR}"
+    fi
 
-	${MAKE} $MAKEFLAGS
+    # Use "sh autogen.sh" since some scripts are not executable in CVS
+    if [ X"$NOAUTOGEN" = X ]; then
+	sh ${DIR_CONFIG}/${CONFCMD} --prefix=${PREFIX} ${LIB_FLAGS} \
+	    ${MOD_SPECIFIC} ${QUIET:+--quiet} \
+	    ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} "$CONFCFLAGS"
 	if [ $? -ne 0 ]; then
-	    failed make $1 $2
+	    failed ${CONFCMD} $1 $2
 	    cd $old_pwd
 	    return 1
 	fi
+    fi
 
-	if [ X"$CHECK" != X ]; then
-	    ${MAKE} $MAKEFLAGS check
-	    if [ $? -ne 0 ]; then
-		failed check $1 $2
-		cd $old_pwd
-		return 1
-	    fi
-	fi
+    ${MAKE} $MAKEFLAGS
+    if [ $? -ne 0 ]; then
+	failed make $1 $2
+	cd $old_pwd
+	return 1
+    fi
 
-	if [ X"$CLEAN" != X ]; then
-	    ${MAKE} $MAKEFLAGS clean
-	    if [ $? -ne 0 ]; then
-		failed clean $1 $2
-		cd $old_pwd
-		return 1
-	    fi
-	fi
-
-	if [ X"$DIST" != X ]; then
-	    ${MAKE} $MAKEFLAGS dist
-	    if [ $? -ne 0 ]; then
-		failed dist $1 $2
-		cd $old_pwd
-		return 1
-	    fi
-	fi
-
-	if [ X"$DISTCHECK" != X ]; then
-	    ${MAKE} $MAKEFLAGS distcheck
-	    if [ $? -ne 0 ]; then
-		failed distcheck $1 $2
-		cd $old_pwd
-		return 1
-	    fi
-	fi
-
-	$SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH ${MAKE} $MAKEFLAGS install
+    if [ X"$CHECK" != X ]; then
+	${MAKE} $MAKEFLAGS check
 	if [ $? -ne 0 ]; then
-	    failed install $1 $2
+	    failed check $1 $2
 	    cd $old_pwd
 	    return 1
 	fi
+    fi
+
+    if [ X"$CLEAN" != X ]; then
+	${MAKE} $MAKEFLAGS clean
+	if [ $? -ne 0 ]; then
+	    failed clean $1 $2
+	    cd $old_pwd
+	    return 1
+	fi
+    fi
+
+    if [ X"$DIST" != X ]; then
+	${MAKE} $MAKEFLAGS dist
+	if [ $? -ne 0 ]; then
+	    failed dist $1 $2
+	    cd $old_pwd
+	    return 1
+	fi
+    fi
+
+    if [ X"$DISTCHECK" != X ]; then
+	${MAKE} $MAKEFLAGS distcheck
+	if [ $? -ne 0 ]; then
+	    failed distcheck $1 $2
+	    cd $old_pwd
+	    return 1
+	fi
+    fi
+
+    $SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH ${MAKE} $MAKEFLAGS install
+    if [ $? -ne 0 ]; then
+	failed install $1 $2
+	cd $old_pwd
+	return 1
     fi
 
     cd ${old_pwd}
