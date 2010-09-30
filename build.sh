@@ -206,6 +206,8 @@ build() {
 	fi
     fi
 
+    module_title $1 $2
+
     SRCDIR=""
     CONFCMD=""
     if [ -f $1/$2/autogen.sh ]; then
@@ -233,8 +235,6 @@ build() {
         nonexistent_components="$nonexistent_components $1/$2"
         return
     fi
-
-    module_title $1 $2
 
     if [ X"$BUILT_MODULES_FILE" != X ]; then
         echo "$1/$2" >> $BUILT_MODULES_FILE
