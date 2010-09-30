@@ -203,7 +203,7 @@ clone() {
 
     if [ ! -d "$DIR" ]; then
         git clone "$GITROOT/$BASEDIR$DIR" "$DIR"
-        if [ $? -ne 0 ] && [ ! -d "$DIR" ]; then
+        if [ $? -ne 0 ]; then
             echo "Failed to clone $1 module component $2. Ignoring."
             clonefailed_components="$clonefailed_components $1/$2"
             return 1
