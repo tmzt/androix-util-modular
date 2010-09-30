@@ -181,19 +181,19 @@ clone() {
     fi
 
     case $1 in
-        "pixman")
+    "pixman")
         BASEDIR=""
         ;;
-        "xcb")
+    "xcb")
         BASEDIR=""
         ;;
-        "mesa")
+    "mesa")
         BASEDIR=""
         ;;
-        "xkeyboard-config")
+    "xkeyboard-config")
         BASEDIR=""
         ;;
-        *)
+    *)
         BASEDIR="xorg/"
         ;;
     esac
