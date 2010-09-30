@@ -174,6 +174,12 @@ checkfortars() {
 #   0 - good
 #   1 - bad
 clone() {
+    # preconds
+    if [ X"$1" = X ]; then
+	echo "clone() required argument \$1 missing"
+	return 1
+    fi
+
     case $1 in
         "pixman")
         BASEDIR=""
@@ -217,6 +223,12 @@ clone() {
 #   1 - bad
 process() {
     local rtn
+
+    # preconds
+    if [ X"$1" = X ]; then
+	echo "process() required argument \$1 missing"
+	return 1
+    fi
 
     module_title $1 $2
 
