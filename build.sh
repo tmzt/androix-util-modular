@@ -66,12 +66,8 @@ nonexistent_components=""
 clonefailed_components=""
 
 failed() {
-    if [ X"${NOQUIT}" != X ]; then
-	echo "***** $1 failed on $2/$3"
-	failed_components="$failed_components $2/$3"
-    else
-	exit 1
-    fi
+    echo "***** $1 failed on $2/$3"
+    failed_components="$failed_components $2/$3"
 }
 
 # print a pretty title to separate the processing of each module
@@ -147,7 +143,11 @@ checkfortars() {
                     if [ X"$jj" = X"gz" ]; then
                         TAROPTS=xzf
                     fi
-                    tar $TAROPTS $TARFILE -C $ii || failed tar $1 $2
+                    tar $TAROPTS $TARFILE -C $ii
+		    if [ $? -ne 0 ]; then
+			failed tar $1 $2
+			return 1
+		    fi
                 fi
                 return 0
             fi
@@ -227,7 +227,11 @@ process() {
     fi
 
     old_pwd=`pwd`
-    cd $SRCDIR || failed cd1 $1 $2
+    cd $SRCDIR
+    if [ $? -ne 0 ]; then
+	failed cd1 $1 $2
+	return 1
+    fi
 
     if [ X"$GITCMD" != X ]; then
 	$GITCMD
@@ -242,13 +246,24 @@ process() {
     fi
 
     if [ X"$PULL" != X ]; then
-	git pull --rebase || failed "git pull" $1 $2
+	git pull --rebase
+	if [ $? -ne 0 ]; then
+	    failed "git pull" $1 $2
+	    cd $old_pwd
+	    return 1
+	fi
     fi
 
     # Build outside source directory
     if [ X"$DIR_ARCH" != X ] ; then
-	mkdir -p "$DIR_ARCH" || failed mkdir $1 $2
-	if cd "$DIR_ARCH" ; then :; else
+	mkdir -p "$DIR_ARCH"
+	if [ $? -ne 0 ]; then
+	    failed mkdir $1 $2
+	    cd $old_pwd
+	    return 1
+	fi
+	cd "$DIR_ARCH"
+	if [ $? -ne 0 ]; then
 	    failed cd2 $1 $2
 	    cd ${old_pwd}
 	    return 1
@@ -256,7 +271,12 @@ process() {
     fi
 
     if [ X"$MAKECMD" != X ]; then
-	$MAKECMD || failed "$MAKECMD" $1 $2
+	$MAKECMD
+	if [ $? -ne 0 ]; then
+	    failed "$MAKECMD" $1 $2
+	    cd $old_pwd
+	    return 1
+	fi
     else
 	# Special configure flags for certain modules
 	MOD_SPECIFIC=
@@ -274,24 +294,63 @@ process() {
 	if [ X"$NOAUTOGEN" = X ]; then
 	    sh ${DIR_CONFIG}/${CONFCMD} --prefix=${PREFIX} ${LIB_FLAGS} \
 		${MOD_SPECIFIC} ${QUIET:+--quiet} \
-		${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} "$CONFCFLAGS" || \
+		${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} "$CONFCFLAGS"
+	    if [ $? -ne 0 ]; then
 		failed ${CONFCMD} $1 $2
+		cd $old_pwd
+		return 1
+	    fi
 	fi
-	${MAKE} $MAKEFLAGS || failed make $1 $2
+
+	${MAKE} $MAKEFLAGS
+	if [ $? -ne 0 ]; then
+	    failed make $1 $2
+	    cd $old_pwd
+	    return 1
+	fi
+
 	if [ X"$CHECK" != X ]; then
-	    ${MAKE} $MAKEFLAGS check || failed check $1 $2
+	    ${MAKE} $MAKEFLAGS check
+	    if [ $? -ne 0 ]; then
+		failed check $1 $2
+		cd $old_pwd
+		return 1
+	    fi
 	fi
+
 	if [ X"$CLEAN" != X ]; then
-	    ${MAKE} $MAKEFLAGS clean || failed clean $1 $2
+	    ${MAKE} $MAKEFLAGS clean
+	    if [ $? -ne 0 ]; then
+		failed clean $1 $2
+		cd $old_pwd
+		return 1
+	    fi
 	fi
+
 	if [ X"$DIST" != X ]; then
-	    ${MAKE} $MAKEFLAGS dist || failed dist $1 $2
+	    ${MAKE} $MAKEFLAGS dist
+	    if [ $? -ne 0 ]; then
+		failed dist $1 $2
+		cd $old_pwd
+		return 1
+	    fi
 	fi
+
 	if [ X"$DISTCHECK" != X ]; then
-	    ${MAKE} $MAKEFLAGS distcheck || failed distcheck $1 $2
+	    ${MAKE} $MAKEFLAGS distcheck
+	    if [ $? -ne 0 ]; then
+		failed distcheck $1 $2
+		cd $old_pwd
+		return 1
+	    fi
 	fi
-	$SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH ${MAKE} $MAKEFLAGS install || \
+
+	$SUDO env LD_LIBRARY_PATH=$LD_LIBRARY_PATH ${MAKE} $MAKEFLAGS install
+	if [ $? -ne 0 ]; then
 	    failed install $1 $2
+	    cd $old_pwd
+	    return 1
+	fi
     fi
 
     cd ${old_pwd}
