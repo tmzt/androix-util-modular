@@ -149,10 +149,12 @@ checkfortars() {
                     fi
                     tar $TAROPTS $TARFILE -C $ii || failed tar $1 $2
                 fi
-                return
+                return 0
             fi
         done
     done
+
+    return 0
 }
 
 clone() {
@@ -190,21 +192,8 @@ clone() {
     return 0
 }
 
-build() {
-    if [ X"$LISTONLY" != X ]; then
-	echo "$1/$2"
-	return 0
-    fi
-
-    if [ X"$RESUME" != X ]; then
-	if [ X"$RESUME" = X"$1/$2" ]; then
-	    unset RESUME
-	    # Resume build at this module
-	else
-	    echo "Skipping $1 module component $2..."
-	    return 0
-	fi
-    fi
+process() {
+    local rtn
 
     module_title $1 $2
 
@@ -218,10 +207,7 @@ build() {
         if [ $? -ne 0 ]; then
             echo "Failed to clone $1 module component $2. Ignoring."
             clonefailed_components="$clonefailed_components $1/$2"
-            if [ X"$BUILD_ONE" != X ]; then
-                exit 1
-            fi
-            return
+            return 1
         fi
         SRCDIR="$1/$2"
         CONFCMD="autogen.sh"
@@ -233,7 +219,7 @@ build() {
     if [ X"$SRCDIR" = X ]; then
         echo "$1 module component $2 does not exist, skipping."
         nonexistent_components="$nonexistent_components $1/$2"
-        return
+        return 0
     fi
 
     if [ X"$BUILT_MODULES_FILE" != X ]; then
@@ -245,14 +231,12 @@ build() {
 
     if [ X"$GITCMD" != X ]; then
 	$GITCMD
-	if [ $? -ne 0 ]; then
-	    failed "$GITCMD $1 $2"
-	fi
+	rtn=$?
 	cd $old_pwd
 
-	if [ X"$BUILD_ONE" != X ]; then
-	    echo "Single-component git command complete"
-	    exit 0
+	if [ $rtn -ne 0 ]; then
+	    failed "$GITCMD" $1 $2
+	    return 1
 	fi
 	return 0
     fi
@@ -267,7 +251,7 @@ build() {
 	if cd "$DIR_ARCH" ; then :; else
 	    failed cd2 $1 $2
 	    cd ${old_pwd}
-	    return
+	    return 1
 	fi
     fi
 
@@ -311,6 +295,32 @@ build() {
     fi
 
     cd ${old_pwd}
+    return 0
+}
+
+build() {
+    if [ X"$LISTONLY" != X ]; then
+	echo "$1/$2"
+	return 0
+    fi
+
+    if [ X"$RESUME" != X ]; then
+	if [ X"$RESUME" = X"$1/$2" ]; then
+	    unset RESUME
+	    # Resume build at this module
+	else
+	    echo "Skipping $1 module component $2..."
+	    return 0
+	fi
+    fi
+
+    process $1 $2
+    if [ $? -ne 0 ]; then
+	echo "error processing module/component:  \"$1/$2\""
+	if [ X"$NOQUIT" = X ]; then
+	    exit 1
+	fi
+    fi
 
     if [ X"$BUILD_ONE" != X ]; then
 	echo "Single-component build complete"
