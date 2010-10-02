@@ -897,6 +897,7 @@ HAVE_ARCH="`uname -i`"
 DIR_ARCH=""
 DIR_CONFIG="."
 LIB_ONLY=0
+PREFIX=""
 
 # Process command line args
 while [ $# != 0 ]
@@ -984,6 +985,14 @@ do
 	fi
 	;;
     *)
+	if [ X"$PREFIX" != X ]; then
+	    echo "unrecognized and/or too many command-line arguments"
+	    echo "  new PREFIX:      $1"
+	    echo "  existing PREFIX: $PREFIX"
+	    echo ""
+	    usage
+	    exit 1
+	fi
 	PREFIX=$1
 	;;
     esac
