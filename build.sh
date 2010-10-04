@@ -1025,8 +1025,8 @@ do
     *)
 	if [ X"$PREFIX" != X ]; then
 	    echo "unrecognized and/or too many command-line arguments"
-	    echo "  new PREFIX:      $1"
-	    echo "  existing PREFIX: $PREFIX"
+	    echo "  new 'prefix':      $1"
+	    echo "  existing 'prefix': $PREFIX"
 	    echo ""
 	    usage
 	    exit 1
@@ -1049,6 +1049,8 @@ do
 done
 
 if [ X"${PREFIX}" = X ] && [ X"$LISTONLY" = X ]; then
+    echo "required argument 'prefix' appears to be missing"
+    echo ""
     usage
     exit 1
 fi
