@@ -899,6 +899,38 @@ DIR_CONFIG="."
 LIB_ONLY=0
 PREFIX=""
 
+# perform sanity checks on cmdline args which require arguments
+# arguments:
+#   $1 - the option being examined
+#   $2 - the argument to the option
+# returns:
+#   if it returns, everything is good
+#   otherwise it exit's
+required_arg() {
+    # preconds
+    if [ X"$1" = X ]; then
+	echo "internal required_arg() error, missing \$1 argument"
+	exit 1
+    fi
+
+    # check for an argument
+    if [ X"$2" = X ]; then
+	echo "the '$1' option is missing its required argument"
+	echo ""
+	usage
+	exit 1
+    fi
+
+    # does the argument look like an option?
+    echo $2 | grep "^-" > /dev/null
+    if [ $? -eq 0 ]; then
+	echo "the argument '$2' of option '$1' looks like an option itself"
+	echo ""
+	usage
+	exit 1
+    fi
+}
+
 # Process command line args
 while [ $# != 0 ]
 do
@@ -920,6 +952,7 @@ do
 	DISTCHECK=1
 	;;
     -f)
+	required_arg $1 $2
         shift
         BUILT_MODULES_FILE=$1
         ;;
@@ -942,6 +975,7 @@ do
 	NOQUIT=1
 	;;
     -o)
+	required_arg $1 $2
 	shift
 	RESUME=$1
 	BUILD_ONE=1
@@ -950,14 +984,17 @@ do
 	PULL=1
 	;;
     -r)
+	required_arg $1 $2
 	shift
 	RESUME=$1
 	;;
     -s)
+	required_arg $1 $2
 	shift
 	SUDO=$1
 	;;
     --autoresume)
+	required_arg $1 $2
 	shift
 	BUILT_MODULES_FILE=$1
 	[ -f $1 ] && RESUME=`tail -n 1 $1`
@@ -969,6 +1006,7 @@ do
 	CLONE=1
 	;;
     --cmd)
+	required_arg $1 $2
 	shift
 	cmd1=`echo $1 | cut -d' ' -f1`
 	cmd2=`echo $1 | cut -d' ' -f2`
