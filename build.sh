@@ -1031,6 +1031,16 @@ do
 	    usage
 	    exit 1
 	fi
+
+	# check that 'prefix' doesn't look like an option
+	echo $1 | grep "^-" > /dev/null
+	if [ $? -eq 0 ]; then
+	    echo "'prefix' appears to be an option"
+	    echo ""
+	    usage
+	    exit 1
+	fi
+
 	PREFIX=$1
 	;;
     esac
