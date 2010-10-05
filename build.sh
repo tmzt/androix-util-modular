@@ -65,7 +65,7 @@ failed_components=""
 nonexistent_components=""
 clonefailed_components=""
 
-# explain where a failured occurred
+# explain where a failure occurred
 # if you find this message in the build output it can help tell you where the failure occurred
 # arguments:
 #   $1 - which command failed
