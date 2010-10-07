@@ -864,6 +864,52 @@ build_doc() {
     build doc xorg-docs
 }
 
+# just process the sub-projects supplied in the given file ($MODFILE)
+# in the order in which they are found in the list
+# (prerequisites and ordering are the responsibility of the user)
+# globals used:
+#   $MODFILE - readable file containing list of modules to process
+# arguments:
+#   (none)
+# returns:
+#   0 - good
+#   1 - bad
+process_module_file() {
+    local line
+    local module
+    local component
+
+    # preconds
+    if [ X"$MODFILE" = X ]; then
+	echo "internal process_module_file() error, \$MODFILE is empty"
+	return 1
+    fi
+    if [ ! -r "$MODFILE" ]; then
+	echo "module file '$MODFILE' is not readable or does not exist"
+	return 1
+    fi
+
+    # read from input file, skipping blank and comment lines
+    while read line; do
+	# skip blank lines
+	if [ X"$line" = X ]; then
+	    continue
+	fi
+
+	# skip comment lines
+	echo "$line" | grep "^#" > /dev/null
+	if [ $? -eq 0 ]; then
+	    continue
+	fi
+
+	module=`echo $line | cut -d'/' -f1`
+	component=`echo $line | cut -d'/' -f2`
+	build $module $component
+    done <"$MODFILE"
+
+    return 0
+}
+
 usage() {
     echo "Usage: $0 [options] prefix"
     echo "  where options are:"
@@ -886,6 +932,7 @@ usage() {
     echo "  --check : run make check in addition to others"
     echo "  --clone : clone non-existing repositories (uses \$GITROOT if set)"
     echo "  --cmd cmd : execute arbitrary git or make command 'cmd'"
+    echo "  --modfile file : only process the module/components specified in 'file'"
     echo ""
     echo "Usage: $0 -L"
     echo "  -L : just list modules to build"
@@ -1022,6 +1069,16 @@ do
 	    exit 1
 	fi
 	;;
+    --modfile)
+	required_arg $1 $2
+	shift
+	CLONE=1
+	if [ ! -r "$1" ]; then
+	    echo "can't find/read file '$1'"
+	    exit 1
+	fi
+	MODFILE=$1
+	;;
     *)
 	if [ X"$PREFIX" != X ]; then
 	    echo "unrecognized and/or too many command-line arguments"
@@ -1064,23 +1121,27 @@ if [ X"$LISTONLY" = X ]; then
     date
 fi
 
-# We must install the global macros before anything else
-build util macros
-build font util
+if [ X"$MODFILE" = X ]; then
+    # We must install the global macros before anything else
+    build util macros
+    build font util
 
-build_proto
-build_lib
-build_mesa
+    build_proto
+    build_lib
+    build_mesa
 
-if [ $LIB_ONLY -eq 0 ]; then
-    build_doc
-    build data bitmaps
-    build_app
-    build_xserver
-    build_driver
-    build_data
-    build_font
-    build_util
+    if [ $LIB_ONLY -eq 0 ]; then
+	build_doc
+	build data bitmaps
+	build_app
+	build_xserver
+	build_driver
+	build_data
+	build_font
+	build_util
+    fi
+else
+    process_module_file
 fi
 
 if [ X"$LISTONLY" != X ]; then
