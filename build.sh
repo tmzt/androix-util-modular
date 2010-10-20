@@ -225,6 +225,7 @@ clone() {
 #   1 - bad
 process() {
     local rtn
+    local needs_config=0
 
     # preconds
     if [ X"$1" = X ]; then
@@ -245,6 +246,7 @@ process() {
 	    SRCDIR="$1/$2"
 	    CONFCMD="autogen.sh"
         fi
+	needs_config=1
     else
         checkfortars $1 $2
         CONFCMD="configure"
@@ -304,18 +306,6 @@ process() {
 	fi
     fi
 
-    if [ X"$MAKECMD" != X ]; then
-	$MAKECMD
-	rtn=$?
-	cd $old_pwd
-
-	if [ $rtn -ne 0 ]; then
-	    failed "$MAKECMD" $1 $2
-	    return 1
-	fi
-	return 0
-    fi
-
     # Special configure flags for certain modules
     MOD_SPECIFIC=
 
@@ -329,7 +319,7 @@ process() {
     fi
 
     # Use "sh autogen.sh" since some scripts are not executable in CVS
-    if [ X"$NOAUTOGEN" = X ]; then
+    if [ $needs_config -eq 1 ] || [ X"$NOAUTOGEN" = X ]; then
 	sh ${DIR_CONFIG}/${CONFCMD} --prefix=${PREFIX} ${LIB_FLAGS} \
 	    ${MOD_SPECIFIC} ${QUIET:+--quiet} \
 	    ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} "$CONFCFLAGS"
@@ -338,6 +328,19 @@ process() {
 	    cd $old_pwd
 	    return 1
 	fi
+    fi
+
+    # a 'make' command has been specified by the user
+    if [ X"$MAKECMD" != X ]; then
+	$MAKECMD
+	rtn=$?
+	cd $old_pwd
+
+	if [ $rtn -ne 0 ]; then
+	    failed "$MAKECMD" $1 $2
+	    return 1
+	fi
+	return 0
     fi
 
     ${MAKE} $MAKEFLAGS
