@@ -934,7 +934,7 @@ usage() {
     echo "  --autoresume file : autoresume from file"
     echo "  --check : run make check in addition to others"
     echo "  --clone : clone non-existing repositories (uses \$GITROOT if set)"
-    echo "  --cmd cmd : execute arbitrary git or make command 'cmd'"
+    echo "  --cmd cmd : execute arbitrary git, gmake, or make command 'cmd'"
     echo "  --modfile file : only process the module/components specified in 'file'"
     echo ""
     echo "Usage: $0 -L"
@@ -1060,17 +1060,21 @@ do
 	shift
 	cmd1=`echo $1 | cut -d' ' -f1`
 	cmd2=`echo $1 | cut -d' ' -f2`
-	if [ X"$cmd1" = X"git" ]; then
-	    GITCMD=$1
-	elif [ X"$cmd1" = X"make" ]; then
-	    MAKECMD=$1
-	else
-	    echo "The script can only process 'make' or 'git' commands"
-	    echo "It can't process '$cmd1' commands"
-	    echo ""
-	    usage
-	    exit 1
-	fi
+	case X"$cmd1" in
+	    X"git")
+		GITCMD=$1
+		;;
+	    X"make" | X"gmake")
+		MAKECMD=$1
+		;;
+	    *)
+		echo "The script can only process 'make', 'gmake', or 'git' commands"
+		echo "It can't process '$cmd1' commands"
+		echo ""
+		usage
+		exit 1
+		;;
+	esac
 	;;
     --modfile)
 	required_arg $1 $2
