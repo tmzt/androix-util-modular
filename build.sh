@@ -1059,6 +1059,16 @@ do
 	shift
 	cmd1=`echo $1 | cut -d' ' -f1`
 	cmd2=`echo $1 | cut -d' ' -f2`
+
+	# verify the command exists
+	which $cmd1 > /dev/null 2>&1
+	if [ $? -ne 0 ]; then
+	    echo "The specified command '$cmd1' does not appear to exist"
+	    echo ""
+	    usage
+	    exit 1
+	fi
+
 	case X"$cmd1" in
 	    X"git")
 		GITCMD=$1
