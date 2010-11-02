@@ -1078,7 +1078,6 @@ do
     --modfile)
 	required_arg $1 $2
 	shift
-	CLONE=1
 	if [ ! -r "$1" ]; then
 	    echo "can't find/read file '$1'"
 	    exit 1
