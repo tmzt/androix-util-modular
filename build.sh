@@ -1158,9 +1158,14 @@ date
 if [ X"$nonexistent_components" != X ]; then
     echo ""
     echo "***** Skipped components (not available) *****"
+	echo "Could neither find a git repository (at the <module/component> paths)"
+	echo "or a tarball (at the <module/> paths or ./) for:"
+	echo "    <module/component>"
     for mod in $nonexistent_components; do
 	echo "    $mod"
     done
+    echo "You may want to provide the --clone option to build.sh"
+    echo "to automatically git-clone the missing components"
     echo ""
 fi
 
