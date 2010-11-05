@@ -955,17 +955,14 @@ usage() {
     echo "  -c : run make clean in addition to others"
     echo "  -D : run make dist in addition to others"
     echo "  -d : run make distcheck in addition to others"
-    echo "  -f file: append module being built to file. The last line of this"
-    echo "           file can be used for resuming with -r."
     echo "  -g : build with debug information"
     echo "  -h | --help : display this help and exit successfully"
     echo "  -l : build libraries only (i.e. no drivers, no docs, etc.)"
     echo "  -n : do not quit after error; just print error message"
     echo "  -o module/component : build just this component"
     echo "  -p : run git pull on each component"
-    echo "  -r module/component : resume building with this component"
     echo "  -s sudo-command : sudo command to use"
-    echo "  --autoresume file : autoresume from file"
+    echo "  --autoresume file : append module being built to, and autoresume from, 'file'"
     echo "  --check : run make check in addition to others"
     echo "  --clone : clone non-existing repositories (uses \$GITROOT if set)"
     echo "  --cmd cmd : execute arbitrary git, gmake, or make command 'cmd'"
@@ -1035,11 +1032,6 @@ do
     -d)
 	DISTCHECK=1
 	;;
-    -f)
-	required_arg $1 $2
-        shift
-        BUILT_MODULES_FILE=$1
-        ;;
     -g)
 	CFLAGS="-g3 -O0"
 	export CFLAGS
@@ -1066,11 +1058,6 @@ do
 	;;
     -p)
 	PULL=1
-	;;
-    -r)
-	required_arg $1 $2
-	shift
-	RESUME=$1
 	;;
     -s)
 	required_arg $1 $2
