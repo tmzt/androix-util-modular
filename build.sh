@@ -131,10 +131,38 @@ checkfortars() {
             ;;
         "xcb")
             case $C in
-                "proto") C="xcb-proto" ;;
-                "pthread-stubs") M="lib"; C="libpthread-stubs" ;;
-                "util") C="xcb-util" ;;
+                "proto")
+                    M="xcb/proto"
+                    C="xcb-proto"
+                    ;;
+                "pthread-stubs")
+                    M="xcb/pthread-stubs"
+                    C="libpthread-stubs"
+                    ;;
+                "libxcb")
+                    M="xcb/libxcb"
+                    C="libxcb"
+                    ;;
+                "util")
+                    M="xcb/util"
+                    C="xcb-util"
+                    ;;
             esac
+            ;;
+        "mesa")
+            case $C in
+                "drm")
+                    M="mesa/drm"
+                    C="libdrm"
+                    ;;
+                "mesa")
+                    M="mesa/mesa"
+                    C="MesaLib"
+                    ;;
+            esac
+            ;;
+        "xkeyboard-config")
+            C="xkeyboard-config"
             ;;
         "xserver")
             C="xorg-server"
@@ -145,6 +173,7 @@ checkfortars() {
             TARFILE=`ls -1rt $ii/$C-*.tar.$jj 2> /dev/null | tail -n 1`
             if [ X"$TARFILE" != X ]; then
                 SRCDIR=`echo $TARFILE | sed "s,.tar.$jj,,"`
+                SRCDIR=`echo $SRCDIR | sed "s,MesaLib,Mesa,"`
                 if [ ! -d $SRCDIR ]; then
                     TAROPTS=xjf
                     if [ X"$jj" = X"gz" ]; then
