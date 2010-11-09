@@ -30,7 +30,8 @@ EOF
 }
 
 setup_buildenv() {
-    export LIBDIR=${LIBDIR:="lib"}
+    LIBDIR=${LIBDIR:="lib"}
+    export LIBDIR
 
     # Must create local aclocal dir or aclocal fails
     ACLOCAL_LOCALDIR="${DESTDIR}${PREFIX}/share/aclocal"
@@ -38,23 +39,28 @@ setup_buildenv() {
 
     # The following is required to make aclocal find our .m4 macros
     ACLOCAL=${ACLOCAL:="aclocal"}
-    export ACLOCAL="${ACLOCAL} -I ${ACLOCAL_LOCALDIR}"
+    ACLOCAL="${ACLOCAL} -I ${ACLOCAL_LOCALDIR}"
+    export ACLOCAL
 
     # The following is required to make pkg-config find our .pc metadata files
-    export PKG_CONFIG_PATH=${DESTDIR}${PREFIX}/share/pkgconfig:${DESTDIR}${PREFIX}/${LIBDIR}/pkgconfig${PKG_CONFIG_PATH+:$PKG_CONFIG_PATH}
+    PKG_CONFIG_PATH=${DESTDIR}${PREFIX}/share/pkgconfig:${DESTDIR}${PREFIX}/${LIBDIR}/pkgconfig${PKG_CONFIG_PATH+:$PKG_CONFIG_PATH}
+    export PKG_CONFIG_PATH
 
     # Set the library path so that locally built libs will be found by apps
-    export LD_LIBRARY_PATH=${DESTDIR}${PREFIX}/${LIBDIR}${LD_LIBRARY_PATH+:$LD_LIBRARY_PATH}
+    LD_LIBRARY_PATH=${DESTDIR}${PREFIX}/${LIBDIR}${LD_LIBRARY_PATH+:$LD_LIBRARY_PATH}
+    export LD_LIBRARY_PATH
 
     # Set the path so that locally built apps will be found and used
-    export PATH=${DESTDIR}${PREFIX}/bin${PATH+:$PATH}
+    PATH=${DESTDIR}${PREFIX}/bin${PATH+:$PATH}
+    export PATH
 
     # Choose which make program to use
     MAKE=${MAKE:="make"}
 
     # Set the default font path for xserver/xorg unless it's already set
     if [ X"$FONTPATH" = X ]; then
-	export FONTPATH="${PREFIX}/${LIBDIR}/X11/fonts/misc/,${PREFIX}/${LIBDIR}/X11/fonts/Type1/,${PREFIX}/${LIBDIR}/X11/fonts/75dpi/,${PREFIX}/${LIBDIR}/X11/fonts/100dpi/,${PREFIX}/${LIBDIR}/X11/fonts/cyrillic/,${PREFIX}/${LIBDIR}/X11/fonts/TTF/"
+	FONTPATH="${PREFIX}/${LIBDIR}/X11/fonts/misc/,${PREFIX}/${LIBDIR}/X11/fonts/Type1/,${PREFIX}/${LIBDIR}/X11/fonts/75dpi/,${PREFIX}/${LIBDIR}/X11/fonts/100dpi/,${PREFIX}/${LIBDIR}/X11/fonts/cyrillic/,${PREFIX}/${LIBDIR}/X11/fonts/TTF/"
+	export FONTPATH
     fi
 
     # Create the log file directory
@@ -1156,8 +1162,10 @@ if [ X"${PREFIX}" = X ] && [ X"$LISTONLY" = X ]; then
     exit 1
 fi
 
-export HOST_OS=`uname -s`
-export HOST_CPU=`uname -m`
+HOST_OS=`uname -s`
+export HOST_OS
+HOST_CPU=`uname -m`
+export HOST_CPU
 
 if [ X"$LISTONLY" = X ]; then
     setup_buildenv
