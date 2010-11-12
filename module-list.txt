@@ -46,7 +46,7 @@ font-xfree86-type1-1.0.3
 fontsproto-2.1.1
 glproto-1.4.12
 iceauth-1.0.4
-inputproto-2.0
+inputproto-2.0.1
 kbproto-1.0.5
 libAppleWM-1.4.0
 libFS-1.0.3
@@ -173,7 +173,7 @@ xf86vidmodeproto-2.3
 xgamma-1.0.4
 xhost-1.0.4
 xineramaproto-1.2
-xinput-1.5.2
+xinput-1.5.3
 xkbcomp-1.2.0
 xkbevd-1.1.1
 xkbutils-1.0.3
