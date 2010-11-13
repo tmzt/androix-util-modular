@@ -259,8 +259,7 @@ clone() {
 #   0 - good
 #   1 - bad
 process() {
-    local rtn
-    local needs_config=0
+    needs_config=0
 
     # preconds
     if [ X"$1" = X ]; then
@@ -912,10 +911,6 @@ build_doc() {
 #   0 - good
 #   1 - bad
 process_module_file() {
-    local line
-    local module
-    local component
-
     # preconds
     if [ X"$MODFILE" = X ]; then
 	echo "internal process_module_file() error, \$MODFILE is empty"
