@@ -887,7 +887,6 @@ build_font() {
 build_util() {
     build util cf
     build util imake
-    build util makedepend
     build util gccmakedep
     build util lndir
 
@@ -1159,6 +1158,8 @@ if [ X"$MODFILE" = X ]; then
     # We must install the global macros before anything else
     build util macros
     build font util
+    # Required by mesa
+    build util makedepend
 
     build_proto
     build_lib
