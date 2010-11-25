@@ -16,6 +16,10 @@ global environment variables you may set to replace default functionality:
             (default: git://anongit.freedesktop.org/git)
 
 global environment variables you may set to augment functionality:
+  CC: C compiler binary to use for building
+  LD: linker binary to use for building
+  CPPFLAGS: passed to configure
+  LDFLAGS: passed to configure
   CONFFLAGS:  additional flags to pass to all configure scripts
   CONFCFLAGS: additional compile flags to pass to all configure scripts
   MAKEFLAGS:  additional flags to pass to all make invocations
@@ -356,7 +360,7 @@ process() {
     if [ $needs_config -eq 1 ] || [ X"$NOAUTOGEN" = X ]; then
 	sh ${DIR_CONFIG}/${CONFCMD} --prefix=${PREFIX} ${LIB_FLAGS} \
 	    ${MOD_SPECIFIC} ${QUIET:+--quiet} \
-	    ${CACHE:+--cache-file=}${CACHE} ${CONFFLAGS} "$CONFCFLAGS"
+	    ${CACHE:+--cache-file=}${CACHE} CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" ${CONFFLAGS} "$CONFCFLAGS"
 	if [ $? -ne 0 ]; then
 	    failed ${CONFCMD} $1 $2
 	    cd $old_pwd
